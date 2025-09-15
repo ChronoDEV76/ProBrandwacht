@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply antialiased text-slate-800;
+}
+.prose h1,
+.prose h2,
+.prose h3 {
+  @apply font-semibold;
+}
