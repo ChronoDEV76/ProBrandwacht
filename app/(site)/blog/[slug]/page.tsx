@@ -85,6 +85,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <ShareBar
           url={`https://www.probrandwacht.nl/blog/${params.slug}`}
           title={frontmatter.title ?? 'ProBrandwacht.nl'}
+          utmCampaign="blog_share"
         />
       </div>
       <div className="mt-8 flex flex-wrap gap-3">

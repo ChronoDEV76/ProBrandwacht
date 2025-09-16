@@ -104,6 +104,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         small
         url={`https://www.probrandwacht.nl/brandwacht-inhuren/${city}`}
         title={`Brandwacht inhuren ${cityName} | ProBrandwacht.nl`}
+        utmCampaign="city_share"
       />
 
       <div className="grid gap-6 sm:grid-cols-3">
