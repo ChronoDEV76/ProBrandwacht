@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import SiteHeader from '@/components/site-header'
 import { Inter } from 'next/font/google'
+import AnalyticsScripts from '@/components/analytics'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl">
       <body className={`bg-gradient-to-b from-brand-50 to-white text-slate-800 ${inter.className}`}>
+        <AnalyticsScripts />
         <SiteHeader />
         {/* Site-level JSON-LD for LocalBusiness */}
         <script

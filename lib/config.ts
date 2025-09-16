@@ -10,3 +10,13 @@ export function getSignupUrl(): string {
   const url = process.env.NEXT_PUBLIC_SIGNUP_URL
   return url?.trim() || 'https://forms.gle/4411sSmSiC3Mf8Fo6'
 }
+
+export function getGtmId(): string | undefined {
+  const id = process.env.NEXT_PUBLIC_GTM_ID?.trim()
+  return id || undefined
+}
+
+export function getGaMeasurementId(): string | undefined {
+  const id = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim()
+  return id || undefined
+}
