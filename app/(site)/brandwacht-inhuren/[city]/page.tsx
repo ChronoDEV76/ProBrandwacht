@@ -24,8 +24,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const city = params.city
   const cityName = niceCity(city)
-  const title = `Brandwacht inhuren ${cityName} | ProBrandwacht.nl`
-  const description = `Brandwacht ${cityName}: evenementen, bouw en industrie. Transparante tarieven en gecertificeerde professionals.`
+  const title = `Brandwacht inhuren ${cityName} – binnenkort via slimme matching | ProBrandwacht.nl`
+  const description = `Vind straks snel een brandwacht in ${cityName} via slimme matching. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
   return {
     title,
     description,
