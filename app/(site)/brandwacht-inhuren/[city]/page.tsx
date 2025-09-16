@@ -86,7 +86,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <section className="space-y-8">
       <h1 className="text-3xl font-semibold">
-        Vind straks snel een brandwacht in {cityName} door slimme matching‑algoritmes
+        Vind Straks Snel Een Brandwacht In {cityName} Door Slimme Matching‑Algoritmes
       </h1>
       <div>
         <a
