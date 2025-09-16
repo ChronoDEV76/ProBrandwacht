@@ -1,5 +1,10 @@
 {
   "framework": "nextjs",
   "installCommand": "npm install --no-audit --no-fund",
-  "buildCommand": "npm run build"
+  "buildCommand": "npm run build",
+  "regions": ["fra1"],
+  "functions": {
+    "api/**": { "regions": ["fra1"] },
+    "app/**": { "regions": ["fra1"] }
+  }
 }
