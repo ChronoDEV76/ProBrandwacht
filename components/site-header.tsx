@@ -1,16 +1,66 @@
+'use client'
 import Link from 'next/link'
+import { getSignupUrl } from '@/lib/config'
+import { usePathname } from 'next/navigation'
 
 export default function SiteHeader() {
+  const signupUrl = getSignupUrl()
+  const pathname = usePathname()
+  const isActive = (href: string) => pathname === href
   return (
-    <header className="border-b bg-white">
-      <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-700/80 text-white backdrop-blur supports-[backdrop-filter]:bg-brand-700/60 shadow-sm">
+      <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-4">
         <Link href="/" className="font-semibold">
           ProBrandwacht.nl
         </Link>
-        <nav className="flex gap-6 text-sm">
-          <Link href="/blog">Blog</Link>
-          <Link href="/brandwacht-inhuren/amsterdam">Brandwacht Amsterdam</Link>
-        </nav>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <nav className="flex gap-2 sm:gap-3 text-sm flex-wrap">
+            <Link
+              href="/faq"
+              aria-current={isActive('/faq') ? 'page' : undefined}
+              className={`relative rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 transition ${
+                isActive('/faq') ? 'bg-white/15' : 'hover:bg-white/10'
+              } after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 ${
+                isActive('/faq') ? 'after:scale-x-100' : 'hover:after:scale-x-100'
+              }`}
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/blog"
+              aria-current={isActive('/blog') ? 'page' : undefined}
+              className={`relative rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 transition ${
+                isActive('/blog') ? 'bg-white/15' : 'hover:bg-white/10'
+              } after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 ${
+                isActive('/blog') ? 'after:scale-x-100' : 'hover:after:scale-x-100'
+              }`}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/manifest"
+              aria-current={isActive('/manifest') ? 'page' : undefined}
+              className={`relative rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 transition ${
+                isActive('/manifest') ? 'bg-white/15' : 'hover:bg-white/10'
+              } after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 ${
+                isActive('/manifest') ? 'after:scale-x-100' : 'hover:after:scale-x-100'
+              }`}
+            >
+              Missie
+            </Link>
+          </nav>
+          <a
+            href={signupUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-md bg-white text-brand-700 px-3 py-1.5 text-sm font-medium hover:bg-white/90 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          >
+            <span className="sm:hidden">Meld je aan</span>
+            <span className="hidden sm:inline">
+              Meld je aan en kom straks met je profiel op ProSafetyMatch
+            </span>
+          </a>
+        </div>
       </div>
     </header>
   )

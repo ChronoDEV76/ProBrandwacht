@@ -17,7 +17,10 @@ export async function getPostBySlug(slug: string) {
   return { frontmatter: data as any, content }
 }
 
-export function readingTime(text: string, wpm: number = getReadingWPM()): {
+export function readingTime(
+  text: string,
+  wpm: number = getReadingWPM(),
+): {
   minutes: number
   words: number
 } {

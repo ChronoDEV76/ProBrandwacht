@@ -16,10 +16,8 @@ describe('SiteHeader', () => {
     render(<SiteHeader />)
     expect(screen.getByText('ProBrandwacht.nl')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '/blog')
-    expect(screen.getByRole('link', { name: 'Brandwacht Amsterdam' })).toHaveAttribute(
-      'href',
-      '/brandwacht-inhuren/amsterdam',
-    )
+    // No city links in header anymore; site is informational only
+    expect(screen.getByRole('link', { name: 'Missie' })).toHaveAttribute('href', '/manifest')
+    expect(screen.getByRole('link', { name: /Meld je aan/i })).toBeInTheDocument()
   })
 })
-

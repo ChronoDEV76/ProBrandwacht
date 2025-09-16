@@ -33,4 +33,3 @@ describe('formatReadingTime', () => {
     expect(formatReadingTime(2, 'en-US')).toBe('2 min read')
   })
 })
-

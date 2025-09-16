@@ -5,8 +5,17 @@ import { getPostSlugs, getPostBySlug, readingTime, formatReadingTime } from '@/l
 export const metadata: Metadata = {
   title: 'Blog | ProBrandwacht.nl',
   description: 'Nieuws en gidsen over brandwacht inzet, tarieven en veiligheid.',
-  alternates: { canonical: '/blog' },
+  alternates: { canonical: '/blog', languages: { 'nl-NL': '/blog' } },
   other: { hreflang: 'nl-NL' },
+}
+
+export const revalidate = 60 * 60 // 1h ISR
+
+function niceCity(slug: string) {
+  return slug
+    .split('-')
+    .map(s => (s ? s[0].toUpperCase() + s.slice(1) : s))
+    .join(' ')
 }
 
 export default async function BlogIndexPage() {
@@ -14,7 +23,12 @@ export default async function BlogIndexPage() {
   if (!slugs.length) {
     return (
       <section className="space-y-6">
-        <h1 className="text-3xl font-semibold">Blog</h1>
+        <header className="space-y-2">
+          <h1 className="text-3xl font-semibold">Blog & kennisbank</h1>
+          <p className="text-slate-600 max-w-2xl">
+            Gidsen, tarieven en praktische tips voor evenementen, bouw en industrie.
+          </p>
+        </header>
         <p className="text-slate-600">Er zijn nog geen artikelen gepubliceerd.</p>
         <Link href="/" className="underline">
           Terug naar home
@@ -38,22 +52,40 @@ export default async function BlogIndexPage() {
         }
       }),
     )
-  )
-    .sort((a, b) => {
-      if (!a.date && !b.date) return 0
-      if (!a.date) return 1
-      if (!b.date) return -1
-      return b.date.getTime() - a.date.getTime()
-    })
+  ).sort((a, b) => {
+    if (!a.date && !b.date) return 0
+    if (!a.date) return 1
+    if (!b.date) return -1
+    return b.date.getTime() - a.date.getTime()
+  })
 
   return (
     <section className="space-y-6">
-      <h1 className="text-3xl font-semibold">Blog</h1>
+      <header className="space-y-2">
+        <h1 className="text-3xl font-semibold">Blog & kennisbank</h1>
+        <p className="text-slate-600 max-w-2xl">
+          Gidsen, tarieven en praktische tips voor evenementen, bouw en industrie.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {['amsterdam', 'rotterdam', 'den-haag', 'utrecht'].map(c => (
+            <Link
+              key={c}
+              href={`/brandwacht-inhuren/${c}`}
+              className="rounded-md border px-3 py-1.5 text-sm hover:bg-slate-50"
+            >
+              {niceCity(c)}
+            </Link>
+          ))}
+        </div>
+      </header>
       <ul className="grid gap-4 sm:grid-cols-2">
         {posts.map(p => {
           const now = new Date()
           const isNew = p.date ? now.getTime() - p.date.getTime() < 1000 * 60 * 60 * 24 * 30 : false
-          const excerpt = p.description && p.description.length > 140 ? `${p.description.slice(0, 140)}…` : p.description
+          const excerpt =
+            p.description && p.description.length > 140
+              ? `${p.description.slice(0, 140)}…`
+              : p.description
           return (
             <li key={p.slug} className="rounded-xl border p-5 hover:bg-slate-50 transition-colors">
               <div className="flex items-start justify-between gap-3">
@@ -78,7 +110,11 @@ export default async function BlogIndexPage() {
                   className="text-xs text-slate-500 mt-1 block"
                   dateTime={p.date.toISOString().slice(0, 10)}
                 >
-                  {p.date.toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {p.date.toLocaleDateString('nl-NL', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
                 </time>
               ) : null}
               {excerpt ? <p className="text-sm text-slate-600 mt-2">{excerpt}</p> : null}

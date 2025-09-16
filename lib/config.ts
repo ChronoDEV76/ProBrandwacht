@@ -6,3 +6,7 @@ export function getReadingWPM(): number {
   return Math.min(400, Math.max(100, n))
 }
 
+export function getSignupUrl(): string {
+  const url = process.env.NEXT_PUBLIC_SIGNUP_URL
+  return url?.trim() || 'https://forms.gle/4411sSmSiC3Mf8Fo6'
+}
