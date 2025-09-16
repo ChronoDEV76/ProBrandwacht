@@ -3,6 +3,7 @@ import { getSignupUrl } from '@/lib/config'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
 import Prose from '@/components/prose'
+import ShareBar from '@/components/share-bar'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -24,7 +25,15 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url, languages: { 'nl-NL': url } },
     other: { hreflang: 'nl-NL' },
-    openGraph: { url, title, description, images: ['/og.jpg'] },
+    openGraph: {
+      url,
+      title,
+      description,
+      images: ['/og.jpg'],
+      type: 'article',
+      locale: 'nl_NL',
+      publishedTime: frontmatter.date ? new Date(frontmatter.date).toISOString() : undefined,
+    },
   }
 }
 
@@ -72,6 +81,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <Prose>
         <MDXRemote source={content} />
       </Prose>
+      <div className="mt-6">
+        <ShareBar
+          url={`https://www.probrandwacht.nl/blog/${params.slug}`}
+          title={frontmatter.title ?? 'ProBrandwacht.nl'}
+        />
+      </div>
       <div className="mt-8 flex flex-wrap gap-3">
         <a
           href={signupUrl}
