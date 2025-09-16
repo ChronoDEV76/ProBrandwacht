@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type ShareBarProps = {
   url: string
@@ -9,6 +9,7 @@ type ShareBarProps = {
 
 export default function ShareBar({ url, title, small }: ShareBarProps) {
   const [copied, setCopied] = useState(false)
+  const [canNativeShare, setCanNativeShare] = useState(false)
   const size = small ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm'
   const gap = small ? 'gap-1.5' : 'gap-2'
 
@@ -30,16 +31,37 @@ export default function ShareBar({ url, title, small }: ShareBarProps) {
     } catch {}
   }
 
+  useEffect(() => {
+    setCanNativeShare(
+      typeof navigator !== 'undefined' && typeof (navigator as any).share === 'function',
+    )
+  }, [])
+
+  async function nativeShare() {
+    try {
+      if (canNativeShare) {
+        await (navigator as any).share({ title, text: title, url })
+        return
+      }
+    } catch {}
+    copy()
+  }
+
   return (
     <div className={`flex flex-wrap ${gap}`} aria-label="Deel dit artikel">
+      {canNativeShare ? (
+        <button type="button" onClick={nativeShare} className={`${li} cursor-pointer`}>
+          Deel
+        </button>
+      ) : null}
+      <a className={li} href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
       <a className={li} href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
         LinkedIn
       </a>
       <a className={li} href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
         Facebook
-      </a>
-      <a className={li} href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
-        WhatsApp
       </a>
       <a className={li} href={shareLinks.email}>
         E‑mail

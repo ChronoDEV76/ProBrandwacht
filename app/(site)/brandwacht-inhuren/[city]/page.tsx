@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getSignupUrl } from '@/lib/config'
 import { coreCities } from '@/lib/cities'
+import ShareBar from '@/components/share-bar'
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
 
@@ -99,6 +100,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
         Vind snel een brandwacht in {cityName}. Hieronder vind je informatie voor evenementen, bouw
         en industriële inzet, plus veelgestelde vragen.
       </p>
+      <ShareBar
+        small
+        url={`https://www.probrandwacht.nl/brandwacht-inhuren/${city}`}
+        title={`Brandwacht inhuren ${cityName} | ProBrandwacht.nl`}
+      />
 
       <div className="grid gap-6 sm:grid-cols-3">
         <div className="rounded-xl border p-5 bg-white shadow-sm">
