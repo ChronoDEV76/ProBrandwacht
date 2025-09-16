@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag to release (e.g., v1.1.0)'
+        required: true
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Determine tag
+        id: tag
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "TAG=${{ github.ref_name }}" >> $GITHUB_ENV
+          else
+            echo "TAG=${{ inputs.tag_name }}" >> $GITHUB_ENV
+          fi
+          echo "Releasing tag: $TAG"
+
+      - name: Build release notes from CHANGELOG
+        id: notes
+        run: |
+          BODY=$(awk -v tag="$TAG" '
+            BEGIN{p=0}
+            /^v[0-9]+\.[0-9]+\.[0-9]+/{
+              if (p==1) { exit }
+              if ($0 ~ "^"tag) { p=1 }
+            }
+            p==1 { print }
+          ' CHANGELOG.md)
+          if [ -z "$BODY" ]; then
+            BODY="Release $TAG"
+          fi
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG }}
+          name: ${{ env.TAG }}
+          body: ${{ steps.notes.outputs.body }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
