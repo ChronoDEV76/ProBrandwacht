@@ -85,7 +85,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   return (
     <section className="space-y-8">
-      <h1 className="text-3xl font-semibold">Brandwacht inhuren in {cityName}</h1>
+      <h1 className="text-3xl font-semibold">
+        Vind straks snel een brandwacht in {cityName} door slimme matching‑algoritmes
+      </h1>
       <div>
         <a
           href={signupUrl}
@@ -97,13 +99,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </a>
       </div>
       <p className="text-slate-600 max-w-2xl">
-        Vind snel een brandwacht in {cityName}. Hieronder vind je informatie voor evenementen, bouw
+        We werken aan ProSafetyMatch: het digitale platform dat brandwachten en opdrachtgevers
+        transparant aan elkaar koppelt. Hieronder vind je alvast informatie voor evenementen, bouw
         en industriële inzet, plus veelgestelde vragen.
       </p>
       <ShareBar
         small
         url={`https://www.probrandwacht.nl/brandwacht-inhuren/${city}`}
-        title={`Brandwacht inhuren ${cityName} | ProBrandwacht.nl`}
+        title={`Vind straks snel een brandwacht in ${cityName} | ProBrandwacht.nl`}
         utmCampaign="city_share"
       />
 
