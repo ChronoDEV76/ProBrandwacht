@@ -17,7 +17,7 @@ export default function ManifestPage() {
     <article>
       {/* Kleine hero-kop voor context */}
       <header className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze missie</h1>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze Missie</h1>
         <p className="text-slate-700 mt-1 max-w-2xl">
           Eerlijk, transparant en betrouwbaar voor brandwachten én opdrachtgevers.
         </p>

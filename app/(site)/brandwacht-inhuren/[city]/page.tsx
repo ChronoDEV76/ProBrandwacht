@@ -14,7 +14,9 @@ function niceCity(slug: string) {
 }
 
 export async function generateStaticParams() {
-  return coreCities.map(city => ({ city }))
+  // Pre-render a broader set of cities for better coverage
+  const { cities } = await import('@/lib/cities')
+  return cities.map(city => ({ city }))
 }
 
 export async function generateMetadata({
@@ -95,7 +97,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Meld je aan en kom straks met je profiel op ProSafetyMatch
+          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
         </a>
       </div>
       <p className="text-slate-600 max-w-2xl">
@@ -103,6 +105,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         transparant aan elkaar koppelt. Hieronder vind je alvast informatie voor evenementen, bouw
         en industriële inzet, plus veelgestelde vragen.
       </p>
+      <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
         small
         url={`https://www.probrandwacht.nl/brandwacht-inhuren/${city}`}
@@ -166,7 +169,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
                       rel="noopener noreferrer"
                       className="underline"
                     >
-                      Meld je hier aan als brandwacht
+                      Meld je aan (gratis)
                     </a>
                   </>
                 ) : null}

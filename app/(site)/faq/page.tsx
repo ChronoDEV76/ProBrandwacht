@@ -80,7 +80,7 @@ export default function FAQPage() {
   }
   return (
     <section className="space-y-6">
-      <h1 className="text-3xl font-semibold">Veelgestelde vragen</h1>
+      <h1 className="text-3xl font-semibold">Veelgestelde Vragen</h1>
       <ul className="space-y-4">
         {faqs.map((f, i) => (
           <li key={i}>
@@ -103,7 +103,7 @@ export default function FAQPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Meld je aan en kom straks met je profiel op ProSafetyMatch
+          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
         </a>
       </div>
       <script

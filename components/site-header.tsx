@@ -55,9 +55,9 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-md bg-white text-brand-700 px-3 py-1.5 text-sm font-medium hover:bg-white/90 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            <span className="sm:hidden">Meld je aan</span>
+            <span className="sm:hidden">Meld je aan (gratis)</span>
             <span className="hidden sm:inline">
-              Meld je aan en kom straks met je profiel op ProSafetyMatch
+              Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
             </span>
           </a>
         </div>

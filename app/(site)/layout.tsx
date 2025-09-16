@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     siteName: 'ProBrandwacht.nl',
     title: 'ProBrandwacht.nl',
     description: 'Brandwacht inhuren in Nederland – transparant en veilig.',
-    images: ['/og.jpg'],
   },
 }
 

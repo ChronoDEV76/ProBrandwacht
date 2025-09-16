@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getPostSlugs } from '@/lib/blog'
-import { coreCities } from '@/lib/cities'
+import { coreCities, cities } from '@/lib/cities'
+import { getPostBySlug } from '@/lib/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://www.probrandwacht.nl'
@@ -9,16 +10,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
-  const cityRoutes = coreCities.map(c => ({
+  const cityRoutes = cities.map(c => ({
     url: `${base}/brandwacht-inhuren/${c}`,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))
   const slugs = await getPostSlugs()
-  const blogRoutes = slugs.map(s => ({
-    url: `${base}/blog/${s}`,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const blogRoutes = await Promise.all(
+    slugs.map(async s => {
+      const { frontmatter } = await getPostBySlug(s)
+      const lastModified = frontmatter.date ? new Date(frontmatter.date) : undefined
+      return {
+        url: `${base}/blog/${s}`,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+        lastModified,
+      }
+    }),
+  )
   return [...staticRoutes, ...cityRoutes, ...blogRoutes]
 }

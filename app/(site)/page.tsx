@@ -70,7 +70,7 @@ export default async function HomePage() {
           {/* Hero */}
           <header className="space-y-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
-              Eerlijke tarieven voor brandwachten in Nederland
+              Eerlijke Tarieven Voor Brandwachten In Nederland
             </h1>
             <p className="text-slate-700 max-w-2xl">
               ProBrandwacht.nl is het voorportaal van ProSafetyMatch: het digitale platform waar
@@ -83,7 +83,7 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
               >
-                Meld je aan als zzp‑brandwacht
+                Meld je aan (gratis) als zzp‑brandwacht
               </a>
               <Link href="/manifest" className="text-sm underline">
                 Lees hoe het werkt →
@@ -177,7 +177,7 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-50"
               >
-                Reserveer je plek als zzp’er
+                Meld je aan (gratis)
               </a>
             </div>
           </section>
@@ -200,7 +200,7 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
               >
-                Meld je gratis aan voor updates
+                Meld je aan (gratis)
               </a>
             </div>
           </section>

@@ -29,7 +29,6 @@ export async function generateMetadata({
       url,
       title,
       description,
-      images: ['/og.jpg'],
       type: 'article',
       locale: 'nl_NL',
       publishedTime: frontmatter.date ? new Date(frontmatter.date).toISOString() : undefined,
@@ -81,7 +80,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <Prose>
         <MDXRemote source={content} />
       </Prose>
-      <div className="mt-6">
+      <p className="mt-6 text-sm text-slate-600">Deel dit artikel:</p>
+      <div>
         <ShareBar
           url={`https://www.probrandwacht.nl/blog/${params.slug}`}
           title={frontmatter.title ?? 'ProBrandwacht.nl'}
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Meld je aan en kom straks met je profiel op ProSafetyMatch
+          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
         </a>
       </div>
       {howto ? (
