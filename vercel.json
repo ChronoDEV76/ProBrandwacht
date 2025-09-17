@@ -2,14 +2,9 @@
   "framework": "nextjs",
   "installCommand": "npm install --no-audit --no-fund",
   "buildCommand": "npm run build",
+  "regions": ["fra1"],
   "functions": {
-    "api/**": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 60
-    },
-    "app/**": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 60
-    }
+    "api/**": { "regions": ["fra1"] },
+    "app/**": { "regions": ["fra1"] }
   }
 }
