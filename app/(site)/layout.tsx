@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: 'ProBrandwacht.nl – Brandwacht inhuren (NL)',
   description:
     'Transparant brandwachtplatform: gecertificeerde professionals, eerlijke tarieven en veilige betaling.',
+  keywords: [
+    'brandwacht inhuren',
+    'brandwacht tarieven',
+    'brandveiligheid evenementen',
+    'industriële brandwacht',
+    'brandwacht platform',
+    'probrandwacht',
+  ],
   alternates: { canonical: '/' },
   other: {
     hreflang: 'nl-NL',
@@ -31,20 +39,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AnalyticsScripts />
         <SiteHeader />
         {/* Site-level JSON-LD for LocalBusiness */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              name: 'ProBrandwacht.nl',
-              url: 'https://www.probrandwacht.nl',
-              areaServed: 'NL',
-            }),
-          }}
-        />
+        {[organizationJsonLd, websiteJsonLd].map((schema, index) => (
+          <script
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
         <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
       </body>
     </html>
   )
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'ProBrandwacht.nl',
+  url: 'https://www.probrandwacht.nl',
+  serviceType: 'Brandwacht diensten',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Nederland',
+  },
+  logo: 'https://www.probrandwacht.nl/og.jpg',
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ProBrandwacht.nl',
+  url: 'https://www.probrandwacht.nl',
 }

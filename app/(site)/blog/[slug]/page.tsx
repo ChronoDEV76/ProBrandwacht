@@ -29,9 +29,18 @@ export async function generateMetadata({
   const title = frontmatter.title ?? params.slug
   const description = frontmatter.description ?? 'Brandwacht blog – ProBrandwacht.nl'
   const url = `/blog/${params.slug}`
+  const keywords = Array.isArray(frontmatter.keywords)
+    ? (frontmatter.keywords as string[])
+    : [
+        'brandwacht blog',
+        'brandveiligheid',
+        'brandwacht inhuren',
+        title,
+      ]
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: url, languages: { 'nl-NL': url } },
     other: { hreflang: 'nl-NL' },
     openGraph: {
@@ -59,6 +68,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
   const signupUrl = getSignupUrl()
   const rt = readingTime(content)
+  const pageUrl = `https://www.probrandwacht.nl/blog/${params.slug}`
   const faqs: BlogFaq[] = Array.isArray(frontmatter.faq)
     ? frontmatter.faq.filter((faq): faq is BlogFaq => {
         if (!faq || typeof faq !== 'object') return false
@@ -84,6 +94,30 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         totalTime: howtoSource?.totalTime,
       }
     : null
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.probrandwacht.nl/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://www.probrandwacht.nl/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: frontmatter.title ?? params.slug,
+        item: pageUrl,
+      },
+    ],
+  }
   return (
     <article>
       <h1 className="mb-2 text-3xl font-semibold">{frontmatter.title}</h1>
@@ -106,7 +140,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <p className="mt-6 text-sm text-slate-600">Deel dit artikel:</p>
       <div>
         <ShareBar
-          url={`https://www.probrandwacht.nl/blog/${params.slug}`}
+          url={pageUrl}
           title={frontmatter.title ?? 'ProBrandwacht.nl'}
           utmCampaign="blog_share"
         />
@@ -177,6 +211,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           }}
         />
       ) : null}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     </article>
   )
 }

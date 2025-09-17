@@ -27,9 +27,16 @@ export async function generateMetadata({
   const cityName = niceCity(city)
   const title = `Brandwacht inhuren ${cityName} – binnenkort via slimme matching | ProBrandwacht.nl`
   const description = `Vind straks snel een brandwacht in ${cityName} via slimme matching. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
+  const keywords = [
+    `brandwacht ${cityName}`,
+    `brandwacht inhuren ${cityName}`,
+    'brandwacht platform',
+    'escrow brandwacht',
+  ]
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: `/brandwacht-inhuren/${city}`,
       languages: { 'nl-NL': `/brandwacht-inhuren/${city}` },
@@ -43,6 +50,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
   const cityName = niceCity(city)
   const signupUrl = getSignupUrl()
+  const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   const faqs = [
     {
       q: `Wanneer is een brandwacht verplicht bij evenementen in ${cityName}?`,
@@ -84,6 +92,45 @@ export default function CityPage({ params }: { params: { city: string } }) {
     })),
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.probrandwacht.nl/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Brandwacht inhuren',
+        item: 'https://www.probrandwacht.nl/brandwacht-inhuren',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: cityName,
+        item: pageUrl,
+      },
+    ],
+  }
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Brandwacht inhuren ${cityName}`,
+    provider: {
+      '@type': 'Organization',
+      name: 'ProBrandwacht.nl',
+      url: 'https://www.probrandwacht.nl',
+    },
+    areaServed: cityName,
+    url: pageUrl,
+    category: 'Brandveiligheid',
+  }
+
   return (
     <section className="space-y-8">
       <h1 className="text-3xl font-semibold">
@@ -107,7 +154,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
         small
-        url={`https://www.probrandwacht.nl/brandwacht-inhuren/${city}`}
+        url={pageUrl}
         title={`Vind straks snel een brandwacht in ${cityName} | ProBrandwacht.nl`}
         utmCampaign="city_share"
       />
@@ -195,10 +242,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </div>
 
       {/* FAQ JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
     </section>
   )
 }

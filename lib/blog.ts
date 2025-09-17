@@ -25,6 +25,7 @@ export type BlogFrontmatter = {
   date?: string
   faq?: BlogFaq[]
   howto?: BlogHowTo
+  keywords?: string[]
   [key: string]: unknown
 }
 

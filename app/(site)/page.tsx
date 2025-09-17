@@ -1,11 +1,25 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import {
+  getPostSlugs,
+  getPostBySlug,
+  readingTime,
+  formatReadingTime,
+  type BlogFrontmatter,
+} from '@/lib/blog'
 import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Het eerlijke brandwacht-platform – ProBrandwacht.nl',
   description:
     'Eerlijk platform voor brandwachten. Transparant, snel, veilig. ProSafetyMatch – in ontwikkeling door ProBrandwacht.nl – geeft zicht op tarieven, betalingen en certificaten.',
+  keywords: [
+    'brandwacht platform',
+    'brandwacht inhuren',
+    'brandwacht tarieven',
+    'escrow brandwacht',
+    'probrandwacht',
+  ],
   alternates: { canonical: '/', languages: { 'nl-NL': '/' } },
   other: { hreflang: 'nl-NL' },
 }
@@ -62,8 +76,47 @@ const steps = [
   },
 ]
 
-export default function HomePage() {
+const faqs = [
+  {
+    q: 'Wat is het verschil met grote brandwachtbureaus?',
+    a: 'ProSafetyMatch laat vooraf zien wat opdrachtgever en brandwacht betalen en ontvangen. Geen verborgen marge, wel escrow-betaling en directe afspraken.',
+  },
+  {
+    q: 'Welke certificaten kan ik tonen op het platform?',
+    a: 'Denk aan VCA, BHV, EHBO, brandwacht diploma’s en branche-specifieke certificaten. Ze worden zichtbaar voor opdrachtgevers.',
+  },
+  {
+    q: 'Wanneer start het platform met opdrachten?',
+    a: 'We bouwen met een eerste lichting brandwachten. Via updates hoor je wanneer pilots live gaan en hoe je opdrachten claimt.',
+  },
+]
+
+export default async function HomePage() {
   const signupUrl = getSignupUrl()
+  const latestPosts = await getLatestPosts()
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  }
+
+  const itemListJsonLd = latestPosts.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: latestPosts.map((post, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `https://www.probrandwacht.nl/blog/${post.slug}`,
+          name: post.title,
+        })),
+      }
+    : null
 
   return (
     <div className="relative w-full bg-gradient-to-r from-brand-50 to-white">
@@ -209,8 +262,119 @@ export default function HomePage() {
               </a>
             </div>
           </section>
+
+          {/* Blog & kennisbank */}
+          {latestPosts.length ? (
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold">Blog & kennisbank</h2>
+              <p className="text-slate-700 max-w-3xl">
+                Tips en uitleg over brandveiligheid, tarieven en wetgeving voor evenementen, bouw en industrie.
+              </p>
+              <ul className="grid gap-6 md:grid-cols-3">
+                {latestPosts.map(post => (
+                  <li
+                    key={post.slug}
+                    className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-2"
+                  >
+                    <Link href={`/blog/${post.slug}`} className="text-base font-semibold hover:underline">
+                      {post.title}
+                    </Link>
+                    <div className="text-xs text-slate-500 flex items-center gap-2">
+                      {post.date ? (
+                        <time dateTime={post.date.toISOString().slice(0, 10)}>
+                          {post.date.toLocaleDateString('nl-NL', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          })}
+                        </time>
+                      ) : (
+                        <span>Geen datum</span>
+                      )}
+                      <span>•</span>
+                      <span>{formatReadingTime(post.readMinutes, 'nl-NL')}</span>
+                    </div>
+                    {post.description ? (
+                      <p
+                        className="text-sm text-slate-600 overflow-hidden text-ellipsis"
+                        style={{
+                          display: '-webkit-box',
+                          WebkitLineClamp: 4,
+                          WebkitBoxOrient: 'vertical' as const,
+                        }}
+                      >
+                        {post.description}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+              <div className="text-sm">
+                <Link href="/blog" className="underline">
+                  Alle artikelen →
+                </Link>
+              </div>
+            </section>
+          ) : null}
+
+          {/* FAQ */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Veelgestelde vragen</h2>
+            <ul className="grid gap-4 md:grid-cols-3">
+              {faqs.map(faq => (
+                <li key={faq.q} className="rounded-lg border bg-white p-4 text-sm shadow-sm">
+                  <p className="font-medium">{faq.q}</p>
+                  <p className="text-slate-600 mt-1">{faq.a}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="text-sm">
+              <Link href="/faq" className="underline">
+                Bekijk alle vragen →
+              </Link>
+            </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+            {itemListJsonLd ? (
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+              />
+            ) : null}
+          </section>
         </div>
       </div>
     </div>
   )
+}
+
+async function getLatestPosts() {
+  const slugs = await getPostSlugs()
+  const posts = await Promise.all(
+    slugs.map(async slug => {
+      const { frontmatter, content } = await getPostBySlug(slug)
+      const date = frontmatter.date ? new Date(frontmatter.date) : undefined
+      const { minutes } = readingTime(content)
+      return {
+        slug,
+        title: frontmatter.title ?? slug,
+        description: getDescription(frontmatter),
+        date,
+        readMinutes: minutes,
+      }
+    }),
+  )
+  return posts
+    .sort((a, b) => {
+      if (!a.date && !b.date) return 0
+      if (!a.date) return 1
+      if (!b.date) return -1
+      return b.date.getTime() - a.date.getTime()
+    })
+    .slice(0, 6)
+}
+
+function getDescription(frontmatter: BlogFrontmatter): string | undefined {
+  if (typeof frontmatter.description === 'string') return frontmatter.description
+  if (typeof frontmatter.excerpt === 'string') return frontmatter.excerpt
+  return undefined
 }
