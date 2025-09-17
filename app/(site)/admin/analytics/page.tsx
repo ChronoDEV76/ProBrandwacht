@@ -1,23 +1,22 @@
 'use client'
 import { useEffect, useState } from 'react'
+import type { ShareEvent } from '@/components/share-bar'
 
-type ShareEvent = {
-  ts: number
-  event: string
-  platform: string
-  url: string
+type ShareWindow = Window & {
+  __shareEvents?: ShareEvent[]
 }
 
 export default function AnalyticsDebugPage() {
   const [events, setEvents] = useState<ShareEvent[]>([])
 
   useEffect(() => {
-    const w = window as any
-    w.__shareEvents = w.__shareEvents || []
-    setEvents([...w.__shareEvents])
+    const shareWindow = window as ShareWindow
+    shareWindow.__shareEvents = shareWindow.__shareEvents || []
+    setEvents([...shareWindow.__shareEvents])
 
     const id = setInterval(() => {
-      setEvents([...w.__shareEvents])
+      const eventsForSession = shareWindow.__shareEvents ?? []
+      setEvents([...eventsForSession])
     }, 1000)
     return () => clearInterval(id)
   }, [])

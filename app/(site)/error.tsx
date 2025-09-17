@@ -1,12 +1,13 @@
 'use client'
 
 export default function GlobalError({
-  error,
+  error: _error,
   reset,
 }: {
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  void _error
   return (
     <section className="space-y-4">
       <h1 className="text-2xl font-semibold">Er ging iets mis</h1>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getSignupUrl } from '@/lib/config'
-import { coreCities } from '@/lib/cities'
 import ShareBar from '@/components/share-bar'
 
 export const revalidate = 60 * 60 * 24 // 24h ISR

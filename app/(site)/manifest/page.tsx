@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Prose from '@/components/prose'
-import Link from 'next/link'
 import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {

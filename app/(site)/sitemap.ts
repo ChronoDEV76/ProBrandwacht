@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { getPostSlugs } from '@/lib/blog'
-import { coreCities, cities } from '@/lib/cities'
-import { getPostBySlug } from '@/lib/blog'
+import { getPostSlugs, getPostBySlug } from '@/lib/blog'
+import { cities } from '@/lib/cities'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://www.probrandwacht.nl'

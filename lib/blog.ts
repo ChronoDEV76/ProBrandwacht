@@ -3,6 +3,31 @@ import path from 'node:path'
 import matter from 'gray-matter'
 import { getReadingWPM } from './config'
 
+export type BlogFaq = {
+  q: string
+  a: string
+}
+
+export type BlogHowToStep = {
+  name: string
+  text?: string
+}
+
+export type BlogHowTo = {
+  name?: string
+  totalTime?: string
+  steps?: BlogHowToStep[]
+}
+
+export type BlogFrontmatter = {
+  title?: string
+  description?: string
+  date?: string
+  faq?: BlogFaq[]
+  howto?: BlogHowTo
+  [key: string]: unknown
+}
+
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
 export async function getPostSlugs(): Promise<string[]> {
@@ -10,11 +35,13 @@ export async function getPostSlugs(): Promise<string[]> {
   return files.filter(f => f.endsWith('.mdx')).map(f => f.replace(/\.mdx$/, ''))
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(
+  slug: string,
+): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
   const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
   const raw = await fs.readFile(fullPath, 'utf8')
   const { data, content } = matter(raw)
-  return { frontmatter: data as any, content }
+  return { frontmatter: data as BlogFrontmatter, content }
 }
 
 export function readingTime(

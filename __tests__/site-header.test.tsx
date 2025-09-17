@@ -1,15 +1,19 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
+import type { ComponentProps, ReactNode } from 'react'
 import SiteHeader from '@/components/site-header'
 
 // Mock next/link to a plain anchor for testing
-vi.mock('next/link', () => ({
-  default: ({ href, children, ...props }: any) => (
-    <a href={href as string} {...props}>
-      {children}
-    </a>
-  ),
-}))
+vi.mock('next/link', () => {
+  type AnchorProps = ComponentProps<'a'> & { children: ReactNode }
+  return {
+    default: ({ href, children, ...props }: AnchorProps) => (
+      <a href={href ?? undefined} {...props}>
+        {children}
+      </a>
+    ),
+  }
+})
 
 describe('SiteHeader', () => {
   it('renders brand and primary links', () => {

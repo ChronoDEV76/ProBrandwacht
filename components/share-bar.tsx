@@ -1,11 +1,28 @@
 'use client'
 import { useEffect, useState } from 'react'
 
+export type ShareEvent = {
+  ts: number
+  event: 'share_click'
+  platform: string
+  url: string
+}
+
 type ShareBarProps = {
   url: string
   title: string
   small?: boolean
   utmCampaign?: string
+}
+
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>
+  gtag?: (...args: unknown[]) => void
+  __shareEvents?: ShareEvent[]
+}
+
+type ShareNavigator = Navigator & {
+  share?: (data?: ShareData) => Promise<void>
 }
 
 export default function ShareBar({ url, title, small, utmCampaign }: ShareBarProps) {
@@ -36,12 +53,17 @@ export default function ShareBar({ url, title, small, utmCampaign }: ShareBarPro
   }
 
   function track(platform: string) {
+    const shareUrl = withUtm(platform)
     try {
-      ;(window as any).dataLayer?.push({ event: 'share_click', platform, url: withUtm(platform) })
-      ;(window as any).gtag?.('event', 'share_click', {
+      const analyticsWindow = window as AnalyticsWindow
+      analyticsWindow.dataLayer?.push({ event: 'share_click', platform, url: shareUrl })
+      analyticsWindow.gtag?.('event', 'share_click', {
         event_category: 'engagement',
         event_label: platform,
       })
+      const events = analyticsWindow.__shareEvents || []
+      events.push({ ts: Date.now(), event: 'share_click', platform, url: shareUrl })
+      analyticsWindow.__shareEvents = events
     } catch {}
   }
 
@@ -61,15 +83,18 @@ export default function ShareBar({ url, title, small, utmCampaign }: ShareBarPro
   }
 
   useEffect(() => {
-    setCanNativeShare(
-      typeof navigator !== 'undefined' && typeof (navigator as any).share === 'function',
-    )
+    if (typeof navigator === 'undefined') return
+    const nav = navigator as ShareNavigator
+    setCanNativeShare(typeof nav.share === 'function')
   }, [])
 
   async function nativeShare() {
     try {
       if (canNativeShare) {
-        await (navigator as any).share({ title, text: title, url: withUtm('native') })
+        const nav = navigator as ShareNavigator
+        if (typeof nav.share === 'function') {
+          await nav.share({ title, text: title, url: withUtm('native') })
+        }
         track('native')
         return
       }

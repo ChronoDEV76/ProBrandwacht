@@ -1,4 +1,13 @@
-import { getPostBySlug, getPostSlugs, readingTime, formatReadingTime } from '@/lib/blog'
+import {
+  getPostBySlug,
+  getPostSlugs,
+  readingTime,
+  formatReadingTime,
+  type BlogFrontmatter,
+  type BlogFaq,
+  type BlogHowTo,
+  type BlogHowToStep,
+} from '@/lib/blog'
 import { getSignupUrl } from '@/lib/config'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
@@ -40,7 +49,7 @@ export const revalidate = 60 * 60 // 1h ISR
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   let content: string
-  let frontmatter: any
+  let frontmatter: BlogFrontmatter
   try {
     const data = await getPostBySlug(params.slug)
     content = data.content
@@ -50,17 +59,31 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
   const signupUrl = getSignupUrl()
   const rt = readingTime(content)
-  const faqs: Array<{ q: string; a: string }> = Array.isArray(frontmatter.faq)
-    ? frontmatter.faq.filter((f: any) => f && f.q && f.a)
+  const faqs: BlogFaq[] = Array.isArray(frontmatter.faq)
+    ? frontmatter.faq.filter((faq): faq is BlogFaq => {
+        if (!faq || typeof faq !== 'object') return false
+        const candidate = faq as Partial<BlogFaq>
+        return typeof candidate.q === 'string' && typeof candidate.a === 'string'
+      })
     : []
-  const howto =
-    frontmatter.howto && Array.isArray(frontmatter.howto.steps)
-      ? {
-          name: (frontmatter.howto.name as string) || (frontmatter.title as string) || params.slug,
-          steps: frontmatter.howto.steps as Array<{ name: string; text?: string }>,
-          totalTime: frontmatter.howto.totalTime as string | undefined,
-        }
-      : null
+
+  const howtoSource: BlogHowTo | undefined = frontmatter.howto
+  const rawSteps = Array.isArray(howtoSource?.steps) ? (howtoSource.steps as unknown[]) : []
+  const howtoSteps: BlogHowToStep[] = rawSteps.filter((step): step is BlogHowToStep => {
+    if (!step || typeof step !== 'object') return false
+    const candidate = step as { name?: unknown; text?: unknown }
+    return (
+      typeof candidate.name === 'string' &&
+      (candidate.text === undefined || typeof candidate.text === 'string')
+    )
+  })
+  const howto = howtoSteps.length
+    ? {
+        name: howtoSource?.name || frontmatter.title || params.slug,
+        steps: howtoSteps,
+        totalTime: howtoSource?.totalTime,
+      }
+    : null
   return (
     <article>
       <h1 className="mb-2 text-3xl font-semibold">{frontmatter.title}</h1>
