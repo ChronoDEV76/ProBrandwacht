@@ -66,21 +66,6 @@ const problemModels = [
   },
 ]
 
-const missionHighlights = [
-  {
-    title: 'Transparantie als norm',
-    description: 'Iedere afspraak, betaling en review is inzichtelijk zodat vertrouwen groeit.',
-  },
-  {
-    title: 'Autonomie voor professionals',
-    description: 'Je bepaalt zelf met wie je werkt, tegen welk tarief en hoe vaak.',
-  },
-  {
-    title: 'Collectieve groei',
-    description: 'We bouwen aan een community van brandwachten die elkaar versterken en opdrachten herhalen.',
-  },
-]
-
 const solutionFeatures = [
   {
     icon: '💶',
@@ -140,9 +125,34 @@ export default function HomePage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
               Verdien wat je waard bent – zonder bureau-marges.
             </h1>
-            <p className="text-slate-700 max-w-2xl text-lg">
-              ProBrandwacht.nl bouwt ProSafetyMatch: het platform dat je tarief beschermt, betalingen borgt en je zichtbaar maakt bij opdrachtgevers.
+            <p className="text-lg font-medium text-brand-700">
+              ZZP-brandwachten inhuren en aanmelden in Nederland – voor bouw, evenementen en industrie.
             </p>
+            <p className="text-slate-700 max-w-2xl">
+              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Transparantie over tarief, betaling en certificaten – de rest lees je op onze missiepagina.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={signupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+              >
+                Meld je nu aan als zzp’er
+              </a>
+              <Link
+                href="/manifest"
+                className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+              >
+                Lees de volledige missie →
+              </Link>
+              <Link
+                href="/opdrachtgevers"
+                className="inline-flex items-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50"
+              >
+                Ook voor opdrachtgevers →
+              </Link>
+            </div>
             <ul className="grid gap-3 sm:grid-cols-3 text-sm text-slate-700">
               {heroBenefits.map(benefit => (
                 <li
@@ -156,16 +166,6 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <div>
-              <a
-                href={signupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-              >
-                Meld je nu aan als zzp’er
-              </a>
-            </div>
           </header>
 
           {/* Vergelijking */}
@@ -218,44 +218,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Missie */}
-          <section className="space-y-6 rounded-3xl bg-slate-900 p-6 text-white sm:p-10">
-            <div className="space-y-3">
-              <p className="text-sm uppercase tracking-wide text-brand-200">Missie</p>
-              <h2 className="text-2xl font-semibold">Brandwachten verdienen een eerlijk platform</h2>
-              <p className="max-w-3xl text-white/80">
-                We bestaan om brandwachten het volledige verhaal te geven: waardering voor hun werk,
-                transparantie over tarieven en zekerheid over betaling. Zo kan jij bouwen aan een
-                duurzame zelfstandige carrière.
-              </p>
-            </div>
-            <ul className="grid gap-3 sm:grid-cols-3">
-              {missionHighlights.map(item => (
-                <li key={item.title} className="rounded-xl border border-white/20 bg-white/10 p-4 text-sm shadow-lg">
-                  <p className="font-medium">{item.title}</p>
-                  <p className="mt-1 text-white/80">{item.description}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={signupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-white px-5 py-3 text-sm font-medium text-slate-900 shadow hover:bg-white/90"
-              >
-                Meld je nu aan als zzp’er
-              </a>
-              <Link
-                href="/manifest"
-                className="inline-flex items-center rounded-md border border-white/30 px-4 py-2 text-sm font-medium text-white hover:bg-white/10"
-              >
-                Lees de volledige missie →
-              </Link>
-            </div>
-          </section>
-
-          {/* Oplossing */}
+         {/* Oplossing */}
           <section className="space-y-6">
             <div className="space-y-3">
               <p className="text-sm uppercase tracking-wide text-brand-600">Oplossing</p>
@@ -321,16 +284,22 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* FAQ */}
-          <section className="space-y-6">
-            <div className="space-y-3">
-              <p className="text-sm uppercase tracking-wide text-brand-600">FAQ</p>
-              <h2 className="text-2xl font-semibold">Veelgestelde vragen van zzp-brandwachten</h2>
-              <p className="text-slate-700 max-w-3xl">
-                Geen marketingpraat, wel heldere antwoorden op de vragen die we dagelijks krijgen van
-                brandwachten die willen overstappen.
-              </p>
-            </div>
+        {/* FAQ */}
+        <section className="space-y-6">
+          <div className="space-y-3">
+            <p className="text-sm uppercase tracking-wide text-brand-600">FAQ</p>
+            <h2 className="text-2xl font-semibold">Veelgestelde vragen van zzp-brandwachten</h2>
+            <p className="text-slate-700 max-w-3xl">
+              Geen marketingpraat, wel heldere antwoorden op de vragen die we dagelijks krijgen van
+              brandwachten die willen overstappen.
+            </p>
+            <p className="text-sm text-slate-500">
+              ProSafetyMatch is een onafhankelijk platform en geen bemiddelingsbureau. De overeenkomst is altijd tussen opdrachtgever en professional.
+            </p>
+            <p className="text-sm font-medium text-brand-700">
+              Al 37 brandwachten sloten zich aan voor de pilot – meld je ook aan en blijf op de hoogte.
+            </p>
+          </div>
             <div className="space-y-4">
               {faqItems.map(item => (
                 <div key={item.question} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
