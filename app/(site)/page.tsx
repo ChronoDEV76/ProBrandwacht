@@ -57,11 +57,11 @@ const problemModels = [
   },
   {
     title: 'ProSafetyMatch (binnenkort)',
-    subtitle: 'Jij ontvangt €40/u',
+    subtitle: 'Jij ontvangt €40,50/u',
     total: 45,
     segments: [
-      { label: 'Platform €5', amount: 5, className: 'bg-emerald-300 text-slate-900' },
-      { label: 'Brandwacht €40', amount: 40, className: 'bg-brand-500/90 text-white' },
+      { label: 'Platform €4,50', amount: 4.5, className: 'bg-emerald-300 text-slate-900' },
+      { label: 'Brandwacht €40,50', amount: 40.5, className: 'bg-brand-500/90 text-white' },
     ],
   },
 ]
@@ -118,7 +118,7 @@ const faqItems = [
   {
     question: 'Hoeveel verdien ik via ProBrandwacht?',
     answer:
-      'Jij bepaalt je tarief. Opdrachtgevers zien exact wat zij betalen en jij ziet wat je netto ontvangt. Geen verborgen bureau-marges, wel een vaste platformfee van €5 per uur bij livegang.',
+      'Jij bepaalt je tarief. Je ontvangt 90% van het opdrachtbedrag rechtstreeks. We rekenen 10% platformfee voor community, support en matching, plus 1–2% aparte escrowkosten (doorgerekend aan de opdrachtgever) voor veilige betalingen. Zo blijft alles schaalbaar én geloofwaardig.',
   },
   {
     question: 'Hoe werkt escrow?',
@@ -270,7 +270,7 @@ export default function HomePage() {
                 betalingen en zichtbaarheid bij opdrachtgevers. Jij doet het werk, wij halen de frictie weg.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {solutionFeatures.map(feature => (
                 <article
                   key={feature.title}
