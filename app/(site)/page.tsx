@@ -80,7 +80,7 @@ const solutionFeatures = [
   {
     icon: '📑',
     title: 'Certificaten centraal',
-    description: 'Upload je certificaten bij voorkeur als PDF (PNG/JPG alleen ter inzage en daarna verwijderd) en houd ze up-to-date. Zo zien opdrachtgevers direct wat je in huis hebt.',
+    description: 'Upload certificaten bij voorkeur als PDF. PNG/JPG gebruiken we alleen ter inzage en nemen we niet mee in je profiel. Houd alles up-to-date zodat opdrachtgevers direct zien wat je in huis hebt.',
   },
 ]
 
