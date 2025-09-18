@@ -181,6 +181,29 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Zo bouw je mee */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Zo bouw je mee aan het platform</h2>
+            <ul className="grid gap-3 md:grid-cols-3">
+              {steps.map(step => (
+                <li key={step.title} className="rounded-lg border bg-white p-4 text-sm shadow-sm">
+                  <p className="font-medium">{step.title}</p>
+                  <p className="text-slate-600 mt-1">{step.text}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2">
+              <a
+                href={signupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+              >
+                Meld je aan als zzp’er
+              </a>
+            </div>
+          </section>
+
           {/* Missie */}
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold">Onze missie</h2>
@@ -204,29 +227,6 @@ export default function HomePage() {
               >
                 Lees de volledige missie →
               </Link>
-            </div>
-          </section>
-
-          {/* Zo bouw je mee */}
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold">Zo bouw je mee aan het platform</h2>
-            <ul className="grid gap-3 md:grid-cols-3">
-              {steps.map(step => (
-                <li key={step.title} className="rounded-lg border bg-white p-4 text-sm shadow-sm">
-                  <p className="font-medium">{step.title}</p>
-                  <p className="text-slate-600 mt-1">{step.text}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="pt-2">
-              <a
-                href={signupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-              >
-                Meld je aan als zzp’er
-              </a>
             </div>
           </section>
         </div>
