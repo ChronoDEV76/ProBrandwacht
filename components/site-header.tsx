@@ -27,6 +27,17 @@ export default function SiteHeader() {
               Missie
             </Link>
             <Link
+              href="/opdrachtgevers"
+              aria-current={isActive('/opdrachtgevers') ? 'page' : undefined}
+              className={`relative rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 transition ${
+                isActive('/opdrachtgevers') ? 'bg-white/15' : 'hover:bg-white/10'
+              } after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 ${
+                isActive('/opdrachtgevers') ? 'after:scale-x-100' : 'hover:after:scale-x-100'
+              }`}
+            >
+              Opdrachtgevers
+            </Link>
+            <Link
               href="/faq"
               aria-current={isActive('/faq') ? 'page' : undefined}
               className={`relative rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 transition ${
