@@ -166,6 +166,9 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <p className="text-sm text-slate-500">
+              Al meer dan <strong>100 brandwachten</strong> hebben zich aangemeld en uploaden hun certificaten voor een profiel op ProSafetyMatch.
+            </p>
           </header>
 
           {/* Vergelijking */}
@@ -294,10 +297,10 @@ export default function HomePage() {
               brandwachten die willen overstappen.
             </p>
             <p className="text-sm text-slate-500">
-              ProSafetyMatch is een onafhankelijk platform en geen bemiddelingsbureau. De overeenkomst is altijd tussen opdrachtgever en professional.
+              ProSafetyMatch is een onafhankelijk platform en geen bemiddelingsbureau. De overeenkomst is altijd tussen opdrachtgever en professional. Gegevens worden versleuteld opgeslagen; alleen jij en geverifieerde opdrachtgevers zien je certificaten.
             </p>
             <p className="text-sm font-medium text-brand-700">
-              Al 37 brandwachten sloten zich aan voor de pilot – meld je ook aan en blijf op de hoogte.
+              Inmiddels hebben <strong>100+ brandwachten</strong> certificaten geüpload en bouwen ze hun profiel op. Meld je aan en sluit je bij hen aan.
             </p>
           </div>
             <div className="space-y-4">
