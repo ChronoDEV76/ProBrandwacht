@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Het eerlijke brandwacht-platform – ProBrandwacht.nl',
+  title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
   description:
-    'Eerlijk platform voor brandwachten. Transparant, snel, veilig. ProSafetyMatch – in ontwikkeling door ProBrandwacht.nl – geeft zicht op tarieven, betalingen en certificaten.',
+    'Meld je aan als zzp-brandwacht. Transparant tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
   keywords: [
     'brandwacht platform',
     'brandwacht inhuren',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/', languages: { 'nl-NL': '/' } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
-    title: 'Het eerlijke brandwacht-platform – ProBrandwacht.nl',
+    title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
     description:
-      'Eerlijk platform voor brandwachten. Transparant, snel, veilig. ProSafetyMatch – in ontwikkeling door ProBrandwacht.nl – geeft zicht op tarieven, betalingen en certificaten.',
+      'Meld je aan als zzp-brandwacht. Transparant tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
     url: 'https://www.probrandwacht.nl/',
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform overzicht' }],
   },
@@ -114,11 +114,24 @@ const faqItems = [
 
 export default function HomePage() {
   const signupUrl = getSignupUrl()
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
 
   return (
     <div className="relative w-full bg-gradient-to-r from-brand-50 to-white">
       <div className="relative text-slate-900">
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 md:px-8 pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-20 lg:pb-24 space-y-12">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
           {/* Hero */}
           <header className="space-y-6">
             <p className="text-sm uppercase tracking-wide text-brand-600">Voor zzp-brandwachten</p>
@@ -168,6 +181,9 @@ export default function HomePage() {
             </ul>
             <p className="text-sm text-slate-500">
               Al meer dan <strong>100 brandwachten</strong> hebben zich aangemeld en uploaden hun certificaten voor een profiel op ProSafetyMatch.
+            </p>
+            <p className="text-sm text-slate-500">
+              Meer weten? Bekijk onze <Link className="underline" href="/faq">brandwacht inhuren FAQ</Link> of lees de blog <Link className="underline" href="/blog/wat-kost-een-brandwacht-in-2025">Wat kost een brandwacht in 2025</Link>.
             </p>
           </header>
 
