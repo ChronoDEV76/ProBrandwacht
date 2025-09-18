@@ -80,7 +80,7 @@ const solutionFeatures = [
   {
     icon: '📑',
     title: 'Certificaten centraal',
-    description: 'Upload alle certificaten, houd ze up-to-date en laat opdrachtgevers zien dat je klaarstaat.',
+    description: 'Upload je certificaten bij voorkeur als PDF (PNG/JPG alleen ter inzage en daarna verwijderd) en houd ze up-to-date. Zo zien opdrachtgevers direct wat je in huis hebt.',
   },
 ]
 
@@ -126,7 +126,7 @@ export default function HomePage() {
               Verdien wat je waard bent – zonder bureau-marges.
             </h1>
             <p className="text-lg font-medium text-brand-700">
-              ZZP-brandwachten inhuren en aanmelden in Nederland – voor bouw, evenementen en industrie.
+              Het platform voor zzp-brandwachten in bouw, industrie en evenementen – transparant, DBA-proof en met escrow-betaling.
             </p>
             <p className="text-slate-700 max-w-2xl">
               Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Transparantie over tarief, betaling en certificaten – de rest lees je op onze missiepagina.
