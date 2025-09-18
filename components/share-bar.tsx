@@ -28,10 +28,12 @@ type ShareNavigator = Navigator & {
 export default function ShareBar({ url, title, small, utmCampaign }: ShareBarProps) {
   const [copied, setCopied] = useState(false)
   const [canNativeShare, setCanNativeShare] = useState(false)
-  const size = small ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm'
-  const gap = small ? 'gap-1.5' : 'gap-2'
+  const size = small ? 'px-3 py-1 text-xs' : 'px-4 py-2 text-sm'
+  const iconSize = small ? 'text-base' : 'text-lg'
+  const gap = small ? 'gap-2' : 'gap-3'
 
-  const li = `inline-flex items-center rounded-md border bg-white hover:bg-slate-50 ${size}`
+  const baseButton =
+    'inline-flex items-center gap-2 rounded-full font-medium shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:-translate-y-0.5 transform'
 
   const enc = encodeURIComponent
 
@@ -74,6 +76,37 @@ export default function ShareBar({ url, title, small, utmCampaign }: ShareBarPro
     email: `mailto:?subject=${enc(title)}&body=${enc(withUtm('email'))}`,
   }
 
+  const shareButtons = [
+    {
+      platform: 'whatsapp',
+      label: 'WhatsApp',
+      href: shareLinks.whatsapp,
+      className: `${baseButton} ${size} bg-emerald-500 text-white hover:bg-emerald-600 focus-visible:ring-emerald-500/60`,
+      icon: '💬',
+    },
+    {
+      platform: 'linkedin',
+      label: 'LinkedIn',
+      href: shareLinks.linkedin,
+      className: `${baseButton} ${size} bg-sky-600 text-white hover:bg-sky-700 focus-visible:ring-sky-600/60`,
+      icon: '🔗',
+    },
+    {
+      platform: 'facebook',
+      label: 'Facebook',
+      href: shareLinks.facebook,
+      className: `${baseButton} ${size} bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-600/60`,
+      icon: '📣',
+    },
+    {
+      platform: 'email',
+      label: 'E‑mail',
+      href: shareLinks.email,
+      className: `${baseButton} ${size} bg-slate-900 text-white hover:bg-black focus-visible:ring-slate-900/60`,
+      icon: '✉️',
+    },
+  ]
+
   async function copy() {
     try {
       await navigator.clipboard.writeText(url)
@@ -108,54 +141,41 @@ export default function ShareBar({ url, title, small, utmCampaign }: ShareBarPro
         <button
           type="button"
           onClick={nativeShare}
-          className={`${li} cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
+          className={`${baseButton} ${size} cursor-pointer bg-brand-500 text-white hover:bg-brand-600 focus-visible:ring-brand-500/60`}
         >
-          Deel
+          <span className={iconSize} aria-hidden="true">
+            🚀
+          </span>
+          <span>Direct delen</span>
         </button>
       ) : null}
-      <a
-        className={`${li} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
-        href={shareLinks.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => track('whatsapp')}
-      >
-        WhatsApp
-      </a>
-      <a
-        className={`${li} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
-        href={shareLinks.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => track('linkedin')}
-      >
-        LinkedIn
-      </a>
-      <a
-        className={`${li} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
-        href={shareLinks.facebook}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => track('facebook')}
-      >
-        Facebook
-      </a>
-      <a
-        className={`${li} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
-        href={shareLinks.email}
-        onClick={() => track('email')}
-      >
-        E‑mail
-      </a>
+      {shareButtons.map(button => (
+        <a
+          key={button.platform}
+          className={button.className}
+          href={button.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track(button.platform)}
+        >
+          <span className={iconSize} aria-hidden="true">
+            {button.icon}
+          </span>
+          <span>{button.label}</span>
+        </a>
+      ))}
       <button
         type="button"
         onClick={() => {
           track('copy')
           copy()
         }}
-        className={`${li} cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50`}
+        className={`${baseButton} ${size} cursor-pointer bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-100 focus-visible:ring-brand-500/60`}
       >
-        {copied ? 'Gekopieerd' : 'Kopieer link'}
+        <span className={iconSize} aria-hidden="true">
+          {copied ? '✅' : '🔗'}
+        </span>
+        <span>{copied ? 'Gekopieerd' : 'Kopieer link'}</span>
       </button>
     </div>
   )
