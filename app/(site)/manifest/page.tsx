@@ -8,6 +8,19 @@ export const metadata: Metadata = {
     'De nieuwe standaard voor brandwachten in Nederland: eerlijk, transparant en betrouwbaar voor professionals én opdrachtgevers.',
   alternates: { canonical: '/manifest', languages: { 'nl-NL': '/manifest' } },
   other: { hreflang: 'nl-NL' },
+  openGraph: {
+    title: 'Missie | ProBrandwacht.nl',
+    description:
+      'De nieuwe standaard voor brandwachten in Nederland: eerlijk, transparant en betrouwbaar voor professionals én opdrachtgevers.',
+    url: 'https://www.probrandwacht.nl/manifest',
+    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'Missie van ProBrandwacht.nl' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@ProBrandwacht',
+    creator: '@ProBrandwacht',
+    images: ['/og-home.jpg'],
+  },
 }
 
 export default function ManifestPage() {

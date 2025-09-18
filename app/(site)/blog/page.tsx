@@ -2,11 +2,57 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getPostSlugs, getPostBySlug, readingTime, formatReadingTime } from '@/lib/blog'
 
-export const metadata: Metadata = {
-  title: 'Blog | ProBrandwacht.nl',
-  description: 'Nieuws en gidsen over brandwacht inzet, tarieven en veiligheid.',
-  alternates: { canonical: '/blog', languages: { 'nl-NL': '/blog' } },
-  other: { hreflang: 'nl-NL' },
+type BlogIndexSearchParams = {
+  page?: string
+  tag?: string
+  author?: string
+}
+
+type BlogIndexPageProps = {
+  searchParams?: BlogIndexSearchParams
+}
+
+export async function generateMetadata({ searchParams }: BlogIndexPageProps): Promise<Metadata> {
+  const baseUrl = 'https://www.probrandwacht.nl/blog'
+  const params = searchParams ?? {}
+  const canonicalParams = new URLSearchParams()
+
+  if (params.tag) canonicalParams.set('tag', params.tag)
+  if (params.author) canonicalParams.set('author', params.author)
+
+  const pageNumber = params.page ? Number.parseInt(params.page, 10) : NaN
+  if (!Number.isNaN(pageNumber) && pageNumber > 1) {
+    canonicalParams.set('page', pageNumber.toString())
+  }
+
+  const canonicalPath = canonicalParams.toString() ? `/blog?${canonicalParams.toString()}` : '/blog'
+  const canonicalUrl = canonicalParams.toString()
+    ? `${baseUrl}?${canonicalParams.toString()}`
+    : baseUrl
+
+  const title = 'Blog | ProBrandwacht.nl'
+  const description = 'Nieuws en gidsen over brandwacht inzet, tarieven en veiligheid.'
+
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalPath, languages: { 'nl-NL': canonicalPath } },
+    other: { hreflang: 'nl-NL' },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      images: [
+        { url: 'https://www.probrandwacht.nl/og-home.jpg', width: 1200, height: 630, alt: 'Blog overzicht ProBrandwacht.nl' },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@ProBrandwacht',
+      creator: '@ProBrandwacht',
+      images: ['https://www.probrandwacht.nl/og-home.jpg'],
+    },
+  }
 }
 
 export const revalidate = 60 * 60 // 1h ISR
@@ -18,7 +64,8 @@ function niceCity(slug: string) {
     .join(' ')
 }
 
-export default async function BlogIndexPage() {
+export default async function BlogIndexPage({ searchParams }: BlogIndexPageProps) {
+  void searchParams
   const slugs = await getPostSlugs()
   if (!slugs.length) {
     return (

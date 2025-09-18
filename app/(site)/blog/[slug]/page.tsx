@@ -37,6 +37,13 @@ export async function generateMetadata({
         'brandwacht inhuren',
         title,
       ]
+  const rawOgImage =
+    typeof frontmatter.ogImage === 'string' && frontmatter.ogImage.trim().length
+      ? frontmatter.ogImage.trim()
+      : '/og-home.jpg'
+  const ogImage = rawOgImage.startsWith('http')
+    ? rawOgImage
+    : `https://www.probrandwacht.nl${rawOgImage}`
   return {
     title,
     description,
@@ -50,6 +57,15 @@ export async function generateMetadata({
       type: 'article',
       locale: 'nl_NL',
       publishedTime: frontmatter.date ? new Date(frontmatter.date).toISOString() : undefined,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@ProBrandwacht',
+      creator: '@ProBrandwacht',
+      title,
+      description,
+      images: [ogImage],
     },
   }
 }

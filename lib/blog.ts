@@ -26,6 +26,7 @@ export type BlogFrontmatter = {
   faq?: BlogFaq[]
   howto?: BlogHowTo
   keywords?: string[]
+  ogImage?: string
   [key: string]: unknown
 }
 

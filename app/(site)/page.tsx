@@ -22,6 +22,19 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/', languages: { 'nl-NL': '/' } },
   other: { hreflang: 'nl-NL' },
+  openGraph: {
+    title: 'Het eerlijke brandwacht-platform – ProBrandwacht.nl',
+    description:
+      'Eerlijk platform voor brandwachten. Transparant, snel, veilig. ProSafetyMatch – in ontwikkeling door ProBrandwacht.nl – geeft zicht op tarieven, betalingen en certificaten.',
+    url: 'https://www.probrandwacht.nl/',
+    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform overzicht' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@ProBrandwacht',
+    creator: '@ProBrandwacht',
+    images: ['/og-home.jpg'],
+  },
 }
 
 const problemModels = [

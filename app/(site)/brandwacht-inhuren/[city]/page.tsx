@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getSignupUrl } from '@/lib/config'
 import ShareBar from '@/components/share-bar'
+import { getCityBySlug } from '@/lib/cities'
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
 
@@ -14,8 +15,8 @@ function niceCity(slug: string) {
 
 export async function generateStaticParams() {
   // Pre-render a broader set of cities for better coverage
-  const { cities } = await import('@/lib/cities')
-  return cities.map(city => ({ city }))
+  const { citySlugs } = await import('@/lib/cities')
+  return citySlugs.map(city => ({ city }))
 }
 
 export async function generateMetadata({
@@ -24,7 +25,8 @@ export async function generateMetadata({
   params: { city: string }
 }): Promise<Metadata> {
   const city = params.city
-  const cityName = niceCity(city)
+  const cityMeta = getCityBySlug(city)
+  const cityName = cityMeta?.name ?? niceCity(city)
   const title = `Brandwacht inhuren ${cityName} – binnenkort via slimme matching | ProBrandwacht.nl`
   const description = `Vind straks snel een brandwacht in ${cityName} via slimme matching. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
   const keywords = [
@@ -33,22 +35,36 @@ export async function generateMetadata({
     'brandwacht platform',
     'escrow brandwacht',
   ]
+  const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
+  const canonical = `/brandwacht-inhuren/${city}`
   return {
     title,
     description,
     keywords,
     alternates: {
-      canonical: `/brandwacht-inhuren/${city}`,
-      languages: { 'nl-NL': `/brandwacht-inhuren/${city}` },
+      canonical,
+      languages: { 'nl-NL': canonical },
     },
-    openGraph: { title, description, url: `/brandwacht-inhuren/${city}` },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.probrandwacht.nl${canonical}`,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `Brandwacht inhuren ${cityName}` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@ProBrandwacht',
+      creator: '@ProBrandwacht',
+      images: [ogImage],
+    },
     other: { hreflang: 'nl-NL' },
   }
 }
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
-  const cityName = niceCity(city)
+  const cityMeta = getCityBySlug(city)
+  const cityName = cityMeta?.name ?? niceCity(city)
   const signupUrl = getSignupUrl()
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   const faqs = [
@@ -130,6 +146,17 @@ export default function CityPage({ params }: { params: { city: string } }) {
     url: pageUrl,
     category: 'Brandveiligheid',
   }
+
+  const geoJsonLd = cityMeta
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'GeoCoordinates',
+        latitude: cityMeta.latitude,
+        longitude: cityMeta.longitude,
+        name: cityName,
+        url: pageUrl,
+      }
+    : null
 
   return (
     <section className="space-y-8">
@@ -248,6 +275,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      {geoJsonLd ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }} />
+      ) : null}
     </section>
   )
 }
