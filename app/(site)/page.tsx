@@ -48,7 +48,7 @@ const heroBenefits = [
 const problemModels = [
   {
     title: 'Traditioneel bureau',
-    subtitle: 'Jij ontvangt €30/u',
+    subtitle: 'Voorbeeldtarief: jij ontvangt €30/u',
     total: 50,
     segments: [
       { label: 'Bureau €20', amount: 20, className: 'bg-slate-300 text-slate-800' },
@@ -57,7 +57,7 @@ const problemModels = [
   },
   {
     title: 'ProSafetyMatch (binnenkort)',
-    subtitle: 'Jij ontvangt €40,50/u',
+    subtitle: 'Voorbeeldtarief: jij ontvangt €40,50/u',
     total: 45,
     segments: [
       { label: 'Platform €4,50', amount: 4.5, className: 'bg-emerald-300 text-slate-900' },
@@ -87,7 +87,7 @@ const solutionFeatures = [
 const steps = [
   {
     title: 'Meld je vandaag aan',
-    text: 'Vul je gegevens in, upload certificaten en word onderdeel van de eerste lichting brandwachten.',
+    text: 'Vul gratis en zonder verplichting je gegevens in, upload certificaten en word onderdeel van de eerste lichting brandwachten.',
   },
   {
     title: 'Ontvang updates',
@@ -209,6 +209,9 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
+            <p className="text-xs text-slate-400">
+              Bedragen zijn indicatief om het verschil in marges te tonen. Jij stelt altijd zelf je definitieve tarief vast.
+            </p>
             <div>
               <a
                 href={signupUrl}
