@@ -73,12 +73,6 @@ export default function VoorOpdrachtgeversPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="/aanmelden-opdrachtgever"
-              className="rounded-2xl bg-brand-700 px-5 py-3 text-white shadow hover:bg-brand-500"
-            >
-              Meld je aan voor de wachtlijst
-            </a>
-            <a
               href="/faq"
               className="rounded-2xl border px-5 py-3 text-slate-700 hover:bg-slate-50"
             >
@@ -144,13 +138,8 @@ export default function VoorOpdrachtgeversPage() {
               <strong>Beoordeling & vervolg</strong> – rond af, laat een review achter en voeg toe aan je favorieten voor herhaalopdrachten.
             </li>
           </ol>
-          <div className="mt-6">
-            <a
-              href="/aanmelden-opdrachtgever"
-              className="inline-block rounded-2xl bg-brand-700 px-5 py-3 text-white shadow hover:bg-brand-500"
-            >
-              Start met de wachtlijst
-            </a>
+          <div className="mt-6 text-sm text-slate-600">
+            Klaar voor transparante inzet? Meld je onderaan deze pagina aan voor de wachtlijst.
           </div>
         </section>
 
