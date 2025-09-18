@@ -118,7 +118,7 @@ const faqItems = [
   {
     question: 'Hoeveel verdien ik via ProBrandwacht?',
     answer:
-      'Jij bepaalt je tarief. Je ontvangt 90% van het opdrachtbedrag rechtstreeks. We rekenen 10% platformfee voor community, support en matching, plus 1–2% aparte escrowkosten (doorgerekend aan de opdrachtgever) voor veilige betalingen. Zo blijft alles schaalbaar én geloofwaardig.',
+      'Jij bepaalt je tarief. Je ontvangt 90% van het opdrachtbedrag rechtstreeks. Betaalt de opdrachtgever €45, dan krijg jij €40,50 en houden wij 10% (€4,50) als platformfee voor community, support en matching. Daarbovenop rekenen we 1–2% escrowkosten (voor rekening van de opdrachtgever) zodat betalingen veilig en tijdig verlopen.',
   },
   {
     question: 'Hoe werkt escrow?',
