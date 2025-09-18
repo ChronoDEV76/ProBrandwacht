@@ -96,9 +96,9 @@ export default function VoorOpdrachtgeversPage() {
             </p>
           </div>
           <div className="rounded-2xl border p-5">
-            <h3 className="font-semibold">Gecertificeerde professionals</h3>
+            <h3 className="font-semibold">Gecertificeerde & geverifieerde professionals</h3>
             <p className="mt-2 text-sm text-slate-700">
-              Certificaten (BHV, VCA, EHBO, Manschap A/B) worden vooraf gecontroleerd. Altijd duidelijk wie je op de werkvloer haalt.
+              Certificaten (BHV, VCA, EHBO, Manschap A/B) worden vooraf gecontroleerd. Identiteit en referenties worden geverifieerd, zodat altijd duidelijk is wie je op de werkvloer haalt.
             </p>
           </div>
           <div className="rounded-2xl border p-5">
@@ -139,7 +139,7 @@ export default function VoorOpdrachtgeversPage() {
             </li>
           </ol>
           <div className="mt-6 text-sm text-slate-600">
-            Klaar voor transparante inzet? Meld je onderaan deze pagina aan voor de wachtlijst.
+            Klaar voor transparante inzet? Gebruik onderstaande link om je direct aan te melden voor de wachtlijst.
           </div>
         </section>
 
@@ -184,7 +184,7 @@ export default function VoorOpdrachtgeversPage() {
             Transparantie, zekerheid en snelheid — zonder verborgen marges. Sluit je vandaag aan en ontvang een uitnodiging zodra we live zijn.
           </p>
           <a
-            href="/aanmelden-opdrachtgever"
+            href="https://forms.gle/3BXxU64yyxnfvrLN8"
             className="mt-4 inline-block rounded-2xl bg-brand-700 px-5 py-3 text-white shadow hover:bg-brand-500"
           >
             Meld je aan voor de wachtlijst

@@ -1,10 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { getSignupUrl } from '@/lib/config'
 import { usePathname } from 'next/navigation'
 
 export default function SiteHeader() {
-  const signupUrl = getSignupUrl()
   const pathname = usePathname()
   const isActive = (href: string) => pathname === href
   return (
@@ -61,9 +59,7 @@ export default function SiteHeader() {
             </Link>
           </nav>
           <a
-            href={signupUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://forms.gle/pWCs2Dwuk4uZGw2K7"
             className="inline-flex items-center rounded-md bg-white text-brand-700 px-3 py-1.5 text-sm font-medium hover:bg-white/90 shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span className="sm:hidden">Meld je aan (gratis)</span>
