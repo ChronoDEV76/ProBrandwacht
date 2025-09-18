@@ -287,9 +287,9 @@ export default function HomePage() {
             </div>
           </section>
 
-        {/* FAQ */}
-        <section className="space-y-6">
-          <div className="space-y-3">
+          {/* FAQ */}
+          <section className="space-y-6">
+            <div className="space-y-3">
             <p className="text-sm uppercase tracking-wide text-brand-600">FAQ</p>
             <h2 className="text-2xl font-semibold">Veelgestelde vragen van zzp-brandwachten</h2>
             <p className="text-slate-700 max-w-3xl">
@@ -297,7 +297,7 @@ export default function HomePage() {
               brandwachten die willen overstappen.
             </p>
             <p className="text-sm text-slate-500">
-              ProSafetyMatch is een onafhankelijk platform en geen bemiddelingsbureau. De overeenkomst is altijd tussen opdrachtgever en professional. Gegevens worden versleuteld opgeslagen; alleen jij en geverifieerde opdrachtgevers zien je certificaten.
+              ProSafetyMatch is géén bemiddelingsbureau. Wij faciliteren het platform – profielen, escrow-betalingen en certificaatbeheer – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Dat sluit aan bij DBA-proof werken. Gegevens worden versleuteld opgeslagen; alleen jij en geverifieerde opdrachtgevers zien je certificaten.
             </p>
             <p className="text-sm font-medium text-brand-700">
               Inmiddels hebben <strong>100+ brandwachten</strong> certificaten geüpload en bouwen ze hun profiel op. Meld je aan en sluit je bij hen aan.
@@ -320,6 +320,23 @@ export default function HomePage() {
               >
                 Meld je nu aan als zzp’er
               </a>
+            </div>
+          </section>
+
+          <section className="space-y-3 rounded-2xl border border-brand-200 bg-brand-50/70 p-5 text-sm text-slate-700">
+            <div className="flex items-start gap-3">
+              <span className="text-xl" aria-hidden="true">
+                ⚖️
+              </span>
+              <div className="space-y-2">
+                <h2 className="text-base font-semibold text-brand-700">Hoe we samenwerken</h2>
+                <p>
+                  ProSafetyMatch is géén bemiddelingsbureau. Wij bieden het platform – profielen, escrow-betalingen, certificaatbeheer en communicatie – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Daarmee blijft het model DBA-proof: jij werkt zelfstandig, met transparante afspraken.
+                </p>
+                <p>
+                  Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage en we verwijderen tijdelijke uploads (PNG/JPG) na verificatie.
+                </p>
+              </div>
             </div>
           </section>
 
