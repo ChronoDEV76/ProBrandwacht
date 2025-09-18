@@ -140,21 +140,55 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
-            <div className="rounded-2xl border border-brand-500/20 bg-brand-50 p-5 text-sm space-y-2">
-              <h3 className="text-lg font-semibold text-slate-900">Onze oplossing</h3>
-              <ul className="list-disc pl-5 space-y-1 text-slate-700">
-                <li>Transparante overeenkomsten die aansluiten op de Wet DBA en schijnzelfstandigheid voorkomen.</li>
-                <li>Escrow-betalingen: zekerheid voor brandwacht én opdrachtgever.</li>
-                <li>Eerlijke tarieven met volledige verdeling zichtbaar voor alle partijen.</li>
-              </ul>
+          </section>
+
+          {/* Missie */}
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Onze missie</h2>
+            <p className="text-slate-700 max-w-3xl">
+              ProSafetyMatch zet transparantie en zekerheid centraal: DBA-proof overeenkomsten,
+              escrow-betalingen en heldere tariefopbouw maken het werken met zzp-brandwachten
+              geloofwaardig en toekomstbestendig.
+            </p>
+            <ul className="grid gap-3 sm:grid-cols-3">
+              {missionHighlights.map(item => (
+                <li key={item.title} className="rounded-lg border bg-white p-4 text-sm shadow-sm">
+                  <p className="font-medium">{item.title}</p>
+                  <p className="text-slate-600 mt-1">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+            <div>
+              <Link
+                href="/manifest"
+                className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-50"
+              >
+                Lees de volledige missie →
+              </Link>
             </div>
           </section>
 
-          {/* Managementvraag */}
+          {/* Onze oplossing */}
           <section className="space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-semibold">Onze oplossing</h2>
+              <p className="text-slate-700 max-w-3xl">
+                We bouwen een platform dat eerlijkheid afdwingt: transparante afspraken, escrow-betalingen
+                en dashboards voor opdrachtgever en brandwacht. Zo verdwijnt de verborgen marge en blijft
+                motivatie hoog.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-500/20 bg-brand-50 p-5 text-sm space-y-2">
+              <h3 className="text-lg font-semibold text-slate-900">Dit krijg je straks standaard</h3>
+              <ul className="list-disc pl-5 space-y-1 text-slate-700">
+                <li>DBA-proof overeenkomsten die schijnzelfstandigheid voorkomen.</li>
+                <li>Escrow-betalingen voor gegarandeerde uitbetalingen.</li>
+                <li>Volledige tarieftransparantie voor alle partijen.</li>
+              </ul>
+            </div>
             <div className="text-center space-y-1">
               <p className="text-xs uppercase tracking-wide text-brand-600">De eeuwige managementvraag</p>
-              <h2 className="text-2xl font-semibold">Doen we de juiste dingen?</h2>
+              <h3 className="text-2xl font-semibold">Doen we de juiste dingen?</h3>
             </div>
             <div className="relative mx-auto max-w-3xl">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm text-slate-500">Efficiëntie</div>
@@ -204,31 +238,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Missie */}
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold">Onze missie</h2>
-            <p className="text-slate-700 max-w-3xl">
-              ProSafetyMatch zet transparantie en zekerheid centraal: DBA-proof overeenkomsten,
-              escrow-betalingen en heldere tariefopbouw maken het werken met zzp-brandwachten
-              geloofwaardig en toekomstbestendig.
-            </p>
-            <ul className="grid gap-3 sm:grid-cols-3">
-              {missionHighlights.map(item => (
-                <li key={item.title} className="rounded-lg border bg-white p-4 text-sm shadow-sm">
-                  <p className="font-medium">{item.title}</p>
-                  <p className="text-slate-600 mt-1">{item.description}</p>
-                </li>
-              ))}
-            </ul>
-            <div>
-              <Link
-                href="/manifest"
-                className="inline-flex items-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-50"
-              >
-                Lees de volledige missie →
-              </Link>
-            </div>
-          </section>
         </div>
       </div>
     </div>
