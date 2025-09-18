@@ -125,11 +125,6 @@ const faqItems = [
     answer:
       'De opdrachtgever stort de gehele opdracht vooruit op een beveiligde rekening. Zodra jij de klus afrondt, wordt de betaling automatisch vrijgegeven. Zo heb je vooraf zekerheid dat het geld er is.',
   },
-  {
-    question: 'Wat als ik geen certificaten heb?',
-    answer:
-      'Je kunt je alsnog aanmelden. We laten precies zien welke certificaten vereist zijn en helpen je met het plannen van trainingen, zodat je snel inzetbaar bent voor meer opdrachten.',
-  },
 ]
 
 export default function HomePage() {
