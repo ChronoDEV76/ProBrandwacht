@@ -85,7 +85,7 @@ export default function BlogKosten2025Page() {
           <ul className="mt-3 space-y-3 text-sm text-slate-700">
             <li>
               <strong>Repressieve brandwachten</strong> – professionals uit korpsen en veiligheidsregio’s die af en toe
-              extra diensten draaien en verzekerd zijn via hun werkgever.
+              extra diensten draaien.
             </li>
             <li>
               <strong>Volledig zzp-brandwachten</strong> – rijksgediplomeerd, vaak met ademlucht/BHV/VCA, kiezen bewust voor

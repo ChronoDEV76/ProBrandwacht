@@ -9,8 +9,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
-  const cityRoutes = cities.map(c => ({
-    url: `${base}/brandwacht-inhuren/${c}`,
+  const cityRoutes = cities.map(city => ({
+    url: `${base}/brandwacht-inhuren/${city.slug}`,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))
