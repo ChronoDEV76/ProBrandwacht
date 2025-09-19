@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { getPostSlugs, getPostBySlug } from '@/lib/blog'
-import { resolveDate } from '@/app/(site)/blog/page'
+import { resolveDate } from '@/lib/blog-index'
 
 describe('blog listing order', () => {
   it('sorts posts in descending chronological order', async () => {

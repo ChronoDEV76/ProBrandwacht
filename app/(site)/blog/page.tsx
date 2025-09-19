@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { getPostSlugs, getPostBySlug, readingTime } from '@/lib/blog'
+import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
 
 export const metadata = {
   title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
@@ -16,13 +17,8 @@ export const metadata = {
   },
 }
 
-const CATEGORY_LABELS = ['Tarieven', 'Wetgeving', 'Evenementen', 'Bouw', 'Industrie', 'Overig'] as const
 const CATEGORIES = ['Alle', ...CATEGORY_LABELS] as const
-type CategoryLabel = (typeof CATEGORY_LABELS)[number]
-
-const CITY_FILTERS = ['Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht'] as const
 const CITIES = ['Alle', ...CITY_FILTERS] as const
-type CityFilter = (typeof CITY_FILTERS)[number]
 
 function JSONLD({ data }: { data: Record<string, unknown> }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -206,26 +202,6 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
       {children}
     </Link>
   )
-}
-
-export function resolveDate(baseIso: string | undefined) {
-  if (baseIso) {
-    const parsed = new Date(baseIso)
-    if (!Number.isNaN(parsed.getTime())) {
-      return parsed
-    }
-  }
-  return new Date('2025-01-01')
-}
-
-function normalizeCategory(value: unknown): CategoryLabel {
-  if (typeof value !== 'string') return 'Overig'
-  return CATEGORY_LABELS.includes(value as CategoryLabel) ? (value as CategoryLabel) : 'Overig'
-}
-
-function normalizeCity(value: unknown): CityFilter | undefined {
-  if (typeof value !== 'string') return undefined
-  return CITY_FILTERS.includes(value as CityFilter) ? (value as CityFilter) : undefined
 }
 
 function formatDate(iso: string) {
