@@ -108,32 +108,6 @@ export default function BlogKosten2025Page() {
           <CostCalculator />
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold">Voorbeeldscenario’s (afspraak tussen opdrachtgever en zzp’er)</h2>
-          <div className="mt-3 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border p-4">
-              <div className="font-medium">Scenario A – Amsterdam, dagdienst evenement</div>
-              <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-                <li>Partijen kiezen een uurtarief van €52 voor 8 uur inzet.</li>
-                <li>Opdrachtgeverstarief: 8 × €52 = €416</li>
-                <li>Platformfee (10%): €41,60 → netto professional €46,80/u (totaal €374,40)</li>
-                <li>Escrow-bijdrage (1,5%): €6,24</li>
-                <li><strong>Opdrachtgever betaalt (ex. btw): €422,24</strong></li>
-              </ul>
-            </div>
-            <div className="rounded-2xl border p-4">
-              <div className="font-medium">Scenario B – Rotterdam, industrie nachtdienst</div>
-              <ul className="mt-2 list-disc pl-5 text-sm text-slate-700">
-                <li>Basisafspraak €68/u, plus 25% voor nachtdienst = €85/u voor 12 uur.</li>
-                <li>Opdrachtgeverstarief: 12 × €85 = €1.020</li>
-                <li>Platformfee (10%): €102,00 → netto professional €76,50/u (totaal €918,00)</li>
-                <li>Escrow-bijdrage (1,5%): €15,30</li>
-                <li><strong>Opdrachtgever betaalt (ex. btw): €1.035,30</strong></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section className="mt-8">
           <div className="rounded-2xl bg-slate-50 p-6 text-center">
             <h3 className="text-lg font-semibold">Meer inzicht nodig?</h3>
