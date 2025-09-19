@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'FAQ | ProBrandwacht.nl',
@@ -80,7 +79,6 @@ const faqs: FAQItem[] = [
 ]
 
 export default function FAQPage() {
-  const signupUrl = getSignupUrl()
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -110,7 +108,7 @@ export default function FAQPage() {
       </ul>
       <div>
         <a
-          href={signupUrl}
+          href="https://forms.gle/fAChpLDNSJWRBHDC7"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"

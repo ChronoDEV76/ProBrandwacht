@@ -165,7 +165,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </h1>
       <div>
         <a
-          href={signupUrl}
+          href="https://forms.gle/fAChpLDNSJWRBHDC7"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"

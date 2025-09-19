@@ -8,7 +8,6 @@ import {
   type BlogHowTo,
   type BlogHowToStep,
 } from '@/lib/blog'
-import { getSignupUrl } from '@/lib/config'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
 import Prose from '@/components/prose'
@@ -82,7 +81,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   } catch {
     return notFound()
   }
-  const signupUrl = getSignupUrl()
   const rt = readingTime(content)
   const pageUrl = `https://www.probrandwacht.nl/blog/${params.slug}`
   const faqs: BlogFaq[] = Array.isArray(frontmatter.faq)
@@ -163,7 +161,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </div>
       <div className="mt-8 flex flex-wrap gap-3">
         <a
-          href={signupUrl}
+          href="https://forms.gle/fAChpLDNSJWRBHDC7"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
