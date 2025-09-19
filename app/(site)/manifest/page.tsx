@@ -117,7 +117,7 @@ export default function ManifestPage() {
         <ul>
           <li>
             <strong>Repressieve brandwachten</strong> – werken bij korps of veiligheidsregio, draaien af en toe extra uren
-            en zijn verzekerd via hun werkgever. Ze brengen operationele ervaring mee, maar willen duidelijke afspraken.
+            en brengen operationele ervaring mee, maar willen duidelijke afspraken.
           </li>
           <li>
             <strong>Volledig zzp-brandwachten</strong> – rijksgediplomeerd, vaak met ademlucht en aanvullende certificaten.

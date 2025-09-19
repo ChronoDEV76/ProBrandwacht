@@ -16,21 +16,13 @@ export const metadata = {
   },
 }
 
-const CATEGORY_MAP: Record<string, 'Tarieven' | 'Wetgeving' | 'Evenementen' | 'Bouw' | 'Industrie' | 'Overig'> = {
-  'wat-kost-een-brandwacht-in-2025': 'Tarieven',
-  'wanneer-is-een-brandwacht-verplicht-bij-evenementen': 'Wetgeving',
-  'bouwplaats-in-den-haag-veilig-gesteld-met-inzet-van-3-brandwachten': 'Bouw',
-  'industriele-brandwacht-wat-houdt-het-in': 'Industrie',
-  '5-meest-gemaakte-fouten-bij-brandwacht-inhuur': 'Evenementen',
-  'trends-in-brandwacht-tarieven-waarom-transparantie-cruciaal-wordt': 'Tarieven',
-}
+const CATEGORY_LABELS = ['Tarieven', 'Wetgeving', 'Evenementen', 'Bouw', 'Industrie', 'Overig'] as const
+const CATEGORIES = ['Alle', ...CATEGORY_LABELS] as const
+type CategoryLabel = (typeof CATEGORY_LABELS)[number]
 
-const CITY_MAP: Record<string, 'Amsterdam' | 'Rotterdam' | 'Den Haag' | 'Utrecht' | undefined> = {
-  'bouwplaats-in-den-haag-veilig-gesteld-met-inzet-van-3-brandwachten': 'Den Haag',
-}
-
-const CATEGORIES = ['Alle', 'Tarieven', 'Wetgeving', 'Evenementen', 'Bouw', 'Industrie', 'Overig'] as const
-const CITIES = ['Alle', 'Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht'] as const
+const CITY_FILTERS = ['Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht'] as const
+const CITIES = ['Alle', ...CITY_FILTERS] as const
+type CityFilter = (typeof CITY_FILTERS)[number]
 
 function JSONLD({ data }: { data: Record<string, unknown> }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -45,11 +37,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     slugs.map(async slug => {
       const { frontmatter, content } = await getPostBySlug(slug)
       const minutes = Math.max(1, Math.ceil(readingTime(content).minutes))
-      const category = CATEGORY_MAP[slug] ?? 'Overig'
-      const mappedCity = CITY_MAP[slug]
+      const category = normalizeCategory(frontmatter.category)
+      const mappedCity = normalizeCity(frontmatter.city)
       const image = (frontmatter.image as string | undefined) ?? null
       const imageAlt = (frontmatter.imageAlt as string | undefined) ?? frontmatter.title ?? slug
-      const randomizedDate = randomizeDate(frontmatter.date as string | undefined, slug)
+      const resolvedDate = resolveDate(frontmatter.date as string | undefined)
       return {
         slug,
         title: frontmatter.title ?? slug,
@@ -57,7 +49,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         category,
         city: mappedCity,
         minutes,
-        dateIso: randomizedDate.toISOString().slice(0, 10),
+        dateIso: resolvedDate.toISOString().slice(0, 10),
         image,
         imageAlt,
       }
@@ -73,19 +65,27 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   })
 
   const articleSchema = filtered.map(post => ({
-    '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     datePublished: post.dateIso,
     author: { '@type': 'Organization', name: 'ProBrandwacht' },
-    publisher: { '@type': 'Organization', name: 'ProBrandwacht', url: 'https://www.probrandwacht.nl' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ProBrandwacht',
+      url: 'https://www.probrandwacht.nl',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.probrandwacht.nl/og.jpg',
+      },
+    },
+    mainEntityOfPage: `https://www.probrandwacht.nl/blog/${post.slug}`,
     url: `https://www.probrandwacht.nl/blog/${post.slug}`,
     description: post.excerpt,
   }))
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
-      <JSONLD data={{ '@graph': articleSchema }} />
+      <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
 
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Blog over brandveiligheid & zzp-brandwachten</h1>
@@ -208,27 +208,24 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
   )
 }
 
-function randomizeDate(baseIso: string | undefined, seed: string) {
-  const base = baseIso ? new Date(baseIso) : new Date('2025-01-01')
-  const randomFactor = pseudoRandom(seed)
-  const dayOffset = Math.floor(randomFactor * 60) - 30 // spread over roughly ±30 dagen
-  const randomized = new Date(base)
-  randomized.setDate(base.getDate() + dayOffset)
-  const today = new Date()
-  if (randomized > today) {
-    return today
+export function resolveDate(baseIso: string | undefined) {
+  if (baseIso) {
+    const parsed = new Date(baseIso)
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed
+    }
   }
-  return randomized
+  return new Date('2025-01-01')
 }
 
-function pseudoRandom(seed: string) {
-  let hash = 0
-  for (let i = 0; i < seed.length; i += 1) {
-    hash = (hash << 5) - hash + seed.charCodeAt(i)
-    hash |= 0
-  }
-  const x = Math.sin(hash) * 10000
-  return x - Math.floor(x)
+function normalizeCategory(value: unknown): CategoryLabel {
+  if (typeof value !== 'string') return 'Overig'
+  return CATEGORY_LABELS.includes(value as CategoryLabel) ? (value as CategoryLabel) : 'Overig'
+}
+
+function normalizeCity(value: unknown): CityFilter | undefined {
+  if (typeof value !== 'string') return undefined
+  return CITY_FILTERS.includes(value as CityFilter) ? (value as CityFilter) : undefined
 }
 
 function formatDate(iso: string) {

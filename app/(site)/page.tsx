@@ -87,7 +87,7 @@ const audienceProfiles = [
   {
     title: 'Repressieve brandwachten',
     description:
-      'Werken bij korps of veiligheidsregio en draaien af en toe een extra dienst. Zijn verzekerd via hun werkgever en brengen operationele ervaring mee.',
+      'Werken bij korps of veiligheidsregio en draaien af en toe een extra dienst. Ze brengen operationele ervaring mee.',
   },
   {
     title: 'Volledig zzp-brandwachten',

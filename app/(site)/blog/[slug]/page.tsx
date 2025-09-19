@@ -108,6 +108,34 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         totalTime: howtoSource?.totalTime,
       }
     : null
+  const datePublishedIso = parseIso(frontmatter.date)
+  const articleImage = toAbsoluteUrl(
+    typeof frontmatter.ogImage === 'string'
+      ? frontmatter.ogImage
+      : (frontmatter.image as string | undefined),
+  )
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: frontmatter.title ?? params.slug,
+    description: frontmatter.description ?? '',
+    datePublished: datePublishedIso,
+    dateModified: datePublishedIso,
+    mainEntityOfPage: pageUrl,
+    url: pageUrl,
+    image: articleImage ? [articleImage] : undefined,
+    author: { '@type': 'Organization', name: 'ProBrandwacht' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ProBrandwacht',
+      url: 'https://www.probrandwacht.nl',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.probrandwacht.nl/og.jpg',
+      },
+    },
+  }
+
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -195,6 +223,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </ul>
         </section>
       ) : null}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       {faqs.length ? (
         <script
           type="application/ld+json"
@@ -228,4 +257,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     </article>
   )
+}
+
+function parseIso(value: unknown) {
+  if (typeof value !== 'string') return undefined
+  const parsed = new Date(value)
+  if (Number.isNaN(parsed.getTime())) return undefined
+  return parsed.toISOString()
+}
+
+function toAbsoluteUrl(url: string | undefined) {
+  if (!url) return undefined
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  return `https://www.probrandwacht.nl${url}`
 }
