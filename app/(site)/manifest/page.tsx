@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Prose from '@/components/prose'
-import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
 }
 
 export default function ManifestPage() {
-  const signupUrl = getSignupUrl()
   return (
     <article>
       {/* Kleine hero-kop voor context */}
@@ -198,7 +196,7 @@ export default function ManifestPage() {
         <h2>👉 Doe mee met de verandering</h2>
         <div className="not-prose">
           <a
-            href={signupUrl}
+            href="https://forms.gle/fAChpLDNSJWRBHDC7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-slate-50"
