@@ -123,12 +123,12 @@ export default function BlogKosten2025Page() {
                 Start met een proefopdracht
               </a>
               <a
-                href="https://forms.gle/PnaujHNoE7ZZSCfQ6"
+                href="https://forms.gle/fAChpLDNSJWRBHDC7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl border px-5 py-3 hover:bg-white"
               >
-                Vraag een demo aan
+                Meld je aan als zzp’er
               </a>
             </div>
           </div>
