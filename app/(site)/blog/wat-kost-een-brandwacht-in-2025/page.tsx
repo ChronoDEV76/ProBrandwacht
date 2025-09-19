@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import CostCalculator from '@/components/CostCalculator'
-import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Wat kost een brandwacht in 2025? | ProBrandwacht.nl',
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
 }
 
 export default function BlogKosten2025Page() {
-  const signupUrl = getSignupUrl()
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
       <article>
@@ -117,7 +115,7 @@ export default function BlogKosten2025Page() {
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
               <a
-                href={signupUrl}
+                href="https://forms.gle/hwUkK7KZQAe3CKKT8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
