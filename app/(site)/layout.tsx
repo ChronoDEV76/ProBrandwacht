@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.probrandwacht.nl'),
   title: 'ProBrandwacht.nl – Brandwacht inhuren (NL)',
   description:
-    'Transparant brandwachtplatform: gecertificeerde professionals, eerlijke tarieven en veilige betaling.',
+    'Eerlijk brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.',
   keywords: [
     'brandwacht inhuren',
     'brandwacht tarieven',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: 'https://www.probrandwacht.nl',
     siteName: 'ProBrandwacht.nl',
     title: 'ProBrandwacht.nl',
-    description: 'Brandwacht inhuren in Nederland – transparant en veilig.',
+    description: 'Brandwacht inhuren in Nederland – eerlijk en veilig.',
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform' }],
   },
   twitter: {

@@ -2,7 +2,7 @@
 
 ## v1.1.0 – Promotional refresh, SEO + sharing, analytics
 
-- New promotional homepage: hero, probleem/oplossing/CTA, transparantie‑visual.
+- New promotional homepage: hero, probleem/oplossing/CTA, eerlijkheidsvisual.
 - Expanded FAQ page with new questions, internal links, and JSON‑LD.
 - Blog: HowTo + FAQ support via frontmatter, per‑post ShareBar, OG metadata (article, nl_NL, publishedTime).
 - City pages: compact ShareBar with native Web Share API, inline CTA’s in FAQ‑antwoorden.

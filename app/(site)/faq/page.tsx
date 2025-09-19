@@ -19,7 +19,7 @@ type FAQItem = {
 const faqs: FAQItem[] = [
   {
     q: 'Hoeveel pakt een bureau gemiddeld per uur?',
-    a: 'In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60. Concreet voorbeeld: opdrachtgever betaalt €50/u → bureau pakt €20 → brandwacht ontvangt €30. In industrie/nacht/weekend kan het tarief hoger liggen, maar de verdeling blijft zelden volledig transparant.',
+    a: 'In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60. Voorbeeld: opdrachtgever betaalt €50 per uur, het bureau pakt €20 en de brandwacht ontvangt €30. In industrie, nacht of weekend ligt het klanttarief hoger, maar de verdeling blijft zelden volledig duidelijk.',
     more: {
       href: '/blog/wat-kost-een-brandwacht-in-2025',
       label: 'Lees: Wat kost een brandwacht in 2025?',
@@ -27,7 +27,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat verdien ik als zzp’er via ProBrandwacht straks?',
-    a: 'Richtlijn €38–€45+ per uur bij standaardopdrachten overdag; hoger bij nacht/weekend of extra risico. De verdeling is zichtbaar: opdrachtgeverstarief – platformfee (circa €5/u) = jouw uitbetaling. Geen verborgen marges; je ziet altijd wat je overhoudt.',
+    a: 'Richtlijn: €38–€45 per uur bij standaardopdrachten overdag, hoger bij nacht, weekend of extra risico. Je ziet altijd de verdeling: opdrachtgeverstarief min platformfee van circa €5 per uur is jouw uitbetaling. Geen verborgen marges, je houdt direct zicht op je inkomsten.',
   },
   {
     q: 'Hoe werkt escrow‑betaling?',
@@ -35,7 +35,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?',
-    a: 'ProBrandwacht.nl is het voorportaal: community, kennisbank en voorinschrijving voor professionals. ProSafetyMatch wordt het platform: transparante tarieven, escrow‑betalingen, reviews en certificaat‑checks. Je aanmelding via ProBrandwacht geeft je vroege toegang tot ProSafetyMatch.',
+    a: 'ProBrandwacht.nl is onze wervingssite met community, kennisbank en voorinschrijving voor professionals. ProSafetyMatch wordt het digitale platform met eerlijke tarieven, escrow-betalingen, reviews en certificaat-checks. Meld je via ProBrandwacht aan voor vroege toegang tot ProSafetyMatch.',
   },
   {
     q: 'Wanneer gaat het platform live?',
@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat kost een brandwacht?',
-    a: 'Veelvoorkomend is €40–€60 per uur. Factoren: certificaten (VCA/BHV/EHBO/Manschap), type inzet (evenementen/bouw/industrie), duur en doorlooptijd, tijdstip (nacht/weekend/feestdag), regio en reiskosten. Transparantie over tariefopbouw voorkomt misverstanden.',
+    a: 'Veelvoorkomend is €40–€60 per uur. Factoren: certificaten (VCA/BHV/EHBO/Manschap), type inzet (evenementen/bouw/industrie), duur en doorlooptijd, tijdstip (nacht/weekend/feestdag), regio en reiskosten. Eerlijke uitleg over tariefopbouw voorkomt misverstanden.',
     more: {
       href: '/blog/wat-kost-een-brandwacht-in-2025',
       label: 'Lees: Wat kost een brandwacht in 2025?',

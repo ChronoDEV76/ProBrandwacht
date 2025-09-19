@@ -5,7 +5,7 @@ import { getSignupUrl } from '@/lib/config'
 export const metadata: Metadata = {
   title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
   description:
-    'Meld je aan als zzp-brandwacht. Transparant tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
+    'Meld je aan als zzp-brandwacht. Eerlijk tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
   keywords: [
     'brandwacht platform',
     'brandwacht inhuren',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
     description:
-      'Meld je aan als zzp-brandwacht. Transparant tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
+      'Meld je aan als zzp-brandwacht. Eerlijk tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
     url: 'https://www.probrandwacht.nl/',
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform overzicht' }],
   },
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
 const heroBenefits = [
   {
     icon: '💶',
-    text: 'Eigen tarief: jij ziet vooraf wat de opdrachtgever betaalt en houdt dat bedrag zelf over.',
+    text: 'Stel je eigen tarief en zie vooraf wat de opdrachtgever betaalt.',
   },
   {
     icon: '🔒',
-    text: 'Zekerheid van betaling via escrow: uitbetaling zodra de klus is afgerond.',
+    text: 'Escrow zorgt dat je na iedere klus zeker wordt uitbetaald.',
   },
   {
     icon: '📑',
-    text: 'Meer opdrachten doordat certificaten en beschikbaarheid direct zichtbaar zijn.',
+    text: 'Certificaten en beschikbaarheid zijn direct zichtbaar voor extra opdrachten.',
   },
 ]
 
@@ -80,30 +80,30 @@ const solutionFeatures = [
   {
     icon: '📑',
     title: 'Certificaten centraal',
-    description: 'Upload certificaten bij voorkeur als PDF. PNG/JPG gebruiken we alleen ter inzage en nemen we niet mee in je profiel. Houd alles up-to-date zodat opdrachtgevers direct zien wat je in huis hebt.',
+    description: 'Upload certificaten bij voorkeur als PDF. Gebruik je toch PNG of JPG, dan dienen die enkel ter controle. Houd je bestanden actueel zodat opdrachtgevers direct zien wat je in huis hebt.',
   },
 ]
 
 const steps = [
   {
-    title: 'Meld je vandaag aan',
-    text: 'Vul gratis en zonder verplichting je gegevens in, upload certificaten en word onderdeel van de eerste lichting brandwachten.',
+    title: 'Aanmelden',
+    text: 'Vul gratis je gegevens in, upload certificaten en sluit je aan bij de eerste lichting brandwachten.',
   },
   {
-    title: 'Ontvang updates',
-    text: 'We delen pilots, feedbacksessies en de roadmap van ProSafetyMatch rechtstreeks met jou.',
+    title: 'Updates ontvangen',
+    text: 'Ontvang pilots, feedbacksessies en de roadmap van ProSafetyMatch rechtstreeks in je inbox.',
   },
   {
-    title: 'Start met opdrachten',
-    text: 'Krijg transparante opdrachten met vaste uitbetaling zodra het platform live is.',
+    title: 'Aan de slag',
+    text: 'Krijg eerlijke opdrachten met vaste uitbetaling zodra het platform live is.',
   },
 ]
 
 const faqItems = [
   {
-    question: 'Hoeveel verdien ik via ProBrandwacht?',
+    question: 'Hoeveel verdien ik straks via ProSafetyMatch?',
     answer:
-      'Jij bepaalt je tarief. Je ontvangt 90% van het opdrachtbedrag rechtstreeks. Betaalt de opdrachtgever €45, dan krijg jij €40,50 en houden wij 10% (€4,50) als platformfee voor community, support en matching. Daarbovenop rekenen we 1–2% escrowkosten (voor rekening van de opdrachtgever) zodat betalingen veilig en tijdig verlopen.',
+      'Jij bepaalt je tarief en ontvangt 90% van het opdrachtbedrag rechtstreeks. Betaalt de opdrachtgever €45? Dan krijg jij €40,50 en houden wij 10% (€4,50) als platformfee voor community, support en matching. Daarbovenop rekenen we 1–2% escrowkosten voor rekening van de opdrachtgever zodat betalingen veilig en op tijd verlopen.',
   },
   {
     question: 'Hoe werkt escrow?',
@@ -139,10 +139,10 @@ export default function HomePage() {
               Verdien wat je waard bent – zonder bureau-marges.
             </h1>
             <p className="text-lg font-medium text-brand-700">
-              Het platform voor zzp-brandwachten in bouw, industrie en evenementen – transparant, DBA-proof en met escrow-betaling.
+              Platform voor zzp-brandwachten in bouw, industrie en evenementen. Eerlijk, DBA-proof en met escrow-betaling.
             </p>
             <p className="text-slate-700 max-w-2xl">
-              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Transparantie over tarief, betaling en certificaten – de rest lees je op onze missiepagina.
+              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Alles over tarief, betaling en certificaten is helder. Lees op onze missiepagina wat je verder kunt verwachten.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -246,7 +246,7 @@ export default function HomePage() {
               <p className="text-sm uppercase tracking-wide text-brand-600">Oplossing</p>
               <h2 className="text-2xl font-semibold">Zo lossen wij het voor jou op</h2>
               <p className="text-slate-700 max-w-3xl">
-                ProSafetyMatch wordt je digitale backoffice: wij regelen transparante contracten, veilige
+                ProSafetyMatch wordt je digitale backoffice: wij regelen eerlijke contracten, veilige
                 betalingen en zichtbaarheid bij opdrachtgevers. Jij doet het werk, wij halen de frictie weg.
               </p>
             </div>
@@ -350,7 +350,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 <h2 className="text-base font-semibold text-brand-700">Hoe we samenwerken</h2>
                 <p>
-                  ProSafetyMatch is géén bemiddelingsbureau. Wij bieden het platform – profielen, escrow-betalingen, certificaatbeheer en communicatie – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Daarmee blijft het model DBA-proof: jij werkt zelfstandig, met transparante afspraken.
+                  ProSafetyMatch is géén bemiddelingsbureau. Wij bieden het platform – profielen, escrow-betalingen, certificaatbeheer en communicatie – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Daarmee blijft het model DBA-proof: jij werkt zelfstandig, met eerlijke afspraken.
                 </p>
                 <p>
                   Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage en we verwijderen tijdelijke uploads (PNG/JPG) na verificatie.

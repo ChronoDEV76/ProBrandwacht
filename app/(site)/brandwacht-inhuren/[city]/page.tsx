@@ -161,7 +161,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <section className="space-y-8">
       <h1 className="text-3xl font-semibold">
-        Vind Straks Snel Een Brandwacht In {cityName} Door Slimme Matching‑Algoritmes
+        Vind snel een brandwacht in {cityName} met slimme matching
       </h1>
       <div>
         <a
@@ -174,9 +174,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </a>
       </div>
       <p className="text-slate-600 max-w-2xl">
-        We werken aan ProSafetyMatch: het digitale platform dat brandwachten en opdrachtgevers
-        transparant aan elkaar koppelt. Hieronder vind je alvast informatie voor evenementen, bouw
-        en industriële inzet, plus veelgestelde vragen.
+        We werken aan ProSafetyMatch, het digitale platform dat brandwachten en opdrachtgevers eerlijk
+        aan elkaar koppelt. Hieronder lees je alvast wat je kunt verwachten bij evenementen, bouw en
+        industriële inzet, inclusief veelgestelde vragen.
       </p>
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
@@ -195,8 +195,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <h2 className="font-semibold">Evenementen</h2>
           </div>
           <p className="text-sm text-slate-600 mt-1">
-            Toezicht op publieksveiligheid, crowd control ondersteuning en noodprocedures. Vaak
-            verplicht bij vergunningsplichtige events.
+            We houden toezicht op publieksveiligheid, ondersteunen crowd control en bewaken
+            noodprocedures. Bij vergunningsplichtige events is inzet vrijwel altijd verplicht.
           </p>
         </div>
         <div className="rounded-xl border p-5 bg-white shadow-sm">
@@ -207,8 +207,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <h2 className="font-semibold">Bouw</h2>
           </div>
           <p className="text-sm text-slate-600 mt-1">
-            Brandwacht bij risicovolle werkzaamheden, tijdelijk brandrisico of
-            in‑bedrijf‑stellingen. Let op certificaten en VCA.
+            We bewaken risicovolle werkzaamheden, tijdelijke brandrisico’s en inbedrijfstellingen.
+            Let op geldige certificaten en VCA voor iedereen op locatie.
           </p>
         </div>
         <div className="rounded-xl border p-5 bg-white shadow-sm">
@@ -219,8 +219,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <h2 className="font-semibold">Industrie</h2>
           </div>
           <p className="text-sm text-slate-600 mt-1">
-            Industriële brandwacht voor heetwerk, besloten ruimten en onderhoudsstops. Ervaring en
-            procedures zijn hier cruciaal.
+            We leveren industriële brandwachten voor heetwerk, besloten ruimten en onderhoudsstops.
+            Ervaring met procedures is daarbij cruciaal.
           </p>
         </div>
       </div>

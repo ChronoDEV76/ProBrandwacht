@@ -3,12 +3,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Voor Opdrachtgevers | ProBrandwacht.nl',
   description:
-    'Brandwachten inhuren zonder gedoe of verborgen kosten. Transparant tarief, gecertificeerde professionals en escrow-betaling via ProSafetyMatch.',
+    'Brandwachten inhuren zonder gedoe of verborgen kosten. Eerlijk tarief, gecertificeerde professionals en escrow-betaling via ProSafetyMatch.',
   alternates: { canonical: '/opdrachtgevers' },
   openGraph: {
     title: 'Voor Opdrachtgevers | ProBrandwacht.nl',
     description:
-      'Brandwachten inhuren zonder gedoe of verborgen kosten. Transparant tarief, gecertificeerde professionals en escrow-betaling via ProSafetyMatch.',
+      'Brandwachten inhuren zonder gedoe of verborgen kosten. Eerlijk tarief, gecertificeerde professionals en escrow-betaling via ProSafetyMatch.',
     url: 'https://probrandwacht.nl/opdrachtgevers',
     type: 'website',
   },
@@ -68,7 +68,7 @@ export default function VoorOpdrachtgeversPage() {
             Brandwachten inhuren zonder gedoe of verborgen kosten
           </h1>
           <p className="mt-3 max-w-3xl text-slate-700">
-            Via ProSafetyMatch huur je direct zzp-brandwachten in, met volledige transparantie over kosten en certificaten. Snel inzetbaar voor{' '}
+            Via ProSafetyMatch huur je direct zzp-brandwachten in, met volledige duidelijkheid over kosten en certificaten. Snel inzetbaar voor{' '}
             <strong>evenementen</strong>, <strong>bouw</strong> en <strong>industrie</strong>.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -84,7 +84,7 @@ export default function VoorOpdrachtgeversPage() {
         {/* Voordelen */}
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border p-5">
-            <h3 className="font-semibold">Transparant tarief</h3>
+            <h3 className="font-semibold">Eerlijk tarief</h3>
             <p className="mt-2 text-sm text-slate-700">
               Geen verborgen marges. Je ziet exact: jouw betaling, het netto-bedrag voor de brandwacht en de platformfee.
             </p>
@@ -139,7 +139,7 @@ export default function VoorOpdrachtgeversPage() {
             </li>
           </ol>
           <div className="mt-6 text-sm text-slate-600">
-            Klaar voor transparante inzet? Gebruik onderstaande link om je direct aan te melden voor de wachtlijst.
+            Klaar voor eerlijke inzet? Gebruik onderstaande link om je direct aan te melden voor de wachtlijst.
           </div>
         </section>
 
@@ -181,7 +181,7 @@ export default function VoorOpdrachtgeversPage() {
         <section className="mt-14 rounded-2xl bg-slate-50 p-6">
           <h2 className="text-xl font-semibold">Ervaar het verschil</h2>
           <p className="mt-2 max-w-3xl text-slate-700">
-            Transparantie, zekerheid en snelheid — zonder verborgen marges. Sluit je vandaag aan en ontvang een uitnodiging zodra we live zijn.
+            Eerlijke afspraken, zekerheid en snelheid — zonder verborgen marges. Sluit je vandaag aan en ontvang een uitnodiging zodra we live zijn.
           </p>
           <a
             href="https://forms.gle/3BXxU64yyxnfvrLN8"

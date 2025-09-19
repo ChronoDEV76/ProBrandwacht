@@ -5,13 +5,13 @@ import { getSignupUrl } from '@/lib/config'
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
   description:
-    'De nieuwe standaard voor brandwachten in Nederland: eerlijk, transparant en betrouwbaar voor professionals én opdrachtgevers.',
+    'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
   alternates: { canonical: '/manifest', languages: { 'nl-NL': '/manifest' } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
     title: 'Missie | ProBrandwacht.nl',
     description:
-      'De nieuwe standaard voor brandwachten in Nederland: eerlijk, transparant en betrouwbaar voor professionals én opdrachtgevers.',
+      'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
     url: 'https://www.probrandwacht.nl/manifest',
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'Missie van ProBrandwacht.nl' }],
   },
@@ -31,11 +31,11 @@ export default function ManifestPage() {
       <header className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze Missie</h1>
         <p className="text-slate-700 mt-1 max-w-2xl">
-          Eerlijk, transparant en betrouwbaar voor brandwachten én opdrachtgevers.
+          Eerlijk, duidelijk en betrouwbaar voor brandwachten én opdrachtgevers.
         </p>
       </header>
 
-      {/* Transparante kaarten voor consistentie met de landingspagina */}
+      {/* Heldere kaarten voor consistentie met de landingspagina */}
       <section className="mb-8">
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-lg">
@@ -49,7 +49,7 @@ export default function ManifestPage() {
                 d="M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm.5 4h-2v2H9v2h1.5v2H9v2h1.5v2h2v-2h1.75v-2H12.5v-2h2.25V9H12.5V7Z"
               />
             </svg>
-            <h3 className="font-semibold text-slate-900">Transparante tarieven</h3>
+            <h3 className="font-semibold text-slate-900">Eerlijke tarieven</h3>
             <p className="text-sm text-slate-600 mt-1">Iedereen ziet wat er betaald wordt.</p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-lg">
@@ -86,12 +86,10 @@ export default function ManifestPage() {
       <Prose>
         <h1>De nieuwe standaard voor brandwachten in Nederland</h1>
         <p>
-          De brandwachtbranche staat al jaren onder druk. Lage tarieven voor professionals, hoge
-          marges bij bureaus, en een gebrek aan transparantie maken dat gemotiveerde vakmensen vaak
-          te weinig waardering krijgen. Tegelijkertijd zien opdrachtgevers dat de kwaliteit en
-          motivatie onder druk komen te staan.
+          De brandwachtbranche staat onder druk. Professionals krijgen lage tarieven, bureaus houden
+          hoge marges en transparantie ontbreekt. Opdrachtgevers merken ondertussen dat kwaliteit en
+          motivatie daardoor afnemen. Dat kan én moet beter.
         </p>
-        <p>Dat kan én moet beter.</p>
 
         <h2>🔥 Wat gaat er mis in de markt?</h2>
         <ul>
@@ -108,13 +106,13 @@ export default function ManifestPage() {
             weer doorverkocht.
           </li>
           <li>
-            <strong>Weinig transparantie</strong> → opdrachtgever weet niet wat de brandwacht
+            <strong>Te weinig openheid</strong> → opdrachtgever weet niet wat de brandwacht
             verdient, brandwacht weet niet wat de opdrachtgever betaalt.
           </li>
         </ul>
 
-        <h2>✅ Hoe ProBrandwacht het anders doet</h2>
-        <h3>Transparante tarieven</h3>
+        <h2>✅ Hoe ProSafetyMatch het anders doet</h2>
+        <h3>Eerlijke tarieven</h3>
         <ul>
           <li>Opdrachtgever ziet precies wat er betaald wordt.</li>
           <li>Brandwacht weet exact wat hij/zij overhoudt.</li>
@@ -148,14 +146,10 @@ export default function ManifestPage() {
 
         <h2>🌍 Onze missie</h2>
         <p>
-          ProBrandwacht.nl digitaliseert de brandwachtmarkt niet alleen, maar maakt hem structureel
-          beter:
+          ProBrandwacht.nl werft professionals voor ProSafetyMatch, het platform dat de brandwachtmarkt digitaliseert en structureel beter maakt: eerlijk
+          voor professionals, helder voor opdrachtgevers en betrouwbaar voor iedereen die rekent op
+          brandveiligheid.
         </p>
-        <ul>
-          <li>Eerlijker voor professionals.</li>
-          <li>Transparanter voor opdrachtgevers.</li>
-          <li>Betrouwbaarder voor iedereen die rekent op brandveiligheid.</li>
-        </ul>
 
         <h2>👉 Doe mee met de verandering</h2>
         <div className="not-prose">
