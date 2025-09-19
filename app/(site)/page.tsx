@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { getSignupUrl } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
@@ -131,7 +130,6 @@ const faqItems = [
 ]
 
 export default function HomePage() {
-  const signupUrl = getSignupUrl()
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -166,7 +164,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href={signupUrl}
+                href="https://forms.gle/fAChpLDNSJWRBHDC7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -259,10 +257,10 @@ export default function HomePage() {
             </p>
             <div>
               <a
-                href={signupUrl}
+                href="https://forms.gle/fAChpLDNSJWRBHDC7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover/sidebar:black shadow"
               >
                 Meld je nu aan als zzp’er
               </a>
@@ -337,14 +335,14 @@ export default function HomePage() {
               ))}
             </div>
             <div>
-              <a
-                href={signupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-              >
-                Meld je nu aan als zzp’er
-              </a>
+          <a
+            href="https://forms.gle/fAChpLDNSJWRBHDC7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+          >
+            Meld je nu aan als zzp’er
+          </a>
             </div>
           </section>
 
@@ -423,7 +421,7 @@ export default function HomePage() {
             </ul>
             <div>
               <a
-                href={signupUrl}
+                href="https://forms.gle/fAChpLDNSJWRBHDC7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -458,14 +456,14 @@ export default function HomePage() {
               ))}
             </div>
             <div>
-              <a
-                href={signupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-              >
-                Meld je nu aan als zzp’er
-              </a>
+            <a
+              href="https://forms.gle/fAChpLDNSJWRBHDC7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+            >
+              Meld je nu aan als zzp’er
+            </a>
             </div>
           </section>
 
