@@ -1,6 +1,7 @@
-import CostCalculator, { DEFAULT_TARIFFS, type CityKey } from '@/components/CostCalculator'
+import CostCalculator from '@/components/CostCalculator'
 import Link from 'next/link'
 import { getSignupUrl } from '@/lib/config'
+import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
 
 const CITY_LABEL: Record<CityKey, string> = {
   amsterdam: 'Amsterdam',
