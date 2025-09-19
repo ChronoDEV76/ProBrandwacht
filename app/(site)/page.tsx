@@ -47,8 +47,8 @@ const heroBenefits = [
 
 const problemModels = [
   {
-    title: 'Traditioneel bureau',
-    subtitle: 'Voorbeeldtarief: jij ontvangt €30/u',
+    title: 'Dumpingscenario via bureau',
+    subtitle: 'Voorbeeld: opdrachtgever betaalt €50/u, jij houdt €30/u over',
     total: 50,
     segments: [
       { label: 'Bureau €20', amount: 20, className: 'bg-slate-300 text-slate-800' },
@@ -56,8 +56,8 @@ const problemModels = [
     ],
   },
   {
-    title: 'ProSafetyMatch (binnenkort)',
-    subtitle: 'Voorbeeldtarief: jij ontvangt €40,50/u',
+    title: 'Afspraak via ProSafetyMatch',
+    subtitle: 'Voorbeeld: jullie spreken €45/u af, jij ontvangt €40,50/u',
     total: 45,
     segments: [
       { label: 'Platform €4,50', amount: 4.5, className: 'bg-emerald-300 text-slate-900' },
@@ -70,17 +70,35 @@ const solutionFeatures = [
   {
     icon: '💶',
     title: 'Tarief zonder verrassingen',
-    description: 'Het platform toont realtime wat de opdrachtgever betaalt en wat jij ontvangt.',
+    description: 'Jij en de opdrachtgever bepalen het tarief; wij tonen realtime de verdeling en fee.',
   },
   {
     icon: '🔒',
     title: 'Escrow-betalingen',
-    description: 'Opdrachtgevers storten vooraf in escrow; jij wordt automatisch uitbetaald na oplevering.',
+    description: 'Opdrachtgevers storten vooraf in escrow; uitbetaling volgt zodra jullie samen akkoord zijn.',
   },
   {
     icon: '📑',
     title: 'Certificaten centraal',
     description: 'Upload certificaten bij voorkeur als PDF. Gebruik je toch PNG of JPG, dan dienen die enkel ter controle. Houd je bestanden actueel zodat opdrachtgevers direct zien wat je in huis hebt.',
+  },
+]
+
+const audienceProfiles = [
+  {
+    title: 'Repressieve brandwachten',
+    description:
+      'Werken bij korps of veiligheidsregio en draaien af en toe een extra dienst. Zijn verzekerd via hun werkgever en brengen operationele ervaring mee.',
+  },
+  {
+    title: 'Volledig zzp-brandwachten',
+    description:
+      'Rijksgediplomeerd, vaak met ademlucht en BHV/VCA. Ze kiezen bewust voor zzp en zoeken eerlijke, direct te sluiten afspraken zonder verborgen marges.',
+  },
+  {
+    title: 'Industrieel inzetbare brandwachten',
+    description:
+      'Beschikken over industriecertificaten en projectervaring. De juiste prijsafspraak zorgt voor motivatie en continuïteit op risicolocaties.',
   },
 ]
 
@@ -142,7 +160,9 @@ export default function HomePage() {
               Platform voor zzp-brandwachten in bouw, industrie en evenementen. Eerlijk, DBA-proof en met escrow-betaling.
             </p>
             <p className="text-slate-700 max-w-2xl">
-              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Alles over tarief, betaling en certificaten is helder. Lees op onze missiepagina wat je verder kunt verwachten.
+              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Jij en de opdrachtgever bepalen het
+              tarief; wij zorgen voor de transparante opbouw, escrow en documenten. We leggen niets op, maar maken helder
+              wat er gebeurt zodat iedereen met vertrouwen tekent.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -186,6 +206,15 @@ export default function HomePage() {
               Meer weten? Bekijk onze <Link className="underline" href="/faq">brandwacht inhuren FAQ</Link> of lees de blog <Link className="underline" href="/blog/wat-kost-een-brandwacht-in-2025">Wat kost een brandwacht in 2025</Link>.
             </p>
           </header>
+
+          <section className="rounded-3xl border border-brand-100 bg-brand-50/60 p-5 text-sm text-brand-800">
+            <p className="font-semibold">Onze rol als platform</p>
+            <p className="mt-1">
+              We zijn geen bureau en geen tariefbepaler. Op ProSafetyMatch kies jij als professional je tarief en maakt de
+              opdrachtgever de afweging of dat past. Wij faciliteren het gesprek met transparante fee, escrow en
+              documentatie — niet door bedragen op te leggen, maar door inzicht te geven.
+            </p>
+          </section>
 
           {/* Vergelijking */}
           <section className="space-y-6">
@@ -240,14 +269,57 @@ export default function HomePage() {
             </div>
           </section>
 
+          <section className="space-y-6">
+            <div className="space-y-2">
+              <p className="text-sm uppercase tracking-wide text-brand-600">Voor wie</p>
+              <h2 className="text-2xl font-semibold">Drie groepen brandwachten, één platform</h2>
+              <p className="text-slate-700 max-w-3xl">
+                De markt is divers. We brengen iedereen bij elkaar en maken zichtbaar wat iemand meebrengt, zonder dat
+                we tarieven opleggen.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {audienceProfiles.map(profile => (
+                <article key={profile.title} className="rounded-2xl border bg-white p-5 text-sm shadow-sm">
+                  <h3 className="text-base font-semibold text-slate-900">{profile.title}</h3>
+                  <p className="mt-2 text-slate-700">{profile.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-2xl font-semibold">Waarom dumping uiteindelijk duurder is</h2>
+            <p className="text-slate-700 max-w-3xl">
+              Tarieven van €30/u lijken aantrekkelijk, maar we zien in de praktijk minder motivatie, hogere uitval en
+              meer risico voor opdrachtgevers. Onze aanpak: jij en de opdrachtgever kiezen het tarief, wij zorgen voor
+              transparantie en veilige escrow zodat kwaliteit beloond wordt.
+            </p>
+            <ul className="grid gap-3 md:grid-cols-3 text-sm text-slate-700">
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Motivatie blijft hoger.</strong> Eerlijke afspraken zorgen dat professionals hun volledige
+                aandacht bij de klus houden.
+              </li>
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Minder risico voor opdrachtgevers.</strong> Certificaten, escrow en duidelijke verwachtingen
+                verkleinen kans op fouten of uitval.
+              </li>
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Continuïteit op de werkvloer.</strong> Wie goed wordt beloond, keert terug en bouwt kennis op van
+                jouw locaties.
+              </li>
+            </ul>
+          </section>
+
          {/* Oplossing */}
           <section className="space-y-6">
             <div className="space-y-3">
               <p className="text-sm uppercase tracking-wide text-brand-600">Oplossing</p>
               <h2 className="text-2xl font-semibold">Zo lossen wij het voor jou op</h2>
               <p className="text-slate-700 max-w-3xl">
-                ProSafetyMatch wordt je digitale backoffice: wij regelen eerlijke contracten, veilige
-                betalingen en zichtbaarheid bij opdrachtgevers. Jij doet het werk, wij halen de frictie weg.
+                ProSafetyMatch wordt je digitale backoffice: jullie spreken het tarief af, wij laten realtime zien hoe
+                opdrachtgeverstarief, fee en netto uitbetaling zich tot elkaar verhouden. Met escrow, documenten en
+                dashboards blijft alles veilig en zichtbaar.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -274,6 +346,61 @@ export default function HomePage() {
                 Meld je nu aan als zzp’er
               </a>
             </div>
+          </section>
+
+          <section className="space-y-4">
+            <div className="space-y-2">
+              <p className="text-sm uppercase tracking-wide text-brand-600">Transparantie in cijfers</p>
+              <h2 className="text-2xl font-semibold">Zo ziet een eerlijke tariefopbouw eruit</h2>
+              <p className="text-slate-700 max-w-3xl">
+                Opdrachtgever en zzp’er vullen samen het afgesproken tarief in. Onze tools tonen direct wat er met iedere
+                euro gebeurt. Geen verrassingen achteraf, wel bewijs dat kwaliteit wordt betaald.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-4 text-sm text-slate-700">
+              <div className="rounded-2xl border bg-white p-4">
+                <p className="font-semibold text-slate-900">Opdrachtgever kiest</p>
+                <p className="mt-1">Bijvoorbeeld €52/u voor 8 uur inzet.</p>
+              </div>
+              <div className="rounded-2xl border bg-white p-4">
+                <p className="font-semibold text-slate-900">Fee zichtbaar</p>
+                <p className="mt-1">10% platformfee = €41,60. Iedereen ziet dezelfde regel.</p>
+              </div>
+              <div className="rounded-2xl border bg-white p-4">
+                <p className="font-semibold text-slate-900">Netto voor zzp’er</p>
+                <p className="mt-1">€46,80/u → motivatie en kwaliteit blijven hoog.</p>
+              </div>
+              <div className="rounded-2xl border bg-white p-4">
+                <p className="font-semibold text-slate-900">Escrow & zekerheid</p>
+                <p className="mt-1">1,5% escrow gekoppeld aan oplevering. Geen late betalingen.</p>
+              </div>
+            </div>
+            <p className="text-xs text-slate-500">
+              Gebruik de calculator in onze blogs of stadspagina’s om dit zelf in te vullen. Wij stellen geen tarieven vast,
+              maar zorgen dat iedereen met dezelfde informatie aan tafel zit.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <div className="space-y-2">
+              <p className="text-sm uppercase tracking-wide text-brand-600">Community & kennis</p>
+              <h2 className="text-2xl font-semibold">Samen bouwen aan een eerlijk vak</h2>
+              <p className="text-slate-700 max-w-3xl">
+                Volledig zzp’ers hebben geen vakbond of collectief. Daarom bouwen we een community voor kennisdeling,
+                feedback op platformfeatures en gezamenlijke scholing. Hoe meer input, hoe beter we dumping tegengaan.
+              </p>
+            </div>
+            <ul className="grid gap-3 md:grid-cols-3 text-sm text-slate-700">
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Kennis & blogs.</strong> Regelmatige inzichten over tarieven, certificaten en best practices.
+              </li>
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Community-updates.</strong> Zzp’ers denken mee over roadmap, compliance en tooling.
+              </li>
+              <li className="rounded-2xl border bg-white p-4 shadow-sm">
+                <strong>Directe feedbackloop.</strong> Opdrachtgevers en professionals geven input op matching en dashboards.
+              </li>
+            </ul>
           </section>
 
           {/* Zo bouw je mee */}

@@ -102,6 +102,10 @@ export default function ManifestPage() {
             weinig van terug.
           </li>
           <li>
+            <strong>Dumpingtarieven</strong> → tarieven van €30/u lijken aantrekkelijk, maar zorgen voor
+            minder motivatie, meer verloop en hogere risico’s.
+          </li>
+          <li>
             <strong>Korte termijn denken</strong> → bedrijven worden opgericht en na enkele jaren
             weer doorverkocht.
           </li>
@@ -111,11 +115,32 @@ export default function ManifestPage() {
           </li>
         </ul>
 
+        <h3>Drie groepen brandwachten die we bij elkaar brengen</h3>
+        <ul>
+          <li>
+            <strong>Repressieve brandwachten</strong> – werken bij korps of veiligheidsregio, draaien af en toe extra uren
+            en zijn verzekerd via hun werkgever. Ze brengen operationele ervaring mee, maar willen duidelijke afspraken.
+          </li>
+          <li>
+            <strong>Volledig zzp-brandwachten</strong> – rijksgediplomeerd, vaak met ademlucht en aanvullende certificaten.
+            Ze kiezen voor vrijheid, maar alleen als de beloning eerlijk is en afspraken transparant zijn.
+          </li>
+          <li>
+            <strong>Industrieel inzetbare brandwachten</strong> – beschikken over petrochemische certificaten en projectroutine.
+            Zij willen voorkomen dat ze worden ingezet voor dumpprijzen die motivatie uithollen.
+          </li>
+        </ul>
+
         <h2>✅ Hoe ProSafetyMatch het anders doet</h2>
+        <p>
+          Wij zijn geen bureau dat tarieven voorschrijft. ProSafetyMatch maakt zichtbaar wat opdrachtgever en zzp’er
+          afspreken, houdt escrow veilig en zorgt dat documenten DBA-proof zijn. Zo behoudt iedereen de regie, maar wel met
+          dezelfde feiten op tafel.
+        </p>
         <h3>Eerlijke tarieven</h3>
         <ul>
-          <li>Opdrachtgever ziet precies wat er betaald wordt.</li>
-          <li>Brandwacht weet exact wat hij/zij overhoudt.</li>
+          <li>Opdrachtgever ziet precies wat er betaald wordt en kan onderbouwen waarom.</li>
+          <li>Brandwacht weet exact wat hij/zij overhoudt en kan een tarief voorstellen dat past bij de opdracht.</li>
         </ul>
         <h3>Meer verdienen als professional</h3>
         <ul>
@@ -135,6 +160,13 @@ export default function ManifestPage() {
           <li>Toegang tot opleidingen, hercertificering en verzekeringen via het platform.</li>
           <li>Een community die elkaar versterkt.</li>
         </ul>
+        <h3>Community & inspraak</h3>
+        <ul>
+          <li>Volledig zzp-brandwachten hebben geen vakbond. Wij bieden een digitaal collectief waar kennis en cases
+            worden gedeeld.</li>
+          <li>Zzp’ers en opdrachtgevers leveren input voor nieuwe features, compliance-tools en marktobservaties.</li>
+          <li>Door samen te bouwen, blijven tarieven eerlijk en motivatie hoog.</li>
+        </ul>
         <h3>Lange termijn relaties</h3>
         <ul>
           <li>
@@ -143,6 +175,18 @@ export default function ManifestPage() {
           </li>
           <li>Dit zorgt voor betrokkenheid, vertrouwen en continuïteit op de werkvloer.</li>
         </ul>
+
+        <h3>Dumping lijkt goedkoop, maar kost uiteindelijk meer</h3>
+        <p>
+          Lage tarieven leveren korte termijn voordeel op, maar zorgen voor meer uitval, minder motivatie en risico’s
+          op de werkvloer. Door afspraken eerlijk vast te leggen en fee/escrow zichtbaar te maken, houden we de kwaliteit
+          hoog én weten opdrachtgever en professional precies waar ze aan toe zijn.
+        </p>
+        <p>
+          We delen onze inzichten openlijk via blogs, checklists en marktrapporten. Zo blijven opdrachtgevers, repressieve
+          krachten en zzp’er-brandwachten op de hoogte van trends en best practices — en wordt ProSafetyMatch het eerste
+          digitale referentiepunt in de sector.
+        </p>
 
         <h2>🌍 Onze missie</h2>
         <p>

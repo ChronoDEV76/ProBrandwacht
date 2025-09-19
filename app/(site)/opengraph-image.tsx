@@ -5,7 +5,7 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OgImage() {
-  const title = 'ProBrandwacht.nl — Eerlijke Tarieven, Transparant Platform'
+  const title = 'ProBrandwacht.nl — Eerlijke Tarieven, Eerlijke Afspraken'
   return new ImageResponse(
     (
       <div

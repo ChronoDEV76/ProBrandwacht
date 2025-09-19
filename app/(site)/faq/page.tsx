@@ -26,8 +26,20 @@ const faqs: FAQItem[] = [
     },
   },
   {
+    q: 'Waarom lijkt €30 per uur goedkoop maar pakt het duur uit?',
+    a: 'Een tarief van €30/u klinkt als slimme inkoop, maar de praktijk laat het tegendeel zien: minder motivatie, hogere uitval en extra risico op de werkvloer. Via ProSafetyMatch bepaal je samen een passend tarief, met transparantie over fee en escrow, zodat kwaliteit beloond blijft.',
+  },
+  {
+    q: 'Welke typen brandwachten zijn er?',
+    a: 'We zien grofweg drie groepen: repressieve brandwachten uit korpsen/veiligheidsregio’s die af en toe bijverdienen; volledig zzp-brandwachten met rijksdiploma’s en vaak ademlucht; en industriële brandwachten met petrochemische certificaten. ProSafetyMatch brengt ze bij elkaar zonder tarieven op te leggen, maar met volledig inzicht in fee, escrow en certificaten.',
+  },
+  {
+    q: 'Wat houdt de community rond ProSafetyMatch in?',
+    a: 'We bouwen een digitaal collectief voor zelfstandige brandwachten: nieuws over wetgeving en tarieven, kennisdeling, feedback op nieuwe features en toegang tot scholing. Zo ontstaat er een alternatief voor losse groepen en houden we samen dumping tegen.',
+  },
+  {
     q: 'Wat verdien ik als zzp’er via ProBrandwacht straks?',
-    a: 'Richtlijn: €38–€45 per uur bij standaardopdrachten overdag, hoger bij nacht, weekend of extra risico. Je ziet altijd de verdeling: opdrachtgeverstarief min platformfee van circa €5 per uur is jouw uitbetaling. Geen verborgen marges, je houdt direct zicht op je inkomsten.',
+    a: 'Het tarief spreek je zelf af met de opdrachtgever. Veel afspraken liggen tussen €38–€45 per uur bij dagdiensten; nacht, weekend, industrie of ademlucht liggen hoger. Wij laten alleen zien wat er met de 10% platformfee en 1–2% escrow gebeurt, zodat je netto direct zichtbaar is.',
   },
   {
     q: 'Hoe werkt escrow‑betaling?',
@@ -51,7 +63,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat kost een brandwacht?',
-    a: 'Veelvoorkomend is €40–€60 per uur. Factoren: certificaten (VCA/BHV/EHBO/Manschap), type inzet (evenementen/bouw/industrie), duur en doorlooptijd, tijdstip (nacht/weekend/feestdag), regio en reiskosten. Eerlijke uitleg over tariefopbouw voorkomt misverstanden.',
+    a: 'Veel opdrachten worden gesloten tussen €40 en €60 per uur. Het precieze tarief hangt af van certificaten (VCA/BHV/EHBO/Manschap), type inzet, duur, tijdstip en regio. Gebruik onze calculator om te laten zien hoe fee en escrow worden verdeeld, maar bepaal het tarief altijd samen met de professional.',
     more: {
       href: '/blog/wat-kost-een-brandwacht-in-2025',
       label: 'Lees: Wat kost een brandwacht in 2025?',

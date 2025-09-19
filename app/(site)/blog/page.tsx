@@ -157,9 +157,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                 <Link href={`/blog/${post.slug}`} className="text-sm font-medium text-brand-700 hover:underline">
                   Lees artikel →
                 </Link>
-                <Link href="/aanmelden" className="text-sm text-slate-500 hover:underline">
+                <a
+                  href="https://forms.gle/nKrkzY5c145LM5y87"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-500 hover:underline"
+                >
                   Meld je aan als zzp’er
-                </Link>
+                </a>
               </div>
             </div>
           </article>
@@ -172,9 +177,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           Sluit je aan bij de eerste lichting brandwachten of meld je als opdrachtgever aan voor de wachtlijst.
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/aanmelden" className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500">
+          <a
+            href="https://forms.gle/nKrkzY5c145LM5y87"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
+          >
             Meld je aan als zzp’er
-          </Link>
+          </a>
           <Link href="/opdrachtgevers" className="rounded-2xl border px-5 py-3 hover:bg-white">
             Info voor opdrachtgevers
           </Link>
