@@ -46,7 +46,7 @@ const heroBenefits = [
 
 const problemModels = [
   {
-    title: 'Dumpingscenario via bureau',
+    title: 'Werken voor een bureau',
     subtitle: 'Voorbeeld: opdrachtgever betaalt €50/u, jij houdt €30/u over',
     total: 50,
     segments: [
