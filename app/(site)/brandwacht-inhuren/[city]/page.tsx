@@ -66,8 +66,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
   const signupUrl = getSignupUrl()
+  const zzpSignupUrl = 'https://forms.gle/fAChpLDNSJWRBHDC7'
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
-  const faqs = [
+  type FAQItem = { q: string; a: string; ctaUrl?: string }
+  const faqs: FAQItem[] = [
     {
       q: `Wanneer is een brandwacht verplicht bij evenementen in ${cityName}?`,
       a: `Bij vergunningsplichtige evenementen en zodra de veiligheidsregio dit voorschrijft (o.a. bij verhoogd risico, grote publieksstromen of pyrotechniek).`,
@@ -75,12 +77,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
     {
       q: `Wat kost een brandwacht in ${cityName}?`,
       a: `Gemiddeld €40–€60 per uur afhankelijk van type inzet, certificaten, duur en tijdstip.`,
-      cta: true,
+      ctaUrl: zzpSignupUrl,
     },
     {
       q: `Mag een zzp‑brandwacht ingezet worden op bouwplaatsen?`,
       a: `Ja, mits de vereiste certificaten (bijv. VCA, BHV, EHBO) en projectvoorwaarden aanwezig zijn.`,
-      cta: true,
+      ctaUrl: zzpSignupUrl,
     },
     {
       q: `Wat is een industriële brandwacht?`,
@@ -89,12 +91,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
     {
       q: `Word ik via ProBrandwacht altijd betaald als brandwacht?`,
       a: `Ja. We werken met escrow‑betaling: de opdrachtgever betaalt vooraf op een tussenrekening en na bevestigde uitvoering volgt automatische uitbetaling.`,
-      cta: true,
+      ctaUrl: zzpSignupUrl,
     },
     {
       q: `Kan ik als zzp‑brandwacht opdrachten krijgen via ProBrandwacht?`,
       a: `Ja. Meld je aan om updates en vroege toegang te krijgen tot het platform en om straks met je profiel zichtbaar te zijn voor opdrachtgevers.`,
-      cta: true,
+      ctaUrl: zzpSignupUrl,
     },
     {
       q: 'Hoe lever ik certificaten aan?',
@@ -241,11 +243,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
               <p className="font-medium">{f.q}</p>
               <p className="text-sm text-slate-600">
                 {f.a}
-                {f.cta ? (
+                {f.ctaUrl ? (
                   <>
                     {' '}
                     <a
-                      href={signupUrl}
+                      href={f.ctaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline"

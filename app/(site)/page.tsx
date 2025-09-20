@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   keywords: [
     'brandwacht platform',
     'brandwacht inhuren',
+    'zzp brandwacht inhuren',
     'brandwacht tarieven',
     'escrow brandwacht',
     'probrandwacht',
@@ -158,7 +159,8 @@ export default function HomePage() {
               Verdien wat je waard bent – zonder bureau-marges.
             </h1>
             <p className="text-lg font-medium text-brand-700">
-              Platform voor zzp-brandwachten in bouw, industrie en evenementen. Eerlijk, DBA-proof en met escrow-betaling.
+              Platform voor zzp-brandwachten en opdrachtgevers die een zzp brandwacht willen inhuren – eerlijk,
+              DBA-proof en met escrow-betaling.
             </p>
             <p className="text-slate-700 max-w-2xl">
               Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Jij en de opdrachtgever bepalen het
