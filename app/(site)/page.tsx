@@ -287,7 +287,7 @@ export default function HomePage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-2xl font-semibold">Waarom dumping uiteindelijk duurder is</h2>
+            <h2 className="text-2xl font-semibold">Waarom werken via een bureau duurder kan uitpakken</h2>
             <p className="text-slate-700 max-w-3xl">
               Tarieven van €30/u lijken aantrekkelijk, maar we zien in de praktijk minder motivatie, hogere uitval en
               meer risico voor opdrachtgevers. Onze aanpak: jij en de opdrachtgever kiezen het tarief, wij zorgen voor
@@ -385,7 +385,8 @@ export default function HomePage() {
               <h2 className="text-2xl font-semibold">Samen bouwen aan een eerlijk vak</h2>
               <p className="text-slate-700 max-w-3xl">
                 Volledig zzp’ers hebben geen vakbond of collectief. Daarom bouwen we een community voor kennisdeling,
-                feedback op platformfeatures en gezamenlijke scholing. Hoe meer input, hoe beter we dumping tegengaan.
+                feedback op platformfeatures en gezamenlijke scholing. Hoe meer input, hoe beter we samen scherpe
+                bureau-marges voorkomen.
               </p>
             </div>
             <ul className="grid gap-3 md:grid-cols-3 text-sm text-slate-700">

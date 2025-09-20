@@ -34,7 +34,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat houdt de community rond ProSafetyMatch in?',
-    a: 'We bouwen een digitaal collectief voor zelfstandige brandwachten: nieuws over wetgeving en tarieven, kennisdeling, feedback op nieuwe features en toegang tot scholing. Zo ontstaat er een alternatief voor losse groepen en houden we samen dumping tegen.',
+    a: 'We bouwen een digitaal collectief voor zelfstandige brandwachten: nieuws over wetgeving en tarieven, kennisdeling, feedback op nieuwe features en toegang tot scholing. Zo ontstaat er een alternatief voor losse groepen en houden we samen de tariefverdeling eerlijk.',
   },
   {
     q: 'Wat verdien ik als zzp’er via ProBrandwacht straks?',

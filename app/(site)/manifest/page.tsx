@@ -125,7 +125,7 @@ export default function ManifestPage() {
           </li>
           <li>
             <strong>Industrieel inzetbare brandwachten</strong> – beschikken over petrochemische certificaten en projectroutine.
-            Zij willen voorkomen dat ze worden ingezet voor dumpprijzen die motivatie uithollen.
+            Zij willen voorkomen dat ze worden ingezet voor zeer lage bureau-tarieven die motivatie verminderen.
           </li>
         </ul>
 
@@ -174,11 +174,11 @@ export default function ManifestPage() {
           <li>Dit zorgt voor betrokkenheid, vertrouwen en continuïteit op de werkvloer.</li>
         </ul>
 
-        <h3>Dumping lijkt goedkoop, maar kost uiteindelijk meer</h3>
+        <h3>Lage bureau-tarieven lijken goedkoop, maar kosten uiteindelijk meer</h3>
         <p>
-          Lage tarieven leveren korte termijn voordeel op, maar zorgen voor meer uitval, minder motivatie en risico’s
-          op de werkvloer. Door afspraken eerlijk vast te leggen en fee/escrow zichtbaar te maken, houden we de kwaliteit
-          hoog én weten opdrachtgever en professional precies waar ze aan toe zijn.
+          Zeer scherpe tarieven leveren op korte termijn voordeel op, maar zorgen voor meer uitval, minder motivatie en
+          extra risico’s op de werkvloer. Door afspraken eerlijk vast te leggen en fee/escrow zichtbaar te maken, houden
+          we de kwaliteit hoog én weten opdrachtgever en professional precies waar ze aan toe zijn.
         </p>
         <p>
           We delen onze inzichten openlijk via blogs, checklists en marktrapporten. Zo blijven opdrachtgevers, repressieve

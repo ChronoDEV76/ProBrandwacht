@@ -49,8 +49,8 @@ export default function OpdrachtgeversPage() {
           </p>
           <p className="mt-2 max-w-3xl text-sm text-slate-700">
             We leggen geen tarieven op. Jullie bepalen het tarief dat past bij de opdracht, terwijl wij fee, escrow en de
-            benodigde documenten inzichtelijk maken. Zo voorkom je dumping en hou je gemotiveerde professionals op de
-            werkvloer.
+            benodigde documenten inzichtelijk maken. Zo voorkom je verrassingen in de tariefverdeling en hou je
+            gemotiveerde professionals op de werkvloer.
           </p>
         </div>
       </section>
@@ -96,10 +96,10 @@ export default function OpdrachtgeversPage() {
       </section>
 
       <section className="mb-12 rounded-2xl border bg-amber-50 p-6 text-sm text-amber-900">
-        <h3 className="text-lg font-semibold text-amber-900">Waarom €30/u geen slimme deal is</h3>
+        <h3 className="text-lg font-semibold text-amber-900">Waarom €30/u vaak tegenvalt</h3>
         <p className="mt-2">
-          Een tarief van €30/u lijkt scherp, maar leidt tot minder motivatie, meer verloop en hogere risico’s bij
-          specialistische taken. ProSafetyMatch laat opdrachtgever en professional samen een eerlijk tarief kiezen en
+          Een tarief van €30/u lijkt scherp, maar leidt regelmatig tot minder motivatie, meer verloop en hogere risico’s
+          bij specialistische taken. ProSafetyMatch laat opdrachtgever en professional samen een passend tarief kiezen en
           maakt de volledige kostenopbouw zichtbaar. Zo blijft kwaliteit behouden en weet iedereen waarvoor hij tekent.
         </p>
       </section>

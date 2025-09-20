@@ -93,7 +93,7 @@ export default function BlogKosten2025Page() {
             </li>
             <li>
               <strong>Industrieel inzetbare brandwachten</strong> – beschikken over petrochemische certificaten en zoeken
-              stabiliteit in projecten waar dumpingtarieven juist extra risico opleveren.
+              stabiliteit in projecten waar zeer lage bureau-tarieven juist extra risico opleveren.
             </li>
           </ul>
           <p className="mt-3 text-sm text-slate-600">
