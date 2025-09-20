@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { coreCities } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
@@ -79,7 +80,7 @@ const solutionFeatures = [
   {
     icon: '📑',
     title: 'Certificaten centraal',
-    description: 'Upload certificaten bij voorkeur als PDF. Gebruik je toch PNG of JPG, dan dienen die enkel ter controle. Houd je bestanden actueel zodat opdrachtgevers direct zien wat je in huis hebt.',
+    description: 'Upload certificaten bij voorkeur als PDF. Gebruik je toch PNG of JPG, dan dienen die enkel ter controle en verwijderen we ze na verificatie. We checken documenten minimaal jaarlijks zodat opdrachtgevers direct zien wat je in huis hebt.',
   },
 ]
 
@@ -128,6 +129,8 @@ const faqItems = [
       'De opdrachtgever stort de gehele opdracht vooruit op een beveiligde rekening. Zodra jij de klus afrondt, wordt de betaling automatisch vrijgegeven. Zo heb je vooraf zekerheid dat het geld er is.',
   },
 ]
+
+const keyCities = coreCities
 
 export default function HomePage() {
   const faqSchema = {
@@ -197,6 +200,29 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <nav aria-label="Populaire steden" className="text-sm text-slate-600">
+              <p className="font-medium text-slate-700">Brandwacht inhuren in jouw regio</p>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {keyCities.map(city => (
+                  <li key={city.slug}>
+                    <Link
+                      href={`/brandwacht-inhuren/${city.slug}`}
+                      className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 transition hover:bg-brand-50 hover:text-brand-700"
+                    >
+                      Brandwacht inhuren {city.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link
+                    href="/blog/wat-kost-een-brandwacht-in-2025"
+                    className="inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 transition hover:bg-brand-50 hover:text-brand-700"
+                  >
+                    Bekijk tariefuitleg →
+                  </Link>
+                </li>
+              </ul>
+            </nav>
             <p className="text-sm text-slate-500">
               Al meer dan <strong>100 brandwachten</strong> hebben zich aangemeld en uploaden hun certificaten voor een profiel op ProSafetyMatch.
             </p>
@@ -479,7 +505,7 @@ export default function HomePage() {
                   ProSafetyMatch is géén bemiddelingsbureau. Wij bieden het platform – profielen, escrow-betalingen, certificaatbeheer en communicatie – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Daarmee blijft het model DBA-proof: jij werkt zelfstandig, met eerlijke afspraken.
                 </p>
                 <p>
-                  Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage en we verwijderen tijdelijke uploads (PNG/JPG) na verificatie.
+                  Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage. We controleren documenten minimaal jaarlijks en verwijderen tijdelijke uploads (PNG/JPG) na verificatie.
                 </p>
               </div>
             </div>

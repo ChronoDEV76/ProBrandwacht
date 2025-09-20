@@ -10,9 +10,11 @@ import {
 } from '@/lib/blog'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Prose from '@/components/prose'
 import ShareBar from '@/components/share-bar'
 import { notFound } from 'next/navigation'
+import { coreCities } from '@/lib/cities'
 
 export async function generateStaticParams() {
   const slugs = await getPostSlugs()
@@ -108,6 +110,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         totalTime: howtoSource?.totalTime,
       }
     : null
+  const cityLinks = coreCities
   const datePublishedIso = parseIso(frontmatter.date)
   const articleImage = toAbsoluteUrl(
     typeof frontmatter.ogImage === 'string'
@@ -197,6 +200,24 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
         </a>
       </div>
+      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
+        <h2 className="text-lg font-semibold text-slate-900">Direct naar een stadspagina</h2>
+        <p className="mt-1 text-sm text-slate-600">
+          Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en escrowberekening met opdrachtgevers.
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {cityLinks.map(city => (
+            <li key={city.slug}>
+              <Link
+                href={`/brandwacht-inhuren/${city.slug}`}
+                className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+              >
+                Brandwacht inhuren {city.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
       {howto ? (
         <section className="mt-8 space-y-3">
           <h2 className="text-xl font-semibold">Stappenplan</h2>

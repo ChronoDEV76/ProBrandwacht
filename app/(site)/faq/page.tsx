@@ -70,7 +70,11 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Welke certificaten zijn relevant?',
-    a: 'Veelvoorkomend: VCA, BHV, EHBO en Manschap A/B. In de industrie zijn aanvullingen nodig (hete werkvergunning, toezicht besloten ruimte). Actuele geldigheid en aantoonbare ervaring verhogen je inzetbaarheid en tarief.',
+    a: 'Veelvoorkomend: VCA, BHV, EHBO en Manschap A/B. In de industrie zijn aanvullingen nodig (hete werkvergunning, toezicht besloten ruimte). We verifiëren certificaten minimaal iedere 12 maanden en eerder bij verlopen documenten. Actuele geldigheid en aantoonbare ervaring verhogen je inzetbaarheid en tarief.',
+  },
+  {
+    q: 'Hoe lever ik certificaten aan?',
+    a: 'Upload certificaten bij voorkeur als PDF zodat we ze automatisch kunnen valideren. PNG/JPG’s accepteren we als tijdelijke momentopname en verwijderen we na handmatige verificatie. Alleen jij en uitgenodigde opdrachtgevers krijgen inzage.',
   },
   {
     q: 'Mag een zzp‑brandwacht op een bouwplaats werken?',

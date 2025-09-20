@@ -1,6 +1,8 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { getPostSlugs, getPostBySlug, readingTime } from '@/lib/blog'
+import { coreCities } from '@/lib/cities'
 import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
 
 export const metadata = {
@@ -19,6 +21,7 @@ export const metadata = {
 
 const CATEGORIES = ['Alle', ...CATEGORY_LABELS] as const
 const CITIES = ['Alle', ...CITY_FILTERS] as const
+const cityLinks = coreCities
 
 function JSONLD({ data }: { data: Record<string, unknown> }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -131,8 +134,15 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             className="group relative overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-md"
           >
             {post.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={post.image} alt={post.imageAlt} className="h-40 w-full object-cover" loading="lazy" />
+              <div className="relative h-40 w-full overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             ) : (
               <div className="h-40 w-full bg-slate-100" />
             )}
@@ -165,6 +175,33 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h3>
+        <p className="mt-2 text-sm text-slate-600">
+          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en 1–2% escrowkosten.
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {cityLinks.map(city => (
+            <li key={city.slug}>
+              <Link
+                href={`/brandwacht-inhuren/${city.slug}`}
+                className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+              >
+                Brandwacht inhuren {city.name}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link
+              href="/steden/amsterdam"
+              className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+            >
+              Bekijk calculator →
+            </Link>
+          </li>
+        </ul>
       </section>
 
       <section className="mt-10 rounded-2xl bg-slate-50 p-6 text-center">

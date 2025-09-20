@@ -70,7 +70,8 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Jij ziet exact wat de professional ontvangt en wat de platformfee is. Geen verborgen marges.
+            Jij ziet exact wat de professional ontvangt en wat de platformfee is. We werken met een vaste 10%
+            platformfee en 1–2% escrowkosten voor rekening van de opdrachtgever. Geen verborgen marges.
           </ListItem>
           <ListItem title="DBA‑proof overeenkomsten">
             Heldere rol‑ en resultaatafspraken. De overeenkomst is altijd tussen opdrachtgever en professional.

@@ -27,8 +27,8 @@ export async function generateMetadata({
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const title = `Brandwacht inhuren ${cityName} – binnenkort via slimme matching | ProBrandwacht.nl`
-  const description = `Vind straks snel een brandwacht in ${cityName} via slimme matching. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
+  const title = `Brandwacht inhuren ${cityName} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
+  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
   const keywords = [
     `brandwacht ${cityName}`,
     `brandwacht inhuren ${cityName}`,
@@ -95,6 +95,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
       q: `Kan ik als zzp‑brandwacht opdrachten krijgen via ProBrandwacht?`,
       a: `Ja. Meld je aan om updates en vroege toegang te krijgen tot het platform en om straks met je profiel zichtbaar te zijn voor opdrachtgevers.`,
       cta: true,
+    },
+    {
+      q: 'Hoe lever ik certificaten aan?',
+      a: 'Upload certificaten als PDF voor automatische controle. PNG of JPG kan als momentopname; we verifiëren ze handmatig, verwijderen ze na goedkeuring en controleren alle documenten minimaal jaarlijks.',
     },
   ]
 
@@ -177,6 +181,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
         We werken aan ProSafetyMatch, het digitale platform dat brandwachten en opdrachtgevers eerlijk
         aan elkaar koppelt. Hieronder lees je alvast wat je kunt verwachten bij evenementen, bouw en
         industriële inzet, inclusief veelgestelde vragen.
+      </p>
+      <p className="text-sm text-slate-600">
+        Tarieven bepaal je altijd samen. Wij tonen transparant de verdeling: 10% platformfee voor community, support en
+        matching plus 1–2% escrowkosten voor rekening van de opdrachtgever zodat uitbetaling verzekerd is.
       </p>
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar

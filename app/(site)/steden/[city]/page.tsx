@@ -1,5 +1,6 @@
 import CostCalculator from '@/components/CostCalculator'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { getSignupUrl } from '@/lib/config'
 import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
 
@@ -20,9 +21,44 @@ export function generateStaticParams() {
   ]
 }
 
+function resolveLabel(city: CityKey) {
+  return CITY_LABEL[city] ?? city.replace(/-/g, ' ')
+}
+
+export function generateMetadata({ params }: { params: { city: CityKey } }): Metadata {
+  const label = resolveLabel(params.city)
+  const title = `Brandwacht tarieven ${label} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
+  const description = `Vergelijk brandwacht tarieven voor ${label} via het alternatieve brandwachtplatform. Zie direct de 10% platformfee en 1–2% escrowkosten zodat opdrachtgever en professional dezelfde kostenopbouw delen.`
+  const canonical = `/steden/${params.city}`
+  const keywords = [
+    `brandwacht ${label}`,
+    `brandwacht inhuren ${label}`,
+    'brandwacht tarieven',
+    'escrow brandwacht',
+  ]
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical, languages: { 'nl-NL': canonical } },
+    other: { hreflang: 'nl-NL' },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.probrandwacht.nl${canonical}`,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
+}
+
 export default function CityPage({ params }: { params: { city: CityKey } }) {
   const city = params.city
-  const label = CITY_LABEL[city]
+  const label = resolveLabel(city)
   const ranges = DEFAULT_TARIFFS[city]
   const signupUrl = getSignupUrl()
 
@@ -39,7 +75,8 @@ export default function CityPage({ params }: { params: { city: CityKey } }) {
       <section className="mb-6">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
           ProSafetyMatch bepaalt geen tarieven. Gebruik de bandbreedtes als vertrekpunt en vul in de calculator het tarief
-          in dat jullie zelf afspreken. De fee- en escrowberekening blijft gelijk zodat iedereen hetzelfde inzicht heeft.
+          in dat jullie zelf afspreken. De fee- en escrowberekening blijft gelijk: 10% platformfee voor community & support
+          plus 1–2% escrowkosten voor rekening van de opdrachtgever. Iedereen ziet dezelfde regels.
         </div>
       </section>
 
