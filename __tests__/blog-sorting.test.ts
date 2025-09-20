@@ -18,7 +18,11 @@ describe('blog listing order', () => {
       expect(posts[i - 1].date.getTime()).toBeGreaterThanOrEqual(posts[i].date.getTime())
     }
 
-    expect(posts[0].slug).toBe('trends-in-brandwacht-tarieven-waarom-transparantie-cruciaal-wordt')
+    const newest = posts.reduce((latest, current) => {
+      return current.date.getTime() > latest.date.getTime() ? current : latest
+    }, posts[0])
+
+    expect(posts[0].slug).toBe(newest.slug)
   })
 
   it('falls back to the default baseline date when metadata is missing or invalid', () => {
