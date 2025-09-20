@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.probrandwacht.nl'),
-  title: 'ProBrandwacht.nl – Brandwacht inhuren (NL)',
+  title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
   description:
-    'Eerlijk brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.',
+    'Het alternatieve brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.',
   keywords: [
     'brandwacht inhuren',
     'brandwacht tarieven',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.probrandwacht.nl',
     siteName: 'ProBrandwacht.nl',
-    title: 'ProBrandwacht.nl',
-    description: 'Brandwacht inhuren in Nederland – eerlijk en veilig.',
+    title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
+    description: 'Brandwacht inhuren in Nederland – alternatief, eerlijk en veilig.',
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform' }],
   },
   twitter: {
