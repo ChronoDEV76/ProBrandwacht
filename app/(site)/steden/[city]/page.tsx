@@ -154,5 +154,5 @@ export default function CityPage({ params }: { params: { city: string } }) {
 }
 
 function isCityKey(value: string): value is CityKey {
-  return Object.hasOwn(DEFAULT_TARIFFS, value)
+  return Object.prototype.hasOwnProperty.call(DEFAULT_TARIFFS, value)
 }
