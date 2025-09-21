@@ -87,9 +87,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Blog over brandveiligheid & zzp-brandwachten</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
         <p className="mt-2 max-w-3xl text-slate-700">
-          Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp’ers én opdrachtgevers.
+          We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
         </p>
       </header>
 
@@ -161,7 +161,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               <p className="mt-2 line-clamp-3 text-sm text-slate-700">{post.excerpt}</p>
               <div className="mt-4 flex items-center justify-between">
                 <Link href={`/blog/${post.slug}`} className="text-sm font-medium text-brand-700 hover:underline">
-                  Lees artikel →
+                  Lees hoe wij de norm verschuiven →
                 </Link>
                 <a
                   href="https://forms.gle/nKrkzY5c145LM5y87"
@@ -169,7 +169,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   rel="noopener noreferrer"
                   className="text-sm text-slate-500 hover:underline"
                 >
-                  Meld je aan als zzp’er
+                  Word onderdeel van de ploeg
                 </a>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             rel="noopener noreferrer"
             className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
           >
-            Meld je aan als zzp’er
+            Sluit je aan bij de ploeg die de norm herschrijft
           </a>
           <Link href="/opdrachtgevers" className="rounded-2xl border px-5 py-3 hover:bg-white">
             Info voor opdrachtgevers

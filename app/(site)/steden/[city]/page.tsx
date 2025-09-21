@@ -1,6 +1,7 @@
 import CostCalculator from '@/components/CostCalculator'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getSignupUrl } from '@/lib/config'
 import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
 
@@ -18,15 +19,32 @@ export function generateStaticParams() {
     { city: 'rotterdam' },
     { city: 'den-haag' },
     { city: 'utrecht' },
-  ]
+  ] satisfies Array<{ city: CityKey }>
 }
 
 function resolveLabel(city: CityKey) {
   return CITY_LABEL[city] ?? city.replace(/-/g, ' ')
 }
 
-export function generateMetadata({ params }: { params: { city: CityKey } }): Metadata {
-  const label = resolveLabel(params.city)
+export function generateMetadata({ params }: { params: { city: string } }): Metadata {
+  const rawCity = params.city
+  if (!isCityKey(rawCity)) {
+    const fallbackCanonical = `/steden/${rawCity}`
+    return {
+      title: 'Stad niet gevonden | ProBrandwacht.nl',
+      description: 'De opgevraagde stadspagina bestaat niet (meer).',
+      alternates: { canonical: fallbackCanonical, languages: { 'nl-NL': fallbackCanonical } },
+      other: { hreflang: 'nl-NL' },
+      openGraph: {
+        url: `https://www.probrandwacht.nl${fallbackCanonical}`,
+        title: 'Stad niet gevonden | ProBrandwacht.nl',
+        description: 'De opgevraagde stadspagina bestaat niet (meer).',
+        type: 'website',
+      },
+    }
+  }
+  const city = rawCity
+  const label = resolveLabel(city)
   const title = `Brandwacht tarieven ${label} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
   const description = `Vergelijk brandwacht tarieven voor ${label} via het alternatieve brandwachtplatform. Zie direct de 10% platformfee en 1–2% escrowkosten zodat opdrachtgever en professional dezelfde kostenopbouw delen.`
   const canonical = `/steden/${params.city}`
@@ -56,10 +74,17 @@ export function generateMetadata({ params }: { params: { city: CityKey } }): Met
   }
 }
 
-export default function CityPage({ params }: { params: { city: CityKey } }) {
-  const city = params.city
+export default function CityPage({ params }: { params: { city: string } }) {
+  const rawCity = params.city
+  if (!isCityKey(rawCity)) {
+    notFound()
+  }
+  const city = rawCity
   const label = resolveLabel(city)
   const ranges = DEFAULT_TARIFFS[city]
+  if (!ranges) {
+    notFound()
+  }
   const signupUrl = getSignupUrl()
 
   return (
@@ -106,24 +131,28 @@ export default function CityPage({ params }: { params: { city: CityKey } }) {
 
       <section className="mt-6 rounded-2xl bg-slate-50 p-6">
         <h3 className="text-lg font-semibold">Voorbeeldcase</h3>
-        <p className="mt-2 text-slate-700">
-          {label}: stel dat je een gecertificeerde brandwacht (BHV/VCA) zoekt voor laswerkzaamheden. Met de calculator
-          hierboven vul je het afgesproken uurtarief in en zie je meteen hoe platformfee en escrow uitpakken.
-        </p>
-        <div className="mt-4 flex flex-wrap items-center gap-3">
-          <a
-            href={signupUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
-          >
-            Start met een proefopdracht
-          </a>
-          <Link href="/opdrachtgevers" className="rounded-2xl border px-5 py-3 hover:bg-white">
-            Lees meer voordelen
-          </Link>
-        </div>
+      <p className="mt-2 text-slate-700">
+        {label}: stel dat je een gecertificeerde brandwacht (BHV/VCA) zoekt voor laswerkzaamheden. Met de calculator
+        hierboven vul je het afgesproken uurtarief in en zie je meteen hoe platformfee en escrow uitpakken.
+      </p>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <a
+          href={signupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
+        >
+          Lanceer de nieuwe standaard in {label}
+        </a>
+        <Link href="/opdrachtgevers" className="rounded-2xl border px-5 py-3 hover:bg-white">
+          Lees meer voordelen
+        </Link>
+      </div>
       </section>
     </main>
   )
+}
+
+function isCityKey(value: string): value is CityKey {
+  return Object.hasOwn(DEFAULT_TARIFFS, value)
 }

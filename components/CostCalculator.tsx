@@ -48,10 +48,7 @@ export default function CostCalculator({
   const [city, setCity] = useState<CityKey>(initialCity)
   const [category, setCategory] = useState<CategoryKey>(initialCategory)
   const [hours, setHours] = useState(8)
-  const [hourly, setHourly] = useState<number>(() => {
-    const base = category === 'industrie' ? tariffs[city].industrie ?? tariffs[city].standaard : tariffs[city].standaard
-    return round2((base.min + base.max) / 2)
-  })
+  const [hourly, setHourly] = useState<number>(() => getMidpointRate(tariffs, city, category))
   const [night, setNight] = useState(false)
   const [weekend, setWeekend] = useState(false)
   const [rush, setRush] = useState(false)
@@ -59,6 +56,11 @@ export default function CostCalculator({
   useEffect(() => {
     runDevTests()
   }, [])
+
+  useEffect(() => {
+    const nextRate = getMidpointRate(tariffs, city, category)
+    setHourly(current => (Math.abs(current - nextRate) < 1e-6 ? current : nextRate))
+  }, [category, city, tariffs])
 
   const adjHourly = useMemo(() => {
     let rate = hourly
@@ -208,4 +210,11 @@ export default function CostCalculator({
       </div>
     </div>
   )
+}
+
+function getMidpointRate(tariffs: TariffConfig, city: CityKey, category: CategoryKey) {
+  const config = tariffs[city] ?? DEFAULT_TARIFFS[city]
+  const range = category === 'industrie' ? config.industrie ?? config.standaard : config.standaard
+  const midpoint = (range.min + range.max) / 2
+  return round2(midpoint)
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getSignupUrl } from '@/lib/config'
 import ShareBar from '@/components/share-bar'
 import { getCityBySlug } from '@/lib/cities'
 
@@ -65,7 +64,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const signupUrl = getSignupUrl()
   const zzpSignupUrl = 'https://forms.gle/fAChpLDNSJWRBHDC7'
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   type FAQItem = { q: string; a: string; ctaUrl?: string }
@@ -167,7 +165,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <section className="space-y-8">
       <h1 className="text-3xl font-semibold">
-        Vind snel een brandwacht in {cityName} met slimme matching
+        Van oude marge-modellen naar slimme matching in {cityName}
       </h1>
       <div>
         <a
@@ -176,17 +174,20 @@ export default function CityPage({ params }: { params: { city: string } }) {
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+          Sluit je aan bij de ploeg die de norm herschrijft
         </a>
       </div>
       <p className="text-slate-600 max-w-2xl">
-        We werken aan ProSafetyMatch, het digitale platform dat brandwachten en opdrachtgevers eerlijk
-        aan elkaar koppelt. Hieronder lees je alvast wat je kunt verwachten bij evenementen, bouw en
-        industriële inzet, inclusief veelgestelde vragen.
+        Vandaag verlies je in {cityName} nog uren aan ondoorzichtige tussenlagen. Morgen werkt de sector met een platform
+        dat tarieven, certificaten en escrow in één oogopslag regelt. Hieronder zie je wat er verandert als jij meebouwt.
       </p>
       <p className="text-sm text-slate-600">
         Tarieven bepaal je altijd samen. Wij tonen transparant de verdeling: 10% platformfee voor community, support en
         matching plus 1–2% escrowkosten voor rekening van de opdrachtgever zodat uitbetaling verzekerd is.
+      </p>
+      <p className="text-sm text-brand-700 font-medium">
+        Vandaag vangt een tussenlaag nog marge; morgen bepalen jij en de professional de regels. Gebruik deze pagina om de
+        stap naar dat nieuwe systeem te zetten.
       </p>
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
@@ -246,14 +247,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
                 {f.ctaUrl ? (
                   <>
                     {' '}
-                    <a
-                      href={f.ctaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline"
-                    >
-                      Meld je aan (gratis)
-                    </a>
+                  <a
+                    href={f.ctaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    Sluit je aan bij de ploeg die de norm herschrijft
+                  </a>
                   </>
                 ) : null}
               </p>

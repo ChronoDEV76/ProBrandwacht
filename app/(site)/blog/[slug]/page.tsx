@@ -26,9 +26,10 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }): Promise<Metadata> {
-  const { frontmatter } = await getPostBySlug(params.slug)
-  const title = frontmatter.title ?? params.slug
-  const description = frontmatter.description ?? 'Brandwacht blog – ProBrandwacht.nl'
+  try {
+    const { frontmatter } = await getPostBySlug(params.slug)
+    const title = frontmatter.title ?? params.slug
+    const description = frontmatter.description ?? 'Brandwacht blog – ProBrandwacht.nl'
   const url = `/blog/${params.slug}`
   const keywords = Array.isArray(frontmatter.keywords)
     ? (frontmatter.keywords as string[])
@@ -68,6 +69,21 @@ export async function generateMetadata({
       description,
       images: [ogImage],
     },
+  }
+  } catch {
+    const fallbackUrl = `/blog/${params.slug}`
+    return {
+      title: 'Artikel niet gevonden | ProBrandwacht.nl',
+      description: 'Het opgevraagde artikel bestaat niet (meer).',
+      alternates: { canonical: fallbackUrl, languages: { 'nl-NL': fallbackUrl } },
+      other: { hreflang: 'nl-NL' },
+      openGraph: {
+        url: `https://www.probrandwacht.nl${fallbackUrl}`,
+        title: 'Artikel niet gevonden | ProBrandwacht.nl',
+        description: 'Het opgevraagde artikel bestaat niet (meer).',
+        type: 'article',
+      },
+    }
   }
 }
 

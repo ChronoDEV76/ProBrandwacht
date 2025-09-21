@@ -159,13 +159,11 @@ export default function HomePage() {
               Verdien wat je waard bent – zonder bureau-marges.
             </h1>
             <p className="text-lg font-medium text-brand-700">
-              Platform voor zzp-brandwachten en opdrachtgevers die een zzp brandwacht willen inhuren – eerlijk,
-              DBA-proof en met escrow-betaling.
+              De digitale standaard voor brandveilig samenwerken.
             </p>
             <p className="text-slate-700 max-w-2xl">
-              Sluit je aan bij ProSafetyMatch en werk rechtstreeks met opdrachtgevers. Jij en de opdrachtgever bepalen het
-              tarief; wij zorgen voor de transparante opbouw, escrow en documenten. We leggen niets op, maar maken helder
-              wat er gebeurt zodat iedereen met vertrouwen tekent.
+              ProSafetyMatch zet bureaumarges buitenspel. Jij kiest het tarief, wij maken elke euro zichtbaar met escrow en
+              documenten die altijd kloppen. Zo bouw je vandaag al aan de standaard van morgen.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -174,7 +172,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
               >
-                Meld je nu aan als zzp’er
+                Sluit je aan bij de ploeg die de norm herschrijft
               </a>
               <Link
                 href="/manifest"
@@ -288,9 +286,9 @@ export default function HomePage() {
                 href="https://forms.gle/fAChpLDNSJWRBHDC7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover/sidebar:black shadow"
+                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
               >
-                Meld je nu aan als zzp’er
+                Sluit je aan bij de ploeg die de norm herschrijft
               </a>
             </div>
           </section>
@@ -369,7 +367,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
           >
-            Meld je nu aan als zzp’er
+            Sluit je aan bij de ploeg die de norm herschrijft
           </a>
             </div>
           </section>
@@ -455,7 +453,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
               >
-                Meld je nu aan als zzp’er
+                Sluit je aan bij de ploeg die de norm herschrijft
               </a>
             </div>
           </section>
