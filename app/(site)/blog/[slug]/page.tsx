@@ -15,6 +15,7 @@ import Prose from '@/components/prose'
 import ShareBar from '@/components/share-bar'
 import { notFound } from 'next/navigation'
 import { coreCities } from '@/lib/cities'
+import { getSignupUrl } from '@/lib/config'
 
 export async function generateStaticParams() {
   const slugs = await getPostSlugs()
@@ -133,6 +134,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       ? frontmatter.ogImage
       : (frontmatter.image as string | undefined),
   )
+  const opdrachtgeverSignupUrl = getSignupUrl()
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -208,12 +210,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </div>
       <div className="mt-8 flex flex-wrap gap-3">
         <a
-          href="https://forms.gle/fAChpLDNSJWRBHDC7"
+          href={opdrachtgeverSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+          Zet de nieuwe standaard: meld je aan als opdrachtgever
         </a>
       </div>
       <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
