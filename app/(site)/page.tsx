@@ -434,7 +434,7 @@ export default function HomePage() {
               <p className="text-sm uppercase tracking-wide text-brand-600">Start vandaag</p>
               <h2 className="text-2xl font-semibold">Zo bouw je mee aan het platform</h2>
               <p className="text-slate-700 max-w-3xl">
-                Jij krijgt als eerste toegang, denkt mee over de roadmap en bouwt mee aan een eerlijker
+                Jij krijgt als eerste toegang, denkt mee over de roadmap en bouwt mee aan een eerlijkere
                 markt. We houden je stap voor stap op de hoogte.
               </p>
             </div>
