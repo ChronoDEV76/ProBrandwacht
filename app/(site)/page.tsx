@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     'Meld je aan als zzp-brandwacht. Eerlijk tarief, escrow-betaling en DBA-proof samenwerken via ProSafetyMatch.',
   keywords: [
+    'brandwacht gezocht zzp',
+    'brandwacht huren',
+    'brandwacht zzp',
+    'brandwacht salaris',
+    'brandwacht kosten',
+    'brandwacht industriële',
+    'brandwacht tarieven',
+    'brandwacht werk',
     'brandwacht platform',
     'brandwacht inhuren',
     'zzp brandwacht inhuren',
