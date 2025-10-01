@@ -1,3 +1,5 @@
+'use client'
+
 import Script from 'next/script'
 import { getGtmId, getGaMeasurementId } from '@/lib/config'
 
@@ -32,9 +34,10 @@ export default function AnalyticsScripts() {
                   dl.push.__pbwWrapped = true;
                 }
               })();
+              })(window,document,'script','dataLayer','${gtmId}');
             `}
           </Script>
-          <noscript>
+          <noscript suppressHydrationWarning>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
               height="0"

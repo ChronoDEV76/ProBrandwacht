@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import SiteHeader from '@/components/site-header'
 import { Inter } from 'next/font/google'
-import AnalyticsScripts from '@/components/analytics'
+import SiteHeader from '@/components/site-header'
+import dynamic from 'next/dynamic'
+
+const AnalyticsScripts = dynamic(() => import('@/components/analytics'), { ssr: false })
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -41,24 +43,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl">
-      <body className={`bg-gradient-to-b from-brand-50 to-white text-slate-800 ${inter.className}`}>
-        <AnalyticsScripts />
-        <SiteHeader />
-        {/* Site-level JSON-LD for LocalBusiness */}
-        {[organizationJsonLd, websiteJsonLd].map((schema, index) => (
-          <script
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(schema),
-            }}
-          />
-        ))}
-        <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
-      </body>
-    </html>
+    <div className={inter.className}>
+      <SiteHeader />
+      {/* Site-level JSON-LD for LocalBusiness */}
+      {[organizationJsonLd, websiteJsonLd].map((schema, index) => (
+        <script
+          // eslint-disable-next-line react/no-array-index-key
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
+      <AnalyticsScripts />
+      <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
+    </div>
   )
 }
 

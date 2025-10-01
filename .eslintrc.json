@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "ignorePatterns": ["node_modules/**", ".next/**", "out/**", "build/**", "coverage/**", "next-env.d.ts"]
+}
