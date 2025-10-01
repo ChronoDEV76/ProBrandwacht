@@ -42,7 +42,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Hoe werkt escrow‑betaling?',
-    a: 'De opdrachtgever betaalt vooraf naar een tussenrekening (escrow). Na bevestigde uitvoering volgt automatische uitbetaling naar de brandwacht. Bij een terechte klacht pauzeren we de uitbetaling en bemiddelen; na oplossing wordt uitgekeerd. Dit voorkomt late betalingen en discussie achteraf.',
+    a: 'De opdrachtgever betaalt vooraf op een tussenrekening (escrow). Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht. Bij een terechte klacht wordt de betaling tijdelijk gepauzeerd totdat er een oplossing is. Zo voorkom je late betalingen en discussies achteraf. ProSafetyMatch treedt niet op als bemiddelaar. Wij zijn een onafhankelijk platform dat uitsluitend de escrow-betaling en de transparante afhandeling faciliteert. Daarmee blijft elke euro inzichtelijk en worden afspraken direct nagekomen, zonder tussenkomst of marge van een bureau.',
   },
   {
     q: 'Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?',
