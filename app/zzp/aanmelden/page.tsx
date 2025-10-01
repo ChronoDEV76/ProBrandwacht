@@ -130,19 +130,13 @@ function LinkButton({ href = "#", children, variant = "primary", className = "",
   );
 }
 
-// -----------------------------
-// Env helper (client)
-// -----------------------------
-function usePublicEnv(key: string, fallback = "#") {
-  const value = typeof process !== "undefined" ? process.env?.[key] : undefined;
-  return value ?? fallback;
-}
+const DROPBOX_URL = process.env.NEXT_PUBLIC_DROPBOX_FILE_REQUEST_URL ?? "#";
 
 // -----------------------------
 // Dropbox hint block
 // -----------------------------
 function DropboxHint() {
-  const url = usePublicEnv("NEXT_PUBLIC_DROPBOX_FILE_REQUEST_URL", "#");
+  const url = DROPBOX_URL;
   const notConfigured = url === "#";
   return (
     <div className="text-sm text-gray-700 bg-blue-50 border border-blue-200 rounded-lg p-3">
