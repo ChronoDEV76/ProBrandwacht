@@ -84,20 +84,19 @@ export default function ManifestPage() {
       <Prose>
         <h1>De nieuwe standaard voor brandwachten in Nederland</h1>
         <p>
-          De brandwachtbranche staat onder druk. Professionals krijgen lage tarieven, bureaus houden
-          hoge marges en transparantie ontbreekt. Opdrachtgevers merken ondertussen dat kwaliteit en
-          motivatie daardoor afnemen. Dat kan én moet beter.
+          De brandwachtbranche staat onder druk. We horen elke week dezelfde verhalen: lage tarieven, laat geld, te veel schakels
+          en te weinig zeggenschap. Professionals en opdrachtgevers verdienen beter. Daarom bouwen we aan een eerlijk en snel alternatief.
         </p>
 
         <h2>🔥 Wat gaat er mis in de markt?</h2>
         <ul>
           <li>
-            <strong>Geen vakbond of collectieve afspraken</strong> → ieder bureau hanteert eigen
+            <strong>Geen vakbond of collectieve afspraken</strong> → iedere tussenpartij hanteert eigen
             spelregels.
           </li>
           <li>
-            <strong>Hoge marges</strong> → opdrachtgevers betalen veel, maar de brandwacht ziet daar
-            weinig van terug.
+            <strong>Hoge marges</strong> → in klassieke modellen blijft een groot deel van het tarief
+            hangen bij management en overhead.
           </li>
           <li>
             <strong>Dumpingtarieven</strong> → tarieven van €30/u lijken aantrekkelijk, maar zorgen voor
@@ -121,19 +120,18 @@ export default function ManifestPage() {
           </li>
           <li>
             <strong>Volledig zzp-brandwachten</strong> – rijksgediplomeerd, vaak met ademlucht en aanvullende certificaten.
-            Ze kiezen voor vrijheid, maar alleen als de beloning eerlijk is en afspraken transparant zijn.
+            Ze kiezen voor vrijheid, maar alleen als de beloning eerlijk is en afspraken helder zijn.
           </li>
           <li>
             <strong>Industrieel inzetbare brandwachten</strong> – beschikken over petrochemische certificaten en projectroutine.
-            Zij willen voorkomen dat ze worden ingezet voor zeer lage bureau-tarieven die motivatie verminderen.
+            Zij willen voorkomen dat ze worden ingezet voor lage tarieven waarbij weinig overblijft voor hun expertise.
           </li>
         </ul>
 
         <h2>✅ Hoe ProSafetyMatch het anders doet</h2>
         <p>
           Wij zijn geen bureau dat tarieven voorschrijft. ProSafetyMatch maakt zichtbaar wat opdrachtgever en zzp’er
-          afspreken, houdt escrow veilig en zorgt dat documenten DBA-proof zijn. Zo behoudt iedereen de regie, maar wel met
-          dezelfde feiten op tafel.
+          afspreken, houdt escrow veilig en zorgt dat documenten DBA-proof zijn. Binnen enkele minuten staat je profiel live en kun je zelf bepalen welke opdrachten bij je passen.
         </p>
         <h3>Eerlijke tarieven</h3>
         <ul>
@@ -144,6 +142,11 @@ export default function ManifestPage() {
         <ul>
           <li>Geen verborgen marges, maar een eerlijke verdeling.</li>
           <li>Escrow‑betalingen zorgen dat je altijd op tijd betaald krijgt.</li>
+        </ul>
+        <h3>Ondernemersvrijheid terug</h3>
+        <ul>
+          <li>Jij kiest opdrachten, tijden en tarieven. Het platform ondersteunt met tooling en betaling, niet met sturing.</li>
+          <li>Geen verkapt dienstverband: je werkt als ondernemer met de voordelen en zekerheid die daarbij horen.</li>
         </ul>
         <h3>Motivatie en kwaliteit centraal</h3>
         <ul>
@@ -174,11 +177,12 @@ export default function ManifestPage() {
           <li>Dit zorgt voor betrokkenheid, vertrouwen en continuïteit op de werkvloer.</li>
         </ul>
 
-        <h3>Lage bureau-tarieven lijken goedkoop, maar kosten uiteindelijk meer</h3>
+        <h3>Waarom extreem lage tarieven uiteindelijk meer kosten</h3>
         <p>
           Zeer scherpe tarieven leveren op korte termijn voordeel op, maar zorgen voor meer uitval, minder motivatie en
-          extra risico’s op de werkvloer. Door afspraken eerlijk vast te leggen en fee/escrow zichtbaar te maken, houden
-          we de kwaliteit hoog én weten opdrachtgever en professional precies waar ze aan toe zijn.
+          extra risico’s op de werkvloer. Of je nu via een bureau of direct samenwerkt: als de verdeling niet klopt,
+          betaalt de kwaliteit de rekening. Door afspraken eerlijk vast te leggen en fee/escrow zichtbaar te maken,
+          houden we de kwaliteit hoog én weten opdrachtgever en professional precies waar ze aan toe zijn.
         </p>
         <p>
           We delen onze inzichten openlijk via blogs, checklists en marktrapporten. Zo blijven opdrachtgevers, repressieve

@@ -59,8 +59,8 @@ export default function OpdrachtgeversPage() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold">Jullie uitdaging</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
-          <Card title="Onduidelijke tarieven" text="Wat gaat er nu echt naar de brandwacht? Bij ons zie je de volledige kostenopbouw." />
-          <Card title="Wisselende motivatie" text="Eerlijke beloning en transparantie zorgen voor betrokken professionals op de werkvloer." />
+          <Card title="Onduidelijke tarieven" text="Wat gaat er nu echt naar de brandwacht? Bij ons zie je de volledige kostenopbouw en versnelde planning." />
+          <Card title="Wisselende motivatie" text="Eerlijke beloning en snelle planning zorgen voor betrokken professionals op de werkvloer." />
           <Card title="Risico & compliance" text="DBA‑proof afspraken, certificaten‑inzicht en escrow verkleinen je operationeel risico." />
         </div>
       </section>
@@ -76,8 +76,8 @@ export default function OpdrachtgeversPage() {
           <ListItem title="DBA‑proof overeenkomsten">
             Heldere rol‑ en resultaatafspraken. De overeenkomst is altijd tussen opdrachtgever en professional.
           </ListItem>
-          <ListItem title="Escrow‑betaling">
-            Jij betaalt vooraf, uitbetaling volgt na correcte uitvoering. Zekerheid voor beide kanten.
+          <ListItem title="Escrow‑betaling & snelheid">
+            Jij betaalt vooraf, uitbetaling volgt na correcte uitvoering. Zekerheid én tempo voor beide kanten.
           </ListItem>
           <ListItem title="Gecertificeerd netwerk">
             Inzicht in certificaten, reviews en beschikbaarheid. Vraag gericht de juiste expertise uit.
@@ -109,7 +109,7 @@ export default function OpdrachtgeversPage() {
       <section className="mb-12 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
         <h2 className="text-2xl font-semibold">Bouw met ons mee</h2>
         <p className="mt-2 max-w-3xl text-slate-700">
-          Het platform is modulair. Geef in je aanmelding aan welke certificaten, rapportages en transparantie je wilt
+          Het platform is modulair. Geef in je aanmelding aan welke certificaten, rapportages en helder inzicht je wilt
           zien. Zo maken we samen de norm voor eerlijk en veilig samenwerken.
         </p>
         <div className="mt-5">

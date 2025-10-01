@@ -106,7 +106,7 @@ export default function CostCalculator({
         opgebouwd, zodat opdrachtgever en professional hetzelfde overzicht delen.
       </p>
       <p className="mt-2 text-xs text-slate-500">
-        Voorbeeldfunctie: ProSafetyMatch stelt geen tarieven vast. Gebruik dit hulpmiddel om transparantie in jullie
+        Voorbeeldfunctie: ProSafetyMatch stelt geen tarieven vast. Gebruik dit hulpmiddel om eerlijk inzicht in jullie
         afspraak te brengen.
       </p>
 

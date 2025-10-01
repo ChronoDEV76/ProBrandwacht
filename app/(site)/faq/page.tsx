@@ -17,8 +17,8 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    q: 'Hoeveel pakt een bureau gemiddeld per uur?',
-    a: 'In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60. Voorbeeld: opdrachtgever betaalt €50 per uur, het bureau pakt €20 en de brandwacht ontvangt €30. In industrie, nacht of weekend ligt het klanttarief hoger, maar de verdeling blijft zelden volledig duidelijk.',
+    q: 'Hoe wordt het tarief verdeeld bij een traditioneel bureau?',
+    a: 'In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60. Voorbeeld: opdrachtgever betaalt €50 per uur, er gaat €20 naar tussenpartij/overhead en de brandwacht ontvangt €30. In industrie, nacht of weekend ligt het klanttarief hoger, maar de verdeling blijft zelden volledig zichtbaar.',
     more: {
       href: '/blog/wat-kost-een-brandwacht-in-2025',
       label: 'Lees: Wat kost een brandwacht in 2025?',
@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Waarom lijkt €30 per uur goedkoop maar pakt het duur uit?',
-    a: 'Een tarief van €30/u klinkt als slimme inkoop, maar de praktijk laat het tegendeel zien: minder motivatie, hogere uitval en extra risico op de werkvloer. Via ProSafetyMatch bepaal je samen een passend tarief, met transparantie over fee en escrow, zodat kwaliteit beloond blijft.',
+    a: 'Een tarief van €30/u klinkt als slimme inkoop, maar de praktijk laat het tegendeel zien: minder motivatie, hogere uitval en extra risico op de werkvloer. Via ProSafetyMatch bepaal je samen een passend tarief, met eerlijke inzichten in fee en escrow, zodat kwaliteit beloond blijft.',
   },
   {
     q: 'Welke typen brandwachten zijn er?',
@@ -38,11 +38,11 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Wat verdien ik als zzp’er via ProBrandwacht straks?',
-    a: 'Het tarief spreek je zelf af met de opdrachtgever. Veel afspraken liggen tussen €38–€45 per uur bij dagdiensten; nacht, weekend, industrie of ademlucht liggen hoger. Wij laten alleen zien wat er met de 10% platformfee en 1–2% escrow gebeurt, zodat je netto direct zichtbaar is.',
+    a: 'Het tarief spreek je zelf af met de opdrachtgever. Veel afspraken liggen tussen €38–€45 per uur bij dagdiensten; nacht, weekend, industrie of ademlucht liggen hoger. Wij laten alleen zien wat er met de 10% platformfee en 1–2% escrow gebeurt, zodat je netto direct zichtbaar is en je ondernemersvrijheid behoudt.',
   },
   {
     q: 'Hoe werkt escrow‑betaling?',
-    a: 'De opdrachtgever betaalt vooraf op een tussenrekening (escrow). Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht. Bij een terechte klacht wordt de betaling tijdelijk gepauzeerd totdat er een oplossing is. Zo voorkom je late betalingen en discussies achteraf. ProSafetyMatch treedt niet op als bemiddelaar. Wij zijn een onafhankelijk platform dat uitsluitend de escrow-betaling en de transparante afhandeling faciliteert. Daarmee blijft elke euro inzichtelijk en worden afspraken direct nagekomen, zonder tussenkomst of marge van een bureau.',
+    a: 'De opdrachtgever betaalt vooraf op een tussenrekening (escrow). Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht. Bij een terechte klacht wordt de betaling tijdelijk gepauzeerd totdat er een oplossing is. Zo voorkom je late betalingen en discussies achteraf. ProSafetyMatch treedt niet op als bemiddelaar. Wij zijn een onafhankelijk platform dat uitsluitend de escrow-betaling en de eerlijke afhandeling faciliteert. Daarmee blijft elke euro inzichtelijk, behoud jij je ondernemerspositie en worden afspraken direct nagekomen, zonder tussenkomst of marge van een bureau.',
   },
   {
     q: 'Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?',

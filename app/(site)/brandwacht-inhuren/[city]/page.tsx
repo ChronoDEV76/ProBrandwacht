@@ -178,11 +178,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </a>
       </div>
       <p className="text-slate-600 max-w-2xl">
-        Vandaag verlies je in {cityName} nog uren aan ondoorzichtige tussenlagen. Morgen werkt de sector met een platform
-        dat tarieven, certificaten en escrow in één oogopslag regelt. Hieronder zie je wat er verandert als jij meebouwt.
+        Vandaag verlies je in {cityName} nog uren aan ondoorzichtige tussenlagen. Wij kennen die vertragingen, en daarom bouwen we aan een platform
+        dat tarieven, certificaten en escrow in één oogopslag regelt zodat jij sneller kunt leveren. Hieronder zie je wat er verandert als jij meebouwt.
       </p>
       <p className="text-sm text-slate-600">
-        Tarieven bepaal je altijd samen. Wij tonen transparant de verdeling: 10% platformfee voor community, support en
+        Tarieven bepaal je altijd samen. Wij tonen eerlijk de verdeling: 10% platformfee voor community, support en
         matching plus 1–2% escrowkosten voor rekening van de opdrachtgever zodat uitbetaling verzekerd is.
       </p>
       <p className="text-sm text-brand-700 font-medium">
