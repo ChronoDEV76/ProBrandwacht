@@ -255,7 +255,10 @@ export default function ZzpAanmeldenPage() {
       {/* Header */}
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-gray-900">Word brandwacht (ZZP)</h1>
-        <p className="text-gray-600">Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vraag je later in je account na <span className="font-medium">iDIN-verificatie</span>.</p>
+        <p className="text-gray-600">
+          Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vraag je later in je account na
+          <span className="font-medium"> iDIN-verificatie</span>.
+        </p>
       </div>
 
       {/* Progress mini-steps */}
@@ -278,23 +281,26 @@ export default function ZzpAanmeldenPage() {
 
       <form onSubmit={onSubmit} className="space-y-6" data-testid="zzp-form">
         <Card>
-          <CardSection title="Contactgegevens" subtitle="We gebruiken deze gegevens om je profiel op te zetten en contact te houden over opdrachten.">
+          <CardSection
+            title="Contactgegevens"
+            subtitle="We gebruiken deze gegevens om je profiel op te zetten en contact te houden over opdrachten."
+          >
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="firstName">Voornaam</Label>
-                <Input id="firstName" name="firstName" required defaultValue={profile.firstName||""} placeholder="Jan" />
+                <Input id="firstName" name="firstName" required defaultValue={profile.firstName || ""} placeholder="Jan" />
               </div>
               <div>
                 <Label htmlFor="lastName">Achternaam</Label>
-                <Input id="lastName" name="lastName" required defaultValue={profile.lastName||""} placeholder="Jansen" />
+                <Input id="lastName" name="lastName" required defaultValue={profile.lastName || ""} placeholder="Jansen" />
               </div>
               <div>
                 <Label htmlFor="email">E‑mail</Label>
-                <Input id="email" name="email" type="email" required defaultValue={profile.email||""} placeholder="jan@example.com" />
+                <Input id="email" name="email" type="email" required defaultValue={profile.email || ""} placeholder="jan@example.com" />
               </div>
               <div>
                 <Label htmlFor="phone" hint="alleen voor match & planning">Telefoon</Label>
-                <Input id="phone" name="phone" required defaultValue={profile.phone||""} placeholder="06…" />
+                <Input id="phone" name="phone" required defaultValue={profile.phone || ""} placeholder="06…" />
               </div>
             </div>
           </CardSection>
