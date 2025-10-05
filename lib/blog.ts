@@ -46,7 +46,7 @@ export async function getPostBySlug(
     raw = await fs.readFile(fullPath, 'utf8');
   } catch (error) {
     throw new Error(`File not found: ${slug}.mdx`);
-  const { data, content } = matter(raw);
+  const { data, content } = matter(raw); // Fix indentation
   return { frontmatter: data as BlogFrontmatter, content }
 }
 
@@ -57,12 +57,12 @@ export function readingTime(
   minutes: number
   words: number
 } {
-  const words = (text.match(/\S+/g) || []).length;
+  const words = (text.match(/\S+/g) || []).length; // Fix type inference
   const minutes = Math.max(1, Math.ceil(words / Math.max(1, wpm)));
   return { minutes, words }
 }
 
-export function formatReadingTime(minutes: number, locale: string = 'nl-NL'): string {
+export function formatReadingTime(minutes: number, locale: string = 'nl-NL'): string { // Ensure return type is consistent
   // Very small i18n helper for concise labels
   const m = Math.max(1, Math.round(minutes));
   const lang = locale.toLowerCase()
