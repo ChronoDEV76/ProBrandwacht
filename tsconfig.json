@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es2020"
-    ],
+    "lib": ["dom", "dom.iterable", "es2020"],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -16,31 +12,43 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "node",
-      "react",
-      "react-dom"
-    ],
+
+    "types": ["node", "react", "react-dom", "vitest"],
+
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     },
     "esModuleInterop": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": [{ "name": "next" }]
   },
+
   "include": [
+    "app",
+    "components",
+    "lib",
+    "styles",
+    "__tests__",
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "next-contentlayer.d.ts",
     ".next/types/**/*.ts"
   ],
+
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".next",
+    "dist",
+    "build",
+    "out",
+    "coverage",
+
+    "vite.config.*",
+    "vitest.config.*",
+    "tailwind.config.*",
+    "postcss.config.*",
+    "next.config.*",
+    "eslint.config.*",
+    "playwright.config.*"
   ]
 }
+
