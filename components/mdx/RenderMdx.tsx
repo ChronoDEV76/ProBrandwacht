@@ -1,24 +1,17 @@
-components/mdx/RenderMdx.tsx
-```tsx
 "use client";
-
 import * as React from "react";
-import { useMDXComponent } from "next-contentlayer/hooks"; // Ensure this is correctly imported
-import type { MDXComponents } from "next-contentlayer/types"; // Import the types for components
+import { useMDXComponent } from "next-contentlayer/hooks";
 
-// Optional: map custom MDX components here
-const defaultComponents = {
-  // code: (p: any) => <pre className="...">{p.children}</pre>,
-};
+type MDXComponents = Record<string, React.ComponentType<any>>;
+const defaultComponents: MDXComponents = {};
 
 export default function RenderMdx({
   code,
   components,
 }: {
   code: string;
-  components?: MDXComponents; // Use the imported MDXComponents type
+  components?: MDXComponents;
 }) {
   const MDX = useMDXComponent(code);
-  return <MDX components={{ ...defaultComponents, ...components }} />;
+  return <MDX components={{ ...defaultComponents, ...(components || {}) }} />;
 }
-
