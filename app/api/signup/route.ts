@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { NextRequest } from 'next/server'; // Import NextRequest
-import rateLimit from 'express-rate-limit'; // Assuming you're using express-rate-limit
 
 const signupSchema = z.object({
   email: z.string().email(),
@@ -15,16 +14,14 @@ const limiter = rateLimit({
 export async function POST(req: NextRequest) { // Change Request to NextRequest
   try {
     const json = await req.json();
-    const parsed = signupSchema.parse(json); // Validate input
-    console.log("SIGNUP", parsed); // Move this line inside the try block
-    // Process the validated data
-    console.log("SIGNUP", parsed);
-    return new Response("ok");
+    const body = await req.json(); // Use body instead of parsed
+    console.log("SIGNUP", body); // Log body
+    return NextResponse.json({ ok: true }); // Return JSON response
   } catch (error) {
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
   }
-  // TODO: persist to DB/CRM + KYC trigger (MVP: console)
-  console.log("ZZP_SIGNUP", parsed.data);
-  return new Response("ok");
+export async function GET() { // Add GET method
+    return NextResponse.json({ ok: true });
+}
 }
 
