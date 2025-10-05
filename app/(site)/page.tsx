@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { coreCities } from '@/lib/cities'
+import { authoritativeSources } from '@/lib/seo/authoritative-sources'
 
 export const metadata: Metadata = {
   title: 'ZZP brandwacht inhuren | ProBrandwacht.nl',
   description:
-    'Meld je aan als zzp-brandwacht. Vergelijk bestaande bureauconstructies met een eerlijk alternatief via ProSafetyMatch.',
+    'Meld je aan als zzp-brandwacht. Vergelijk traditionele bureauconstructies met een transparant zzp-brandwacht tarief, escrow-betaling en DBA-proof overeenkomsten via ProSafetyMatch.',
   keywords: [
     'brandwacht gezocht zzp',
     'brandwacht huren',
@@ -140,6 +141,7 @@ const faqItems = [
 ]
 
 const keyCities = coreCities
+const highlightedSources = authoritativeSources.slice(0, 4)
 
 export default function HomePage() {
   const faqSchema = {
@@ -164,16 +166,16 @@ export default function HomePage() {
           <header className="space-y-6">
             <p className="text-sm uppercase tracking-wide text-brand-600">Voor zzp-brandwachten</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
-              Eerlijk werk. Jij aan het roer.
+              ZZP-brandwacht tarief zonder verborgen marge.
             </h1>
             <p className="text-lg font-medium text-brand-700">
-              Geen verborgen marges, geen gedoe – één platform dat jouw tempo volgt.
+              Geen tussenpersoon, wél transparante uurtarieven, escrow-betaling en DBA-proof afspraken.
             </p>
             <p className="text-slate-700 max-w-2xl">
-              Wij geloven dat je recht hebt op eerlijk werk. Jij doet je eigen werk en bepaalt je eigen tarief, wij zorgen voor de infrastructuur: escrow, certificaten en directe matching. Binnen minuten staat straks je profiel live en ben je inzetbaar zonder eindeloos wachten op een tussenpartij.
+              Jij bepaalt je tarief, wij faciliteren de infrastructuur: escrow, certificaten, compliance en directe matching. Binnen minuten staat straks je profiel live en ben je inzetbaar zonder eindeloos wachten op een tussenpartij.
             </p>
             <p className="text-slate-700 max-w-2xl">
-              Zo vergelijk je eenvoudig met bestaande bureauafspraken, beweeg je sneller van aanvraag naar inzet en blijf je ondernemer met eigen regie in plaats van een verkapte medewerker zonder zekerheid.
+              Zo vergelijk je eenvoudig met bestaande bureauconstructies, beweeg je sneller van aanvraag naar inzet en blijf je ondernemer met eigen regie. Alle berekeningen sluiten aan op officiële cijfers van CBS, KVK, Belastingdienst en FNV.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -289,20 +291,58 @@ export default function HomePage() {
             <p className="text-xs text-slate-400">
               Bedragen zijn indicatief om het verschil in marges te tonen. Jij stelt altijd zelf je definitieve tarief vast.
             </p>
-            <div>
-              <a
-                href="https://forms.gle/fAChpLDNSJWRBHDC7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-              >
-                Sluit je aan bij de ploeg die de norm herschrijft
-              </a>
-            </div>
-          </section>
+          <div>
+            <a
+              href="https://forms.gle/fAChpLDNSJWRBHDC7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+            >
+              Sluit je aan bij de ploeg die de norm herschrijft
+            </a>
+          </div>
+        </section>
 
-          <section className="space-y-6">
-            <div className="space-y-2">
+        <section className="space-y-4 rounded-2xl border border-brand-100 bg-brand-50/60 p-6 shadow-sm">
+          <h2 className="text-2xl font-semibold text-brand-800">Onderbouwd met officiële bronnen</h2>
+          <p className="text-sm text-slate-700">
+            We gebruiken data van CBS, KVK, Belastingdienst, FNV en andere autoriteiten voor onze tariefbandbreedtes,
+            escrowpercentages en DBA-proof documenten. Daarmee bewijs je richting opdrachtgevers en inspecties dat jouw
+            zzp-brandwacht tarief marktconform en transparant is.
+          </p>
+          <ul className="grid gap-4 md:grid-cols-2">
+            {highlightedSources.map(source => (
+              <li key={source.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="text-sm font-semibold text-slate-900">{source.title}</p>
+                <p className="mt-1 text-xs text-slate-600">{source.description}</p>
+                <ul className="mt-2 space-y-1">
+                  {source.links.map(link => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium text-brand-700 underline hover:text-brand-800"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-slate-500">
+            Alle bronnen op één plek? Bekijk de volledige lijst voor copywriters en marketeers op{' '}
+            <Link href="/seo-resources" className="font-medium text-brand-700 underline hover:text-brand-800">
+              autoritaire bronnen voor brandwachtcontent
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <div className="space-y-2">
               <p className="text-sm uppercase tracking-wide text-brand-600">Voor wie</p>
               <h2 className="text-2xl font-semibold">Drie groepen brandwachten, één platform</h2>
               <p className="text-slate-700 max-w-3xl">

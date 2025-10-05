@@ -25,6 +25,14 @@ const faqs: FAQItem[] = [
     },
   },
   {
+    q: 'Welke officiële bronnen gebruiken jullie voor tarieven en regelgeving?',
+    a: 'We leunen op cijfers van CBS (cao-lonen en loonkosten), KVK (uurtarief berekenen als zzp’er), Belastingdienst (Wet DBA) en FNV (cao Veiligheidsregio’s & ORT). Door die bronnen te koppelen aan onze escrow- en tariefberekeningen kun jij opdrachtgevers onderbouwen waarom een transparant tarief nodig is.',
+    more: {
+      href: '/seo-resources',
+      label: 'Bekijk alle autoritaire bronnen',
+    },
+  },
+  {
     q: 'Waarom lijkt €30 per uur goedkoop maar pakt het duur uit?',
     a: 'Een tarief van €30/u klinkt als slimme inkoop, maar de praktijk laat het tegendeel zien: minder motivatie, hogere uitval en extra risico op de werkvloer. Via ProSafetyMatch bepaal je samen een passend tarief, met eerlijke inzichten in fee en escrow, zodat kwaliteit beloond blijft.',
   },

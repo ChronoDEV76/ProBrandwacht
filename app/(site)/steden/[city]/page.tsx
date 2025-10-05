@@ -1,4 +1,4 @@
-import CostCalculator from '@/components/CostCalculator'
+import CostCalculator from '@/components/cost-calculator'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'

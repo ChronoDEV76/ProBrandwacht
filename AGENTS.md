@@ -1,55 +1,48 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-
-- `app/`: Next.js App Router routes (e.g., `api/`, `(site)/`).
-- `components/`: Reusable React components (e.g., `site-header.tsx`).
-- `lib/`: Server/util code (e.g., `blog.ts`, `cities.ts`).
-- `content/`: MDX content (e.g., `content/blog/*.mdx`).
-- `public/`: Static assets served at `/`.
-- `styles/`: Global styles (`globals.css`, Tailwind).
-- Root config: `next.config.ts`, `tailwind.config.ts`, `eslint.config.mjs`, `tsconfig.json`.
+- `app/`: Next.js routes, layouts, and API handlers; keep loaders beside pages.
+- `components/`: Shared client components for UI primitives.
+- `lib/`: Typed server utilities and helpers for pricing, escrow, and compliance flows.
+- `content/`: MDX marketing copy; track SEO pillars such as “DBA-proof brandwacht” and “brandwacht inhuren”.
+- `public/`: Raw assets exposed at root paths (logos, poort-QR check-in visuals).
+- `styles/`: Global CSS and Tailwind layers (`styles/globals.css`).
+- `__tests__/`: Vitest suites mirroring feature folders.
 
 ## Build, Test, and Development Commands
-
-- Local dev: `pnpm dev` — Next.js on `http://localhost:3000`.
-- Build: `pnpm build` — production bundle.
-- Start: `pnpm start` — run built app.
-- Lint: `pnpm lint` — ESLint with Next rules.
-- Test (Vitest): `pnpm test` (run), `pnpm test:watch`, `pnpm test:coverage`.
-- Alt tests (Jest): `pnpm test:jest` if your env restricts native builds.
-- Format (Prettier): `pnpm format` to write, `pnpm format:check` to verify.
-- Env: copy `.env.local.example` to `.env.local`. Never commit secrets.
-- Requirements: Node 18.17+; pnpm preferred.
+- `pnpm dev`: start the dev server on `http://localhost:3000` with HMR.
+- `pnpm build`: create the production bundle and surface data warnings.
+- `pnpm start`: serve the built app to verify fixes.
+- `pnpm lint`: run `next lint` with project rules.
+- `pnpm typecheck`: `tsc --noEmit` for strict typing.
+- `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`: run Vitest once, in watch mode, or with coverage.
+- `pnpm format` / `pnpm format:check`: write or verify Prettier formatting.
 
 ## Coding Style & Naming Conventions
-
-- Language: TypeScript (`strict: true`).
-- Components: Functional components; default export when file has a single component.
-- Filenames: `kebab-case` (e.g., `site-header.tsx`, `jsonld.tsx`). Component names: `PascalCase`.
-- Indentation: 2 spaces; single quotes; no semicolons (Prettier enforced).
-- Styling: Tailwind CSS utilities in JSX; prefer small, composable components.
-- Linting: `eslint-config-next` + `eslint-config-prettier`. Fix or justify warnings in PRs.
+- TypeScript only; annotate props, loaders, and MDX helpers.
+- Functional React components; default-export single-component files.
+- Filenames use `kebab-case`; components `PascalCase`; hooks/utilities `camelCase`.
+- Prettier enforces 2 spaces, single quotes, and no semicolons.
+- Tailwind utilities style JSX; extract shared patterns into small components or `lib` helpers.
+- ESLint extends `eslint-config-next` and `eslint-config-prettier`; resolve warnings before merge.
 
 ## Testing Guidelines
+- Vitest with Testing Library and JSDOM via `vitest.setup.ts`.
+- Place specs in `__tests__/` or as `*.test.ts(x)` beside code.
+- Cover escrow, gasmeting/gasmeter, and ERT/rescue team flows; confirm via `pnpm test:coverage`.
+- Mock remote calls through `lib/` helpers to keep runs deterministic.
 
-- Framework: Vitest with Testing Library (`@testing-library/react`, `@testing-library/jest-dom`).
-- Structure: `__tests__/` or co-locate as `*.test.ts(x)`.
-- Coverage: keep critical utils/components covered; check `pnpm test:coverage`.
-- Example: see `__tests__/smoke.test.tsx`.
+## SEO & Content Notes
+- Refresh MDX copy for gecontroleerde certificaten, industrieel/industriële brandwacht, mangatwacht/buitenwacht, and 24/7,zzp brandwacht tarieven.
+- Use headings for poort-QR check-in, brandwacht rijksgediplomeerd, and gasmeting/gasmeter services.
+- Link CTAs when highlighting DBA-proof brandwacht or brandwacht inhuren packages.
 
 ## Commit & Pull Request Guidelines
-
-- Commits: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`). One concern per commit.
-- PRs: Clear description, linked issues, screenshots for UI changes, test plan, and Vercel preview URL when available.
-- Scope: Keep PRs small and focused; update docs/config when behavior changes.
+- Follow Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`).
+- Keep PRs focused; include summary, linked issue, screenshots for UI, and executed checks.
+- Ensure lint, typecheck, and tests pass; attach Vercel preview URLs when available.
 
 ## Security & Configuration Tips
-
-- Use `NEXT_PUBLIC_` prefix only for safe, public env vars.
-- Never commit secrets. Add `.env.local` only; validate config in PRs.
-
-## Install Dev Tools (one-time)
-
-- Install dev deps: `pnpm add -D vitest @testing-library/react @testing-library/jest-dom jsdom @types/jsdom prettier eslint-config-prettier`.
-- Optionally run `pnpm format` once to normalize formatting.
+- Never commit `.env.local`; copy from `.env.local.example`.
+- Prefix client-safe values with `NEXT_PUBLIC_`; review new keys with maintainers.
+- Update `vercel.json` and Tailwind tokens carefully to avoid regressions.

@@ -204,6 +204,21 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         </ul>
       </section>
 
+      <section className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/60 p-6 shadow-sm">
+        <h3 className="text-lg font-semibold text-brand-800">Schrijf met autoriteit</h3>
+        <p className="mt-2 text-sm text-slate-700">
+          Al onze artikelen verwijzen naar dezelfde officiële bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
+          zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s. Gebruik deze bronnenlijst bij
+          nieuwe content om je E-A-T te versterken en lezers direct naar de originele regelgeving te leiden.
+        </p>
+        <Link
+          href="/seo-resources"
+          className="inline-flex items-center rounded-md border border-brand-200 bg-white px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-100"
+        >
+          Bekijk alle autoritaire bronnen →
+        </Link>
+      </section>
+
       <section className="mt-10 rounded-2xl bg-slate-50 p-6 text-center">
         <h3 className="text-xl font-semibold">Klaar voor eerlijk samenwerken?</h3>
         <p className="mt-2 text-slate-700">

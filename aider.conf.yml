@@ -1,0 +1,56 @@
+# .aider.conf.yml
+# ProBrandwacht — Next.js (App Router) + Vitest + Tailwind
+
+# Use a fast/cheap coding model by default; switch to gpt-4o when you need deeper refactors.
+model: gpt-4o-mini
+
+# Let Aider read the whole repo on demand (no need to /add every file),
+# but exclude build artifacts, binaries, and secrets.
+read:
+  - "**/*"
+  - ".*"
+
+read_exclude:
+  - "node_modules/**"
+  - ".git/**"
+  - ".next/**"
+  - "dist/**"
+  - "build/**"
+  - "out/**"
+  - "coverage/**"
+  - ".turbo/**"
+  - ".vercel/**"
+  - ".idea/**"
+  - ".vscode/**"
+  - "*.lock"
+  - "*.log"
+  - "*.map"
+  - "*.zip"
+  - "*.tar.gz"
+  - "public/**/*.{png,jpg,jpeg,webp,avif,gif,svg,ico,mp4,mp3,pdf}"
+  - ".env*"
+
+# Files Aider is allowed to EDIT by default (you can still /add others explicitly).
+# Keeps marketing copy & MDX read-only unless you decide to edit it.
+add:
+  - "package.json"
+  - "vitest.config.*"
+  - "tsconfig*.json"
+  - "postcss.config.*"
+  - "tailwind.config.*"
+  - "vite.config.*"
+  - "next.config.*"
+  - "app/**/*.{ts,tsx,js,jsx}"
+  - "components/**/*.{ts,tsx,js,jsx}"
+  - "lib/**/*.{ts,tsx,js,jsx}"
+  - "styles/**/*.{css,scss}"
+  - "__tests__/**/*.{ts,tsx,js,jsx}"
+
+# Extra guardrails: don’t auto-edit MDX marketing content unless you explicitly /add it.
+add_exclude:
+  - "content/**/*.{md,mdx}"
+
+# Optional quality-of-life notes (pure comments):
+# - Use /run to drive your toolchain: /run npm run lint | typecheck | build | test
+# - If you DO want Aider to edit MDX, just: /add content/**/*
+
