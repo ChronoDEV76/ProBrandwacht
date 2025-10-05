@@ -5,7 +5,7 @@ export const PSM_ZzpProfileV1 = z.object({
   firstName: z.string().min(2),
   lastName: z.string().min(2),
   email: z.string().email(),
-  kvk: z.string().min(8),
+  kvk: z.string().min(8).max(9), // Adjusted to allow for 8-9 digits
   btw: z.string().optional(),
   skills: z.string().optional(),
   certificateRef: z.string().optional(), // "VCA_JanJansen.pdf; BHV_JanJansen.pdf"
