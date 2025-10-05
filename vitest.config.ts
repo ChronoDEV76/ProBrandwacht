@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitest/config';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 export default defineConfig({
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -6,6 +8,9 @@ import path from 'node:path'
 export default defineConfig({
   esbuild: { jsx: 'automatic' },
   resolve: {
+    alias: {
+      '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.'),
+    },
     alias: {
       '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.'),
     },

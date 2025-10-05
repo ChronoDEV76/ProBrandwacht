@@ -4,6 +4,12 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
   recommendedConfig: false,
   allConfig: false,
+  alias: {
+    '@': path.resolve(__dirname, './src'),
+  },
+  baseDirectory: __dirname,
+  recommendedConfig: false,
+  allConfig: false,
 })
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
