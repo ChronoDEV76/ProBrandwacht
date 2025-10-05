@@ -64,7 +64,7 @@ export default function ZzpImportPage() {
         <input
           ref={inputRef}
           type="file"
-          accept="application/json"
+          accept=".json"
           className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];

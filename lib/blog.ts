@@ -41,7 +41,11 @@ export async function getPostBySlug(
   slug: string,
 ): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
   const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
-  const raw = await fs.readFile(fullPath, 'utf8')
+  let raw;
+  try {
+    raw = await fs.readFile(fullPath, 'utf8');
+  } catch (error) {
+    throw new Error(`File not found: ${slug}.mdx`);
   const { data, content } = matter(raw)
   return { frontmatter: data as BlogFrontmatter, content }
 }
