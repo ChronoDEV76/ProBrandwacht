@@ -13,7 +13,7 @@
     "jsx": "preserve",
     "incremental": true,
 
-    "types": ["node", "react", "react-dom", "vitest"],
+    "types": ["node", "react", "react-dom", "vitest", "@testing-library/jest-dom"],
 
     "baseUrl": ".",
     "paths": {
