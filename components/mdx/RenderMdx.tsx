@@ -13,5 +13,5 @@ export default function RenderMdx({
   components?: MDXComponents;
 }) {
   const MDX = useMDXComponent(code);
-  return <MDX components={{ ...defaultComponents, ...(components || {}) }} />;
+  return <MDX components={{ ...defaultComponents, ...(components || {}) }} type="button" />; // Ensure button type is set
 }

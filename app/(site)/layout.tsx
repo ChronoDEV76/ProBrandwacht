@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.probrandwacht.nl'),
-  title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
+  title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform', // Ensure this is descriptive
   description:
     'Het alternatieve brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.',
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'ProBrandwacht.nl',
     title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
     description: 'Brandwacht inhuren in Nederland – alternatief, eerlijk en veilig.',
-    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform' }],
+    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform - A visual representation of our services' }], // Ensure alt text is descriptive
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,6 +44,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={inter.className}>
+      <h1 className="sr-only">ProBrandwacht.nl</h1> // Add a hidden heading for accessibility
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}
       {[organizationJsonLd, websiteJsonLd].map((schema, index) => (
