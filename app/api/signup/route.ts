@@ -15,11 +15,12 @@ export async function POST(req: Request) {
   try {
     const json = await req.json();
     const parsed = signupSchema.parse(json); // Validate input
+    console.log("SIGNUP", parsed);
     // Process the validated data
     console.log("SIGNUP", parsed);
     return new Response("ok");
   } catch (error) {
-    return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
   }
   // TODO: persist to DB/CRM + KYC trigger (MVP: console)
   console.log("ZZP_SIGNUP", parsed.data);
