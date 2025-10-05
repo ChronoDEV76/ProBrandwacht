@@ -1,9 +1,11 @@
+components/mdx/RenderMdx.tsx
+```tsx
 "use client";
 
 import * as React from "react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
-// Optioneel: je MDX component map (code blocks, tabellen, etc.)
+// Optional: map custom MDX components here
 const defaultComponents = {
   // code: (p: any) => <pre className="...">{p.children}</pre>,
 };
