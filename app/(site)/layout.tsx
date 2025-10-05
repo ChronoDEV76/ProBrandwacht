@@ -44,10 +44,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={inter.className}>
-      <h1 className="sr-only">ProBrandwacht.nl</h1> // Add a hidden heading for accessibility
+      <h1 className="sr-only">ProBrandwacht.nl</h1> {/* Add a hidden heading for accessibility */}
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}
-      {[organizationJsonLd, websiteJsonLd].map((schema, index) => (
+      {[organizationJsonLd, websiteJsonLd].map((schema, index: number) => (
         <script
           // eslint-disable-next-line react/no-array-index-key
           key={index}
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       ))}
-      <AnalyticsScripts />
+      <AnalyticsScripts /> {/* Ensure analytics scripts are loaded */}
       <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
     </div>
   )
