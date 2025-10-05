@@ -46,7 +46,8 @@ export async function getPostBySlug(
     raw = await fs.readFile(fullPath, 'utf8');
   } catch (error) {
     throw new Error(`File not found: ${slug}.mdx`);
-  const { data, content } = matter(raw); 
+  const { data, content } = matter(raw);
+  return { frontmatter: data as BlogFrontmatter, content }
   return { frontmatter: data as BlogFrontmatter, content }
 }
 
@@ -57,14 +58,14 @@ export function readingTime(
   minutes: number
   words: number
 } {
-  const words = (text.match(/\S+/g) || []).length; 
+  const words = (text.match(/\S+/g) || []).length;
   const minutes = Math.max(1, Math.ceil(words / Math.max(1, wpm)));
   return { minutes, words }
 }
 
 export function formatReadingTime(minutes: number, locale: string = 'nl-NL'): string { 
   // Very small i18n helper for concise labels
-  const m = Math.max(1, Math.round(minutes));
+  const m = Math.max(1, Math.round(minutes)); 
   const lang = locale.toLowerCase()
   if (lang.startsWith('nl')) return `${m} min leestijd`;
   return `${m} min read`;
