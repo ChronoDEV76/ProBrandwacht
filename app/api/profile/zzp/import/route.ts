@@ -1,7 +1,8 @@
 import { PSM_ZzpProfileV1 } from "@/lib/schemas/psm-profile-v1";
 
 export async function POST(req: Request) {
-  const body = await req.json().catch(() => {
+  const body = await req.json().catch((error) => {
+    console.error("Error parsing JSON:", error);
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
   });
   const parsed = PSM_ZzpProfileV1.safeParse(body);

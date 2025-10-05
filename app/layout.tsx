@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "ProSafetyMatch – aanmeldingen",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode | null }) {
   return (
     <html lang="nl" className="h-full">
       <body className="min-h-screen bg-gradient-to-b from-brand-50 to-white text-slate-800">

@@ -13,7 +13,7 @@ export default function ZzpImportPage() {
     setMessage("");
     try {
       const text = await file.text();
-      const json = JSON.parse(text);
+      const json = JSON.parse(text || "{}");
       const res = await fetch("/api/profile/zzp/import", {
         method: "POST",
         headers: { "content-type": "application/json" },

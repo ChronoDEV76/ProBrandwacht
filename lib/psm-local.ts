@@ -6,11 +6,11 @@ export function saveZzpLocalWithVersion(entries: Record<string, string>) {
   localStorage.setItem(ZZP_LOCAL_KEY, JSON.stringify(payload));
 }
 
-export function loadZzpLocal<T = unknown>(): T | null {
+export function loadZzpLocal<T = unknown>(): T | undefined {
   if (typeof window === "undefined") return null;
   try {
     const raw = localStorage.getItem(ZZP_LOCAL_KEY);
-    return raw ? (JSON.parse(raw) as T) : null;
+    return raw ? (JSON.parse(raw) as T) : undefined;
   } catch {
     return null;
   }
