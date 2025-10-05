@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     console.error("Error parsing JSON:", error);
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 });
   });
-  const parsed = PSM_ZzpProfileV1.safeParse(body as unknown);
+  const parsed = ZzpProfileSchema.safeParse(body as unknown);
   if (!parsed.success) {
     return new Response(JSON.stringify({ error: parsed.error.flatten() }), {
       status: 400,

@@ -13,7 +13,7 @@ export default function ZzpImportPage() {
     setMessage("");
     try {
       const text = await file.text();
-      const json = JSON.parse(text || "{}"); // Ensure valid JSON
+      const json = JSON.parse(text); // Ensure valid JSON
       if (!json || typeof json !== 'object') {
         throw new Error("Invalid JSON structure");
       }

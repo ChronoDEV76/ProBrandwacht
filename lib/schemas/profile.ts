@@ -19,7 +19,7 @@ export const ClientProfileSchema = z.object({
   kvk: z.string().min(8),
   contact: z.string().min(3),
   email: z.string().email(),
-  phone: z.string().optional(),
+  phone: z.string().min(6).max(15).optional().nullable(), // Allow null values
   region: z.string().optional(),
   needs: z.string().optional(),
 });

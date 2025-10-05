@@ -2,7 +2,7 @@ export const ZZP_LOCAL_KEY = "psm_profile_zzp";
 
 export function saveZzpLocalWithVersion(entries: Record<string, string>) {
   if (typeof window === "undefined") return;
-  const payload = { schemaVersion: "psm-profile/zzp@v1", ...entries };
+  const payload = { schemaVersion: "psm-profile/zzp@v1", ...entries || {} };
   try {
     localStorage.setItem(ZZP_LOCAL_KEY, JSON.stringify(payload));
   } catch (error) {
