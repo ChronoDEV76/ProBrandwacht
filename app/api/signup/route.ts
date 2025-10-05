@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { NextRequest } from 'next/server'; // Import NextRequest
 import rateLimit from 'express-rate-limit'; // Assuming you're using express-rate-limit
 
 const signupSchema = z.object({
@@ -11,11 +12,11 @@ const limiter = rateLimit({
   max: 100, // Limit each IP to 100 requests per windowMs
 });
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) { // Change Request to NextRequest
   try {
     const json = await req.json();
     const parsed = signupSchema.parse(json); // Validate input
-    console.log("SIGNUP", parsed);
+    console.log("SIGNUP", parsed); // Move this line inside the try block
     // Process the validated data
     console.log("SIGNUP", parsed);
     return new Response("ok");
