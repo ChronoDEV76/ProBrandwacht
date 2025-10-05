@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '@/styles/globals.css'
+import '@/styles/globals.css' // Ensure this is present
 import { Inter } from 'next/font/google'
 import SiteHeader from '@/components/site-header'
 import dynamic from 'next/dynamic'

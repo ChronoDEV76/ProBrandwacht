@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './content/**/*.{md,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
+    './components/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
+    './content/**/*.{md,mdx}', // Ensure this is included
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
   ],
   theme: {
     extend: {
