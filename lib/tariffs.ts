@@ -3,7 +3,7 @@ export type CategoryKey = 'evenementen_bouw' | 'industrie'
 
 export type Range = { min: number; max: number }
 
-export type TariffConfig = Record<CityKey, { standaard: Range; industrie?: Range }>
+export type TariffConfig = Record<CityKey, { standaard: Range; industrie?: Range | undefined }> // Ensure optionality
 
 export const DEFAULT_TARIFFS: TariffConfig = { 
   amsterdam: { standaard: { min: 50, max: 55 }, industrie: { min: 60, max: 70 } },

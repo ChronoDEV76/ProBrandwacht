@@ -1,4 +1,5 @@
-import { PSM_ZzpProfileV1 } from "@/lib/schemas/psm-profile-v1";
+import { ZzpProfileSchema } from "@/lib/schemas/profile"; // Updated import
+import { PSM_ZzpProfileV1 } from "@/lib/schemas/psm-profile-v1"; // Ensure this is correct
 
 export async function POST(req: Request) {
   const body = await req.json().catch((error) => {
