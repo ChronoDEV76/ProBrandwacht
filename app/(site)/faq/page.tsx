@@ -118,16 +118,6 @@ export default function FAQPage() {
           </li>
         ))}
       </ul>
-      <div>
-        <a
-          href="https://www.probrandwacht.nl/zzp/aanmelden"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
-        >
-          Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
-        </a>
-      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
