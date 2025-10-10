@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
@@ -130,7 +130,9 @@ function LinkButton({ href = "#", children, variant = "primary", className = "",
   );
 }
 
-const DROPBOX_URL = process.env.NEXT_PUBLIC_DROPBOX_FILE_REQUEST_URL ?? "#";
+const FALLBACK_DROPBOX_URL =
+  "https://www.dropbox.com/scl/fo/axkyvuoh62y36std3jgsf/AGWQLvWGla_8-uzmwfN6LRU?rlkey=44eawj25bofwgc5sbqbkzp849&st=iqlg0q16&dl=0";
+const DROPBOX_URL = process.env.NEXT_PUBLIC_DROPBOX_FILE_REQUEST_URL?.trim() || FALLBACK_DROPBOX_URL;
 
 // -----------------------------
 // Dropbox hint block
@@ -203,20 +205,47 @@ function formDataToProfile(form: FormData): ProfileValues {
 export default function ZzpAanmeldenPage() {
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [profile, setProfile] = useState<ProfileValues>(() => loadLocal<ProfileValues>(STORAGE_KEY_ZZP) ?? {});
+  const [submitting, setSubmitting] = useState(false);
+  const [profile, setProfile] = useState<ProfileValues>({});
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    const storedProfile = loadLocal<ProfileValues>(STORAGE_KEY_ZZP);
+    if (storedProfile) {
+      setProfile(storedProfile);
+    }
+  }, []);
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
+    setSubmitting(true);
     const form = new FormData(e.currentTarget);
     const data = formDataToProfile(form);
     try {
+      const payload = {
+        type: "zzp_signup",
+        submittedAt: new Date().toISOString(),
+        userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
+        data,
+      };
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
       saveLocal(STORAGE_KEY_ZZP, data);
       setProfile(data);
       setDone(true);
-    } catch {
-      setError("Opslaan in je browser is mislukt. Controleer je instellingen (localStorage).");
+    } catch (error) {
+      console.error("Failed to submit ZZP signup", error);
+      setError(
+        "We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@probrandwacht.nl."
+      );
     }
+    setSubmitting(false);
   }
 
   const hasProfile = Object.keys(profile).length > 0;
@@ -227,7 +256,7 @@ export default function ZzpAanmeldenPage() {
         <Card>
           <CardSection
             title="Aanmelding opgeslagen ✅"
-            subtitle="Je gegevens zijn lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in na iDIN-verificatie in ProSafetyMatch."
+            subtitle="Je gegevens zijn gelogd voor ons platform en lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in tijdens de profielverificatie zodra je toegang krijgt tot de beta."
           >
             <div className="grid gap-4">
               <DropboxHint />
@@ -254,18 +283,21 @@ export default function ZzpAanmeldenPage() {
     <div className="max-w-3xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Word brandwacht (ZZP)</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
         <p className="text-gray-600">
-          Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vraag je later in je account na
-          <span className="font-medium"> iDIN-verificatie</span>.
+          Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vul je later in tijdens je
+          profielverificatie.
+        </p>
+        <p className="text-sm text-amber-700">
+          Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over test momenten, feedbacksessies en de overstap naar het live platform.
         </p>
       </div>
 
       {/* Progress mini-steps */}
       <ol className="flex items-center gap-4 text-sm">
         <li className="flex items-center gap-2 text-blue-700"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">1</span> Basisgegevens</li>
-        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">2</span> iDIN + Certificaten</li>
-        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">3</span> Betaalgegevens (IBAN)</li>
+        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">2</span> Certificaten</li>
+        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">3</span> iDIN + Betaalgegevens (IBAN)</li>
       </ol>
 
       {/* Form */}
@@ -297,10 +329,6 @@ export default function ZzpAanmeldenPage() {
               <div>
                 <Label htmlFor="email">E‑mail</Label>
                 <Input id="email" name="email" type="email" required defaultValue={profile.email || ""} placeholder="jan@example.com" />
-              </div>
-              <div>
-                <Label htmlFor="phone" hint="alleen voor match & planning">Telefoon</Label>
-                <Input id="phone" name="phone" required defaultValue={profile.phone || ""} placeholder="06…" />
               </div>
             </div>
           </CardSection>
@@ -342,7 +370,9 @@ export default function ZzpAanmeldenPage() {
         </Card>
 
         <div className="flex flex-wrap gap-3">
-          <Button type="submit" data-testid="zzp-submit">Opslaan in browser</Button>
+          <Button type="submit" data-testid="zzp-submit" disabled={submitting}>
+            {submitting ? "Bezig met opslaan…" : "Aanmelding opslaan"}
+          </Button>
           <LinkButton href="/" variant="ghost">Annuleren</LinkButton>
         </div>
       </form>
