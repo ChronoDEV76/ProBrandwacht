@@ -8,7 +8,7 @@ export const ZzpProfileSchema = z.object({
   kvk: z.string().min(8),          // NL KvK = 8 cijfers (soms 8-9 met leidende nul); pas aan indien nodig
   btw: z.string().optional(),      // bv. NL123456789B01
   iban: z.string().min(10),        // basale check; wil je strikt? gebruik iban-lib
-  skills: z.string().optional().nullable(), // Allow null values
+  skills: z.string().optional().nullable().default(null), // Allow null values
   certificateRef: z.string().optional().nullable(), // Allow null values
   notes: z.string().optional(),
 });
