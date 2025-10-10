@@ -37,9 +37,11 @@ Bij ProSafetyMatch werken we met **transparante bandbreedtes**, gebaseerd op cao
   min={40}
   max={80}
   ranges={[
-    { label: "Dagdienst (07:00–15:00)", from: 48, to: 56, hint: "Basis inzet" },
-    { label: "Avonddienst (15:00–23:00)", from: 52, to: 60, hint: "Onregelmatige uren" },
-    { label: "Nachtdienst of spoed (23:00–07:00)", from: 58, to: 72, hint: "Hogere onregelmatigheid / risico" },
+    { label: "Dagdienst (07:00–15:00)", from: 42, to: 48, hint: "Basis inzet" },
+    { label: "Avonddienst (15:00–23:00)", from: 46.2, to: 55.2, hint: "+10% tot +15% toeslag" },
+    { label: "Nachtdienst (23:00–07:00)", from: 50.4, to: 62.4, hint: "+20% tot +30% toeslag" },
+    { label: "Weekend of feestdag", from: 52.5, to: 67.2, hint: "+25% tot +40% toeslag" },
+    { label: "Spoed / korte oproep", from: 54.6, to: 72, hint: "+30% tot +50% toeslag" },
   ]}
 />
 

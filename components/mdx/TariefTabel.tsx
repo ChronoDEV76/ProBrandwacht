@@ -9,7 +9,8 @@ function formatEUR(v: number) {
   return new Intl.NumberFormat("nl-NL", {
     style: "currency",
     currency: "EUR",
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(v);
 }
 
@@ -106,4 +107,3 @@ export default function TariefTabel({
     </div>
   );
 }
-
