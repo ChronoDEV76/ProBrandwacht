@@ -206,10 +206,7 @@ export default function OpdrachtgeversPage() {
       {/* Disclaimer */}
       <section className="mt-4 text-sm text-slate-600">
         <p>
-          <strong>Let op:</strong> ProSafetyMatch is{" "}
-          <span className="font-semibold">geen bemiddelingsbureau</span> maar
-          een onafhankelijk platform. De overeenkomst wordt altijd rechtstreeks
-          gesloten tussen opdrachtgever en professional.
+          <strong>Let op:</strong> ProSafetyMatch werkt als onafhankelijk platform, niet als traditioneel bemiddelingsbureau. Wij maken matching, tariefopbouw en escrow tooling inzichtelijk, terwijl opdrachtgever en professional zelf de overeenkomst sluiten. Laat altijd je eigen juridische teams bevestigen of deze constructie binnen jullie compliance- en DBA-kaders past.
         </p>
       </section>
     </main>
@@ -301,4 +298,3 @@ function Step({
     </div>
   )
 }
-

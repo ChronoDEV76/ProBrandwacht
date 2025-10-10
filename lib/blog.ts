@@ -27,6 +27,9 @@ export type BlogFrontmatter = {
   howto?: BlogHowTo
   keywords?: string[]
   ogImage?: string
+  image?: string
+  imageAlt?: string
+  imagePosition?: string
   [key: string]: unknown
 }
 
@@ -34,39 +37,45 @@ const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
 export async function getPostSlugs(): Promise<string[]> {
   const files = await fs.readdir(BLOG_DIR)
-  return files.filter(f => f.endsWith('.mdx')).map(f => f.replace(/\.mdx$/, ''))
+  return files
+    .filter((f) => f.endsWith('.mdx'))
+    .map((f) => f.replace(/\.mdx$/, ''))
 }
 
 export async function getPostBySlug(
-  slug: string,
+  slug: string
 ): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
   const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
-  let raw;
+  let raw: string
   try {
-    raw = await fs.readFile(fullPath, 'utf8');
-  } catch (error) {
-    throw new Error(`File not found: ${slug}.mdx`);
-  const { data, content } = matter(raw);
-  return { frontmatter: data as BlogFrontmatter, content }
+    raw = await fs.readFile(fullPath, 'utf8')
+  } catch {
+    throw new Error(`File not found: ${slug}.mdx`)
+  }
+
+  const { data, content } = matter(raw)
   return { frontmatter: data as BlogFrontmatter, content }
 }
 
 export function readingTime(
   text: string,
-  wpm: number = getReadingWPM(),
+  wpm: number = getReadingWPM()
 ): {
   minutes: number
   words: number
 } {
-  const words = (text.match(/\S+/g) || []).length;
-  const minutes = Math.max(1, Math.ceil(words / Math.max(1, wpm)));
+  const words = (text.match(/\S+/g) || []).length
+  const minutes = Math.max(1, Math.ceil(words / Math.max(1, wpm)))
   return { minutes, words }
 }
 
-export function formatReadingTime(minutes: number, locale: string = 'nl-NL'): string { 
+export function formatReadingTime(
+  minutes: number,
+  locale: string = 'nl-NL'
+): string {
   // Very small i18n helper for concise labels
-  const m = Math.max(1, Math.round(minutes)); 
+  const m = Math.max(1, Math.round(minutes))
   const lang = locale.toLowerCase()
-  if (lang.startsWith('nl')) return `${m} min leestijd`;
-  return `${m} min read`;
+  if (lang.startsWith('nl')) return `${m} min leestijd`
+  return `${m} min read`
 }

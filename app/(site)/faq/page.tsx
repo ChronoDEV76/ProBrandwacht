@@ -82,7 +82,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: 'Hoe lever ik certificaten aan?',
-    a: 'Upload certificaten bij voorkeur als PDF zodat we ze automatisch kunnen valideren. PNG/JPG’s accepteren we als tijdelijke momentopname en verwijderen we na handmatige verificatie. Alleen jij en uitgenodigde opdrachtgevers krijgen inzage.',
+    a: 'Upload certificaten bij voorkeur als PDF zodat we ze automatisch kunnen valideren. Lever je PNG/JPG aan, dan koppelen we die aan je iDIN-verificatie en checken we ze handmatig tegen bronnen zoals het Centraal Diploma Register VCA. Alleen jij en uitgenodigde opdrachtgevers krijgen inzage.',
   },
   {
     q: 'Mag een zzp‑brandwacht op een bouwplaats werken?',
@@ -120,7 +120,7 @@ export default function FAQPage() {
       </ul>
       <div>
         <a
-          href="https://forms.gle/fAChpLDNSJWRBHDC7"
+          href="https://www.probrandwacht.nl/zzp/aanmelden"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"

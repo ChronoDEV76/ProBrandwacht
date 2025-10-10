@@ -24,7 +24,7 @@ export const authoritativeSources: AuthoritativeSource[] = [
     links: [
       {
         label: 'KVK – Uurtarief berekenen als zzp’er',
-        href: 'https://www.kvk.nl/geldzaken/rekentool-uurtarief-berekenen/',
+        href: 'https://www.kvk.nl/geldzaken/uurtarief-bepalen/',
       },
       {
         label: 'KVK – Inschrijven en ondernemen',
@@ -65,7 +65,7 @@ export const authoritativeSources: AuthoritativeSource[] = [
     links: [
       {
         label: 'Inspectie SZW – Schijnzelfstandigheid',
-        href: 'https://www.nlarbeidsinspectie.nl/onderwerpen/schijnzelfstandigheid',
+        href: 'https://www.nlarbeidsinspectie.nl/publicaties/rapporten/2018/06/15/aanpak-schijnconstructies-en-cao-naleving-2014-2018',
       },
     ],
   },
@@ -76,7 +76,7 @@ export const authoritativeSources: AuthoritativeSource[] = [
     links: [
       {
         label: 'Rijksoverheid – Zzp en arbeidsmarkt',
-        href: 'https://www.rijksoverheid.nl/onderwerpen/freelancers-en-zzp',
+        href: 'https://www.rijksoverheid.nl/onderwerpen/zelfstandigen-zonder-personeel-zzp/nieuwe-maatregelen-zzpers-en-opdrachtgevers',
       },
     ],
   },
@@ -87,29 +87,7 @@ export const authoritativeSources: AuthoritativeSource[] = [
     links: [
       {
         label: 'SER – Zelfstandigen zonder personeel',
-        href: 'https://www.ser.nl/nl/thema/zelfstandigen',
-      },
-    ],
-  },
-  {
-    id: 'nibud',
-    title: 'Nibud',
-    description: 'Inkomens- en kostencalculaties voor zzp.’s.',
-    links: [
-      {
-        label: 'Nibud – Uurtarief bepalen',
-        href: 'https://www.nibud.nl/ondernemers/wat-is-een-goed-zzp-tarief/',
-      },
-    ],
-  },
-  {
-    id: 'eu-commission',
-    title: 'Europese Commissie (EU)',
-    description: 'Richtlijnen platformwerk en zzp.',
-    links: [
-      {
-        label: 'Europese Commissie – Platformwerk',
-        href: 'https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/economy-works-people/jobs-growth-and-investment/working-conditions-platform-work_en',
+        href: 'https://www.ser.nl/-/media/ser/downloads/adviezen/2010/visie-zelfstandigen-zonder-personeel.pdf',
       },
     ],
   },

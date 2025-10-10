@@ -28,7 +28,7 @@ export async function generateMetadata(
     const description = post.frontmatter.description ?? 'Brandwacht blog – ProBrandwacht.nl'
     const url = `/blog/${params.slug}`
     const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.jpg') as string
-    const ogAbs = og.startsWith('http') ? og : `https://www.probrandwacht.nl${og}`
+    const ogAbs = toAbsoluteUrl(og)
 
     return {
       title,
@@ -173,7 +173,9 @@ function toIso(value: unknown) {
   return Number.isNaN(d.getTime()) ? undefined : d.toISOString()
 }
 function toAbsoluteUrl(url: string) {
-  if (url.startsWith('http://') || url.startsWith('https://')) return url
-  return `https://www.probrandwacht.nl${url}`
+  const trimmed = url.trim()
+  if (!trimmed) return 'https://www.probrandwacht.nl/og-home.jpg'
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed
+  const normalized = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
+  return `https://www.probrandwacht.nl${normalized}`
 }
-

@@ -64,7 +64,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const zzpSignupUrl = 'https://forms.gle/fAChpLDNSJWRBHDC7'
+  const zzpSignupUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   type FAQItem = { q: string; a: string; ctaUrl?: string }
   const faqs: FAQItem[] = [
@@ -98,7 +98,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     },
     {
       q: 'Hoe lever ik certificaten aan?',
-      a: 'Upload certificaten als PDF voor automatische controle. PNG of JPG kan als momentopname; we verifiëren ze handmatig, verwijderen ze na goedkeuring en controleren alle documenten minimaal jaarlijks.',
+      a: 'Upload certificaten bij voorkeur als PDF voor automatische controle. PNG of JPG kan ook: na je iDIN-verificatie checken we ze handmatig via registers zoals het Centraal Diploma Register VCA en verwijderen we de kopieën na goedkeuring. We herbeoordelen alle documenten minimaal jaarlijks.',
     },
   ]
 
@@ -169,7 +169,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </h1>
       <div>
         <a
-          href="https://forms.gle/fAChpLDNSJWRBHDC7"
+          href="https://www.probrandwacht.nl/zzp/aanmelden"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"

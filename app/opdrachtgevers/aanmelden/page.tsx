@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /** ----------------------------------------------------------------
  * Minimal UI primitives (same look & feel as your ZZP form)
@@ -129,7 +129,15 @@ function downloadJSON(filename: string, data: unknown) {
 export default function OpdrachtgeverAanmeldenPage() {
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [profile, setProfile] = useState<Record<string, string>>(() => loadLocal(STORAGE_KEY_CLIENT) || {});
+  const [profile, setProfile] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const stored = loadLocal<Record<string, string>>(STORAGE_KEY_CLIENT);
+    if (stored) {
+      setProfile(stored);
+    }
+  }, []);
 
   function validate(entries: Record<string, string>): string | null {
     if (!entries.company?.trim()) return "Vul je bedrijfsnaam in.";
@@ -138,24 +146,50 @@ export default function OpdrachtgeverAanmeldenPage() {
     return null;
   }
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
+    setSubmitting(true);
     const form = new FormData(e.currentTarget);
     const entries: Record<string, string> = {};
     form.forEach((v, k) => { entries[k] = typeof v === "string" ? v : ""; });
 
     const err = validate(entries);
-    if (err) { setError(err); return; }
-
-    const payload = { schemaVersion: "psm-profile/client@v1", ...entries } as Record<string, string>;
-    try {
-      saveLocal(STORAGE_KEY_CLIENT, payload);
-      setProfile(payload);
-      setDone(true);
-    } catch {
-      setError("Opslaan in je browser is mislukt.");
+    if (err) {
+      setError(err);
+      setSubmitting(false);
+      return;
     }
+
+    const profilePayload = {
+      schemaVersion: "psm-profile/client@v1",
+      ...entries,
+    } as Record<string, string>;
+
+    const payload = {
+      type: "client_signup",
+      submittedAt: new Date().toISOString(),
+      userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
+      data: profilePayload,
+    };
+
+    try {
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+      saveLocal(STORAGE_KEY_CLIENT, profilePayload);
+      setProfile(profilePayload);
+      setDone(true);
+    } catch (err) {
+      console.error("Failed to submit client signup", err);
+      setError("We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@probrandwacht.nl.");
+    }
+    setSubmitting(false);
   }
 
   const hasProfile = profile && Object.keys(profile).length > 0;
@@ -166,7 +200,7 @@ export default function OpdrachtgeverAanmeldenPage() {
         <Card>
           <CardSection
             title="Accountaanvraag opgeslagen ✅"
-            subtitle="Je bedrijfsgegevens zijn lokaal opgeslagen. Je kunt dit later importeren in je dashboard."
+            subtitle="Je bedrijfsgegevens zijn gelogd voor het platform en lokaal opgeslagen. Je kunt dit later importeren in je dashboard."
           >
             <div className="text-sm text-gray-700">
               <div className="font-semibold mb-1">Samenvatting (JSON)</div>
@@ -192,7 +226,7 @@ export default function OpdrachtgeverAanmeldenPage() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-gray-900">Aanmelden als opdrachtgever</h1>
         <p className="text-gray-600">
-          Vul je bedrijfsgegevens in. We slaan dit lokaal op (localStorage) zodat je het later kunt hergebruiken of importeren.
+          Vul je bedrijfsgegevens in. We versturen de gegevens direct naar het platform en bewaren een kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren.
         </p>
       </div>
 
@@ -239,7 +273,9 @@ export default function OpdrachtgeverAanmeldenPage() {
         </Card>
 
         <div className="flex flex-wrap gap-3">
-          <Button type="submit">Opslaan in browser</Button>
+          <Button type="submit" disabled={submitting}>
+            {submitting ? "Bezig met opslaan…" : "Aanmelding opslaan"}
+          </Button>
           <LinkButton href="/" variant="ghost">Annuleren</LinkButton>
         </div>
       </form>

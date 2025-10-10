@@ -76,6 +76,15 @@ const problemModels = [
   },
 ]
 
+const baseTariff = { lower: 42, upper: 48 }
+
+const surchargeDefinitions = [
+  { label: 'Avond (15:00–23:00)', minPercent: 0.1, maxPercent: 0.15 },
+  { label: 'Nacht (23:00–07:00)', minPercent: 0.2, maxPercent: 0.3 },
+  { label: 'Weekend of feestdag', minPercent: 0.25, maxPercent: 0.4 },
+  { label: 'Spoed / korte oproep', minPercent: 0.3, maxPercent: 0.5 },
+]
+
 const solutionFeatures = [
   {
     icon: '💶',
@@ -90,7 +99,8 @@ const solutionFeatures = [
   {
     icon: '📑',
     title: 'Certificaten centraal',
-    description: 'Upload certificaten bij voorkeur als PDF. Gebruik je toch PNG of JPG, dan dienen die enkel ter controle en verwijderen we ze na verificatie. We checken documenten minimaal jaarlijks zodat opdrachtgevers direct zien wat je in huis hebt.',
+    description:
+      'Upload certificaten bij voorkeur als PDF. Lever je PNG of JPG aan, dan koppelen we die aan je iDIN-verificatie en controleren we ze handmatig via registers zoals het Centraal Diploma Register VCA. Alleen niet-verifieerbare uploads markeren we als risico.',
   },
 ]
 
@@ -140,6 +150,14 @@ const faqItems = [
   },
 ]
 
+function formatEuro(value: number): string {
+  return `€ ${value.toFixed(2).replace('.', ',')}`
+}
+
+function formatRange(lower: number, upper: number): string {
+  return `${formatEuro(lower)} – ${formatEuro(upper)}`
+}
+
 const keyCities = coreCities
 const highlightedSources = authoritativeSources.slice(0, 4)
 
@@ -168,8 +186,11 @@ export default function HomePage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
               ZZP-brandwacht tarief zonder verborgen marge.
             </h1>
-            <p className="text-lg font-medium text-brand-700">
-              Geen tussenpersoon, wél transparante uurtarieven, escrow-betaling en DBA-proof afspraken.
+            <p className="text-lg font-semibold text-brand-700">
+              Betaal geen bureau-marges: wij maken tarieven, platformfee en uitbetaling vanaf dag één transparant.
+            </p>
+            <p className="text-base font-medium text-brand-700">
+              Geen tussenpersoon, wél open tariefopbouw met escrow-betaling en DBA-proof afspraken.
             </p>
             <p className="text-slate-700 max-w-2xl">
               Jij bepaalt je tarief, wij faciliteren de infrastructuur: escrow, certificaten, compliance en directe matching. Binnen minuten staat straks je profiel live en ben je inzetbaar zonder eindeloos wachten op een tussenpartij.
@@ -177,9 +198,13 @@ export default function HomePage() {
             <p className="text-slate-700 max-w-2xl">
               Zo vergelijk je eenvoudig met bestaande bureauconstructies, beweeg je sneller van aanvraag naar inzet en blijf je ondernemer met eigen regie. Alle berekeningen sluiten aan op officiële cijfers van CBS, KVK, Belastingdienst en FNV.
             </p>
+            <div className="inline-flex items-center gap-2 rounded-xl border border-brand-200 bg-white/90 px-4 py-2 text-sm text-brand-800 shadow-sm">
+              <span className="inline-flex h-2 w-2 rounded-full bg-amber-500" aria-hidden />
+              <span>Platform in bètastadium: aanmeldingen gaan via onze wachtlijst, features rollen gefaseerd uit.</span>
+            </div>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="https://forms.gle/fAChpLDNSJWRBHDC7"
+                href="https://www.probrandwacht.nl/zzp/aanmelden"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -246,7 +271,7 @@ export default function HomePage() {
           <section className="rounded-3xl border border-brand-100 bg-brand-50/60 p-5 text-sm text-brand-800">
             <p className="font-semibold">Onze rol als platform</p>
             <p className="mt-1">
-              We zijn geen bureau en geen tariefbepaler. We kennen de pijn van laat betaalde diensten en onzichtbare marges. Op ProSafetyMatch kies jij, reageert de opdrachtgever direct en zorgen wij voor een eerlijke verdeling, escrow en documentatie – zonder iets op te leggen, wel door alles helder te maken.
+              We opereren als onafhankelijk platform in plaats van een traditioneel bureau. We faciliteren matching, escrow en documentatie zodat tarieven zichtbaar blijven, terwijl opdrachtgever en professional de overeenkomst rechtstreeks sluiten. Laat je eigen juridische en fiscale checks altijd bevestigen dat deze werkwijze bij jouw organisatie past.
             </p>
           </section>
 
@@ -291,17 +316,63 @@ export default function HomePage() {
             <p className="text-xs text-slate-400">
               Bedragen zijn indicatief om het verschil in marges te tonen. Jij stelt altijd zelf je definitieve tarief vast.
             </p>
-          <div>
-            <a
-              href="https://forms.gle/fAChpLDNSJWRBHDC7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
-            >
-              Sluit je aan bij de ploeg die de norm herschrijft
-            </a>
-          </div>
-        </section>
+            <div>
+              <a
+                href="https://www.probrandwacht.nl/zzp/aanmelden"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
+              >
+                Sluit je aan bij de ploeg die de norm herschrijft
+              </a>
+            </div>
+          </section>
+
+          <section className="space-y-4 rounded-2xl border border-brand-100 bg-white/80 p-6 shadow-sm">
+            <div className="space-y-2">
+              <p className="text-sm uppercase tracking-wide text-brand-600">Tarieven onderbouwen</p>
+              <h2 className="text-2xl font-semibold">Bepaal je basis en bouw toeslagen op</h2>
+              <p className="text-slate-700 max-w-3xl">
+                Een basisuurtarief tussen {formatRange(40, 50)} (excl. btw) sluit aan bij cao-logica en marktdata voor veiligheidsdiensten. In de praktijk
+                kiezen veel brandwachten voor een bandbreedte van {formatRange(baseTariff.lower, baseTariff.upper)} als dagdiensttarief en bouwen ze daarop
+                voort met duidelijke toeslagen.
+              </p>
+            </div>
+            <ol className="space-y-3 text-sm text-slate-700">
+              <li>
+                <strong>1. Basisuurtarief (07:00–15:00).</strong> Gebruik de bandbreedte {formatRange(baseTariff.lower, baseTariff.upper)} als referentie voor dagdiensten.
+              </li>
+              <li>
+                <strong>2. Toeslagen voor bijzondere diensten.</strong> Spreek vooraf vaste opslagen af per diensttype zodat opdrachtgevers exact zien hoe het tarief oploopt.
+              </li>
+            </ol>
+            <div className="overflow-hidden rounded-2xl border border-slate-200">
+              <div className="grid grid-cols-1 gap-px bg-slate-200 text-sm font-semibold text-slate-900 sm:grid-cols-3">
+                <div className="bg-slate-50 p-3">Diensttype</div>
+                <div className="bg-slate-50 p-3">Voorbeeld toeslag</div>
+                <div className="bg-slate-50 p-3">Tariefbandbreedte*</div>
+              </div>
+              {surchargeDefinitions.map(row => {
+                const minTariff = baseTariff.lower * (1 + row.minPercent)
+                const maxTariff = baseTariff.upper * (1 + row.maxPercent)
+                return (
+                  <div
+                    key={row.label}
+                    className="grid grid-cols-1 gap-px bg-slate-200 text-sm text-slate-700 sm:grid-cols-3"
+                  >
+                    <div className="bg-white p-3">{row.label}</div>
+                    <div className="bg-white p-3">
+                      +{Math.round(row.minPercent * 100)}% tot +{Math.round(row.maxPercent * 100)}%
+                    </div>
+                    <div className="bg-white p-3">{formatRange(minTariff, maxTariff)}</div>
+                  </div>
+                )
+              })}
+            </div>
+            <p className="text-xs text-slate-500">
+              *Rond bedragen af voor offertes en bevestig toeslagen expliciet in je opdrachtbevestiging.
+            </p>
+          </section>
 
         <section className="space-y-4 rounded-2xl border border-brand-100 bg-brand-50/60 p-6 shadow-sm">
           <h2 className="text-2xl font-semibold text-brand-800">Onderbouwd met officiële bronnen</h2>
@@ -410,7 +481,7 @@ export default function HomePage() {
             </div>
             <div>
           <a
-            href="https://forms.gle/fAChpLDNSJWRBHDC7"
+            href="https://www.probrandwacht.nl/zzp/aanmelden"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -496,7 +567,7 @@ export default function HomePage() {
             </ul>
             <div>
               <a
-                href="https://forms.gle/fAChpLDNSJWRBHDC7"
+                href="https://www.probrandwacht.nl/zzp/aanmelden"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -516,7 +587,7 @@ export default function HomePage() {
               brandwachten die willen overstappen.
             </p>
             <p className="text-sm text-slate-500">
-              ProSafetyMatch is géén bemiddelingsbureau. Wij faciliteren het platform – profielen, escrow-betalingen en certificaatbeheer – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Dat sluit aan bij DBA-proof werken. Gegevens worden versleuteld opgeslagen; alleen jij en geverifieerde opdrachtgevers zien je certificaten.
+              ProSafetyMatch is een onafhankelijk platform en geen traditioneel bemiddelingsbureau. Wij faciliteren profielen, escrow-betalingen en certificaatbeheer zodat iedere euro zichtbaar blijft, terwijl de overeenkomst rechtstreeks tussen opdrachtgever en professional gesloten wordt. Laat altijd je eigen adviseur toetsen of deze constructie voldoet aan jouw DBA- en compliance-eisen.
             </p>
             <p className="text-sm font-medium text-brand-700">
               Inmiddels hebben <strong>100+ brandwachten</strong> certificaten geüpload en bouwen ze hun profiel op. Meld je aan en sluit je bij hen aan.
@@ -532,7 +603,7 @@ export default function HomePage() {
             </div>
             <div>
             <a
-              href="https://forms.gle/fAChpLDNSJWRBHDC7"
+              href="https://www.probrandwacht.nl/zzp/aanmelden"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -550,10 +621,10 @@ export default function HomePage() {
               <div className="space-y-2">
                 <h2 className="text-base font-semibold text-brand-700">Hoe we samenwerken</h2>
                 <p>
-                  ProSafetyMatch is géén bemiddelingsbureau. Wij bieden het platform – profielen, escrow-betalingen, certificaatbeheer en communicatie – maar de overeenkomst sluit je altijd rechtstreeks met de opdrachtgever of professional. Daarmee blijft het model DBA-proof: jij werkt zelfstandig, met eerlijke afspraken.
+                  ProSafetyMatch positioneert zich als onafhankelijk platform: we verzorgen tooling voor profielen, escrow-betalingen, certificaatbeheer en communicatie, maar opdrachtgever en professional tekenen altijd rechtstreeks. Raadpleeg je eigen juridische en fiscale partners om te bevestigen dat deze werkwijze past bij je DBA- en compliancekaders; wij geven geen bindend advies.
                 </p>
                 <p>
-                  Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage. We controleren documenten minimaal jaarlijks en verwijderen tijdelijke uploads (PNG/JPG) na verificatie.
+                  Certificaten worden versleuteld opgeslagen. Alleen jij en opdrachtgevers die je uitnodigt krijgen inzage. PDF heeft onze voorkeur, maar zodra je via iDIN geverifieerd bent accepteren we ook PNG- of JPG-bestanden die we kunnen matchen met officiële registers (bijvoorbeeld het Centraal Diploma Register VCA). Alleen niet-verifieerbare uploads markeren we als risico.
                 </p>
               </div>
             </div>

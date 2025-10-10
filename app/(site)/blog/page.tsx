@@ -27,6 +27,23 @@ function JSONLD({ data }: { data: Record<string, unknown> }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
 
+function normalizeImageSrc(src?: string | null) {
+  if (!src) return null
+  const trimmed = src.trim()
+  if (!trimmed) return null
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+    return trimmed
+  }
+  const withoutPublicPrefix = trimmed.replace(/^public\//, '')
+  return withoutPublicPrefix.startsWith('/') ? withoutPublicPrefix : `/${withoutPublicPrefix}`
+}
+
+function normalizeImagePosition(value: unknown) {
+  if (typeof value !== 'string') return undefined
+  const trimmed = value.trim()
+  return trimmed ? trimmed : undefined
+}
+
 export default async function BlogIndexPage({ searchParams }: { searchParams?: Record<string, string> }) {
   const cat = (searchParams?.cat as (typeof CATEGORIES)[number]) || 'Alle'
   const city = (searchParams?.city as (typeof CITIES)[number]) || 'Alle'
@@ -38,8 +55,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       const minutes = Math.max(1, Math.ceil(readingTime(content).minutes))
       const category = normalizeCategory(frontmatter.category)
       const mappedCity = normalizeCity(frontmatter.city)
-      const image = (frontmatter.image as string | undefined) ?? null
+      const image = normalizeImageSrc(frontmatter.image as string | undefined)
       const imageAlt = (frontmatter.imageAlt as string | undefined) ?? frontmatter.title ?? slug
+      const imagePosition = normalizeImagePosition(frontmatter.imagePosition)
       const resolvedDate = resolveDate(frontmatter.date as string | undefined)
       return {
         slug,
@@ -51,6 +69,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         dateIso: resolvedDate.toISOString().slice(0, 10),
         image,
         imageAlt,
+        imagePosition,
       }
     }),
   )
@@ -141,6 +160,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover"
+                  style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
               </div>
             ) : (
@@ -164,7 +184,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   Lees hoe wij de norm verschuiven →
                 </Link>
                 <a
-                  href="https://forms.gle/nKrkzY5c145LM5y87"
+                  href="https://www.probrandwacht.nl/zzp/aanmelden"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-slate-500 hover:underline"
@@ -205,11 +225,10 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       </section>
 
       <section className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/60 p-6 shadow-sm">
-        <h3 className="text-lg font-semibold text-brand-800">Schrijf met autoriteit</h3>
+        <h3 className="text-lg font-semibold text-brand-800">Autoritaire bronnen</h3>
         <p className="mt-2 text-sm text-slate-700">
           Al onze artikelen verwijzen naar dezelfde officiële bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
-          zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s. Gebruik deze bronnenlijst bij
-          nieuwe content om je E-A-T te versterken en lezers direct naar de originele regelgeving te leiden.
+          zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s.
         </p>
         <Link
           href="/seo-resources"
@@ -226,7 +245,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://forms.gle/nKrkzY5c145LM5y87"
+            href="https://www.probrandwacht.nl/zzp/aanmelden"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
