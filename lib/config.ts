@@ -8,7 +8,7 @@ export function getReadingWPM(): number {
 
 export function getSignupUrl(): string {
   const url = process.env.NEXT_PUBLIC_SIGNUP_URL
-  return url?.trim() || 'https://forms.gle/hwUkK7KZQAe3CKKT8'
+  return url?.trim() || '/opdrachtgevers/aanmelden'
 }
 
 export function getGtmId(): string | undefined {
