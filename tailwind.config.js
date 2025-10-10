@@ -1,11 +1,8 @@
+const typography = require('@tailwindcss/typography')
+
 /** @type {import('tailwindcss').Config} */
-const config = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
-    './components/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
-    './content/**/*.{md,mdx}', // Ensure this is included
-    './src/**/*.{js,ts,jsx,tsx,mdx}', // Ensure this is included
-  ],
+module.exports = {
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './content/**/*.{md,mdx}'],
   theme: {
     extend: {
       colors: {
@@ -17,7 +14,5 @@ const config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
-}
-export default config;
+  plugins: [typography],
 }
