@@ -64,7 +64,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const zzpSignupUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
+  const zzpSignupUrl = '/zzp/aanmelden'
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   type FAQItem = { q: string; a: string; ctaUrl?: string }
   const faqs: FAQItem[] = [
@@ -169,7 +169,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </h1>
       <div>
         <a
-          href="https://www.probrandwacht.nl/zzp/aanmelden"
+          href="/zzp/aanmelden"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"

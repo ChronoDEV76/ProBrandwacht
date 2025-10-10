@@ -204,7 +204,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="https://www.probrandwacht.nl/zzp/aanmelden"
+                href="/zzp/aanmelden"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -318,7 +318,7 @@ export default function HomePage() {
             </p>
             <div>
               <a
-                href="https://www.probrandwacht.nl/zzp/aanmelden"
+                href="/zzp/aanmelden"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -481,7 +481,7 @@ export default function HomePage() {
             </div>
             <div>
           <a
-            href="https://www.probrandwacht.nl/zzp/aanmelden"
+            href="/zzp/aanmelden"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -567,7 +567,7 @@ export default function HomePage() {
             </ul>
             <div>
               <a
-                href="https://www.probrandwacht.nl/zzp/aanmelden"
+                href="/zzp/aanmelden"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"
@@ -603,7 +603,7 @@ export default function HomePage() {
             </div>
             <div>
             <a
-              href="https://www.probrandwacht.nl/zzp/aanmelden"
+              href="/zzp/aanmelden"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black shadow"

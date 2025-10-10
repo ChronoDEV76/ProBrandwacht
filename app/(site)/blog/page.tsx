@@ -184,7 +184,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   Lees hoe wij de norm verschuiven →
                 </Link>
                 <a
-                  href="https://www.probrandwacht.nl/zzp/aanmelden"
+                  href="/zzp/aanmelden"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-slate-500 hover:underline"
@@ -245,7 +245,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://www.probrandwacht.nl/zzp/aanmelden"
+            href="/zzp/aanmelden"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
