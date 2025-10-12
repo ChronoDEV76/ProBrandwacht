@@ -13,6 +13,7 @@ type FAQItem = {
   q: string
   a: string
   more?: { href: string; label: string }
+  id?: string
 }
 
 const faqs: FAQItem[] = [
@@ -79,10 +80,12 @@ const faqs: FAQItem[] = [
   {
     q: 'Welke certificaten zijn relevant?',
     a: 'Veelvoorkomend: VCA, BHV, EHBO en Manschap A/B. In de industrie zijn aanvullingen nodig (hete werkvergunning, toezicht besloten ruimte). We verifiëren certificaten minimaal iedere 12 maanden en eerder bij verlopen documenten. Actuele geldigheid en aantoonbare ervaring verhogen je inzetbaarheid en tarief.',
+    id: 'certificaten-overzicht',
   },
   {
     q: 'Hoe lever ik certificaten aan?',
     a: 'Upload certificaten bij voorkeur als PDF zodat we ze automatisch kunnen valideren. Lever je PNG/JPG aan, dan koppelen we die aan je iDIN-verificatie en checken we ze handmatig tegen bronnen zoals het Centraal Diploma Register VCA. Alleen jij en uitgenodigde opdrachtgevers krijgen inzage.',
+    id: 'certificaten',
   },
   {
     q: 'Mag een zzp‑brandwacht op een bouwplaats werken?',
@@ -105,7 +108,7 @@ export default function FAQPage() {
       <h1 className="text-3xl font-semibold">Veelgestelde Vragen</h1>
       <ul className="space-y-4">
         {faqs.map((f, i) => (
-          <li key={i}>
+          <li key={i} id={f.id ?? undefined}>
             <p className="font-medium">{f.q}</p>
             <p className="text-sm text-slate-600">{f.a}</p>
             {f.more ? (
