@@ -1,11 +1,11 @@
 // app/layout.tsx
-import "./globals.css"
-import type { Metadata } from "next"
+import '@/styles/globals.css'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht",
-  description: "ProSafetyMatch – aanmeldingen",
-};
+  title: 'ProBrandwacht',
+  description: 'ProSafetyMatch – aanmeldingen',
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode | null }) {
   return (
@@ -14,5 +14,5 @@ export default function RootLayout({ children }: { children: React.ReactNode | n
         {children}
       </body>
     </html>
-  );
+  )
 }

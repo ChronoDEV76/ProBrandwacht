@@ -125,7 +125,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </div>
       </section>
 
-      <section className="mb-10">
+      <section className="mb-10" id="tarief-calculator">
         <CostCalculator initialCity={city} />
       </section>
 
