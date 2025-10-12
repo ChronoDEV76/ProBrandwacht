@@ -50,8 +50,16 @@ const faqs: FAQItem[] = [
     a: 'Het tarief spreek je zelf af met de opdrachtgever. Veel afspraken liggen tussen €38–€45 per uur bij dagdiensten; nacht, weekend, industrie of ademlucht liggen hoger. Wij laten alleen zien wat er met de 10% platformfee en 1–2% escrow gebeurt, zodat je netto direct zichtbaar is en je ondernemersvrijheid behoudt.',
   },
   {
+    q: 'Kan ik mijn tarief jaarlijks indexeren?',
+    a: 'Ja. We adviseren om minimaal jaarlijks te indexeren op basis van CBS-loonkosten en inflatie. Gebruik onze calculator als referentie en spreek vooraf met opdrachtgevers af welke index of percentage je hanteert (bijvoorbeeld CPI of een sectorindex). Transparantie voorkomt discussie achteraf.',
+  },
+  {
     q: 'Hoe werkt escrow‑betaling?',
     a: 'De opdrachtgever betaalt vooraf op een tussenrekening (escrow). Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht. Bij een terechte klacht wordt de betaling tijdelijk gepauzeerd totdat er een oplossing is. Zo voorkom je late betalingen en discussies achteraf. ProSafetyMatch treedt niet op als bemiddelaar. Wij zijn een onafhankelijk platform dat uitsluitend de escrow-betaling en de eerlijke afhandeling faciliteert. Daarmee blijft elke euro inzichtelijk, behoud jij je ondernemerspositie en worden afspraken direct nagekomen, zonder tussenkomst of marge van een bureau.',
+  },
+  {
+    q: 'Wat als de kosten te hoog worden voor de opdrachtgever?',
+    a: 'Blijf in gesprek. Laat zien hoe het tarief is opgebouwd (uurloon, platformfee, escrow, toeslagen) en bespreek alternatieven zoals langere inzet, ploegdeling of faseerplanning. Soms is het beter om een opdracht te weigeren dan concessies te doen die veiligheid of zelfstandigheid onder druk zetten.',
   },
   {
     q: 'Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?',

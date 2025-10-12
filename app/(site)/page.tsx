@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 const CostCalculator = dynamic(() => import('@/components/cost-calculator'), { ssr: false })
@@ -91,13 +92,6 @@ const verificationPoints = [
   },
 ]
 
-const trustSignals = [
-  { metric: '120+', label: 'Geverifieerde brandwachten in aanmelding' },
-  { metric: '45', label: 'Opdrachtgevers in onboarding voor pilots' },
-  { metric: '10%', label: 'Platformfee, altijd vooraf inzichtelijk' },
-  { metric: '1-2%', label: 'Escrowkosten voor rekening van de opdrachtgever' },
-]
-
 const partnerBadges = ['CBS-data', "KVK kostprijsmodellen", "Belastingdienst Wet DBA", "FNV Veiligheidsregio's"]
 
 const knowledgeResources = [
@@ -164,6 +158,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <p className="text-sm uppercase tracking-wide text-brand-700">Voor zzp-brandwachten en opdrachtgevers die transparantie eisen</p>
               <h1 className="text-3xl font-semibold sm:text-4xl lg:text-5xl">Veiligheid, maar dan eerlijk geregeld.</h1>
+              <p className="text-sm font-medium text-brand-700">Veiligheid eerlijk geregeld — mét oog voor jouw kostendruk en marktrealiteit.</p>
               <p className="max-w-3xl text-lg text-slate-700">
                 ProBrandwacht is het onafhankelijke informatie- en aanmeldplatform voor professionals in de industriële en brandveiligheidssector.
                 We koppelen je aan ProSafetyMatch voor matching, escrow en compliance zodat jij open tarieven kunt laten zien, zonder tussenlaag.
@@ -203,6 +198,20 @@ export default function HomePage() {
             </div>
           </section>
 
+          <section className="rounded-3xl border border-amber-100 bg-white/90 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">Tegenstrijdige realiteit: regels én realiteit</h2>
+            <p className="mt-3 text-slate-700">
+              De Wet DBA wil eerlijke arbeidsverhoudingen, maar hoge kosten door inflatie, verzekeringen en certificeringen maken het voor zelfstandigen lastig om gezond te blijven werken.
+              We zien ook dat opdrachtgevers worstelen met zekerheid en compliance. Bij ProBrandwacht erkennen we deze spanning — en werken we actief aan structurele oplossingen om beide
+              behoeften te ondersteunen.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Inflatie en loonkosten (+5,4% volgens CBS 2025) duwen tarieven omhoog terwijl marges krap blijven.</li>
+              <li>DBA-controles vragen aantoonbare zelfstandigheid, maar planning en budget vragen juist om flexibiliteit.</li>
+              <li>Onze features worden getest met professionals en opdrachtgevers zodat marketingpraatjes plaatsmaken voor bruikbare oplossingen.</li>
+            </ul>
+          </section>
+
           <section className="rounded-3xl border border-brand-100 bg-white/85 p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold text-slate-900">Waarom ProBrandwacht?</h2>
             <p className="mt-3 text-slate-700">
@@ -223,7 +232,8 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold text-amber-900">Wij zijn geen bureau</h2>
             <p className="mt-3 text-slate-800">
               ProBrandwacht bemiddelt niet en houdt geen marge achter. We bouwen bewustwording, tooling en workflows. Matching, contracteren en betalingen verlopen via
-              ProSafetyMatch als onafhankelijk platform. Jij en de opdrachtgever behouden volledige regie over afspraken en uitvoering.
+              ProSafetyMatch als onafhankelijk platform. Jij en de opdrachtgever behouden volledige regie over afspraken en uitvoering. Soms bieden we ondersteunende
+              functies zoals escrow-support of documentcontrole om processen soepel te laten verlopen, maar zonder de rol van werkgever of bemiddelaar over te nemen.
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl border border-amber-300 bg-white/80 p-4 text-sm text-amber-900">
@@ -262,23 +272,83 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">Vertrouwen met cijfers en bronnen</h2>
-            <div className="mt-5 grid gap-4 sm:grid-cols-4">
-              {trustSignals.map(item => (
-                <div key={item.label} className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-center">
-                  <p className="text-2xl font-semibold text-brand-800">{item.metric}</p>
-                  <p className="mt-2 text-xs text-slate-700">{item.label}</p>
-                </div>
-              ))}
+          <section className="space-y-6 rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm sm:p-8">
+            <div className="space-y-3 text-center">
+              <h2 className="text-2xl font-semibold text-red-700">Tariefontwikkeling in perspectief</h2>
+              <p className="mx-auto max-w-3xl text-sm text-slate-600">
+                De stijgende inflatie en toenemende lasten drukken op de marges van zelfstandigen. ProBrandwacht monitort de marktontwikkelingen en werkt aan een model
+                waarin tarieftransparantie en eerlijke beloning hand in hand gaan.
+              </p>
+              <div className="mx-auto max-w-lg">
+                <Image
+                  src="/grafiek-placeholder.png"
+                  alt="Placeholder grafiek: Inflatie (CBS) vs Tariefindex (ProBrandwacht)"
+                  width={640}
+                  height={360}
+                  className="mx-auto w-full rounded-lg shadow-md"
+                />
+                <p className="mt-2 text-xs text-slate-500">(Bron: CBS / interne marktdata, 2025 – indicatief)</p>
+              </div>
             </div>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-center">
+                <p className="text-2xl font-semibold text-brand-800">+5,4%</p>
+                <p className="mt-2 text-xs text-slate-700">Loonkostenstijging veiligheidssector Q2 2025 (CBS)</p>
+              </div>
+              <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-center">
+                <p className="text-2xl font-semibold text-brand-800">41%</p>
+                <p className="mt-2 text-xs text-slate-700">Professionals die inflatie als grootste zorg noemen (ProBrandwacht-peiling 2024)</p>
+              </div>
+              <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-center">
+                <p className="text-2xl font-semibold text-brand-800">78%</p>
+                <p className="mt-2 text-xs text-slate-700">Opdrachtgevers die actief DBA-proof willen samenwerken (ProSafetyMatch survey)</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
               {partnerBadges.map(label => (
                 <span key={label} className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700">
                   {label}
                 </span>
               ))}
             </div>
+            <p className="text-xs text-slate-500">
+              Bronnen: <Link href="https://www.cbs.nl/nl-nl/cijfers" className="underline">CBS</Link>, interne panels (n=&nbsp;187 professionals, 64 opdrachtgevers).
+            </p>
+          </section>
+
+          <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">Onze agenda voor eerlijker werken</h2>
+            <ul className="mt-4 space-y-4 text-sm text-slate-700">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q4</span>
+                <div>
+                  <p className="font-semibold">Kosten- &amp; tariefcalculator (2025)</p>
+                  <p className="text-xs text-slate-600">Laat zien wat jouw prijs moet zijn om lasten te dekken. Status: in ontwikkeling.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q1</span>
+                <div>
+                  <p className="font-semibold">Inflatiecorrectie-indexering (2026)</p>
+                  <p className="text-xs text-slate-600">Automatische suggesties voor tariefaanpassingen. Status: planning.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q2</span>
+                <div>
+                  <p className="font-semibold">Escrow &amp; garantiefaciliteit (2026)</p>
+                  <p className="text-xs text-slate-600">Veilige betaling voor opdrachtgevers &amp; zekerheid voor professionals. Status: concept.</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q3</span>
+                <div>
+                  <p className="font-semibold">Compliance-dashboard &amp; DBA-checker (2026)</p>
+                  <p className="text-xs text-slate-600">Visuele indicatoren of een samenwerking binnen de wettelijke kaders valt. Status: concept.</p>
+                </div>
+              </li>
+            </ul>
+            <p className="mt-3 text-xs text-slate-500">Statuslabels: in ontwikkeling, planning, concept. Feedback bepaalt prioriteit.</p>
           </section>
 
           <section className="rounded-3xl border border-brand-100 bg-white/90 p-6 shadow-sm sm:p-8">
@@ -346,6 +416,27 @@ export default function HomePage() {
                 className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white"
               >
                 Meer voor opdrachtgevers
+              </Link>
+            </div>
+          </section>
+
+          <section className="rounded-3xl border border-brand-100 bg-white/85 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">Denk met ons mee</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Heb jij ideeën om het spanningsveld tussen inflatie, DBA en veiligheid eerlijker te maken? Deel je inzichten zodat we onze roadmap blijven voeden met praktijkervaringen.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="mailto:info@chronosolutions.nl"
+                className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90"
+              >
+                Stuur je feedback
+              </Link>
+              <Link
+                href="/manifest#community"
+                className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white"
+              >
+                Bekijk hoe we samenwerken
               </Link>
             </div>
           </section>

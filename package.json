@@ -14,7 +14,8 @@
     "test:coverage": "vitest run --coverage",
     "e2e": "playwright test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "sanity:aider": "bash scripts/aider-sanity.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

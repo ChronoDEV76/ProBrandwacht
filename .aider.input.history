@@ -87,3 +87,410 @@
 
 # 2025-10-05 17:35:17.855167
 +/run git add -A
+
+# 2025-10-05 17:35:24.599181
++y
+
+# 2025-10-05 17:35:36.196201
++/run git commit -m "baseline"
+
+# 2025-10-05 17:44:09.723984
++add package.json
++/add vitest.config.*
++/add tsconfig*.json
++/add postcss.config.*
++/add tailwind.config.*
++/add vite.config.*
++/add next.config.*     # only if it exists
++/add app/*
++/add components/*
++/add lib/*
++/add styles/*
++/add __tests__/*
+
+# 2025-10-05 17:45:57.146731
++/run npm run lint
+
+# 2025-10-05 17:46:10.537112
++y
+
+# 2025-10-05 17:46:31.927733
++/run npm run typecheck
+
+# 2025-10-05 17:46:59.519779
++y
+
+# 2025-10-05 17:47:13.169833
++What's wrong? Fix
+
+# 2025-10-05 17:48:53.290164
++Found 1 error in components/mdx/RenderMdx.tsx:4
++fix this error
+
+# 2025-10-05 17:52:05.015726
++/run npm run build
++Fix any build errors. Keep changes minimal and explain diffs.
+
+# 2025-10-05 17:52:52.107744
++y
+
+# 2025-10-05 17:52:57.659252
++What's wrong? Fix
+
+# 2025-10-05 18:26:32.818867
++sanity check project 
+
+# 2025-10-05 18:34:06.029000
++Update components/mdx/RenderMdx.tsx to a minimal MDX renderer using useMDXComponent from next-contentlayer/hooks.
++Also create a declaration file next-contentlayer.d.ts that declares the useMDXComponent function so TypeScript is happy.
+
+# 2025-10-05 18:41:26.422799
++i editted rendermdx and created next contentlayer.d.ts check if they are correct 
+
+# 2025-10-05 18:42:00.527855
++sanity check the project 
+
+# 2025-10-05 18:55:21.194115
++diff --git a/components/mdx/RenderMdx.tsx b/components/mdx/RenderMdx.tsx
++new file mode 100644
++--- /dev/null
+++++ b/components/mdx/RenderMdx.tsx
++@@ -0,0 +1,12 @@
+++"use client";
+++import * as React from "react";
+++import { useMDXComponent } from "next-contentlayer/hooks";
+++export default function RenderMdx({ code }: { code: string }) {
+++  const MDX = useMDXComponent(code);
+++  return <MDX />;
+++}
++
+
+# 2025-10-05 18:58:20.636809
++y
+
+# 2025-10-05 18:58:38.810119
++sanity check the project 
+
+# 2025-10-05 18:59:08.873999
++y
+
+# 2025-10-05 19:12:08.205237
++Ensure all configs work with our current module mode.
++- Keep Next/Tailwind/PostCSS/Vitest settings consistent.
++- If a file must be CJS, rename to .cjs. Otherwise use ESM export default.
+
+# 2025-10-05 19:12:18.184603
++y
+
+# 2025-10-05 19:13:07.671092
++Align the "@" alias across tsconfig, vite, vitest, and source imports.
++Update any broken imports and run typecheck.
+
+# 2025-10-05 19:13:21.913428
++y
+
+# 2025-10-05 19:13:54.392844
++Verify Tailwind scans the right folders and that globals.css is loaded in app/(site)/layout.tsx.
++Fix if needed, then run a minimal build.
+
+# 2025-10-05 19:13:56.942381
++y
+
+# 2025-10-05 19:14:53.893086
++Use next-contentlayer/hooks correctly in components/mdx/RenderMdx.tsx.
++If needed, create next-contentlayer.d.ts and ensure tsconfig includes it.
+
+# 2025-10-05 19:14:55.440981
++y
+
+# 2025-10-05 19:15:31.373213
++/run npm run lint -- --fix
++Explain any rules you disabled and why.
+
+# 2025-10-05 19:15:48.081818
++y
+
+# 2025-10-05 19:45:49.557727
++diff --git a/tsconfig.json b/tsconfig.json
++--- a/tsconfig.json
+++++ b/tsconfig.json
++@@ -20,7 +20,7 @@
++-    "types": ["node", "react", "react-dom", "vitest"],
+++    "types": ["node", "react", "react-dom", "vitest", "@testing-library/jest-dom"],
++
+
+# 2025-10-05 19:46:22.390644
++y
+
+# 2025-10-05 19:48:32.103981
++Run an a11y pass on app routes: headings order, label/for, button/type, alt text, color contrast in Tailwind.
++Also ensure pages set reasonable <title> and meta via next-seo where applicable. Create focused diffs.
+
+# 2025-10-05 19:50:23.132753
++Review API handlers under app/api/* for:
++- zod input validation
++- safe error handling (no stack leaks)
++- rate-limit hooks (explain where to add if missing)
++Apply minimal changes to harden endpoints.
+
+# 2025-10-05 19:50:51.126172
++y
+
+# 2025-10-05 20:09:29.565903
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 20:09:29.565954
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 20:09:39.508188
++y
+
+# 2025-10-05 20:13:00.631328
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 20:13:00.631385
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 20:13:27.816423
++y
+
+# 2025-10-05 20:19:57.667742
++Fix lint/type errors in app/(site)/layout.tsx only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:19:57.668127
++Fix lint/type errors in app/(site)/layout.tsx only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:20:02.510271
++y
+
+# 2025-10-05 20:24:55.977563
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:24:55.977924
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:24:59.205648
++y
+
+# 2025-10-05 20:26:19.028862
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:26:19.028914
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:26:25.297066
++y
+
+# 2025-10-05 20:31:57.219671
++diff --git a/lib/blog.ts b/lib/blog.ts
++--- a/lib/blog.ts
+++++ b/lib/blog.ts
++@@ -41,13 +41,15 @@
++ export async function getPostBySlug(
++   slug: string,
++ ): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
++   const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
++-  let raw;
+++  let raw: string;
++   try {
++     raw = await fs.readFile(fullPath, 'utf8');
++   } catch (error) {
++     throw new Error(`File not found: ${slug}.mdx`);
++-  const { data, content } = matter(raw); // Fix indentation
++-  return { frontmatter: data as BlogFrontmatter, content }
+++  }
+++  const { data, content } = matter(raw);
+++  return { frontmatter: data as BlogFrontmatter, content };
++ }
++
+
+# 2025-10-05 20:32:18.770111
++y
+
+# 2025-10-05 20:34:20.779196
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:34:20.779312
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:34:24.345192
++y
+
+# 2025-10-05 20:34:45.339521
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:34:45.340303
++Fix lint/type errors in lib/blog.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:34:48.966345
++y
+
+# 2025-10-05 20:40:47.187862
++Fix lint/type errors in app/api/profile/zzp/import/route.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:40:47.187992
++Fix lint/type errors in app/api/profile/zzp/import/route.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:40:49.765938
++y
+
+# 2025-10-05 20:41:10.417967
++Fix lint/type errors in app/api/signup/route.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:10.418046
++Fix lint/type errors in app/api/signup/route.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:12.445612
++y
+
+# 2025-10-05 20:41:37.449349
++Fix lint/type errors in lib/psm-local.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:37.449445
++Fix lint/type errors in lib/psm-local.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:38.916329
++y
+
+# 2025-10-05 20:41:57.489582
++Fix lint/type errors in lib/tariffs.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:57.489755
++Fix lint/type errors in lib/tariffs.ts only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:41:59.891955
++y
+
+# 2025-10-05 20:43:57.683222
++Fix lint/type errors in api/signup/route.ts:2:23 only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:43:57.683328
++Fix lint/type errors in api/signup/route.ts:2:23 only. Keep diffs minimal. Do not change dependencies.
+
+# 2025-10-05 20:44:09.519653
++y
+
+# 2025-10-05 20:46:36.540147
++/run npm run typecheck
+
+# 2025-10-05 20:46:36.540168
++/run npm run typecheck
+
+# 2025-10-05 20:46:44.837148
++y
+
+# 2025-10-05 20:51:14.457372
++Remove the 'express-rate-limit' import (Next route handlers aren't Express).
++In POST, do: const body = await request.json(); replace any 'parsed' usage with 'body';
++log body; return NextResponse.json({ ok: true }). Add a simple GET that returns ok.
+
+# 2025-10-05 20:51:14.457420
++Remove the 'express-rate-limit' import (Next route handlers aren't Express).
++In POST, do: const body = await request.json(); replace any 'parsed' usage with 'body';
++log body; return NextResponse.json({ ok: true }). Add a simple GET that returns ok.
+
+# 2025-10-05 20:52:20.377475
++Remove the 'express-rate-limit' import (Next route handlers aren't Express).
++In POST, do: const body = await request.json(); replace any 'parsed' usage with 'body';
++log body; return NextResponse.json({ ok: true }). Add a simple GET that returns ok.
+
+# 2025-10-05 20:52:20.377593
++Remove the 'express-rate-limit' import (Next route handlers aren't Express).
++In POST, do: const body = await request.json(); replace any 'parsed' usage with 'body';
++log body; return NextResponse.json({ ok: true }). Add a simple GET that returns ok.
+
+# 2025-10-05 20:57:30.693910
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 20:57:30.694123
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 20:58:54.919354
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 20:58:54.919455
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 20:59:03.060367
++y
+
+# 2025-10-05 20:59:56.538630
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 20:59:56.538701
++Remove the 'express-rate-limit' import. In POST, use: const body = await request.json(); replace any 'parsed' usage with 'body'; log body; return NextResponse.json({ ok: true }). Add GET returning ok.
+
+# 2025-10-05 21:00:03.516440
++y
+
+# 2025-10-05 21:10:10.418076
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:10:10.418120
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:10:19.424462
++y
+
+# 2025-10-05 21:11:17.380514
++Rename to postcss.config.cjs and export CommonJS config: module.exports = { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:11:17.380578
++Rename to postcss.config.cjs and export CommonJS config: module.exports = { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:11:25.675607
++y
+
+# 2025-10-05 21:11:35.618937
++/run mv postcss.config.js postcss.config.cjs
+
+# 2025-10-05 21:11:35.618958
++/run mv postcss.config.js postcss.config.cjs
+
+# 2025-10-05 21:13:32.316143
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:13:32.316165
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:13:37.623903
++y
+
+# 2025-10-05 21:14:37.881446
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:14:37.881545
++Replace the file with a valid ESM PostCSS config: export default { plugins: { tailwindcss: {}, autoprefixer: {} } }. Remove any 'path' usage.
+
+# 2025-10-05 21:14:43.001305
++y
+
+# 2025-10-05 21:32:48.178194
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:32:48.178268
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:33:43.509110
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:33:43.509193
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:34:00.350414
++y
+
+# 2025-10-05 21:35:04.649527
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:35:04.649555
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-05 21:35:29.218094
++y
+
+# 2025-10-10 22:27:31.528776
++Resolve build errors; keep diffs small and explain changes briefly.
+
+# 2025-10-10 22:27:31.528820
++Resolve build errors; keep diffs small and explain changes briefly.
