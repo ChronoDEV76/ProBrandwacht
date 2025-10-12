@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import CpiChart from '@/components/cpi-chart'
 
 const CostCalculator = dynamic(() => import('@/components/cost-calculator'), { ssr: false })
 export const metadata: Metadata = {
@@ -279,15 +280,9 @@ export default function HomePage() {
                 De stijgende inflatie en toenemende lasten drukken op de marges van zelfstandigen. ProBrandwacht monitort de marktontwikkelingen en werkt aan een model
                 waarin tarieftransparantie en eerlijke beloning hand in hand gaan.
               </p>
-              <div className="mx-auto max-w-lg">
-                <Image
-                  src="/grafiek-placeholder.png"
-                  alt="Placeholder grafiek: Inflatie (CBS) vs Tariefindex (ProBrandwacht)"
-                  width={640}
-                  height={360}
-                  className="mx-auto w-full rounded-lg shadow-md"
-                />
-                <p className="mt-2 text-xs text-slate-500">(Bron: CBS / interne marktdata, 2025 – indicatief)</p>
+              <div className="mx-auto max-w-lg rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <CpiChart />
+                <p className="mt-2 text-xs text-slate-500">Bron: CBS – CPI jaarmutaties, 2016–2025 (indicatief)</p>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
@@ -420,26 +415,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="rounded-3xl border border-brand-100 bg-white/85 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">Denk met ons mee</h2>
-            <p className="mt-2 text-sm text-slate-700">
-              Heb jij ideeën om het spanningsveld tussen inflatie, DBA en veiligheid eerlijker te maken? Deel je inzichten zodat we onze roadmap blijven voeden met praktijkervaringen.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href="mailto:info@chronosolutions.nl"
-                className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90"
-              >
-                Stuur je feedback
-              </Link>
-              <Link
-                href="/manifest#community"
-                className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white"
-              >
-                Bekijk hoe we samenwerken
-              </Link>
-            </div>
-          </section>
         </div>
       </div>
     </div>

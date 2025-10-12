@@ -9,6 +9,14 @@ export type CalculatorProps = {
   platformFeePct?: number // default 10%
   escrowPct?: number // default 1.5%
   tariffs?: TariffConfig
+  /** Jaar waarin de meegegeven tarieven (tariffs/DEFAULT_TARIFFS) gelden */
+  baseYear?: number
+  /** Jaar waarvoor je wilt indexeren (default: huidig jaar) */
+  targetYear?: number
+  /** CPI index (bijv. 2015 = 100). Als aanwezig, heeft prioriteit boven cpiYoY. */
+  cpiIndex?: Record<number, number>
+  /** Jaarmutaties in % (alternatief als je geen index hebt) */
+  cpiYoY?: Record<number, number>
 }
 
 function round2(v: number) {
@@ -26,16 +34,65 @@ function runDevTests() {
   const feeAmt = total * fee
   const escrowAmt = total * escrow
   const netPerHour = hourly * (1 - fee)
-  const expected = {
-    total: 416,
-    feeAmt: 41.6,
-    netPerHour: 46.8,
-    escrowAmt: 6.24,
-  }
+  const expected = { total: 416, feeAmt: 41.6, netPerHour: 46.8, escrowAmt: 6.24 }
   console.assert(Math.abs(total - expected.total) < 1e-6, 'Total mismatch')
   console.assert(Math.abs(feeAmt - expected.feeAmt) < 1e-6, 'Fee mismatch')
   console.assert(Math.abs(netPerHour - expected.netPerHour) < 1e-6, 'Net per hour mismatch')
   console.assert(Math.abs(escrowAmt - expected.escrowAmt) < 1e-6, 'Escrow mismatch')
+}
+
+function computeInflationFactor({
+  baseYear,
+  targetYear,
+  cpiIndex,
+  cpiYoY,
+}: {
+  baseYear: number
+  targetYear: number
+  cpiIndex?: Record<number, number>
+  cpiYoY?: Record<number, number>
+}): number {
+  if (targetYear <= baseYear) return 1
+
+  if (cpiIndex?.[baseYear] != null && cpiIndex?.[targetYear] != null) {
+    const base = cpiIndex[baseYear]
+    const target = cpiIndex[targetYear]
+    if (base > 0) return target / base
+  }
+
+  if (cpiYoY) {
+    let factor = 1
+    for (let y = baseYear + 1; y <= targetYear; y++) {
+      const yoy = cpiYoY[y]
+      if (typeof yoy === 'number') factor *= 1 + yoy / 100
+    }
+    return factor
+  }
+
+  return 1
+}
+
+function inflateTariffs(tariffs: TariffConfig, factor: number): TariffConfig {
+  if (Math.abs(factor - 1) < 1e-9) return tariffs
+  const scaled: TariffConfig = {} as TariffConfig
+  for (const cityKey in tariffs) {
+    const t = tariffs[cityKey as CityKey]
+    scaled[cityKey as CityKey] = {
+      standaard: {
+        min: round2(t.standaard.min * factor),
+        max: round2(t.standaard.max * factor),
+      },
+      ...(t.industrie
+        ? {
+            industrie: {
+              min: round2(t.industrie.min * factor),
+              max: round2(t.industrie.max * factor),
+            },
+          }
+        : {}),
+    }
+  }
+  return scaled
 }
 
 export default function CostCalculator({
@@ -44,29 +101,39 @@ export default function CostCalculator({
   platformFeePct = 10,
   escrowPct = 1.5,
   tariffs = DEFAULT_TARIFFS,
+  baseYear = 2022,
+  targetYear = new Date().getFullYear(),
+  cpiIndex,
+  cpiYoY,
 }: CalculatorProps) {
+  useEffect(() => {
+    runDevTests()
+  }, [])
+
+  const inflationFactor = useMemo(
+    () => computeInflationFactor({ baseYear, targetYear, cpiIndex, cpiYoY }),
+    [baseYear, targetYear, cpiIndex, cpiYoY]
+  )
+  const indexedTariffs = useMemo(() => inflateTariffs(tariffs, inflationFactor), [tariffs, inflationFactor])
+
   const [city, setCity] = useState<CityKey>(initialCity)
   const [category, setCategory] = useState<CategoryKey>(initialCategory)
   const [hours, setHours] = useState(8)
-  const [hourly, setHourly] = useState<number>(() => getMidpointRate(tariffs, city, category))
+  const [hourly, setHourly] = useState<number>(() => getMidpointRate(indexedTariffs, initialCity, initialCategory))
   const [night, setNight] = useState(false)
   const [weekend, setWeekend] = useState(false)
   const [rush, setRush] = useState(false)
 
   useEffect(() => {
-    runDevTests()
-  }, [])
-
-  useEffect(() => {
-    const nextRate = getMidpointRate(tariffs, city, category)
+    const nextRate = getMidpointRate(indexedTariffs, city, category)
     setHourly(current => (Math.abs(current - nextRate) < 1e-6 ? current : nextRate))
-  }, [category, city, tariffs])
+  }, [category, city, indexedTariffs])
 
   const adjHourly = useMemo(() => {
     let rate = hourly
-    if (night) rate *= 1.25 // +25%
-    if (weekend) rate *= 1.15 // +15%
-    if (rush) rate *= 1.1 // +10%
+    if (night) rate *= 1.25
+    if (weekend) rate *= 1.15
+    if (rush) rate *= 1.1
     return round2(rate)
   }, [hourly, night, weekend, rush])
 
@@ -102,12 +169,8 @@ export default function CostCalculator({
     <div className="rounded-3xl bg-slate-50 p-6">
       <h3 className="text-xl font-semibold">Bereken je tarief</h3>
       <p className="mt-1 text-slate-700">
-        Vul je eigen uurtarief en omstandigheden in. De calculator laat alleen zien hoe fee en escrow worden
-        opgebouwd, zodat opdrachtgever en professional hetzelfde overzicht delen.
-      </p>
-      <p className="mt-2 text-xs text-slate-500">
-        Voorbeeldfunctie: ProSafetyMatch stelt geen tarieven vast. Gebruik dit hulpmiddel om eerlijk inzicht in jullie
-        afspraak te brengen.
+        Deze calculator indexeert richttarieven automatisch op basis van CBS-inflatie ({baseYear} → {targetYear}).
+        ProSafetyMatch stelt geen tarieven vast; dit is een hulpmiddel voor transparantie.
       </p>
 
       <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -149,10 +212,12 @@ export default function CostCalculator({
             className="rounded-xl border px-3 py-2"
           />
           <small className="text-slate-500">
-            Richtlijn per stad:{' '}
+            Richtlijn per stad (geïndexeerd):{' '}
             {category === 'industrie'
-              ? `${tariffs[city].industrie?.min ?? tariffs[city].standaard.min}–${tariffs[city].industrie?.max ?? tariffs[city].standaard.max}`
-              : `${tariffs[city].standaard.min}–${tariffs[city].standaard.max}`}{' '}
+              ? `${indexedTariffs[city].industrie?.min ?? indexedTariffs[city].standaard.min}–${
+                  indexedTariffs[city].industrie?.max ?? indexedTariffs[city].standaard.max
+                }`
+              : `${indexedTariffs[city].standaard.min}–${indexedTariffs[city].standaard.max}`}{' '}
             €/u
           </small>
         </label>
@@ -206,6 +271,9 @@ export default function CostCalculator({
           <div className="text-sm text-slate-600">Totaal te factureren (ex. btw)</div>
           <div className="text-2xl font-semibold">€ {calc.grand.toFixed(2)}</div>
           <div className="mt-1 text-sm text-slate-600">Opdrachtgeverstarief + escrow</div>
+          <div className="mt-2 text-xs text-slate-500">
+            Inflatiefactor CBS {baseYear}→{targetYear}: × {inflationFactor.toFixed(4)}
+          </div>
         </div>
       </div>
     </div>

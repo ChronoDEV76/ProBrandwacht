@@ -1,0 +1,17 @@
+3) Tips & toggles
+
+Auto-accept diffs (hands-off):
+
+AIDER_YES_ALWAYS=1 npm run sanity:aider
+
+
+Commit manually (keep full control):
+
+AIDER_NO_AUTO_COMMITS=1 npm run sanity:aider
+
+
+Open extra files right away (positional after --):
+
+~/.local/bin/aider -c aider.conf.yml --aiderignore aiderignore \
+  --env-file .env.local --model gpt-4o-mini --edit-format diff --map-tokens 4000 \
+  -- app/(site)/layout.tsx README.md
