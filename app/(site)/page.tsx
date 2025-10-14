@@ -112,33 +112,6 @@ const verificationPoints = [
   },
 ]
 
-const seoPillars = [
-  {
-    id: 'poort-qr-check-in',
-    heading: 'Poort-QR check-in voor realtime aanwezigheidscontrole',
-    copy:
-      'Gebruik een poort-QR check-in om certificaten automatisch te controleren en ploegbezetting live bij te werken. Zo voldoe je aan vergunningseisen en audit-trails zonder wachtrijen bij de ingang.',
-    ctaLabel: 'Lees hoe poort-QR check-in werkt',
-    href: '/blog/industriele-brandwacht-wat-houdt-het-in#poort-qr-check-in',
-  },
-  {
-    id: 'brandwacht-rijksgediplomeerd',
-    heading: 'Brandwacht rijksgediplomeerd voor industriële inzet',
-    copy:
-      'Selecteer rijksgediplomeerde manschappen (Manschap A/B) met recente oefenuren voor petrochemische stops en reddingswerk. Combineer repressieve ervaring met toezichttaken via één transparant platform.',
-    ctaLabel: 'Bekijk rijksgediplomeerde profielen',
-    href: '/blog/industriele-brandwacht-wat-houdt-het-in#brandwacht-rijksgediplomeerd',
-  },
-  {
-    id: 'gasmeting-gasmeter',
-    heading: 'Gasmeting/gasmeter services met rapportage',
-    copy:
-      'Professionals loggen Ex-Ox-Tox-waarden per meetmoment, bewaren kalibratiecertificaten en delen rapporten via escrow-dossiers. Geen losse spreadsheets meer, maar aantoonbare compliance.',
-    ctaLabel: 'Meer over gasmeting en gasmeterdiensten',
-    href: '/blog/industriele-brandwacht-wat-houdt-het-in#gasmeting-gasmeter-services',
-  },
-]
-
 const partnerBadges = ['CBS-data', "KVK kostprijsmodellen", "Belastingdienst Wet DBA", "FNV Veiligheidsregio's"]
 
 const knowledgeResources = [
@@ -399,30 +372,6 @@ export default function HomePage() {
                     className="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-800"
                   >
                     Lees meer
-                  </Link>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="rounded-3xl border border-brand-100 bg-white/90 p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">Brandwacht diensten waar bureaus op concurreren</h2>
-            <p className="mt-2 text-sm text-slate-700">
-              Laat zien dat je dezelfde specialistische diensten biedt als de grote bureaus: van poort-QR check-in tot
-              rijksgediplomeerde teams en volledige gasmeting/gasmeter rapportage.
-            </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {seoPillars.map(pillar => (
-                <article key={pillar.id} className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white/90 p-4">
-                  <div>
-                    <h3 className="text-base font-semibold text-slate-900">{pillar.heading}</h3>
-                    <p className="mt-2 text-sm text-slate-700">{pillar.copy}</p>
-                  </div>
-                  <Link
-                    href={pillar.href}
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-800"
-                  >
-                    {pillar.ctaLabel}
                   </Link>
                 </article>
               ))}
