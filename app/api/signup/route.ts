@@ -1,33 +1,66 @@
 // app/api/signup/route.ts
-import { NextResponse } from 'next/server'
-import { sql } from '@vercel/postgres' // ⬅️ dit is de import
+import { NextResponse, NextRequest } from 'next/server'
+import { Pool } from 'pg'
 
-export async function POST(request: Request) {
-  const body = await request.json().catch(() => null)
-  if (!body || typeof body !== 'object') {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
+// 1 pool voor alle invocations
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+  ssl: { rejectUnauthorized: false }, // voor Supabase
+})
+
+type Payload = {
+  type?: string
+  submittedAt?: string
+  userAgent?: string
+  data?: Record<string, unknown>
+  email?: string // optioneel: halen we ook uit data
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = (await req.json()) as Payload
+
+    // simpele validatie
+    const type = (body.type || 'unknown').slice(0, 64)
+    const ua = (body.userAgent || req.headers.get('user-agent') || '').slice(0, 512)
+
+    // probeer een e-mail te pakken uit top-level of uit data.{email}
+    const email =
+      (body.email as string) ||
+      (body.data && typeof body.data === 'object' ? (body.data as any).email : undefined) ||
+      null
+
+    // client ip (best effort)
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+      req.ip ||
+      null
+
+    // insert
+    const q = `
+      insert into signups (id, type, email, payload, ip, user_agent)
+      values (gen_random_uuid(), $1, $2, $3::jsonb, $4::inet, $5)
+      returning id, created_at
+    `
+    const vals = [type, email, JSON.stringify(body), ip, ua]
+    const { rows } = await pool.query(q, vals)
+
+    return NextResponse.json({ ok: true, id: rows[0]?.id, createdAt: rows[0]?.created_at })
+  } catch (err: any) {
+    console.error('[SIGNUP:POST] error', err)
+    return NextResponse.json({ ok: false, error: 'Database insert failed' }, { status: 500 })
   }
-
-  const id = crypto.randomUUID()
-  const {
-    type = 'unknown',
-    firstName, lastName, email, kvk, btw, skills, certificateRef, notes,
-  } = body as any
-
-  await sql/* sql */`
-    INSERT INTO signups (id, type, first_name, last_name, email, kvk, btw, skills, certificate_ref, notes)
-    VALUES (${id}, ${type}, ${firstName}, ${lastName}, ${email}, ${kvk}, ${btw}, ${skills}, ${certificateRef}, ${notes});
-  `
-  console.log('[SIGNUP:PG] stored', id, email)
-  return NextResponse.json({ ok: true, id })
 }
 
 export async function GET() {
-  const { rows } = await sql/* sql */`
-    SELECT id, created_at, type, first_name, last_name, email
-    FROM signups
-    ORDER BY created_at DESC
-    LIMIT 10;
-  `
-  return NextResponse.json({ ok: true, count: rows.length, items: rows })
+  try {
+    const { rows } = await pool.query(
+      `select id, type, email, created_at from signups order by created_at desc limit 10`
+    )
+    return NextResponse.json({ ok: true, items: rows })
+  } catch (err: any) {
+    console.error('[SIGNUP:GET] error', err)
+    return NextResponse.json({ ok: false, error: 'Database select failed' }, { status: 500 })
+  }
 }
+
