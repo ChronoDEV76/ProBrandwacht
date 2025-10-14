@@ -15,10 +15,14 @@
     "e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "sanity:aider": "bash scripts/aider-sanity.sh"
+    "sanity:aider": "bash scripts/aider-sanity.sh",
+    "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
+    "tone-check": "node scripts/toneCheck.mjs --root content"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@vercel/kv": "^3.0.0",
+    "@vercel/postgres": "^0.10.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

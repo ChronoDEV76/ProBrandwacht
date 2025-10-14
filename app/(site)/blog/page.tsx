@@ -59,10 +59,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       const imageAlt = (frontmatter.imageAlt as string | undefined) ?? frontmatter.title ?? slug
       const imagePosition = normalizeImagePosition(frontmatter.imagePosition)
       const resolvedDate = resolveDate(frontmatter.date as string | undefined)
+      const excerpt =
+        (frontmatter.tldr as string | undefined) ??
+        (frontmatter.description as string | undefined) ??
+        ''
       return {
         slug,
         title: frontmatter.title ?? slug,
-        excerpt: (frontmatter.description as string | undefined) ?? '',
+        excerpt,
         category,
         city: mappedCity,
         minutes,

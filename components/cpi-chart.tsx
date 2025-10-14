@@ -1,3 +1,5 @@
+'use client'
+
 import { useMemo } from 'react'
 import cpiData from '@/data/cpi-monthly.json'
 

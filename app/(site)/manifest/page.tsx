@@ -92,7 +92,7 @@ export default function ManifestPage() {
         <h2>🔥 Wat gaat er mis in de markt?</h2>
         <ul>
           <li>
-            <strong>Geen vakbond of collectieve afspraken</strong> → iedere tussenpartij hanteert eigen
+            <strong>Geen vakbond of collectieve afspraken</strong> → iedere ketenpartij hanteert eigen
             spelregels.
           </li>
           <li>

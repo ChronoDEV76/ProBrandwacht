@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { getPostSlugs, getPostBySlug } from '@/lib/mdx' // <-- Option A loader (compileMDX)
+import { getPostSlugs } from '@/lib/blog'
+import { getPostBySlug } from '@/lib/mdx' // <-- Option A loader (compileMDX)
 import { coreCities } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 
 import Prose from '@/components/prose'
 import ShareBar from '@/components/share-bar'
+import SeoStructuredData from '@/components/SeoStructuredData'
 
 // ISR
 export const revalidate = 60 * 60 // 1 uur
@@ -25,7 +27,10 @@ export async function generateMetadata(
   try {
     const post = await getPostBySlug(params.slug)
     const title = post.frontmatter.title ?? params.slug
-    const description = post.frontmatter.description ?? 'Brandwacht blog – ProBrandwacht.nl'
+    const description =
+      (post.frontmatter.tldr as string | undefined) ??
+      (post.frontmatter.description as string | undefined) ??
+      'Brandwacht blog – ProBrandwacht.nl'
     const url = `/blog/${params.slug}`
     const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.jpg') as string
     const ogAbs = toAbsoluteUrl(og)
@@ -62,60 +67,34 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   const pageUrl = `https://www.probrandwacht.nl/blog/${params.slug}`
-  const pub = post.frontmatter.date ? new Date(post.frontmatter.date) : null
   const opdrachtgeverSignupUrl = getSignupUrl()
-
-  // JSON-LD
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.frontmatter.title ?? params.slug,
-    description: post.frontmatter.description ?? '',
-    datePublished: toIso(post.frontmatter.date),
-    dateModified: toIso(post.frontmatter.date),
-    mainEntityOfPage: pageUrl,
+  const publishedDate = parseFrontmatterDate(post.frontmatter.date)
+  const articleImage = toAbsoluteUrl(
+    (post.frontmatter.ogImage as string | undefined) || (post.frontmatter.image as string | undefined) || '/og-home.jpg',
+  )
+  const description =
+    (post.frontmatter.tldr as string | undefined) ??
+    (post.frontmatter.description as string | undefined) ??
+    ''
+  const structuredBreadcrumbs = [
+    { name: 'Home', item: 'https://www.probrandwacht.nl/' },
+    { name: 'Blog', item: 'https://www.probrandwacht.nl/blog' },
+    { name: post.frontmatter.title ?? params.slug, item: pageUrl },
+  ]
+  const structuredArticle = {
+    title: post.frontmatter.title ?? params.slug,
+    description,
     url: pageUrl,
-    image: post.frontmatter.ogImage
-      ? [toAbsoluteUrl(post.frontmatter.ogImage as string)]
-      : undefined,
-    author: { '@type': 'Organization', name: 'ProBrandwacht' },
-    publisher: {
-      '@type': 'Organization',
-      name: 'ProBrandwacht',
-      url: 'https://www.probrandwacht.nl',
-      logo: { '@type': 'ImageObject', url: 'https://www.probrandwacht.nl/og.jpg' },
-    },
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.probrandwacht.nl/' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.probrandwacht.nl/blog' },
-      { '@type': 'ListItem', position: 3, name: post.frontmatter.title ?? params.slug, item: pageUrl },
-    ],
+    datePublished: publishedDate?.toISOString(),
+    dateModified: publishedDate?.toISOString(),
+    image: articleImage,
   }
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
+      <SeoStructuredData article={structuredArticle} breadcrumbs={structuredBreadcrumbs} />
       <header className="mb-6">
         <h1 className="text-3xl font-semibold">{post.frontmatter.title ?? params.slug}</h1>
-        <div className="mt-2 flex items-center gap-2 text-xs text-slate-600">
-          {pub && (
-            <time
-              suppressHydrationWarning
-              dateTime={pub.toISOString().slice(0, 10)}
-            >
-              {new Date(`${post.frontmatter.date}T00:00:00Z`).toLocaleDateString('nl-NL', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                timeZone: 'UTC',
-              })}
-            </time>
-          )}
-        </div>
       </header>
 
       {/* MDX-uitvoer uit compileMDX (geleverd door lib/mdx) */}
@@ -159,23 +138,22 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         </ul>
       </section>
 
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     </article>
   )
 }
 
 // helpers
-function toIso(value: unknown) {
-  if (typeof value !== 'string') return undefined
-  const d = new Date(value)
-  return Number.isNaN(d.getTime()) ? undefined : d.toISOString()
-}
 function toAbsoluteUrl(url: string) {
   const trimmed = url.trim()
   if (!trimmed) return 'https://www.probrandwacht.nl/og-home.jpg'
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed
   const normalized = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
   return `https://www.probrandwacht.nl${normalized}`
+}
+function parseFrontmatterDate(value: unknown) {
+  if (typeof value !== 'string') return undefined
+  const trimmed = value.trim()
+  if (!trimmed) return undefined
+  const parsed = new Date(trimmed)
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed
 }

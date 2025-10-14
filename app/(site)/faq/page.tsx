@@ -1,138 +1,75 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import faqContent from '@/content/faq.json'
 
 export const metadata: Metadata = {
   title: 'FAQ | ProBrandwacht.nl',
-  description:
-    'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
+  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
   alternates: { canonical: '/faq', languages: { 'nl-NL': '/faq' } },
   other: { hreflang: 'nl-NL' },
 }
 
 type FAQItem = {
-  q: string
-  a: string
-  more?: { href: string; label: string }
   id?: string
+  question: string
+  summary?: string
+  answer: string[]
+  more?: { href: string; label: string }
 }
 
-const faqs: FAQItem[] = [
-  {
-    q: 'Hoe wordt het tarief verdeeld bij een traditioneel bureau?',
-    a: 'In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60. Voorbeeld: opdrachtgever betaalt €50 per uur, er gaat €20 naar tussenpartij/overhead en de brandwacht ontvangt €30. In industrie, nacht of weekend ligt het klanttarief hoger, maar de verdeling blijft zelden volledig zichtbaar.',
-    more: {
-      href: '/blog/wat-kost-een-brandwacht-in-2025',
-      label: 'Lees: Wat kost een brandwacht in 2025?',
-    },
-  },
-  {
-    q: 'Welke officiële bronnen gebruiken jullie voor tarieven en regelgeving?',
-    a: 'We leunen op cijfers van CBS (cao-lonen en loonkosten), KVK (uurtarief berekenen als zzp’er), Belastingdienst (Wet DBA) en FNV (cao Veiligheidsregio’s & ORT). Door die bronnen te koppelen aan onze escrow- en tariefberekeningen kun jij opdrachtgevers onderbouwen waarom een transparant tarief nodig is.',
-    more: {
-      href: '/seo-resources',
-      label: 'Bekijk alle autoritaire bronnen',
-    },
-  },
-  {
-    q: 'Waarom lijkt €30 per uur goedkoop maar pakt het duur uit?',
-    a: 'Een tarief van €30/u klinkt als slimme inkoop, maar de praktijk laat het tegendeel zien: minder motivatie, hogere uitval en extra risico op de werkvloer. Via ProSafetyMatch bepaal je samen een passend tarief, met eerlijke inzichten in fee en escrow, zodat kwaliteit beloond blijft.',
-  },
-  {
-    q: 'Welke typen brandwachten zijn er?',
-    a: 'We zien grofweg drie groepen: repressieve brandwachten uit korpsen/veiligheidsregio’s die af en toe bijverdienen; volledig zzp-brandwachten met rijksdiploma’s en vaak ademlucht; en industriële brandwachten met petrochemische certificaten. ProSafetyMatch brengt ze bij elkaar zonder tarieven op te leggen, maar met volledig inzicht in fee, escrow en certificaten.',
-  },
-  {
-    q: 'Wat houdt de community rond ProSafetyMatch in?',
-    a: 'We bouwen een digitaal collectief voor zelfstandige brandwachten: nieuws over wetgeving en tarieven, kennisdeling, feedback op nieuwe features en toegang tot scholing. Zo ontstaat er een alternatief voor losse groepen en houden we samen de tariefverdeling eerlijk.',
-  },
-  {
-    q: 'Wat verdien ik als zzp’er via ProBrandwacht straks?',
-    a: 'Het tarief spreek je zelf af met de opdrachtgever. Veel afspraken liggen tussen €38–€45 per uur bij dagdiensten; nacht, weekend, industrie of ademlucht liggen hoger. Wij laten alleen zien wat er met de 10% platformfee en 1–2% escrow gebeurt, zodat je netto direct zichtbaar is en je ondernemersvrijheid behoudt.',
-  },
-  {
-    q: 'Kan ik mijn tarief jaarlijks indexeren?',
-    a: 'Ja. We adviseren om minimaal jaarlijks te indexeren op basis van CBS-loonkosten en inflatie. Gebruik onze calculator als referentie en spreek vooraf met opdrachtgevers af welke index of percentage je hanteert (bijvoorbeeld CPI of een sectorindex). Transparantie voorkomt discussie achteraf.',
-  },
-  {
-    q: 'Hoe werkt escrow‑betaling?',
-    a: 'De opdrachtgever betaalt vooraf op een tussenrekening (escrow). Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht. Bij een terechte klacht wordt de betaling tijdelijk gepauzeerd totdat er een oplossing is. Zo voorkom je late betalingen en discussies achteraf. ProSafetyMatch treedt niet op als bemiddelaar. Wij zijn een onafhankelijk platform dat uitsluitend de escrow-betaling en de eerlijke afhandeling faciliteert. Daarmee blijft elke euro inzichtelijk, behoud jij je ondernemerspositie en worden afspraken direct nagekomen, zonder tussenkomst of marge van een bureau.',
-  },
-  {
-    q: 'Wat als de kosten te hoog worden voor de opdrachtgever?',
-    a: 'Blijf in gesprek. Laat zien hoe het tarief is opgebouwd (uurloon, platformfee, escrow, toeslagen) en bespreek alternatieven zoals langere inzet, ploegdeling of faseerplanning. Soms is het beter om een opdracht te weigeren dan concessies te doen die veiligheid of zelfstandigheid onder druk zetten.',
-  },
-  {
-    q: 'Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?',
-    a: 'ProBrandwacht.nl is onze wervingssite met community, kennisbank en voorinschrijving voor professionals. ProSafetyMatch wordt het digitale platform met eerlijke tarieven, escrow-betalingen, reviews en certificaat-checks. Meld je via ProBrandwacht aan voor vroege toegang tot ProSafetyMatch.',
-  },
-  {
-    q: 'Wanneer gaat het platform live?',
-    a: 'We werken toe naar de eerste publieke lancering in 2025. Sluit je nu aan voor updates en vroege toegang; we starten gefaseerd met pilots en breiden vervolgens landelijk uit.',
-  },
-  {
-    q: 'Wanneer is een brandwacht verplicht bij evenementen?',
-    a: 'Bij vergunningsplichtige evenementen of wanneer de veiligheidsregio dit voorschrijft, bijvoorbeeld bij verhoogd risico, grote publieksstromen of pyrotechniek.',
-    more: {
-      href: '/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen',
-      label: 'Lees: Wanneer is een brandwacht verplicht bij evenementen?',
-    },
-  },
-  {
-    q: 'Wat kost een brandwacht?',
-    a: 'Veel opdrachten worden gesloten tussen €40 en €60 per uur. Het precieze tarief hangt af van certificaten (VCA/BHV/EHBO/Manschap), type inzet, duur, tijdstip en regio. Gebruik onze calculator om te laten zien hoe fee en escrow worden verdeeld, maar bepaal het tarief altijd samen met de professional.',
-    more: {
-      href: '/blog/wat-kost-een-brandwacht-in-2025',
-      label: 'Lees: Wat kost een brandwacht in 2025?',
-    },
-  },
-  {
-    q: 'Welke certificaten zijn relevant?',
-    a: 'Veelvoorkomend: VCA, BHV, EHBO en Manschap A/B. In de industrie zijn aanvullingen nodig (hete werkvergunning, toezicht besloten ruimte). We verifiëren certificaten minimaal iedere 12 maanden en eerder bij verlopen documenten. Actuele geldigheid en aantoonbare ervaring verhogen je inzetbaarheid en tarief.',
-    id: 'certificaten-overzicht',
-  },
-  {
-    q: 'Hoe lever ik certificaten aan?',
-    a: 'Upload certificaten bij voorkeur als PDF zodat we ze automatisch kunnen valideren. Lever je PNG/JPG aan, dan koppelen we die aan je iDIN-verificatie en checken we ze handmatig tegen bronnen zoals het Centraal Diploma Register VCA. Alleen jij en uitgenodigde opdrachtgevers krijgen inzage.',
-    id: 'certificaten',
-  },
-  {
-    q: 'Mag een zzp‑brandwacht op een bouwplaats werken?',
-    a: 'Ja, mits de vereiste certificaten aanwezig zijn (minimaal VCA, vaak BHV/EHBO) en de opdrachtvoorwaarden dit toestaan. Duidelijke taakafspraken en risico‑instructie op locatie zijn essentieel.',
-  },
-]
+type FAQSection = {
+  title: string
+  items: FAQItem[]
+}
+
+const sections = faqContent as FAQSection[]
 
 export default function FAQPage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(f => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
+    mainEntity: sections.flatMap(section =>
+      section.items.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer.join(' ') },
+      }))
+    ),
   }
+
   return (
-    <section className="space-y-6">
+    <section className="space-y-8">
       <h1 className="text-3xl font-semibold">Veelgestelde Vragen</h1>
-      <ul className="space-y-4">
-        {faqs.map((f, i) => (
-          <li key={i} id={f.id ?? undefined}>
-            <p className="font-medium">{f.q}</p>
-            <p className="text-sm text-slate-600">{f.a}</p>
-            {f.more ? (
-              <p className="mt-1 text-sm">
-                <Link href={f.more.href} className="underline">
-                  {f.more.label}
-                </Link>
-              </p>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {sections.map(section => (
+        <div key={section.title} className="space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
+          <ul className="space-y-3">
+            {section.items.map(item => (
+              <li
+                key={item.id ?? item.question}
+                id={item.id}
+                className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4"
+              >
+                <p className="font-medium text-slate-900">{item.question}</p>
+                {item.summary ? <p className="text-sm font-medium text-slate-600">{item.summary}</p> : null}
+                <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-slate-600">
+                  {item.answer.map((line, idx) => (
+                    <li key={idx}>{line}</li>
+                  ))}
+                </ul>
+                {item.more ? (
+                  <p className="mt-2 text-sm">
+                    <Link href={item.more.href} className="underline">
+                      {item.more.label}
+                    </Link>
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </section>
   )
 }

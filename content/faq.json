@@ -1,0 +1,193 @@
+[
+  {
+    "title": "Transparante tarieven",
+    "items": [
+      {
+        "id": "tarief-verdeling",
+        "question": "Hoe wordt het tarief verdeeld bij een traditioneel bureau?",
+        "summary": "Bureaus houden vaak €15–€25 per uur over; zelfstandigen zien niet altijd dezelfde transparantie.",
+        "answer": [
+          "In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €45–€60.",
+          "Voorbeeld: opdrachtgever betaalt €50/u → €20 overhead, €30 voor de brandwacht.",
+          "Industrie-, nacht- of weekendwerk kent hogere tarieven, maar de verdeling blijft zelden volledig zichtbaar."
+        ],
+        "more": {
+          "href": "/blog/wat-kost-een-brandwacht-in-2025",
+          "label": "Lees: Wat kost een brandwacht in 2025?"
+        }
+      },
+      {
+        "id": "bronnen",
+        "question": "Welke officiële bronnen gebruiken jullie voor tarieven en regelgeving?",
+        "summary": "CBS, KVK, Belastingdienst en FNV vormen de basis voor onze berekeningen en documentatie.",
+        "answer": [
+          "CBS levert cao-loon- en loonkostenstatistieken.",
+          "KVK publiceert kostprijsmodellen voor zzp’ers.",
+          "Belastingdienst en FNV geven richtlijnen over Wet DBA en ORT-toeslagen.",
+          "Door deze bronnen te combineren onderbouw je waarom transparante tarieven nodig zijn."
+        ],
+        "more": {
+          "href": "/seo-resources",
+          "label": "Bekijk alle autoritaire bronnen"
+        }
+      },
+      {
+        "id": "lage-tarieven",
+        "question": "Waarom lijkt €30 per uur goedkoop maar pakt het duur uit?",
+        "summary": "Een te laag tarief vergroot verloop en veiligheidsrisico’s.",
+        "answer": [
+          "Een tarief van €30/u klinkt aantrekkelijk, maar leidt tot minder motivatie en hogere uitval.",
+          "Risico’s stijgen bij specialistische taken; herstelwerk kost tijd en geld.",
+          "Via ProSafetyMatch bepaal je samen een passend tarief met zicht op fee en escrow."
+        ]
+      },
+      {
+        "id": "typen-brandwachten",
+        "question": "Welke typen brandwachten zijn er?",
+        "summary": "We onderscheiden repressief, volledig zzp en industrieel.",
+        "answer": [
+          "Repressieve brandwachten uit korpsen/veiligheidsregio’s verdienen bij naast hun dienst.",
+          "Zelfstandige brandwachten werken met rijksdiploma’s en organiseren hun opdrachten zelf.",
+          "Industriële brandwachten hebben petrochemische certificaten en werken in risicovolle omgevingen.",
+          "ProSafetyMatch brengt alle profielen samen met volledig inzicht in fee, escrow en certificaten."
+        ]
+      },
+      {
+        "id": "community",
+        "question": "Wat houdt de community rond ProSafetyMatch in?",
+        "summary": "We bouwen een digitaal collectief voor zelfstandige brandwachten.",
+        "answer": [
+          "Nieuws over wetgeving, tarieven en best practices.",
+          "Feedback op nieuwe features en toegang tot scholing.",
+          "Gezamenlijk tariefbewustzijn zodat de verdeling eerlijk blijft."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Samenwerking & betaling",
+    "items": [
+      {
+        "id": "zzp-verdiensten",
+        "question": "Wat verdien ik als zzp’er via ProBrandwacht straks?",
+        "summary": "Je spreekt het tarief zelf af; dagdiensten liggen gemiddeld rond €38–€45/u.",
+        "answer": [
+          "Je tarief spreek je rechtstreeks af met de opdrachtgever.",
+          "Veel dagdiensten liggen tussen €38–€45/u; nacht, weekend en industrie hoger.",
+          "Wij tonen alleen de 10% platformfee en 1–2% escrow zodat je netto direct zichtbaar is."
+        ]
+      },
+      {
+        "id": "indexeren",
+        "question": "Kan ik mijn tarief jaarlijks indexeren?",
+        "summary": "Ja, baseer je op CBS-loonkosten en spreek het vooraf af.",
+        "answer": [
+          "Indexeer minimaal jaarlijks op basis van CBS-loonkosten en inflatie.",
+          "Gebruik onze calculator als referentie.",
+          "Leg vooraf vast welke index of percentage je hanteert om discussie te voorkomen."
+        ]
+      },
+      {
+        "id": "escrow",
+        "question": "Hoe werkt escrow-betaling?",
+        "summary": "Opdrachtgever stort vooraf; uitbetaling volgt na bevestiging.",
+        "answer": [
+          "De opdrachtgever betaalt vooraf naar een tussenrekening (escrow).",
+          "Na bevestigde uitvoering wordt automatisch uitbetaald aan de brandwacht.",
+          "Bij een terechte klacht pauzeren we de betaling tot er een oplossing is.",
+          "ProSafetyMatch treedt niet op als bemiddelaar en houdt geen marge achter."
+        ]
+      },
+      {
+        "id": "kosten-te-hoog",
+        "question": "Wat als de kosten te hoog worden voor de opdrachtgever?",
+        "summary": "Blijf in gesprek en toon hoe het tarief is opgebouwd.",
+        "answer": [
+          "Laat zien hoe uurtarief, platformfee, escrow en toeslagen zijn opgebouwd.",
+          "Onderzoek alternatieven zoals langere inzet, ploegdeling of gefaseerde planning.",
+          "Voorkom concessies die veiligheid of zelfstandigheid onder druk zetten."
+        ]
+      },
+      {
+        "id": "probrandwacht-vs-prosafety",
+        "question": "Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?",
+        "summary": "ProBrandwacht is de wervingssite; ProSafetyMatch wordt het platform.",
+        "answer": [
+          "ProBrandwacht.nl bevat community, kennisbank en voorinschrijving.",
+          "ProSafetyMatch lanceert als digitaal platform met escrow, reviews en certificaat-checks.",
+          "Meld je via ProBrandwacht aan voor vroege toegang."
+        ]
+      },
+      {
+        "id": "live",
+        "question": "Wanneer gaat het platform live?",
+        "summary": "We werken naar een gefaseerde lancering in 2025.",
+        "answer": [
+          "We starten met pilots en rollen daarna landelijk uit.",
+          "Sluit je nu aan voor updates en vroege toegang."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Certificaten & inzet",
+    "items": [
+      {
+        "id": "event-brandwacht",
+        "question": "Wanneer is een brandwacht verplicht bij evenementen?",
+        "summary": "Bij vergunningsplichtige evenementen of verhoogd risico.",
+        "answer": [
+          "Gemeente en veiligheidsregio bepalen via vergunning en veiligheidsplan de verplichting.",
+          "Voorbeelden: open vuur, grote bezoekersstromen, pyrotechniek, complex stroomplan."
+        ],
+        "more": {
+          "href": "/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen",
+          "label": "Lees: Wanneer is een brandwacht verplicht bij evenementen?"
+        }
+      },
+      {
+        "id": "kost-brandwacht",
+        "question": "Wat kost een brandwacht?",
+        "summary": "Veel afspraken vallen tussen €40 en €60 per uur.",
+        "answer": [
+          "Tarief hangt af van certificaten, inzet, duur, tijdstip en regio.",
+          "Gebruik de calculator voor fee- en escrowtransparantie.",
+          "Bepaal het tarief altijd samen met de professional."
+        ],
+        "more": {
+          "href": "/blog/wat-kost-een-brandwacht-in-2025",
+          "label": "Lees: Wat kost een brandwacht in 2025?"
+        }
+      },
+      {
+        "id": "certificaten-overzicht",
+        "question": "Welke certificaten zijn relevant?",
+        "summary": "Veelvoorkomend: VCA, BHV, EHBO, Manschap A/B en industrie-specifiek.",
+        "answer": [
+          "VCA, BHV, EHBO en Manschap A/B vormen de basis.",
+          "Industrie vraagt aanvullingen zoals hete werkvergunning en toezicht besloten ruimte.",
+          "We verifiëren certificaten minimaal jaarlijks en tonen geldigheid in het dashboard."
+        ]
+      },
+      {
+        "id": "certificaten-aanleveren",
+        "question": "Hoe lever ik certificaten aan?",
+        "summary": "Upload als PDF of koppel via iDIN voor automatische validatie.",
+        "answer": [
+          "Upload bij voorkeur als PDF voor automatische validatie.",
+          "PNG/JPG koppelen we aan iDIN en checken we handmatig tegen officiële registers.",
+          "Alleen jij en uitgenodigde opdrachtgevers krijgen inzage."
+        ]
+      },
+      {
+        "id": "zzp-bouwplaats",
+        "question": "Mag een zzp-brandwacht op een bouwplaats werken?",
+        "summary": "Ja, mits certificaten en voorwaarden op orde zijn.",
+        "answer": [
+          "Minimaal VCA; vaak ook BHV/EHBO verplicht.",
+          "Zorg voor duidelijke taakafspraken en risico-instructies op locatie."
+        ]
+      }
+    ]
+  }
+]

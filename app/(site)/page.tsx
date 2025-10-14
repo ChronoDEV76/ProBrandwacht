@@ -1,37 +1,56 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
+
+import SeoStructuredData from '@/components/SeoStructuredData'
+
 import CpiChart from '@/components/cpi-chart'
 
 const CostCalculator = dynamic(() => import('@/components/cost-calculator'), { ssr: false })
+
 export const metadata: Metadata = {
-  title: 'ProBrandwacht.nl | Veiligheid, eerlijk geregeld',
+  title: 'Brandwacht inhuren | ProBrandwacht.nl – transparante tarieven & DBA-proof samenwerking',
   description:
-    'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers begeleidt naar transparante tarieven, DBA-proof afspraken en directe samenwerking via ProSafetyMatch.',
+    'ProBrandwacht.nl is het onafhankelijke platform voor brandwachten en opdrachtgevers. Ontdek transparante tarieven, escrow-betalingen en DBA-proof samenwerking zonder tussenbureau.',
   keywords: [
-    'probrandwacht',
-    'prosafetymatch',
-    'brandwacht platform',
     'brandwacht inhuren',
     'zzp brandwacht',
-    'dba brandwacht',
-    'escrow brandwacht',
+    'freelance brandwacht',
+    'brandwacht tarieven 2025',
+    'brandwacht kosten per uur',
     'transparante brandwacht tarieven',
+    'probrandwacht',
+    'prosafetymatch',
+    'dba proof samenwerking',
+    'escrow brandwacht',
+    'HEV 2018 brandveiligheid',
+    'BGBOP brandveiligheid',
+    'brandbeveiliging evenement',
+    'veiligheidsregio eisen brandwacht',
+    'alternatief brandwacht bureau',
+    'brandwacht evenementen Randstad',
+    'directe opdracht zzp brandwacht',
+    'brandwacht rijksgediplomeerd',
+    'poort-QR check-in',
+    'gasmeting gasmeter services',
+    'mangatwacht buitenwacht',
   ],
   alternates: { canonical: '/', languages: { 'nl-NL': '/' } },
-  other: { hreflang: 'nl-NL' },
   openGraph: {
-    title: 'ProBrandwacht.nl | Veiligheid, eerlijk geregeld',
+    title: 'Brandwacht inhuren via ProBrandwacht.nl | Transparante tarieven & directe samenwerking',
     description:
-      'Bewustwording, transparantie en digitale onafhankelijkheid voor brandwachten en opdrachtgevers. Powered by ProSafetyMatch.',
+      'Huur een brandwacht of veiligheidsprofessional in zonder tussenbureau. Transparante tarieven, escrow-betaling en DBA-proof samenwerking via ProSafetyMatch.',
     url: 'https://www.probrandwacht.nl/',
-    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform overzicht' }],
+    locale: 'nl_NL',
+    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'Brandwacht inhuren via ProBrandwacht' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@ProBrandwacht',
     creator: '@ProBrandwacht',
+    title: 'Brandwacht inhuren via ProBrandwacht.nl',
+    description:
+      'DBA-proof brandwacht inhuren? Vergelijk transparante tarieven, escrow-betalingen en gecertificeerde teams via ProBrandwacht.nl.',
     images: ['/og-home.jpg'],
   },
 }
@@ -93,6 +112,33 @@ const verificationPoints = [
   },
 ]
 
+const seoPillars = [
+  {
+    id: 'poort-qr-check-in',
+    heading: 'Poort-QR check-in voor realtime aanwezigheidscontrole',
+    copy:
+      'Gebruik een poort-QR check-in om certificaten automatisch te controleren en ploegbezetting live bij te werken. Zo voldoe je aan vergunningseisen en audit-trails zonder wachtrijen bij de ingang.',
+    ctaLabel: 'Lees hoe poort-QR check-in werkt',
+    href: '/blog/industriele-brandwacht-wat-houdt-het-in#poort-qr-check-in',
+  },
+  {
+    id: 'brandwacht-rijksgediplomeerd',
+    heading: 'Brandwacht rijksgediplomeerd voor industriële inzet',
+    copy:
+      'Selecteer rijksgediplomeerde manschappen (Manschap A/B) met recente oefenuren voor petrochemische stops en reddingswerk. Combineer repressieve ervaring met toezichttaken via één transparant platform.',
+    ctaLabel: 'Bekijk rijksgediplomeerde profielen',
+    href: '/blog/industriele-brandwacht-wat-houdt-het-in#brandwacht-rijksgediplomeerd',
+  },
+  {
+    id: 'gasmeting-gasmeter',
+    heading: 'Gasmeting/gasmeter services met rapportage',
+    copy:
+      'Professionals loggen Ex-Ox-Tox-waarden per meetmoment, bewaren kalibratiecertificaten en delen rapporten via escrow-dossiers. Geen losse spreadsheets meer, maar aantoonbare compliance.',
+    ctaLabel: 'Meer over gasmeting en gasmeterdiensten',
+    href: '/blog/industriele-brandwacht-wat-houdt-het-in#gasmeting-gasmeter-services',
+  },
+]
+
 const partnerBadges = ['CBS-data', "KVK kostprijsmodellen", "Belastingdienst Wet DBA", "FNV Veiligheidsregio's"]
 
 const knowledgeResources = [
@@ -109,7 +155,7 @@ const knowledgeResources = [
   {
     label: 'Toolkit voor certificaten',
     description: 'Leer hoe je documenten veilig beheert, wanneer je moet vernieuwen en hoe escrow uitbetalingen werkt.',
-    href: '/faq#certificaten',
+    href: '/manifest',
   },
 ]
 
@@ -132,24 +178,21 @@ const faqEntries = [
 ]
 
 export default function HomePage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqEntries.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
+  const articleStructuredData = {
+    title: 'Brandwacht inhuren – transparante tarieven & DBA-proof samenwerking',
+    description:
+      'ProBrandwacht.nl helpt opdrachtgevers en brandwachten met transparante tarieven, escrow en DBA-proof samenwerking zonder tussenbureau.',
+    url: 'https://www.probrandwacht.nl/',
+    datePublished: '2024-07-05',
+    dateModified: '2024-07-05',
+    image: 'https://www.probrandwacht.nl/og-home.jpg',
   }
 
   return (
     <div className="relative w-full bg-gradient-to-r from-brand-50 to-white">
       <div className="relative text-slate-900">
         <div className="relative mx-auto max-w-5xl space-y-16 px-4 pb-16 pt-10 sm:px-6 md:px-8 md:pb-24 md:pt-16">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+          <SeoStructuredData includeOrganization={false} article={articleStructuredData} faqs={faqEntries} />
 
           <section className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/80 px-4 py-2 text-xs font-medium text-brand-700 shadow-sm">
@@ -280,9 +323,9 @@ export default function HomePage() {
                 De stijgende inflatie en toenemende lasten drukken op de marges van zelfstandigen. ProBrandwacht monitort de marktontwikkelingen en werkt aan een model
                 waarin tarieftransparantie en eerlijke beloning hand in hand gaan.
               </p>
-              <div className="mx-auto max-w-lg rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm">
                 <CpiChart />
-                <p className="mt-2 text-xs text-slate-500">Bron: CBS – CPI jaarmutaties, 2016–2025 (indicatief)</p>
+                <p className="mt-2 text-xs text-slate-500 text-center">Bron: CBS StatLine (jaar-op-jaar CPI) & interne ProBrandwacht-index</p>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
@@ -314,13 +357,6 @@ export default function HomePage() {
           <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-semibold text-slate-900">Onze agenda voor eerlijker werken</h2>
             <ul className="mt-4 space-y-4 text-sm text-slate-700">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q4</span>
-                <div>
-                  <p className="font-semibold">Kosten- &amp; tariefcalculator (2025)</p>
-                  <p className="text-xs text-slate-600">Laat zien wat jouw prijs moet zijn om lasten te dekken. Status: in ontwikkeling.</p>
-                </div>
-              </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-semibold text-brand-700">Q1</span>
                 <div>
@@ -363,6 +399,30 @@ export default function HomePage() {
                     className="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-800"
                   >
                     Lees meer
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-3xl border border-brand-100 bg-white/90 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">Brandwacht diensten waar bureaus op concurreren</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Laat zien dat je dezelfde specialistische diensten biedt als de grote bureaus: van poort-QR check-in tot
+              rijksgediplomeerde teams en volledige gasmeting/gasmeter rapportage.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {seoPillars.map(pillar => (
+                <article key={pillar.id} className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white/90 p-4">
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-900">{pillar.heading}</h3>
+                    <p className="mt-2 text-sm text-slate-700">{pillar.copy}</p>
+                  </div>
+                  <Link
+                    href={pillar.href}
+                    className="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-800"
+                  >
+                    {pillar.ctaLabel}
                   </Link>
                 </article>
               ))}
@@ -415,6 +475,26 @@ export default function HomePage() {
             </div>
           </section>
 
+          <section className="rounded-3xl border border-brand-100 bg-white/85 p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-slate-900">Denk met ons mee</h2>
+            <p className="mt-2 text-sm text-slate-700">
+              Heb jij ideeën om het spanningsveld tussen inflatie, DBA en veiligheid eerlijker te maken? Deel je inzichten zodat we onze roadmap blijven voeden met praktijkervaringen.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="mailto:info@chronosolutions.nl"
+                className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90"
+              >
+                Stuur je feedback
+              </Link>
+              <Link
+                href="/manifest#community"
+                className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white"
+              >
+                Bekijk hoe we samenwerken
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </div>

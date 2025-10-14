@@ -33,7 +33,7 @@ export type BlogFrontmatter = {
   [key: string]: unknown
 }
 
-const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
+export const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
 export async function getPostSlugs(): Promise<string[]> {
   const files = await fs.readdir(BLOG_DIR)

@@ -12,8 +12,13 @@ import TariefTabel from '@/components/mdx/TariefTabel'
 import KostenOpbouw from '@/components/mdx/KostenOpbouw'
 import KostenOpbouwScenarios from '@/components/mdx/KostenOpbouwScenarios'
 import FeeVergelijk from '@/components/mdx/FeeVergelijk'
+import Bronnen from '@/components/mdx/Bronnen'
+import ConclusieMarkt from '@/components/mdx/ConclusieMarkt'
+import Tldr from '@/components/mdx/Tldr'
+import { BLOG_DIR } from './blog'
+import type { BlogFrontmatter } from './blog'
 
-export type BlogFrontmatter = Record<string, any>
+export { getPostSlugs } from './blog'
 
 export interface BlogPost {
   slug: string
@@ -23,14 +28,6 @@ export interface BlogPost {
 }
 
 // Where your .mdx posts live (e.g. /content/blog/*.mdx)
-export const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
-
-export async function getPostSlugs(): Promise<string[]> {
-  const files = await fs.readdir(BLOG_DIR)
-  return files
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => f.replace(/\.mdx$/, ''))
-}
 
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
@@ -66,6 +63,9 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
       KostenOpbouw,
       KostenOpbouwScenarios,
       FeeVergelijk,
+      Bronnen,
+      ConclusieMarkt,
+      Tldr,
     },
   })
 
@@ -76,4 +76,3 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     raw: content,
   }
 }
-

@@ -6,12 +6,10 @@ import * as React from "react";
 type Range = { label: string; from: number; to: number; hint?: string };
 
 function formatEUR(v: number) {
-  return new Intl.NumberFormat("nl-NL", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(v);
+  if (!Number.isFinite(v)) return "—";
+  const [whole, fraction] = v.toFixed(2).split(".");
+  const thousands = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `€ ${thousands},${fraction}`;
 }
 
 export default function TariefTabel({
@@ -29,6 +27,11 @@ export default function TariefTabel({
 }) {
   const clamp = (v: number) => Math.min(Math.max(v, min), max);
   const span = Math.max(max - min, 1);
+
+  const formatPercent = (value: number) => {
+    const rounded = Math.round(value * 1000) / 1000;
+    return `${rounded.toFixed(3).replace(/\.0+$/, '').replace(/(\.\d*?)0+$/, '$1')}%`;
+  };
 
   return (
     <div className="rounded-2xl border bg-white p-5 shadow-sm">
@@ -70,13 +73,13 @@ export default function TariefTabel({
                 {/* range-bar */}
                 <div
                   className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 shadow-sm"
-                  style={{ left: `${startPct}%`, width: `${widthPct}%` }}
+                  style={{ left: formatPercent(startPct), width: formatPercent(widthPct) }}
                   aria-hidden
                 />
                 {/* midpoint marker */}
                 <div
                   className="absolute top-1/2 -translate-y-1/2 -ml-2 h-5 w-5 rounded-full bg-white ring-2 ring-blue-600 shadow"
-                  style={{ left: `${midPct}%` }}
+                  style={{ left: formatPercent(midPct) }}
                   title={`Midden: ${formatEUR(mid)}/u`}
                 />
                 {/* min/max labels */}

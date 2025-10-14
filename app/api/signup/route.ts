@@ -1,21 +1,33 @@
-import { NextResponse } from 'next/server';
+// app/api/signup/route.ts
+import { NextResponse } from 'next/server'
+import { sql } from '@vercel/postgres' // ⬅️ dit is de import
 
 export async function POST(request: Request) {
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+  const body = await request.json().catch(() => null)
+  if (!body || typeof body !== 'object') {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
-  const type =
-    typeof body === 'object' && body !== null && 'type' in body && typeof (body as { type?: unknown }).type === 'string'
-      ? ((body as { type: string }).type || 'unknown')
-      : 'unknown';
-  console.log(`[SIGNUP] ${type}`, body);
-  return NextResponse.json({ ok: true });
+  const id = crypto.randomUUID()
+  const {
+    type = 'unknown',
+    firstName, lastName, email, kvk, btw, skills, certificateRef, notes,
+  } = body as any
+
+  await sql/* sql */`
+    INSERT INTO signups (id, type, first_name, last_name, email, kvk, btw, skills, certificate_ref, notes)
+    VALUES (${id}, ${type}, ${firstName}, ${lastName}, ${email}, ${kvk}, ${btw}, ${skills}, ${certificateRef}, ${notes});
+  `
+  console.log('[SIGNUP:PG] stored', id, email)
+  return NextResponse.json({ ok: true, id })
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true });
+  const { rows } = await sql/* sql */`
+    SELECT id, created_at, type, first_name, last_name, email
+    FROM signups
+    ORDER BY created_at DESC
+    LIMIT 10;
+  `
+  return NextResponse.json({ ok: true, count: rows.length, items: rows })
 }
