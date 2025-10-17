@@ -1,7 +1,7 @@
 {
   "name": "probrandwacht",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,12 +17,14 @@
     "format:check": "prettier --check .",
     "sanity:aider": "bash scripts/aider-sanity.sh",
     "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
-    "tone-check": "node scripts/toneCheck.mjs --root content"
+    "tone-check": "node scripts/toneCheck.mjs --root content",
+    "seo:audit": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@vercel/kv": "^3.0.0",
     "@vercel/postgres": "^0.10.0",
+    "cheerio": "^1.1.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
@@ -39,6 +41,8 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
+    "sharp": "^0.34.4",
+    "undici": "^7.16.0",
     "zod": "^4.1.11"
   },
   "devDependencies": {
