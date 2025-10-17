@@ -13,6 +13,9 @@ body {
 
 body {
   @apply antialiased text-slate-800;
+  background-image: linear-gradient(180deg, rgba(10, 99, 255, 0.15) 0%, rgba(10, 99, 255, 0.05) 18%, rgba(255, 255, 255, 0.6) 48%, rgba(255, 255, 255, 1) 100%);
+  background-color: #f6f9ff;
+  min-height: 100vh;
 }
 .prose h1,
 .prose h2,

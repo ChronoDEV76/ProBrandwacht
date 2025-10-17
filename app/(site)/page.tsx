@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
 import SeoStructuredData from '@/components/SeoStructuredData'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 
 import CpiChart from '@/components/cpi-chart'
 
@@ -36,6 +37,9 @@ export const metadata: Metadata = {
     'mangatwacht buitenwacht',
   ],
   alternates: { canonical: '/', languages: { 'nl-NL': '/' } },
+  authors: [{ name: 'ProBrandwacht', url: 'https://www.probrandwacht.nl' }],
+  creator: 'ProBrandwacht',
+  publisher: 'ProBrandwacht',
   openGraph: {
     title: 'Brandwacht inhuren via ProBrandwacht.nl | Transparante tarieven & directe samenwerking',
     description:
@@ -52,6 +56,10 @@ export const metadata: Metadata = {
     description:
       'DBA-proof brandwacht inhuren? Vergelijk transparante tarieven, escrow-betalingen en gecertificeerde teams via ProBrandwacht.nl.',
     images: ['/og-home.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -114,6 +122,11 @@ const verificationPoints = [
 
 const partnerBadges = ['CBS-data', "KVK kostprijsmodellen", "Belastingdienst Wet DBA", "FNV Veiligheidsregio's"]
 
+const breadcrumbItems = [
+  { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+  { name: 'Brandwacht inhuren', url: 'https://www.probrandwacht.nl/' },
+]
+
 const knowledgeResources = [
   {
     label: 'Tariefcalculator',
@@ -162,10 +175,11 @@ export default function HomePage() {
   }
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-brand-50 to-white">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-brand-100/40 via-white to-white">
       <div className="relative text-slate-900">
         <div className="relative mx-auto max-w-5xl space-y-16 px-4 pb-16 pt-10 sm:px-6 md:px-8 md:pb-24 md:pt-16">
           <SeoStructuredData includeOrganization={false} article={articleStructuredData} faqs={faqEntries} />
+          <StructuredBreadcrumbs items={breadcrumbItems} />
 
           <section className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/80 px-4 py-2 text-xs font-medium text-brand-700 shadow-sm">
