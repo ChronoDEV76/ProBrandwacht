@@ -251,7 +251,7 @@ export default function HomePage() {
               Voor zzp-brandwachten en opdrachtgevers die staan voor eerlijk samenwerken
             </p>
             <h1 id="hero-heading" className="text-3xl font-semibold sm:text-4xl lg:text-5xl">
-              Veiligheid, maar dan eerlijk geregeld.
+              Veiligheid, maar dan anders geregeld.
             </h1>
             <p className="text-sm font-medium text-brand-700">
               Transparant. DBA-proof. Zonder verborgen marges.
