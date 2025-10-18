@@ -4,7 +4,15 @@ import { cities } from '@/lib/cities'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://www.probrandwacht.nl'
-  const staticRoutes = ['/', '/blog', '/manifest', '/faq'].map(p => ({
+  const staticRoutes = [
+    '/',
+    '/blog',
+    '/manifest',
+    '/faq',
+    '/zzp/aanmelden',
+    '/opdrachtgevers',
+    '/opdrachtgevers/brandwacht-inhuren',
+  ].map(p => ({
     url: base + p,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
