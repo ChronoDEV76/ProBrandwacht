@@ -224,7 +224,7 @@ export default function ZzpAanmeldenPage() {
       saveLocal(STORAGE_KEY_ZZP, profile);
       setDone(true);
     }
-  }, [result]);
+  }, [result, profile]);
 
   const hasProfile = Object.keys(profile).length > 0;
 
@@ -395,4 +395,3 @@ export default function ZzpAanmeldenPage() {
 // - Success-state toont JSON + Dropbox instructie
 // - Button disabled + label tijdens loading
 // ==================================================================
-
