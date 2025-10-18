@@ -1,6 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
+import { useSignup } from "@/lib/hooks/useSignup";
 import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
@@ -42,8 +42,8 @@ function Label({ children, htmlFor, hint }: LabelProps) {
     </label>
   );
 }
-type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
+type InputProps = InputHTMLAttributes<HTMLInputElement>;
 function Input({ className = "", ...props }: InputProps) {
   return (
     <input
@@ -52,8 +52,8 @@ function Input({ className = "", ...props }: InputProps) {
     />
   );
 }
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 function Textarea({ className = "", ...props }: TextareaProps) {
   return (
     <textarea
@@ -62,9 +62,10 @@ function Textarea({ className = "", ...props }: TextareaProps) {
     />
   );
 }
-type ButtonVariant = "primary" | "secondary" | "ghost";
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant };
 
+type ButtonVariant = "primary" | "secondary" | "ghost";
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant };
 function Button({ children, variant = "primary", className = "", ...props }: ButtonProps) {
   const base =
     "inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-medium focus:outline-none focus:ring-4 focus:ring-offset-0 disabled:opacity-50 transition";
@@ -80,20 +81,13 @@ function Button({ children, variant = "primary", className = "", ...props }: But
     </button>
   );
 }
-type CardProps = {
-  children: ReactNode;
-  className?: string;
-};
 
+type CardProps = { children: ReactNode; className?: string };
 function Card({ children, className = "" }: CardProps) {
   return <div className={`rounded-2xl border border-gray-200 bg-white shadow-sm ${className}`}>{children}</div>;
 }
-type CardSectionProps = {
-  title?: string;
-  subtitle?: string;
-  children: ReactNode;
-};
 
+type CardSectionProps = { title?: string; subtitle?: string; children: ReactNode };
 function CardSection({ title, subtitle, children }: CardSectionProps) {
   return (
     <section className="p-6">
@@ -107,11 +101,12 @@ function CardSection({ title, subtitle, children }: CardSectionProps) {
     </section>
   );
 }
+
 function Divider() {
   return <hr className="border-t border-gray-100" />;
 }
-type LinkButtonProps = LinkProps & { variant?: ButtonVariant };
 
+type LinkButtonProps = LinkProps & { variant?: ButtonVariant };
 function LinkButton({ href = "#", children, variant = "primary", className = "", ...props }: LinkButtonProps) {
   const styles =
     variant === "secondary"
@@ -200,53 +195,36 @@ function formDataToProfile(form: FormData): ProfileValues {
 }
 
 // ===============================================================
-// 1) ZZP — Aanmeldformulier (Strakker, zonder IBAN)
+// 1) ZZP — Aanmeldformulier (met useSignup hook)
 // ===============================================================
 export default function ZzpAanmeldenPage() {
+  const { loading, result, error: hookError, handleSubmit } = useSignup("/api/signup");
+
   const [done, setDone] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState(false);
   const [profile, setProfile] = useState<ProfileValues>({});
 
   useEffect(() => {
     const storedProfile = loadLocal<ProfileValues>(STORAGE_KEY_ZZP);
-    if (storedProfile) {
-      setProfile(storedProfile);
-    }
+    if (storedProfile) setProfile(storedProfile);
   }, []);
 
+  // Wrap de hook-submit zodat we ook lokaal de ingevulde waarden kunnen tonen/opslaan
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setError(null);
-    setSubmitting(true);
-    const form = new FormData(e.currentTarget);
-    const data = formDataToProfile(form);
-    try {
-      const payload = {
-        type: "zzp_signup",
-        submittedAt: new Date().toISOString(),
-        userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
-        data,
-      };
-      const response = await fetch("/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
-      }
-      saveLocal(STORAGE_KEY_ZZP, data);
-      setProfile(data);
-      setDone(true);
-    } catch (error) {
-      console.error("Failed to submit ZZP signup", error);
-      setError(
-        "We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@probrandwacht.nl."
-      );
-    }
-    setSubmitting(false);
+    // Leg de formwaarden vast vóórdat de hook het event verwerkt
+    const snapshot = new FormData(e.currentTarget);
+    const data = formDataToProfile(snapshot);
+    setProfile(data);
+
+    await handleSubmit(e);
   }
+
+  // Als de server-POST succesvol was: markeer done en sla lokaal op
+  useEffect(() => {
+    if (result?.ok) {
+      saveLocal(STORAGE_KEY_ZZP, profile);
+      setDone(true);
+    }
+  }, [result]);
 
   const hasProfile = Object.keys(profile).length > 0;
 
@@ -270,8 +248,17 @@ export default function ZzpAanmeldenPage() {
           <CardSection>
             <div className="flex flex-wrap gap-3">
               <Button onClick={() => downloadJSON("psm-zzp-profiel.json", profile)}>Download JSON</Button>
-              <Button variant="secondary" onClick={() => { navigator.clipboard?.writeText(JSON.stringify(profile, null, 2)); }}>Kopieer JSON</Button>
-              <LinkButton href="/" variant="ghost">Terug naar home</LinkButton>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  navigator.clipboard?.writeText(JSON.stringify(profile, null, 2));
+                }}
+              >
+                Kopieer JSON
+              </Button>
+              <LinkButton href="/" variant="ghost">
+                Terug naar home
+              </LinkButton>
             </div>
           </CardSection>
         </Card>
@@ -295,17 +282,34 @@ export default function ZzpAanmeldenPage() {
 
       {/* Progress mini-steps */}
       <ol className="flex items-center gap-4 text-sm">
-        <li className="flex items-center gap-2 text-blue-700"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">1</span> Basisgegevens</li>
-        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">2</span> Certificaten</li>
-        <li className="flex items-center gap-2 text-gray-400"><span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">3</span> iDIN + Betaalgegevens (IBAN)</li>
+        <li className="flex items-center gap-2 text-blue-700">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">1</span> Basisgegevens
+        </li>
+        <li className="flex items-center gap-2 text-gray-400">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">2</span> Certificaten
+        </li>
+        <li className="flex items-center gap-2 text-gray-400">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">3</span> iDIN + Betaalgegevens (IBAN)
+        </li>
       </ol>
 
-      {/* Form */}
-      {error && (
-        <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">{error}</div>
+      {/* Errors uit de hook */}
+      {hookError && (
+        <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
+          <div className="font-semibold">Fout bij opslaan</div>
+          <div className="mt-1">{hookError.message}</div>
+          {hookError.details && hookError.details.length > 0 && (
+            <ul className="list-disc ml-5 mt-2 text-red-800">
+              {hookError.details.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
 
-      {hasProfile && (
+      {/* Hint wanneer er al lokaal een profiel staat */}
+      {hasProfile && !hookError && (
         <div className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3">
           Er is al een lokaal profiel gevonden. Als je opnieuw indient, wordt het overschreven.
         </div>
@@ -335,15 +339,15 @@ export default function ZzpAanmeldenPage() {
 
           <Divider />
 
-          <CardSection title="Zakelijke gegevens" subtitle="Vul je KvK en (optioneel) BTW-nummer in.">
+          <CardSection title="Zakelijke gegevens" subtitle="Vul je KvK en BTW-nummer in.">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="kvk">KvK-nummer</Label>
-                <Input id="kvk" name="kvk" required defaultValue={profile.kvk||""} placeholder="12345678" />
+                <Input id="kvk" name="kvk" required defaultValue={profile.kvk || ""} placeholder="12345678" />
               </div>
               <div>
-                <Label htmlFor="btw">BTW-nummer (optioneel)</Label>
-                <Input id="btw" name="btw" defaultValue={profile.btw||""} placeholder="NL123456789B01" />
+                <Label htmlFor="btw">BTW-nummer </Label>
+                <Input id="btw" name="btw" defaultValue={profile.btw || ""} placeholder="NL123456789B01" />
               </div>
             </div>
           </CardSection>
@@ -354,26 +358,30 @@ export default function ZzpAanmeldenPage() {
             <div className="grid gap-4">
               <div>
                 <Label htmlFor="skills">Specialisaties</Label>
-                <Input id="skills" name="skills" defaultValue={profile.skills||""} placeholder="Industriële brandwacht, Mangatwacht, Gasmeting…" />
+                <Input id="skills" name="skills" defaultValue={profile.skills || ""} placeholder="Industriële brandwacht, Mangatwacht, Gasmeting…" />
               </div>
               <div>
                 <Label htmlFor="certificateRef" hint="bestandsnaam of lijstje">Certificaten (referentie)</Label>
-                <Input id="certificateRef" name="certificateRef" defaultValue={profile.certificateRef||""} placeholder="VCA_JanJansen.pdf; BHV_JanJansen.pdf" />
-                <div className="mt-3"><DropboxHint /></div>
+                <Input id="certificateRef" name="certificateRef" defaultValue={profile.certificateRef || ""} placeholder="VCA_JanJansen.pdf; BHV_JanJansen.pdf" />
+                <div className="mt-3">
+                  <DropboxHint />
+                </div>
               </div>
               <div>
                 <Label htmlFor="notes">Opmerking</Label>
-                <Textarea id="notes" name="notes" rows={3} defaultValue={profile.notes||""} placeholder="Beschikbaarheid, regio, dag/nacht/weekend…" />
+                <Textarea id="notes" name="notes" rows={3} defaultValue={profile.notes || ""} placeholder="Beschikbaarheid, regio, dag/nacht/weekend…" />
               </div>
             </div>
           </CardSection>
         </Card>
 
         <div className="flex flex-wrap gap-3">
-          <Button type="submit" data-testid="zzp-submit" disabled={submitting}>
-            {submitting ? "Bezig met opslaan…" : "Aanmelding opslaan"}
+          <Button type="submit" data-testid="zzp-submit" disabled={loading}>
+            {loading ? "Bezig met opslaan…" : "Aanmelding opslaan"}
           </Button>
-          <LinkButton href="/" variant="ghost">Annuleren</LinkButton>
+          <LinkButton href="/" variant="ghost">
+            Annuleren
+          </LinkButton>
         </div>
       </form>
     </div>
@@ -382,7 +390,9 @@ export default function ZzpAanmeldenPage() {
 
 // ==================================================================
 // Notes
-// - Strakker ontwerp: betere typografie, focus states, sections, divider
-// - IBAN verwijderd uit formulier (komt later na iDIN in PSM-account)
-// - Client-only; kan zo in Next app gezet worden (vervang Link shim door next/link)
+// - Gebruik van useSignup hook voor POST + servervalidatie
+// - Lokaal opslaan/herstellen van profielgegevens blijft intact
+// - Success-state toont JSON + Dropbox instructie
+// - Button disabled + label tijdens loading
 // ==================================================================
+
