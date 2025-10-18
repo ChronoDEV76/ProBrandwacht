@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
 import SeoStructuredData from '@/components/SeoStructuredData'
-import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import CpiChart from '@/components/cpi-chart'
 
 const CostCalculator = dynamic(() => import('@/components/cost-calculator'), {
@@ -175,11 +174,6 @@ const partnerBadges = [
   "FNV Veiligheidsregio's",
 ] as const
 
-const breadcrumbItems = [
-  { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-  { name: 'Brandwacht inhuren', url: 'https://www.probrandwacht.nl/' },
-]
-
 const knowledgeResources = [
   {
     label: 'Tariefcalculator',
@@ -237,7 +231,6 @@ export default function HomePage() {
           article={articleStructuredData}
           faqs={faqEntries}
         />
-        <StructuredBreadcrumbs items={breadcrumbItems} />
 
         {/* HERO */}
         <section aria-labelledby="hero-heading" className="space-y-8">
