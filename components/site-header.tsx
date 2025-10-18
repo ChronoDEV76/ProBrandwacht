@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -70,7 +70,7 @@ export default function SiteHeader() {
             href="/zzp/aanmelden"
             className="hidden items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex"
           >
-            Meld je aan (gratis)
+            Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
           </a>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function SiteHeader() {
             onClick={closeMenu}
             className="inline-flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            Meld je aan (gratis)
+            Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
           </a>
         </div>
       </div>

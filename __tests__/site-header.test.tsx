@@ -19,9 +19,14 @@ describe('SiteHeader', () => {
   it('renders brand and primary links', () => {
     render(<SiteHeader />)
     expect(screen.getByText('ProBrandwacht.nl')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '/blog')
-    // No city links in header anymore; site is informational only
-    expect(screen.getByRole('link', { name: 'Missie' })).toHaveAttribute('href', '/manifest')
-    expect(screen.getByRole('link', { name: /Meld je aan/i })).toBeInTheDocument()
+    const blogLinks = screen.getAllByRole('link', { name: 'Blog' })
+    expect(blogLinks.some(link => link.getAttribute('href') === '/blog')).toBe(true)
+    const missionLinks = screen.getAllByRole('link', { name: 'Missie' })
+    expect(missionLinks.some(link => link.getAttribute('href') === '/manifest')).toBe(true)
+    const ctaLinks = screen.getAllByRole('link', {
+      name: 'Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch',
+    })
+    expect(ctaLinks.length).toBeGreaterThan(0)
+    expect(ctaLinks.every(link => link.getAttribute('href') === '/zzp/aanmelden')).toBe(true)
   })
 })

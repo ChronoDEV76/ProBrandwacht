@@ -44,7 +44,7 @@
     "remark-gfm": "^4.0.1",
     "sharp": "^0.34.4",
     "undici": "^7.16.0",
-    "zod": "^4.1.11"
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
