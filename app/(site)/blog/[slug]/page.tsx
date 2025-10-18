@@ -3,13 +3,15 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { getPostSlugs } from '@/lib/blog'
-import { getPostBySlug } from '@/lib/mdx' // <-- Option A loader (compileMDX)
+import { getPostBySlug } from '@/lib/mdx'
 import { coreCities } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 
 import Prose from '@/components/prose'
 import ShareBar from '@/components/share-bar'
 import SeoStructuredData from '@/components/SeoStructuredData'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 // ISR
 export const revalidate = 60 * 60 // 1 uur
@@ -31,16 +33,16 @@ export async function generateMetadata(
       (post.frontmatter.tldr as string | undefined) ??
       (post.frontmatter.description as string | undefined) ??
       'Brandwacht blog – ProBrandwacht.nl'
-    const url = `/blog/${params.slug}`
+    const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
     const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.jpg') as string
     const ogAbs = toAbsoluteUrl(og)
 
     return {
       title,
       description,
-      alternates: { canonical: url, languages: { 'nl-NL': url } },
+      alternates: { canonical, languages: { 'nl-NL': canonical } },
       openGraph: {
-        url,
+        url: canonical,
         type: 'article',
         title,
         description,
@@ -49,11 +51,11 @@ export async function generateMetadata(
       twitter: { card: 'summary_large_image', title, description, images: [ogAbs] },
     }
   } catch {
-    const url = `/blog/${params.slug}`
+    const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
     return {
       title: 'Artikel niet gevonden | ProBrandwacht.nl',
       description: 'Het opgevraagde artikel bestaat niet (meer).',
-      alternates: { canonical: url, languages: { 'nl-NL': url } },
+      alternates: { canonical, languages: { 'nl-NL': canonical } },
     }
   }
 }
@@ -76,10 +78,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     (post.frontmatter.tldr as string | undefined) ??
     (post.frontmatter.description as string | undefined) ??
     ''
-  const structuredBreadcrumbs = [
-    { name: 'Home', item: 'https://www.probrandwacht.nl/' },
-    { name: 'Blog', item: 'https://www.probrandwacht.nl/blog' },
-    { name: post.frontmatter.title ?? params.slug, item: pageUrl },
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
+    { name: post.frontmatter.title ?? params.slug, url: pageUrl },
   ]
   const structuredArticle = {
     title: post.frontmatter.title ?? params.slug,
@@ -92,7 +94,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
-      <SeoStructuredData article={structuredArticle} breadcrumbs={structuredBreadcrumbs} />
+      <StructuredBreadcrumbs items={breadcrumbItems} />
+      <SeoStructuredData article={structuredArticle} breadcrumbs={breadcrumbItems.map(item => ({ name: item.name, item: item.url }))} faqs={generalPlatformFaq} />
       <header className="mb-6">
         <h1 className="text-3xl font-semibold">{post.frontmatter.title ?? params.slug}</h1>
       </header>

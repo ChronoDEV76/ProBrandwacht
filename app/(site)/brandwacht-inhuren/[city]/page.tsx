@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import ShareBar from '@/components/share-bar'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getCityBySlug } from '@/lib/cities'
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
@@ -35,7 +36,7 @@ export async function generateMetadata({
     'escrow brandwacht',
   ]
   const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
-  const canonical = `/brandwacht-inhuren/${city}`
+  const canonical = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   return {
     title,
     description,
@@ -47,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://www.probrandwacht.nl${canonical}`,
+      url: canonical,
       images: [{ url: ogImage, width: 1200, height: 630, alt: `Brandwacht inhuren ${cityName}` }],
     },
     twitter: {
@@ -112,30 +113,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
     })),
   }
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://www.probrandwacht.nl/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Brandwacht inhuren',
-        item: 'https://www.probrandwacht.nl/brandwacht-inhuren',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: cityName,
-        item: pageUrl,
-      },
-    ],
-  }
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Brandwacht inhuren', url: 'https://www.probrandwacht.nl/opdrachtgevers/brandwacht-inhuren' },
+    { name: cityName, url: pageUrl },
+  ]
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -164,6 +146,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   return (
     <section className="space-y-8">
+      <StructuredBreadcrumbs items={breadcrumbItems} />
       <h1 className="text-3xl font-semibold">
         Van oude marge-modellen naar slimme matching in {cityName}
       </h1>
@@ -281,10 +264,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       {/* FAQ JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       {geoJsonLd ? (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }} />

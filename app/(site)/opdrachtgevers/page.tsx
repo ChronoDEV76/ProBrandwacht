@@ -3,6 +3,8 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import { getSignupUrl } from "@/lib/config"
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.probrandwacht.nl"),
@@ -31,10 +33,24 @@ export const metadata: Metadata = {
 
 export default function OpdrachtgeversPage() {
   const signupUrl = getSignupUrl()
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Voor opdrachtgevers', url: 'https://www.probrandwacht.nl/opdrachtgevers' },
+  ]
+  const extraFaqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: opdrachtgeverFaq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
+    <main className="mx-auto max-w-6xl space-y-12 px-4 py-10">
+      <StructuredBreadcrumbs items={breadcrumbItems} />
       {/* Hero */}
-      <section className="mb-12">
+      <section className="space-y-6 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200">
         <div className="rounded-3xl bg-slate-50 p-8 md:p-12 ring-1 ring-slate-200">
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
             Huur brandwachten in zonder verborgen marges – snel, eerlijk en
@@ -123,6 +139,20 @@ export default function OpdrachtgeversPage() {
       </section>
 
       {/* 3 stappen */}
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
+        <div className="mt-4 space-y-3">
+          {opdrachtgeverFaq.map(item => (
+            <details key={item.question} className="group rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-slate-900 group-open:text-brand-700">
+                {item.question}
+              </summary>
+              <p className="mt-2 text-sm text-slate-700">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section className="mb-12 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
         <h2 className="text-2xl font-semibold">Zo werkt het in 3 stappen</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -209,6 +239,24 @@ export default function OpdrachtgeversPage() {
           <strong>Let op:</strong> ProSafetyMatch werkt als onafhankelijk platform, niet als traditioneel bemiddelingsbureau. Wij maken matching, tariefopbouw en escrow tooling inzichtelijk, terwijl opdrachtgever en professional zelf de overeenkomst sluiten. Laat altijd je eigen juridische teams bevestigen of deze constructie binnen jullie compliance- en DBA-kaders past.
         </p>
       </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Direct verder lezen</h2>
+        <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
+          <li>
+            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
+              Brandwacht inhuren – transparant & DBA-proof
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" className="underline">
+              Bekijk de nieuwste kennisartikelen
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(extraFaqJsonLd) }} />
     </main>
   )
 }

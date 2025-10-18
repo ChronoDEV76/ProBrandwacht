@@ -1,9 +1,11 @@
 import CostCalculator from '@/components/cost-calculator'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getSignupUrl } from '@/lib/config'
 import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
+import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 
 const CITY_LABEL: Record<CityKey, string> = {
   amsterdam: 'Amsterdam',
@@ -29,14 +31,14 @@ function resolveLabel(city: CityKey) {
 export function generateMetadata({ params }: { params: { city: string } }): Metadata {
   const rawCity = params.city
   if (!isCityKey(rawCity)) {
-    const fallbackCanonical = `/steden/${rawCity}`
+    const fallbackCanonical = `https://www.probrandwacht.nl/steden/${rawCity}`
     return {
       title: 'Stad niet gevonden | ProBrandwacht.nl',
       description: 'De opgevraagde stadspagina bestaat niet (meer).',
       alternates: { canonical: fallbackCanonical, languages: { 'nl-NL': fallbackCanonical } },
       other: { hreflang: 'nl-NL' },
       openGraph: {
-        url: `https://www.probrandwacht.nl${fallbackCanonical}`,
+        url: fallbackCanonical,
         title: 'Stad niet gevonden | ProBrandwacht.nl',
         description: 'De opgevraagde stadspagina bestaat niet (meer).',
         type: 'website',
@@ -47,7 +49,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   const label = resolveLabel(city)
   const title = `Brandwacht tarieven ${label} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
   const description = `Vergelijk brandwacht tarieven voor ${label} via het alternatieve brandwachtplatform. Zie direct de 10% platformfee en 1–2% escrowkosten zodat opdrachtgever en professional dezelfde kostenopbouw delen.`
-  const canonical = `/steden/${params.city}`
+  const canonical = `https://www.probrandwacht.nl/steden/${params.city}`
   const keywords = [
     `brandwacht ${label}`,
     `brandwacht inhuren ${label}`,
@@ -63,7 +65,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
     openGraph: {
       title,
       description,
-      url: `https://www.probrandwacht.nl${canonical}`,
+      url: canonical,
       type: 'website',
     },
     twitter: {
@@ -86,9 +88,27 @@ export default function CityPage({ params }: { params: { city: string } }) {
     notFound()
   }
   const signupUrl = getSignupUrl()
+  const canonical = `https://www.probrandwacht.nl/steden/${city}`
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: opdrachtgeverFaq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
+
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Regio tarieven', url: 'https://www.probrandwacht.nl/brandwacht-inhuren' },
+    { name: `Brandwacht ${label}`, url: canonical },
+  ]
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
+    <main className="mx-auto max-w-3xl space-y-8 px-4 py-10">
+      <StructuredBreadcrumbs items={breadcrumbItems} />
       <header className="mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren in {label}</h1>
         <p className="mt-2 text-slate-700">
@@ -149,6 +169,22 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </Link>
       </div>
       </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6">
+        <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
+        <div className="mt-3 space-y-3">
+          {opdrachtgeverFaq.map(item => (
+            <details key={item.question} className="group rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-slate-900 group-open:text-brand-700">
+                {item.question}
+              </summary>
+              <p className="mt-2 text-sm text-slate-700">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </main>
   )
 }

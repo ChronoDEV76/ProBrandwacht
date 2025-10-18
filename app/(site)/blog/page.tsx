@@ -4,6 +4,8 @@ import type { ReactNode } from 'react'
 import { getPostSlugs, getPostBySlug, readingTime } from '@/lib/blog'
 import { coreCities } from '@/lib/cities'
 import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 export const metadata = {
   title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
@@ -105,18 +107,49 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     description: post.excerpt,
   }))
 
-  return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
-      <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
+  ]
 
-      <header className="mb-8">
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: generalPlatformFaq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
+
+  return (
+    <main className="mx-auto max-w-6xl space-y-10 px-4 py-10">
+      <StructuredBreadcrumbs items={breadcrumbItems} />
+      <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      <header className="space-y-4">
         <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
         <p className="mt-2 max-w-3xl text-slate-700">
           We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/opdrachtgevers/brandwacht-inhuren"
+            className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/40"
+          >
+            Brandwacht aanvragen
+          </Link>
+          <Link
+            href="/zzp/aanmelden"
+            className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
+          >
+            Meld je aan als zzp-brandwacht
+          </Link>
+        </div>
       </header>
 
-      <section className="mb-6 flex flex-wrap gap-3">
+      <section className="flex flex-wrap gap-3">
         <div className="flex items-center gap-2">
           <span className="text-sm text-slate-600">Categorie</span>
           <nav className="flex flex-wrap gap-2">

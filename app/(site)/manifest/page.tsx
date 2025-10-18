@@ -1,18 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Prose from '@/components/prose'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+
+const canonicalUrl = 'https://www.probrandwacht.nl/manifest'
 
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
   description:
     'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
-  alternates: { canonical: '/manifest', languages: { 'nl-NL': '/manifest' } },
+  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
     title: 'Missie | ProBrandwacht.nl',
     description:
       'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
-    url: 'https://www.probrandwacht.nl/manifest',
+    url: canonicalUrl,
     images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'Missie van ProBrandwacht.nl' }],
   },
   twitter: {
@@ -24,8 +28,22 @@ export const metadata: Metadata = {
 }
 
 export default function ManifestPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Missie', url: canonicalUrl },
+  ]
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: generalPlatformFaq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
   return (
     <article>
+      <StructuredBreadcrumbs items={breadcrumbItems} />
       {/* Kleine hero-kop voor context */}
       <header className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze Missie</h1>
@@ -208,6 +226,37 @@ export default function ManifestPage() {
           </Link>
         </div>
       </Prose>
+
+      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
+        <div className="mt-3 space-y-3">
+          {generalPlatformFaq.map(item => (
+            <details key={item.question} className="group rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-slate-900 group-open:text-brand-700">
+                {item.question}
+              </summary>
+              <p className="mt-2 text-sm text-slate-700">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-6 flex flex-wrap gap-3">
+        <Link
+          href="/opdrachtgevers/aanmelden"
+          className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90"
+        >
+          Brandwacht aanvragen
+        </Link>
+        <Link
+          href="/zzp/aanmelden"
+          className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
+        >
+          Meld je aan als zzp-brandwacht
+        </Link>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </article>
   )
 }

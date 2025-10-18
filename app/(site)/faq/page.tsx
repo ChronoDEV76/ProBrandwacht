@@ -1,12 +1,25 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import faqContent from '@/content/faq.json'
+
+const canonicalUrl = 'https://www.probrandwacht.nl/faq'
 
 export const metadata: Metadata = {
   title: 'FAQ | ProBrandwacht.nl',
   description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
-  alternates: { canonical: '/faq', languages: { 'nl-NL': '/faq' } },
+  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   other: { hreflang: 'nl-NL' },
+  openGraph: {
+    url: canonicalUrl,
+    title: 'FAQ | ProBrandwacht.nl',
+    description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ | ProBrandwacht.nl',
+    description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
+  },
 }
 
 type FAQItem = {
@@ -39,6 +52,12 @@ export default function FAQPage() {
 
   return (
     <section className="space-y-8">
+      <StructuredBreadcrumbs
+        items={[
+          { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+          { name: 'FAQ', url: canonicalUrl },
+        ]}
+      />
       <h1 className="text-3xl font-semibold">Veelgestelde Vragen</h1>
       {sections.map(section => (
         <div key={section.title} className="space-y-4">
@@ -69,6 +88,26 @@ export default function FAQPage() {
           </ul>
         </div>
       ))}
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Direct starten</h2>
+        <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
+          <li>
+            <Link href="/opdrachtgevers/aanmelden" className="underline">
+              Aanmelden als opdrachtgever
+            </Link>
+          </li>
+          <li>
+            <Link href="/zzp/aanmelden" className="underline">
+              Meld je aan als zzp-brandwacht
+            </Link>
+          </li>
+          <li>
+            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
+              Meer lezen over brandwacht inhuren
+            </Link>
+          </li>
+        </ul>
+      </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </section>
   )
