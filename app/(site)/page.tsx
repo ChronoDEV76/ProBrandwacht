@@ -248,7 +248,7 @@ export default function HomePage() {
 
           <header className="space-y-6">
             <p className="text-sm uppercase tracking-wide text-brand-700">
-              Voor zzp-brandwachten en opdrachtgevers die transparantie eisen
+              Voor zzp-brandwachten en opdrachtgevers die staan voor eerlijk samenwerken
             </p>
             <h1 id="hero-heading" className="text-3xl font-semibold sm:text-4xl lg:text-5xl">
               Veiligheid, maar dan eerlijk geregeld.
