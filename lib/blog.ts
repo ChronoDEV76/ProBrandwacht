@@ -24,6 +24,7 @@ export type BlogFrontmatter = {
   description?: string
   date?: string
   faq?: BlogFaq[]
+  h1?: string
   howto?: BlogHowTo
   keywords?: string[]
   ogImage?: string
@@ -54,7 +55,11 @@ export async function getPostBySlug(
   }
 
   const { data, content } = matter(raw)
-  return { frontmatter: data as BlogFrontmatter, content }
+  const fm = data as BlogFrontmatter
+  if (!fm.h1 && typeof fm.title === 'string') {
+    fm.h1 = fm.title
+  }
+  return { frontmatter: fm, content }
 }
 
 export function readingTime(
