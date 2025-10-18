@@ -55,7 +55,7 @@ export default function SiteHeader() {
               )}
             </svg>
           </button>
-          <nav className="hidden items-center gap-2 text-sm lg:flex">
+          <nav className="hidden items-center gap-1 text-sm lg:flex">
             {links.map(link => (
               <Link
                 key={link.href}
@@ -68,9 +68,12 @@ export default function SiteHeader() {
           </nav>
           <a
             href="/zzp/aanmelden"
-            className="hidden items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex"
+            className="hidden items-center rounded-md bg-white px-3 py-1.5 text-xs font-semibold tracking-tight text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex xl:text-sm"
           >
-            Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+            <span className="xl:hidden">Meld je aan (gratis)</span>
+            <span className="hidden xl:inline">
+              Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+            </span>
           </a>
         </div>
       </div>
@@ -97,7 +100,9 @@ export default function SiteHeader() {
             onClick={closeMenu}
             className="inline-flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+            <span className="max-w-[18ch] text-center leading-snug">
+              Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch
+            </span>
           </a>
         </div>
       </div>
