@@ -15,6 +15,7 @@ import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 // ISR
 export const revalidate = 60 * 60 // 1 uur
+export const dynamicParams = true
 
 // SSG params
 export async function generateStaticParams() {
