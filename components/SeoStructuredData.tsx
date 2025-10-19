@@ -42,7 +42,7 @@ const DEFAULT_ORGANIZATION = {
   '@type': 'Organization',
   name: 'ProBrandwacht.nl',
   url: 'https://www.probrandwacht.nl',
-  logo: 'https://www.probrandwacht.nl/logo-probrandwacht.png',
+  logo: 'https://www.probrandwacht.nl/og.jpg',
   sameAs: [
     'https://www.linkedin.com/company/probrandwacht',
     'https://twitter.com/ProBrandwacht',
