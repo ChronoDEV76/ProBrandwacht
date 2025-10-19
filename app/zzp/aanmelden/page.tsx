@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ClientPage from './client-page'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
@@ -39,5 +40,20 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <ClientPage />
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: generalPlatformFaq.slice(0, 4).map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
+
+  return (
+    <>
+      <ClientPage />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+    </>
+  )
 }

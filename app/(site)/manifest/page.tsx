@@ -101,7 +101,7 @@ export default function ManifestPage() {
       </section>
 
       <Prose>
-        <h1>De nieuwe standaard voor brandwachten in Nederland</h1>
+        <h2>De nieuwe standaard voor brandwachten in Nederland</h2>
         <p>
           De brandwachtbranche staat onder druk. We horen elke week dezelfde verhalen: lage tarieven, laat geld, te veel schakels
           en te weinig zeggenschap. Professionals en opdrachtgevers verdienen beter. Daarom bouwen we aan een eerlijk en snel alternatief.

@@ -48,7 +48,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   const city = rawCity
   const label = resolveLabel(city)
   const title = `Brandwacht tarieven ${label} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
-  const description = `Vergelijk brandwacht tarieven voor ${label} via het alternatieve brandwachtplatform. Zie direct de 10% platformfee en 1–2% escrowkosten zodat opdrachtgever en professional dezelfde kostenopbouw delen.`
+  const description = `Vergelijk brandwacht tarieven voor ${label}. Zie meteen de 10% platformfee en 1–2% escrowkosten, gedeeld door opdrachtgever en professional.`
   const canonical = `https://www.probrandwacht.nl/steden/${params.city}`
   const keywords = [
     `brandwacht ${label}`,

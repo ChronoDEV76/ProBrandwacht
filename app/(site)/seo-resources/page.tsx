@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     description:
       'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
+    description:
+      'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
+    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+  },
 }
 
 export default function SeoResourcesPage() {

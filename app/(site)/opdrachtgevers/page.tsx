@@ -29,6 +29,13 @@ export const metadata: Metadata = {
     description:
       "ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Voor opdrachtgevers | Eerlijk brandwachten inhuren – ProSafetyMatch',
+    description:
+      'ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.',
+    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+  },
 }
 
 export default function OpdrachtgeversPage() {

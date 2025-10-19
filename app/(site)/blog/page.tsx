@@ -19,6 +19,13 @@ export const metadata = {
     url: 'https://www.probrandwacht.nl/blog',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
+    description:
+      'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
+    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+  },
 }
 
 const CATEGORIES = ['Alle', ...CATEGORY_LABELS] as const

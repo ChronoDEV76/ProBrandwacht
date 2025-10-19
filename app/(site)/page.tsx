@@ -15,7 +15,7 @@ const CostCalculator = dynamic(() => import('@/components/cost-calculator'), {
 export const metadata: Metadata = {
   title: 'Brandwacht inhuren | ProBrandwacht.nl – transparante tarieven & DBA-proof samenwerking',
   description:
-    'ProBrandwacht.nl is het onafhankelijke platform voor brandwachten en opdrachtgevers. Ontdek transparante tarieven, escrow-betalingen en DBA-proof samenwerking zonder tussenbureau.',
+    'ProBrandwacht.nl brengt brandwachten en opdrachtgevers samen met transparante tarieven, escrow-betalingen en DBA-proof afspraken zonder tussenbureau.',
   keywords: [
     // Kern
     'brandwacht inhuren',

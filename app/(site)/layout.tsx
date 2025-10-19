@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${inter.className} flex flex-1 flex-col`}>
-      <h1 className="sr-only">ProBrandwacht.nl</h1> {/* Add a hidden heading for accessibility */}
+      <span className="sr-only">ProBrandwacht.nl</span>
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}
       {[organizationJsonLd, websiteJsonLd].map((schema, index: number) => (
