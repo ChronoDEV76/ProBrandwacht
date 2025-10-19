@@ -9,7 +9,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   tools: 'Tools',
   tarieven: 'Tarieven',
   steden: 'Regio tarieven',
-  manifest: 'Missie',
+  missie: 'Missie',
   blog: 'Blog',
   faq: 'FAQ',
   opdrachtgevers: 'Opdrachtgevers',

@@ -4,7 +4,7 @@ import Prose from '@/components/prose'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
-const canonicalUrl = 'https://www.probrandwacht.nl/manifest'
+const canonicalUrl = 'https://www.probrandwacht.nl/missie'
 
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
