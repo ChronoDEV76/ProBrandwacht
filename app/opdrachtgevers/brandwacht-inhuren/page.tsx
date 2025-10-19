@@ -150,10 +150,10 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             Vraag een brandwacht aan
           </Link>
           <Link
-            href="/manifest"
+            href="/missie"
             className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
           >
-            Bekijk het manifest
+            Bekijk onze missie
           </Link>
         </div>
       </section>

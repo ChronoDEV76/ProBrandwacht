@@ -196,7 +196,7 @@ const knowledgeResources = [
     label: 'Toolkit voor certificaten',
     description:
       'Beheer documenten veilig; leer wanneer je moet vernieuwen en hoe escrow uitbetalingen werkt.',
-    href: '/manifest',
+    href: '/missie',
   },
 ] as const
 
@@ -271,7 +271,7 @@ export default function HomePage() {
               Bereken je tarief nu
             </Link>
             <Link
-              href="/manifest"
+              href="/missie"
               className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-200"
             >
               Lees de missie
@@ -593,7 +593,7 @@ export default function HomePage() {
               Stuur je feedback
             </Link>
             <Link
-              href="/manifest#community"
+              href="/missie#community"
               className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-slate-200"
             >
               Bekijk hoe we samenwerken

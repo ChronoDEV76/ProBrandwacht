@@ -12,7 +12,7 @@
 
 ## Content & Structure
 
-- `app/(site)/` — routes (`/`, `/blog`, `/faq`, `/manifest`, city pages)
+- `app/(site)/` — routes (`/`, `/blog`, `/faq`, `/missie`, city pages)
 - `components/` — UI (header, share bar, prose)
 - `content/blog/*.mdx` — blog posts with frontmatter (title, description, date, optional `howto`, `faq`)
 - `lib/` — server/util code (blog loader, config)

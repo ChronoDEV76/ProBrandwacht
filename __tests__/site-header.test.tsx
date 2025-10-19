@@ -22,7 +22,7 @@ describe('SiteHeader', () => {
     const blogLinks = screen.getAllByRole('link', { name: 'Blog' })
     expect(blogLinks.some(link => link.getAttribute('href') === '/blog')).toBe(true)
     const missionLinks = screen.getAllByRole('link', { name: 'Missie' })
-    expect(missionLinks.some(link => link.getAttribute('href') === '/manifest')).toBe(true)
+    expect(missionLinks.some(link => link.getAttribute('href') === '/missie')).toBe(true)
     const ctaLinks = screen.getAllByRole('link', {
       name: 'Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch',
     })
