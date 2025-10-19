@@ -28,12 +28,6 @@ export default function SiteHeader() {
           ProBrandwacht.nl
         </Link>
         <div className="flex items-center gap-2">
-          <a
-            href="tel:+31853032100"
-            className="hidden items-center rounded-md border border-white/30 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:inline-flex"
-          >
-            Bel 085-303 2100
-          </a>
           <button
             type="button"
             className="inline-flex items-center rounded-md border border-white/30 px-3 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:hidden"
@@ -101,12 +95,6 @@ export default function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <a
-            href="tel:+31853032100"
-            className="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-          >
-            Bel 085-303 2100
-          </a>
           <a
             href="/zzp/aanmelden"
             onClick={closeMenu}
