@@ -262,8 +262,16 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
         </Link>
       </section>
 
-      <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(schema)}</script>
-      <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(serviceSchema)}</script>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
     </main>
   )
 }
