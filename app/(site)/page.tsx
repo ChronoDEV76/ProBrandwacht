@@ -13,7 +13,7 @@ const CostCalculator = dynamic(() => import('@/components/cost-calculator'), {
 })
 
 export const metadata: Metadata = {
-  title: 'Brandwacht inhuren | ProBrandwacht.nl – transparante tarieven & DBA-proof samenwerking',
+  title: 'Brandwacht inhuren | ProBrandwacht.nl',
   description:
     'ProBrandwacht.nl brengt brandwachten en opdrachtgevers samen met transparante tarieven, escrow-betalingen en DBA-proof afspraken zonder tussenbureau.',
   keywords: [

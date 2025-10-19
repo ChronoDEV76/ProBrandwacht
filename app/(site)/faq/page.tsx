@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     url: canonicalUrl,
     title: 'FAQ | ProBrandwacht.nl',
     description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
+    images: [
+      {
+        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Veelgestelde vragen over brandwacht inhuren',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,13 +49,13 @@ export default function FAQPage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: sections.flatMap(section =>
-      section.items.map(item => ({
+    mainEntity: sections
+      .flatMap(section => section.items.map(item => ({
         '@type': 'Question',
         name: item.question,
         acceptedAnswer: { '@type': 'Answer', text: item.answer.join(' ') },
-      }))
-    ),
+      })))
+      .slice(0, 6),
   }
 
   return (

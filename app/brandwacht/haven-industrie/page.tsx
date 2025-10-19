@@ -3,7 +3,7 @@ import { BrandwachtStubPage, buildMetadata, type BrandwachtStubConfig } from '..
 
 const config: BrandwachtStubConfig = {
   slug: 'haven-industrie',
-  title: 'Brandwacht haven & industrie – transparante inzet | ProBrandwacht',
+  title: 'Brandwacht haven & industrie | ProBrandwacht',
   description:
     'Vraag gecertificeerde brandwachten voor haven- en industrieprojecten aan. Transparante tarieven, directe contracten en escrow-betalingen zonder verborgen marges.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/haven-industrie',

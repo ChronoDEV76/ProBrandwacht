@@ -6,7 +6,7 @@ const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 
 export const metadata: Metadata = {
-  title: 'ZZP Brandwacht aanmelden – gratis profiel & directe opdrachten | ProBrandwacht',
+  title: 'ZZP brandwacht aanmelden | ProBrandwacht',
   description:
     'Meld je gratis aan als ZZP brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
   alternates: {
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     languages: { 'nl-NL': canonicalUrl },
   },
   openGraph: {
-    title: 'ZZP Brandwacht aanmelden – gratis profiel & directe opdrachten | ProBrandwacht',
+    title: 'ZZP brandwacht aanmelden | ProBrandwacht',
     description:
-      'Meld je gratis aan als ZZP brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
+      'Meld je gratis aan als zzp-brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
     url: canonicalUrl,
     siteName: 'ProBrandwacht.nl',
     images: [
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@ProBrandwacht',
     creator: '@ProBrandwacht',
-    title: 'ZZP Brandwacht aanmelden – gratis profiel & directe opdrachten | ProBrandwacht',
+    title: 'ZZP brandwacht aanmelden | ProBrandwacht',
     description:
-      'Meld je gratis aan als ZZP brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
+      'Meld je gratis aan als zzp-brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
     images: [ogImage],
   },
 }

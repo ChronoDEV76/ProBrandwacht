@@ -9,8 +9,8 @@ import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.probrandwacht.nl"),
   title: {
-    default: "Voor opdrachtgevers | Eerlijk brandwachten inhuren – ProSafetyMatch",
-    template: "%s | ProSafetyMatch",
+    default: "Voor opdrachtgevers | ProBrandwacht",
+    template: "%s | ProBrandwacht",
   },
   description:
     "Huur brandwachten in zonder verborgen marges. Eerlijk, DBA-proof en met zekerheid van betaling via escrow. Geef je wensen door en bouw mee aan het platform.",
@@ -24,14 +24,21 @@ export const metadata: Metadata = {
     url: "https://www.probrandwacht.nl/opdrachtgevers",
     type: "website",
     siteName: "ProBrandwacht.nl",
-    title:
-      "Voor opdrachtgevers | Eerlijk brandwachten inhuren – ProSafetyMatch",
+    title: "Voor opdrachtgevers | ProBrandwacht",
     description:
       "ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.",
+    images: [
+      {
+        url: "https://www.probrandwacht.nl/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Voor opdrachtgevers bij ProBrandwacht",
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Voor opdrachtgevers | Eerlijk brandwachten inhuren – ProSafetyMatch',
+    title: 'Voor opdrachtgevers | ProBrandwacht',
     description:
       'ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.',
     images: ['https://www.probrandwacht.nl/og-home.jpg'],

@@ -3,7 +3,7 @@ import { BrandwachtStubPage, buildMetadata, type BrandwachtStubConfig } from '..
 
 const config: BrandwachtStubConfig = {
   slug: 'mangatwacht',
-  title: 'Mangatwacht & buitenwacht – checklist & inzet | ProBrandwacht',
+  title: 'Mangatwacht & buitenwacht | ProBrandwacht',
   description:
     'Zorg voor veilige toegang tot besloten ruimten met gecertificeerde mangatwachten. Tarieftransparantie, gasmeting en poort-QR logging inbegrepen.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/mangatwacht',

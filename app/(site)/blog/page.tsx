@@ -8,20 +8,28 @@ import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 export const metadata = {
-  title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
+  title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
   description:
     'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
   alternates: { canonical: 'https://www.probrandwacht.nl/blog' },
   openGraph: {
-    title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
+    title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
     description:
       'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
     url: 'https://www.probrandwacht.nl/blog',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ProBrandwacht blogoverzicht',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog over brandveiligheid & zzp-brandwachten | ProBrandwacht.nl',
+    title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
     description:
       'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
     images: ['https://www.probrandwacht.nl/og-home.jpg'],
@@ -242,7 +250,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       </section>
 
       <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
-        <h3 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h3>
+        <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
         <p className="mt-2 text-sm text-slate-600">
           Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en 1–2% escrowkosten.
         </p>

@@ -3,7 +3,7 @@ import { BrandwachtStubPage, buildMetadata, type BrandwachtStubConfig } from '..
 
 const config: BrandwachtStubConfig = {
   slug: 'turnaround-stop',
-  title: 'Brandwacht turnaround & stop – zekerheid bij onderhoud | ProBrandwacht',
+  title: 'Brandwacht turnaround & stop | ProBrandwacht',
   description:
     'Zet brandwachtteams in voor turnarounds en onderhoudsstops. Escrow-betalingen, ploegendienstplanning en gecertificeerde professionals zonder tussenlaag.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/turnaround-stop',
