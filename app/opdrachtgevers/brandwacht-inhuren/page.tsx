@@ -106,6 +106,29 @@ const schema = {
   })),
 }
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Brandwacht inhuren',
+  serviceType: 'Brandwacht diensten',
+  provider: {
+    '@type': 'Organization',
+    name: 'ProBrandwacht.nl',
+    url: 'https://www.probrandwacht.nl',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Nederland',
+  },
+  url: canonicalUrl,
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'EUR',
+    description: 'Transparante kostenopbouw met directe contracten en escrow-betaling.',
+  },
+}
+
 export default function BrandwachtInhurenOpdrachtgeversPage() {
   return (
     <main className="mx-auto w-full min-h-full max-w-5xl space-y-12 px-4 py-10">
@@ -240,6 +263,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       </section>
 
       <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(schema)}</script>
+      <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(serviceSchema)}</script>
     </main>
   )
 }

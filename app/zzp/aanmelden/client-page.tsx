@@ -93,7 +93,7 @@ function CardSection({ title, subtitle, children }: CardSectionProps) {
     <section className="p-6">
       {title && (
         <div className="mb-3">
-          <h3 className="text-base font-semibold text-gray-900">{title}</h3>
+          <h2 className="text-base font-semibold text-gray-900">{title}</h2>
           {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
         </div>
       )}

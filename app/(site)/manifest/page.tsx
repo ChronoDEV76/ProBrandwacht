@@ -66,7 +66,7 @@ export default function ManifestPage() {
                 d="M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm.5 4h-2v2H9v2h1.5v2H9v2h1.5v2h2v-2h1.75v-2H12.5v-2h2.25V9H12.5V7Z"
               />
             </svg>
-            <h3 className="font-semibold text-slate-900">Eerlijke tarieven</h3>
+            <h2 className="text-lg font-semibold text-slate-900">Eerlijke tarieven</h2>
             <p className="text-sm text-slate-600 mt-1">Iedereen ziet wat er betaald wordt.</p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-lg">
@@ -80,7 +80,7 @@ export default function ManifestPage() {
                 d="M12 2a7 7 0 0 1 7 7v2h1a2 2 0 0 1 2 2v7h-6v-6H8v6H2v-7a2 2 0 0 1 2-2h1V9a7 7 0 0 1 7-7Zm0 2a5 5 0 0 0-5 5v2h10V9a5 5 0 0 0-5-5Z"
               />
             </svg>
-            <h3 className="font-semibold text-slate-900">Escrow‑betaling</h3>
+            <h2 className="text-lg font-semibold text-slate-900">Escrow‑betaling</h2>
             <p className="text-sm text-slate-600 mt-1">Veilig en op tijd uitbetaald.</p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-lg">
@@ -94,7 +94,7 @@ export default function ManifestPage() {
                 d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Zm0 4.3 5 2.5V12c0 3.6-1.9 6.9-5 7.7-3.1-.8-5-4.1-5-7.7V8.8l5-2.5Zm0 3.7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
               />
             </svg>
-            <h3 className="font-semibold text-slate-900">Gecertificeerde professionals</h3>
+            <h2 className="text-lg font-semibold text-slate-900">Gecertificeerde professionals</h2>
             <p className="text-sm text-slate-600 mt-1">Focus op actuele certificaten en reviews.</p>
           </div>
         </div>
