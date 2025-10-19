@@ -60,7 +60,7 @@ export function BrandwachtStubPage(config: BrandwachtStubConfig) {
   }
 
   return (
-    <main className="mx-auto max-w-5xl space-y-10 px-4 py-10">
+    <main className="mx-auto w-full min-h-full max-w-5xl space-y-10 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <section className="space-y-5 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200">
         <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-100">

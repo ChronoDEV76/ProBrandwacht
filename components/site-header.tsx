@@ -22,7 +22,7 @@ export default function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-700/80 text-white shadow-sm backdrop-blur supports-[backdrop-filter]:bg-brand-700/60">
+    <header className="sticky top-0 z-50 shrink-0 border-b border-white/10 bg-brand-700/80 text-white shadow-sm backdrop-blur supports-[backdrop-filter]:bg-brand-700/60">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="text-base font-semibold tracking-tight">
           ProBrandwacht.nl

@@ -107,7 +107,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   ]
 
   return (
-    <main className="mx-auto max-w-3xl space-y-8 px-4 py-10">
+    <main className="mx-auto w-full min-h-full max-w-3xl space-y-8 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <header className="mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren in {label}</h1>

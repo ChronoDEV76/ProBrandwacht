@@ -36,7 +36,7 @@ export default function SeoResourcesPage() {
   }
 
   return (
-    <main className="mx-auto max-w-3xl space-y-8 px-4 py-12">
+    <main className="mx-auto w-full min-h-full max-w-3xl space-y-8 px-4 py-12">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <h1 className="text-3xl font-semibold text-slate-900">
         Autoritaire bronnen voor brandwachtcontent

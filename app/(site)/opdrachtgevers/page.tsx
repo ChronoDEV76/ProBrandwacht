@@ -47,7 +47,7 @@ export default function OpdrachtgeversPage() {
     })),
   }
   return (
-    <main className="mx-auto max-w-6xl space-y-12 px-4 py-10">
+    <main className="mx-auto w-full min-h-full max-w-6xl space-y-12 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       {/* Hero */}
       <section className="space-y-6 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200">

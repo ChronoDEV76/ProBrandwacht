@@ -53,13 +53,13 @@ export default function OpdrachtgeverAanmeldenPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-brand-50 to-white py-10">
-      <div className="mx-auto max-w-3xl space-y-8 px-4 sm:px-6 md:px-0">
+    <div className="min-h-full bg-gradient-to-b from-brand-50 to-white py-10">
+      <div className="mx-auto w-full max-w-3xl space-y-8 px-4 sm:px-6 md:px-0">
         <StructuredBreadcrumbs items={breadcrumbItems} />
         <header className="space-y-3">
           <h1 className="text-3xl font-semibold text-slate-900">Meld je bedrijf aan</h1>
           <p className="text-sm text-slate-600">
-            Vul je bedrijfsgegevens in en ontvang binnen 24 uur een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat escrow wordt geactiveerd.
+            Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat escrow wordt geactiveerd.
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
             <a href="/opdrachtgevers/brandwacht-inhuren" className="underline text-brand-700">

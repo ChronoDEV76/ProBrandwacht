@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             { name: 'Tarieven', item: 'https://www.probrandwacht.nl/tools/tarieven' },
           ]}
         />
-        {children}
+        <div className="flex flex-1 flex-col">
+          {children}
+        </div>
       </body>
     </html>
   )

@@ -123,7 +123,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   }
 
   return (
-    <main className="mx-auto max-w-6xl space-y-10 px-4 py-10">
+    <main className="mx-auto w-full min-h-full max-w-6xl space-y-10 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

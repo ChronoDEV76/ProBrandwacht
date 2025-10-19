@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={inter.className}>
+    <div className={`${inter.className} flex flex-1 flex-col`}>
       <h1 className="sr-only">ProBrandwacht.nl</h1> {/* Add a hidden heading for accessibility */}
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       ))}
       <AnalyticsScripts /> {/* Ensure analytics scripts are loaded */}
-      <main className="mx-auto max-w-5xl px-4 py-10">{children}</main>
+      <main className="mx-auto flex-1 w-full max-w-5xl px-4 py-10 sm:py-12">{children}</main>
     </div>
   )
 }

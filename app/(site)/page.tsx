@@ -230,7 +230,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="relative min-h-screen w-full bg-gradient-to-b from-brand-100/40 via-white to-white text-slate-900">
+    <main className="relative min-h-[var(--app-viewport-height)] w-full bg-gradient-to-b from-brand-100/40 via-white to-white text-slate-900">
       <div className="relative mx-auto max-w-5xl space-y-16 px-4 pb-16 pt-10 sm:px-6 md:px-8 md:pb-24 md:pt-16">
         <SeoStructuredData
           includeOrganization={false}
