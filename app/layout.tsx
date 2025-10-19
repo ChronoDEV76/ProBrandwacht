@@ -58,6 +58,11 @@ export const metadata: Metadata = {
   description:
     'Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – transparante tarieven, DBA-proof samenwerking en escrow-betaling via ProSafetyMatch.',
   metadataBase: new URL('https://www.probrandwacht.nl'),
+  icons: {
+    icon: '/og.jpg',
+    shortcut: '/og.jpg',
+    apple: '/og.jpg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
