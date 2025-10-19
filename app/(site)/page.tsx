@@ -522,6 +522,10 @@ export default function HomePage() {
               Gebruik de calculator hieronder voor een snelle indicatie en klik door naar de
               stadspagina voor meer scenario’s.
             </p>
+            <p className="text-sm text-slate-700">
+              Onze kostencalculator laat zien wat er écht speelt achter het uurtarief — zodat
+              opdrachtgever en zzp’er samen de juiste keuze kunnen maken.
+            </p>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white/90 p-4">
             <CostCalculator initialCity="amsterdam" />
