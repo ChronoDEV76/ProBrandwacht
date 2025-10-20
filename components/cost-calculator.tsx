@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import type { ReactNode } from 'react'
 import { DEFAULT_TARIFFS, type CityKey, type CategoryKey, type TariffConfig } from '@/lib/tariffs'
 import ImpactInfoCard from '@/components/impact-info-card'
@@ -258,15 +258,15 @@ export default function CostCalculator({
 
   const [city, setCity] = useState<CityKey>(initialCity)
   const [category, setCategory] = useState<CategoryKey>(initialCategory)
-  const [hours, setHours] = useState(8)
+  const [hours, setHours] = useState(0)
   const [hourly, setHourly] = useState<number>(() => getMidpointRate(indexedTariffs, initialCity, initialCategory))
   const [night, setNight] = useState(false)
   const [weekend, setWeekend] = useState(false)
   const [rush, setRush] = useState(false)
   const [mode, setMode] = useState<'quick' | 'cost'>('cost')
-  const [targetNetMonthly, setTargetNetMonthly] = useState(3000)
-  const [totalMonthlyCosts, setTotalMonthlyCosts] = useState(1580)
-  const [billableHoursPerMonth, setBillableHoursPerMonth] = useState(120)
+  const [targetNetMonthly, setTargetNetMonthly] = useState(0)
+  const [totalMonthlyCosts, setTotalMonthlyCosts] = useState(0)
+  const [billableHoursPerMonth, setBillableHoursPerMonth] = useState(0)
   const [reservePct, setReservePct] = useState(15)
   const [variablePct, setVariablePct] = useState(2)
 
@@ -370,6 +370,28 @@ export default function CostCalculator({
     { key: 'industrie', label: 'Industrieel (algemeen)' },
   ]
 
+  const resetQuickValues = useCallback(() => {
+    setCity(initialCity)
+    setCategory(initialCategory)
+    setHourly(getMidpointRate(indexedTariffs, initialCity, initialCategory))
+    setHours(0)
+    setTargetNetMonthly(0)
+    setTotalMonthlyCosts(0)
+    setBillableHoursPerMonth(0)
+    setNight(false)
+    setWeekend(false)
+    setRush(false)
+  }, [initialCity, initialCategory, indexedTariffs])
+
+  const previousModeRef = useRef(mode)
+
+  useEffect(() => {
+    if (mode === 'quick' && previousModeRef.current !== 'quick') {
+      resetQuickValues()
+    }
+    previousModeRef.current = mode
+  }, [mode, resetQuickValues])
+
   return (
     <div className="rounded-3xl bg-slate-50 p-6">
       <h3 className="text-xl font-semibold">Bereken je tarief</h3>
@@ -413,7 +435,7 @@ export default function CostCalculator({
               <span className="text-sm text-slate-600">Facturabele uren p/m</span>
               <input
                 type="number"
-                min={1}
+                min={0}
                 step={1}
                 value={billableHoursPerMonth}
                 onChange={e => setBillableHoursPerMonth(Number(e.target.value))}
@@ -468,7 +490,7 @@ export default function CostCalculator({
               <span className="text-sm text-slate-600">Uren voor deze opdracht</span>
               <input
                 type="number"
-                min={1}
+                min={0}
                 step={1}
                 value={hours}
                 onChange={e => setHours(Number(e.target.value))}
@@ -698,13 +720,23 @@ export default function CostCalculator({
               <span className="text-sm text-slate-600">Uren</span>
               <input
                 type="number"
-                min={1}
+                min={0}
                 step={1}
                 value={hours}
                 onChange={e => setHours(Number(e.target.value))}
                 className="rounded-xl border px-3 py-2"
               />
             </label>
+          </div>
+
+          <div className="mt-2 flex justify-end">
+            <button
+              type="button"
+              onClick={resetQuickValues}
+              className="text-sm text-slate-600 underline underline-offset-4 hover:text-slate-800"
+            >
+              Reset invoer
+            </button>
           </div>
 
           <div className="mt-3 flex flex-wrap gap-4 text-sm text-slate-700">
