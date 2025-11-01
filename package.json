@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "seo:check": "node scripts/seo-check.mjs",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
@@ -16,12 +17,16 @@
     "e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "add-anchor": "node scripts/add-anchor.mjs",
     "sanity:aider": "bash scripts/aider-sanity.sh",
     "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
     "tone-check": "node scripts/toneCheck.mjs --root content",
     "seo:audit": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md",
     "launch:check": "node scripts/launch-check.mjs",
-    "launch:quick": "node scripts/launch-check.mjs --no-build"
+    "launch:quick": "node scripts/launch-check.mjs --no-build",
+    "find-components": "node scripts/find-components.mjs",
+    "strip-calculator": "node scripts/strip-calculator.mjs",
+    "strip-calculator:dry": "node scripts/strip-calculator.mjs --auto-detect --dry"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -38,6 +43,7 @@
     "next": "14.2.32",
     "next-mdx-remote": "^5.0.0",
     "next-seo": "^6.8.0",
+    "node-fetch": "^3.3.2",
     "openai": "^6.1.0",
     "pdf-lib": "^1.17.1",
     "pg": "^8.16.3",

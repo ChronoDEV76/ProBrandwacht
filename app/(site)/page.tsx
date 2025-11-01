@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-[13px] font-medium text-emerald-700">
             Geen bureau. Geen marge. Wel regie.
           </div>
-          <h1 className="text-3xl font-bold sm:text-4xl">
+          <h1 id="bereken" data-anchor-injected className="text-3xl font-bold sm:text-4xl">
             Slimmer samenwerken.
           </h1>
           <p className="mx-auto max-w-2xl text-slate-700">
