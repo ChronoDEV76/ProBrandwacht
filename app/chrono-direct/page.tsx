@@ -3,7 +3,7 @@ import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Direct inzet aanvragen | ProBrandwacht',
+  title: 'Directe inzet aanvragen | ProBrandwacht',
   description:
     'Snel gecertificeerde brandwachten via Chrono4Solutions. Vul je project in en we nemen direct contact op.',
   robots: { index: false, follow: false },
@@ -23,7 +23,7 @@ export default function ChronoDirectPage() {
 
       {/* HERO */}
       <section className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
-        <h1 className="text-3xl font-semibold tracking-tight">Direct inzet aanvragen</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Directe inzet aanvragen</h1>
         <p className="mt-2 text-slate-700">
           <strong>Chrono Direct</strong> verzorgt directe inzetaanvragen voor brandwachten.
           De uitvoering verloopt via <strong>Chrono4Solutions</strong>, waar

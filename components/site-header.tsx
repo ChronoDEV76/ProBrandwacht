@@ -93,7 +93,7 @@ export default function SiteHeader() {
             href="/chrono-direct"
             className="hidden items-center rounded-md border border-white/40 px-3 py-1.5 text-xs font-semibold tracking-tight text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex xl:text-sm"
           >
-            Direct inzet (Chrono4Solutions)
+            Directe inzet via (Chrono4Solutions)
           </a>
           <a
             href="/zzp/aanmelden"
