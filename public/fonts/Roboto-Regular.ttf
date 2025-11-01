@@ -1,0 +1,7 @@
+import path from "path";
+import fs from "fs";
+
+const fontPath = path.resolve("./public/fonts/Roboto-Regular.ttf");
+pdf.registerFont("Roboto", fs.readFileSync(fontPath));
+pdf.font("Roboto");
+

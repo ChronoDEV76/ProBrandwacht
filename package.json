@@ -18,11 +18,13 @@
     "sanity:aider": "bash scripts/aider-sanity.sh",
     "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
     "tone-check": "node scripts/toneCheck.mjs --root content",
-    "seo:audit": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md"
+    "seo:audit": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md",
+    "launch:check": "node scripts/launch-check.mjs",
+    "launch:quick": "node scripts/launch-check.mjs --no-build"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@supabase/supabase-js": "^2.75.1",
+    "@supabase/supabase-js": "^2.77.0",
     "@vercel/kv": "^3.0.0",
     "@vercel/postgres": "^0.10.0",
     "cheerio": "^1.1.2",
@@ -36,6 +38,7 @@
     "next-mdx-remote": "^5.0.0",
     "next-seo": "^6.8.0",
     "openai": "^6.1.0",
+    "pdf-lib": "^1.17.1",
     "pg": "^8.16.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -65,7 +68,6 @@
     "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.2",
     "jsdom": "^25.0.1",
-    "nodemailer": "^7.0.6",
     "playwright": "^1.55.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
@@ -81,3 +83,4 @@
     "typescript": "5.6.3"
   }
 }
+

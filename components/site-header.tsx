@@ -1,9 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-const links = [
+type NavLink = { href: string; label: string }
+
+// 👇 Add/adjust links here
+const LINKS: NavLink[] = [
   { href: '/missie', label: 'Missie' },
   { href: '/opdrachtgevers', label: 'Opdrachtgevers' },
   { href: '/faq', label: 'FAQ' },
@@ -12,6 +16,13 @@ const links = [
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = useMemo(
+    () => (href: string) =>
+      pathname === href || (href !== '/' && pathname?.startsWith(href)),
+    [pathname]
+  )
 
   function toggleMenu() {
     setMenuOpen(prev => !prev)
@@ -27,7 +38,9 @@ export default function SiteHeader() {
         <Link href="/" className="text-base font-semibold tracking-tight">
           ProBrandwacht.nl
         </Link>
+
         <div className="flex items-center gap-2">
+          {/* Mobile menu button */}
           <button
             type="button"
             className="inline-flex items-center rounded-md border border-white/30 px-3 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:hidden"
@@ -55,17 +68,33 @@ export default function SiteHeader() {
               )}
             </svg>
           </button>
+
+          {/* Desktop nav */}
           <nav className="hidden items-center gap-1 text-sm lg:flex">
-            {links.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative rounded-md px-3 py-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 hover:bg-white/10 after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 hover:after:scale-x-100"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {LINKS.map(link => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`relative rounded-md px-3 py-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 hover:bg-white/10
+                    after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 hover:after:scale-x-100
+                    ${active ? 'bg-white/10 after:scale-x-100' : ''}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
+
+          {/* Primary CTA (desktop) */}
+          <a
+            href="/chrono-direct"
+            className="hidden items-center rounded-md border border-white/40 px-3 py-1.5 text-xs font-semibold tracking-tight text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex xl:text-sm"
+          >
+            Direct inzet (Chrono4Solutions)
+          </a>
           <a
             href="/zzp/aanmelden"
             className="hidden items-center rounded-md bg-white px-3 py-1.5 text-xs font-semibold tracking-tight text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex xl:text-sm"
@@ -77,24 +106,41 @@ export default function SiteHeader() {
           </a>
         </div>
       </div>
+
+      {/* Mobile drawer */}
       <div
         className={`lg:hidden border-t border-white/10 bg-brand-700/95 text-sm text-white transition-[max-height,opacity] duration-200 ease-in-out ${
           menuOpen ? 'max-h-72 opacity-100' : 'pointer-events-none max-h-0 opacity-0'
         }`}
       >
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-4">
-         <nav className="flex flex-col gap-1">
-            {links.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="rounded-md px-3 py-2 font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="flex flex-col gap-1">
+            {LINKS.map(link => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  aria-current={active ? 'page' : undefined}
+                  className={`rounded-md px-3 py-2 font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                    active ? 'bg-white/10' : ''
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
+
+          {/* Primary CTA (mobile) */}
+          <a
+            href="/chrono-direct"
+            onClick={closeMenu}
+            className="inline-flex items-center justify-center rounded-md border border-white/40 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          >
+            Direct inzet (Chrono4Solutions)
+          </a>
           <a
             href="/zzp/aanmelden"
             onClick={closeMenu}

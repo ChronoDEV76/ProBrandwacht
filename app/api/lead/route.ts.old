@@ -1,0 +1,261 @@
+import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+
+// Node runtime
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+type Payload = {
+  name?: string | null;
+  email: string;
+  role: "brandwacht" | "beveiliger" | "mvk";
+  bureauHourly: number;
+  hoursPerMonth: number;
+  costPct?: number;
+  hasInsurance?: boolean;
+  deductions?: { zelfstandig?: boolean; mkb?: boolean; starters?: boolean };
+  consent?: boolean;
+  source?: string;
+};
+
+function assertEnv() {
+  const {
+    SUPABASE_URL,
+    SUPABASE_SERVICE_ROLE_KEY,
+    RESEND_API_KEY,
+    RESEND_FROM,
+    NEXT_PUBLIC_BASE_URL,
+  } = process.env;
+
+  const missing: string[] = [];
+  if (!SUPABASE_URL) missing.push("SUPABASE_URL");
+  if (!SUPABASE_SERVICE_ROLE_KEY) missing.push("SUPABASE_SERVICE_ROLE_KEY");
+  if (!RESEND_API_KEY) missing.push("RESEND_API_KEY");
+  if (!RESEND_FROM) missing.push("RESEND_FROM");
+  if (!NEXT_PUBLIC_BASE_URL) missing.push("NEXT_PUBLIC_BASE_URL");
+
+  if (missing.length) {
+    console.error("ENV missing:", missing.join(", "));
+    throw new Error("Server misconfig: " + missing.join(", "));
+  }
+
+  return {
+    SUPABASE_URL,
+    SUPABASE_SERVICE_ROLE_KEY,
+    RESEND_API_KEY,
+    RESEND_FROM,
+    NEXT_PUBLIC_BASE_URL,
+  } as Record<string, string>;
+}
+
+// Marktconforme richtlijn per rol
+const ROLE_MARKET_HINT: Record<string, number> = {
+  brandwacht: 43,
+  beveiliger: 38,
+  mvk: 65,
+};
+
+function calculateMarketHourly(role: string, bureauHourly: number): number {
+  const hint = ROLE_MARKET_HINT[role] ?? bureauHourly + 10;
+  const uplift = Math.min(Math.max(bureauHourly + 12, bureauHourly * 1.2), bureauHourly + 20);
+  return Math.round(((hint + uplift) / 2) * 100) / 100;
+}
+
+export async function POST(req: Request) {
+  try {
+    const env = assertEnv();
+    const body = (await req.json()) as Payload;
+    console.log("[lead] incoming:", body);
+
+    if (!body.email || !body.bureauHourly || !body.hoursPerMonth) {
+      return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+    }
+
+    // 1️⃣ Berekeningen
+    const marketHourly = calculateMarketHourly(body.role, body.bureauHourly);
+    const PLATFORM_FEE = 0.10;
+    const ESCROW_MIN = 0.015;
+    const ESCROW_MAX = 0.02;
+
+    const netMin = marketHourly * (1 - PLATFORM_FEE - ESCROW_MAX);
+    const netMax = marketHourly * (1 - PLATFORM_FEE - ESCROW_MIN);
+
+    const revenueMonth = marketHourly * body.hoursPerMonth;
+    const costsMonth = revenueMonth * ((body.costPct ?? 0) / 100);
+    const profitBeforeTax = revenueMonth - costsMonth;
+
+    const baseTaxPct =
+      (body.deductions?.zelfstandig ? 0.16 : 0.20) -
+      (body.deductions?.mkb ? 0.02 : 0) -
+      (body.deductions?.starters ? 0.02 : 0);
+    const estTax = Math.max(profitBeforeTax * baseTaxPct, 0);
+    const netMonth = profitBeforeTax - estTax;
+    const netYear = netMonth * 12;
+
+    const diffPerHour = Math.max(marketHourly - body.bureauHourly, 0);
+    const diffPerMonth = diffPerHour * body.hoursPerMonth;
+
+    // 2️⃣ PDF genereren
+    const pdf = await PDFDocument.create();
+    const page = pdf.addPage([595.28, 841.89]); // A4
+    const { width, height } = page.getSize();
+    const font = await pdf.embedFont(StandardFonts.Helvetica);
+
+    // Header
+    page.drawText("Persoonlijk Rapport — ProBrandwacht", {
+      x: 40,
+      y: height - 60,
+      size: 18,
+      font,
+      color: rgb(0.1, 0.1, 0.1),
+    });
+
+    // Logo rechtsboven
+    try {
+      const logoRes = await fetch(`${env.NEXT_PUBLIC_BASE_URL}/probrandwacht-logo.png`);
+      if (logoRes.ok) {
+        const buf = new Uint8Array(await logoRes.arrayBuffer());
+        const img = await pdf.embedPng(buf);
+        const w = 120;
+        const h = (img.height / img.width) * w;
+        page.drawImage(img, { x: width - w - 40, y: height - h - 40, width: w, height: h });
+      }
+    } catch {}
+
+    const line = (t: string, y: number, size = 12) =>
+      page.drawText(t, { x: 40, y, size, font, color: rgb(0.15, 0.15, 0.15) });
+
+    let y = height - 100;
+
+    line(`Naam: ${body.name || "-"}`, (y -= 18));
+    line(`E-mail: ${body.email}`, (y -= 16));
+    line(`Rol: ${body.role}`, (y -= 16));
+    y -= 8;
+
+    // Invoer
+    page.drawText("Invoer", { x: 40, y: (y -= 22), size: 13, font, color: rgb(0.05, 0.05, 0.05) });
+    line(`Huidig uurtarief via bureau: € ${body.bureauHourly.toFixed(2)}`, (y -= 18));
+    line(`Uren per maand: ${body.hoursPerMonth}`, (y -= 16));
+    line(`Kosten (% van omzet): ${body.costPct ?? 0}%`, (y -= 16));
+    line(
+      `Aftrekposten: Zelfstandigenaftrek (${body.deductions?.zelfstandig ? "ja" : "nee"}), MKB-vrijstelling (${body.deductions?.mkb ? "ja" : "nee"}), Startersaftrek (${body.deductions?.starters ? "ja" : "nee"})`,
+      (y -= 16)
+    );
+
+    // Marktconform
+    y -= 10;
+    page.drawText("Marktconform & netto via ProSafetyMatch", {
+      x: 40,
+      y: (y -= 22),
+      size: 13,
+      font,
+      color: rgb(0.05, 0.05, 0.05),
+    });
+    line(`Marktconform (bruto): € ${marketHourly.toFixed(2)} / uur`, (y -= 18));
+    line(
+      `Netto range (incl. 10% platform + 1.5–2% escrow): € ${netMin.toFixed(2)} – € ${netMax.toFixed(2)} / uur`,
+      (y -= 16)
+    );
+
+    // Resultaten
+    y -= 10;
+    page.drawText("Resultaten na belasting (indicatief)", {
+      x: 40,
+      y: (y -= 22),
+      size: 13,
+      font,
+      color: rgb(0.05, 0.05, 0.05),
+    });
+    line(`Omzet p/m: € ${revenueMonth.toFixed(2)}`, (y -= 18));
+    line(`Kosten p/m: € ${costsMonth.toFixed(2)}`, (y -= 16));
+    line(`Winst vóór IB p/m: € ${profitBeforeTax.toFixed(2)}`, (y -= 16));
+    line(`Inkomstenbelasting (schatting): € ${estTax.toFixed(2)}`, (y -= 16));
+    line(`Netto p/m: € ${netMonth.toFixed(2)}`, (y -= 16));
+    line(`Netto p/j: € ${netYear.toFixed(2)}`, (y -= 16));
+
+    // Vergelijking
+    y -= 10;
+    page.drawText("Vergelijking met huidige situatie", {
+      x: 40,
+      y: (y -= 22),
+      size: 13,
+      font,
+      color: rgb(0.05, 0.05, 0.05),
+    });
+    line(`Extra per uur t.o.v. bureau: +€ ${diffPerHour.toFixed(2)}`, (y -= 18));
+    line(`Extra per maand (zelfde uren): +€ ${diffPerMonth.toFixed(2)}`, (y -= 16));
+
+    // CTA
+    y -= 20;
+    line(
+      "Sluit je aan bij ProSafetyMatch en word een gamechanger in jouw vak.",
+      (y -= 16)
+    );
+    line(`${env.NEXT_PUBLIC_BASE_URL}/zzp/aanmelden`, (y -= 16));
+
+    const pdfBytes = await pdf.save();
+
+    // 3️⃣ Supabase: opslaan lead
+    const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+    await supabase.from("leads").insert({
+      name: body.name ?? null,
+      email: body.email,
+      role: body.role,
+      hourly: marketHourly,
+      hours_per_month: body.hoursPerMonth,
+      cost_pct: body.costPct ?? 0,
+      has_insurance: !!body.hasInsurance,
+      deductions: body.deductions ?? {},
+      consent: !!body.consent,
+      source: body.source ?? "lead-calculator",
+    });
+
+    // 4️⃣ Upload PDF
+    const reportPath = `lead-${crypto.randomUUID()}.pdf`;
+    const { error: upErr } = await supabase.storage
+      .from("reports")
+      .upload(reportPath, pdfBytes, {
+        contentType: "application/pdf",
+        upsert: true,
+      });
+
+    if (upErr) {
+      console.error("[lead] upload error:", upErr);
+      return NextResponse.json({ ok: false, error: "PDF upload failed" }, { status: 500 });
+    }
+
+    const { data: signedUrlData } = await supabase
+      .storage
+      .from("reports")
+      .createSignedUrl(reportPath, 60 * 60 * 72);
+
+    // 5️⃣ Mail verzenden via Resend
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: env.RESEND_FROM,
+        to: [body.email],
+        subject: "Jouw persoonlijke tariefrapport — ProBrandwacht",
+        html: `
+          <p>Hi ${body.name || "professional"},</p>
+          <p>Download je rapport hier (72 uur geldig): <br/>
+          <a href="${signedUrlData?.signedUrl}">Download PDF</a></p>
+          <p>Sluit je aan bij ProSafetyMatch en word een gamechanger in jouw vak.</p>
+          <p><a href="${env.NEXT_PUBLIC_BASE_URL}/zzp/aanmelden">Aanmelden bij ProSafetyMatch</a></p>
+          <p>— Team ProBrandwacht</p>
+        `,
+      }),
+    });
+
+    return NextResponse.json({ ok: true }, { status: 200 });
+  } catch (err: any) {
+    console.error("[lead] fatal:", err?.message || err);
+    return NextResponse.json({ error: err?.message || "Server error" }, { status: 500 });
+  }
+}
+

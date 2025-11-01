@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ShareBar from '@/components/share-bar'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getCityBySlug } from '@/lib/cities'
+import { getSignupUrl } from '@/lib/config'
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
 
@@ -14,7 +15,6 @@ function niceCity(slug: string) {
 }
 
 export async function generateStaticParams() {
-  // Pre-render a broader set of cities for better coverage
   const { citySlugs } = await import('@/lib/cities')
   return citySlugs.map(city => ({ city }))
 }
@@ -28,7 +28,7 @@ export async function generateMetadata({
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
   const title = `Brandwacht inhuren ${cityName} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
-  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Transparante tarieven, escrow‑betaling en certificaat‑checks.`
+  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Transparante tarieven, escrow-betaling en certificaat-checks.`
   const keywords = [
     `brandwacht ${cityName}`,
     `brandwacht inhuren ${cityName}`,
@@ -65,41 +65,57 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const zzpSignupUrl = '/zzp/aanmelden'
+
+  // CTA’s
+  const opdrachtgeverSignupUrl = getSignupUrl()            // primaire doelgroep van deze pagina
+  const zzpSignupUrl = '/zzp/aanmelden'                    // secundaire CTA waar relevant
+
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
-  type FAQItem = { q: string; a: string; ctaUrl?: string }
+
+  type FAQItem = { q: string; a: string; ctaUrl?: string; ctaLabel?: string }
+
   const faqs: FAQItem[] = [
     {
       q: `Wanneer is een brandwacht verplicht bij evenementen in ${cityName}?`,
       a: `Bij vergunningsplichtige evenementen en zodra de veiligheidsregio dit voorschrijft (o.a. bij verhoogd risico, grote publieksstromen of pyrotechniek).`,
+      ctaUrl: opdrachtgeverSignupUrl,
+      ctaLabel: 'Meld je bedrijf aan'
     },
     {
       q: `Wat kost een brandwacht in ${cityName}?`,
       a: `Gemiddeld €40–€60 per uur afhankelijk van type inzet, certificaten, duur en tijdstip.`,
-      ctaUrl: zzpSignupUrl,
+      ctaUrl: opdrachtgeverSignupUrl,
+      ctaLabel: 'Vraag een profieloverzicht aan'
     },
     {
-      q: `Mag een zzp‑brandwacht ingezet worden op bouwplaatsen?`,
+      q: `Mag een zzp-brandwacht ingezet worden op bouwplaatsen?`,
       a: `Ja, mits de vereiste certificaten (bijv. VCA, BHV, EHBO) en projectvoorwaarden aanwezig zijn.`,
-      ctaUrl: zzpSignupUrl,
+      ctaUrl: opdrachtgeverSignupUrl,
+      ctaLabel: 'Bekijk mogelijkheden'
     },
     {
       q: `Wat is een industriële brandwacht?`,
       a: `Een specialist die toezicht houdt bij risicovolle werkzaamheden (zoals heetwerk) in een industriële omgeving en kan ingrijpen bij calamiteiten.`,
+      ctaUrl: opdrachtgeverSignupUrl,
+      ctaLabel: 'Vind industriële profielen'
     },
     {
       q: `Word ik via ProBrandwacht altijd betaald als brandwacht?`,
-      a: `Ja. We werken met escrow‑betaling: de opdrachtgever betaalt vooraf op een tussenrekening en na bevestigde uitvoering volgt automatische uitbetaling.`,
+      a: `Ja. We werken met escrow-betaling: de opdrachtgever betaalt vooraf op een tussenrekening en na bevestigde uitvoering volgt automatische uitbetaling.`,
       ctaUrl: zzpSignupUrl,
+      ctaLabel: 'Meld je aan als professional'
     },
     {
-      q: `Kan ik als zzp‑brandwacht opdrachten krijgen via ProBrandwacht?`,
-      a: `Ja. Meld je aan om updates en vroege toegang te krijgen tot het platform en om straks met je profiel zichtbaar te zijn voor opdrachtgevers.`,
+      q: `Kan ik als zzp-brandwacht opdrachten krijgen via ProBrandwacht?`,
+      a: `Ja. Meld je aan voor vroege toegang en zichtbaarheid richting opdrachtgevers.`,
       ctaUrl: zzpSignupUrl,
+      ctaLabel: 'Meld je aan als professional'
     },
     {
       q: 'Hoe lever ik certificaten aan?',
-      a: 'Upload certificaten bij voorkeur als PDF voor automatische controle. PNG of JPG kan ook: na je iDIN-verificatie checken we ze handmatig via registers zoals het Centraal Diploma Register VCA en verwijderen we de kopieën na goedkeuring. We herbeoordelen alle documenten minimaal jaarlijks.',
+      a: 'Upload certificaten bij voorkeur als PDF voor automatische controle. PNG of JPG kan ook: na je iDIN-verificatie checken we ze via registers (o.a. Centraal Diploma Register VCA) en verwijderen we kopieën na goedkeuring. Herbeoordeling minimaal jaarlijks.',
+      ctaUrl: opdrachtgeverSignupUrl,
+      ctaLabel: 'Start met een proefopdracht'
     },
   ]
 
@@ -147,31 +163,55 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <section className="space-y-8">
       <StructuredBreadcrumbs items={breadcrumbItems} />
+
+      {/* HERO */}
       <h1 className="text-3xl font-semibold">
-        Van oude marge-modellen naar slimme matching in {cityName}
+        Brandwacht inhuren in {cityName} — sneller, eerlijker, DBA-proof
       </h1>
-      <div>
+
+      <div className="flex flex-wrap items-center gap-3">
         <a
-          href="/zzp/aanmelden"
+          href={opdrachtgeverSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:bg-black"
         >
-          Sluit je aan bij de ploeg die de norm herschrijft
+          Meld je bedrijf aan
         </a>
+        <Link
+          href="/opdrachtgevers/brandwacht-inhuren"
+          className="text-sm font-medium text-slate-700 underline hover:text-slate-900"
+        >
+          Of lees eerst hoe het werkt
+        </Link>
       </div>
+
+      {/* Micro-belofte + Social proof */}
+      <p className="text-xs text-slate-600">
+        Met 2 velden zie je direct beschikbaarheid & tariefbandbreedte.
+      </p>
+      <p className="mt-1 inline-flex items-center rounded-full border px-3 py-1 text-xs text-slate-700">
+        Aangescherpt met feedback uit de sector (200+ professionals)
+      </p>
+
+      {/* Loss-aversion nudge */}
+      <p className="text-sm text-brand-700 font-medium">
+        Elke week uitstel = langere doorlooptijd en minder grip op kwaliteit. Vandaag transparant
+        regelen, morgen sneller leveren.
+      </p>
+
+      {/* Context */}
       <p className="text-slate-600 max-w-2xl">
-        Vandaag verlies je in {cityName} nog uren aan ondoorzichtige tussenlagen. Wij kennen die vertragingen, en daarom bouwen we aan een platform
-        dat tarieven, certificaten en escrow in één oogopslag regelt zodat jij sneller kunt leveren. Hieronder zie je wat er verandert als jij meebouwt.
+        In {cityName} verlies je vaak tijd en kwaliteit aan tussenlagen. ProSafetyMatch maakt tarief,
+        certificaten en escrow in één oogopslag zichtbaar — zodat je direct kunt schakelen met de
+        juiste professionals.
       </p>
       <p className="text-sm text-slate-600">
-        Tarieven bepaal je altijd samen. Wij tonen eerlijk de verdeling: 10% platformfee voor community, support en
-        matching plus 1–2% escrowkosten voor rekening van de opdrachtgever zodat uitbetaling verzekerd is.
+        Tarieven bepaal je samen. Wij tonen eerlijk de verdeling: <strong>10% platformfee</strong> en <strong>1–2% escrow</strong>.
+        <br className="hidden sm:block" /> 0% verborgen marges — het uurtarief gaat rechtstreeks naar de professional.
       </p>
-      <p className="text-sm text-brand-700 font-medium">
-        Vandaag vangt een tussenlaag nog marge; morgen bepalen jij en de professional de regels. Gebruik deze pagina om de
-        stap naar dat nieuwe systeem te zetten.
-      </p>
+
+      {/* Share */}
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
         small
@@ -180,45 +220,23 @@ export default function CityPage({ params }: { params: { city: string } }) {
         utmCampaign="city_share"
       />
 
+      {/* Domeinen */}
       <div className="grid gap-6 sm:grid-cols-3">
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-2">
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 text-brand-700">
-              <path fill="currentColor" d="M4 6h16v2H4V6Zm0 4h16v8H4v-8Zm2 2v4h12v-4H6Z" />
-            </svg>
-            <h2 className="font-semibold">Evenementen</h2>
-          </div>
-          <p className="text-sm text-slate-600 mt-1">
-            We houden toezicht op publieksveiligheid, ondersteunen crowd control en bewaken
-            noodprocedures. Bij vergunningsplichtige events is inzet vrijwel altijd verplicht.
-          </p>
-        </div>
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-2">
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 text-brand-700">
-              <path fill="currentColor" d="M3 13h8V3h2v10h8v2H3v-2Zm0 4h18v2H3v-2Z" />
-            </svg>
-            <h2 className="font-semibold">Bouw</h2>
-          </div>
-          <p className="text-sm text-slate-600 mt-1">
-            We bewaken risicovolle werkzaamheden, tijdelijke brandrisico’s en inbedrijfstellingen.
-            Let op geldige certificaten en VCA voor iedereen op locatie.
-          </p>
-        </div>
-        <div className="rounded-xl border p-5 bg-white shadow-sm">
-          <div className="flex items-center gap-2">
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 text-brand-700">
-              <path fill="currentColor" d="M4 13V7h2v6h3V9h2v4h3V6h2v7h4v2H4Z" />
-            </svg>
-            <h2 className="font-semibold">Industrie</h2>
-          </div>
-          <p className="text-sm text-slate-600 mt-1">
-            We leveren industriële brandwachten voor heetwerk, besloten ruimten en onderhoudsstops.
-            Ervaring met procedures is daarbij cruciaal.
-          </p>
-        </div>
+        <DomainCard
+          title="Evenementen"
+          copy="Toezicht op publieksveiligheid, crowd control en noodprocedures. Bij vergunningsplichtige events vaak verplicht."
+        />
+        <DomainCard
+          title="Bouw"
+          copy="Bewaking bij risicovolle werkzaamheden, tijdelijke brandrisico’s en inbedrijfstellingen. Let op geldige VCA en certificaten."
+        />
+        <DomainCard
+          title="Industrie"
+          copy="Industriële brandwachten voor heetwerk, besloten ruimten en onderhoudsstops. Ervaring met procedures is cruciaal."
+        />
       </div>
 
+      {/* FAQ */}
       <div>
         <h3 className="text-xl font-semibold mb-2">Veelgestelde vragen</h3>
         <ul className="space-y-4">
@@ -226,19 +244,16 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <li key={i}>
               <p className="font-medium">{f.q}</p>
               <p className="text-sm text-slate-600">
-                {f.a}
+                {f.a}{' '}
                 {f.ctaUrl ? (
-                  <>
-                    {' '}
                   <a
                     href={f.ctaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
                   >
-                    Sluit je aan bij de ploeg die de norm herschrijft
+                    {f.ctaLabel || 'Lees meer'}
                   </a>
-                  </>
                 ) : null}
               </p>
             </li>
@@ -246,6 +261,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </ul>
       </div>
 
+      {/* Verder lezen */}
       <div>
         <h3 className="text-xl font-semibold mb-2">Verder lezen</h3>
         <ul className="list-disc pl-5 text-sm text-slate-700">
@@ -262,7 +278,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </ul>
       </div>
 
-      {/* FAQ JSON-LD */}
+      {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       {geoJsonLd ? (
@@ -271,3 +287,20 @@ export default function CityPage({ params }: { params: { city: string } }) {
     </section>
   )
 }
+
+/* -------------------------- Kleine componenten -------------------------- */
+
+function DomainCard({ title, copy }: { title: string; copy: string }) {
+  return (
+    <div className="rounded-xl border p-5 bg-white shadow-sm">
+      <div className="flex items-start gap-2">
+        <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-brand-700" aria-hidden />
+        <div>
+          <h2 className="font-semibold">{title}</h2>
+          <p className="text-sm text-slate-600 mt-1">{copy}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+

@@ -1,0 +1,218 @@
+"use client";
+
+import { useState } from "react";
+
+type Role = "brandwacht" | "beveiliger" | "mvk";
+
+export default function LeadCalculator() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState<Role>("brandwacht");
+
+  // wat je NU via een bureau krijgt
+  const [bureauHourly, setBureauHourly] = useState<number | "">(32);
+
+  // standaard invoer
+  const [hoursPerMonth, setHoursPerMonth] = useState<number | "">(144);
+  const [costPct, setCostPct] = useState<number | "">(30);
+
+  // indicatieve aftrek
+  const [hasInsurance, setHasInsurance] = useState(true);
+  const [aftrekZelf, setAftrekZelf] = useState(true);
+  const [aftrekMkb, setAftrekMkb] = useState(true);
+  const [aftrekStart, setAftrekStart] = useState(false);
+
+  const [consent, setConsent] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "ok" | "warn" | "err">("idle");
+  const [msg, setMsg] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("idle");
+    setMsg(null);
+
+    if (!email || !bureauHourly || !hoursPerMonth) {
+      setStatus("err");
+      setMsg("Vul minimaal e-mail, huidig uurtarief via bureau en uren/maand in.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name || null,
+          email,
+          role,
+          bureauHourly: Number(bureauHourly),   // ← alleen ‘nu via bureau’
+          hoursPerMonth: Number(hoursPerMonth),
+          costPct: Number(costPct || 0),
+          hasInsurance,
+          deductions: {
+            zelfstandig: aftrekZelf,
+            mkb: aftrekMkb,
+            starters: aftrekStart,
+          },
+          consent,
+          source: "lead-calculator",
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data?.ok) {
+        setStatus(data.warn ? "warn" : "ok");
+        setMsg(
+          data.warn
+            ? "Rapport gegenereerd, e-mail versturen lukte niet — link staat in de console/logs."
+            : "Verzonden — check je e-mail!"
+        );
+      } else {
+        setStatus("err");
+        setMsg(data?.error || "Er ging iets mis bij het maken van het rapport.");
+      }
+    } catch (err: any) {
+      setStatus("err");
+      setMsg(err?.message || "Onbekende fout.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  // kleine feedback (optioneel): verschil per uur tussen eigen doel en bureau zou hier kunnen,
+  // maar omdat we nieuwsgierigheid willen wekken, laten we hier bewust weinig zien.
+
+  return (
+    <section className="rounded-3xl border border-blue-200 bg-blue-50/80 p-6 shadow-sm text-slate-900">
+      <h2 className="text-2xl font-semibold text-blue-900">Bereken wat je écht waard bent</h2>
+      <p className="mt-1 text-sm text-slate-700">
+        Vul in wat je <strong>nu</strong> via een bureau krijgt. Je ontvangt direct een{" "}
+        <strong>persoonlijk PDF-rapport</strong> per e-mail met: indicatie marktconform tarief, netto via ProSafetyMatch
+        (incl. platform & escrow) en het verschil met je huidige situatie.
+      </p>
+
+      <form onSubmit={handleSubmit} className="mt-4 grid gap-3 sm:grid-cols-2">
+        <label className="text-sm">
+          <span className="text-slate-700">Naam (optioneel)</span>
+          <input
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Jouw naam"
+          />
+        </label>
+
+        <label className="text-sm">
+          <span className="text-slate-700">E-mailadres</span>
+          <input
+            type="email"
+            required
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="jij@email.nl"
+          />
+        </label>
+
+        <label className="text-sm">
+          <span className="text-slate-700">Rol</span>
+          <select
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            value={role}
+            onChange={(e) => setRole(e.target.value as Role)}
+          >
+            <option value="brandwacht">Brandwacht</option>
+            <option value="beveiliger">Beveiliger</option>
+            <option value="mvk">MVK</option>
+          </select>
+        </label>
+
+        <label className="text-sm">
+          <span className="text-slate-700">Huidig uurtarief via bureau (€)</span>
+          <input
+            type="number"
+            required
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            value={bureauHourly}
+            onChange={(e) => setBureauHourly(e.target.value === "" ? "" : Number(e.target.value))}
+            placeholder="Bijv. 32"
+          />
+        </label>
+
+        <label className="text-sm">
+          <span className="text-slate-700">Uren per maand</span>
+          <input
+            type="number"
+            required
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            value={hoursPerMonth}
+            onChange={(e) => setHoursPerMonth(e.target.value === "" ? "" : Number(e.target.value))}
+            placeholder="Bijv. 144"
+          />
+        </label>
+
+        <label className="text-sm">
+          <span className="text-slate-700">Kosten (% van omzet)</span>
+          <input
+            type="number"
+            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            value={costPct}
+            onChange={(e) => setCostPct(e.target.value === "" ? "" : Number(e.target.value))}
+            placeholder="Bijv. 30"
+          />
+        </label>
+
+        <div className="rounded-md border border-slate-200 bg-white p-3 text-sm sm:col-span-2">
+          <p className="font-medium text-slate-900">Belasting & aftrek (indicatief)</p>
+          <div className="mt-2 grid sm:grid-cols-3 gap-2">
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={hasInsurance} onChange={() => setHasInsurance(!hasInsurance)} />
+              AOV/pensioen aanwezig
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={aftrekZelf} onChange={() => setAftrekZelf(!aftrekZelf)} />
+              Zelfstandigenaftrek
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={aftrekMkb} onChange={() => setAftrekMkb(!aftrekMkb)} />
+              MKB-vrijstelling
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" checked={aftrekStart} onChange={() => setAftrekStart(!aftrekStart)} />
+              Startersaftrek
+            </label>
+          </div>
+        </div>
+
+        <div className="sm:col-span-2">
+          <label className="flex items-center gap-2 text-xs text-slate-600">
+            <input type="checkbox" checked={consent} onChange={() => setConsent(!consent)} />
+            Ik wil mijn persoonlijke PDF-rapport ontvangen en updates over eerlijk werken (geen spam).
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="sm:col-span-2 w-full rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 transition-colors disabled:opacity-60"
+        >
+          {submitting ? "Bezig…" : "Bereken & ontvang PDF-rapport"}
+        </button>
+
+        {status !== "idle" && (
+          <p
+            className={
+              "sm:col-span-2 text-sm " +
+              (status === "ok" ? "text-emerald-700" : status === "warn" ? "text-amber-700" : "text-red-700")
+            }
+          >
+            {msg}
+          </p>
+        )}
+      </form>
+    </section>
+  );
+}
+
