@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Bedankt — aanvraag ontvangen | ProBrandwacht",
   description:
     "We hebben je aanvraag ontvangen. We nemen snel contact met je op.",
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"],
   robots: { index: false, follow: false },
 };
 
@@ -15,12 +14,6 @@ export default function ThankYouPage() {
     <main className="mx-auto w-full max-w-3xl px-4 py-10 space-y-6">
       <div className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">Bedankt!</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-700">
           We hebben je aanvraag ontvangen en nemen{" "}
           <strong>snel contact</strong> met je op om de inzet af te stemmen.

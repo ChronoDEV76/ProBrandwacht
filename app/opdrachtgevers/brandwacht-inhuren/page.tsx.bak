@@ -9,8 +9,7 @@ const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
 export const metadata: Metadata = {
   title: 'Brandwacht inhuren – transparant & DBA-proof | ProBrandwacht',
   description:
-    'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Transparant tarief,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA-proof samenwerking en direct contact met professionals.',
+    'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Transparant tarief, DBA-proof samenwerking en direct contact met professionals.',
   alternates: {
     canonical: canonicalUrl,
     languages: { 'nl-NL': canonicalUrl },
@@ -140,12 +139,6 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
           Direct contact, geen bemiddeling
         </div>
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="max-w-3xl text-slate-700">
           Maak een match met gecertificeerde brandwachten zonder tussenlaag. Jij bepaalt tarief en planning; wij regelen escrow, certificaatcontrole en DBA-proof documentatie. Transparant, snel en betrouwbaar.
         </p>

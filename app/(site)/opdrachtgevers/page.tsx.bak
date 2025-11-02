@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     template: "%s | ProBrandwacht",
   },
   description:
-    "Huur brandwachten in zonder verborgen marges. Eerlijk,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA-proof en met zekerheid van betaling via escrow. Geef je wensen door en bouw mee aan het platform.",
+    "Huur brandwachten in zonder verborgen marges. Eerlijk, DBA-proof en met zekerheid van betaling via escrow. Geef je wensen door en bouw mee aan het platform.",
   alternates: {
     canonical: "/opdrachtgevers",
     languages: {
@@ -81,12 +80,6 @@ export default function OpdrachtgeversPage() {
             Huur brandwachten in zonder verborgen marges – snel, eerlijk en
             DBA-proof
           </h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
           <p className="mt-3 max-w-3xl text-slate-700">
             Met ProSafetyMatch vind je binnen minuten de juiste brandwachten.
             Jij stelt budget en eisen vast, wij tonen direct wie beschikbaar is.

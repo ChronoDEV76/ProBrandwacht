@@ -9,8 +9,7 @@ const canonicalUrl = 'https://www.probrandwacht.nl/missie'
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
   description:
-    'De nieuwe standaard voor brandwachten in Nederland: eerlijk,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
+    'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
   alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
@@ -62,12 +61,6 @@ export default function ManifestPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze Missie</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
           <p className="mt-2 max-w-2xl text-slate-700">
             Eerlijk, duidelijk en betrouwbaar voor brandwachten én opdrachtgevers. ProBrandwacht werft
             professionals en opdrachtgevers voor <strong>ProSafetyMatch</strong> — het platform dat transparantie,

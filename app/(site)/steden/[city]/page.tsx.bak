@@ -97,12 +97,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
       {/* Hero / inleiding */}
       <header className="mb-2">
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren in {label}</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-700">
           Hieronder vind je <strong>indicatieve tariefbandbreedtes</strong> voor {label}. Voor een
           <strong> persoonlijk PDF-rapport met jouw netto waarde</strong> (incl. aftrekposten & reserveringen),

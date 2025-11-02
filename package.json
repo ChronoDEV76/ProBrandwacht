@@ -26,7 +26,13 @@
     "launch:quick": "node scripts/launch-check.mjs --no-build",
     "find-components": "node scripts/find-components.mjs",
     "strip-calculator": "node scripts/strip-calculator.mjs",
-    "strip-calculator:dry": "node scripts/strip-calculator.mjs --auto-detect --dry"
+    "strip-calculator:dry": "node scripts/strip-calculator.mjs --auto-detect --dry",
+    "repo:map": "node scripts/repo-map.mjs --format=all",
+    "repo:map:small": "node scripts/repo-map.mjs --max-depth=3",
+    "repo:map:sizes": "node scripts/repo-map.mjs --format=all --sizes --ext-stats",
+    "seo:upgrade": "node scripts/seo-upgrade.mjs",
+    "seo:upgrade:apply": "node scripts/seo-upgrade.mjs --apply",
+    "seo:upgrade:sitemap": "node scripts/seo-upgrade.mjs --apply --sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

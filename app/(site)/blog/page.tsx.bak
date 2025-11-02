@@ -10,8 +10,7 @@ import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 export const metadata = {
   title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
   description:
-    'Artikelen over tarieven,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
+    'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
   alternates: { canonical: 'https://www.probrandwacht.nl/blog' },
   openGraph: {
     title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
@@ -146,12 +145,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
       <header className="space-y-4">
         <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="mt-2 max-w-3xl text-slate-700">
           We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
         </p>

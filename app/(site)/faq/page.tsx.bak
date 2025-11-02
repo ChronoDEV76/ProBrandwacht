@@ -7,8 +7,7 @@ const canonicalUrl = 'https://www.probrandwacht.nl/faq'
 
 export const metadata: Metadata = {
   title: 'FAQ | ProBrandwacht.nl',
-  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], bouw en industrie.',
+  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
   alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
@@ -78,12 +77,6 @@ export default function FAQPage() {
             </span>
           </div>
 Veelgestelde Vragen</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
       {sections.map(section => (
         <div key={section.title} className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
