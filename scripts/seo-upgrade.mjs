@@ -38,9 +38,9 @@ const SEO_MARK_END = "{/* SEO-UPGRADE END */}";
 
 const SEO_SNIPPET = `
 ${SEO_MARK_START}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+<div className=\"mt-2 text-slate-600 text-sm\">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href=\"/opdrachtgevers/brandwacht-inhuren\" className=\"underline\">brandwacht inhuren</a> of vraag direct aan via <a href=\"/chrono-direct\" className=\"underline\">Chrono Direct</a>.
 </div>
 ${SEO_MARK_END}
 `.trim();
@@ -49,7 +49,6 @@ const DEFAULT_KEYWORDS = [
   "brandwacht",
   "brandwacht inhuren",
   "brandwacht huren",
-  "escrow brandwacht",
   "DBA-proof brandwacht",
   "brandwacht tarieven",
 ];
@@ -222,4 +221,3 @@ async function processFile(file) {
     process.exit(1);
   }
 })();
-

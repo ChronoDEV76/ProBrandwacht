@@ -4,8 +4,14 @@ import dynamic from "next/dynamic";
 export const metadata: Metadata = {
   title: "ProBrandwacht — Slimmer werken. Eerlijk verdienen. Samen vooruit.",
   description:
-    "Bereken jouw echte waarde als professional. Eerlijke tarieven,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.",
+    'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
 };
 
 // Dynamische client import
@@ -32,12 +38,12 @@ export default function HomePage() {
           </h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
           <p className="mx-auto max-w-2xl text-slate-700">
-            Prosafetymatch verbindt professionals en opdrachtgevers via transparante tarieven en directe samenwerking. Minder ruis, meer waarde, en afspraken die standhouden.
+            Prosafetymatch verbindt professionals en opdrachtgevers via eerlijke tarieven en directe samenwerking. Minder ruis, meer waarde, en afspraken die standhouden.
           </p>
         </section>
 
@@ -71,4 +77,3 @@ export default function HomePage() {
     </main>
   );
 }
-

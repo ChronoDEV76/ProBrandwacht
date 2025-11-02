@@ -551,7 +551,7 @@ export default function CostCalculator({
               <div className="text-2xl font-semibold">
                 {isFinite(costCalc.grand) ? `€ ${costCalc.grand.toFixed(2)}` : '—'}
               </div>
-              <div className="mt-1 text-sm text-slate-600">Incl. escrow ({escrowPct}%)</div>
+              <div className="mt-1 text-sm text-slate-600">Incl. betaalbuffer ({escrowPct}%)</div>
               <div className="mt-1 text-xs text-slate-500">Benchmark bureau: €40/u (alleen ter vergelijking)</div>
             </div>
           </div>
@@ -635,7 +635,7 @@ export default function CostCalculator({
 
             {bench.status === 'boven' && (
               <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                Je ligt <strong>{round1(bench.diffPct)}% boven</strong> de bureauprijs. Dat is verdedigbaar bij extra verantwoordelijkheden (specialisme, korte oproep, nacht/weekend, eigen materieel of verhoogd risico). Licht dit kort toe in je offerte voor transparantie.
+                Je ligt <strong>{round1(bench.diffPct)}% boven</strong> de bureauprijs. Dat is verdedigbaar bij extra verantwoordelijkheden (specialisme, korte oproep, nacht/weekend, eigen materieel of verhoogd risico). Licht dit kort toe in je offerte voor helderheid.
               </p>
             )}
 
@@ -647,7 +647,7 @@ export default function CostCalculator({
             </ul>
 
             <p className="mt-3 text-xs text-slate-500">
-              Onderbouwd met cao-logica, CBS-inflatie en gangbare zzp-kostprijsmethodes. ProSafetyMatch stelt geen vaste tarieven vast; dit is een hulpmiddel voor transparantie.
+              Onderbouwd met cao-logica, CBS-inflatie en gangbare zzp-kostprijsmethodes. ProSafetyMatch stelt geen vaste tarieven vast; dit is een hulpmiddel voor inzicht.
             </p>
           </div>
 
@@ -767,14 +767,14 @@ export default function CostCalculator({
               </div>
             </div>
             <div className="rounded-2xl border bg-white p-4">
-              <div className="text-sm text-slate-600">Escrow ({escrowPct}%)</div>
+              <div className="text-sm text-slate-600">Betaalbuffer ({escrowPct}%)</div>
               <div className="text-xl font-semibold">€ {calc.escrowAmt.toFixed(2)}</div>
               <div className="mt-1 text-sm text-slate-600">Beveiligde betaling gekoppeld aan uitvoering</div>
             </div>
             <div className="rounded-2xl border bg-white p-4">
               <div className="text-sm text-slate-600">Totaal te factureren (ex. btw)</div>
               <div className="text-2xl font-semibold">€ {calc.grand.toFixed(2)}</div>
-              <div className="mt-1 text-sm text-slate-600">Opdrachtgeverstarief + escrow</div>
+              <div className="mt-1 text-sm text-slate-600">Opdrachtgeverstarief + betaalbuffer</div>
               <div className="mt-2 text-xs text-slate-500">
                 Inflatiefactor CBS {baseYear}→{targetYear}: × {inflationFactor.toFixed(4)}
               </div>

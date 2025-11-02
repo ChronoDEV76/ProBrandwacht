@@ -44,7 +44,7 @@ export default function ImpactMeter() {
         <ul className="ml-4 list-disc">
           <li>Werk je onder je eerlijke tarief, dan werk je mee aan de race to the bottom.</li>
           <li>Een bureau-tarief bevat ruis + marge en zegt niets over jouw echte waarde.</li>
-          <li>Gamechanger: transparant tarief, directe afspraken, escrow-zekerheid.</li>
+          <li>Gamechanger: eerlijk tarief, directe afspraken en voorspelbare betaling.</li>
         </ul>
       </div>
     </section>

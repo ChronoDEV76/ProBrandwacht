@@ -130,7 +130,7 @@ export default function SeoStructuredData({
       mainEntityOfPage: { '@type': 'WebPage', '@id': article.url },
       datePublished: article.datePublished ?? new Date().toISOString(),
       dateModified: article.dateModified ?? new Date().toISOString(),
-      image: article.image ?? 'https://www.probrandwacht.nl/og-home.jpg',
+      image: article.image ?? 'https://www.probrandwacht.nl/og-home.webp',
     })
   }
 

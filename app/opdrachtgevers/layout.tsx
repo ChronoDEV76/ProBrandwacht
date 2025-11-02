@@ -4,7 +4,7 @@ import { baseMeta } from '@/app/(site)/shared-metadata'
 export const metadata: Metadata = {
   ...baseMeta,
   title: 'Voor opdrachtgevers | ProBrandwacht.nl',
-  description: 'Transparant inhuren met escrow, eerlijke tariefopbouw en DBA-proof documentatie.',
+  description: 'Eerlijk inhuren met duidelijke tariefopbouw en DBA-proof documentatie.',
   alternates: {
     canonical: '/opdrachtgevers',
     languages: { 'nl-NL': '/opdrachtgevers' },

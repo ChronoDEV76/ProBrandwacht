@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import AnalyticsClient from './AnalyticsClient'
+import dynamic from 'next/dynamic'
+
+const AnalyticsClient = dynamic(() => import('./AnalyticsClient'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Share events debug | ProBrandwacht',

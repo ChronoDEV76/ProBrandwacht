@@ -27,7 +27,7 @@ export function buildMetadata({ title, description, canonical }: BrandwachtStubC
       description,
       images: [
         {
-          url: 'https://www.probrandwacht.nl/og-home.jpg',
+          url: 'https://www.probrandwacht.nl/og-home.webp',
           width: 1200,
           height: 630,
           alt: title,
@@ -38,7 +38,7 @@ export function buildMetadata({ title, description, canonical }: BrandwachtStubC
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.probrandwacht.nl/og-home.jpg'],
+      images: ['https://www.probrandwacht.nl/og-home.webp'],
     },
   }
 }

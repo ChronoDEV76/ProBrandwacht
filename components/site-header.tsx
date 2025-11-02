@@ -35,7 +35,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 shrink-0 border-b border-white/10 bg-brand-700/80 text-white shadow-sm backdrop-blur supports-[backdrop-filter]:bg-brand-700/60">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
-        <Link href="/" className="text-base font-semibold tracking-tight">
+        <Link href="/" prefetch={false} className="text-base font-semibold tracking-tight">
           ProBrandwacht.nl
         </Link>
 
@@ -77,6 +77,7 @@ export default function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={false}
                   aria-current={active ? 'page' : undefined}
                   className={`relative rounded-md px-3 py-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 hover:bg-white/10
                     after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:bg-white/80 hover:after:scale-x-100
@@ -93,7 +94,7 @@ export default function SiteHeader() {
             href="/chrono-direct"
             className="hidden items-center rounded-md border border-white/40 px-3 py-1.5 text-xs font-semibold tracking-tight text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 lg:inline-flex xl:text-sm"
           >
-            Directe inzet via (Chrono4Solutions)
+            Directe inzet aanvragen bij beschikbaarheid via Chrono-Direct
           </a>
           <a
             href="/zzp/aanmelden"
@@ -121,6 +122,7 @@ export default function SiteHeader() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={false}
                   onClick={closeMenu}
                   aria-current={active ? 'page' : undefined}
                   className={`rounded-md px-3 py-2 font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${

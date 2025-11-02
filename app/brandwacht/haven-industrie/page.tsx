@@ -5,13 +5,13 @@ const config: BrandwachtStubConfig = {
   slug: 'haven-industrie',
   title: 'Brandwacht haven & industrie | ProBrandwacht',
   description:
-    'Vraag gecertificeerde brandwachten voor haven- en industrieprojecten aan. Transparante tarieven, directe contracten en escrow-betalingen zonder verborgen marges.',
+    'Vraag gecertificeerde brandwachten voor haven- en industrieprojecten aan. Eerlijke tarieven, directe contracten en vaste afspraken zonder verborgen marges.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/haven-industrie',
   hero: {
     badge: 'Haven & zware industrie',
     heading: 'Brandwacht haven & industrie',
     intro:
-      'Escrow-betalingen, gecertificeerde brandwachten en transparante tariefopbouw. Ideaal voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
+      'Gegarandeerde betalingen, gecertificeerde brandwachten en heldere tariefopbouw. Ideaal voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
   },
   bullets: [
     {
@@ -24,7 +24,7 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Werken zonder tussenlaag',
-      items: ['Direct contract tussen opdrachtgever en brandwacht', 'Escrow garandeert uitbetaling na uitvoering', 'Transparante 10% platformfee voor tooling & support'],
+      items: ['Direct contract tussen opdrachtgever en brandwacht', 'Betaalafspraken garanderen uitbetaling na uitvoering', 'Heldere 10% platformfee voor tooling & support'],
     },
   ],
 }
@@ -38,7 +38,7 @@ export default function Page() {
 
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

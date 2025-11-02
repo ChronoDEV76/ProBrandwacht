@@ -38,7 +38,7 @@ export default function ImpactInfoCard() {
       </div>
 
       <p className="mt-4 text-xs leading-relaxed text-slate-500">
-        Doel van deze toelichting is inzicht bieden. Eerlijke, transparante afspraken zorgen voor gemotiveerde en bekwaam inzetbare
+        Doel van deze toelichting is inzicht bieden. Eerlijke afspraken zorgen voor gemotiveerde en bekwaam inzetbare
         professionals — en daarmee voor een veiligere werkomgeving. Cijfers zijn indicatief en gebaseerd op CBS-inflatie,
         cao-logica en gangbare zzp-kostprijsmethodes.
       </p>

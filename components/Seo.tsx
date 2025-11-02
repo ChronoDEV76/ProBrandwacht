@@ -82,7 +82,7 @@ export default function Seo({
         const published = article.datePublished ?? new Date().toISOString()
         const modified = article.dateModified ?? published
         const normalized = (article.images ?? []).map(abs).filter(Boolean) as string[]
-        const images = normalized.length > 0 ? normalized : [imageUrl || `${SITE_URL}/og-home.jpg`]
+        const images = normalized.length > 0 ? normalized : [imageUrl || `${SITE_URL}/og-home.webp`]
 
         return (
           <ArticleJsonLd

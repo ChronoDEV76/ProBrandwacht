@@ -6,8 +6,8 @@ type FeeVergelijkProps = {
 
 export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
   const platformFee = tarief * 0.1
-  const escrowFee = tarief * 0.01
-  const nettoZzp = tarief - platformFee - escrowFee
+  const betaalbufferFee = tarief * 0.01
+  const nettoZzp = tarief - platformFee - betaalbufferFee
   const bureauMarge = tarief * 0.35 // aanname 35% marge gemiddeld
 
   return (
@@ -18,7 +18,7 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔹 Platformfee 10%: €{platformFee.toFixed(2)}</li>
-          <li>🔹 Escrow 1%: €{escrowFee.toFixed(2)}</li>
+          <li>🔹 Betaalbuffer 1%: €{betaalbufferFee.toFixed(2)}</li>
           <li className="font-semibold text-green-700">
             ✅ Netto naar zzp’er: €{nettoZzp.toFixed(2)}
           </li>
@@ -39,4 +39,3 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
     </div>
   )
 }
-

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Aanmelden als opdrachtgever | ProBrandwacht.nl',
   description:
     'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"],
+  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","DBA-proof brandwacht","brandwacht tarieven"],
   alternates: {
     canonical: canonicalUrl,
     languages: { 'nl-NL': canonicalUrl },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
     images: [
       {
-        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        url: 'https://www.probrandwacht.nl/og-home.webp',
         width: 1200,
         height: 630,
         alt: 'Aanmelden als opdrachtgever via ProBrandwacht',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Aanmelden als opdrachtgever | ProBrandwacht.nl',
     description:
       'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
-    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+    images: ['https://www.probrandwacht.nl/og-home.webp'],
   },
 }
 
@@ -61,12 +61,12 @@ export default function OpdrachtgeverAanmeldenPage() {
           <h1 className="text-3xl font-semibold text-slate-900">Meld je bedrijf aan</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
           <p className="text-sm text-slate-600">
-            Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat escrow wordt geactiveerd.
+            Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat we betaalafspraken activeren.
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
             <a href="/opdrachtgevers/brandwacht-inhuren" className="underline text-brand-700">

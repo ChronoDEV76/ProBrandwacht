@@ -1,8 +1,14 @@
 // app/layout.tsx
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import SeoStructuredData from "@/components/SeoStructuredData";
 import { headers } from "next/headers";
+
+const roboto = localFont({
+  src: [{ path: "../public/fonts/Roboto-Regular.ttf", weight: "400", style: "normal" }],
+  display: "swap",
+});
 
 const SITE_BASE_URL = "https://www.probrandwacht.nl";
 
@@ -51,9 +57,9 @@ function titleizeSegment(segment: string) {
 }
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht.nl | Brandwacht inhuren & transparante tarieven",
+  title: "ProBrandwacht.nl | Brandwacht inhuren & eerlijke tarieven",
   description:
-    "Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – transparante tarieven, DBA-proof samenwerking en escrow-betaling via ProSafetyMatch.",
+    "Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – eerlijke tarieven en DBA-proof samenwerking via ProSafetyMatch.",
   metadataBase: new URL(SITE_BASE_URL),
   icons: { icon: "/og.jpg", shortcut: "/og.jpg", apple: "/og.jpg" },
 };
@@ -66,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="nl">
-      <body className="bg-white text-slate-900">
+      <body className={`${roboto.className} bg-white text-slate-900`}>
         {/* Globale SEO-schema’s */}
         <SeoStructuredData
           website={{ name: "ProBrandwacht.nl", url: SITE_BASE_URL }}
@@ -78,4 +84,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

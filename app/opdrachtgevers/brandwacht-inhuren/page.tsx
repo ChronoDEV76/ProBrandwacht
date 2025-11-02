@@ -4,22 +4,28 @@ import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/opdrachtgevers/brandwacht-inhuren'
-const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
+const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 
 export const metadata: Metadata = {
-  title: 'Brandwacht inhuren – transparant & DBA-proof | ProBrandwacht',
+  title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
   description:
-    'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Transparant tarief,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA-proof samenwerking en direct contact met professionals.',
+    'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: {
     canonical: canonicalUrl,
     languages: { 'nl-NL': canonicalUrl },
   },
   openGraph: {
     url: canonicalUrl,
-    title: 'Brandwacht inhuren – transparant & DBA-proof | ProBrandwacht',
+    title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
     description:
-      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Transparant tarief, DBA-proof samenwerking en direct contact met professionals.',
+      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
     siteName: 'ProBrandwacht.nl',
     images: [
       {
@@ -34,9 +40,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@ProBrandwacht',
     creator: '@ProBrandwacht',
-    title: 'Brandwacht inhuren – transparant & DBA-proof | ProBrandwacht',
+    title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
     description:
-      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Transparant tarief, DBA-proof samenwerking en direct contact met professionals.',
+      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
     images: [ogImage],
   },
 }
@@ -56,12 +62,12 @@ const faqItems = [
   {
     question: 'Hoe werkt het tarief en de platformfee?',
     answer:
-      'Het uurtarief bepaal je samen met de professional. Wij tonen altijd de verdeling: 10% platformfee voor verificaties en support, 1–2% escrowkosten en het netto honorarium. Geen verborgen marges.',
+      'Het uurtarief bepaal je samen met de professional. Wij maken duidelijk hoe de vergoeding wordt opgebouwd voor verificaties, support en het netto honorarium. Geen verborgen marges.',
   },
   {
     question: 'Is de samenwerking DBA-proof?',
     answer:
-      'Ja. Contracten lopen rechtstreeks tussen opdrachtgever en professional. De platformdocumentatie helpt bij gezag, ondernemersrisico en aansprakelijkheid. Wij leveren tooling en escrow, geen bemiddeling.',
+      'Ja. Contracten lopen rechtstreeks tussen opdrachtgever en professional. De platformdocumentatie helpt bij gezag, ondernemersrisico en aansprakelijkheid. Wij faciliteren tooling en documentatie, geen bemiddeling.',
   },
   {
     question: 'In welke regio’s leveren jullie brandwachten?',
@@ -126,7 +132,7 @@ const serviceSchema = {
     '@type': 'Offer',
     availability: 'https://schema.org/InStock',
     priceCurrency: 'EUR',
-    description: 'Transparante kostenopbouw met directe contracten en escrow-betaling.',
+    description: 'Heldere kostenopbouw met directe contracten.',
   },
 }
 
@@ -140,14 +146,14 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
           Direct contact, geen bemiddeling
         </div>
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
+        {/* SEO-UPGRADE START */}
+        <div className="mt-2 text-slate-600 text-sm">
+          <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+          Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+        </div>
+        {/* SEO-UPGRADE END */}
         <p className="max-w-3xl text-slate-700">
-          Maak een match met gecertificeerde brandwachten zonder tussenlaag. Jij bepaalt tarief en planning; wij regelen escrow, certificaatcontrole en DBA-proof documentatie. Transparant, snel en betrouwbaar.
+          Maak een match met gecertificeerde brandwachten zonder tussenlaag. Jij bepaalt tarief en planning; wij verzorgen certificaatcontrole en DBA-proof documentatie. Eerlijk, snel en betrouwbaar.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -167,10 +173,10 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
 
       <section className="grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold">Tarieven & transparantie</h2>
+          <h2 className="text-xl font-semibold">Tarieven & helderheid</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             <li>• Selecteer op tariefbandbreedte, werktijd (dag/nacht) en dienstduur.</li>
-            <li>• Zie direct platformfee (10%) en escrowkosten (1–2%).</li>
+            <li>• Zie direct de platformfee (10%) en het netto honorarium.</li>
             <li>• Deel dezelfde tariefberekening met finance & HR om interne afstemming te versnellen.</li>
           </ul>
         </div>

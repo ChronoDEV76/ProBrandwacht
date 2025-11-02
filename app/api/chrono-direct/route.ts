@@ -143,7 +143,7 @@ export async function POST(req: Request) {
     const htmlUser = `
       <p>Beste ${escapeHtml(body.contact)},</p>
       <p>Bedankt voor je aanvraag. We nemen snel contact op om de inzet af te stemmen.<br/>
-      Indien het binnen <strong>ProSafetyMatch</strong> past, regelen we de inzet transparant en DBA-proof. 
+      Indien het binnen <strong>ProSafetyMatch</strong> past, regelen we de inzet eerlijk en DBA-proof. 
       Is directe levering nodig, dan schakelen we via <strong>Chrono4Solutions</strong>.</p>
       <p>— Team ProBrandwacht</p>
     `;
@@ -202,4 +202,3 @@ function escapeHtml(input: string) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
-

@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ShareBar from '@/components/share-bar'
+import dynamic from 'next/dynamic'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getCityBySlug } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
+
+const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
 
@@ -28,14 +30,13 @@ export async function generateMetadata({
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
   const title = `Brandwacht inhuren ${cityName} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
-  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Transparante tarieven, escrow-betaling en certificaat-checks.`
+  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Eerlijke tarieven en certificaat-checks.`
   const keywords = [
     `brandwacht ${cityName}`,
     `brandwacht inhuren ${cityName}`,
     'brandwacht platform',
-    'escrow brandwacht',
   ]
-  const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
+  const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
   const canonical = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
   return {
     title,
@@ -101,7 +102,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     },
     {
       q: `Word ik via ProBrandwacht altijd betaald als brandwacht?`,
-      a: `Ja. We werken met escrow-betaling: de opdrachtgever betaalt vooraf op een tussenrekening en na bevestigde uitvoering volgt automatische uitbetaling.`,
+      a: `Ja. We stemmen betalingen rechtstreeks af tussen opdrachtgever en professional zodat beide partijen vooraf duidelijkheid hebben.`,
       ctaUrl: zzpSignupUrl,
       ctaLabel: 'Meld je aan als professional'
     },
@@ -170,7 +171,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -202,18 +203,18 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       {/* Loss-aversion nudge */}
       <p className="text-sm text-brand-700 font-medium">
-        Elke week uitstel = langere doorlooptijd en minder grip op kwaliteit. Vandaag transparant
+        Elke week uitstel = langere doorlooptijd en minder grip op kwaliteit. Vandaag eerlijk
         regelen, morgen sneller leveren.
       </p>
 
       {/* Context */}
       <p className="text-slate-600 max-w-2xl">
         In {cityName} verlies je vaak tijd en kwaliteit aan tussenlagen. ProSafetyMatch maakt tarief,
-        certificaten en escrow in één oogopslag zichtbaar — zodat je direct kunt schakelen met de
+        certificaten in één oogopslag zichtbaar — zodat je direct kunt schakelen met de
         juiste professionals.
       </p>
       <p className="text-sm text-slate-600">
-        Tarieven bepaal je samen. Wij tonen eerlijk de verdeling: <strong>10% platformfee</strong> en <strong>1–2% escrow</strong>.
+        Tarieven bepaal je samen. Wij tonen eerlijk hoe de kosten verdeeld zijn, zonder verborgen marges.
         <br className="hidden sm:block" /> 0% verborgen marges — het uurtarief gaat rechtstreeks naar de professional.
       </p>
 
@@ -309,4 +310,3 @@ function DomainCard({ title, copy }: { title: string; copy: string }) {
     </div>
   )
 }
-

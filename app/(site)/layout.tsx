@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import SiteHeader from '@/components/site-header'
 import dynamic from 'next/dynamic'
 
 const AnalyticsScripts = dynamic(() => import('@/components/analytics'), { ssr: false })
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const roboto = localFont({
+  src: [{ path: '../../public/fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' }],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.probrandwacht.nl'),
@@ -30,19 +33,19 @@ export const metadata: Metadata = {
     siteName: 'ProBrandwacht.nl',
     title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
     description: 'Brandwacht inhuren in Nederland – alternatief, eerlijk en veilig.',
-    images: [{ url: '/og-home.jpg', width: 1200, height: 630, alt: 'ProBrandwacht platform - A visual representation of our services' }], // Ensure alt text is descriptive
+    images: [{ url: '/og-home.webp', width: 1200, height: 630, alt: 'ProBrandwacht platform - A visual representation of our services' }], // Ensure alt text is descriptive
   },
   twitter: {
     card: 'summary_large_image',
     site: '@ProBrandwacht',
     creator: '@ProBrandwacht',
-    images: ['/og-home.jpg'],
+    images: ['/og-home.webp'],
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${inter.className} flex flex-1 flex-col`}>
+    <div className={`${roboto.className} flex flex-1 flex-col`}>
       <span className="sr-only">ProBrandwacht.nl</span>
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}

@@ -7,8 +7,14 @@ import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 export const metadata: Metadata = {
   title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
   description:
-    'Top 10 officiële bronnen (CBS,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
+    'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: {
     canonical: 'https://www.probrandwacht.nl/seo-resources',
     languages: { 'nl-NL': 'https://www.probrandwacht.nl/seo-resources' },
@@ -20,7 +26,7 @@ export const metadata: Metadata = {
       'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
     images: [
       {
-        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        url: 'https://www.probrandwacht.nl/og-home.webp',
         width: 1200,
         height: 630,
         alt: 'SEO bronnen voor brandwachtcontent',
@@ -32,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
     description:
       'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
-    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+    images: ['https://www.probrandwacht.nl/og-home.webp'],
   },
 }
 
@@ -59,7 +65,7 @@ export default function SeoResourcesPage() {
       </h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

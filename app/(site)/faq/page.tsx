@@ -7,8 +7,14 @@ const canonicalUrl = 'https://www.probrandwacht.nl/faq'
 
 export const metadata: Metadata = {
   title: 'FAQ | ProBrandwacht.nl',
-  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], bouw en industrie.',
+  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   other: { hreflang: 'nl-NL' },
   openGraph: {
@@ -17,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
     images: [
       {
-        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        url: 'https://www.probrandwacht.nl/og-home.webp',
         width: 1200,
         height: 630,
         alt: 'Veelgestelde vragen over brandwacht inhuren',
@@ -67,20 +73,19 @@ export default function FAQPage() {
           { name: 'FAQ', url: canonicalUrl },
         ]}
       />
-      <h1 className="text-3xl font-semibold">
-          {/* /*__seo-badges*/ */}
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Samen zetten we de nieuwe standaard voor brandwachten
-            </span>
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Aangescherpt met feedback uit de sector (200+ professionals)
-            </span>
-          </div>
-Veelgestelde Vragen</h1>
+      <h1 className="text-3xl font-semibold">Veelgestelde vragen</h1>
+      {/* __seo-badges */}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+          Samen zetten we de nieuwe standaard voor brandwachten
+        </span>
+        <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+          Aangescherpt met feedback uit de sector (200+ professionals)
+        </span>
+      </div>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "seo:check": "node scripts/seo-check.mjs",
     "start": "next start",
@@ -32,7 +33,9 @@
     "repo:map:sizes": "node scripts/repo-map.mjs --format=all --sizes --ext-stats",
     "seo:upgrade": "node scripts/seo-upgrade.mjs",
     "seo:upgrade:apply": "node scripts/seo-upgrade.mjs --apply",
-    "seo:upgrade:sitemap": "node scripts/seo-upgrade.mjs --apply --sitemap"
+    "seo:upgrade:sitemap": "node scripts/seo-upgrade.mjs --apply --sitemap",
+    "perf:mobile": "npx @lhci/cli autorun --collect.settings.formFactor=mobile --collect.settings.screenEmulation.mobile=true --collect.startServerCommand=\"npm run start\" --collect.startServerReadyPattern=\"Started server on\" --collect.url=http://localhost:3000 --upload.target=temporary-public-storage",
+    "perf:page": "npx @lhci/cli collect --url=http://localhost:3000 --settings.preset=mobile && npx @lhci/cli assert"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -64,6 +67,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.1",
     "@playwright/test": "^1.55.1",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/dom": "^10.4.1",

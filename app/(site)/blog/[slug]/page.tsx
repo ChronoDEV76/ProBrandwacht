@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 
 import { getPostSlugs } from '@/lib/blog'
@@ -8,10 +9,11 @@ import { coreCities } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 
 import Prose from '@/components/prose'
-import ShareBar from '@/components/share-bar'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+
+const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
 
 // ISR
 export const revalidate = 60 * 60 // 1 uur
@@ -35,7 +37,7 @@ export async function generateMetadata(
       (post.frontmatter.description as string | undefined) ??
       'Brandwacht blog – ProBrandwacht.nl'
     const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
-    const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.jpg') as string
+    const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.webp') as string
     const ogAbs = toAbsoluteUrl(og)
 
     return {
@@ -73,7 +75,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const opdrachtgeverSignupUrl = getSignupUrl()
   const publishedDate = parseFrontmatterDate(post.frontmatter.date)
   const articleImage = toAbsoluteUrl(
-    (post.frontmatter.ogImage as string | undefined) || (post.frontmatter.image as string | undefined) || '/og-home.jpg',
+    (post.frontmatter.ogImage as string | undefined) || (post.frontmatter.image as string | undefined) || '/og-home.webp',
   )
   const description =
     (post.frontmatter.tldr as string | undefined) ??
@@ -101,7 +103,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <h1 className="text-3xl font-semibold">{post.frontmatter.title ?? params.slug}</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -132,13 +134,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
         <h2 className="text-lg font-semibold text-slate-900">Direct naar een stadspagina</h2>
         <p className="mt-1 text-sm text-slate-600">
-          Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en escrowberekening met opdrachtgevers.
+          Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en kostenberekening met opdrachtgevers.
         </p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {coreCities.map((city) => (
             <li key={city.slug}>
               <Link
                 href={`/brandwacht-inhuren/${city.slug}`}
+                prefetch={false}
                 className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
               >
                 Brandwacht inhuren {city.name}
@@ -155,7 +158,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 // helpers
 function toAbsoluteUrl(url: string) {
   const trimmed = url.trim()
-  if (!trimmed) return 'https://www.probrandwacht.nl/og-home.jpg'
+  if (!trimmed) return 'https://www.probrandwacht.nl/og-home.webp'
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed
   const normalized = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
   return `https://www.probrandwacht.nl${normalized}`

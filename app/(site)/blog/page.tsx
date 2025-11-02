@@ -10,8 +10,14 @@ import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 export const metadata = {
   title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
   description:
-    'Artikelen over tarieven,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
+    'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: { canonical: 'https://www.probrandwacht.nl/blog' },
   openGraph: {
     title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
@@ -21,7 +27,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.probrandwacht.nl/og-home.jpg',
+        url: 'https://www.probrandwacht.nl/og-home.webp',
         width: 1200,
         height: 630,
         alt: 'ProBrandwacht blogoverzicht',
@@ -33,7 +39,7 @@ export const metadata = {
     title: 'Blog brandveiligheid & zzp-brandwachten | ProBrandwacht',
     description:
       'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.',
-    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+    images: ['https://www.probrandwacht.nl/og-home.webp'],
   },
 }
 
@@ -148,7 +154,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -158,12 +164,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         <div className="flex flex-wrap gap-3">
           <Link
             href="/opdrachtgevers/brandwacht-inhuren"
+            prefetch={false}
             className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/40"
           >
             Brandwacht aanvragen
           </Link>
           <Link
             href="/zzp/aanmelden"
+            prefetch={false}
             className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
           >
             Meld je aan als zzp-brandwacht
@@ -217,7 +225,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   src={post.image}
                   alt={post.imageAlt}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(max-width: 640px) 100vw, 640px"
                   className="object-cover"
                   style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
                 />
@@ -233,13 +241,17 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                 <span>· {post.minutes} min leestijd</span>
               </div>
               <h2 className="line-clamp-2 text-lg font-semibold">
-                <Link href={`/blog/${post.slug}`} className="hover:underline">
+                <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:underline">
                   {post.title}
                 </Link>
               </h2>
               <p className="mt-2 line-clamp-3 text-sm text-slate-700">{post.excerpt}</p>
               <div className="mt-4 flex items-center justify-between">
-                <Link href={`/blog/${post.slug}`} className="text-sm font-medium text-brand-700 hover:underline">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  prefetch={false}
+                  className="text-sm font-medium text-brand-700 hover:underline"
+                >
                   Lees hoe wij de norm verschuiven →
                 </Link>
                 <a
@@ -259,13 +271,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
         <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en 1–2% escrowkosten.
+          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en het nettobedrag dat overblijft.
         </p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {cityLinks.map(city => (
             <li key={city.slug}>
               <Link
                 href={`/brandwacht-inhuren/${city.slug}`}
+                prefetch={false}
                 className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
               >
                 Brandwacht inhuren {city.name}
@@ -324,6 +337,7 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
   return (
     <Link
       href={href}
+      prefetch={false}
       className={[
         'rounded-full border px-3 py-1 text-sm',
         active ? 'border-brand-200 bg-brand-50 text-brand-700' : 'hover:bg-slate-50',

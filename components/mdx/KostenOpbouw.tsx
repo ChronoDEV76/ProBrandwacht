@@ -17,7 +17,7 @@ export default function KostenOpbouwScenarios({
   feePct = 10,
   escrowPct = [1, 2],
   title = "Kostenopbouw (excl. btw) – scenario’s",
-  note = "Zzp’er factureert direct; PSM faciliteert transparantie en escrow, maar stelt geen tarieven vast.",
+  note = "Zzp’er factureert direct; PSM faciliteert helder inzicht en vaste betaalafspraken, maar stelt geen tarieven vast.",
 }: {
   rates?: number[];
   feePct?: number;
@@ -95,7 +95,7 @@ export default function KostenOpbouwScenarios({
                 />
               </div>
               <div className="mt-2 text-xs text-slate-600">
-                <span className="font-medium text-slate-900">{fmt(totalMid)}</span> (geschat midden, incl. fee & escrow)
+                <span className="font-medium text-slate-900">{fmt(totalMid)}</span> (geschat midden, incl. fee & betaalbuffer)
               </div>
             </div>
           );
@@ -106,4 +106,3 @@ export default function KostenOpbouwScenarios({
     </div>
   );
 }
-

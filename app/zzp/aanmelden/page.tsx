@@ -2,14 +2,20 @@ import type { Metadata } from 'next'
 import ClientPage from './client-page'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
-const ogImage = 'https://www.probrandwacht.nl/og-home.jpg'
+const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 
 export const metadata: Metadata = {
   title: 'ZZP brandwacht aanmelden | ProBrandwacht',
   description:
-    'Meld je gratis aan als ZZP brandwacht. Direct contact met opdrachtgevers,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], eerlijke tarieven en facturatie zonder verborgen kosten.',
+    'Meld je gratis aan als zzp-brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: {
     canonical: canonicalUrl,
     languages: { 'nl-NL': canonicalUrl },
@@ -62,7 +68,7 @@ export default function Page() {
 
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

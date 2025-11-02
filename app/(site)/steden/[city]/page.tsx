@@ -52,13 +52,13 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
       title,
       description,
       url: canonical,
-      images: [{ url: 'https://www.probrandwacht.nl/og-home.jpg', width: 1200, height: 630, alt: `Brandwacht tarieven ${label}` }],
+      images: [{ url: 'https://www.probrandwacht.nl/og-home.webp', width: 1200, height: 630, alt: `Brandwacht tarieven ${label}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.probrandwacht.nl/og-home.jpg'],
+      images: ['https://www.probrandwacht.nl/og-home.webp'],
     },
   }
 }
@@ -99,7 +99,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren in {label}</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -136,7 +136,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <h2 className="text-xl font-semibold text-slate-900 mb-1">Wil je weten wat je écht waard bent?</h2>
         <p className="text-slate-600 mb-4">
           Ontvang direct een <strong>persoonlijk PDF-rapport</strong> met jouw netto uurwaarde, inclusief reserveringen,
-          aftrekposten en duidelijke opbouw. Geen tussenlaag, wel transparantie.
+        aftrekposten en duidelijke opbouw. Geen tussenlaag, wel helder inzicht.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
@@ -179,4 +179,3 @@ import { notFound } from 'next/navigation'
 function isCityKey(value: string): value is CityKey {
   return Object.prototype.hasOwnProperty.call(DEFAULT_TARIFFS, value)
 }
-

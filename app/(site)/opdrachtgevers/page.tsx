@@ -13,8 +13,14 @@ export const metadata: Metadata = {
     template: "%s | ProBrandwacht",
   },
   description:
-    "Huur brandwachten in zonder verborgen marges. Eerlijk,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], DBA-proof en met zekerheid van betaling via escrow. Geef je wensen door en bouw mee aan het platform.",
+    'Huur brandwachten in zonder verborgen marges. Eerlijk, DBA-proof en direct in contact met professionals. Geef je wensen door en bouw mee aan het platform.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: {
     canonical: "/opdrachtgevers",
     languages: {
@@ -27,10 +33,10 @@ export const metadata: Metadata = {
     siteName: "ProBrandwacht.nl",
     title: "Voor opdrachtgevers | ProBrandwacht",
     description:
-      "ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.",
+      "ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en betrouwbare betaling. Minder risico, meer motivatie en controle.",
     images: [
       {
-        url: "https://www.probrandwacht.nl/og-home.jpg",
+        url: "https://www.probrandwacht.nl/og-home.webp",
         width: 1200,
         height: 630,
         alt: "Voor opdrachtgevers bij ProBrandwacht",
@@ -41,8 +47,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Voor opdrachtgevers | ProBrandwacht',
     description:
-      'ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en escrow-betaling. Minder risico, meer motivatie en controle.',
-    images: ['https://www.probrandwacht.nl/og-home.jpg'],
+      'ProSafetyMatch laat je eerlijk brandwachten inhuren: duidelijk tarief, certificaten-inzicht en betrouwbare betaling. Minder risico, meer motivatie en controle.',
+    images: ['https://www.probrandwacht.nl/og-home.webp'],
   },
 }
 
@@ -68,7 +74,10 @@ export default function OpdrachtgeversPage() {
       <section className="space-y-6 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200">
         <div className="rounded-3xl bg-slate-50 p-8 md:p-12 ring-1 ring-slate-200">
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          {/* /*__seo-badges*/ */}
+            Huur brandwachten in zonder verborgen marges – snel, eerlijk en
+            DBA-proof
+          </h1>
+          {/* __seo-badges */}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
               Samen zetten we de nieuwe standaard voor brandwachten
@@ -77,20 +86,16 @@ export default function OpdrachtgeversPage() {
               Aangescherpt met feedback uit de sector (200+ professionals)
             </span>
           </div>
-
-            Huur brandwachten in zonder verborgen marges – snel, eerlijk en
-            DBA-proof
-          </h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
           <p className="mt-3 max-w-3xl text-slate-700">
-            Met ProSafetyMatch vind je binnen minuten de juiste brandwachten.
+            Met ProSafetyMatch vind je straks binnen minuten de juiste brandwachten.
             Jij stelt budget en eisen vast, wij tonen direct wie beschikbaar is.
-            Eerlijke beloning, escrow-betaling en altijd aantoonbare
+            Eerlijke beloning, duidelijke betaalafspraken en altijd aantoonbare
             certificaten. Minder gedoe, meer grip.
           </p>
           <div className="mt-6">
@@ -104,12 +109,12 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Waarom ProSafetyMatch</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           <USP
-            title="Volledige tarieftransparantie"
+            title="Volledig tariefinzicht"
             desc="Je ziet exact wat naar de brandwacht gaat en wat de platformfee is."
           />
           <USP
-            title="Escrow-zekerheid"
-            desc="Vooraf betalen, automatisch uitbetalen na bevestigde uitvoering."
+            title="Betaalgarantie"
+            desc="Vooraf gemaakte afspraken leggen we vast en uitbetaling volgt na bevestigde uitvoering."
           />
           <USP
             title="DBA-proof contracten"
@@ -144,7 +149,7 @@ export default function OpdrachtgeversPage() {
           />
           <Card
             title="Risico & compliance"
-            text="DBA-proof afspraken, certificaten-inzicht en escrow verkleinen je risico."
+            text="DBA-proof afspraken en certificaten-inzicht verkleinen je risico."
           />
         </div>
       </section>
@@ -154,14 +159,14 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Vaste 10% platformfee en 1–2% escrowkosten. Geen verborgen marges,
-            volledige transparantie.
+            Vaste 10% platformfee en een duidelijk netto honorarium. Geen verborgen marges,
+            volledig inzicht in de verdeling.
           </ListItem>
           <ListItem title="Heldere afspraken">
             Rol en resultaat zijn contractueel vastgelegd. Altijd duidelijk.
           </ListItem>
           <ListItem title="Snel schakelen">
-            Escrow maakt directe inzet en zekerheid mogelijk.
+            Vooraf afgestemde betaalafspraken maken directe inzet en zekerheid mogelijk.
           </ListItem>
           <ListItem title="Gecertificeerd netwerk">
             Inzicht in certificaten, reviews en beschikbaarheid.
@@ -195,24 +200,21 @@ export default function OpdrachtgeversPage() {
             Vergelijk profielen op tarief en kwaliteit. Bevestig direct de inzet
             met de professional.
           </Step>
-          <Step n={3} title="Escrow & uitvoering">
-            Betaal vooraf via escrow. Na bevestigde uitvoering volgt automatische
+          <Step n={3} title="Betaling & uitvoering">
+            Betaalafspraken worden vooraf vastgelegd. Na bevestigde uitvoering volgt directe
             uitbetaling.
           </Step>
         </div>
       </section>
 
-      {/* Kosten & transparantie */}
+      {/* Kosten & helder inzicht */}
       <section className="mb-12 grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <h3 className="font-semibold">Kosten & transparantie</h3>
+          <h3 className="font-semibold">Kosten & helder inzicht</h3>
           <ul className="mt-3 space-y-2 text-slate-700 text-sm">
             <li>
               <strong>10% platformfee</strong> – altijd zichtbaar in de
               kostenopbouw.
-            </li>
-            <li>
-              <strong>1–2% escrowkosten</strong> – zekerheid voor beide kanten.
             </li>
             <li>
               <strong>0% verborgen marges</strong> – tarief gaat direct naar de
@@ -231,7 +233,7 @@ export default function OpdrachtgeversPage() {
         <div className="rounded-2xl border bg-white p-5 shadow-sm">
           <h3 className="font-semibold">Administratie op orde</h3>
           <p className="mt-2 text-slate-700 text-sm">
-            DBA-proof documentatie, urenregistratie en escrow-bewijs. Factuur
+            DBA-proof documentatie en volledige urenregistratie. Factuur
             komt altijd rechtstreeks van de zzp’er; het platform faciliteert,
             maar bemiddelt niet.
           </p>
@@ -267,7 +269,7 @@ export default function OpdrachtgeversPage() {
       {/* Disclaimer */}
       <section className="mt-4 text-sm text-slate-600">
         <p>
-          <strong>Let op:</strong> ProSafetyMatch werkt als onafhankelijk platform, niet als traditioneel bemiddelingsbureau. Wij maken matching, tariefopbouw en escrow tooling inzichtelijk, terwijl opdrachtgever en professional zelf de overeenkomst sluiten. Laat altijd je eigen juridische teams bevestigen of deze constructie binnen jullie compliance- en DBA-kaders past.
+          <strong>Let op:</strong> ProSafetyMatch werkt als onafhankelijk platform, niet als traditioneel bemiddelingsbureau. Wij maken matching en tariefopbouw inzichtelijk, terwijl opdrachtgever en professional zelf de overeenkomst sluiten. Laat altijd je eigen juridische teams bevestigen of deze constructie binnen jullie compliance- en DBA-kaders past.
         </p>
       </section>
 
@@ -276,7 +278,7 @@ export default function OpdrachtgeversPage() {
         <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
           <li>
             <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-              Brandwacht inhuren – transparant & DBA-proof
+              Brandwacht inhuren – eerlijk & DBA-proof
             </Link>
           </li>
           <li>

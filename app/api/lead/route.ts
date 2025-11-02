@@ -237,7 +237,7 @@ export async function POST(req: Request) {
     });
     line(`Marktconform (bruto): € ${marketHourly.toFixed(2)} / uur`, (y -= 18));
     line(
-      `Netto range (incl. 10% platform + 1,5–2% escrow): € ${netMin.toFixed(2)} – € ${netMax.toFixed(2)} / uur`,
+      `Netto range (incl. 10% platform + 1,5–2% betaalbuffer): € ${netMin.toFixed(2)} – € ${netMax.toFixed(2)} / uur`,
       (y -= 16)
     );
 
@@ -386,4 +386,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: err?.message || "Server error" }, { status: 500 });
   }
 }
-

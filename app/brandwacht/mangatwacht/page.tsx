@@ -5,13 +5,13 @@ const config: BrandwachtStubConfig = {
   slug: 'mangatwacht',
   title: 'Mangatwacht & buitenwacht | ProBrandwacht',
   description:
-    'Zorg voor veilige toegang tot besloten ruimten met gecertificeerde mangatwachten. Tarieftransparantie, gasmeting en poort-QR logging inbegrepen.',
+    'Zorg voor veilige toegang tot besloten ruimten met gecertificeerde mangatwachten. Helder tariefinzicht, gasmeting en poort-QR logging inbegrepen.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/mangatwacht',
   hero: {
     badge: 'Besloten ruimten',
     heading: 'Mangatwacht en buitenwacht inhuren',
     intro:
-      'Voor besloten ruimten heb je controle over gasmetingen, toegangsregistratie en reddingsmiddelen nodig. Onze buitenwachten werken met poort-QR, incidente logs en escrow voor gegarandeerde uitbetaling.',
+      'Voor besloten ruimten heb je controle over gasmetingen, toegangsregistratie en reddingsmiddelen nodig. Onze buitenwachten werken met poort-QR, incidentenlogs en vooraf afgestemde betaalafspraken.',
   },
   bullets: [
     {
@@ -24,7 +24,7 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Samenwerking',
-      items: ['Tarief en planning bepaal je direct met de professional', 'Escrow-betalingen voor zekerheid bij 24/7 diensten', 'Rapportage voor audits en evaluaties'],
+      items: ['Tarief en planning bepaal je direct met de professional', 'Betaalafspraken vastgelegd voor zekerheid bij 24/7 diensten', 'Rapportage voor audits en evaluaties'],
     },
   ],
 }
@@ -38,7 +38,7 @@ export default function Page() {
 
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

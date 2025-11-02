@@ -6,14 +6,20 @@ const canonicalUrl = 'https://www.probrandwacht.nl/privacy'
 export const metadata: Metadata = {
   title: 'Privacy & cookies | ProBrandwacht.nl',
   description:
-    'Lees hoe ProBrandwacht.nl met persoonsgegevens en cookies omgaat,
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"], inclusief de samenwerking met Chrono4Solutions voor spoedinzet.',
+    'Lees hoe ProBrandwacht.nl met persoonsgegevens en cookies omgaat, inclusief de samenwerking met Chrono4Solutions voor spoedinzet.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
   openGraph: {
     url: canonicalUrl,
     title: 'Privacy & cookies | ProBrandwacht.nl',
     description:
-      'Transparante uitleg over gegevensverwerking, cookiegebruik en het delen van gegevens met Chrono4Solutions voor directe inzet.',
+      'Heldere uitleg over gegevensverwerking, cookiegebruik en het delen van gegevens met Chrono4Solutions voor directe inzet.',
   },
   twitter: {
     card: 'summary',
@@ -37,7 +43,7 @@ export default function PrivacyPage() {
         <h1 className='text-3xl font-semibold text-slate-900'>Privacy & cookies</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

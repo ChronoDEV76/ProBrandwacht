@@ -225,9 +225,9 @@ if (!hasSitemap()) {
 }
 
 // OG/Logo controles (optioneel)
-const og = path.join(ROOT, "public", "og-home.jpg");
-if (fs.existsSync(og)) log.ok("public/og-home.jpg aanwezig");
-else incWarn("public/og-home.jpg ontbreekt");
+const og = path.join(ROOT, 'public', 'og-home.webp');
+if (fs.existsSync(og)) log.ok('public/og-home.webp aanwezig');
+else incWarn('public/og-home.webp ontbreekt');
 
 const logo = path.join(ROOT, "public", "probrandwacht-logo.png");
 if (fs.existsSync(logo)) log.ok("Logo voor PDF aanwezig");
@@ -275,4 +275,3 @@ if (errors > 0) {
   log.ok("Alles OK voor launch! 🚀");
   process.exit(0);
 }
-

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Directe inzet aanvragen | ProBrandwacht',
   description:
     'Snel gecertificeerde brandwachten via Chrono4Solutions. Vul je project in en we nemen direct contact op.',
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","escrow brandwacht","DBA-proof brandwacht","brandwacht tarieven"],
+  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","DBA-proof brandwacht","brandwacht tarieven"],
   robots: { index: false, follow: false },
 }
 
@@ -27,7 +27,7 @@ export default function ChronoDirectPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Directe inzet aanvragen</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je gecertificeerde professionals voor eerlijke tarieven, met directe DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -40,7 +40,7 @@ export default function ChronoDirectPage() {
         {/* badges */}
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Transparante tarieven
+            Eerlijke tarieven
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             DBA-proof samenwerking

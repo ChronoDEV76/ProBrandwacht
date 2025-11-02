@@ -5,7 +5,7 @@ const config: BrandwachtStubConfig = {
   slug: 'turnaround-stop',
   title: 'Brandwacht turnaround & stop | ProBrandwacht',
   description:
-    'Zet brandwachtteams in voor turnarounds en onderhoudsstops. Escrow-betalingen, ploegendienstplanning en gecertificeerde professionals zonder tussenlaag.',
+    'Zet brandwachtteams in voor turnarounds en onderhoudsstops. Heldere betalingen, ploegendienstplanning en gecertificeerde professionals zonder tussenlaag.',
   canonical: 'https://www.probrandwacht.nl/brandwacht/turnaround-stop',
   hero: {
     badge: 'Turnaround & stop',
@@ -16,7 +16,7 @@ const config: BrandwachtStubConfig = {
   bullets: [
     {
       heading: 'Wat regelen we',
-      items: ['Ploegenroosters voor 24/7 inzet', 'Escrow betalingen per ploeg of pakket', 'Rapportages voor SHEQ & audits'],
+      items: ['Ploegenroosters voor 24/7 inzet', 'Afgesproken betalingen per ploeg of pakket', 'Rapportages voor SHEQ & audits'],
     },
     {
       heading: 'Certificering',
@@ -24,7 +24,7 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Samenwerking',
-      items: ['Direct contract opdrachtgever ↔ brandwacht', 'Transparante 10% platformfee', 'Realtime status van documenten en pasjes'],
+      items: ['Direct contract opdrachtgever ↔ brandwacht', 'Heldere 10% platformfee', 'Realtime status van documenten en pasjes'],
     },
   ],
 }
@@ -38,7 +38,7 @@ export default function Page() {
 
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je transparante tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
