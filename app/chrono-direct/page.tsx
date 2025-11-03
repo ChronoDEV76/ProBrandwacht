@@ -6,7 +6,13 @@ export const metadata: Metadata = {
   title: 'Directe inzet aanvragen | ProBrandwacht',
   description:
     'Snel gecertificeerde brandwachten via Chrono4Solutions. Vul je project in en we nemen direct contact op.',
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","DBA-proof brandwacht","brandwacht tarieven"],
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   robots: { index: false, follow: false },
 }
 
@@ -14,7 +20,7 @@ export default function ChronoDirectPage() {
   const canonical = 'https://www.probrandwacht.nl/chrono-direct'
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-10 space-y-10">
+    <main className="mx-auto w-full max-w-3xl space-y-10 px-4 py-10">
       <StructuredBreadcrumbs
         items={[
           { name: 'Home', url: 'https://www.probrandwacht.nl/' },
@@ -22,60 +28,49 @@ export default function ChronoDirectPage() {
         ]}
       />
 
-      {/* HERO */}
-      <section className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
-        <h1 className="text-3xl font-semibold tracking-tight">Directe inzet aanvragen</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je gecertificeerde professionals voor eerlijke tarieven, met directe DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
-        <p className="mt-2 text-slate-700">
-          <strong>Chrono Direct</strong> verzorgt directe inzetaanvragen voor brandwachten.
-          De uitvoering verloopt via <strong>Chrono4Solutions</strong>, waar
-          <strong> ProBrandwacht.nl</strong> en <strong>ProSafetyMatch</strong> onderdeel van zijn.
-        </p>
+      {/* HERO – identiek aan spoedstijl */}
+      <section className="relative overflow-hidden rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200 md:p-10">
+        <div className="max-w-3xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+            Chrono Direct — geplande inzet
+          </h1>
 
-        {/* badges */}
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Eerlijke tarieven
-          </span>
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            DBA-proof samenwerking
-          </span>
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            24/7 inzet bij spoed
-          </span>
+          <p className="mt-3 max-w-2xl text-slate-700">
+            <strong>Reguliere aanvragen</strong> lopen via Chrono Direct. Je aanvraag
+            wordt opgevolgd door <strong>Chrono4Solutions</strong>; DBA-proof afspraken,
+            gecertificeerde professionals en betrouwbare uitvoering. Liever spoed?
+            Ga dan naar{' '}
+            <a href="/probrandwacht-direct" className="underline">
+              ProBrandwacht Direct
+            </a>
+            .
+          </p>
+
+          {/* badges/pills */}
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+              Directe opvolging
+            </span>
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+              DBA-proof afspraken
+            </span>
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
+              Gecertificeerde professionals
+            </span>
+          </div>
+
+          {/* mini-uitleg onder de vouw op mobiel – zelfde patroon als spoed */}
+          <p className="mt-3 text-xs text-slate-600 sm:text-sm">
+            <span className="font-medium">Chrono Direct</span> = geplande inzet via formulier en snelle opvolging.{' '}
+            <span className="font-medium">ProBrandwacht Direct</span> = spoed via Slack, directe matching en bevestiging.
+          </p>
         </div>
-      </section>
 
-      {/* MERKEN */}
-      <section>
-        <h2 className="mb-4 text-xl font-semibold text-slate-900">Zo werken de drie merken samen</h2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="text-base font-semibold text-brand-700">ProBrandwacht.nl</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              Neutrale voorlichtingssite voor opdrachtgevers en professionals, zonder commerciële druk.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="text-base font-semibold text-brand-700">ProSafetyMatch</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              In ontwikkeling: een platform dat de markt verbetert en toekomstbestendig maakt.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="text-base font-semibold text-brand-700">Chrono4Solutions</h3>
-            <p className="mt-1 text-sm text-slate-600">
-              Verzorgt directe inzet en coördinatie bij aanvragen — jouw aanspreekpunt voor snelle en betrouwbare uitvoering.
-            </p>
-          </div>
-        </div>
+        {/* decoratief accent (zelfde als spoed) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 -top-10 hidden h-40 w-40 rounded-full bg-brand-100 blur-2xl sm:block"
+        />
       </section>
 
       {/* FORMULIER */}

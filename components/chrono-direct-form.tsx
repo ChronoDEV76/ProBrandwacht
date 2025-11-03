@@ -15,13 +15,13 @@ type ChronoDirectPayload = {
   requirements?: string
   budget?: string
   message?: string
-  urgent: boolean
   consent: boolean
   website?: string
-  source: string
+  source: 'chrono-direct'
 }
 
-const defaultErrorMessage = 'Versturen mislukt. Probeer het over een moment opnieuw.'
+const defaultErrorMessage =
+  'Versturen mislukt. Probeer het over een moment opnieuw.'
 
 export default function ChronoDirectForm() {
   const router = useRouter()
@@ -48,7 +48,6 @@ export default function ChronoDirectForm() {
       requirements: String(formData.get('requirements') ?? '').trim() || undefined,
       budget: String(formData.get('budget_range') ?? '').trim() || undefined,
       message: String(formData.get('message') ?? '').trim() || undefined,
-      urgent: formData.get('urgent') === 'on',
       consent: formData.get('consent') === 'on',
       website: String(formData.get('website') ?? '').trim() || undefined,
       source: 'chrono-direct',
@@ -56,6 +55,13 @@ export default function ChronoDirectForm() {
 
     if (!payload.company || !payload.contact || !payload.email) {
       setError('Vul bedrijfsnaam, contactpersoon en e-mail in.')
+      setLoading(false)
+      return
+    }
+
+    // Honeypot
+    if (payload.website) {
+      setError(defaultErrorMessage)
       setLoading(false)
       return
     }
@@ -79,8 +85,8 @@ export default function ChronoDirectForm() {
       }
 
       router.push('/opdrachtgevers/thank-you')
-    } catch (submitError) {
-      console.error('[chrono-direct] submit failed', submitError)
+    } catch (err) {
+      console.error('[chrono-direct] submit failed', err)
       setError('Netwerkfout. Controleer je verbinding en probeer opnieuw.')
     } finally {
       setLoading(false)
@@ -88,150 +94,147 @@ export default function ChronoDirectForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='space-y-4'>
+    <form onSubmit={handleSubmit} className="space-y-4">
       {/* Honeypot veld */}
-      <div className='hidden'>
-        <label htmlFor='website'>Website (laat leeg)</label>
-        <input id='website' name='website' autoComplete='off' />
+      <div className="hidden">
+        <label htmlFor="website">Website (laat leeg)</label>
+        <input id="website" name="website" autoComplete="off" />
       </div>
 
       <div>
-        <label className='block text-sm font-medium text-slate-700'>Bedrijf</label>
+        <label className="block text-sm font-medium text-slate-700">Bedrijf</label>
         <input
-          name='company'
+          name="company"
           required
-          autoComplete='organization'
-          className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+          autoComplete="organization"
+          className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
         />
       </div>
 
-      <div className='grid gap-4 sm:grid-cols-2'>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Contactpersoon</label>
+          <label className="block text-sm font-medium text-slate-700">Contactpersoon</label>
           <input
-            name='contact'
+            name="contact"
             required
-            autoComplete='name'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            autoComplete="name"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
         <div>
-          <label className='block text-sm font-medium text-slate-700'>E-mail</label>
+          <label className="block text-sm font-medium text-slate-700">E-mail</label>
           <input
-            name='email'
-            type='email'
+            name="email"
+            type="email"
             required
-            autoComplete='email'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            autoComplete="email"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
       </div>
 
-      <div className='grid gap-4 sm:grid-cols-2'>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Telefoon</label>
+          <label className="block text-sm font-medium text-slate-700">Telefoon</label>
           <input
-            name='phone'
-            type='tel'
-            autoComplete='tel'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Locatie / plaats</label>
+          <label className="block text-sm font-medium text-slate-700">Locatie / plaats</label>
           <input
-            name='city'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            name="city"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
       </div>
 
-      <div className='grid gap-4 sm:grid-cols-3'>
+      <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Startdatum</label>
+          <label className="block text-sm font-medium text-slate-700">Startdatum</label>
           <input
-            name='start_date'
-            type='date'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            name="start_date"
+            type="date"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Aantal dagen</label>
+          <label className="block text-sm font-medium text-slate-700">Aantal dagen</label>
           <input
-            name='duration_days'
-            type='number'
+            name="duration_days"
+            type="number"
             min={1}
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Uren per dag</label>
+          <label className="block text-sm font-medium text-slate-700">Uren per dag</label>
           <input
-            name='hours_per_day'
-            type='number'
+            name="hours_per_day"
+            type="number"
             min={1}
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
       </div>
 
-      <div className='grid gap-4 sm:grid-cols-2'>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Benodigde certificaten</label>
+          <label className="block text-sm font-medium text-slate-700">Benodigde certificaten</label>
           <input
-            name='requirements'
-            placeholder='Bijv. Rijksgediplomeerd, mangatwacht, gasmeting'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            name="requirements"
+            placeholder="Bijv. Rijksgediplomeerd, mangatwacht, gasmeting"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
         <div>
-          <label className='block text-sm font-medium text-slate-700'>Budgetindicatie</label>
+          <label className="block text-sm font-medium text-slate-700">Budgetindicatie</label>
           <input
-            name='budget_range'
-            placeholder='Bijv. €45-€55 per uur'
-            className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+            name="budget_range"
+            placeholder="Bijv. €45–€55 per uur"
+            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
         </div>
       </div>
 
       <div>
-        <label className='block text-sm font-medium text-slate-700'>Aanvullende toelichting</label>
+        <label className="block text-sm font-medium text-slate-700">Aanvullende toelichting</label>
         <textarea
-          name='message'
+          name="message"
           rows={4}
-          placeholder='Omschrijf de situatie, aantal brandwachten, bijzondere wensen...'
-          className='mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+          placeholder="Omschrijf de situatie, aantal brandwachten, bijzondere wensen..."
+          className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
         />
       </div>
 
-      <div className='flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700'>
-        <input id='urgent' name='urgent' type='checkbox' className='h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500' />
-        <label htmlFor='urgent'>Markeer als spoedaanvraag (binnen 24 uur inzet gewenst)</label>
-      </div>
-
-      <div className='flex items-start gap-3 text-sm text-slate-700'>
+      <div className="flex items-start gap-3 text-sm text-slate-700">
         <input
-          id='consent'
-          name='consent'
-          type='checkbox'
+          id="consent"
+          name="consent"
+          type="checkbox"
           defaultChecked
           required
-          className='mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500'
+          className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
         />
-        <label htmlFor='consent'>
-          Ik ga akkoord met het verwerken van mijn gegevens voor deze aanvraag en ontvang praktische updates over inzet.
+        <label htmlFor="consent">
+          Ik ga akkoord met het verwerken van mijn gegevens voor deze aanvraag en
+          ontvang praktische updates over inzet.
         </label>
       </div>
 
-      {error && <p className='text-sm text-red-600'>{error}</p>}
+      {error && <p className="text-sm text-red-600">{error}</p>}
 
       <button
-        type='submit'
+        type="submit"
         disabled={loading}
-        className='w-full rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60'
+        className="w-full rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? 'Versturen…' : 'Aanvraag versturen'}
       </button>
     </form>
   )
 }
+
