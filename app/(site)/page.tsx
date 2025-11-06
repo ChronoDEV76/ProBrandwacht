@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     'brandwacht huren',
     'DBA-proof brandwacht',
     'brandwacht tarieven',
-  ],
+    '24/7 brandwacht',
+      ],
 };
 
 // Dynamische client import
