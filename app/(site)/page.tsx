@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht — Slimmer werken. Eerlijk verdienen. Samen vooruit.",
+  title: "ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.",
   description:
     'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.',
   keywords: [
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     'DBA-proof brandwacht',
     'brandwacht tarieven',
     '24/7 brandwacht',
-      ],
+  ],
+  robots: { index: true, follow: true }, // ✅ ADD THIS LINE
 };
 
 // Dynamische client import
