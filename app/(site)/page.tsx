@@ -3,17 +3,18 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht — Slimmer werken. Eerlijk verdienen. Samen vooruit.",
+  title: "ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.",
   description:
     "Bereken jouw echte waarde als professional. Eerlijke tarieven zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.",
   keywords: [
-    "brandwacht",
-    "brandwacht inhuren",
-    "brandwacht huren",
-    "DBA-proof brandwacht",
-    "brandwacht tarieven",
-    "brandwacht 24/7",
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+    '24/7 brandwacht',
   ],
+  robots: { index: true, follow: true }, // ✅ ADD THIS LINE
 };
 
 // Dynamische client import
