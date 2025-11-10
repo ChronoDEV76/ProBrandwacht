@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import faqContent from '@/content/faq.json'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/faq'
@@ -122,15 +121,6 @@ export default function FAQPage() {
           </ul>
         </div>
       ))}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold">Direct starten</h2>
-        <p className="mt-3 text-sm text-slate-600">
-          Vul het formulier in en ervaar binnen minuten hoe ProBrandwacht Direct planning, betalingen en updates realtime regelt.
-        </p>
-        <div className="mt-4">
-          <ProbrandwachtDirectForm />
-        </div>
-      </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
@@ -138,7 +128,6 @@ export default function FAQPage() {
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
           <li>• 200+ gecertificeerde documenten gecontroleerd en vastgelegd in 2024</li>
           <li>• Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten</li>
-          <li>• Escrow-betalingen uitgekeerd binnen 48 uur na bevestigde inzet</li>
         </ul>
       </div>
     </section>
