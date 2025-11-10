@@ -178,7 +178,7 @@ export default function HomePage() {
 
             <p className="mt-3 text-xs text-slate-600 sm:text-sm">
               <span className="font-medium">ProBrandwacht Direct</span> = regulier aanvraagformulier en snelle opvolging.{" "}
-              <span className="font-medium">in ontwikkeling:ProBrandwacht Direct spoed</span> = via Slack-kanaal, directe matching en bevestiging.
+              <span className="font-medium">Binnenkort: ProBrandwacht Direct spoed</span> = via Slack-kanaal, directe matching en bevestiging.
             </p>
           </div>
 
