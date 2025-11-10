@@ -4,6 +4,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },

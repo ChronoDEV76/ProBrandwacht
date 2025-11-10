@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import faqContent from '@/content/faq.json'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/faq'
@@ -86,9 +87,12 @@ export default function FAQPage() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
+      <p className="text-xs text-slate-500">
+        ProBrandwacht Direct deelt statusupdates realtime met je team; aanvragen komen binnen op één dashboard waarin betalingen automatisch worden klaargezet.
+      </p>
       {sections.map(section => (
         <div key={section.title} className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
@@ -120,25 +124,23 @@ export default function FAQPage() {
       ))}
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold">Direct starten</h2>
-        <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
-          <li>
-            <Link href="/opdrachtgevers/aanmelden" className="underline">
-              Aanmelden als opdrachtgever
-            </Link>
-          </li>
-          <li>
-            <Link href="/zzp/aanmelden" className="underline">
-              Meld je aan als zzp-brandwacht
-            </Link>
-          </li>
-          <li>
-            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-              Meer lezen over brandwacht inhuren
-            </Link>
-          </li>
-        </ul>
+        <p className="mt-3 text-sm text-slate-600">
+          Vul het formulier in en ervaar binnen minuten hoe ProBrandwacht Direct planning, betalingen en updates realtime regelt.
+        </p>
+        <div className="mt-4">
+          <ProbrandwachtDirectForm />
+        </div>
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <h2 className="text-xl font-semibold text-slate-900">Waarom opdrachtgevers vertrouwen op ProBrandwacht</h2>
+        <ul className="mt-3 space-y-2 text-sm text-slate-700">
+          <li>• 200+ gecertificeerde documenten gecontroleerd en vastgelegd in 2024</li>
+          <li>• Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten</li>
+          <li>• Escrow-betalingen uitgekeerd binnen 48 uur na bevestigde inzet</li>
+        </ul>
+      </div>
     </section>
   )
 }

@@ -1,13 +1,18 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import type { ReactNode } from 'react'
 import type { ShareEvent } from '@/components/share-bar'
 
 type ShareWindow = Window & {
   __shareEvents?: ShareEvent[]
 }
 
-export default function AnalyticsClient() {
+type AnalyticsClientProps = {
+  heading?: ReactNode
+}
+
+export default function AnalyticsClient({ heading }: AnalyticsClientProps) {
   const [events, setEvents] = useState<ShareEvent[]>([])
 
   useEffect(() => {
@@ -25,7 +30,9 @@ export default function AnalyticsClient() {
 
   return (
     <section className="space-y-4">
-      <h1 className="text-2xl font-semibold">Share events (session)</h1>
+      {(heading ?? (
+        <h1 className="text-2xl font-semibold">Share events (session)</h1>
+      ))}
       {events.length === 0 ? (
         <p className="text-sm text-slate-600">Nog geen share events in deze sessie.</p>
       ) : (

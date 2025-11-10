@@ -1,0 +1,47 @@
+import { App, ExpressReceiver } from '@slack/bolt';
+import { createClient } from '@supabase/supabase-js';
+import { NextResponse } from 'next/server';
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+const receiver = new ExpressReceiver({
+  signingSecret: process.env.SLACK_SIGNING_SECRET!,
+});
+
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN!,
+  receiver,
+});
+
+app.message(async ({ message, say }) => {
+  if (!('text' in message)) return;
+  const text = message.text;
+  const sender_name = (message.user as string) || 'Slack user';
+
+  // Optional: parse request_id if message starts with e.g. [REQ:uuid]
+  const match = text.match(/\[REQ:(.*?)\]/);
+  const request_id = match ? match[1] : null;
+
+  if (request_id) {
+    await supabase.from('direct_messages').insert([
+      {
+        request_id,
+        sender_name,
+        sender_type: 'brandwacht',
+        message: text.replace(/\[REQ:.*?\]/, '').trim(),
+      },
+    ]);
+  }
+
+  await say(`Ontvangen ✅`);
+});
+
+export async function POST(req: Request) {
+  const body = await req.text();
+  const res = await receiver.router.handle(req, { send: () => {} });
+  return NextResponse.json({ ok: true });
+}
+

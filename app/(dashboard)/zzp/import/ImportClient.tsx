@@ -1,9 +1,13 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import type { DragEvent } from 'react'
+import type { DragEvent, ReactNode } from 'react'
 
-export default function ImportClient() {
+type ImportClientProps = {
+  heading?: ReactNode
+}
+
+export default function ImportClient({ heading }: ImportClientProps) {
   const inputRef = useRef<HTMLInputElement | null>(null)
   const [state, setState] = useState<'idle' | 'loading' | 'ok' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -46,7 +50,9 @@ export default function ImportClient() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-6">
-      <h1 className="text-2xl font-bold">Importeer ZZP-profiel (JSON)</h1>
+      {(heading ?? (
+        <h1 className="text-2xl font-bold">Importeer ZZP-profiel (JSON)</h1>
+      ))}
       <p className="text-gray-600">
         Upload de JSON die vanuit het ZZP-aanmeldformulier is gedownload (schema: <code>psm-profile/zzp@v1</code>).
       </p>

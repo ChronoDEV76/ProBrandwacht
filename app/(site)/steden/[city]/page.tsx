@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import CityHero from '@/components/city-hero'
 import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 
@@ -90,25 +91,37 @@ export default function CityPage({ params }: { params: { city: string } }) {
     { name: `Brandwacht ${label}`, url: canonical },
   ]
 
+  const heroHeading = (
+    <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+      Brandwacht tarieven {label}
+    </h1>
+  )
+
   return (
     <main className="mx-auto w-full min-h-full max-w-3xl space-y-8 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
 
-      {/* Hero / inleiding */}
-      <header className="mb-2">
-        <h1 className="text-3xl font-semibold tracking-tight">Brandwacht inhuren in {label}</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
-        <p className="mt-2 text-slate-700">
+      <CityHero cityName={label} heading={heroHeading} />
+
+      <section className="space-y-3 text-slate-700">
+        <p>
           Hieronder vind je <strong>indicatieve tariefbandbreedtes</strong> voor {label}. Voor een
-          <strong> persoonlijk PDF-rapport met jouw netto waarde</strong> (incl. aftrekposten & reserveringen),
+          <strong> persoonlijk PDF-rapport met jouw netto waarde</strong> (incl. aftrekposten & reserveringen)
           gebruik je onze centrale berekening op de homepage.
         </p>
-      </header>
+        <p className="text-sm text-slate-600">
+          <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof
+          afspraken. Lees meer over{' '}
+          <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">
+            brandwacht inhuren
+          </a>{' '}
+          of vraag direct aan via{' '}
+          <a href="/probrandwacht-direct" className="underline">
+            ProBrandwacht Direct
+          </a>
+          .
+        </p>
+      </section>
 
       {/* Adviesranges */}
       <section className="mb-2">
@@ -136,7 +149,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <h2 className="text-xl font-semibold text-slate-900 mb-1">Wil je weten wat je écht waard bent?</h2>
         <p className="text-slate-600 mb-4">
           Ontvang direct een <strong>persoonlijk PDF-rapport</strong> met jouw netto uurwaarde, inclusief reserveringen,
-        aftrekposten en duidelijke opbouw. Geen tussenlaag, wel helder inzicht.
+          aftrekposten en duidelijke opbouw. Geen tussenlaag, wel helder inzicht.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <a

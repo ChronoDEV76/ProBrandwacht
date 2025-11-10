@@ -149,7 +149,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
         {/* SEO-UPGRADE START */}
         <div className="mt-2 text-slate-600 text-sm">
           <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-          Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+          Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
         </div>
         {/* SEO-UPGRADE END */}
         <p className="max-w-3xl text-slate-700">

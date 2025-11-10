@@ -13,6 +13,9 @@ const config: BrandwachtStubConfig = {
     intro:
       'Voor besloten ruimten heb je controle over gasmetingen, toegangsregistratie en reddingsmiddelen nodig. Onze buitenwachten werken met poort-QR, incidentenlogs en vooraf afgestemde betaalafspraken.',
   },
+  headingSlot: (
+    <h1 className="text-3xl font-semibold tracking-tight">Mangatwacht en buitenwacht inhuren</h1>
+  ),
   bullets: [
     {
       heading: 'Takenpakket',
@@ -39,6 +42,6 @@ export default function Page() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

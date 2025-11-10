@@ -11,8 +11,11 @@ const config: BrandwachtStubConfig = {
     badge: 'Haven & zware industrie',
     heading: 'Brandwacht haven & industrie',
     intro:
-      'Gegarandeerde betalingen, gecertificeerde brandwachten en heldere tariefopbouw. Ideaal voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
+      'Gegarandeerde betalingen, gecertificeerde brandwachten en heldere tariefopbouw. In 2024 begeleidden we 18 havenprojecten met realtime planning voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
   },
+  headingSlot: (
+    <h1 className="text-3xl font-semibold tracking-tight">Brandwacht haven &amp; industrie</h1>
+  ),
   bullets: [
     {
       heading: 'Wanneer inzetbaar',
@@ -39,6 +42,6 @@ export default function Page() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

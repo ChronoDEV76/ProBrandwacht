@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import CityHero from '@/components/city-hero'
+import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import { getCityBySlug } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 
@@ -72,6 +74,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const zzpSignupUrl = '/zzp/aanmelden'                    // secundaire CTA waar relevant
 
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
+
+  const heroHeading = (
+    <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+      Brandwacht inhuren in {cityName}
+    </h1>
+  )
 
   type FAQItem = { q: string; a: string; ctaUrl?: string; ctaLabel?: string }
 
@@ -165,16 +173,26 @@ export default function CityPage({ params }: { params: { city: string } }) {
     <section className="space-y-8">
       <StructuredBreadcrumbs items={breadcrumbItems} />
 
-      {/* HERO */}
-      <h1 className="text-3xl font-semibold">
-        Brandwacht inhuren in {cityName} — sneller, eerlijker, DBA-proof
-      </h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
+      <CityHero cityName={cityName} heading={heroHeading} />
+
+      <section className="space-y-3 text-slate-700">
+        <p className="text-lg font-medium text-slate-800">
+          Brandwacht inhuren in {cityName} — sneller, eerlijker en DBA-proof met directe toegang tot gecertificeerde
+          professionals en realtime planning via ProBrandwacht Direct.
+        </p>
+        <p className="text-sm text-slate-600">
+          <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof
+          afspraken. Lees meer over{' '}
+          <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">
+            brandwacht inhuren
+          </a>{' '}
+          of vraag direct aan via{' '}
+          <a href="/probrandwacht-direct" className="underline">
+            ProBrandwacht Direct
+          </a>
+          .
+        </p>
+      </section>
 
       <div className="flex flex-wrap items-center gap-3">
         <a
@@ -206,6 +224,16 @@ export default function CityPage({ params }: { params: { city: string } }) {
         Elke week uitstel = langere doorlooptijd en minder grip op kwaliteit. Vandaag eerlijk
         regelen, morgen sneller leveren.
       </p>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold text-slate-900">Start je ProBrandwacht Direct aanvraag</h2>
+        <p className="mt-2 text-sm text-slate-600">
+          Eén formulier, realtime updates: binnen minuten weet je wie beschikbaar is en hoe betalingen worden geborgd.
+        </p>
+        <div className="mt-4">
+          <ProbrandwachtDirectForm />
+        </div>
+      </section>
 
       {/* Context */}
       <p className="text-slate-600 max-w-2xl">
