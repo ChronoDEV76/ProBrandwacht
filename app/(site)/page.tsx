@@ -7,7 +7,7 @@ import { SPOED_UI_ENABLED } from "@/lib/featureFlags";
 export const metadata: Metadata = {
   title: "ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.",
   description:
-    "Bereken jouw echte waarde als professional. Eerlijke tarieven zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.",
+    "Bereken jouw echte waarde als professional. Eerlijke tarieven. Samen bouwen we aan een gezonde veiligheidsmarkt.",
   keywords: [
     'brandwacht',
     'brandwacht inhuren',
@@ -178,7 +178,7 @@ export default function HomePage() {
 
             <p className="mt-3 text-xs text-slate-600 sm:text-sm">
               <span className="font-medium">ProBrandwacht Direct</span> = regulier aanvraagformulier en snelle opvolging.{" "}
-              <span className="font-medium">ProBrandwacht Direct spoed</span> = via Slack-kanaal, directe matching en bevestiging.
+              <span className="font-medium">in ontwikkeling:ProBrandwacht Direct spoed</span> = via Slack-kanaal, directe matching en bevestiging.
             </p>
           </div>
 
