@@ -57,9 +57,13 @@ export default function Page() {
     })),
   }
 
+  const heading = (
+    <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
+  )
+
   return (
     <>
-      <ClientPage />
+      <ClientPage heading={heading} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   )
@@ -69,6 +73,6 @@ export default function Page() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

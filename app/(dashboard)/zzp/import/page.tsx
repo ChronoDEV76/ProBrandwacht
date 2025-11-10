@@ -19,5 +19,6 @@ export const metadata: Metadata = {
 }
 
 export default function ZzpImportPage() {
-  return <ImportClient />
+  const heading = <h1 className="text-2xl font-bold">Importeer ZZP-profiel (JSON)</h1>
+  return <ImportClient heading={heading} />
 }

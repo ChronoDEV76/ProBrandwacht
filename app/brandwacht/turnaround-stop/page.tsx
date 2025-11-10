@@ -13,10 +13,18 @@ const config: BrandwachtStubConfig = {
     intro:
       'Voor revisies en onderhoudsstops heb je een flexibel, gecertificeerd team nodig. Wij tonen direct tariefopbouw, certificaatstatus en ploegendiensten zodat je veilig kunt opschalen.',
   },
+  headingSlot: (
+    <h1 className="text-3xl font-semibold tracking-tight">Brandwacht turnaround &amp; stop</h1>
+  ),
   bullets: [
     {
       heading: 'Wat regelen we',
-      items: ['Ploegenroosters voor 24/7 inzet', 'Afgesproken betalingen per ploeg of pakket', 'Rapportages voor SHEQ & audits'],
+      items: [
+        'Ploegenroosters voor 24/7 inzet',
+        'Realtime ploegwissels en updates in ProBrandwacht Direct',
+        'Afgesproken betalingen per ploeg of pakket',
+        'Rapportages voor SHEQ & audits',
+      ],
     },
     {
       heading: 'Certificering',
@@ -39,6 +47,6 @@ export default function Page() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}

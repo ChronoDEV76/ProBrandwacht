@@ -44,7 +44,7 @@ export default function PrivacyPage() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
         <p className='text-sm text-slate-600'>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         </p>
         <ul className='list-disc space-y-2 pl-5 text-sm text-slate-700'>
           <li>Contact- en bedrijfsgegevens via formulieren zoals <code>/opdrachtgevers/aanmelden</code>.</li>
-          <li>Projectdetails, budgetindicaties en spoedstatus via <code>/chrono-direct</code>.</li>
+          <li>Projectdetails, budgetindicaties en spoedstatus via <code>/probrandwacht-direct</code>.</li>
           <li>Anonieme gebruiksstatistieken via privacyvriendelijke analytics om de site te verbeteren.</li>
         </ul>
         <p className='text-sm text-slate-700'>

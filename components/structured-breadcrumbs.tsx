@@ -1,58 +1,92 @@
-import Link from 'next/link'
+// components/structured-breadcrumbs.tsx
+import * as React from "react";
+import Link from "next/link";
 
-type BreadcrumbItem = {
-  name: string
-  url: string
+type Crumb = { name: string; url: string };
+
+type Props = {
+  items: Crumb[];
+  className?: string;
+  /** Zet uit als je bewust géén JSON-LD wilt renderen (default: true) */
+  schema?: boolean;
+};
+
+/** Zorgt dat een URL absoluut is (nodig voor JSON-LD) */
+function toAbsoluteUrl(url: string): string {
+  try {
+    // Al absoluut? Dan zo laten
+    new URL(url);
+    return url;
+  } catch {
+    const base =
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+      "https://www.probrandwacht.nl";
+    return `${base}${url.startsWith("/") ? url : `/${url}`}`;
+  }
 }
 
-type StructuredBreadcrumbsProps = {
-  items: BreadcrumbItem[]
-  className?: string
-  includeJsonLd?: boolean
+/** Bouwt BreadcrumbList JSON-LD vanuit zichtbare crumbs */
+function buildBreadcrumbJsonLd(items: Crumb[]) {
+  const itemListElement = items.map((it, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: it.name,
+    item: toAbsoluteUrl(it.url),
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement,
+  };
 }
 
-export default function StructuredBreadcrumbs({ items, className = 'text-xs text-slate-500', includeJsonLd = true }: StructuredBreadcrumbsProps) {
-  if (!items || items.length === 0) return null
-
-  const jsonLd = includeJsonLd
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: items.map((item, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: item.name,
-          item: item.url,
-        })),
-      }
-    : null
+export default function StructuredBreadcrumbs({
+  items,
+  className,
+  schema = true,
+}: Props) {
+  const jsonLd = React.useMemo(
+    () => (schema ? buildBreadcrumbJsonLd(items) : null),
+    [items, schema]
+  );
 
   return (
     <>
+      {/* Zichtbare breadcrumbs (UI) */}
       <nav aria-label="Breadcrumb" className={className}>
-        <ol className="flex flex-wrap items-center gap-1">
-          {items.map((item, index) => {
-            const isLast = index === items.length - 1
+        <ol className="flex flex-wrap items-center gap-1 text-sm text-slate-600">
+          {items.map((item, i) => {
+            const isLast = i === items.length - 1;
             return (
-              <li key={item.url} className="inline-flex items-center gap-1">
-                {!isLast ? (
-                  <Link href={item.url} className="hover:text-brand-700">
+              <li key={item.url} className="flex items-center gap-1">
+                {isLast ? (
+                  <span className="font-medium text-slate-900">{item.name}</span>
+                ) : (
+                  <Link
+                    href={item.url}
+                    className="underline decoration-slate-300 underline-offset-2 hover:text-slate-900"
+                  >
                     {item.name}
                   </Link>
-                ) : (
-                  <span aria-current="page" className="font-medium text-slate-700">
-                    {item.name}
-                  </span>
                 )}
-                {!isLast && <span className="text-slate-400">/</span>}
+                {!isLast && <span aria-hidden>›</span>}
               </li>
-            )
+            );
           })}
         </ol>
       </nav>
-      {jsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      )}
+
+      {/* JSON-LD (SEO) — exact gelijk aan de zichtbare crumbs */}
+      {jsonLd ? (
+        <script
+          type="application/ld+json"
+          // voorkomt hydration-warnings in Next App Router
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      ) : null}
     </>
-  )
+  );
 }
+

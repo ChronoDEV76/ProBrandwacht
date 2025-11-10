@@ -248,7 +248,7 @@ for (const r of mustPages) {
 
 // API routes
 log.info("\n[API] Endpoints");
-const apis = ["/api/lead", "/api/chrono-direct"];
+const apis = ["/api/lead", "/api/probrandwacht-direct"];
 for (const r of apis) {
   if (apiRouteExists(r)) log.ok(`API ${r}`);
   else incErr(`API ${r} ontbreekt`);

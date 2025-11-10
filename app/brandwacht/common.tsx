@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
@@ -14,6 +15,7 @@ export type BrandwachtStubConfig = {
   }
   bullets: { heading: string; items: string[] }[]
   canonical: string
+  headingSlot?: ReactNode
 }
 
 export function buildMetadata({ title, description, canonical }: BrandwachtStubConfig): Metadata {
@@ -44,6 +46,7 @@ export function buildMetadata({ title, description, canonical }: BrandwachtStubC
 }
 
 export function BrandwachtStubPage(config: BrandwachtStubConfig) {
+  const { headingSlot } = config
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Brandwacht inhuren', url: 'https://www.probrandwacht.nl/opdrachtgevers/brandwacht-inhuren' },
@@ -66,7 +69,9 @@ export function BrandwachtStubPage(config: BrandwachtStubConfig) {
         <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-100">
           {config.hero.badge}
         </div>
-        <h1 className="text-3xl font-semibold tracking-tight">{config.hero.heading}</h1>
+        {headingSlot ?? (
+          <h1 className="text-3xl font-semibold tracking-tight">{config.hero.heading}</h1>
+        )}
         <p className="max-w-3xl text-slate-700">{config.hero.intro}</p>
         <div className="flex flex-wrap gap-3">
           <Link

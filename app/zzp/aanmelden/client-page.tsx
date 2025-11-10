@@ -197,7 +197,7 @@ function formDataToProfile(form: FormData): ProfileValues {
 // ===============================================================
 // 1) ZZP — Aanmeldformulier (met useSignup hook)
 // ===============================================================
-export default function ZzpAanmeldenPage() {
+export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
   const { loading, result, error: hookError, handleSubmit } = useSignup("/api/signup");
 
   const [done, setDone] = useState(false);
@@ -270,7 +270,9 @@ export default function ZzpAanmeldenPage() {
     <div className="max-w-3xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
+        {(heading ?? (
+          <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
+        ))}
         <p className="text-gray-600">
           Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vul je later in tijdens je
           profielverificatie.

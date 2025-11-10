@@ -62,12 +62,21 @@ export default function OpdrachtgeverAanmeldenPage() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/chrono-direct" className="underline">Chrono Direct</a>.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
           <p className="text-sm text-slate-600">
             Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat we betaalafspraken activeren.
           </p>
+          <div className="space-y-2 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">Waarom organisaties ons vertrouwen</p>
+            <ul className="space-y-1">
+              <li>• 200+ gecertificeerde brandwacht-documenten gecontroleerd (VCA, BHV, ademlucht) in 2024</li>
+              <li>• Escrow-betalingen gegarandeerd binnen 48 uur na bevestigde inzet</li>
+              <li>• Realtime ProBrandwacht Direct dashboard met audit-log voor veiligheidsteams en veiligheidsregio-adviseurs</li>
+              <li>• iDIN- en KvK-verificatie voordat dossiers worden vrijgegeven</li>
+            </ul>
+          </div>
           <div className="flex flex-wrap gap-3 text-sm">
             <a href="/opdrachtgevers/brandwacht-inhuren" className="underline text-brand-700">
               Bekijk eerst hoe inhuur werkt
