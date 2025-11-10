@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { postPbDirectToSlack } from '@/lib/pbDirectSlack';
+import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags';
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -24,6 +25,10 @@ function validEmail(e: string) {
 }
 
 export async function POST(req: Request) {
+  if (!SPOED_ROUTE_ENABLED) {
+    return NextResponse.json({ ok: false, error: 'not_available' }, { status: 404 })
+  }
+
   try {
     const body = await req.json().catch(() => ({} as Record<string, unknown>));
 

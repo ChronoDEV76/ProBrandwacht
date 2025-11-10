@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+
 type CityHeroProps = {
   cityName: string
   heading?: ReactNode
@@ -18,8 +20,10 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
           Zoek je een <strong>brandwacht</strong> in {cityName}? Via ProBrandwacht.nl vind je binnen enkele minuten de juiste inzet.
-          Kies tussen <span className="font-medium">ProBrandwacht Direct</span> voor geplande opdrachten of{' '}
-          <span className="font-medium">ProBrandwacht Direct spoed</span> voor 24/7 inzet.
+          Kies voor <span className="font-medium">ProBrandwacht Direct</span> voor geplande opdrachten.
+          {SPOED_UI_ENABLED ? (
+            <> Voor 24/7 inzet schakel je via <span className="font-medium">ProBrandwacht Direct spoed</span>. </>
+          ) : null}
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -30,13 +34,15 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
           >
             ProBrandwacht Direct — geplande inzet
           </a>
-          <a
-            href="/probrandwacht-direct-spoed"
-            data-analytics="hero-probrandwacht-direct-spoed-cta"
-            className="inline-flex items-center rounded-2xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
-          >
-            ProBrandwacht Direct spoed — 24/7
-          </a>
+          {SPOED_UI_ENABLED ? (
+            <a
+              href="/probrandwacht-direct-spoed"
+              data-analytics="hero-probrandwacht-direct-spoed-cta"
+              className="inline-flex items-center rounded-2xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
+            >
+              ProBrandwacht Direct spoed — 24/7
+            </a>
+          ) : null}
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">

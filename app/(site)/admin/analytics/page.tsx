@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
+import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+
 const AnalyticsClient = dynamic(() => import('./AnalyticsClient'), { ssr: false })
 
 export const metadata: Metadata = {
@@ -38,12 +40,14 @@ export default function AnalyticsDebugPage() {
           >
             ProBrandwacht Direct aanvragen
           </Link>
-          <Link
-            href="/probrandwacht-direct-spoed"
-            className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
-          >
-            Naar ProBrandwacht Direct spoed
-          </Link>
+          {SPOED_UI_ENABLED ? (
+            <Link
+              href="/probrandwacht-direct-spoed"
+              className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
+            >
+              Naar ProBrandwacht Direct spoed
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>

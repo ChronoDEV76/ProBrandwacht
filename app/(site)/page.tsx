@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 
+import { SPOED_UI_ENABLED } from "@/lib/featureFlags";
+
 export const metadata: Metadata = {
   title: "ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.",
   description:
@@ -139,8 +141,8 @@ export default function HomePage() {
             <p className="mt-4 mx-auto max-w-2xl text-slate-700">
               ProBrandwacht.nl is het startpunt voor opdrachtgevers en professionals.
               Kies direct wat je nodig hebt:{" "}
-              <span className="font-medium">geplande inzet</span> of{" "}
-              <span className="font-medium">spoed</span>.
+              <span className="font-medium">geplande inzet</span>
+              {SPOED_UI_ENABLED ? (<> of{' '}<span className="font-medium">spoed</span></>) : null}.
             </p>
 
             {/* CTA's */}
@@ -151,12 +153,14 @@ export default function HomePage() {
               >
                 ProBrandwacht Direct — geplande inzet
               </a>
-              <a
-                href="/probrandwacht-direct-spoed"
-                className="inline-flex items-center rounded-2xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
-              >
-                ProBrandwacht Direct spoed — 24/7
-              </a>
+              {SPOED_UI_ENABLED ? (
+                <a
+                  href="/probrandwacht-direct-spoed"
+                  className="inline-flex items-center rounded-2xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
+                >
+                  ProBrandwacht Direct spoed — 24/7
+                </a>
+              ) : null}
             </div>
 
             {/* Trust badges */}

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import PbDirectForm from '@/components/pb-direct-form'
+import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
 
 export const metadata: Metadata = {
   title: 'ProSafetyMatch Direct — spoed (24/7) | ProBrandwacht',
@@ -10,6 +13,10 @@ export const metadata: Metadata = {
 }
 
 export default function PbDirectPage() {
+  if (!SPOED_ROUTE_ENABLED) {
+    notFound()
+  }
+
   const canonical = 'https://www.probrandwacht.nl/probrandwacht-direct'
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-10 space-y-10">

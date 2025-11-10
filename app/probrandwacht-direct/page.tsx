@@ -2,6 +2,8 @@ import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import type { Metadata } from 'next'
 
+import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+
 export const metadata: Metadata = {
   title: 'Directe inzet aanvragen | ProBrandwacht',
   description:
@@ -38,12 +40,10 @@ export default function ProbrandwachtDirectPage() {
           <p className="mt-3 max-w-2xl text-slate-700">
             <strong>Reguliere aanvragen</strong> lopen via ProBrandwacht Direct. Je aanvraag
             wordt opgevolgd door <strong>Chrono4Solutions</strong>; DBA-proof afspraken,
-            gecertificeerde professionals en betrouwbare uitvoering. Liever spoed?
-            Ga dan naar{' '}
-            <a href="/probrandwacht-direct-spoed" className="underline">
-              ProBrandwacht Direct spoed
-            </a>
-            .
+            gecertificeerde professionals en betrouwbare uitvoering.
+            {SPOED_UI_ENABLED ? (
+              <> Liever spoed? Ga dan naar <a href="/probrandwacht-direct-spoed" className="underline">ProBrandwacht Direct spoed</a>. </>
+            ) : null}
           </p>
 
           {/* badges/pills */}
@@ -61,8 +61,10 @@ export default function ProbrandwachtDirectPage() {
 
           {/* mini-uitleg onder de vouw op mobiel – zelfde patroon als spoed */}
           <p className="mt-3 text-xs text-slate-600 sm:text-sm">
-            <span className="font-medium">ProBrandwacht Direct</span> = geplande inzet via formulier en snelle opvolging.{' '}
-            <span className="font-medium">ProBrandwacht Direct spoed</span> = via Slack, directe matching en bevestiging.
+            <span className="font-medium">ProBrandwacht Direct</span> = geplande inzet via formulier en snelle opvolging.
+            {SPOED_UI_ENABLED ? (
+              <> <span className="font-medium">ProBrandwacht Direct spoed</span> = via Slack, directe matching en bevestiging.</>
+            ) : null}
           </p>
         </div>
 

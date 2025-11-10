@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+
 type NavLink = { href: string; label: string }
 
 const LINKS: NavLink[] = [
@@ -68,19 +70,21 @@ export default function SiteHeader() {
           </Link>
 
           {/* ProBrandwacht Direct spoed */}
-          <Link
-            href="/probrandwacht-direct-spoed"
-            prefetch={false}
-            title="Spoed & 24/7 — directe inzet via Slack"
-            className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-              pathname?.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
-            }`}
-          >
-            <span className="font-semibold flex items-center gap-1">
-              ⚡ ProBrandwacht Direct spoed
-            </span>
-            <span className="opacity-85">spoed & 24/7</span>
-          </Link>
+          {SPOED_UI_ENABLED ? (
+            <Link
+              href="/probrandwacht-direct-spoed"
+              prefetch={false}
+              title="Spoed & 24/7 — directe inzet via Slack"
+              className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                pathname?.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
+              }`}
+            >
+              <span className="font-semibold flex items-center gap-1">
+                ⚡ ProBrandwacht Direct spoed
+              </span>
+              <span className="opacity-85">spoed & 24/7</span>
+            </Link>
+          ) : null}
 
           {/* Aanmeld CTA */}
           <a
@@ -144,7 +148,7 @@ export default function SiteHeader() {
           </nav>
 
           {/* Compact actions on mobile */}
-          <div className="mt-2 grid grid-cols-2 gap-2">
+          <div className={`mt-2 grid gap-2 ${SPOED_UI_ENABLED ? 'grid-cols-2' : 'grid-cols-1'}`}>
             <Link
               href="/probrandwacht-direct"
               prefetch={false}
@@ -155,16 +159,18 @@ export default function SiteHeader() {
             >
               ⏱️ ProBrandwacht Direct
             </Link>
-            <Link
-              href="/probrandwacht-direct-spoed"
-              prefetch={false}
-              onClick={() => setOpen(false)}
-              className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
-                pathname?.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
-              }`}
-            >
-              ⚡ ProBrandwacht Direct spoed
-            </Link>
+            {SPOED_UI_ENABLED ? (
+              <Link
+                href="/probrandwacht-direct-spoed"
+                prefetch={false}
+                onClick={() => setOpen(false)}
+                className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
+                  pathname?.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
+                }`}
+              >
+                ⚡ ProBrandwacht Direct spoed
+              </Link>
+            ) : null}
           </div>
 
           <a
