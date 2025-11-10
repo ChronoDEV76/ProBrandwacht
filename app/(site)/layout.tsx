@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import SiteHeader from '@/components/site-header'
-import dynamic from 'next/dynamic'
-
-const AnalyticsScripts = dynamic(() => import('@/components/analytics'), { ssr: false })
 
 const roboto = localFont({
   src: [{ path: '../../public/fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' }],
@@ -59,7 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       ))}
-      <AnalyticsScripts /> {/* Ensure analytics scripts are loaded */}
       <main className="mx-auto flex-1 w-full max-w-5xl px-4 py-10 sm:py-12">{children}</main>
     </div>
   )

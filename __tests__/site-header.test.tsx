@@ -3,6 +3,12 @@ import { render, screen } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
 import SiteHeader from '@/components/site-header'
 
+vi.mock('next/headers', () => ({
+  headers: () => ({
+    get: vi.fn(() => '/'),
+  }),
+}))
+
 // Mock next/link to a plain anchor for testing
 vi.mock('next/link', () => {
   type AnchorProps = ComponentProps<'a'> & { children: ReactNode }
