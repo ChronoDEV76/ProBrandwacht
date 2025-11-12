@@ -391,51 +391,6 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
         </p>
       </form>
 
-      <section className="space-y-4 rounded-2xl border border-gray-200 bg-white p-5 text-sm text-gray-700 shadow-sm">
-        <h2 className="text-xl font-semibold text-gray-900">Privacyverklaring</h2>
-        <p>
-          Deze privacyverklaring is van toepassing op het platform ProBrandwacht, een handelsnaam van Chrono4Solutions. ProBrandwacht respecteert de privacy van alle gebruikers van haar platform en draagt er zorg voor dat de persoonlijke informatie die je ons verschaft, vertrouwelijk en volgens de geldende wetgeving wordt behandeld.
-        </p>
-        <div className="space-y-3">
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Verzameling van gegevens</h3>
-            <p>
-              Wij verzamelen persoonsgegevens wanneer je je aanmeldt via ons inschrijfformulier, gebruikmaakt van ons platform of contact met ons opneemt. Het gaat hierbij om gegevens zoals je naam, e-mailadres, telefoonnummer, certificeringen en beschikbaarheid.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Gebruik van gegevens</h3>
-            <p>
-              Gegevens worden uitsluitend gebruikt voor het faciliteren van veilige en directe samenwerking tussen opdrachtgevers en zelfstandige brandwachten. ProBrandwacht bemiddelt niet, maar is een platform dat vraag en aanbod bij elkaar brengt met volledige transparantie.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Beveiliging en opslag</h3>
-            <p>
-              Alle gegevens worden opgeslagen op beveiligde servers binnen de Europese Unie. We nemen passende technische en organisatorische maatregelen om misbruik, verlies en onbevoegde toegang tegen te gaan.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Inzage, wijziging en verwijdering</h3>
-            <p>
-              Je hebt het recht om je persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact op via{' '}
-              <a href="mailto:privacy@prosafetymatch.nl" className="underline">privacy@prosafetymatch.nl</a>.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Cookies</h3>
-            <p>
-              Deze website maakt beperkt gebruik van functionele cookies om de werking van het platform te verbeteren. Wij gebruiken geen trackingcookies of advertentiecookies van derden.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-base font-semibold text-gray-900">Wijzigingen</h3>
-            <p>
-              ProBrandwacht behoudt zich het recht voor om deze privacyverklaring aan te passen. Wij raden aan deze verklaring periodiek te raadplegen.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
