@@ -159,7 +159,7 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Vaste 10% platformfee en een duidelijk netto honorarium. Geen verborgen marges,
+            Vaste 15% platformfee en een duidelijk netto honorarium. Geen verborgen marges,
             volledig inzicht in de verdeling.
           </ListItem>
           <ListItem title="Heldere afspraken">
@@ -213,7 +213,7 @@ export default function OpdrachtgeversPage() {
           <h3 className="font-semibold">Kosten & helder inzicht</h3>
           <ul className="mt-3 space-y-2 text-slate-700 text-sm">
             <li>
-              <strong>10% platformfee</strong> – altijd zichtbaar in de
+              <strong>15% platformfee</strong> – altijd zichtbaar in de
               kostenopbouw.
             </li>
             <li>

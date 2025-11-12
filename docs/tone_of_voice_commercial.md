@@ -23,7 +23,7 @@ Helder, direct en betrokken. Gebruik korte zinnen, spreek de lezer aan met “je
 - Benoem wat iemand wint: **tijd, duidelijkheid, DBA-proof samenwerking, escrow-betaling**.  
   > “Binnen 24 uur weet je welke gecertificeerde brandwacht beschikbaar is en welk tarief hoort bij de inzet.”
 - Leg keuzes uit in gewone taal.  
-  > “Je ziet meteen de 10% platformfee en 1–2% escrowkosten, zodat je nooit voor verrassingen staat.”
+  > “Je ziet meteen de 15% platformfee en 1–2% escrowkosten, zodat je nooit voor verrassingen staat.”
 - Richt je op samenwerking.  
   > “We houden contact tot het project klaar is. Jij regelt de planning; wij zorgen voor de check-ins.”
 - Laat expertise horen zonder te bluffen.  

@@ -310,7 +310,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
         <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en het nettobedrag dat overblijft.
+          Bekijk per stad hoe je tarieven samenstelt inclusief 15% platformfee en het nettobedrag dat overblijft.
         </p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {cityLinks.map(city => (

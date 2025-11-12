@@ -32,7 +32,7 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Samenwerking',
-      items: ['Direct contract opdrachtgever ↔ brandwacht', 'Heldere 10% platformfee', 'Realtime status van documenten en pasjes'],
+      items: ['Direct contract opdrachtgever ↔ brandwacht', 'Heldere 15% platformfee', 'Realtime status van documenten en pasjes'],
     },
   ],
 }

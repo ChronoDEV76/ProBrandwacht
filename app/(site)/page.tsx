@@ -1,17 +1,42 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
+import Hero from '@/components/Hero'
 
 export const metadata: Metadata = {
   title: 'ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.',
   description:
     'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder strijkstok. Samen bouwen we aan een gezonde veiligheidsmarkt.',
   keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-    '24/7 brandwacht',
+     'brandwacht',
+     'brandwacht inhuren',
+     'brandwacht-inhuren',
+     'brandwacht huren',
+     'brandwacht-huren',
+     'DBA-proof brandwacht',
+     'brandwacht tarieven',
+     'brandwacht spoed',
+     'brandwacht direct', 'brandwacht aanvragen',
+     'brandwacht uurtarief',
+     'kosten brandwacht inhuren',
+     '24/7 brandwacht',
+     '24/7 brandwacht direct',
+     'brandwacht petrochemie',
+     'industriële brandwacht',
+     'brandwacht evenementen',
+     'brandwacht bij storing',
+     'brandwacht brandmeldinstallatie',
+     'veiligheidswacht inhuren',
+     'brandwacht kantoor',
+     'brandwacht zorginstelling',
+     'zzp brandwacht opdrachten',
+     'freelance brandwacht',
+     'zzp brandwacht inhuren',
+     'platform brandwachten',
+     'brandwacht gezocht zzp',
+     'brandwacht modelovereenkomst',
+     'brandwacht heetwerkwacht',
+     'brandwacht werkvergunning',
+     'brandwacht inhuren kosten',
   ],
   robots: { index: true, follow: true },
 }
@@ -28,30 +53,8 @@ const LeadCalculator = dynamic(() => import('@/components/lead-calculator'), {
 export default function HomePage() {
   return (
     <main className="min-h-[100svh] bg-gradient-to-b from-brand-50 via-white to-white text-slate-900">
-      <div className="mx-auto max-w-4xl space-y-12 px-4 pb-20 pt-16 sm:px-6 md:px-8">
-        <section className="space-y-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-[13px] font-medium text-emerald-700">
-            Geen bureau. Geen marge. Wel regie.
-          </div>
-          <h1 id="bereken" className="text-3xl font-bold sm:text-4xl">
-            Slimmer samenwerken.
-          </h1>
-          <div className="mt-2 text-slate-600 text-sm">
-            <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken. Lees meer over{' '}
-            <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-              brandwacht inhuren
-            </a>{' '}
-            of vraag direct aan via{' '}
-            <a href="/probrandwacht-direct" className="underline">
-              ProBrandwacht Direct
-            </a>
-            .
-          </div>
-          <p className="mx-auto max-w-2xl text-slate-700">
-            Prosafetymatch verbindt professionals en opdrachtgevers via eerlijke tarieven en directe samenwerking. Minder ruis, meer waarde, en afspraken die standhouden.
-          </p>
-        </section>
-
+      <Hero />
+      <div className="mx-auto max-w-4xl space-y-12 px-4 pb-20 sm:px-6 md:px-8">
         <LeadCalculator />
 
         <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm space-y-5">
