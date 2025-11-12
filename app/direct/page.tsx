@@ -38,7 +38,7 @@ export default function ProBrandwachtDirectPage() {
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">Aanvraagformulier</h2>
           <p className="mt-1 text-slate-700 text-sm">
-            Binnen enkele minuten je project indienen. We posten je aanvraag direct in het operationele Slack-kanaal zodat beschikbare brandwachten kunnen reageren.
+            Dien je project in binnen een paar minuten. We posten je aanvraag direct in het operationele Slack-kanaal zodat beschikbare brandwachten kunnen reageren.
           </p>
           <div className="mt-4">
             <DirectRequestForm />
@@ -77,4 +77,3 @@ export default function ProBrandwachtDirectPage() {
     </main>
   );
 }
-

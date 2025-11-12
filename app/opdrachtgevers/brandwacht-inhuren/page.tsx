@@ -183,7 +183,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">DBA-proof samenwerking</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
-            <li>• Contracten altijd rechtstreeks tussen opdrachtgever en professional.</li>
+            <li>• Contracten lopen rechtstreeks tussen opdrachtgever en professional.</li>
             <li>• Checklists voor gezag, ondernemersrisico en aansprakelijkheid inbegrepen.</li>
             <li>• Escrow zorgt voor automatische betaling na bevestigde uitvoering.</li>
           </ul>
@@ -193,7 +193,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold">Certificeringen & kwaliteit</h2>
         <p className="mt-3 text-sm text-slate-700">
-          Profielen tonen altijd actuele certificaten (VCA VOL, BHV/brandpreventie, mangatwacht, gasmeting) en status van iDIN-verificatie. Verlopen documenten worden automatisch gemarkeerd.
+          Profielen tonen de actuele certificaten (VCA VOL, BHV/brandpreventie, mangatwacht, gasmeting) en status van iDIN-verificatie. Verlopen documenten worden automatisch gemarkeerd en opnieuw opgevraagd.
         </p>
         <div className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
           <div className="rounded-xl bg-slate-50 p-4">

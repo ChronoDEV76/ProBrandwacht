@@ -93,10 +93,10 @@ export default function OpdrachtgeversPage() {
 </div>
 {/* SEO-UPGRADE END */}
           <p className="mt-3 max-w-3xl text-slate-700">
-            Met ProSafetyMatch vind je straks binnen minuten de juiste brandwachten.
-            Jij stelt budget en eisen vast, wij tonen direct wie beschikbaar is.
-            Eerlijke beloning, duidelijke betaalafspraken en altijd aantoonbare
-            certificaten. Minder gedoe, meer grip.
+            Met ProSafetyMatch zie je vaak al binnen enkele minuten welke brandwachten aansluiten op je aanvraag.
+            Jij stelt budget en eisen vast, wij laten realtime zien wie beschikbaar is en welke certificaten in het dossier staan.
+            Eerlijke beloning, duidelijke betaalafspraken en aantoonbare certificaten geven je grip zonder extra tussenlagen.
+            Elk dossier bevat de Arbowet-artikel-3 checklist, BGBOP-vereisten en Wet DBA-modelbepalingen, zodat compliance traceerbaar blijft.
           </p>
           <div className="mt-6">
             <PrimaryCTA href={signupUrl}>Meld je bedrijf aan</PrimaryCTA>
@@ -118,7 +118,7 @@ export default function OpdrachtgeversPage() {
           />
           <USP
             title="DBA-proof contracten"
-            desc="Altijd rechtstreeks tussen opdrachtgever en professional."
+            desc="Contracten lopen rechtstreeks tussen opdrachtgever en professional."
           />
           <USP
             title="Kwaliteit zichtbaar"
@@ -141,7 +141,7 @@ export default function OpdrachtgeversPage() {
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           <Card
             title="Onduidelijke tarieven"
-            text="Wat gaat er nu echt naar de brandwacht? Bij ons zie je de volledige kostenopbouw."
+            text="Bureaus houden vaak €15–25 per uur marge over; bij ons zie je de volledige kostenopbouw inclusief 15% platformfee en nettobedrag."
           />
           <Card
             title="Wisselende motivatie"
@@ -149,7 +149,7 @@ export default function OpdrachtgeversPage() {
           />
           <Card
             title="Risico & compliance"
-            text="DBA-proof afspraken en certificaten-inzicht verkleinen je risico."
+            text="Checklist voor Wet DBA, Arbowet en BGBOP-eisen in één dossier verlaagt je risico."
           />
         </div>
       </section>
@@ -163,7 +163,7 @@ export default function OpdrachtgeversPage() {
             volledig inzicht in de verdeling.
           </ListItem>
           <ListItem title="Heldere afspraken">
-            Rol en resultaat zijn contractueel vastgelegd. Altijd duidelijk.
+            We leggen rol en resultaat contractueel vast voor maximale duidelijkheid.
           </ListItem>
           <ListItem title="Snel schakelen">
             Vooraf afgestemde betaalafspraken maken directe inzet en zekerheid mogelijk.
@@ -213,12 +213,12 @@ export default function OpdrachtgeversPage() {
           <h3 className="font-semibold">Kosten & helder inzicht</h3>
           <ul className="mt-3 space-y-2 text-slate-700 text-sm">
             <li>
-              <strong>15% platformfee</strong> – altijd zichtbaar in de
+              <strong>15% platformfee</strong> – standaard opgenomen in de
               kostenopbouw.
             </li>
             <li>
-              <strong>0% verborgen marges</strong> – tarief gaat direct naar de
-              professional.
+              <strong>Tariefverdeling</strong> – het dossier laat zien welk deel
+              rechtstreeks naar de professional gaat.
             </li>
           </ul>
         </div>
@@ -233,9 +233,9 @@ export default function OpdrachtgeversPage() {
         <div className="rounded-2xl border bg-white p-5 shadow-sm">
           <h3 className="font-semibold">Administratie op orde</h3>
           <p className="mt-2 text-slate-700 text-sm">
-            DBA-proof documentatie en volledige urenregistratie. Factuur
-            komt altijd rechtstreeks van de zzp’er; het platform faciliteert,
-            maar bemiddelt niet.
+            DBA-proof documentatie en volledige urenregistratie. Facturatie
+            verloopt rechtstreeks tussen opdrachtgever en zzp’er; het platform
+            faciliteert, maar bemiddelt niet.
           </p>
         </div>
       </section>

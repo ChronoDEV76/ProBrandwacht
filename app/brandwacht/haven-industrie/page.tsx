@@ -11,7 +11,7 @@ const config: BrandwachtStubConfig = {
     badge: 'Haven & zware industrie',
     heading: 'Brandwacht haven & industrie',
     intro:
-      'Gegarandeerde betalingen, gecertificeerde brandwachten en heldere tariefopbouw. In 2024 begeleidden we 18 havenprojecten met realtime planning voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
+      'We borgen tijdige betalingen, werken uitsluitend met gecertificeerde brandwachten en leggen de tariefopbouw vooraf vast. In 2024 ondersteunden we 18 havenprojecten met realtime planning voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
   },
   headingSlot: (
     <h1 className="text-3xl font-semibold tracking-tight">Brandwacht haven &amp; industrie</h1>

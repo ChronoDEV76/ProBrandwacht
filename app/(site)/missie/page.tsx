@@ -94,14 +94,6 @@ export default function ManifestPage() {
               Aanmelden als opdrachtgever
             </Link>
           </div>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Samen zetten we de nieuwe standaard voor brandwachten
-            </span>
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Aangescherpt met feedback uit de sector (200+ professionals)
-            </span>
-          </div>
         </header>
 
         {/* KERNPILAREN */}

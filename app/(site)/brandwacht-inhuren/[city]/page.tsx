@@ -228,7 +228,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold text-slate-900">Start je ProBrandwacht Direct aanvraag</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Eén formulier, realtime updates: binnen minuten weet je wie beschikbaar is en hoe betalingen worden geborgd.
+          Eén formulier, realtime updates: meestal binnen enkele minuten zie je wie beschikbaar is en hoe betalingen worden geborgd.
         </p>
         <div className="mt-4">
           <ProbrandwachtDirectForm />
@@ -239,7 +239,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <p className="text-slate-600 max-w-2xl">
         In {cityName} verlies je vaak tijd en kwaliteit aan tussenlagen. ProSafetyMatch maakt tarief,
         certificaten in één oogopslag zichtbaar — zodat je direct kunt schakelen met de
-        juiste professionals.
+        juiste professionals. Eisen uit de lokale vergunning (BGBOP/Omgevingswet) en Arbowet-artikel-3 controles
+        worden in hetzelfde dossier vastgelegd.
       </p>
       <p className="text-sm text-slate-600">
         Tarieven bepaal je samen. Wij tonen eerlijk hoe de kosten verdeeld zijn, zonder verborgen marges.
