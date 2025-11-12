@@ -111,7 +111,7 @@ export default function PrivacyPage() {
       <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
         <h2 className='text-xl font-semibold text-slate-900'>Contact</h2>
         <p className='text-sm text-slate-700'>
-          Vragen over privacy of cookies? Mail ons op <a className='underline' href='mailto:privacy@probrandwacht.nl'>privacy@probrandwacht.nl</a>. Voor
+          Vragen over privacy of cookies? Mail ons op <a className='underline' href='mailto:privacy@prosafetymatch.nl'>privacy@prosafetymatch.nl</a>. Voor
           aanvragen die via Chrono4Solutions lopen kun je ook rechtstreeks contact opnemen via <a className='underline' href='mailto:info@chronosolutions.nl'>info@chronosolutions.nl</a>.
         </p>
       </section>

@@ -387,7 +387,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
         </div>
         <p className="text-xs text-gray-500 leading-relaxed">
           Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{' '}
-          <a href="mailto:privacy@probrandwacht.nl" className="underline text-gray-600">privacy@probrandwacht.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-gray-600">privacy-pagina</a>.
+          <a href="mailto:privacy@prosafetymatch.nl" className="underline text-gray-600">privacy@prosafetymatch.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-gray-600">privacy-pagina</a>.
         </p>
       </form>
 
@@ -419,7 +419,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             <h3 className="text-base font-semibold text-gray-900">Inzage, wijziging en verwijdering</h3>
             <p>
               Je hebt het recht om je persoonsgegevens in te zien, te laten corrigeren of te laten verwijderen. Neem hiervoor contact op via{' '}
-              <a href="mailto:privacy@probrandwacht.nl" className="underline">privacy@probrandwacht.nl</a>.
+              <a href="mailto:privacy@prosafetymatch.nl" className="underline">privacy@prosafetymatch.nl</a>.
             </p>
           </div>
           <div>
