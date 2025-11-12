@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder tussenpartij. Samen bouwen we aan een gezonde veiligheidsmarkt.',
   keywords: [
      'brandwacht',
+     'brandwacht nodig',
      'brandwacht inhuren',
      'brandwacht-inhuren',
      'brandwacht huren',
