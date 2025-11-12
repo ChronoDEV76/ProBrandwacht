@@ -137,7 +137,7 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Vaste 15% platformfee en 1–2% escrowkosten. Geen verborgen marges,
+            Vaste 15% platformfee en 1,5–2% escrowkosten. Geen verborgen marges,
             volledige transparantie.
           </ListItem>
           <ListItem title="Heldere afspraken">
@@ -195,7 +195,7 @@ export default function OpdrachtgeversPage() {
               kostenopbouw.
             </li>
             <li>
-              <strong>1–2% escrowkosten</strong> – zekerheid voor beide kanten.
+              <strong>1,5–2% escrowkosten</strong> – zekerheid voor beide kanten.
             </li>
             <li>
               <strong>0% verborgen marges</strong> – tarief gaat direct naar de
