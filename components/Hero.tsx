@@ -33,12 +33,12 @@ export default function Hero() {
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
             ProBrandwacht
             <span className="block text-slate-600 sm:mt-2 sm:text-[1.45rem]">
-              Het platform voor gecertificeerde brandwachten & spoedinzet
+              Het platform voor gecertificeerde brandwachten 
             </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
-            Hét netwerk van repressieve, rijksgediplomeerde professionals.
+            Een netwerk van repressieve, rijksgediplomeerde professionals.
             Direct, Eerlijk , Zonder tussenpartij 
           </p>
 
