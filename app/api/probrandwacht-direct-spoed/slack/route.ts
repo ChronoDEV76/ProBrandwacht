@@ -1,13 +1,8 @@
 // app/api/probrandwacht-direct/slack/route.ts
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { createClient } from '@supabase/supabase-js';
 import { renderRequestBlocks } from '@/lib/slackBlocks';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 function verifySlack(req: Request, rawBody: string) {
   const ts = req.headers.get('x-slack-request-timestamp') || '';
@@ -77,6 +72,7 @@ export async function POST(req: Request) {
   const action = payload?.actions?.[0];
   const requestId: string | undefined = action?.value;
   const responseUrl: string | undefined = payload?.response_url;
+  const supabase = getSupabaseAdmin()
 
   if (!action || !requestId || !responseUrl) {
     return NextResponse.json({ ok: false, error: 'bad_payload' }, { status: 400 });
@@ -162,4 +158,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: e?.message ?? 'server_error' }, { status: 500 });
   }
 }
-

@@ -1,11 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-)
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
 
 export const metadata: Metadata = {
   title: 'Aanvraag • Admin',
@@ -13,6 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default async function AdminRequestPage({ params }: { params: { id: string } }) {
+  const supabase = getSupabaseAdmin()
   const { data, error } = await supabase
     .from('direct_requests')
     .select('*')

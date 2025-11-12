@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { postPbDirectToSlack } from '@/lib/pbDirectSlack';
 import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 const SPOED_FEE_PER_HOUR_EUR = 50;
 const PLATFORM_FEE_RATE = 15; // %
@@ -62,6 +57,7 @@ export async function POST(req: Request) {
     const platformFeeCents  = Math.round(emergencyFeeCents * (PLATFORM_FEE_RATE / 100));
 
     // Opslaan
+    const supabase = getSupabaseAdmin()
     const { data: row, error } = await supabase
       .from('direct_requests')
       .insert([{

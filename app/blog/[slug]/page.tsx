@@ -92,6 +92,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const highlights = Array.isArray(post.frontmatter.highlights)
     ? post.frontmatter.highlights.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
     : []
+  const readingTimeValue = post.frontmatter.readingTime
+  const readingTimeLabel =
+    typeof readingTimeValue === 'string'
+      ? readingTimeValue
+      : typeof readingTimeValue === 'number'
+        ? `${Math.max(1, Math.round(readingTimeValue))} min`
+        : 'ca. 5 min'
+  const categoryLabel = typeof post.frontmatter.category === 'string' && post.frontmatter.category.trim().length > 0
+    ? post.frontmatter.category
+    : 'Algemeen'
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
@@ -132,8 +142,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         />
         <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-100 px-4 py-3 text-xs text-slate-600">
           <span>Geplaatst: {publishedDate ? publishedDate.toLocaleDateString('nl-NL') : 'Onbekend'}</span>
-          <span>Leestijd: {post.frontmatter.readingTime ?? 'ca. 5 min'}</span>
-          <span>Type: {post.frontmatter.category ?? 'Algemeen'}</span>
+          <span>Leestijd: {readingTimeLabel}</span>
+          <span>Type: {categoryLabel}</span>
         </figcaption>
       </figure>
 

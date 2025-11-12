@@ -1,6 +1,6 @@
 // app/api/direct-messages/route.ts
 import { NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-admin'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
 
 type Viewer = 'agent' | 'customer'
 type SenderRole = 'agent' | 'customer' | 'brandwacht' | 'opdrachtgever'
@@ -29,6 +29,7 @@ const normalizeMessage = (row: any) => {
 }
 
 async function ensureRequest(requestId: string) {
+  const supabaseAdmin = getSupabaseAdmin()
   const { data, error } = await supabaseAdmin
     .from('direct_requests')
     .select('id, contact, email, claimed_name, claimed_by_id')
@@ -100,6 +101,7 @@ export async function POST(req: Request) {
       content: textValue,
     }
 
+    const supabaseAdmin = getSupabaseAdmin()
     const { data, error } = await supabaseAdmin
       .from('direct_messages')
       .insert([insertPayload])
@@ -139,6 +141,7 @@ export async function GET(req: Request) {
     )
   }
 
+  const supabaseAdmin = getSupabaseAdmin()
   const { data, error } = await supabaseAdmin
     .from('direct_messages')
     .select('*')
@@ -156,4 +159,3 @@ export async function GET(req: Request) {
   const normalized = (data ?? []).map(normalizeMessage)
   return NextResponse.json({ ok: true, messages: normalized, items: normalized })
 }
-

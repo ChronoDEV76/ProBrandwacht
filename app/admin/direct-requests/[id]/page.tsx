@@ -3,17 +3,13 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { createClient } from '@supabase/supabase-js'
+import { getSupabaseAdmin } from '@/lib/supabase-admin'
 
 export const dynamic = 'force-dynamic'
 
 // Server-side Supabase client (safe: this file is a server component)
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-)
-
 async function getDirectRequest(id: string) {
+  const supabase = getSupabaseAdmin()
   const { data, error } = await supabase
     .from('direct_requests')
     .select('*')
@@ -216,4 +212,3 @@ function DetailRow({
     </p>
   )
 }
-

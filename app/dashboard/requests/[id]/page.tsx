@@ -1,14 +1,9 @@
 // app/dashboard/requests/[id]/page.tsx
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 import Link from 'next/link';
 import ChatBox from './ChatBox';
 
 export const dynamic = 'force-dynamic';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
 
 function fmt(v?: string | number | null) {
   if (v === null || v === undefined || v === '') return '—';
@@ -16,6 +11,7 @@ function fmt(v?: string | number | null) {
 }
 
 export default async function RequestDashboardPage({ params }: { params: { id: string } }) {
+  const supabase = getSupabaseAdmin()
   const { data: request, error } = await supabase
     .from('direct_requests')
     .select('*')
@@ -76,4 +72,3 @@ export default async function RequestDashboardPage({ params }: { params: { id: s
     </main>
   );
 }
-

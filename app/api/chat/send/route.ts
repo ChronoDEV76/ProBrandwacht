@@ -1,10 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -14,6 +9,7 @@ export async function POST(req: Request) {
   if (!request_id || !message)
     return NextResponse.json({ ok: false, error: 'Missing fields' }, { status: 400 });
 
+  const supabase = getSupabaseAdmin()
   const { error } = await supabase.from('direct_messages').insert([
     {
       request_id,
@@ -28,4 +24,3 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ ok: true });
 }
-

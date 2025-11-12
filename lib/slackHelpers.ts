@@ -1,6 +1,6 @@
 // lib/slackHelpers.ts
 import crypto from 'crypto';
-import { supabaseAdmin } from './supabase-admin';
+import { getSupabaseAdmin } from './supabase-admin';
 import { renderRequestBlocks } from '@/lib/slackBlocks';
 
 /** Verify Slack signature for webhooks (raw body required). */
@@ -75,6 +75,7 @@ export async function redrawSlackMessage(row: any, responseUrl: string) {
 /** DB updates */
 export async function setClaimed(requestId: string, user: any) {
   const name = await getSlackDisplayName(user);
+  const supabaseAdmin = getSupabaseAdmin()
   const { data, error } = await supabaseAdmin
     .from('direct_requests')
     .update({
@@ -92,6 +93,7 @@ export async function setClaimed(requestId: string, user: any) {
 }
 
 export async function setInProgress(requestId: string, user: any) {
+  const supabaseAdmin = getSupabaseAdmin()
   // Als nog niet geclaimd → claim meteen
   const { data: current } = await supabaseAdmin
     .from('direct_requests')
@@ -117,4 +119,3 @@ export async function setInProgress(requestId: string, user: any) {
   if (error || !data) throw new Error(error?.message || 'update_failed');
   return data;
 }
-

@@ -1,6 +1,6 @@
 import { App, BlockAction, Middleware, SlackActionMiddlewareArgs, ViewSubmitAction } from '@slack/bolt';
 import fetch from 'node-fetch';
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET!,
@@ -9,10 +9,7 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN, // alleen bij socket mode
 });
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY! // server-side only
-);
+const supabase = getSupabaseAdmin()
 
 // -------- helpers --------
 
