@@ -98,9 +98,30 @@ const useCases = [
 ]
 
 const regions = [
-  { title: 'Rotterdam & Botlek', copy: 'Havenfaciliteiten, chemie en raffinage – snel opschalen bij stops en onderhoud.' },
-  { title: 'Moerdijk & Brabantse industrie', copy: 'Logistieke terminals, warehouses en petrochemische plants met 24/7 inzet.' },
-  { title: 'Terneuzen & Zeeuws-Vlaanderen', copy: 'Dow-terrein en omliggende chemieclusters met streng gecertificeerd personeel.' },
+  {
+    title: 'Rotterdam & Botlek',
+    copy: 'Brandwacht laswerk Rotterdam en heetwerktoezicht op kades, inclusief brandwacht calamiteit zzp voor spoedinzet.',
+  },
+  {
+    title: 'Moerdijk & Brabantse industrie',
+    copy: 'zzp brandwacht Brabant voor tijdelijke inzet, gasmetingen en nachtbeveiliging tijdens turnarounds.',
+  },
+  {
+    title: 'Terneuzen & Zeeuws-Vlaanderen',
+    copy: 'Dow-terrein en chemieclusters met brandwacht toezicht werkzaamheden en veiligheid las- en snijwerk.',
+  },
+  {
+    title: 'Arnhem, Nijmegen & Zwolle',
+    copy: 'Brandwacht laswerk Zwolle / Arnhem / Nijmegen bij onderhoudslocaties, inclusief mangatwacht en preventiebrandwacht zzp.',
+  },
+  {
+    title: 'Friesland & Groningen',
+    copy: 'zzp brandwacht Friesland en mangatwacht gezocht per direct voor Eemshaven, terminals en offshore-projecten.',
+  },
+  {
+    title: 'Limburg & Maasvallei',
+    copy: 'zzp brandwacht Limburg voor chemieclusters in Geleen en Venlo, met optie voor brandwacht tijdelijke inzet bij calamiteit.',
+  },
 ]
 
 const schema = {
@@ -217,6 +238,23 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Specialistische inzet</h2>
+        <p className="mt-3 text-sm text-slate-700">
+          Naast reguliere opdrachten zoeken opdrachtgevers specifiek naar onderstaande diensten. Neem de exacte termen
+          gerust over in je aanvraag; ze komen rechtstreeks uit zoekgedrag zoals{' '}
+          <em>zzp brandwacht gezocht</em> en <em>brandwacht voor heet werk inhuren</em>.
+        </p>
+        <ul className="mt-4 space-y-2 text-sm text-slate-700">
+          <li>• Brandwacht voor heet werk inhuren inclusief preventiebrandwacht zzp en veiligheid las- en snijwerk.</li>
+          <li>• Brandwacht gasmeting zzp en mangatwacht zzp inhuren voor besloten ruimten.</li>
+          <li>• Brandwacht nachtbeveiliging tijdelijk tijdens shutdowns of onderhoudsnachten.</li>
+          <li>• Brandwacht toezicht werkzaamheden en brandwacht veiligheid las- en snijwerk tijdens revisies.</li>
+          <li>• Brandwacht calamiteit zzp voor spoedgevallen of storingen buiten kantooruren.</li>
+          <li>• Mangatwacht gezocht per direct wanneer vergunninghouder extra toezicht vereist.</li>
+        </ul>
       </section>
 
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">

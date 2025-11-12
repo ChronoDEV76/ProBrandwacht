@@ -194,6 +194,34 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </p>
       </section>
 
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold text-slate-900">Veel gezochte aanvragen in {cityName}</h2>
+        <p className="mt-2 text-sm text-slate-600">
+          We krijgen vaak dezelfde zoekopdrachten binnen: <strong>brandwacht zzp inhuren</strong>, tijdelijke inzet per
+          stad en toezicht bij gespecialiseerd werk. Onderstaande voorbeelden laten zien wat je direct kunt aanvragen.
+        </p>
+        <ul className="mt-4 space-y-2 text-sm text-slate-700">
+          <li>• Brandwacht zzp inhuren in {cityName} voor heet werk en preventiebrandwacht-taken.</li>
+          <li>• Brandwacht laswerk regio {cityName} inclusief veiligheid las- en snijwerk.</li>
+          <li>• Brandwacht tijdelijke inzet {cityName} voor shutdowns, nachtbeveiliging of calamiteit.</li>
+          <li>• Brandwacht gasmeting zzp en toezicht werkzaamheden bij mangaten en besloten ruimten.</li>
+        </ul>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold text-slate-900">Waarom dit anders is</h2>
+        <p className="mt-2 text-sm text-slate-600">
+          Geen loze beloftes. We tonen je de werkelijkheid zodat je <strong>brandwacht zzp inhuren</strong> kunt doen op basis
+          van echte data.
+        </p>
+        <ul className="mt-4 space-y-2 text-sm text-slate-700">
+          <li>• Beschikbaarheid komt direct uit het ProBrandwacht Direct-planbord; geen fictieve “24/7 gegarandeerd”.</li>
+          <li>• Contract en tarief lopen rechtstreeks tussen opdrachtgever en professional, tariefopbouw is gedeeld.</li>
+          <li>• iDIN en documentcontrole blokkeren verlopen certificaten, dus <strong>gecertificeerde brandwacht toezicht werkzaamheden</strong> is ook echt gecertificeerd.</li>
+          <li>• DBA-proof dossiers leggen rol, gezag en escrow vast zodat audits geen verrassingen opleveren.</li>
+        </ul>
+      </section>
+
       <div className="flex flex-wrap items-center gap-3">
         <a
           href={opdrachtgeverSignupUrl}

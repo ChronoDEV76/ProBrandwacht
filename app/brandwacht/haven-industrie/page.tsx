@@ -11,7 +11,7 @@ const config: BrandwachtStubConfig = {
     badge: 'Haven & zware industrie',
     heading: 'Brandwacht haven & industrie',
     intro:
-      'We borgen tijdige betalingen, werken uitsluitend met gecertificeerde brandwachten en leggen de tariefopbouw vooraf vast. In 2024 ondersteunden we 18 havenprojecten met realtime planning voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
+      'We borgen tijdige betalingen, werken uitsluitend met gecertificeerde brandwachten en leggen de tariefopbouw vooraf vast. Voor heetwerktoezicht kun je direct een brandwacht voor heet werk inhuren, en bij incidenten staat er een brandwacht calamiteit zzp klaar. In 2024 ondersteunden we 18 havenprojecten met realtime planning voor laden/lossen, tankonderhoud en petrochemische stops in Rotterdam, Moerdijk en Terneuzen.',
   },
   headingSlot: (
     <h1 className="text-3xl font-semibold tracking-tight">Brandwacht haven &amp; industrie</h1>
@@ -19,11 +19,15 @@ const config: BrandwachtStubConfig = {
   bullets: [
     {
       heading: 'Wanneer inzetbaar',
-      items: ['Heetwerk en onderhoud in terminals en raffinaderijen', '24/7 ploegendiensten tijdens turnarounds', 'Extra toezicht bij laden/lossen van gevaarlijke stoffen'],
+      items: [
+        'Brandwacht voor heet werk inhuren bij terminals en raffinaderijen',
+        '24/7 ploegendiensten tijdens turnarounds en nachtbeveiliging tijdelijk',
+        'Brandwacht calamiteit zzp voor laden/lossen van gevaarlijke stoffen',
+      ],
     },
     {
       heading: 'Certificaten & checks',
-      items: ['VCA VOL, BHV, ademlucht, mangatwacht/gasmeting', 'Documentcontrole en iDIN-verificatie per professional', 'Auditlog met certificaatstatus voor compliance'],
+      items: ['VCA VOL, BHV, ademlucht, brandwacht gasmeting zzp', 'Documentcontrole en iDIN-verificatie per professional', 'Auditlog met certificaatstatus voor compliance'],
     },
     {
       heading: 'Werken zonder tussenlaag',

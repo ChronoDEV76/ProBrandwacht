@@ -130,6 +130,21 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-slate-900">Geen loze beloftes</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Grote bureaus beloven “altijd binnen 2 uur”. Wij tonen liever wat we écht regelen. Dat is het verhaal waar 
+            zzp’er én opdrachtgever iets aan hebben.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-700">
+            <li>• <strong>Echte beschikbaarheidsdata</strong> – realtime profielen, geen copy/paste-lijsten.</li>
+            <li>• <strong>Direct contract met de zzp’er</strong> – tarief gaat rechtstreeks naar de professional, zonder marge.</li>
+            <li>• <strong>DBA-proof dossiers</strong> – rolzuiver, escrow vastgelegd en elke afspraak herleidbaar.</li>
+            <li>• <strong>Geverifieerde certificaten</strong> – iDIN + documentcontrole, verlopen certificaten kunnen niet ingepland worden.</li>
+            <li>• <strong>Transparante tariefopbouw</strong> – iedereen ziet de 15% platformfee en het nettobedrag.</li>
+          </ul>
+        </section>
       </div>
     </main>
   )
