@@ -39,81 +39,57 @@ export default function PrivacyPage() {
     <main className='mx-auto w-full max-w-3xl space-y-8 px-4 py-10'>
       <StructuredBreadcrumbs items={breadcrumbItems} />
 
-      <header className='space-y-3'>
-        <h1 className='text-3xl font-semibold text-slate-900'>Privacy & cookies</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
-        <p className='text-sm text-slate-600'>
-          ProBrandwacht.nl is een initiatief van ProBrandwacht B.V. en ondersteunt de community rondom ProSafetyMatch. Onderstaand lees je hoe we gegevens
-          verwerken, wanneer we gegevens delen met Chrono4Solutions en welke cookies we inzetten.
-        </p>
-      </header>
+      <section className='rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
+        <div className='text-sm text-gray-800'>
+          <h1 className='text-3xl font-semibold text-slate-900'>Privacyverklaring</h1>
+          <p className='mt-4'>
+            Deze privacyverklaring is van toepassing op het platform ProBrandwacht, een handelsnaam van Chrono4solutions. ProBrandwacht respecteert de privacy
+            van alle gebruikers van haar platform en draagt er zorg voor dat de persoonlijke informatie die je ons verschaft, vertrouwelijk en volgens de
+            geldende wetgeving wordt behandeld.
+          </p>
 
-      <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h2 className='text-xl font-semibold text-slate-900'>Welke gegevens we ontvangen</h2>
-        <p className='text-sm text-slate-700'>
-          We verzamelen persoonsgegevens die je zelf invult op ProBrandwacht.nl, waaronder:
-        </p>
-        <ul className='list-disc space-y-2 pl-5 text-sm text-slate-700'>
-          <li>Contact- en bedrijfsgegevens via formulieren zoals <code>/opdrachtgevers/aanmelden</code>.</li>
-          <li>Projectdetails, budgetindicaties en spoedstatus via <code>/probrandwacht-direct</code>.</li>
-          <li>Anonieme gebruiksstatistieken via privacyvriendelijke analytics om de site te verbeteren.</li>
-        </ul>
-        <p className='text-sm text-slate-700'>
-          We vragen nooit om BSN, kopieën van identiteitsbewijzen of andere bijzondere persoonsgegevens via deze site.
-        </p>
-      </section>
+          <h2 className='text-lg font-semibold mt-8 mb-2'>Welke gegevens we ontvangen</h2>
+          <p className='mb-4'>We verzamelen persoonsgegevens die je zelf invult op ProBrandwacht.nl, waaronder:</p>
+          <ul className='list-disc list-inside mb-4 space-y-1'>
+            <li>Contact- en bedrijfsgegevens via formulieren zoals /opdrachtgevers/aanmelden.</li>
+            <li>Projectdetails, budgetindicaties en spoedstatus via /probrandwacht-direct.</li>
+            <li>Anonieme gebruiksstatistieken via privacyvriendelijke analytics om de site te verbeteren.</li>
+          </ul>
+          <p className='mb-4'>We vragen nooit om BSN, kopieën van identiteitsbewijzen of andere bijzondere persoonsgegevens via deze site.</p>
 
-      <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h2 className='text-xl font-semibold text-slate-900'>Wanneer we gegevens delen</h2>
-        <p className='text-sm text-slate-700'>
-          ProBrandwacht.nl gebruikt de gegevens primair om je onboarding bij ProSafetyMatch voor te bereiden. Bij spoed- of directe inzetaanvragen kunnen we
-          jouw contact- en projectgegevens veilig doorzetten naar onze operationele partner <strong>Chrono4Solutions</strong>. Zij leveren gecertificeerde
-          brandwachten wanneer een onmiddellijke inzet gewenst is. Hiervoor geldt:
-        </p>
-        <ul className='list-disc space-y-2 pl-5 text-sm text-slate-700'>
-          <li>We delen alleen de informatie die nodig is om jouw aanvraag uit te voeren.</li>
-          <li>Chrono4Solutions verwerkt de gegevens enkel voor de betreffende aanvraag en hanteert eigen verwerkersovereenkomsten.</li>
-          <li>Je ontvangt een bevestiging zodra jouw aanvraag is doorgestuurd of opgepakt.</li>
-        </ul>
-        <p className='text-sm text-slate-700'>
-          Andere derden krijgen jouw gegevens niet, tenzij dit wettelijk verplicht is of je hier vooraf toestemming voor hebt gegeven.
-        </p>
-      </section>
+          <h2 className='text-lg font-semibold mt-8 mb-2'>Wanneer we gegevens delen</h2>
+          <p className='mb-4'>
+            ProBrandwacht.nl gebruikt de gegevens primair om je onboarding bij ProSafetyMatch voor te bereiden. Bij spoed- of directe inzetaanvragen kunnen we
+            jouw contact- en projectgegevens veilig doorzetten naar onze operationele tak binnen Chrono4Solutions. Hiervoor geldt:
+          </p>
+          <ul className='list-disc list-inside mb-4 space-y-1'>
+            <li>We delen alleen de informatie die nodig is om jouw aanvraag uit te voeren.</li>
+            <li>Chrono4Solutions verwerkt de gegevens enkel voor de betreffende aanvraag en hanteert eigen verwerkersovereenkomsten.</li>
+            <li>Je ontvangt een bevestiging zodra jouw aanvraag is doorgestuurd of opgepakt.</li>
+          </ul>
+          <p className='mb-4'>Andere derden krijgen jouw gegevens niet, tenzij dit wettelijk verplicht is of je hier vooraf toestemming voor hebt gegeven.</p>
 
-      <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h2 className='text-xl font-semibold text-slate-900'>Cookies en analytics</h2>
-        <p className='text-sm text-slate-700'>
-          We beperken cookies tot wat noodzakelijk is voor het functioneren van de site en privacyvriendelijke statistieken. Dat betekent:
-        </p>
-        <ul className='list-disc space-y-2 pl-5 text-sm text-slate-700'>
-          <li>Functionele cookies om formulieren en beveiligingsmaatregelen goed te laten werken.</li>
-          <li>Geanonimiseerde analytics (zonder advertentiecookies) om te meten welke pagina&apos;s het best presteren.</li>
-          <li>Geen tracking-cookies van derden en geen heridentificatie buiten ProBrandwacht, ProSafetyMatch of Chrono4Solutions.</li>
-        </ul>
-        <p className='text-sm text-slate-700'>
-          Als we in de toekomst aanvullende cookies willen plaatsen, vragen we hier vooraf expliciet toestemming voor.
-        </p>
-      </section>
+          <h2 className='text-lg font-semibold mt-8 mb-2'>Cookies en analytics</h2>
+          <p className='mb-4'>We beperken cookies tot wat noodzakelijk is voor het functioneren van de site en privacyvriendelijke statistieken. Dat betekent:</p>
+          <ul className='list-disc list-inside mb-4 space-y-1'>
+            <li>Functionele cookies om formulieren en beveiligingsmaatregelen goed te laten werken.</li>
+            <li>Geanonimiseerde analytics (zonder advertentiecookies) om te meten welke pagina&apos;s het best presteren.</li>
+            <li>Geen tracking-cookies van derden en geen heridentificatie buiten ProBrandwacht of ProSafetyMatch.</li>
+          </ul>
+          <p className='mb-4'>Als we in de toekomst aanvullende cookies willen plaatsen, vragen we hier vooraf expliciet toestemming voor.</p>
 
-      <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h2 className='text-xl font-semibold text-slate-900'>Bewaartermijnen & jouw rechten</h2>
-        <p className='text-sm text-slate-700'>
-          Gegevens die leiden tot onboarding bij ProSafetyMatch bewaren we zolang de samenwerking loopt of zolang de wet dit vereist. Aanvragen zonder
-          vervolg verwijderen we maximaal 12 maanden na ontvangst. Je mag altijd inzage, correctie of verwijdering vragen via onderstaande contactgegevens.
-        </p>
-      </section>
+          <h2 className='text-lg font-semibold mt-8 mb-2'>Bewaartermijnen & jouw rechten</h2>
+          <p className='mb-4'>
+            Gegevens die leiden tot onboarding bij ProSafetyMatch bewaren we zolang de samenwerking loopt of zolang de wet dit vereist. Aanvragen zonder
+            vervolg verwijderen we maximaal 12 maanden na ontvangst. Je mag altijd inzage, correctie of verwijdering vragen via onderstaande contactgegevens.
+          </p>
 
-      <section className='space-y-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h2 className='text-xl font-semibold text-slate-900'>Contact</h2>
-        <p className='text-sm text-slate-700'>
-          Vragen over privacy of cookies? Mail ons op <a className='underline' href='mailto:privacy@prosafetymatch.nl'>privacy@prosafetymatch.nl</a>. Voor
-          aanvragen die via Chrono4Solutions lopen kun je ook rechtstreeks contact opnemen via <a className='underline' href='mailto:info@chronosolutions.nl'>info@chronosolutions.nl</a>.
-        </p>
+          <h2 className='text-lg font-semibold mt-8 mb-2'>Contact</h2>
+          <p className='mb-4'>
+            Vragen over privacy of cookies? Mail ons op <a className='underline' href='mailto:privacy@prosafetymatch.nl'>privacy@prosafetymatch.nl</a>. Voor
+            algemene vragen kun je contact opnemen via <a className='underline' href='mailto:info@prosafetymatch.nl'>info@prosafetymatch.nl</a>.
+          </p>
+        </div>
       </section>
     </main>
   )
