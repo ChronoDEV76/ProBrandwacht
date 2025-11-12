@@ -259,7 +259,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             className="group relative overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-md"
           >
             {post.image ? (
-              <div className="relative h-40 w-full overflow-hidden">
+              <div className="relative h-64 w-full overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.imageAlt}

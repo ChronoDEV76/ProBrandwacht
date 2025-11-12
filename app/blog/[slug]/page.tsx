@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
@@ -81,6 +82,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     (post.frontmatter.tldr as string | undefined) ??
     (post.frontmatter.description as string | undefined) ??
     ''
+  const heroImage = toAbsoluteUrl(
+    (post.frontmatter.image as string | undefined) || (post.frontmatter.ogImage as string | undefined) || '/og-home.webp',
+  )
+  const heroImageSrc = heroImage.startsWith('https://www.probrandwacht.nl')
+    ? heroImage.replace('https://www.probrandwacht.nl', '') || '/og-home.webp'
+    : heroImage
+  const heroAlt = (post.frontmatter.imageAlt as string | undefined) ?? post.frontmatter.title ?? params.slug
+  const highlights = Array.isArray(post.frontmatter.highlights)
+    ? post.frontmatter.highlights.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
+    : []
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
@@ -108,6 +119,34 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 </div>
 {/* SEO-UPGRADE END */}
       </header>
+
+      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <Image
+          src={heroImageSrc}
+          alt={heroAlt}
+          width={900}
+          height={450}
+          sizes="(max-width:768px) 100vw, 768px"
+          className="h-auto w-full max-h-[320px] object-cover"
+          loading="lazy"
+        />
+        <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-100 px-4 py-3 text-xs text-slate-600">
+          <span>Geplaatst: {publishedDate ? publishedDate.toLocaleDateString('nl-NL') : 'Onbekend'}</span>
+          <span>Leestijd: {post.frontmatter.readingTime ?? 'ca. 5 min'}</span>
+          <span>Type: {post.frontmatter.category ?? 'Algemeen'}</span>
+        </figcaption>
+      </figure>
+
+      {highlights.length > 0 ? (
+        <section className="mb-6 rounded-2xl border border-amber-100 bg-amber-50 p-5 text-sm text-amber-900">
+          <h2 className="text-base font-semibold text-amber-900">Belangrijkste punten</h2>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            {highlights.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {/* MDX-uitvoer uit compileMDX (geleverd door lib/mdx) */}
       <Prose>

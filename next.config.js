@@ -11,6 +11,7 @@ module.exports = withBundleAnalyzer({
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: ['www.probrandwacht.nl'],
   },
   async headers() {
     return [
