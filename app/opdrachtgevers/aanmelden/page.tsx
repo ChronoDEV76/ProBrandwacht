@@ -72,7 +72,6 @@ export default function OpdrachtgeverAanmeldenPage() {
             <p className="font-semibold text-slate-900">Waarom organisaties ons vertrouwen</p>
             <ul className="space-y-1">
               <li>• 200+ gecertificeerde brandwacht-documenten gecontroleerd (VCA, BHV, ademlucht) in 2024</li>
-              <li>• Escrow-betalingen gegarandeerd binnen 48 uur na bevestigde inzet</li>
               <li>• Realtime ProBrandwacht Direct dashboard met audit-log voor veiligheidsteams en veiligheidsregio-adviseurs</li>
               <li>• iDIN- en KvK-verificatie voordat dossiers worden vrijgegeven</li>
             </ul>
@@ -87,6 +86,10 @@ export default function OpdrachtgeverAanmeldenPage() {
           </div>
         </header>
         <ClientSignupForm className="px-0" />
+        <p className="text-xs text-slate-500 leading-relaxed">
+          Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{' '}
+          <a href="mailto:privacy@prosafetymatch.nl" className="underline text-slate-600">privacy@prosafetymatch.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-slate-600">privacy-pagina</a>.
+        </p>
         <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
           <div className="mt-3 space-y-3">
