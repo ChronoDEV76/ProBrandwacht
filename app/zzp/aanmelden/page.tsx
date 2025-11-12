@@ -58,7 +58,7 @@ export default function Page() {
   }
 
   const heading = (
-    <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
+    <h1 className="text-3xl font-bold text-gray-900">Direct beschikbaar? Dan hoor jij erbij.</h1>
   )
 
   return (

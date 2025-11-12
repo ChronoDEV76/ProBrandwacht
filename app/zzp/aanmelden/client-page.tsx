@@ -271,7 +271,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
       {/* Header */}
       <div className="space-y-2">
         {(heading ?? (
-          <h1 className="text-3xl font-bold text-gray-900">Meld je aan als gamechanger (ZZP)</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Direct beschikbaar? Dan hoor jij erbij.</h1>
         ))}
         <p className="text-gray-600">
           Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vul je later in tijdens je
@@ -385,6 +385,10 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             Annuleren
           </LinkButton>
         </div>
+        <p className="text-xs text-gray-500 leading-relaxed">
+          Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{' '}
+          <a href="mailto:privacy@probrandwacht.nl" className="underline text-gray-600">privacy@probrandwacht.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-gray-600">privacy-pagina</a>.
+        </p>
       </form>
     </div>
   );
