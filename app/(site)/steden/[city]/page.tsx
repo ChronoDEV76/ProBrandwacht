@@ -5,7 +5,7 @@ import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import CityHero from '@/components/city-hero'
 import { DEFAULT_TARIFFS, type CitySlug } from '@/lib/tariffs'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
-import { CITY_DATA, type CityRecord } from '@/lib/city-data'
+import { CITY_DATA, CITY_SLUGS, type CityRecord } from '@/lib/city-data'
 
 const CITY_RECORD_MAP = CITY_DATA.reduce((acc, city) => {
   acc[city.slug as CitySlug] = city
@@ -13,7 +13,7 @@ const CITY_RECORD_MAP = CITY_DATA.reduce((acc, city) => {
 }, {} as Record<CitySlug, CityRecord>)
 
 export function generateStaticParams() {
-  return CITY_DATA.map(city => ({ city: city.slug })) satisfies Array<{ city: CitySlug }>
+  return CITY_SLUGS.map(city => ({ city })) satisfies Array<{ city: CitySlug }>
 }
 
 const resolveLabel = (city: CitySlug) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
@@ -183,7 +183,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
 import { notFound } from 'next/navigation'
 
-const CITY_SLUG_SET = new Set(CITY_DATA.map(city => city.slug))
+const CITY_SLUG_SET = new Set<string>(CITY_SLUGS)
 
 function isCitySlug(value: string): value is CitySlug {
   return CITY_SLUG_SET.has(value)

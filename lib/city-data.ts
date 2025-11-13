@@ -1,17 +1,18 @@
 // lib/city-data.ts
-export type CityRecord = {
+
+export type CityRecordShape = {
   slug: string
   name: string
   latitude: number
   longitude: number
-  venues?: string[]          // evenementen/locaties
-  industrialAreas?: string[] // industrie/terreinen
-  sectorNotes?: string       // korte lokale duiding
-  aliases?: string[]         // URL-aliases die 301 moeten krijgen
-  updatedAt?: string         // YYYY-MM-DD (voor “Laatst geactualiseerd”)
+  venues?: string[]
+  industrialAreas?: string[]
+  sectorNotes?: string
+  aliases?: string[]
+  updatedAt?: string
 }
 
-export const CITY_DATA: CityRecord[] = [
+export const CITY_DATA = [
   {
     slug: "amsterdam",
     name: "Amsterdam",
@@ -261,4 +262,8 @@ export const CITY_DATA: CityRecord[] = [
     sectorNotes: "Snelle woningbouw; toezicht bij oplevering en brandmeldinstallaties.",
     updatedAt: "2025-10-01",
   },
-]
+ ] as const satisfies ReadonlyArray<CityRecordShape>
+
+export type CityRecord = (typeof CITY_DATA)[number]
+export type CitySlug = CityRecord['slug']
+export const CITY_SLUGS = CITY_DATA.map(city => city.slug) as CitySlug[]

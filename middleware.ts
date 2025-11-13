@@ -1,9 +1,9 @@
 // middleware.ts
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { CITY_DATA } from "@/lib/city-data"
+import { CITY_DATA, type CityRecordShape } from "@/lib/city-data"
 
-const aliasMap: Record<string, string> = CITY_DATA.reduce((acc, c) => {
+const aliasMap: Record<string, string> = (CITY_DATA as readonly CityRecordShape[]).reduce((acc, c) => {
   (c.aliases ?? []).forEach(a => { acc[a] = c.slug })
   return acc
 }, {} as Record<string, string>)
