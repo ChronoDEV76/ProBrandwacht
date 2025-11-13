@@ -3,31 +3,24 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import CityHero from '@/components/city-hero'
-import { DEFAULT_TARIFFS, type CityKey } from '@/lib/tariffs'
+import { DEFAULT_TARIFFS, type CitySlug } from '@/lib/tariffs'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
+import { CITY_DATA, type CityRecord } from '@/lib/city-data'
 
-const CITY_LABEL: Record<CityKey, string> = {
-  amsterdam: 'Amsterdam',
-  rotterdam: 'Rotterdam',
-  'den-haag': 'Den Haag',
-  utrecht: 'Utrecht',
-  industrie: 'Industrieel (algemeen)',
-}
+const CITY_RECORD_MAP = CITY_DATA.reduce((acc, city) => {
+  acc[city.slug as CitySlug] = city
+  return acc
+}, {} as Record<CitySlug, CityRecord>)
 
 export function generateStaticParams() {
-  return [
-    { city: 'amsterdam' },
-    { city: 'rotterdam' },
-    { city: 'den-haag' },
-    { city: 'utrecht' },
-  ] satisfies Array<{ city: CityKey }>
+  return CITY_DATA.map(city => ({ city: city.slug })) satisfies Array<{ city: CitySlug }>
 }
 
-const resolveLabel = (city: CityKey) => CITY_LABEL[city] ?? city.replace(/-/g, ' ')
+const resolveLabel = (city: CitySlug) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
 
 export function generateMetadata({ params }: { params: { city: string } }): Metadata {
   const rawCity = params.city
-  if (!isCityKey(rawCity)) {
+  if (!isCitySlug(rawCity)) {
     const fallback = `https://www.probrandwacht.nl/steden/${rawCity}`
     return {
       title: 'Stad niet gevonden | ProBrandwacht.nl',
@@ -38,7 +31,7 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
     }
   }
 
-  const city = rawCity as CityKey
+  const city = rawCity as CitySlug
   const label = resolveLabel(city)
   const title = `Brandwacht tarieven ${label} | ProBrandwacht`
   const description = `Indicatieve tariefbandbreedtes voor ${label} en duidelijke uitleg. Voor een persoonlijk PDF-rapport ga je naar de centrale berekening op de homepage.`
@@ -66,8 +59,8 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const rawCity = params.city
-  if (!isCityKey(rawCity)) return notFound()
-  const city = rawCity as CityKey
+  if (!isCitySlug(rawCity)) return notFound()
+  const city = rawCity as CitySlug
   const label = resolveLabel(city)
 
   const ranges = DEFAULT_TARIFFS[city]
@@ -189,6 +182,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
 }
 
 import { notFound } from 'next/navigation'
-function isCityKey(value: string): value is CityKey {
-  return Object.prototype.hasOwnProperty.call(DEFAULT_TARIFFS, value)
+
+const CITY_SLUG_SET = new Set(CITY_DATA.map(city => city.slug))
+
+function isCitySlug(value: string): value is CitySlug {
+  return CITY_SLUG_SET.has(value)
 }

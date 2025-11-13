@@ -20,7 +20,6 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
           Zoek je een <strong>brandwacht</strong> in {cityName}? Via ProBrandwacht.nl zie je in een paar minuten welke inzet aansluit op je aanvraag.
-          We loggen de eisen van de lokale veiligheidsregio (BGBOP, Arbowet artikel 3) direct in je dossier.
           Kies voor <span className="font-medium">ProBrandwacht Direct</span> voor geplande opdrachten.
           {SPOED_UI_ENABLED ? (
             <> Voor 24/7 inzet schakel je via <span className="font-medium">ProBrandwacht Direct spoed</span>. </>

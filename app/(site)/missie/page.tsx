@@ -9,7 +9,7 @@ const canonicalUrl = 'https://www.probrandwacht.nl/missie'
 export const metadata: Metadata = {
   title: 'Missie | ProBrandwacht.nl',
   description:
-    'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
+    'De nieuwe standaard voor veiligheids professionals in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
   keywords: [
     'brandwacht',
     'brandwacht inhuren',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Missie | ProBrandwacht.nl',
     description:
-      'De nieuwe standaard voor brandwachten in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
+      'De nieuwe standaard voor veiligheids professionals in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
     url: canonicalUrl,
     images: [{ url: '/og-home.webp', width: 1200, height: 630, alt: 'Missie van ProBrandwacht.nl' }],
   },
@@ -61,7 +61,7 @@ export default function ManifestPage() {
           {/* __seo-badges */}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Samen zetten we de nieuwe standaard voor brandwachten
+              Samen zetten we de nieuwe standaard voor veiligheids professionals
             </span>
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
               Aangescherpt met feedback uit de sector (200+ professionals)
@@ -71,7 +71,7 @@ export default function ManifestPage() {
           <h1 className="text-3xl sm:text-4xl font-semibold text-slate-900">Onze Missie</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven, escrow-betaling en DBA-proof afspraken.
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
@@ -104,10 +104,10 @@ export default function ManifestPage() {
         </section>
 
         <Prose>
-          <h2>De nieuwe standaard voor brandwachten</h2>
+          <h2>De nieuwe standaard voor veiligheids professionals</h2>
           <p>
-            De branche staat onder druk: te lage tarieven, te veel schakels en te weinig zeggenschap. Met
-            ProSafetyMatch maken we het fundament weer gezond: helder inzicht in tarieven, zekerheid in betaling
+            De branche staat onder druk: te lage tarieven, te veel schakels en te weinig zeggenschap en schijnconstructies. Met
+            ProSafetyMatch maken we het fundament weer gezond: helder inzicht in tarieven, meer zekerheid en snellere betalingen,
             en duidelijke, zelfstandige afspraken tussen opdrachtgever en professional.
           </p>
 
@@ -128,7 +128,7 @@ export default function ManifestPage() {
 
           <h2>Onze missie</h2>
           <p>
-            ProBrandwacht.nl werft en informeert; <strong>ProSafetyMatch</strong> is het platform waar helder inzicht en directe samenwerking
+            ProBrandwacht.nl werft en informeert; <strong>ProSafetyMatch</strong> is het platform waar straks helder inzicht en directe samenwerking
             samenkomen. Eerlijk voor professionals, helder voor opdrachtgevers en beter voor iedereen die rekent op veiligheid.
             <strong>Escrow-betalingen en automatische uitbetaling draaien live zodra ProSafetyMatch lanceert; tot die tijd leggen we betaalafspraken rechtstreeks vast.</strong>
           </p>

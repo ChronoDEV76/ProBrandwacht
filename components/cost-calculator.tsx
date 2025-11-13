@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import type { ReactNode } from 'react'
-import { DEFAULT_TARIFFS, type CityKey, type CategoryKey, type TariffConfig } from '@/lib/tariffs'
+import { DEFAULT_TARIFFS, type CityKey, type CitySlug, type CategoryKey, type TariffConfig } from '@/lib/tariffs'
 import ImpactInfoCard from '@/components/impact-info-card'
+import { CITY_DATA } from '@/lib/city-data'
 
 export type CalculatorProps = {
   initialCity?: CityKey
@@ -73,11 +74,11 @@ export const REFERENCE_RATES_BASE: Record<
   'dag' | 'avond' | 'nacht' | 'weekend' | 'spoed',
   ReferenceRateEntry
 > = {
-  dag: { label: 'Dagdienst (07:00–15:00)', min: 42.0, max: 48.0 },
-  avond: { label: 'Avonddienst (15:00–23:00)', min: 46.2, max: 55.2 },
-  nacht: { label: 'Nachtdienst (23:00–07:00)', min: 50.4, max: 62.4 },
-  weekend: { label: 'Weekend of feestdag', min: 52.5, max: 67.2 },
-  spoed: { label: 'Spoed / korte oproep', min: 54.6, max: 72.0 },
+  dag: { label: 'Dagdienst (07:00–15:00)', min: 40.0, max: 50.0 },
+  avond: { label: 'Avonddienst (15:00–23:00)', min: 44.0, max: 57.5 },
+  nacht: { label: 'Nachtdienst (23:00–07:00)', min: 48.0, max: 65.0 },
+  weekend: { label: 'Weekend of feestdag', min: 50.0, max: 70.0 },
+  spoed: { label: 'Spoed / korte oproep', min: 52.0, max: 75.0 },
 }
 
 type RefRates = typeof REFERENCE_RATES_BASE
@@ -363,10 +364,7 @@ export default function CostCalculator({
   }, [adjHourly, hours, feeRate, escrowRate, hourly])
 
   const cityOptions: { key: CityKey; label: string }[] = [
-    { key: 'amsterdam', label: 'Amsterdam' },
-    { key: 'rotterdam', label: 'Rotterdam' },
-    { key: 'den-haag', label: 'Den Haag' },
-    { key: 'utrecht', label: 'Utrecht' },
+    ...CITY_DATA.map(city => ({ key: city.slug as CitySlug, label: city.name })),
     { key: 'industrie', label: 'Industrieel (algemeen)' },
   ]
 

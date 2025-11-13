@@ -1,6 +1,8 @@
 // app/direct/page.tsx
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import DirectRequestForm from "@/components/direct-request-form";
+import { SPOED_ROUTE_ENABLED } from "@/lib/featureFlags";
 
 export const metadata = {
   title: "ProBrandwacht Direct — 24/7 spoedlijn | ProBrandwacht",
@@ -10,6 +12,10 @@ export const metadata = {
 };
 
 export default function ProBrandwachtDirectPage() {
+  if (!SPOED_ROUTE_ENABLED) {
+    notFound();
+  }
+
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10 space-y-10">
       <header className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">

@@ -72,7 +72,7 @@ export default function Hero() {
               Rijksgediplomeerd & repressief
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Eerlijke tarieven. Direct contact. Veilig geregeld.
+              Eerlijke tarieven. Direct contact. Snel geregeld.
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Bij beschikbaarheid, Snel inzetbaar
@@ -83,4 +83,3 @@ export default function Hero() {
     </section>
   );
 }
-

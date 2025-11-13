@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: 'Welke certificaten hebben jullie brandwachten?',
     answer:
-      'Onze professionals beschikken over VCA (VOL), BHV/brandpreventie en – waar relevant – mangatwacht, gasmeting of ademlucht certificaten. Je ziet certificaatstatus en vervaldatum direct in het profiel.',
+      'Onze professionals beschikken over VCA (VOL), BHV/Manschap A/B en – waar relevant – mangatwacht, gasmeting of ademlucht certificaten. Je ziet certificaatstatus en vervaldatum direct in het profiel.',
   },
   {
     question: 'Hoe werkt het tarief en de platformfee?',
@@ -197,7 +197,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
           <h2 className="text-xl font-semibold">Tarieven & helderheid</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             <li>• Selecteer op tariefbandbreedte, werktijd (dag/nacht) en dienstduur.</li>
-            <li>• Zie direct de platformfee (15%) en het netto honorarium.</li>
+            <li>• Zie direct de platformfee (15%) + 1,5–2% escrowkosten en het netto uurtarief.</li>
             <li>• Deel dezelfde tariefberekening met finance & HR om interne afstemming te versnellen.</li>
           </ul>
         </div>
@@ -214,7 +214,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold">Certificeringen & kwaliteit</h2>
         <p className="mt-3 text-sm text-slate-700">
-          Profielen tonen de actuele certificaten (VCA VOL, BHV/brandpreventie, mangatwacht, gasmeting) en status van iDIN-verificatie. Verlopen documenten worden automatisch gemarkeerd en opnieuw opgevraagd.
+          Profielen tonen de actuele certificaten (VCA VOL, BHV/Manschap A/B, mangatwacht, gasmeting) en status van iDIN-verificatie. Verlopen documenten worden automatisch gemarkeerd en opnieuw opgevraagd.
         </p>
         <div className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
           <div className="rounded-xl bg-slate-50 p-4">
@@ -301,9 +301,6 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       <section className="flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-brand-700 px-6 py-5 text-white">
         <div>
           <h2 className="text-lg font-semibold">Start met eerlijke inhuur</h2>
-          <p className="text-sm text-brand-100">
-            Meld je bedrijf aan en ontvang binnen 24 uur toegang tot het aanvraagportaal.
-          </p>
         </div>
         <Link
           href="/opdrachtgevers/aanmelden"

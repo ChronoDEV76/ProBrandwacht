@@ -58,93 +58,11 @@ export default function HomePage() {
       <Hero />
       <div className="mx-auto max-w-4xl space-y-12 px-4 pb-20 sm:px-6 md:px-8">
         <LeadCalculator />
-
-        <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm space-y-5">
-          <h2 className="text-xl font-semibold text-slate-900">Waarom dit werkt</h2>
-          <div className="grid gap-3 sm:grid-cols-3 text-sm">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="font-semibold">Professionals</p>
-              <p>Eerlijk tarief, directe afspraken, meer waardering.</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="font-semibold">Opdrachtgevers</p>
-              <p>Meer kwaliteit, minder verloop, helder tarief.</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <p className="font-semibold">Veiligheid</p>
-              <p>Stabiel, betrouwbaar en aantoonbaar beter.</p>
-            </div>
-          </div>
-          <p className="border-t border-slate-200 pt-3 text-center text-sm text-slate-600">
-            Samen maken we de veiligheidssector gezonder. Vandaag eerlijk, morgen sterker.
+        <div className="rounded-3xl border border-brand-200 bg-white/90 p-6 text-center shadow-lg shadow-brand-100">
+          <p className="text-xl font-semibold text-brand-900">
+            “Vandaag eerlijk. Morgen beter en veiliger.”
           </p>
-        </section>
-
-        <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-slate-900">Direct naar belangrijke pagina&apos;s</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Interne links helpen zoekmachines en bezoekers snel de juiste route te vinden. Kies wat bij je vraag past.
-          </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            {[
-              {
-                href: '/opdrachtgevers',
-                title: 'Opdrachtgevers',
-                copy: 'Leer hoe je DBA-proof afspraken en tarifering vastlegt.',
-              },
-              {
-                href: '/brandwacht/haven-industrie',
-                title: 'Haven & industrie',
-                copy: 'Checklist voor laden/lossen, tankonderhoud en petrochemie.',
-              },
-              {
-                href: '/brandwacht-inhuren/rotterdam',
-                title: 'Brandwacht Rotterdam',
-                copy: 'Voorbeeldtarieven en beschikbaarheid per stadspagina.',
-              },
-              {
-                href: '/blog',
-                title: 'Blog & kennisbank',
-                copy: 'Wet DBA, tarieven en praktijkcases vanuit de sector.',
-              },
-              {
-                href: '/faq',
-                title: 'Veelgestelde vragen',
-                copy: 'Krijg snel antwoord over escrow, tarieven en documentatie.',
-              },
-              {
-                href: '/probrandwacht-direct',
-                title: 'ProBrandwacht Direct',
-                copy: 'Plan opdrachten en zie direct hoe betalingen worden geborgd.',
-              },
-            ].map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                prefetch={false}
-                className="rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-brand-200 hover:bg-brand-50"
-              >
-                <p className="text-sm font-semibold text-slate-900">{link.title}</p>
-                <p className="mt-1 text-sm text-slate-600">{link.copy}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-slate-900">Geen loze beloftes</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Grote bureaus beloven “altijd binnen 2 uur”. Wij tonen liever wat we écht regelen. Dat is het verhaal waar 
-            zzp’er én opdrachtgever iets aan hebben.
-          </p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-700">
-            <li>• <strong>Echte beschikbaarheidsdata</strong> – realtime profielen, geen copy/paste-lijsten.</li>
-            <li>• <strong>Direct contract met de zzp’er</strong> – tarief gaat rechtstreeks naar de professional, zonder marge.</li>
-            <li>• <strong>DBA-proof dossiers</strong> – rolzuiver, escrow vastgelegd en elke afspraak herleidbaar.</li>
-            <li>• <strong>Geverifieerde certificaten</strong> – iDIN + documentcontrole, verlopen certificaten kunnen niet ingepland worden.</li>
-            <li>• <strong>Transparante tariefopbouw</strong> – iedereen ziet de 15% platformfee en het nettobedrag.</li>
-          </ul>
-        </section>
+        </div>
       </div>
     </main>
   )

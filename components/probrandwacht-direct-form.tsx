@@ -197,6 +197,9 @@ export default function ProbrandwachtDirectForm() {
             placeholder="Bijv. €45–€55 per uur"
             className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
           />
+          <p className="mt-1 text-xs text-slate-500">
+            Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€42/u netto (16,5% platformfee, escrow volgt bij ProSafetyMatch). Alles zichtbaar voor beide kanten.
+          </p>
         </div>
       </div>
 

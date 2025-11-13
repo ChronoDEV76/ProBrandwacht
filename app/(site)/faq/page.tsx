@@ -77,21 +77,13 @@ export default function FAQPage() {
       {/* __seo-badges */}
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-          Samen zetten we de nieuwe standaard voor brandwachten
+          Samen zetten we de nieuwe standaard voor veiligheids professionals
         </span>
         <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
           Aangescherpt met feedback uit de sector (200+ professionals)
         </span>
       </div>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
-      <p className="text-xs text-slate-500">
-        ProBrandwacht Direct deelt statusupdates realtime met je team; aanvragen komen binnen op één dashboard waarin betalingen automatisch worden klaargezet.
-      </p>
+{/* marketing intro intentionally removed */}
       {sections.map(section => (
         <div key={section.title} className="space-y-4">
           <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
@@ -126,7 +118,7 @@ export default function FAQPage() {
       <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Waarom opdrachtgevers vertrouwen op ProBrandwacht</h2>
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
-          <li>• 200+ gecertificeerde documenten gecontroleerd en vastgelegd in 2024</li>
+          <li>• Certificaten worden realtime gecontroleerd en verlopen documenten blokkeren we direct</li>
           <li>• Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten</li>
         </ul>
       </div>
