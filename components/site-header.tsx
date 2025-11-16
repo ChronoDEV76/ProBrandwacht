@@ -105,7 +105,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </span>
       </summary>
 
-      <div className="absolute right-0 top-full z-40 mt-3 w-[min(20rem,90vw)] overflow-hidden rounded-2xl border border-white/15 bg-brand-800/95 text-sm shadow-xl">
+      <div className="absolute right-0 top-full z-40 mt-3 w-[min(20rem,90vw)] overflow-hidden rounded-2xl border border-white/15 bg-brand-800 text-sm shadow-xl">
         <div className="flex flex-col gap-1 px-4 py-4">
           {LINKS.map(link => (
             <Link
