@@ -69,7 +69,7 @@ export default function Hero() {
           {/* trust badges */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600">
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Rijksgediplomeerd & repressief
+              Rijksgediplomeerd en repressief
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Eerlijke tarieven. Direct contact. Snel geregeld.
