@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const dynamic = 'force-dynamic'
 
@@ -36,7 +35,9 @@ function formatDate(value?: string | null) {
 
 export async function generateMetadata({
   params,
-}: { params: { id: string } }): Promise<Metadata> {
+}: {
+  params: { id: string }
+}): Promise<Metadata> {
   const request = await getDirectRequest(params.id)
   if (!request) {
     return { title: 'Aanvraag niet gevonden | ProBrandwacht admin' }
@@ -46,7 +47,6 @@ export async function generateMetadata({
     description: 'Detailoverzicht van een ProBrandwacht Direct-aanvraag.',
   }
 }
-export const metadata: Metadata = getRouteMetadata('/admin/direct-requests/[id]');
 
 
 

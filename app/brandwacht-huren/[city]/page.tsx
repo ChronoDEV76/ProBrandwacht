@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
 import { cities } from '@/lib/cities'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
 const FALLBACK_DESCRIPTION =
@@ -32,7 +31,6 @@ export async function generateMetadata({
     },
   }
 }
-export const metadata: Metadata = getRouteMetadata('/brandwacht-huren/[city]');
 
 
 
