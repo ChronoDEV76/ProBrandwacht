@@ -60,7 +60,7 @@ export default function HomePage() {
         <LeadCalculator />
         <div className="rounded-3xl border border-brand-200 bg-white/90 p-6 text-center shadow-lg shadow-brand-100">
           <p className="text-xl font-semibold text-brand-900">
-            “Vandaag eerlijk. Morgen beter en veiliger.”
+            “Eerlijk werken. Eerlijk verdienen.”
           </p>
         </div>
       </div>
