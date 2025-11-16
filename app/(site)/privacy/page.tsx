@@ -1,13 +1,20 @@
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import type { Metadata } from 'next'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/privacy'
+const description =
+  'Zo gaat ProBrandwacht.nl om met persoonsgegevens, cookies en spoedaanvragen via Chrono4Solutions.'
 
-Zo gaat ProBrandwacht.nl om met persoonsgegevens, cookies en spoedaanvragen via Chrono4Solutions.',
+export const metadata: Metadata = {
+  title: 'Privacyverklaring ProBrandwacht',
+  description,
+  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
+  openGraph: {
+    title: 'Privacyverklaring ProBrandwacht',
+    description,
+    url: canonicalUrl,
   },
 }
-export const metadata: Metadata = getRouteMetadata('/privacy');
 
 
 
