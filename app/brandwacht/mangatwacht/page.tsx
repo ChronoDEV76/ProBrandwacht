@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BrandwachtStubPage, buildMetadata, type BrandwachtStubConfig } from '../common'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const config: BrandwachtStubConfig = {
   slug: 'mangatwacht',
@@ -31,8 +32,9 @@ const config: BrandwachtStubConfig = {
     },
   ],
 }
+export const metadata: Metadata = getRouteMetadata('/brandwacht/mangatwacht');
 
-export const metadata: Metadata = buildMetadata(config)
+
 
 export default function Page() {
   return <BrandwachtStubPage {...config} />

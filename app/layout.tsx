@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import dynamic from "next/dynamic";
 import SeoStructuredData from "@/components/SeoStructuredData";
 import { headers } from "next/headers";
+import { seoKeywordClusters } from '@/lib/seo/seo-keywords';
 
 const roboto = localFont({
   src: [{ path: "../public/fonts/Roboto-Regular.ttf", weight: "400", style: "normal" }],

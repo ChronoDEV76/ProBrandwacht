@@ -3,23 +3,12 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const AnalyticsClient = dynamic(() => import('./AnalyticsClient'), { ssr: false })
+export const metadata: Metadata = getRouteMetadata('/admin/analytics');
 
-export const metadata: Metadata = {
-  title: 'Share events debug | ProBrandwacht',
-  description: 'Bekijk live welke share_click events tijdens je sessie zijn geregistreerd voor testdoeleinden.',
-  robots: { index: false, follow: false },
-  openGraph: {
-    title: 'Share events debug | ProBrandwacht',
-    description: 'Bekijk live welke share_click events tijdens je sessie zijn geregistreerd voor testdoeleinden.',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Share events debug | ProBrandwacht',
-    description: 'Bekijk live welke share_click events tijdens je sessie zijn geregistreerd voor testdoeleinden.',
-  },
-}
+
 
 export default function AnalyticsDebugPage() {
   const heading = <h1 className="text-2xl font-semibold">Share events (session)</h1>

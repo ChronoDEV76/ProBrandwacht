@@ -3,44 +3,10 @@ import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { authoritativeSources } from '@/lib/seo/authoritative-sources'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/seo-resources');
 
-export const metadata: Metadata = {
-  title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
-  description:
-    'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  alternates: {
-    canonical: 'https://www.probrandwacht.nl/seo-resources',
-    languages: { 'nl-NL': 'https://www.probrandwacht.nl/seo-resources' },
-  },
-  openGraph: {
-    url: 'https://www.probrandwacht.nl/seo-resources',
-    title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
-    description:
-      'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
-    images: [
-      {
-        url: 'https://www.probrandwacht.nl/og-home.webp',
-        width: 1200,
-        height: 630,
-        alt: 'SEO bronnen voor brandwachtcontent',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Autoritaire bronnen voor brandwachtcontent | ProSafetyMatch',
-    description:
-      'Top 10 officiële bronnen (CBS, KVK, Belastingdienst e.a.) om je brandwachtartikelen te onderbouwen met betrouwbare data en regelgeving.',
-    images: ['https://www.probrandwacht.nl/og-home.webp'],
-  },
-}
+
 
 export default function SeoResourcesPage() {
   const breadcrumbItems = [

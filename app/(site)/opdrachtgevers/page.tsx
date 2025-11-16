@@ -5,52 +5,10 @@ import type { ReactNode } from "react"
 import { getSignupUrl } from "@/lib/config"
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/opdrachtgevers');
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.probrandwacht.nl"),
-  title: {
-    default: "Voor opdrachtgevers | ProBrandwacht",
-    template: "%s | ProBrandwacht",
-  },
-  description:
-    'ProBrandwacht werft zzp-brandwachten en opdrachtgevers voor ProSafetyMatch, het platform in ontwikkeling met eerlijk tariefinzicht en directe samenwerking. Tot de lancering kan je een directe inzet wens afhandelen via het actuele ProBrandwacht-netwerk.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  alternates: {
-    canonical: "/opdrachtgevers",
-    languages: {
-      "nl-NL": "/opdrachtgevers",
-    },
-  },
-  openGraph: {
-    url: "https://www.probrandwacht.nl/opdrachtgevers",
-    type: "website",
-    siteName: "ProBrandwacht.nl",
-    title: "Voor opdrachtgevers | ProBrandwacht",
-    description:
-      'ProBrandwacht werft voor ProSafetyMatch: duidelijk tarief, certificaten-inzicht en directe samenwerking via het huidige netwerk. Minder risico, meer motivatie en controle.',
-    images: [
-      {
-        url: "https://www.probrandwacht.nl/og-home.webp",
-        width: 1200,
-        height: 630,
-        alt: "Voor opdrachtgevers bij ProBrandwacht",
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Voor opdrachtgevers | ProBrandwacht',
-    description:
-      'ProBrandwacht werft voor ProSafetyMatch: duidelijk tarief, certificaten-inzicht en directe samenwerking via het huidige netwerk. Minder risico, meer motivatie en controle.',
-    images: ['https://www.probrandwacht.nl/og-home.webp'],
-  },
-}
+
 
 export default function OpdrachtgeversPage() {
   const signupUrl = getSignupUrl()

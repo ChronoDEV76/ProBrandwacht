@@ -4,13 +4,10 @@ import { notFound } from 'next/navigation'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import PbDirectForm from '@/components/pb-direct-form'
 import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/probrandwacht-direct-spoed');
 
-export const metadata: Metadata = {
-  title: 'ProSafetyMatch Direct — spoed (24/7) | ProBrandwacht',
-  description:
-    'Spoedaanvraag brandwacht(-en) via ProSafetyMatch Direct. Direct matchen / chatten via Slack en snelle bevestiging.',
-  robots: { index: false, follow: false },
-}
+
 
 export default function PbDirectPage() {
   if (!SPOED_ROUTE_ENABLED) {

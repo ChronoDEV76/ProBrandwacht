@@ -17,45 +17,9 @@ export function generateStaticParams() {
 }
 
 const resolveLabel = (city: CitySlug) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
+export const metadata: Metadata = getRouteMetadata('/steden/[city]');
 
-export function generateMetadata({ params }: { params: { city: string } }): Metadata {
-  const rawCity = params.city
-  if (!isCitySlug(rawCity)) {
-    const fallback = `https://www.probrandwacht.nl/steden/${rawCity}`
-    return {
-      title: 'Stad niet gevonden | ProBrandwacht.nl',
-      description: 'De opgevraagde stadspagina bestaat niet (meer).',
-      alternates: { canonical: fallback, languages: { 'nl-NL': fallback } },
-      other: { hreflang: 'nl-NL' },
-      openGraph: { url: fallback, title: 'Stad niet gevonden | ProBrandwacht.nl', description: 'De opgevraagde stadspagina bestaat niet (meer).' },
-    }
-  }
 
-  const city = rawCity as CitySlug
-  const label = resolveLabel(city)
-  const title = `Brandwacht tarieven ${label} | ProBrandwacht`
-  const description = `Indicatieve tariefbandbreedtes voor ${label} en duidelijke uitleg. Voor een persoonlijk PDF-rapport ga je naar de centrale berekening op de homepage.`
-  const canonical = `https://www.probrandwacht.nl/steden/${city}`
-
-  return {
-    title,
-    description,
-    alternates: { canonical, languages: { 'nl-NL': canonical } },
-    other: { hreflang: 'nl-NL' },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      images: [{ url: 'https://www.probrandwacht.nl/og-home.webp', width: 1200, height: 630, alt: `Brandwacht tarieven ${label}` }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['https://www.probrandwacht.nl/og-home.webp'],
-    },
-  }
-}
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const rawCity = params.city
@@ -182,6 +146,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 }
 
 import { notFound } from 'next/navigation'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const CITY_SLUG_SET = new Set<string>(CITY_SLUGS)
 

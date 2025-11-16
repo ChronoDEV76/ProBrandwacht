@@ -106,7 +106,6 @@ function normalizeImagePosition(value: unknown) {
   const trimmed = value.trim()
   return trimmed ? trimmed : undefined
 }
-
 export default async function BlogIndexPage({ searchParams }: { searchParams?: Record<string, string> }) {
   const cat = (searchParams?.cat as (typeof CATEGORIES)[number]) || 'Alle'
   const city = (searchParams?.city as (typeof CITIES)[number]) || 'Alle'

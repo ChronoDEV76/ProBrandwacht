@@ -1,33 +1,15 @@
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import type { Metadata } from 'next'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/privacy'
 
-export const metadata: Metadata = {
-  title: 'Privacy & cookies | ProBrandwacht.nl',
-  description:
-    'Lees hoe ProBrandwacht.nl met persoonsgegevens en cookies omgaat, inclusief de samenwerking met Chrono4Solutions voor spoedinzet.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
-  openGraph: {
-    url: canonicalUrl,
-    title: 'Privacy & cookies | ProBrandwacht.nl',
-    description:
-      'Heldere uitleg over gegevensverwerking, cookiegebruik en het delen van gegevens met Chrono4Solutions voor directe inzet.',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Privacy & cookies | ProBrandwacht.nl',
-    description:
-      'Zo gaat ProBrandwacht.nl om met persoonsgegevens, cookies en spoedaanvragen via Chrono4Solutions.',
+Zo gaat ProBrandwacht.nl om met persoonsgegevens, cookies en spoedaanvragen via Chrono4Solutions.',
   },
 }
+export const metadata: Metadata = getRouteMetadata('/privacy');
+
+
 
 export default function PrivacyPage() {
   const breadcrumbItems = [

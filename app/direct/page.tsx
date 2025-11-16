@@ -3,13 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import DirectRequestForm from "@/components/direct-request-form";
 import { SPOED_ROUTE_ENABLED } from "@/lib/featureFlags";
+import type { Metadata } from 'next'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/direct');
 
-export const metadata = {
-  title: "ProBrandwacht Direct — 24/7 spoedlijn | ProBrandwacht",
-  description:
-    "Direct inzetbare brandwachten bij spoed. Meld je aanvraag of start de spoedchat. Powered by Chrono4Solutions.",
-  robots: { index: true, follow: true },
-};
+
 
 export default function ProBrandwachtDirectPage() {
   if (!SPOED_ROUTE_ENABLED) {

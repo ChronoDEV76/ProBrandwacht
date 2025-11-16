@@ -1,20 +1,10 @@
 import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import type { Metadata } from 'next'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/probrandwacht-direct');
 
-export const metadata: Metadata = {
-  title: 'Directe inzet aanvragen | ProBrandwacht',
-  description:
-    'Snel gecertificeerde brandwachten via Chrono4Solutions. Vul je project in en we nemen direct contact op.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  robots: { index: true, follow: true },
-}
+
 
 export default function ProbrandwachtDirectPage() {
   const canonical = 'https://www.probrandwacht.nl/probrandwacht-direct'

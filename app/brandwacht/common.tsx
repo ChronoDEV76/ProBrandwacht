@@ -75,7 +75,7 @@ export function BrandwachtStubPage(config: BrandwachtStubConfig) {
         <p className="max-w-3xl text-slate-700">{config.hero.intro}</p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/opdrachtgevers/aanmelden"
+            href="/probrandwacht-direct"
             className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90"
           >
             Brandwacht aanvragen

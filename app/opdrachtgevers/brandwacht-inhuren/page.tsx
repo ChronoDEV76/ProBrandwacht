@@ -5,18 +5,13 @@ import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/opdrachtgevers/brandwacht-inhuren'
 const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
+const description =
+  'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.'
 
 export const metadata: Metadata = {
   title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
-  description:
-    'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
+  description,
+  keywords: ['brandwacht', 'brandwacht inhuren', 'brandwacht huren', 'DBA-proof brandwacht', 'brandwacht tarieven'],
   alternates: {
     canonical: canonicalUrl,
     languages: { 'nl-NL': canonicalUrl },
@@ -24,8 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: canonicalUrl,
     title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
-    description:
-      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
+    description,
     siteName: 'ProBrandwacht.nl',
     images: [
       {
@@ -41,8 +35,7 @@ export const metadata: Metadata = {
     site: '@ProBrandwacht',
     creator: '@ProBrandwacht',
     title: 'Brandwacht inhuren – eerlijk & DBA-proof | ProBrandwacht',
-    description:
-      'Huur gecertificeerde (ZZP) brandwachten zonder marges of bemiddelaars. Eerlijk tarief, DBA-proof samenwerking en direct contact met professionals.',
+    description,
     images: [ogImage],
   },
 }
@@ -156,7 +149,6 @@ const serviceSchema = {
     description: 'Heldere kostenopbouw met directe contracten.',
   },
 }
-
 export default function BrandwachtInhurenOpdrachtgeversPage() {
   return (
     <main className="mx-auto w-full min-h-full max-w-5xl space-y-12 px-4 py-10">

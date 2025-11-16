@@ -1,0 +1,28 @@
+name: Tone of Voice Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  tone-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22" # of "20" als je liever LTS draait
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tone checker
+        run: npm run tone-check
+

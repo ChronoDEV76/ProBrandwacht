@@ -3,37 +3,12 @@ import Link from 'next/link'
 import Prose from '@/components/prose'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/missie'
+export const metadata: Metadata = getRouteMetadata('/missie');
 
-export const metadata: Metadata = {
-  title: 'Missie | ProBrandwacht.nl',
-  description:
-    'De nieuwe standaard voor veiligheids professionals in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'escrow brandwacht',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
-  other: { hreflang: 'nl-NL' },
-  openGraph: {
-    title: 'Missie | ProBrandwacht.nl',
-    description:
-      'De nieuwe standaard voor veiligheids professionals in Nederland: eerlijk, duidelijk en betrouwbaar voor professionals én opdrachtgevers.',
-    url: canonicalUrl,
-    images: [{ url: '/og-home.webp', width: 1200, height: 630, alt: 'Missie van ProBrandwacht.nl' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@ProBrandwacht',
-    creator: '@ProBrandwacht',
-    images: ['/og-home.webp'],
-  },
-}
+
 
 export default function ManifestPage() {
   const breadcrumbItems = [
@@ -180,7 +155,7 @@ export default function ManifestPage() {
             Meld je aan (zzp)
           </Link>
           <Link
-            href="/opdrachtgevers/aanmelden"
+            href="/probrandwacht-direct"
             prefetch={false}
             className="flex h-10 items-center justify-center rounded-md border border-slate-200 px-3 text-sm font-semibold text-slate-800 transition hover:bg-white"
           >

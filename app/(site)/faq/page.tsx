@@ -2,57 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import faqContent from '@/content/faq.json'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/faq'
+export const metadata: Metadata = getRouteMetadata('/faq');
 
-export const metadata: Metadata = {
-  title: 'FAQ | ProBrandwacht.nl',
-  description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
-  keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'DBA-proof brandwacht',
-    'brandwacht tarieven',
-  ],
-  alternates: { canonical: canonicalUrl, languages: { 'nl-NL': canonicalUrl } },
-  other: { hreflang: 'nl-NL' },
-  openGraph: {
-    url: canonicalUrl,
-    title: 'FAQ | ProBrandwacht.nl',
-    description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
-    images: [
-      {
-        url: 'https://www.probrandwacht.nl/og-home.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Veelgestelde vragen over brandwacht inhuren',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'FAQ | ProBrandwacht.nl',
-    description: 'Antwoorden op veelgestelde vragen over brandwachten voor evenementen, bouw en industrie.',
-  },
-}
 
-type FAQItem = {
-  id?: string
-  question: string
-  summary?: string
-  answer: string[]
-  more?: { href: string; label: string }
-}
-
-type FAQSection = {
-  title: string
-  items: FAQItem[]
-}
-
-const sections = faqContent as FAQSection[]
 
 export default function FAQPage() {
+  const sections = faqContent
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

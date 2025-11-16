@@ -8,6 +8,8 @@ import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import { getCityBySlug } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 import { CITY_PAGES_ENABLED } from '@/lib/featureFlags'
+import { cityCopy } from '@/lib/city-copy'
+import ReactMarkdown from 'react-markdown'
 
 const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
 
@@ -33,15 +35,24 @@ export async function generateMetadata({
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
-  const title = `Brandwacht inhuren ${cityName} – Het alternatieve brandwachtplatform | ProBrandwacht.nl`
-  const description = `Vind straks snel een brandwacht in ${cityName} via het alternatieve brandwachtplatform. Eerlijke tarieven en certificaat-checks.`
+
+  const copy = cityCopy[city]
+
+  const fallbackTitle = `Brandwacht inhuren ${cityName} – zzp-brandwachten voor events, bouw en industrie | ProBrandwacht.nl`
+  const fallbackDescription = `Brandwacht nodig in ${cityName}? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, duidelijke afspraken.`
+
+  const title = copy?.metaTitle ?? fallbackTitle
+  const description = copy?.metaDescription ?? fallbackDescription
+
   const keywords = [
     `brandwacht ${cityName}`,
     `brandwacht inhuren ${cityName}`,
     'brandwacht platform',
+    'zzp brandwacht',
   ]
   const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
   const canonical = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
+
   return {
     title,
     description,
@@ -75,15 +86,15 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
 
-  // CTA’s
-  const opdrachtgeverSignupUrl = getSignupUrl()            // primaire doelgroep van deze pagina
-  const zzpSignupUrl = '/zzp/aanmelden'                    // secundaire CTA waar relevant
+  const copy = cityCopy[city]
 
+  const opdrachtgeverSignupUrl = getSignupUrl()
+  const zzpSignupUrl = '/zzp/aanmelden'
   const pageUrl = `https://www.probrandwacht.nl/brandwacht-inhuren/${city}`
 
   const heroHeading = (
     <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Brandwacht inhuren in {cityName}
+      {copy?.h1 ? copy.h1 : <>Brandwacht inhuren in {cityName}</>}
     </h1>
   )
 
@@ -92,45 +103,39 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const faqs: FAQItem[] = [
     {
       q: `Wanneer is een brandwacht verplicht bij evenementen in ${cityName}?`,
-      a: `Bij vergunningsplichtige evenementen en zodra de veiligheidsregio dit voorschrijft (o.a. bij verhoogd risico, grote publieksstromen of pyrotechniek).`,
+      a: `Bij vergunningsplichtige evenementen en wanneer de veiligheidsregio dit voorschrijft, bijvoorbeeld bij verhoogd risico, grote publieksstromen of gebruik van bijzondere effecten. De exacte eisen lopen per situatie en gemeente uiteen.`,
       ctaUrl: opdrachtgeverSignupUrl,
-      ctaLabel: 'Meld je bedrijf aan'
+      ctaLabel: 'Meld je bedrijf aan',
     },
     {
       q: `Wat kost een brandwacht in ${cityName}?`,
-      a: `Gemiddeld €40–€55 per uur voor evenementen en bouw; specialistische profielen zoals Manschap A/B of industrieel toezicht lopen door tot circa €70.`,
+      a: `De meeste zzp-brandwachten werken met uurtarieven grofweg tussen €40 en €60, afhankelijk van soort inzet, risico, duur en werktijden. Het tarief spreek je altijd vooraf samen af met de professional.`,
       ctaUrl: opdrachtgeverSignupUrl,
-      ctaLabel: 'Vraag een profieloverzicht aan'
+      ctaLabel: 'Vraag een indicatie aan',
     },
     {
       q: `Mag een zzp-brandwacht ingezet worden op bouwplaatsen?`,
-      a: `Ja, mits de vereiste certificaten (bijv. VCA, BHV, EHBO) en projectvoorwaarden aanwezig zijn.`,
+      a: `Ja, mits de vereiste certificaten aanwezig zijn en de projectvoorwaarden dat toelaten. Denk aan Manschap A/B en aanvullende eisen zoals VCA, BHV of EHBO, afhankelijk van de situatie.`,
       ctaUrl: opdrachtgeverSignupUrl,
-      ctaLabel: 'Bekijk mogelijkheden'
+      ctaLabel: 'Bespreek je project',
     },
     {
       q: `Wat is een industriële brandwacht?`,
-      a: `Een specialist die toezicht houdt bij risicovolle werkzaamheden (zoals heetwerk) in een industriële omgeving en kan ingrijpen bij calamiteiten.`,
+      a: `Een brandwacht die gewend is aan werken in industriële omgevingen, bijvoorbeeld bij heetwerk, onderhoudstops of besloten ruimten. Deze professionals kennen de procedures en veiligheidsafspraken op dit soort locaties.`,
       ctaUrl: opdrachtgeverSignupUrl,
-      ctaLabel: 'Vind industriële profielen'
-    },
-    {
-      q: `Word ik via ProBrandwacht altijd betaald als brandwacht?`,
-      a: `Ja. We stemmen betalingen rechtstreeks af tussen opdrachtgever en professional zodat beide partijen vooraf duidelijkheid hebben.`,
-      ctaUrl: zzpSignupUrl,
-      ctaLabel: 'Meld je aan als professional'
+      ctaLabel: 'Vind industriële profielen',
     },
     {
       q: `Kan ik als zzp-brandwacht opdrachten krijgen via ProBrandwacht?`,
-      a: `Ja. Meld je aan voor vroege toegang en zichtbaarheid richting opdrachtgevers.`,
+      a: `Ja. ProBrandwacht brengt opdrachtgevers en zzp-brandwachten bij elkaar. Hoeveel opdrachten er zijn, hangt af van periode, regio en type inzet.`,
       ctaUrl: zzpSignupUrl,
-      ctaLabel: 'Meld je aan als professional'
+      ctaLabel: 'Meld je aan als professional',
     },
     {
       q: 'Hoe lever ik certificaten aan?',
-      a: 'Upload certificaten bij voorkeur als PDF voor automatische controle. PNG of JPG kan ook: na je iDIN-verificatie checken we ze via registers (o.a. Centraal Diploma Register VCA) en verwijderen we kopieën na goedkeuring. Herbeoordeling minimaal jaarlijks.',
+      a: 'Certificaten lever je rechtstreeks aan bij ProBrandwacht en/of de opdrachtgever, meestal als PDF of duidelijke scan. Samen kijken jullie of de certificaten passen bij de gevraagde inzet.',
       ctaUrl: opdrachtgeverSignupUrl,
-      ctaLabel: 'Start met een proefopdracht'
+      ctaLabel: 'Stel je vraag',
     },
   ]
 
@@ -181,18 +186,24 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       <CityHero cityName={cityName} heading={heroHeading} />
 
+      {copy?.intro ? (
+        <p className="max-w-2xl text-sm text-slate-700">{copy.intro}</p>
+      ) : null}
+
+      {/* Voor opdrachtgevers & professionals */}
       <section className="grid gap-4 md:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase text-brand-700">Voor opdrachtgevers</p>
-          <h2 className="mt-1 text-xl font-semibold text-slate-900">Direct toegang tot gecertificeerde teams</h2>
+          <h2 className="mt-1 text-xl font-semibold text-slate-900">Direct schakelen met rijksgediplomeerde brandwachten</h2>
           <p className="mt-2 text-sm text-slate-600">
-            Zie realtime wie er beschikbaar is, leg betaalafspraken vast en houd je dossiers DBA-proof terwijl we naar ProSafetyMatch toewerken.
+            Je wilt geen omwegen, maar iemand die weet wat er nodig is op jouw locatie. Via ProBrandwacht kom je in contact met
+            zzp-brandwachten die gewend zijn aan evenementen, bouw en industriële omgevingen.
           </p>
           <ul className="mt-3 space-y-1 text-sm text-slate-700">
-            <li>• Tariefopbouw gedeeld met finance & inkoop</li>
-            <li>• Certificaten geborgd via iDIN + documentcontrole</li>
-            <li>• Eén aanvraag voor geplande en spoed-inzet</li>
-            <li>• Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€42/u (15% fee + 1,5% escrow) — alles zichtbaar voor beide kanten</li>
+            <li>• Minimaal rijksgediplomeerd Manschap A/B</li>
+            <li>• Tarief en taken spreek je vooraf rechtstreeks af</li>
+            <li>• Geschikt voor korte klussen én langere trajecten</li>
+            <li>• Heldere afspraken over bereikbaarheid en aanspreekpunt</li>
           </ul>
           <div className="mt-4 flex flex-wrap gap-2">
             <a
@@ -208,17 +219,19 @@ export default function CityPage({ params }: { params: { city: string } }) {
             </Link>
           </div>
         </div>
+
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <p className="text-xs font-semibold uppercase text-brand-700">Voor professionals</p>
-          <h2 className="mt-1 text-xl font-semibold text-slate-900">Word onderdeel van ProSafetyMatch</h2>
+          <h2 className="mt-1 text-xl font-semibold text-slate-900">Minder lagen, meer zicht op je opdrachtgevers</h2>
           <p className="mt-2 text-sm text-slate-600">
-            Bouw je dossier nu al op via ProBrandwacht Direct. Zodra ProSafetyMatch live is schuiven je reviews, certificaten en escrow-geschiedenis automatisch mee.
+            ProBrandwacht richt zich op zzp-brandwachten die hun vak serieus nemen. Je staat direct in contact met opdrachtgevers
+            en kunt samen afspraken maken die passen bij jouw ervaring en beschikbaarheid.
           </p>
           <ul className="mt-3 space-y-1 text-sm text-slate-700">
-            <li>• Eerlijke vergoeding: 15% platformfee + 1,5–2% escrow</li>
-            <li>• Direct contact met opdrachtgevers, geen tussenlaag</li>
-            <li>• Bewijs van opdrachten en betalingen in één dashboard</li>
-            <li>• Voorbeeld: klant betaalt €50/u ➜ jij houdt ±€42/u over (15% fee + 1,5% escrow) — nog steeds ±€10 meer dan via bureaus</li>
+            <li>• Direct contact met opdrachtgevers</li>
+            <li>• Nuchtere, duidelijke afspraken over uurtarief en taken</li>
+            <li>• Geschikt voor zowel bij-klussen als vaste opdrachtgevers</li>
+            <li>• Platform in ontwikkeling dat steeds meer ondersteuning biedt</li>
           </ul>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
@@ -228,85 +241,85 @@ export default function CityPage({ params }: { params: { city: string } }) {
               Meld je aan als zzp-brandwacht
             </Link>
             <a href="/#waarde-berekenen" className="text-sm font-semibold text-slate-700 underline">
-              Bereken je netto waarde
+              Bekijk wat je waard bent
             </a>
           </div>
         </div>
       </section>
 
+      {/* Korte uitleg ProBrandwacht / ProSafetyMatch */}
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Waarom ProSafetyMatch straks het verschil maakt</h2>
+        <h2 className="text-xl font-semibold text-slate-900">ProBrandwacht nu, ProSafetyMatch in ontwikkeling</h2>
         <p className="mt-2 text-sm text-slate-600">
-          ProBrandwacht werft vandaag al opdrachtgevers én professionals voor ProSafetyMatch, het platform waar dezelfde dossiers straks automatisch worden beheerd. Geen nieuwe onboarding, wel meer automatisering.
+          ProBrandwacht is de huidige schakel tussen opdrachtgevers en zzp-brandwachten. Tegelijkertijd werken we aan
+          ProSafetyMatch: een platform dat deze samenwerking stap voor stap verder structureert en inzichtelijk maakt.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <BenefitCard title="Nu via ProBrandwacht Direct" copy="Inzet zoals u gewend bent van bureaus, maar met een eerlijkere verdeling richting de uitvoerende professional." />
-          <BenefitCard title="Straks via ProSafetyMatch" copy="Automatische escrow, self-service matching en gedeelde auditlogs voor opdrachtgever én zzp’er, inclusief dashboards met innovatieve tools." />
+          <BenefitCard
+            title="Vandaag: direct inzetbaar"
+            copy="Je schakelt met echte mensen en maakt concrete afspraken over inzet, tarief en planning. Zonder ingewikkelde constructies."
+          />
+          <BenefitCard
+            title="Morgen: meer structuur en overzicht"
+            copy="We bouwen aan tooling en platformfuncties die dossieropbouw en samenwerking makkelijker maken. Zonder grote beloftes: we verbeteren liever in stappen dan alles tegelijk te willen."
+          />
         </div>
       </section>
 
-      <div className="rounded-3xl border border-brand-200 bg-brand-50 p-5 text-center text-sm font-semibold text-brand-800">
-        Betaal marktconform ±€50/u, laat de professional ±€42/u netto overhouden en geef direct €10+ per uur meer dan een traditioneel bureau (≈€30–€32/u). Dat is tot €400 extra beloning voor elke 40-urige week én een onweerstaanbare propositie richting de beste brandwachten.
-      </div>
+      {/* City-specifieke longform body als Markdown */}
+      {copy?.body && (
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-semibold text-slate-900">
+            Meer over brandwacht inhuren in {cityName}
+          </h2>
+          <div className="prose prose-sm max-w-none text-slate-700">
+            <ReactMarkdown>{copy.body}</ReactMarkdown>
+          </div>
+        </section>
+      )}
 
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Veel aangevraagde inzet in {cityName}</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          De meeste aanvragen gaan over <strong>brandwacht zzp inhuren</strong> voor specifieke situaties. Dit zijn de snelst groeiende categorieën in {cityName}:
-        </p>
-        <ul className="mt-4 space-y-2 text-sm text-slate-700">
-          <li>• Heetwerk en preventiebrandwacht bij bouw en verbouwprojecten.</li>
-          <li>• Laden/lossen van gevaarlijke stoffen en terminal-toezicht.</li>
-          <li>• Tijdelijke nacht- of weekendploegen tijdens shutdowns en events.</li>
-          <li>• Gasmeting, mangatwacht en toezicht in besloten ruimten.</li>
-        </ul>
-      </section>
+      {/* City-specifieke case */}
+      {copy?.localCaseTitle && copy?.localCaseBody && (
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-slate-900">Praktijkvoorbeeld uit {cityName}</h2>
+          <h3 className="mt-2 text-sm font-semibold text-slate-800">{copy.localCaseTitle}</h3>
+          <p className="mt-2 text-sm text-slate-600">{copy.localCaseBody}</p>
+        </section>
+      )}
 
+      {/* Formulier */}
       <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Start je ProBrandwacht Direct aanvraag</h2>
+        <h2 className="text-xl font-semibold text-slate-900">Start je aanvraag via ProBrandwacht</h2>
+        <p className="mt-2 text-sm text-slate-600">
+          Geef kort aan wat je zoekt, voor welke periode en in welke omgeving. We kijken mee of er één of meerdere zzp-brandwachten
+          aansluiten bij jouw vraag.
+        </p>
         <div className="mt-4">
           <ProbrandwachtDirectForm />
         </div>
       </section>
 
-      {/* Context */}
-      <p className="text-slate-600 max-w-2xl">
-        In {cityName} verlies je vaak tijd en kwaliteit aan tussenlagen. ProSafetyMatch maakt straks tarief,
-        certificaten en dossierafspraken in één oogopslag zichtbaar zodat je direct schakelt met de juiste professionals.
+      {/* Context & share */}
+      <p className="max-w-2xl text-sm text-slate-600">
+        In {cityName} is de behoefte aan goede brandwachten groot, maar je wilt geen onnodige schakels. ProBrandwacht helpt om
+        opdrachtgevers en professionals op een nuchtere, overzichtelijke manier bij elkaar te brengen.
       </p>
       <p className="text-sm text-slate-600">
-        Tarieven bepaal je samen. Wij tonen eerlijk hoe de kosten verdeeld zijn, zonder verborgen marges.
-        <br className="hidden sm:block" /> 0% verborgen marges — het uurtarief gaat rechtstreeks naar de professional.
+        Afspraken over tarief, taken en tijden maak je altijd vooraf en rechtstreeks met de betrokken partijen. Zo blijft iedereen
+        eigenaar van zijn eigen werk en blijft het overzichtelijk.
       </p>
 
-      {/* Share */}
       <p className="text-sm text-slate-600">Deel deze pagina:</p>
       <ShareBar
         small
         url={pageUrl}
-        title={`Vind straks snel een brandwacht in ${cityName} | ProBrandwacht.nl`}
+        title={`Vind een brandwacht in ${cityName} | ProBrandwacht.nl`}
         utmCampaign="city_share"
       />
 
-      {/* Domeinen */}
-      <div className="grid gap-6 sm:grid-cols-3">
-        <DomainCard
-          title="Evenementen"
-          copy="Toezicht op publieksveiligheid, crowd control en noodprocedures. Bij vergunningsplichtige events vaak verplicht."
-        />
-        <DomainCard
-          title="Bouw"
-          copy="Bewaking bij risicovolle werkzaamheden, tijdelijke brandrisico’s en inbedrijfstellingen. Let op geldige VCA en certificaten."
-        />
-        <DomainCard
-          title="Industrie"
-          copy="Industriële brandwachten voor heetwerk, besloten ruimten en onderhoudsstops. Ervaring met procedures is cruciaal."
-        />
-      </div>
-
       {/* FAQ */}
       <div>
-        <h3 className="text-xl font-semibold mb-2">Veelgestelde vragen</h3>
+        <h3 className="mb-2 text-xl font-semibold">Veelgestelde vragen</h3>
         <ul className="space-y-4">
           {faqs.map((f, i) => (
             <li key={i}>
@@ -331,7 +344,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       {/* Verder lezen */}
       <div>
-        <h3 className="text-xl font-semibold mb-2">Verder lezen</h3>
+        <h3 className="mb-2 text-xl font-semibold">Verder lezen</h3>
         <ul className="list-disc pl-5 text-sm text-slate-700">
           <li>
             <Link className="underline" href="/blog/wat-kost-een-brandwacht-in-2025">
@@ -358,20 +371,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
 /* -------------------------- Kleine componenten -------------------------- */
 
-function DomainCard({ title, copy }: { title: string; copy: string }) {
-  return (
-    <div className="rounded-xl border p-5 bg-white shadow-sm">
-      <div className="flex items-start gap-2">
-        <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-brand-700" aria-hidden />
-        <div>
-          <h2 className="font-semibold">{title}</h2>
-          <p className="text-sm text-slate-600 mt-1">{copy}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function BenefitCard({ title, copy }: { title: string; copy: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
@@ -380,3 +379,4 @@ function BenefitCard({ title, copy }: { title: string; copy: string }) {
     </div>
   )
 }
+

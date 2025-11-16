@@ -2,40 +2,12 @@ import type { Metadata } from 'next'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import ClientSignupForm from '@/components/opdrachtgevers/client-signup-form'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/opdrachtgevers/aanmelden'
+export const metadata: Metadata = getRouteMetadata('/opdrachtgevers/aanmelden');
 
-export const metadata: Metadata = {
-  title: 'Aanmelden als opdrachtgever | ProBrandwacht.nl',
-  description:
-    'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
-  keywords: ["brandwacht","brandwacht inhuren","brandwacht huren","DBA-proof brandwacht","brandwacht tarieven"],
-  alternates: {
-    canonical: canonicalUrl,
-    languages: { 'nl-NL': canonicalUrl },
-  },
-  openGraph: {
-    url: canonicalUrl,
-    title: 'Aanmelden als opdrachtgever | ProBrandwacht.nl',
-    description:
-      'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
-    images: [
-      {
-        url: 'https://www.probrandwacht.nl/og-home.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Aanmelden als opdrachtgever via ProBrandwacht',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Aanmelden als opdrachtgever | ProBrandwacht.nl',
-    description:
-      'Registreer je als opdrachtgever voor ProSafetyMatch. Lever bedrijfsgegevens veilig aan en ontvang updates zodra je dashboard beschikbaar is.',
-    images: ['https://www.probrandwacht.nl/og-home.webp'],
-  },
-}
+
 
 export default function OpdrachtgeverAanmeldenPage() {
   const breadcrumbItems = [

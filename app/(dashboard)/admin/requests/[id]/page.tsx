@@ -1,11 +1,10 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/admin/requests/[id]');
 
-export const metadata: Metadata = {
-  title: 'Aanvraag • Admin',
-  robots: { index: false, follow: false },
-}
+
 
 export default async function AdminRequestPage({ params }: { params: { id: string } }) {
   const supabase = getSupabaseAdmin()

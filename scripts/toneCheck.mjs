@@ -8,7 +8,7 @@
  * CLI:
  *   --root=<dir>               (default: ".")
  *   --exts=.ts,.tsx,.md,.mdx   (default)
- *   --ignore=dir1,dir2         (default: node_modules,.next,build,dist,.git)
+ *   --ignore=dir1,dir2         (default: node_modules,.next,build,dist,.git,docs)
  *   --exitOnIssues=1           (default: 1)
  *   --json=1                   (default: 0)
  */
@@ -24,14 +24,23 @@ const argv = Object.fromEntries(
   })
 );
 
-const ROOT = typeof argv.root === "string" ? path.resolve(argv.root) : process.cwd();
-const EXTS = (argv.exts || ".ts,.tsx,.md,.mdx").split(",").map((s) => s.trim());
+const ROOT =
+  typeof argv.root === "string" ? path.resolve(argv.root) : process.cwd();
+const EXTS = (argv.exts || ".ts,.tsx,.md,.mdx")
+  .split(",")
+  .map((s) => s.trim());
 const IGNORE_DIRS = new Set(
-  (argv.ignore || "node_modules,.next,build,dist,.git,docs").split(",").map((s) => s.trim())
+  (argv.ignore || "node_modules,.next,build,dist,.git,docs")
+    .split(",")
+    .map((s) => s.trim())
 );
 const EXIT_ON_ISSUES = String(argv.exitOnIssues ?? "1") === "1";
 const JSON_OUT = String(argv.json ?? "0") === "1";
-const ALLOW_WORDS = new Set(["schijnzelfstandigheid"]);
+
+// Als we echt iets *nooit* willen flaggen, kan dat hier.
+// Voor nu leeg laten: alles wordt gewoon geëvalueerd.
+const ALLOW_WORDS = new Set([]);
+
 const TLDR_DOUBLE_WARN = true;
 
 // Tone rules (afgestemd op docs/TONE_OF_VOICE.md)
@@ -54,7 +63,7 @@ const HARD_WORDS = [
   "tussenpartij",
   "uitzendmodel",
   "recruiter",
-  "commercieel marge",
+  "commerciële marge",
 ];
 
 const SUGGESTIONS = {
@@ -76,7 +85,7 @@ const SUGGESTIONS = {
   tussenpartij: "intermediair",
   uitzendmodel: "klassiek bemiddelingsmodel",
   recruiter: "bemiddelaar / intermediair",
-  "commercieel marge": "organisatie-opslag / bemiddelingsfee",
+  "commerciële marge": "organisatie-opslag / bemiddelingsfee",
 };
 
 // Positieve signalen (goed voor TOV-score)
@@ -107,6 +116,10 @@ function walk(dir, out = []) {
   return out;
 }
 
+function escapeForRegex(word) {
+  return word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function scanFile(file) {
   const text = fs.readFileSync(file, "utf8");
   const lines = text.split(/\r?\n/);
@@ -120,9 +133,10 @@ function scanFile(file) {
 
     HARD_WORDS.forEach((word) => {
       if (ALLOW_WORDS.has(word)) return;
-      const pattern = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+      const pattern = new RegExp(`\\b${escapeForRegex(word)}\\b`, "i");
       if (pattern.test(line)) {
-        const suggestion = SUGGESTIONS[word] ?? "(herformuleer richting systeemtaal)";
+        const suggestion =
+          SUGGESTIONS[word] ?? "(herformuleer richting systeemtaal)";
         issues.push({
           file,
           line: idx + 1,
@@ -139,18 +153,22 @@ function scanFile(file) {
     });
   });
 
-  if (TLDR_DOUBLE_WARN && path.extname(file) === '.mdx') {
-    const hasTag = /<Tldr[\s>]/i.test(text)
-    const hasFrontmatter = /^---[\s\S]*?\btldr\s*:\s*.+?[\r\n]/m.test(text)
+  // TL;DR dubbele bron check in MDX
+  if (TLDR_DOUBLE_WARN && path.extname(file) === ".mdx") {
+    const hasTag = /<Tldr[\s>]/i.test(text);
+    const hasFrontmatter =
+      /^---[\s\S]*?\btldr\s*:\s*.+?[\r\n]/m.test(text);
     if (hasTag && hasFrontmatter) {
       issues.push({
         file,
         line: 1,
-        found: 'TLDR_DUPLICATE',
-        suggestion: 'Verwijder <Tldr> uit de body of gebruik alleen frontmatter tldr; houd één bron aan.',
-        preview: 'MDX bevat zowel frontmatter `tldr:` als een `<Tldr>`-component.',
-        ext: '.mdx',
-      })
+        found: "TLDR_DUPLICATE",
+        suggestion:
+          "Verwijder <Tldr> uit de body of gebruik alleen frontmatter tldr; houd één bron aan.",
+        preview:
+          "MDX bevat zowel frontmatter `tldr:` als een `<Tldr>`-component.",
+        ext: ".mdx",
+      });
     }
   }
 
@@ -182,12 +200,20 @@ for (const file of files) {
 
 const totalFiles = files.length;
 const totalIssues = allIssues.length;
-const issuesInContent = allIssues.filter((i) => CONTENT_EXTS.has(i.ext)).length;
+const issuesInContent = allIssues.filter((i) =>
+  CONTENT_EXTS.has(i.ext)
+).length;
 const issuesInCode = totalIssues - issuesInContent;
-const weightedIssues = issuesInContent + issuesInCode * CODE_PENALTY_MULTIPLIER;
-const wordsPerIssue = totalIssues > 0 ? Math.round(allWords / totalIssues) : null;
-const wordsPerWeightedIssue = weightedIssues > 0 ? Math.round(allWords / weightedIssues) : null;
-const penalty = Math.min(100, Math.round((weightedIssues / Math.max(1, allWords)) * 100000));
+const weightedIssues =
+  issuesInContent + issuesInCode * CODE_PENALTY_MULTIPLIER;
+const wordsPerIssue =
+  totalIssues > 0 ? Math.round(allWords / totalIssues) : null;
+const wordsPerWeightedIssue =
+  weightedIssues > 0 ? Math.round(allWords / weightedIssues) : null;
+const penalty = Math.min(
+  100,
+  Math.round((weightedIssues / Math.max(1, allWords)) * 100000)
+);
 const toneScore = Math.max(0, 100 - penalty);
 
 const report = {
@@ -207,31 +233,44 @@ const report = {
     count: seenPositives.size,
   },
   toneScore,
-  findings: allIssues.map(({ file, line, found, suggestion, preview }) => ({
-    file,
-    line,
-    found,
-    suggestion,
-    preview,
-  })),
+  findings: allIssues.map(
+    ({ file, line, found, suggestion, preview }) => ({
+      file,
+      line,
+      found,
+      suggestion,
+      preview,
+    })
+  ),
 };
 
 // Output
 if (JSON_OUT) {
   console.log(JSON.stringify(report, null, 2));
 } else {
-  console.log(`📄 Files: ${report.filesScanned}   🔤 Words: ${report.wordsScanned}
+  console.log(
+    `📄 Files: ${report.filesScanned}   🔤 Words: ${report.wordsScanned}
 ⚠️ Issues: ${report.issues.total} (content: ${report.issues.inContent}, code: ${report.issues.inCode})
 📊 Dichtheid: ${report.issues.wordsPerIssue ?? "∞"} woorden/issue
-✅ Positieve signalen (${report.positives.count}): ${report.positives.uniqueSignals.join(", ") || "—"}
-🏁 Tone Score: ${report.toneScore}/100`);
+✅ Positieve signalen (${report.positives.count}): ${
+      report.positives.uniqueSignals.join(", ") || "—"
+    }
+🏁 Tone Score: ${report.toneScore}/100`
+  );
 
   if (allIssues.length) {
     console.log("\nDetails:\n" + formatIssues(allIssues));
-    console.log("\n🧭 Tip: herformuleer volgens docs/TONE_OF_VOICE.md.");
+    console.log(
+      "\n🧭 Tip: herformuleer volgens docs/TONE_OF_VOICE.md (systeemtaal, neutraal, pro-samenwerking)."
+    );
   } else {
-    console.log("\n✅ Geen toonafwijkingen gevonden. Je copy is netjes in balans!");
+    console.log(
+      "\n✅ Geen toonafwijkingen gevonden. Je copy is netjes in balans!"
+    );
   }
 }
 
-if (EXIT_ON_ISSUES && allIssues.length > 0) process.exitCode = 1;
+if (EXIT_ON_ISSUES && allIssues.length > 0) {
+  process.exitCode = 1;
+}
+
