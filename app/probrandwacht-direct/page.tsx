@@ -20,7 +20,7 @@ export default function ProbrandwachtDirectPage() {
   const canonical = 'https://www.probrandwacht.nl/probrandwacht-direct'
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-10 px-4 py-10">
+    <main className="mx-auto w-full max-w-3xl space-y-8 px-4 py-10 sm:space-y-12 sm:px-6">
       <StructuredBreadcrumbs
         items={[
           { name: 'Home', url: 'https://www.probrandwacht.nl/' },
@@ -29,33 +29,20 @@ export default function ProbrandwachtDirectPage() {
       />
 
       {/* HERO – identiek aan spoedstijl */}
-      <section className="relative overflow-hidden rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200 md:p-10">
+      <section className="relative overflow-hidden rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-200 sm:p-8 md:p-10">
         <div className="max-w-3xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+          <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             ProBrandwacht Direct — geplande inzet
           </h1>
 
-          <p className="mt-3 max-w-2xl text-slate-700">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-700">
             <strong>Reguliere aanvragen</strong> lopen via ProBrandwacht Direct. Je aanvraag
             wordt opgevolgd door <strong>Chrono4Solutions</strong>; DBA-proof afspraken,
             gecertificeerde professionals en betrouwbare uitvoering.
           </p>
 
-          {/* badges/pills */}
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Directe opvolging
-            </span>
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              DBA-proof afspraken
-            </span>
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Gecertificeerde professionals
-            </span>
-          </div>
-
           {/* mini-uitleg onder de vouw op mobiel – zelfde patroon als spoed */}
-          <p className="mt-3 text-xs text-slate-600 sm:text-sm">
+          <p className="mt-4 text-sm text-slate-600 sm:text-base">
             <span className="font-medium">ProBrandwacht Direct</span> = geplande inzet via formulier en snelle opvolging.
           </p>
         </div>

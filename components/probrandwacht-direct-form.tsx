@@ -27,6 +27,9 @@ export default function ProbrandwachtDirectForm() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const inputClasses =
+    'mt-1 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base shadow-sm transition focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100'
+  const labelClasses = 'block text-sm font-semibold text-slate-800'
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -94,7 +97,10 @@ export default function ProbrandwachtDirectForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 rounded-3xl border border-slate-100 bg-white p-4 shadow-lg shadow-slate-200 sm:p-6"
+    >
       {/* Honeypot veld */}
       <div className="hidden">
         <label htmlFor="website">Website (laat leeg)</label>
@@ -102,100 +108,62 @@ export default function ProbrandwachtDirectForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700">Bedrijf</label>
-        <input
-          name="company"
-          required
-          autoComplete="organization"
-          className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-        />
+        <label className={labelClasses}>Bedrijf</label>
+        <input name="company" required autoComplete="organization" className={inputClasses} />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Contactpersoon</label>
-          <input
-            name="contact"
-            required
-            autoComplete="name"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Contactpersoon</label>
+          <input name="contact" required autoComplete="name" className={inputClasses} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">E-mail</label>
-          <input
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>E-mail</label>
+          <input name="email" type="email" required autoComplete="email" className={inputClasses} />
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Telefoon</label>
-          <input
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Telefoon</label>
+          <input name="phone" type="tel" autoComplete="tel" className={inputClasses} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">Locatie / plaats</label>
-          <input
-            name="city"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Locatie / plaats</label>
+          <input name="city" className={inputClasses} />
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Startdatum</label>
-          <input
-            name="start_date"
-            type="date"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Startdatum</label>
+          <input name="start_date" type="date" className={inputClasses} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">Aantal dagen</label>
-          <input
-            name="duration_days"
-            type="number"
-            min={1}
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Aantal dagen</label>
+          <input name="duration_days" type="number" min={1} className={inputClasses} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">Uren per dag</label>
-          <input
-            name="hours_per_day"
-            type="number"
-            min={1}
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
-          />
+          <label className={labelClasses}>Uren per dag</label>
+          <input name="hours_per_day" type="number" min={1} className={inputClasses} />
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Benodigde certificaten</label>
+          <label className={labelClasses}>Benodigde certificaten</label>
           <input
             name="requirements"
             placeholder="Bijv. Rijksgediplomeerd, mangatwacht, gasmeting"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            className={inputClasses}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">Budgetindicatie</label>
+          <label className={labelClasses}>Budgetindicatie</label>
           <input
             name="budget_range"
             placeholder="Bijv. €45–€55 per uur"
-            className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
+            className={inputClasses}
           />
           <p className="mt-1 text-xs text-slate-500">
             Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€42/u netto (16,5% platformfee, escrow volgt bij ProSafetyMatch). Alles zichtbaar voor beide kanten.
@@ -204,12 +172,12 @@ export default function ProbrandwachtDirectForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700">Aanvullende toelichting</label>
+        <label className={labelClasses}>Aanvullende toelichting</label>
         <textarea
           name="message"
           rows={4}
           placeholder="Omschrijf de situatie, aantal brandwachten, bijzondere wensen..."
-          className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 shadow-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100"
+          className={`${inputClasses} resize-none`}
         />
       </div>
 
@@ -220,7 +188,7 @@ export default function ProbrandwachtDirectForm() {
           type="checkbox"
           defaultChecked
           required
-          className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
+          className="mt-1.5 h-5 w-5 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
         />
         <label htmlFor="consent">
           Ik ga akkoord met het verwerken van mijn gegevens voor deze aanvraag en
@@ -228,12 +196,16 @@ export default function ProbrandwachtDirectForm() {
         </label>
       </div>
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {error && (
+        <p className="rounded-2xl bg-red-50 px-4 py-2 text-sm text-red-700" role="alert">
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-2xl bg-brand-700 px-5 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-200 transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? 'Versturen…' : 'Aanvraag versturen'}
       </button>

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import { notFound } from 'next/navigation'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import CityHero from '@/components/city-hero'
 import ProbrandwachtDirectForm from '@/components/probrandwacht-direct-form'
 import { getCityBySlug } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
+import { CITY_PAGES_ENABLED } from '@/lib/featureFlags'
 
 const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
 
@@ -20,7 +22,7 @@ function niceCity(slug: string) {
 
 export async function generateStaticParams() {
   const { citySlugs } = await import('@/lib/cities')
-  return citySlugs.map(city => ({ city }))
+  return CITY_PAGES_ENABLED ? citySlugs.map(city => ({ city })) : []
 }
 
 export async function generateMetadata({
@@ -65,6 +67,10 @@ export async function generateMetadata({
 }
 
 export default function CityPage({ params }: { params: { city: string } }) {
+  if (!CITY_PAGES_ENABLED) {
+    notFound()
+  }
+
   const city = params.city
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
@@ -240,7 +246,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </section>
 
       <div className="rounded-3xl border border-brand-200 bg-brand-50 p-5 text-center text-sm font-semibold text-brand-800">
-        Klant marktconform ±€50/u, professional ontvangt ±€42/u na 15% platformfee + 1,5% escrow. Dat is nog altijd ±€10 per uur méér dan het bureau-alternatief (≈€30–€32/u) → tot €400 extra per 40-urige week.
+        Betaal marktconform ±€50/u, laat de professional ±€42/u netto overhouden en geef direct €10+ per uur meer dan een traditioneel bureau (≈€30–€32/u). Dat is tot €400 extra beloning voor elke 40-urige week én een onweerstaanbare propositie richting de beste brandwachten.
       </div>
 
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
