@@ -36,14 +36,14 @@ export default function ProbrandwachtDirectPage() {
           </h1>
 
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-700">
-            <strong>Reguliere aanvragen</strong> lopen via ProBrandwacht Direct. Je aanvraag
-            wordt opgevolgd door <strong>Chrono4Solutions</strong>; DBA-proof afspraken,
+            <strong>Reguliere aanvragen</strong> lopen via ProBrandwacht Direct. Je aanvraag wordt opgevolgd
+            door de beschikbare poule van <strong>ProBrandwacht</strong>; duidelijke afspraken,
             gecertificeerde professionals en betrouwbare uitvoering.
           </p>
 
           {/* mini-uitleg onder de vouw op mobiel – zelfde patroon als spoed */}
           <p className="mt-4 text-sm text-slate-600 sm:text-base">
-            <span className="font-medium">ProBrandwacht Direct</span> = geplande inzet via formulier en snelle opvolging.
+            <span className="font-medium">ProBrandwacht Direct</span> = geplande inzet en snelle opvolging.
           </p>
         </div>
 
