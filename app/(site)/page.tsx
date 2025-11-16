@@ -6,7 +6,7 @@ import Hero from '@/components/Hero'
 export const metadata: Metadata = {
   title: 'ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.',
   description:
-    'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder tussenpartij. Samen bouwen we aan een gezonde veiligheidsmarkt.',
+    'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder intermediair. Samen bouwen we aan een gezonde veiligheidsmarkt.',
   keywords: [
      'brandwacht',
      'brandwacht nodig',

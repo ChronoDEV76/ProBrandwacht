@@ -61,10 +61,10 @@ export const authoritativeSources: AuthoritativeSource[] = [
   {
     id: 'inspectie-szw',
     title: 'Inspectie SZW (Arbeidsinspectie)',
-    description: 'Handhaving schijnzelfstandigheid.',
+    description: 'Handhaving rond onduidelijke contractvormen.',
     links: [
       {
-        label: 'Inspectie SZW – Schijnzelfstandigheid',
+        label: 'Inspectie SZW – Onduidelijke contractvormen',
         href: 'https://www.nlarbeidsinspectie.nl/publicaties/rapporten/2018/06/15/aanpak-schijnconstructies-en-cao-naleving-2014-2018',
       },
     ],

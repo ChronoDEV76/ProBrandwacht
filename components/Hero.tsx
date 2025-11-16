@@ -39,7 +39,7 @@ export default function Hero() {
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
             Een netwerk van repressieve, rijksgediplomeerde professionals.
-            Direct, Eerlijk , Zonder tussenpartij 
+            Direct, Eerlijk , Zonder intermediair 
           </p>
 
           {/* roterende payoff */}
