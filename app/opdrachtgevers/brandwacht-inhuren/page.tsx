@@ -178,7 +178,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/opdrachtgevers/aanmelden"
+            href="/probrandwacht-direct"
             className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/40"
           >
             Vraag een brandwacht aan
@@ -303,7 +303,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
           <h2 className="text-lg font-semibold">Start met eerlijke inhuur</h2>
         </div>
         <Link
-          href="/opdrachtgevers/aanmelden"
+          href="/probrandwacht-direct"
           className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-brand-700 shadow hover:bg-white/90"
         >
           Vraag een brandwacht aan

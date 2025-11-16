@@ -202,7 +202,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/opdrachtgevers/brandwacht-inhuren"
+            href="/probrandwacht-direct"
             prefetch={false}
             className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-700/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-700/40"
           >
