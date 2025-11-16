@@ -230,7 +230,7 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Bouw met ons mee</h2>
         <p className="mt-2 max-w-3xl text-slate-700">
           Sluit je aan en help ons de nieuwe standaard voor eerlijk, veilig en efficiënt samenwerken te realiseren. Hoe eerder je meedoet, hoe groter jouw invloed
-          op het platform dat straks de markt gaat bepalen. Meld je vandaag nog aan.
+          op het platform dat de markt straks eerlijker maakt. Meld je vandaag nog aan.
         </p>
         <div className="mt-5">
           <PrimaryCTA href={signupUrl}>Meld je bedrijf aan</PrimaryCTA>
