@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import dynamic from "next/dynamic";
 import SeoStructuredData from "@/components/SeoStructuredData";
+import CookieNotice from '@/components/cookie-notice'
 import { headers } from "next/headers";
 import { seoKeywordClusters } from '@/lib/seo/seo-keywords';
 
@@ -113,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AnalyticsScripts />
         {/* Belangrijk: géén extra header hier — je bestaande (onderste) header blijft zo de enige header */}
         <div className="flex flex-1 flex-col">{children}</div>
+        <CookieNotice />
       </body>
     </html>
   );
