@@ -12,4 +12,4 @@ export const SPOED_ROUTE_ENABLED =
   routeFlag === 'true' ? true : routeFlag === 'false' ? false : SPOED_UI_ENABLED
 
 export const CITY_PAGES_ENABLED =
-  cityPageFlag === 'false' ? false : false
+  cityPageFlag === 'false' ? false : true
