@@ -59,14 +59,6 @@ export default function Page() {
   return (
     <>
       <ClientPage heading={heading} />
-      <div className="mt-2 text-sm text-slate-600">
-        <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken. Lees meer
-        over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via{' '}
-        <a href="/probrandwacht-direct" className="underline">
-          ProBrandwacht Direct
-        </a>
-        .
-      </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   )
