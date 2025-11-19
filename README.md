@@ -24,7 +24,7 @@ Copy `.env.local.example` to `.env.local` and set as needed:
 
 - `NEXT_PUBLIC_SIGNUP_URL` — signup form URL
 - `NEXT_PUBLIC_GTM_ID` — optional Google Tag Manager container
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 Measurement ID
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 Measurement ID for analytics/pageview tracking
 
 ## SEO
 

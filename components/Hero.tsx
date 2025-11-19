@@ -37,9 +37,10 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
-            Een netwerk van repressieve, rijksgediplomeerde professionals.
-            Direct, Eerlijk , Zonder intermediair 
+          <p className="mx-auto mt-4 max-w-2xl text-base font-semibold leading-relaxed text-slate-900 sm:text-lg">
+            Een netwerk van industriele, repressieve & rijksgediplomeerde professionals.
+            <br />
+            Direct, Eerlijk , Zonder tussenlagen 
           </p>
 
           {/* roterende payoff */}

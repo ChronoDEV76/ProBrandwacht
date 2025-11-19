@@ -1,11 +1,32 @@
 'use client'
 
+import { useEffect } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
 import { getGtmId, getGaMeasurementId } from '@/lib/config'
+
+type AnalyticsWindow = Window & {
+  dataLayer?: Array<Record<string, unknown>>
+  gtag?: (...args: unknown[]) => void
+}
 
 export default function AnalyticsScripts() {
   const gtmId = getGtmId()
   const gaId = getGaMeasurementId()
+  const pathname = usePathname() || ''
+  const searchParams = useSearchParams()
+  const search = searchParams?.toString() || ''
+  const query = search ? `?${search}` : ''
+
+  useEffect(() => {
+    if (!gaId) return
+    if (typeof window === 'undefined') return
+    const pagePath = `${pathname}${query}` || '/'
+    const analyticsWindow = window as AnalyticsWindow
+    analyticsWindow.dataLayer = analyticsWindow.dataLayer || []
+    analyticsWindow.dataLayer.push({ event: 'pageview', page_path: pagePath })
+    analyticsWindow.gtag?.('config', gaId, { page_path: pagePath })
+  }, [gaId, pathname, query])
   return (
     <>
       {gtmId ? (
