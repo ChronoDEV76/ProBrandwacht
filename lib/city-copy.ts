@@ -21,8 +21,8 @@ export const cityCopy: Record<string, CityCopy> = {
 
 De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tussen:
 
-- **€40–€55 per uur** bij evenementen en bouw
 - **€50–€65 per uur** bij industriële inzet of nacht/weekend
+- **€50–€75 per uur** bij industriële inzet of nacht/weekend
 
 De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tariefafspraken maak je altijd rechtstreeks met de professional of het team. ProBrandwacht kan desgewenst meedenken over een passend voorstel.
 
@@ -57,8 +57,8 @@ De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tar
 
 In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg op:
 
-- **€40–€55 per uur** voor bouw- en renovatiewerk
 - **€50–€65 per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
+- **€55–€75 per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
 
 Het uiteindelijke tarief spreek je altijd samen af met de professional, op basis van risico, duur van de opdracht en werktijden. Geen standaard pakketten, maar maatwerk per klus.
 
@@ -353,4 +353,3 @@ Het tarief is altijd onderdeel van de afspraak vooraf, zodat je niet voor verras
       'Tijdens een drukke evenementenweek in Nijmegen was extra toezicht nodig bij een tijdelijke locatie. Er is een zzp-brandwacht ingezet die meerdere dagen aanwezig was, met vaste start- en eindtijden en korte rapportages richting de organisatie.'
   }
 }
-

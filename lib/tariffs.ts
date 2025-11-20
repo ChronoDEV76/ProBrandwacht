@@ -7,8 +7,8 @@ export type Range = { min: number; max: number }
 
 export type TariffConfig = Record<CityKey, { standaard: Range; industrie?: Range }>
 
-const STANDARD_RANGE: Range = { min: 40, max: 50 }
-const INDUSTRY_RANGE: Range = { min: 45, max: 55 }
+const STANDARD_RANGE: Range = { min: 40, max: 55 }
+const INDUSTRY_RANGE: Range = { min: 55, max: 75 }
 
 const cloneRange = (range: Range): Range => ({ min: range.min, max: range.max })
 
