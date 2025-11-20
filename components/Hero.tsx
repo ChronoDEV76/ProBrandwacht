@@ -38,7 +38,7 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-base font-semibold leading-relaxed text-slate-900 sm:text-lg">
-            Een netwerk van industriele, repressieve & rijksgediplomeerde professionals.
+            Een netwerk van industriële, repressieve & rijksgediplomeerde professionals.
             <br />
             Direct, Eerlijk , Zonder tussenlagen 
           </p>
