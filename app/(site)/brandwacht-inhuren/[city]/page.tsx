@@ -9,11 +9,14 @@ import { getCityBySlug } from '@/lib/cities'
 import { getSignupUrl } from '@/lib/config'
 import { CITY_PAGES_ENABLED } from '@/lib/featureFlags'
 import { cityCopy } from '@/lib/city-copy'
+import { CITY_SLUGS, type CitySlug } from '@/lib/city-data'
 import ReactMarkdown from 'react-markdown'
 
 const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
 
 export const revalidate = 60 * 60 * 24 // 24h ISR
+
+const isCitySlug = (value: string): value is CitySlug => CITY_SLUGS.includes(value as CitySlug)
 
 function niceCity(slug: string) {
   return slug
@@ -36,7 +39,7 @@ export async function generateMetadata({
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
 
-  const copy = cityCopy[city]
+  const copy = isCitySlug(city) ? cityCopy[city] : undefined
 
   const fallbackTitle = `Brandwacht inhuren ${cityName} – zzp-brandwachten voor events, bouw en industrie | ProBrandwacht.nl`
   const fallbackDescription = `Brandwacht nodig in ${cityName}? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, duidelijke afspraken.`
@@ -86,7 +89,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   const cityMeta = getCityBySlug(city)
   const cityName = cityMeta?.name ?? niceCity(city)
 
-  const copy = cityCopy[city]
+  const copy = isCitySlug(city) ? cityCopy[city] : undefined
 
   const opdrachtgeverSignupUrl = getSignupUrl()
   const zzpSignupUrl = '/zzp/aanmelden'
@@ -379,4 +382,3 @@ function BenefitCard({ title, copy }: { title: string; copy: string }) {
     </div>
   )
 }
-

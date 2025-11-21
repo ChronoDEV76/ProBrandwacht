@@ -21,7 +21,7 @@ const resolveIndustryRange = (city: CitySlug) =>
     DEFAULT_TARIFFS[city]?.industrie ?? DEFAULT_TARIFFS.industrie?.industrie ?? DEFAULT_TARIFFS.industrie.standaard,
   )
 
-export const cityCopy: Record<CitySlug, CityCopy> = {
+export const cityCopy: Partial<Record<CitySlug, CityCopy>> = {
   amsterdam: {
     h1: 'Brandwacht inhuren in Amsterdam',
     intro:
