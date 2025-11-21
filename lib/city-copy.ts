@@ -1,3 +1,6 @@
+import type { CitySlug } from './city-data'
+import { DEFAULT_TARIFFS, type Range } from './tariffs'
+
 export type CityCopy = {
   h1: string
   intro: string
@@ -8,7 +11,17 @@ export type CityCopy = {
   localCaseBody?: string
 }
 
-export const cityCopy: Record<string, CityCopy> = {
+const formatEuroRange = (range?: Range) => (range ? `€${range.min}–€${range.max}` : '€n.t.b.')
+
+const resolveStandardRange = (city: CitySlug) =>
+  formatEuroRange(DEFAULT_TARIFFS[city]?.standaard ?? DEFAULT_TARIFFS.industrie.standaard)
+
+const resolveIndustryRange = (city: CitySlug) =>
+  formatEuroRange(
+    DEFAULT_TARIFFS[city]?.industrie ?? DEFAULT_TARIFFS.industrie?.industrie ?? DEFAULT_TARIFFS.industrie.standaard,
+  )
+
+export const cityCopy: Record<CitySlug, CityCopy> = {
   amsterdam: {
     h1: 'Brandwacht inhuren in Amsterdam',
     intro:
@@ -21,8 +34,8 @@ export const cityCopy: Record<string, CityCopy> = {
 
 De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tussen:
 
-- **€50–€65 per uur** bij industriële inzet of nacht/weekend
-- **€50–€75 per uur** bij industriële inzet of nacht/weekend
+- **${resolveStandardRange('amsterdam')} per uur** bij evenementen en bouw
+- **${resolveIndustryRange('amsterdam')} per uur** bij industriële inzet of nacht/weekend
 
 De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tariefafspraken maak je altijd rechtstreeks met de professional of het team. ProBrandwacht kan desgewenst meedenken over een passend voorstel.
 
@@ -57,8 +70,8 @@ De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tar
 
 In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg op:
 
-- **€50–€65 per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
-- **€55–€75 per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
+- **${resolveStandardRange('rotterdam')} per uur** voor bouw- en renovatiewerk
+- **${resolveIndustryRange('rotterdam')} per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
 
 Het uiteindelijke tarief spreek je altijd samen af met de professional, op basis van risico, duur van de opdracht en werktijden. Geen standaard pakketten, maar maatwerk per klus.
 
@@ -93,8 +106,8 @@ Het uiteindelijke tarief spreek je altijd samen af met de professional, op basis
 
 De meeste zzp-brandwachten in Den Haag werken met:
 
-- **circa €40–€55 per uur** voor evenementen en bouw
-- **tot rond de €60 per uur** bij zwaardere of meer verantwoordelijke inzet
+- **${resolveStandardRange('den-haag')} per uur** voor evenementen en bouw
+- **${resolveIndustryRange('den-haag')} per uur** bij zwaardere of meer verantwoordelijke inzet
 
 We bekijken per aanvraag wat passend is. Jij bespreekt het tarief rechtstreeks met de professional; ProBrandwacht kan helpen om de verwachtingen aan beide kanten helder te maken.
 
@@ -127,8 +140,8 @@ We bekijken per aanvraag wat passend is. Jij bespreekt het tarief rechtstreeks m
 
 Gebruikelijk liggen uurtarieven van zzp-brandwachten in Utrecht rond:
 
-- **€40–€55 per uur** bij evenementen en reguliere bouw
-- **tot circa €60 per uur** bij complexere inzet of onregelmatige uren
+- **${resolveStandardRange('utrecht')} per uur** bij evenementen en reguliere bouw
+- **${resolveIndustryRange('utrecht')} per uur** bij complexere inzet of onregelmatige uren
 
 Het tarief wordt vooraf afgestemd tussen jou en de brandwacht. Geen standaardpakket, maar een afspraak die past bij het werk en de verantwoordelijkheid.
 
@@ -161,8 +174,8 @@ Het tarief wordt vooraf afgestemd tussen jou en de brandwacht. Geen standaardpak
 
 In Eindhoven werken zzp-brandwachten meestal met:
 
-- **€40–€55 per uur** voor reguliere inzet bij bouw en evenementen
-- **€50–€60 per uur** bij technische of industriële klussen
+- **${resolveStandardRange('eindhoven')} per uur** voor reguliere inzet bij bouw en evenementen
+- **${resolveIndustryRange('eindhoven')} per uur** bij technische of industriële klussen
 
 We kijken per opdracht naar wat passend is. Jij stemt het uurtarief direct af met de professional, op basis van werkzaamheden, duur en werktijden.
 
@@ -195,8 +208,8 @@ We kijken per opdracht naar wat passend is. Jij stemt het uurtarief direct af me
 
 De meeste zzp-brandwachten in Tilburg rekenen:
 
-- **ongeveer €40–€55 per uur** bij evenementen en bouw
-- **tot rond de €60 per uur** bij nachtwerk of hogere risico’s
+- **${resolveStandardRange('tilburg')} per uur** bij evenementen en bouw
+- **${resolveIndustryRange('tilburg')} per uur** bij nachtwerk of hogere risico’s
 
 Het tarief spreek je vooraf samen af. Daarmee weet je waar je aan toe bent voordat de inzet start.
 
@@ -229,8 +242,8 @@ Het tarief spreek je vooraf samen af. Daarmee weet je waar je aan toe bent voord
 
 In Groningen liggen uurtarieven voor zzp-brandwachten meestal rond:
 
-- **€40–€50 per uur** bij reguliere inzet
-- **tot circa €55–€60 per uur** bij complexere of onregelmatige inzet
+- **${resolveStandardRange('groningen')} per uur** bij reguliere inzet
+- **${resolveIndustryRange('groningen')} per uur** bij complexere of onregelmatige inzet
 
 De exacte prijs wordt vooraf besproken tussen jou en de professional. Geen verrassingen achteraf.
 
@@ -263,8 +276,8 @@ De exacte prijs wordt vooraf besproken tussen jou en de professional. Geen verra
 
 Gemiddeld werken zzp-brandwachten in Almere met:
 
-- **circa €40–€50 per uur** voor standaard inzet
-- **tot ongeveer €55–€60 per uur** bij complexere of onregelmatige klussen
+- **${resolveStandardRange('almere')} per uur** voor standaard inzet
+- **${resolveIndustryRange('almere')} per uur** bij complexere of onregelmatige klussen
 
 Het uurtarief wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professional weet wat er van hem of haar verwacht wordt.
 
@@ -297,7 +310,7 @@ Het uurtarief wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professi
 
 In Breda liggen de meeste uurtarieven van zzp-brandwachten rond:
 
-- **€40–€55 per uur** bij evenementen en bouw
+- **${resolveStandardRange('breda')} per uur** bij evenementen en bouw
 - Met mogelijke toeslagen bij nachtwerk of korte, eenmalige klussen
 
 Tariefafspraken maak je rechtstreeks met de professional. Zo is voor iedereen duidelijk wat er tegenover de inzet staat.
@@ -331,8 +344,8 @@ Tariefafspraken maak je rechtstreeks met de professional. Zo is voor iedereen du
 
 De meeste zzp-brandwachten in Nijmegen werken met:
 
-- **ongeveer €40–€55 per uur** bij reguliere inzet
-- **tot circa €60 per uur** bij drukke periodes of complexere inzet
+- **${resolveStandardRange('nijmegen')} per uur** bij reguliere inzet
+- **${resolveIndustryRange('nijmegen')} per uur** bij drukke periodes of complexere inzet
 
 Het tarief is altijd onderdeel van de afspraak vooraf, zodat je niet voor verrassingen komt te staan.
 
