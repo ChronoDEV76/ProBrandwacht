@@ -1,37 +1,18 @@
-'use client'
-
-import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
 import { getGtmId, getGaMeasurementId } from '@/lib/config'
-
-type AnalyticsWindow = Window & {
-  dataLayer?: Array<Record<string, unknown>>
-  gtag?: (...args: unknown[]) => void
-}
+import AnalyticsTracker from '@/components/analytics-tracker'
 
 export default function AnalyticsScripts() {
   const gtmId = getGtmId()
   const gaId = getGaMeasurementId()
-  const pathname = usePathname() || ''
-  const searchParams = useSearchParams()
-  const search = searchParams?.toString() || ''
-  const query = search ? `?${search}` : ''
 
-  useEffect(() => {
-    if (!gaId) return
-    if (typeof window === 'undefined') return
-    const pagePath = `${pathname}${query}` || '/'
-    const analyticsWindow = window as AnalyticsWindow
-    analyticsWindow.dataLayer = analyticsWindow.dataLayer || []
-    analyticsWindow.dataLayer.push({ event: 'pageview', page_path: pagePath })
-    analyticsWindow.gtag?.('config', gaId, { page_path: pagePath })
-  }, [gaId, pathname, query])
+  const shouldRenderTracker = Boolean(gtmId || gaId)
+
   return (
     <>
       {gtmId ? (
         <>
-          <Script id="gtm-loader" strategy="lazyOnload">
+          <Script id="gtm-loader" strategy="afterInteractive">
             {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -73,9 +54,9 @@ export default function AnalyticsScripts() {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
-          <Script id="ga4-init" strategy="lazyOnload">
+          <Script id="ga4-init" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -85,6 +66,7 @@ export default function AnalyticsScripts() {
           </Script>
         </>
       ) : null}
+      {shouldRenderTracker ? <AnalyticsTracker gaId={gaId} /> : null}
     </>
   )
 }
