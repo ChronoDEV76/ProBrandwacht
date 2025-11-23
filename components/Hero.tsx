@@ -25,8 +25,8 @@ export default function Hero() {
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+          <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-700 shadow">
+            <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
             Door brandweermensen, voor brandweermensen
           </div>
 
