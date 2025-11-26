@@ -72,7 +72,9 @@ export function BrandwachtStubPage(config: BrandwachtStubConfig) {
         {headingSlot ?? (
           <h1 className="text-3xl font-semibold tracking-tight">{config.hero.heading}</h1>
         )}
-        <p className="max-w-3xl text-slate-700">{config.hero.intro}</p>
+        <p className="max-w-3xl text-slate-700">
+          {config.hero.intro} Geen concurrentiebeding, geen tussenlaag. We leggen afspraken vast, volgen betalingen op en zetten certificaten klaar in je dossier; zo heb jij autonomie en respect voor je vak.
+        </p>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/probrandwacht-direct"
@@ -84,7 +86,7 @@ export function BrandwachtStubPage(config: BrandwachtStubConfig) {
             href="/zzp/aanmelden"
             className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
           >
-            Aanmelden als brandwacht
+            Aanmelden als brandwacht (geen concurrentiebeding)
           </Link>
           <Link
             href="/missie"

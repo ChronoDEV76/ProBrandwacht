@@ -28,11 +28,11 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Samenwerking',
-      items: ['Tarief en planning bepaal je direct met de professional', 'Betaalafspraken vastgelegd voor zekerheid bij 24/7 diensten', 'Rapportage voor audits en evaluaties'],
+      items: ['Tarief en planning bepaal je direct met de professional', 'Betaalafspraken vastgelegd en opgevolgd voor zekerheid bij 24/7 diensten', 'Rapportage voor audits en evaluaties'],
     },
     {
       heading: 'Zekerheid & vertrouwen',
-      items: ['Rijksgediplomeerde brandwachten en gasmeetcertificaten', 'DBA-proof documentatie en heldere 10% opdrachtgever-fee', '24/7 bereikbaarheid voor spoed of onverwachte ingangen'],
+      items: ['Rijksgediplomeerde brandwachten en gasmeetcertificaten', 'DBA-proof documentatie en heldere 10% opdrachtgever-fee', '24/7 bereikbaarheid voor spoed of onverwachte ingangen', 'Geen concurrentiebeding, directe overeenkomst met opdrachtgever'],
     },
   ],
 }
