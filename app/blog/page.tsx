@@ -9,10 +9,11 @@ import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
-const DEFAULT_TITLE = 'Blog brandveiligheid & zzp-brandwachten'
+const TITLE_CORE = 'Blog brandveiligheid & zzp-brandwachten'
 const BRAND_SUFFIX = 'ProBrandwacht'
+const DEFAULT_TITLE = `${TITLE_CORE} | ${BRAND_SUFFIX}`
 const DEFAULT_DESCRIPTION =
-  'Artikelen over tarieven, DBA, wetgeving en praktijkcases voor bouw, evenementen en industrie. Eerlijk geschreven voor zzp-brandwachten en opdrachtgevers.'
+  'Praktische inzichten over tarieven, inzet en samenwerking met zzp-brandwachten. Voor opdrachtgevers en professionals die helderheid en voorspelbaarheid willen.'
 const DEFAULT_KEYWORDS = [
   'brandwacht',
   'brandwacht inhuren',
@@ -39,11 +40,17 @@ export async function generateMetadata({
   if (cityFilter) params.set('city', cityFilter)
   const canonical = params.toString() ? `${BASE_URL}/blog?${params.toString()}` : `${BASE_URL}/blog`
 
-  const titleParts = [DEFAULT_TITLE]
-  if (categoryFilter) titleParts.unshift(`${categoryFilter} artikelen`)
-  if (cityFilter) titleParts.push(`voor ${cityFilter}`)
-  titleParts.push(BRAND_SUFFIX)
-  const title = `${titleParts.join(' | ')}`
+  const hasFilters = Boolean(categoryFilter || cityFilter)
+  const title = hasFilters
+    ? [
+        categoryFilter ? `${categoryFilter} artikelen` : null,
+        TITLE_CORE,
+        cityFilter ? `voor ${cityFilter}` : null,
+        BRAND_SUFFIX,
+      ]
+        .filter(Boolean)
+        .join(' | ')
+    : DEFAULT_TITLE
 
   const filterSummary = [
     categoryFilter ? `Categorie: ${categoryFilter.toLowerCase()}` : undefined,
@@ -167,6 +174,18 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     description: post.excerpt,
   }))
 
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Brandwacht blogoverzicht',
+    itemListElement: filtered.slice(0, 12).map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: post.title,
+      url: `https://www.probrandwacht.nl/blog/${post.slug}`,
+    })),
+  }
+
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
@@ -186,6 +205,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     <main className="mx-auto w-full min-h-full max-w-6xl space-y-10 px-4 py-10">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
+      <JSONLD data={itemListSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <header className="space-y-4">
@@ -245,6 +265,52 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               </FilterChip>
             ))}
           </nav>
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
+        <h2 className="text-lg font-semibold text-slate-900">Snelle routes naar onze diensten</h2>
+        <p className="mt-1 text-sm text-slate-600">
+          Verken de belangrijkste flows voor DBA-proof brandwachten, mangatwacht/buitenwacht inzet of gasmeting/gasmeter
+          ondersteuning. Elk pad linkt door naar concrete tarieven, poort-QR check-in uitleg en aanbestedingsklare teksten.
+        </p>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/opdrachtgevers/brandwacht-inhuren"
+            className="rounded-xl border border-brand-100 bg-white px-4 py-3 text-sm font-semibold text-brand-800 transition hover:bg-brand-50"
+          >
+            DBA-proof brandwacht inhuren
+          </Link>
+          <Link
+            href="/brandwacht/haven-industrie"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
+          >
+            Industriële brandwacht & gasmeting
+          </Link>
+          <Link
+            href="/brandwacht/mangatwacht"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
+          >
+            Mangatwacht / buitenwacht inzetten
+          </Link>
+          <Link
+            href="/brandwacht/turnaround-stop"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
+          >
+            Turnaround & ERT/rescue team ondersteuning
+          </Link>
+          <Link
+            href="/brandwacht-huren"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
+          >
+            Brandwacht huren met poort-QR check-in
+          </Link>
+          <Link
+            href="/probrandwacht-direct"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
+          >
+            24/7 contact via ProBrandwacht Direct
+          </Link>
         </div>
       </section>
 
@@ -309,7 +375,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
         <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Bekijk per stad hoe je tarieven samenstelt inclusief 15% platformfee en het nettobedrag dat overblijft.
+          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en het nettobedrag dat overblijft.
         </p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {cityLinks.map(city => (

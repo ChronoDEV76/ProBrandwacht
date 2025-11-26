@@ -166,7 +166,7 @@ export default function ProbrandwachtDirectForm() {
             className={inputClasses}
           />
           <p className="mt-1 text-xs text-slate-500">
-            Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€42/u netto (16,5% platformfee, escrow volgt bij ProSafetyMatch). Alles zichtbaar voor beide kanten.
+            Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€45/u netto (10% platformfee, escrow 1–2% volgt bij ProSafetyMatch). Alles zichtbaar voor beide kanten.
           </p>
         </div>
       </div>

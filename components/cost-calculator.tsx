@@ -11,7 +11,7 @@ export type CalculatorProps = {
   initialCity?: CityKey
   initialCategory?: CategoryKey
   platformFeePct?: number // default 10%
-  escrowPct?: number // default 1.5%
+  escrowPct?: number // default 1% (betaalbuffer, richtlijn 1–2%)
   tariffs?: TariffConfig
   /** Jaar waarin de meegegeven tarieven (tariffs/DEFAULT_TARIFFS) gelden */
   baseYear?: number
@@ -165,13 +165,13 @@ function runDevTests() {
   if (process.env.NODE_ENV === 'production') return
   const hourly = 52
   const fee = 0.1
-  const escrow = 0.015
+  const escrow = 0.01
   const hours = 8
   const total = hourly * hours
   const feeAmt = total * fee
   const escrowAmt = total * escrow
   const netPerHour = hourly * (1 - fee)
-  const expected = { total: 416, feeAmt: 41.6, netPerHour: 46.8, escrowAmt: 6.24 }
+  const expected = { total: 416, feeAmt: 41.6, netPerHour: 46.8, escrowAmt: 4.16 }
   console.assert(Math.abs(total - expected.total) < 1e-6, 'Total mismatch')
   console.assert(Math.abs(feeAmt - expected.feeAmt) < 1e-6, 'Fee mismatch')
   console.assert(Math.abs(netPerHour - expected.netPerHour) < 1e-6, 'Net per hour mismatch')
@@ -236,7 +236,7 @@ export default function CostCalculator({
   initialCity = 'amsterdam',
   initialCategory = 'evenementen_bouw',
   platformFeePct = 10,
-  escrowPct = 1.5,
+  escrowPct = 1,
   tariffs = DEFAULT_TARIFFS,
   baseYear = 2022,
   targetYear = new Date().getFullYear(),

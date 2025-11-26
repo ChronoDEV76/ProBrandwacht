@@ -68,7 +68,7 @@ export default function OpdrachtgeversPage() {
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           <Card
             title="Onduidelijke tarieven"
-            text="Bureaus houden vaak €15–25 per uur marge over; bij ons zie je de volledige kostenopbouw inclusief 15% platformfee en nettobedrag."
+            text="Bureaus houden vaak €15–25 per uur marge over; bij ons zie je de volledige kostenopbouw inclusief 10% platformfee en nettobedrag."
           />
           <Card
             title="Wisselende motivatie"
@@ -86,7 +86,7 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing (straks in ProSafetyMatch)</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Vaste 15% platformfee plus 1,5–2% escrowkosten en een duidelijk netto tarief. Geen verborgen marges,
+            Vaste 10% platformfee plus 1–2% escrowkosten en een duidelijk netto tarief. Geen verborgen marges,
             volledig inzicht in de verdeling.
           </ListItem>
           <ListItem title="Heldere afspraken">
@@ -141,7 +141,7 @@ export default function OpdrachtgeversPage() {
           <h3 className="font-semibold">Kosten & helder inzicht</h3>
           <ul className="mt-3 space-y-2 text-slate-700 text-sm">
             <li>
-              <strong>15% platformfee</strong> – standaard opgenomen in de
+              <strong>10% platformfee</strong> – standaard opgenomen in de
               kostenopbouw.
             </li>
             <li>

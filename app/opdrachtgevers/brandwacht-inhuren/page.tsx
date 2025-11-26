@@ -189,7 +189,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
           <h2 className="text-xl font-semibold">Tarieven & helderheid</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-700">
             <li>• Selecteer op tariefbandbreedte, werktijd (dag/nacht) en dienstduur.</li>
-            <li>• Zie direct de platformfee (15%) + 1,5–2% escrowkosten en het netto uurtarief.</li>
+            <li>• Zie direct de platformfee (10%) + 1–2% escrowkosten en het netto uurtarief.</li>
             <li>• Deel dezelfde tariefberekening met finance & HR om interne afstemming te versnellen.</li>
           </ul>
         </div>

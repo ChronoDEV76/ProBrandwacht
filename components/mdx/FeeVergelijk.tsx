@@ -5,8 +5,8 @@ type FeeVergelijkProps = {
 }
 
 export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
-  const platformFee = tarief * 0.15
-  const betaalbufferMin = tarief * 0.015
+  const platformFee = tarief * 0.1
+  const betaalbufferMin = tarief * 0.01
   const betaalbufferMax = tarief * 0.02
   const nettoMin = tarief - platformFee - betaalbufferMax
   const nettoMax = tarief - platformFee - betaalbufferMin
@@ -19,9 +19,9 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
         <h3 className="text-lg font-semibold text-brand-700">ProSafetyMatch</h3>
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
-          <li>🔹 Platformfee 15%: €{platformFee.toFixed(2)}</li>
+          <li>🔹 Platformfee 10%: €{platformFee.toFixed(2)}</li>
           <li>
-            🔹 Betaalbuffer 1,5–2%: €{betaalbufferMin.toFixed(2)}–€{betaalbufferMax.toFixed(2)}
+            🔹 Betaalbuffer 1–2%: €{betaalbufferMin.toFixed(2)}–€{betaalbufferMax.toFixed(2)}
           </li>
           <li className="font-semibold text-green-700">
             ✅ Netto naar zzp’er: €{nettoMin.toFixed(2)}–€{nettoMax.toFixed(2)}

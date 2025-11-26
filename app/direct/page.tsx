@@ -21,7 +21,7 @@ export default function ProBrandwachtDirectPage() {
         <p className="mt-2 text-slate-700">
           24/7 spoedlijn voor inzet van gecertificeerde brandwachten. Snel, transparant en DBA-proof.
           Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
-          Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 15% inbegrepen).
+          Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 10% inbegrepen).
         </p>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">

@@ -143,7 +143,7 @@ export async function POST(req: Request) {
 
     // Fees (indicatief)
     const PLATFORM_FEE = 0.10;
-    const ESCROW_MIN = 0.015;
+    const ESCROW_MIN = 0.01;
     const ESCROW_MAX = 0.02;
 
     const netMin = marketHourly * (1 - PLATFORM_FEE - ESCROW_MAX);
@@ -237,7 +237,7 @@ export async function POST(req: Request) {
     });
     line(`Marktconform (bruto): € ${marketHourly.toFixed(2)} / uur`, (y -= 18));
     line(
-      `Netto range (incl. 15% platform + 1,5–2% betaalbuffer): € ${netMin.toFixed(2)} – € ${netMax.toFixed(2)} / uur`,
+      `Netto range (incl. 10% platform + 1–2% betaalbuffer): € ${netMin.toFixed(2)} – € ${netMax.toFixed(2)} / uur`,
       (y -= 16)
     );
 

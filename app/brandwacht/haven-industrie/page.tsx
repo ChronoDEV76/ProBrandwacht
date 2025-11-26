@@ -32,7 +32,7 @@ const config: BrandwachtStubConfig = {
     },
     {
       heading: 'Werken zonder tussenlaag',
-      items: ['Direct contract tussen opdrachtgever en brandwacht', 'Betaalafspraken garanderen uitbetaling na uitvoering', 'Heldere 15% platformfee voor tooling & support'],
+      items: ['Direct contract tussen opdrachtgever en brandwacht', 'Betaalafspraken garanderen uitbetaling na uitvoering', 'Heldere 10% platformfee voor tooling & support'],
     },
   ],
 }
