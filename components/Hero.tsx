@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const taglines = [
+  "Het eerlijkste platform voor zzp-brandwachten — geen bureaugedoe, geen prijsdruk, geen flauwekul.",
   "Wij matchen expertise aan jouw opdracht.",
   "Bij beschikbaarheid, Snel inzetbaar op locatie.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",
