@@ -95,7 +95,7 @@ export default function ManifestPage() {
 
           <h2>Hoe doen wij het anders?</h2>
           <ul>
-            <li><strong>Tariefinzicht</strong> — helder voor beide kanten, inclusief platformfee en escrow.</li>
+            <li><strong>Tariefinzicht</strong> — helder voor beide kanten met het hybride fee-model; escrow volgt bij lancering.</li>
             <li><strong>Escrow-zekerheid</strong> — op tijd betaald, minder risico, meer rust op de vloer.</li>
             <li><strong>DBA-proof</strong> — rol en onafhankelijkheid zijn contractueel geborgd.</li>
             <li><strong>Vrijheid & motivatie</strong> — professionals kiezen opdrachten en bouwen reputatie op kwaliteit.</li>
