@@ -19,7 +19,7 @@ export default function ProbrandwachtDirectPage() {
       />
 
       {/* HERO – identiek aan spoedstijl */}
-      <section className="relative overflow-hidden rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-200 sm:p-8 md:p-10">
+      <section className="relative overflow-hidden rounded-3xl bg-white p-5 ring-1 ring-slate-200 sm:p-8 md:p-10">
         <div className="max-w-3xl">
           <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             ProBrandwacht Direct — geplande inzet
@@ -37,11 +37,7 @@ export default function ProbrandwachtDirectPage() {
           </p>
         </div>
 
-        {/* decoratief accent (zelfde als spoed) */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-10 -top-10 hidden h-40 w-40 rounded-full bg-brand-100 blur-2xl sm:block"
-        />
+        {/* decoratief accent verwijderd voor clean look */}
       </section>
 
       {/* FORMULIER */}
