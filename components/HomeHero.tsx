@@ -42,14 +42,14 @@ export default function HomeHero() {
 
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <a
-              href="/signup-professional"
+              href="/zzp/aanmelden"
               className="rounded-full bg-blue-600 px-8 py-3 font-semibold text-white shadow-lg shadow-black/40 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-black/60"
             >
               Meld je aan als professional
             </a>
 
             <a
-              href="/zoek-brandwacht"
+              href="/probrandwacht-direct"
               className="rounded-full bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur shadow-md shadow-black/30 transition hover:-translate-y-0.5 hover:bg-white/20"
             >
               Zoek direct een brandwacht
