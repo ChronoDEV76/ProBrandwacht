@@ -21,7 +21,7 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔹 Platformfee 10%: €{platformFee.toFixed(2)}</li>
           <li>
-            🔹 Betaalbuffer 1–2%: €{betaalbufferMin.toFixed(2)}–€{betaalbufferMax.toFixed(2)}
+            🔹 Betaalbuffer 1–2% (bij lancering): €{betaalbufferMin.toFixed(2)}–€{betaalbufferMax.toFixed(2)}
           </li>
           <li className="font-semibold text-green-700">
             ✅ Netto naar zzp’er: €{nettoMin.toFixed(2)}–€{nettoMax.toFixed(2)}

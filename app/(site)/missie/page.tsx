@@ -73,7 +73,7 @@ export default function ManifestPage() {
 
         {/* KERNPILAREN */}
         <section className="grid gap-4 sm:grid-cols-3">
-          <Card title="Eerlijke tarieven" text="Iedereen ziet de opbouw. 10% platformfee + 1–2% escrow, geen verborgen marges." />
+          <Card title="Eerlijke tarieven" text="Iedereen ziet de opbouw. 10% platformfee; betaalbuffer 1–2% volgt bij lancering, geen verborgen marges." />
           <Card title="Escrow-betaling" text="Vooraf gestort, automatisch uitbetaald na bevestigde uitvoering (live bij ProSafetyMatch)." />
           <Card title="Gecertificeerd netwerk" text="Actuele certificaten en reviews in één oogopslag, DBA-proof vastgelegd." />
         </section>
