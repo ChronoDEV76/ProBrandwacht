@@ -38,3 +38,14 @@ body {
 .prose h3 {
   @apply font-semibold;
 }
+
+/* Calculator leesbaarheid: donkere tekst overal */
+.lead-calculator,
+.lead-calculator * {
+  color: #0f172a; /* slate-900 */
+}
+
+.lead-calculator input::placeholder,
+.lead-calculator textarea::placeholder {
+  color: #9ca3af; /* slate-400 */
+}

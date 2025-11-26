@@ -101,17 +101,17 @@ export default function LeadCalculator() {
       : "bg-rose-50 text-rose-800 ring-1 ring-rose-200";
 
   return (
-    <section className="rounded-3xl border border-blue-200 bg-blue-50/60 p-6 shadow-sm text-slate-900">
-      <h2 className="text-2xl font-semibold text-blue-900">Bereken wat je écht waard bent</h2>
-      <p className="mt-1 text-sm text-slate-700">
+    <section className="rounded-3xl p-0 text-slate-900">
+      <h2 className="text-[20px] font-semibold text-slate-900">Bereken wat je écht waard bent</h2>
+      <p className="mt-1 text-[13px] text-slate-700">
         Met <strong>2 velden</strong> ontdek je wat je maandelijks laat liggen. Je ontvangt direct een{" "}
         <strong>persoonlijk PDF-rapport</strong> met het verschil — inclusief <em>indicatie bij 10% minder uren</em>.
       </p>
-      <p className="mt-1 text-[12px] text-slate-600">
+      <p className="mt-1 text-[11.5px] text-slate-600">
         Aangescherpt met feedback uit de sector (200+ professionals). We delen alleen je e-mail met ProSafetyMatch voor dit rapport.
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-4 grid gap-3 sm:grid-cols-2">
+      <form onSubmit={handleSubmit} className="mt-3 grid gap-2.5 sm:grid-cols-2">
         {/* Honeypot (NIET type="hidden") */}
         <label className="sr-only">
           <span>Laat dit veld leeg</span>
@@ -125,32 +125,32 @@ export default function LeadCalculator() {
           />
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">Naam (optioneel)</span>
           <input
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-brand-400 focus:ring-1 focus:ring-brand-300"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Jouw naam"
           />
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">E-mailadres</span>
           <input
             type="email"
             required
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-brand-400 focus:ring-1 focus:ring-brand-300"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="jij@email.nl"
           />
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">Rol</span>
           <select
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             value={role}
             onChange={(e) => setRole(e.target.value as Role)}
           >
@@ -160,42 +160,42 @@ export default function LeadCalculator() {
           </select>
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">Huidig uurtarief via bureau (€)</span>
           <input
             type="number"
             required
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             value={bureauHourly}
             onChange={(e) => setBureauHourly(e.target.value === "" ? "" : Number(e.target.value))}
             placeholder="Bijv. 32"
           />
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">Uren per maand</span>
           <input
             type="number"
             required
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             value={hoursPerMonth}
             onChange={(e) => setHoursPerMonth(e.target.value === "" ? "" : Number(e.target.value))}
             placeholder="Bijv. 144"
           />
         </label>
 
-        <label className="text-sm">
+        <label className="text-[13px]">
           <span className="text-slate-700">Kosten (% van omzet)</span>
           <input
             type="number"
-            className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             value={costPct}
             onChange={(e) => setCostPct(e.target.value === "" ? "" : Number(e.target.value))}
             placeholder="Bijv. 30"
           />
         </label>
 
-        <div className="rounded-md border border-slate-200 bg-white p-3 text-sm sm:col-span-2">
+        <div className="rounded-md border border-slate-200 bg-white p-3 text-[13px] sm:col-span-2">
           <p className="font-medium text-slate-900">Belasting & aftrek (indicatief)</p>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <label className="flex items-center gap-2">
@@ -238,28 +238,27 @@ export default function LeadCalculator() {
         <button
           type="submit"
           disabled={submitting}
-          className="sm:col-span-2 mt-1 w-full rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-800 disabled:opacity-50"
+          className="sm:col-span-2 mt-1 w-full rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition transform hover:-translate-y-0.5 hover:bg-brand-500 disabled:opacity-50"
         >
           {submitting ? "Bezig met verzenden…" : "Bereken & ontvang PDF-rapport"}
         </button>
       </form>
 
       {/* Micro-feedback tegeltjes (geen cijfers in UI; alles staat in PDF) */}
-      <div className="mt-4 grid gap-3 sm:grid-cols-3 text-sm">
-        <div className="rounded border border-blue-200 bg-white p-3">
-          <p className="text-[11px] text-slate-600">Preview</p>
+      <div className="mt-3 grid gap-2.5 text-sm sm:grid-cols-3">
+        <div className="rounded border border-slate-200 bg-white p-3">
+          <p className="text-[11px] text-slate-700">Preview</p>
           <p className="text-slate-900">We tonen de uitkomst alleen in je PDF-rapport.</p>
         </div>
-        <div className="rounded border border-blue-200 bg-white p-3">
-          <p className="text-[11px] text-slate-600">Indicatie</p>
+        <div className="rounded border border-slate-200 bg-white p-3">
+          <p className="text-[11px] text-slate-700">Indicatie</p>
           <p className="text-slate-900">Inclusief scenario bij 10% minder uren.</p>
         </div>
-        <div className="rounded border border-blue-200 bg-white p-3">
-          <p className="text-[11px] text-slate-600">Transparantie</p>
+        <div className="rounded border border-slate-200 bg-white p-3">
+          <p className="text-[11px] text-slate-700">Transparantie</p>
           <p className="text-slate-900">Gebaseerd op feedback (200+ professionals).</p>
         </div>
       </div>
     </section>
   );
 }
-

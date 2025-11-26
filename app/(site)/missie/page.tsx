@@ -86,6 +86,21 @@ export default function ManifestPage() {
             en duidelijke, zelfstandige afspraken tussen opdrachtgever en professional.
           </p>
 
+          <h2>“Niet lullen maar poetsen” — helder, voorspelbaar en professioneel samenwerken</h2>
+          <p>
+            ProSafetyMatch richt zich alleen op wat we zelf kunnen waarmaken. Geen luchtkastelen, wél concreet verbeteren hoe jij werkt én hoe opdrachtgevers rust en zekerheid ervaren.
+          </p>
+          <ul>
+            <li><strong>Hoe je werkt</strong> — vaste werkwijze per opdracht: minder ruis, minder miscommunicatie.</li>
+            <li><strong>Hoe je plant</strong> — realistische starttijden en 24/7 inzet zonder loze beloftes: minder uitval, betrouwbaarder voor opdrachtgevers.</li>
+            <li><strong>Hoe je matcht</strong> — selectie op certificaten, ervaring, tarief en beschikbaarheid: minder risico op mismatch, geen tussenlaag.</li>
+            <li><strong>Hoe je administratie eenvoudig maakt</strong> — uren, certificaten en afspraken in één dossier dat beide kanten zien: minder fouten en vertraging.</li>
+            <li><strong>Hoe je tarief en transparantie bewaakt</strong> — vaste 10% platformfee en gedeelde berekening: eerlijk voor professionals, voorspelbaar voor budgethouders.</li>
+            <li><strong>Hoe je de ruis weghaalt</strong> — één kanaal voor chat en bevestigingen met sessie-ID: geen dubbel werk, minder kans op discussies.</li>
+            <li><strong>Hoe je DB-proof werkt</strong> — modelclausules en gezag-checklist in hetzelfde dossier: veiligheid voor de zzp’er, minder juridisch risico voor de opdrachtgever.</li>
+            <li><strong>Hoe je samenwerking menselijk & eerlijk houdt</strong> — direct contact, duidelijke afspraken en eerlijke verdeling: minder escalaties, meer vertrouwen.</li>
+          </ul>
+
           <h2>Wat gaat er mis in het oude model?</h2>
           <ul>
             <li><strong>Ondoorzichtige prijsopbouw</strong> → opdrachtgever en brandwacht missen zicht op elkaars kant.</li>

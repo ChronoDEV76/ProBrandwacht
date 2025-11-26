@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { headers } from 'next/headers'
 import SiteHeader from '@/components/site-header'
 
 const roboto = localFont({
@@ -41,8 +42,17 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const headerList = headers()
+  const currentPath = headerList.get('next-url') ?? '/'
+  const isHome = currentPath === '/'
+
   return (
-    <div className={`${roboto.className} flex flex-1 flex-col`}>
+    <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col`}>
+      {/* Pagina-brede achtergrondafbeelding met overlay voor leesbaarheid */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-20 bg-[url('/brandweer.webp')] bg-cover bg-center"
+        aria-hidden="true"
+      />
       <span className="sr-only">ProBrandwacht.nl</span>
       <SiteHeader />
       {/* Site-level JSON-LD for LocalBusiness */}
@@ -56,7 +66,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       ))}
-      <main className="mx-auto flex-1 w-full max-w-5xl px-4 py-10 sm:py-12">{children}</main>
+      <main
+        className={`flex-1 w-full ${isHome ? 'max-w-none px-0 py-0' : 'mx-auto max-w-5xl px-4 py-10 sm:py-12'}`}
+      >
+        {children}
+      </main>
     </div>
   )
 }
