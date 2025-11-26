@@ -46,7 +46,7 @@ export default function Hero() {
 
           {/* roterende payoff */}
           <p
-            className="mx-auto mt-5 max-w-2xl text-base font-medium text-slate-900"
+            className="mx-auto mt-6 max-w-2xl text-lg font-semibold leading-relaxed text-brand-700 sm:text-2xl"
             aria-live="polite"
           >
             {taglines[idx]}
