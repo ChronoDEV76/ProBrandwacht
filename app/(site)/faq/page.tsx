@@ -85,7 +85,7 @@ export default function FAQPage() {
       <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Direct door naar een aanvraag</h2>
         <p className="mt-2 text-sm text-slate-700">
-          Start meteen een aanvraag of meld je aan om op de wachtlijst te komen. Altijd duidelijke kostenopbouw en DBA-proof documentatie.
+          Start meteen een aanvraag of meld je aan om op de wachtlijst te komen voor ProSafetyMatch. Altijd duidelijke kostenopbouw en DBA-proof documentatie in je persoonlijke dashboard.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
