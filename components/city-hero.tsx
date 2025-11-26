@@ -50,7 +50,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             Gecertificeerde brandwachten in {cityName}
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            DBA-proof & transparante tarieven
+            DBA-proof & duidelijke tarieven
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             Direct contact met professionals

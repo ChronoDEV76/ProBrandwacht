@@ -124,6 +124,18 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </div>
       </section>
 
+      <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+        <h2 className="text-lg font-semibold text-slate-900">Vertrouwd door veiligheidsteams</h2>
+        <p className="mt-2 text-sm text-slate-700">
+          We werken met rijksgediplomeerde brandwachten, controleren certificaten en leggen afspraken vast. Duidelijke 10% fee voor opdrachtgevers, geen verborgen marges.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
+          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">DBA-proof documentatie</span>
+          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">Certificaatcontrole</span>
+          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">24/7 bereikbaarheid</span>
+        </div>
+      </section>
+
       {/* Veelgestelde vragen */}
       <section className="rounded-2xl border border-slate-200 bg-white p-6">
         <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>

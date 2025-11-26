@@ -53,7 +53,7 @@ export default function OpdrachtgeversPage() {
           <p className="mt-3 max-w-3xl text-slate-700">
             ProBrandwacht werft zzp-brandwachten en opdrachtgevers voor <strong>ProSafetyMatch</strong>, het platform in ontwikkeling waar safety professionals en opdrachtgevers elkaar straks ontmoeten.
             Tot de lancering kan je een directe inzet wens afhandelen via het actuele ProBrandwacht-netwerk: jullie bepalen budget en certificeringseisen, wij regelen het binnen ons actuele netwerk.
-            Eerlijke beloning, duidelijke betaalafspraken en aantoonbare certificaten geven nu al grip zonder extra ketenpartijen; zodra ProSafetyMatch live staat, schuiven dezelfde dossiers door met escrow-ready betalingen en Wet DBA-modelclausules.
+            Eerlijke beloning, duidelijke betaalafspraken en aantoonbare certificaten geven nu al grip zonder extra ketenpartijen; zodra ProSafetyMatch live staat, schuiven dezelfde dossiers door met geautomatiseerde betaalafspraken en Wet DBA-modelclausules. Escrow en automatische uitbetaling volgen bij de lancering.
           </p>
           <div className="mt-6">
             <PrimaryCTA href={signupUrl}>Meld je bedrijf aan</PrimaryCTA>
@@ -86,14 +86,14 @@ export default function OpdrachtgeversPage() {
         <h2 className="text-2xl font-semibold">Onze oplossing (straks in ProSafetyMatch)</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ListItem title="Eerlijke tarieven">
-            Vaste 10% platformfee plus 1–2% escrowkosten en een duidelijk netto tarief. Geen verborgen marges,
-            volledig inzicht in de verdeling.
+            Vaste 10% platformfee en een duidelijk netto tarief. Geen verborgen marges,
+            volledig inzicht in de verdeling. Betaalbuffer/escrow staat in voorbereiding voor lancering; tot die tijd werken we met afgesproken betaalmomenten.
           </ListItem>
           <ListItem title="Heldere afspraken">
             We leggen rol en resultaat contractueel vast voor maximale duidelijkheid.
           </ListItem>
           <ListItem title="Snel schakelen">
-            Directe inzetten handel je nu af via het ProBrandwacht-netwerk; straks automatiseert ProSafetyMatch dezelfde betaalafspraken met escrow.
+            Directe inzetten handel je nu af via het ProBrandwacht-netwerk; na lancering automatiseert ProSafetyMatch dezelfde betaalafspraken.
           </ListItem>
           <ListItem title="Gecertificeerd netwerk">
             Inzicht in certificaten, en beschikbaarheid.
@@ -128,9 +128,9 @@ export default function OpdrachtgeversPage() {
             met de professional in de chatomgeving van het dashboard; iedere sessie krijgt een uniek ID en is opvraagbaar bij een dispuut.
           </Step>
           <Step n={3} title="Betaling & uitvoering">
-            Vooraf gemaakte afspraken met de professional of grotere projecten leggen we vast in escrow. Dat geeft beide partijen zekerheid, versnelt
-            de uitbetaling voor de professional en ontlast jullie financiële afdeling. Tot de lancering kan je een directe inzet wens afhandelen via het
-            actuele ProBrandwacht-netwerk; daarna verzorgt ProSafetyMatch de escrow-uitbetaling zodra het urenoverzicht op je dashboard is bevestigd.
+            Vooraf gemaakte afspraken met de professional leggen we vast en volgen we op. Dat geeft beide partijen zekerheid,
+            versnelt de uitbetaling voor de professional en ontlast jullie financiële afdeling. Tot de lancering kan je een directe inzet wens afhandelen via het
+            actuele ProBrandwacht-netwerk; na livegang automatiseert ProSafetyMatch de uitbetaling op basis van het bevestigde urenoverzicht (escrow volgt bij lancering).
           </Step>
         </div>
       </section>
@@ -171,10 +171,10 @@ export default function OpdrachtgeversPage() {
       {/* Visie */}
       <section className="mb-12 rounded-2xl border bg-amber-50 p-6 text-sm text-amber-900">
         <h3 className="text-lg font-semibold text-amber-900">
-          Waarom een tarief van rond de €45/u nu vaak tegenvalt op de werkvloer
+          Waarom een tarief van rond de €40/u nu vaak tegenvalt op de werkvloer
         </h3>
         <p className="mt-2">
-          €45/u lijkt een prima tarief, maar na bureau-marges, reistijd en kosten blijft er voor de professional schrikbarend weinig over. Dat zie je direct
+          €40/u lijkt een prima tarief, maar na bureau-marges, reistijd en kosten blijft er voor de professional schrikbarend weinig over. Dat zie je direct
           terug in minder motivatie, hogere uitval en lagere kwaliteit op de werkvloer.
         </p>
         <p className="mt-2">

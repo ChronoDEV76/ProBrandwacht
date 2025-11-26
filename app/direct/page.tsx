@@ -19,14 +19,14 @@ export default function ProBrandwachtDirectPage() {
       <header className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
         <p className="mt-2 text-slate-700">
-          24/7 spoedlijn voor inzet van gecertificeerde brandwachten. Snel, transparant en DBA-proof.
+          24/7 spoedlijn voor inzet van gecertificeerde brandwachten. Snel, duidelijk en DBA-proof.
           Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
           Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 10% inbegrepen).
         </p>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Transparante tarieven
+            Duidelijke tarieven
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             DBA-proof samenwerking
@@ -36,6 +36,15 @@ export default function ProBrandwachtDirectPage() {
           </span>
         </div>
       </header>
+
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm text-sm text-slate-700">
+        <h2 className="text-base font-semibold text-slate-900">Vertrouwd voor spoedopdrachten</h2>
+        <ul className="mt-2 space-y-1">
+          <li>• Rijksgediplomeerde brandwachten, certificaten zichtbaar</li>
+          <li>• Duidelijke 10% fee en vooraf afgestemde betalingen</li>
+          <li>• Alle afspraken en chatlogs beschikbaar bij terugkoppeling</li>
+        </ul>
+      </div>
 
       {/* Keuze: formulier of live-chat */}
       <section className="grid gap-4 md:grid-cols-2">

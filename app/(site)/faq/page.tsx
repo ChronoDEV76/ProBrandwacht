@@ -78,7 +78,29 @@ export default function FAQPage() {
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
           <li>• Certificaten worden realtime gecontroleerd en verlopen documenten blokkeren we direct</li>
           <li>• Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten</li>
+          <li>• Duidelijke 10% opdrachtgever-fee en afspraken zwart op wit</li>
         </ul>
+      </div>
+
+      <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-6">
+        <h2 className="text-xl font-semibold text-slate-900">Direct door naar een aanvraag</h2>
+        <p className="mt-2 text-sm text-slate-700">
+          Start meteen een aanvraag of meld je aan om op de wachtlijst te komen. Altijd duidelijke kostenopbouw en DBA-proof documentatie.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Link
+            href="/probrandwacht-direct"
+            className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-600"
+          >
+            Start aanvraag
+          </Link>
+          <Link
+            href="/zzp/aanmelden"
+            className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
+          >
+            Meld je aan als brandwacht
+          </Link>
+        </div>
       </div>
     </section>
   )

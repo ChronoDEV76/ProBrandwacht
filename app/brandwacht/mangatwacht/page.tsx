@@ -30,6 +30,10 @@ const config: BrandwachtStubConfig = {
       heading: 'Samenwerking',
       items: ['Tarief en planning bepaal je direct met de professional', 'Betaalafspraken vastgelegd voor zekerheid bij 24/7 diensten', 'Rapportage voor audits en evaluaties'],
     },
+    {
+      heading: 'Zekerheid & vertrouwen',
+      items: ['Rijksgediplomeerde brandwachten en gasmeetcertificaten', 'DBA-proof documentatie en heldere 10% opdrachtgever-fee', '24/7 bereikbaarheid voor spoed of onverwachte ingangen'],
+    },
   ],
 }
 export const metadata: Metadata = getRouteMetadata('/brandwacht/mangatwacht');
