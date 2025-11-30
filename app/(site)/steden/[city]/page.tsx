@@ -1,36 +1,34 @@
-// app/steden/[city]/page.tsx
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
+
+import HeroBackground from '@/components/HeroBackground'
+import { HeroShell } from '@/components/layout/hero-shell'
+import { InfoCardsRow } from '@/components/layout/info-cards-row'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import CityHero from '@/components/city-hero'
-import { DEFAULT_TARIFFS, type CitySlug } from '@/lib/tariffs'
-import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 import { CITY_DATA, CITY_SLUGS, type CityRecord } from '@/lib/city-data'
+import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+
+export const metadata: Metadata = getRouteMetadata('/steden/[city]')
 
 const CITY_RECORD_MAP = CITY_DATA.reduce((acc, city) => {
-  acc[city.slug as CitySlug] = city
+  acc[city.slug] = city
   return acc
-}, {} as Record<CitySlug, CityRecord>)
+}, {} as Record<string, CityRecord>)
 
 export function generateStaticParams() {
-  return CITY_SLUGS.map(city => ({ city })) satisfies Array<{ city: CitySlug }>
+  return CITY_SLUGS.map(city => ({ city }))
 }
 
-const resolveLabel = (city: CitySlug) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
-export const metadata: Metadata = getRouteMetadata('/steden/[city]');
-
-
+const isCitySlug = (value: string): value is (typeof CITY_SLUGS)[number] => CITY_SLUGS.includes(value as (typeof CITY_SLUGS)[number])
+const resolveLabel = (city: string) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const rawCity = params.city
   if (!isCitySlug(rawCity)) return notFound()
-  const city = rawCity as CitySlug
-  const label = resolveLabel(city)
 
-  const ranges = DEFAULT_TARIFFS[city]
-  if (!ranges) return notFound()
-
-  const canonical = `https://www.probrandwacht.nl/steden/${city}`
+  const label = resolveLabel(rawCity)
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -44,124 +42,91 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Regio tarieven', url: 'https://www.probrandwacht.nl/brandwacht-inhuren' },
-    { name: `Brandwacht ${label}`, url: canonical },
+    { name: `Brandwacht ${label}`, url: `https://www.probrandwacht.nl/steden/${rawCity}` },
   ]
 
-  const heroHeading = (
-    <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Brandwacht tarieven {label}
-    </h1>
-  )
+  const cards = [
+    {
+      eyebrow: 'Vandaag',
+      title: `Zichtbaarheid in ${label}`,
+      body: (
+        <>
+          We helpen je profiel scherp te krijgen en kijken mee bij aanvragen in en rond {label}. Geen garantie op opdrachten, wel een eerlijk
+          vertrekpunt en duidelijke DBA-handvatten.
+        </>
+      ),
+    },
+    {
+      eyebrow: 'Morgen',
+      title: 'ProSafetyMatch',
+      body: (
+        <>
+          Digitale omgeving (streefdatum Q1 2026) waarin vraag en aanbod elkaar rechtstreeks vinden – DBA-proof, transparant en zonder marge op
+          het uurtarief. 10% platformfee, optioneel 1–2% escrow.
+        </>
+      ),
+    },
+    {
+      eyebrow: 'FAQ kort',
+      title: 'Wat kun je nu verwachten?',
+      body: (
+        <>
+          Aanmelden is gratis. We beloven geen volle agenda, wel eerlijke communicatie, sectorinzichten en een platform dat met jou
+          meegroeit richting ProSafetyMatch.
+        </>
+      ),
+    },
+  ]
 
   return (
-    <main className="mx-auto w-full min-h-full max-w-3xl space-y-8 px-4 py-10">
-      <StructuredBreadcrumbs items={breadcrumbItems} />
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+      <div className="mx-auto w-full max-w-5xl px-4 py-6">
+        <StructuredBreadcrumbs items={breadcrumbItems} />
+      </div>
 
-      <CityHero cityName={label} heading={heroHeading} />
-
-      <section className="space-y-3 text-slate-700">
-        <p>
-          Hieronder vind je <strong>indicatieve tariefbandbreedtes</strong> voor {label}. Voor een
-          <strong> persoonlijk PDF-rapport met jouw netto waarde</strong> (incl. aftrekposten & reserveringen)
-          gebruik je onze centrale berekening op de homepage.
-        </p>
-        <p className="text-sm text-slate-600">
-          <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof
-          afspraken. Lees meer over{' '}
-          <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-            brandwacht inhuren
-          </a>{' '}
-          of vraag direct aan via{' '}
-          <a href="/probrandwacht-direct" className="underline">
-            ProBrandwacht Direct
-          </a>
-          .
-        </p>
-      </section>
-
-      {/* Adviesranges */}
-      <section className="mb-2">
-        <h2 className="text-xl font-semibold">Indicatieve adviesranges</h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-2xl border p-4 bg-white shadow-sm">
-            <div className="text-sm text-slate-600">Evenementen / Bouw</div>
-            <div className="text-2xl font-semibold">€ {ranges.standaard.min}–€ {ranges.standaard.max} /u</div>
-          </div>
-          {ranges.industrie && (
-            <div className="rounded-2xl border p-4 bg-white shadow-sm">
-              <div className="text-sm text-slate-600">Industrie / Petrochemie</div>
-              <div className="text-2xl font-semibold">€ {ranges.industrie.min}–€ {ranges.industrie.max} /u</div>
-            </div>
-          )}
+      <HeroBackground
+        backgroundImage="/brandweer-psm.webp"
+        imageClassName="object-[50%_47%]"
+        overlayClassName="bg-slate-950/55"
+      >
+        <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
+          <HeroShell
+            eyebrow={`Brandwacht ${label} · Via ProBrandwacht`}
+            title={<>Kies zelf je opdrachten in {label}</>}
+            body={
+              <>
+                Kies zelf je opdrachten in <span className="font-semibold">{label}</span> — zonder bureau, wel{' '}
+                <span className="font-semibold">DBA-proof</span>. Vandaag via zichtbaarheid en handmatige matching, morgen via{' '}
+                <span className="font-semibold">ProSafetyMatch</span>: een digitale omgeving waar vraag en aanbod elkaar rechtstreeks vinden
+                zonder marge op het uurtarief.
+              </>
+            }
+            primaryCta={{ href: '/zzp/aanmelden', label: 'Meld je aan als brandwacht' }}
+            secondaryCta={{ href: '/missie', label: 'Lees onze missie' }}
+            footer={<>Geen detacheringsbureau: je spreekt altijd zelf tarief, taken en gezag af met de opdrachtgever.</>}
+          />
         </div>
-        <p className="mt-3 text-sm text-slate-600">
-          Deze bandbreedtes zijn een vertrekpunt. Het exacte tarief stem je samen af op certificaten, ervaring,
-          werktijden en projectcomplexiteit.
-        </p>
+      </HeroBackground>
+
+      <div className="pt-6">
+        <InfoCardsRow items={cards} />
+      </div>
+
+      <section className="mx-auto max-w-5xl px-4 pb-20 pt-6">
+        <section className="rounded-[26px] border border-white/10 bg-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+          <h2 className="text-xl font-semibold text-slate-50">Veelgestelde vragen</h2>
+          <ul className="mt-3 space-y-3">
+            {opdrachtgeverFaq.map(f => (
+              <li key={f.question}>
+                <p className="text-sm font-semibold text-slate-50">{f.question}</p>
+                <p className="mt-1 text-sm text-slate-200">{f.answer}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
 
-      {/* Converterende CTA - leidt naar centrale leadgenerator */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900 mb-1">Wil je weten wat je écht waard bent?</h2>
-        <p className="text-slate-600 mb-4">
-          Ontvang direct een <strong>persoonlijk PDF-rapport</strong> met jouw netto uurwaarde, inclusief reserveringen,
-          aftrekposten en duidelijke opbouw. Geen tussenlaag, wel helder inzicht.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <a
-            href="/#waarde-berekenen"
-            className="rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-600"
-          >
-            Bereken mijn waarde
-          </a>
-          <Link
-            href="/opdrachtgevers"
-            className="rounded-2xl border px-5 py-3 text-sm font-semibold hover:bg-white"
-          >
-            Lees meer voor opdrachtgevers
-          </Link>
-        </div>
-      </section>
-
-      <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
-        <h2 className="text-lg font-semibold text-slate-900">Vertrouwd door veiligheidsteams</h2>
-        <p className="mt-2 text-sm text-slate-700">
-          We werken met rijksgediplomeerde brandwachten, controleren certificaten en leggen afspraken vast. Duidelijke 10% fee voor opdrachtgevers, geen verborgen marges.
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
-          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">DBA-proof documentatie</span>
-          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">Certificaatcontrole</span>
-          <span className="rounded-full border border-slate-200 bg-white px-3 py-1">24/7 bereikbaarheid</span>
-        </div>
-      </section>
-
-      {/* Veelgestelde vragen */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
-        <div className="mt-3 space-y-3">
-          {opdrachtgeverFaq.map(item => (
-            <details key={item.question} className="group rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <summary className="cursor-pointer text-sm font-semibold text-slate-900 group-open:text-brand-700">
-                {item.question}
-              </summary>
-              <p className="mt-2 text-sm text-slate-700">{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </main>
   )
-}
-
-import { notFound } from 'next/navigation'
-import { getRouteMetadata } from '@/lib/seo/metadata'
-
-const CITY_SLUG_SET = new Set<string>(CITY_SLUGS)
-
-function isCitySlug(value: string): value is CitySlug {
-  return CITY_SLUG_SET.has(value)
 }

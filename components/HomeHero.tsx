@@ -1,64 +1,59 @@
-"use client";
+import clsx from "clsx"
+import Link from "next/link"
 
-import { useEffect, useState } from "react";
-import HomeHeroCycle from "@/components/home-hero-cycle";
+type HomeHeroProps = {
+  className?: string
+}
 
-const taglines = [
-  "Het eerlijkste platform voor zzp-brandwachten — geen bureaugedoe, geen prijsdruk, geen flauwekul.",
-  "Wij matchen expertise aan jouw opdracht.",
-  "Bij beschikbaarheid — snel inzetbaar op locatie.",
-  "Gecertificeerd. Gescreend. Gereed voor inzet.",
-];
-
-export default function HomeHero() {
-  const [idx, setIdx] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % taglines.length), 2800);
-    return () => clearInterval(t);
-  }, []);
-
+export default function HomeHero({ className }: HomeHeroProps) {
   return (
-    <section className="flex min-h-[50vh] items-center justify-center text-center">
-      <div className="mx-auto w-full max-w-4xl">
-        <div className="rounded-3xl border border-white/10 bg-white/5 px-8 py-10 shadow-2xl backdrop-blur-xl sm:px-10 sm:py-12">
-          <p className="mx-auto mb-3 inline-flex items-center rounded-full bg-white/20 px-4 py-1.5 text-[11px] font-semibold tracking-[0.15em] text-white/80">
-            Door brandweermensen · Voor brandweermensen
+    <section className={clsx("relative text-slate-50", className)}>
+      {/* Container die hero op de grill laat landen */}
+      <div className="mx-auto flex min-h-[50vh] max-w-5xl flex-col justify-end px-4 pb-2 sm:pb-3 md:min-h-[55vh]">
+        <div className="mx-auto w-full max-w-xl rounded-3xl bg-slate-950/82 p-5 shadow-2xl backdrop-blur-md md:p-7">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+            Voor brandweermensen · Door brandweermensen
           </p>
 
-          <h1 className="text-4xl font-bold tracking-wide text-white drop-shadow-xl sm:text-[2.6rem]">ProBrandwacht</h1>
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            ProBrandwacht
+          </h1>
 
-          <p className="mt-3 text-[15px] text-white sm:text-lg">
-            Het platform voor gecertificeerde brandwachten — direct, eerlijk en zonder tussenschakels.
+          <p className="mt-2 text-sm leading-relaxed text-slate-200">
+            Het digitale platform waar brandwachten en opdrachtgevers elkaar straks
+            rechtstreeks vinden —{" "}
+            <span className="font-semibold text-sky-300">DBA-proof</span>, zonder ruis
+            en zonder marge op je uurtarief.
           </p>
 
-          <p className="mt-3 text-sm font-semibold text-white sm:text-[15px]">
-            Bij beschikbaarheid. Snel inzetbaar. Zonder loze beloftes.
+          <p className="mt-1 text-xs leading-relaxed text-slate-300">
+            Vandaag: zichtbaarheid en eerlijke afspraken. Morgen:{" "}
+            <span className="font-semibold text-white">ProSafetyMatch</span> — de nieuwe
+            digitale standaard voor samenwerken in veiligheid.
           </p>
 
-          <p className="mt-2 text-sm text-white sm:text-[15px]">
-            Geen bureaus, geen concurrentiebedingen, geen race to the bottom — wel direct contact en eerlijke tarieven.
-          </p>
-
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <a
+          {/* CTA buttons */}
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Link
               href="/zzp/aanmelden"
-              className="rounded-full bg-blue-600 px-8 py-3 font-semibold text-white shadow-lg shadow-black/40 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-black/60"
+              className="inline-flex flex-1 items-center justify-center rounded-2xl bg-sky-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-400"
             >
-              Meld je aan als professional
-            </a>
-
-            <a
-              href="/probrandwacht-direct"
-              className="rounded-full bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur shadow-md shadow-black/30 transition hover:-translate-y-0.5 hover:bg-white/20"
+              Ik ben brandwacht — start gratis
+            </Link>
+            <Link
+              href="/opdrachtgevers"
+              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-slate-600/70 bg-slate-900/60 px-4 py-2.5 text-sm font-semibold text-slate-50 hover:border-slate-300"
             >
-              Zoek direct een brandwacht
-            </a>
+              Ik ben opdrachtgever — op de wachtlijst
+            </Link>
           </div>
 
-          <HomeHeroCycle />
+          <p className="mt-3 text-[11px] text-slate-400">
+            Profiel aanmaken of wachtlijst: gratis · Altijd DBA-proof · Geen
+            bemiddelingsbureau.
+          </p>
         </div>
       </div>
     </section>
-  );
+  )
 }
