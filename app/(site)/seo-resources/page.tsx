@@ -7,7 +7,6 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/seo-resources');
 
 
-
 export default function SeoResourcesPage() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
@@ -24,22 +23,25 @@ export default function SeoResourcesPage() {
   }
 
   return (
-    <main className="mx-auto w-full min-h-full max-w-3xl space-y-8 px-4 py-12">
+    <main className="mx-auto w-full min-h-full max-w-6xl space-y-10 px-4 py-10 sm:px-6 lg:px-8">
       <StructuredBreadcrumbs items={breadcrumbItems} />
-      <h1 className="text-3xl font-semibold text-slate-900">
-        Autoritaire bronnen voor brandwachtcontent
-      </h1>
+
+      <article className="space-y-4 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
+        <h1 className="text-3xl font-semibold text-slate-900">
+          Autoritaire bronnen voor brandwachtcontent
+        </h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
-      <p className="mt-3 text-sm text-slate-600">
-        Gebruik deze lijst wanneer je blogs of landingspagina’s schrijft. Link naar de passende bron
-        met een beschrijvende anchor-tekst om Expertise, Authoritativeness en Trustworthiness te
-        versterken.
-      </p>
+        <p className="text-sm text-slate-600">
+          Gebruik deze lijst wanneer je blogs of landingspagina’s schrijft. Link naar de passende bron
+          met een beschrijvende anchor-tekst om Expertise, Authoritativeness en Trustworthiness te
+          versterken.
+        </p>
+      </article>
 
       <ol className="mt-8 space-y-6">
         {authoritativeSources.map((src, index) => (
@@ -80,7 +82,7 @@ export default function SeoResourcesPage() {
       </section>
 
       <section className="flex flex-wrap gap-3">
-        <Link href="/opdrachtgevers/brandwacht-inhuren" className="rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90">
+        <Link href="/opdrachtgevers" className="rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90">
           Brandwacht inhuren
         </Link>
         <Link href="/zzp/aanmelden" className="rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50">

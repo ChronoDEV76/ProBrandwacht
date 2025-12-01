@@ -10,7 +10,7 @@ type CityHeroProps = {
 export default function CityHero({ cityName, heading }: CityHeroProps) {
   const defaultHeading = (
     <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Brandwacht inhuren in {cityName}
+      Brandwacht {cityName}: word gevonden en blijf DBA-proof
     </h1>
   )
 
@@ -19,41 +19,48 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          Zoek je een <strong>brandwacht</strong> in {cityName}? Via ProBrandwacht.nl zie je in een paar minuten welke inzet aansluit op je aanvraag.
-          Kies voor <span className="font-medium">ProBrandwacht Direct</span> voor geplande opdrachten.
-          {SPOED_UI_ENABLED ? (
-            <> Voor 24/7 inzet schakel je via <span className="font-medium">ProBrandwacht Direct spoed</span>. </>
-          ) : null}
+          Sluit je aan bij ProBrandwacht; wij delen leads in en rond {cityName} en bereiden je voor op werken via ProSafetyMatch
+          (Wet DBA-proof). Huidige status: handmatige matching en kennisdeling.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <a
-            href="/probrandwacht-direct"
-            data-analytics="hero-probrandwacht-direct-cta"
+            href="/zzp/aanmelden"
             className="inline-flex items-center rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
-            ProBrandwacht Direct — geplande inzet
+            Meld je aan als brandwacht (gratis)
+          </a>
+          <a
+            href="/missie"
+            className="inline-flex items-center rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
+          >
+            Lees hoe we werken
+          </a>
+          <a
+            href="/probrandwacht-direct"
+            className="text-sm font-semibold text-brand-700 underline underline-offset-4"
+          >
+            Heb je een aanvraag? ProBrandwacht Direct
           </a>
           {SPOED_UI_ENABLED ? (
             <a
               href="/probrandwacht-direct-spoed"
-              data-analytics="hero-probrandwacht-direct-spoed-cta"
-              className="inline-flex items-center rounded-2xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
+              className="text-sm font-semibold text-brand-700 underline underline-offset-4"
             >
-              ProBrandwacht Direct spoed — 24/7
+              Spoed (24/7) →
             </a>
           ) : null}
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Gecertificeerde brandwachten in {cityName}
+            Direct contact met opdrachtgevers
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            DBA-proof & duidelijke tarieven
+            Geen concurrentiebeding · geen race to the bottom
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Direct contact met professionals
+            Voorbereiding op Wet DBA-afspraken
           </span>
         </div>
       </div>

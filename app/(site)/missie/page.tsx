@@ -6,8 +6,9 @@ import { HeroShell } from '@/components/layout/hero-shell'
 import { InfoCardsRow } from '@/components/layout/info-cards-row'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/missie');
 
-export const metadata: Metadata = getRouteMetadata('/missie')
+
 
 export default function MissionPage() {
   const breadcrumbItems = [
@@ -50,6 +51,12 @@ export default function MissionPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>

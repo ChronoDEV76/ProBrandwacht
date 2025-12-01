@@ -5,103 +5,128 @@ import faqContent from '@/content/faq.json'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/faq'
-export const metadata: Metadata = getRouteMetadata('/faq');
+export const metadata: Metadata = getRouteMetadata('/faq')
 
-
+// Haal de secties uit je JSON-content.
+// Als faqContent.sections bestaat → gebruik die,
+// anders gaan we ervan uit dat faqContent zelf al een array is.
+const sections =
+  Array.isArray((faqContent as any).sections)
+    ? (faqContent as any).sections
+    : (faqContent as any)
 
 export default function FAQPage() {
-  const sections = faqContent
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: sections
-      .flatMap(section => section.items.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer.join(' ') },
-      })))
+      .flatMap((section: any) =>
+        section.items.map((item: any) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: Array.isArray(item.answer) ? item.answer.join(' ') : String(item.answer ?? ''),
+          },
+        })),
+      )
       .slice(0, 6),
   }
 
   return (
-    <section className="space-y-8">
+    <main className="mx-auto w-full max-w-6xl space-y-10 px-4 py-10 sm:px-6 lg:px-8">
       <StructuredBreadcrumbs
         items={[
           { name: 'Home', url: 'https://www.probrandwacht.nl/' },
           { name: 'FAQ', url: canonicalUrl },
         ]}
       />
-      <h1 className="text-3xl font-semibold">Veelgestelde vragen</h1>
-      {/* __seo-badges */}
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-          Samen zetten we de nieuwe standaard voor veiligheids professionals
-        </span>
-        <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-          Aangescherpt met feedback uit de sector (200+ professionals)
-        </span>
-      </div>
-{/* marketing intro intentionally removed */}
-      {sections.map(section => (
-        <div key={section.title} className="space-y-4">
-          <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
-          <ul className="space-y-3">
-            {section.items.map(item => (
-              <li
-                key={item.id ?? item.question}
-                id={item.id}
-                className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4"
-              >
-                <p className="font-medium text-slate-900">{item.question}</p>
-                {item.summary ? <p className="text-sm font-medium text-slate-600">{item.summary}</p> : null}
-                <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-slate-600">
-                  {item.answer.map((line, idx) => (
-                    <li key={idx}>{line}</li>
-                  ))}
-                </ul>
-                {item.more ? (
-                  <p className="mt-2 text-sm">
-                    <Link href={item.more.href} className="underline">
-                      {item.more.label}
-                    </Link>
-                  </p>
-                ) : null}
-              </li>
-            ))}
+
+      <article className="space-y-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
+        <div className="space-y-4">
+          <h1 className="text-3xl font-semibold text-slate-900">Veelgestelde vragen</h1>
+
+          {/* SEO-UPGRADE START */}
+          <div className="mt-2 text-slate-600 text-sm">
+            <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven
+            en DBA-proof afspraken. Lees meer over{' '}
+            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
+              brandwacht inhuren
+            </Link>{' '}
+            of vraag direct aan via{' '}
+            <Link href="/probrandwacht-direct" className="underline">
+              ProBrandwacht Direct
+            </Link>
+            .
+          </div>
+          {/* SEO-UPGRADE END */}
+
+          {/* __seo-badges */}
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
+              Samen zetten we de nieuwe standaard voor veiligheids professionals
+            </span>
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
+              Aangescherpt met feedback uit de sector (200+ professionals)
+            </span>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {sections.map((section: any) => (
+            <section key={section.title} className="space-y-4">
+              <h2 className="text-xl font-semibold text-slate-900">{section.title}</h2>
+              <ul className="space-y-3">
+                {section.items.map((item: any) => (
+                  <li
+                    key={item.id ?? item.question}
+                    id={item.id}
+                    className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4"
+                  >
+                    <p className="font-medium text-slate-900">{item.question}</p>
+                    {item.summary ? (
+                      <p className="text-sm font-medium text-slate-600">{item.summary}</p>
+                    ) : null}
+                    <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-slate-600">
+                      {item.answer.map((line: string, idx: number) => (
+                        <li key={idx}>{line}</li>
+                      ))}
+                    </ul>
+                    {item.more ? (
+                      <p className="mt-2 text-sm">
+                        <Link href={item.more.href} className="underline">
+                          {item.more.label}
+                        </Link>
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-xl font-semibold text-slate-900">
+            Waarom opdrachtgevers vertrouwen op ProBrandwacht
+          </h2>
+          <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            <li>
+              • Certificaten worden handmatig gecontroleerd; verlopen documenten worden bij aanmelding opnieuw
+              opgevraagd
+            </li>
+            <li>
+              • Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten
+            </li>
           </ul>
         </div>
-      ))}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      </article>
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-        <h2 className="text-xl font-semibold text-slate-900">Waarom opdrachtgevers vertrouwen op ProBrandwacht</h2>
-        <ul className="mt-3 space-y-2 text-sm text-slate-700">
-          <li>• Certificaten worden realtime gecontroleerd en verlopen documenten blokkeren we direct</li>
-          <li>• Gebruikt door veiligheidsregio-adviseurs als referentie voor vergunningstrajecten</li>
-          <li>• Duidelijke 10% opdrachtgever-fee en afspraken zwart op wit</li>
-        </ul>
-      </div>
-
-      <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-6">
-        <h2 className="text-xl font-semibold text-slate-900">Direct door naar een aanvraag</h2>
-        <p className="mt-2 text-sm text-slate-700">
-          Start meteen een aanvraag of meld je aan om op de wachtlijst te komen voor ProSafetyMatch. Altijd duidelijke kostenopbouw en DBA-proof documentatie in je persoonlijke dashboard.
-        </p>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link
-            href="/probrandwacht-direct"
-            className="inline-flex items-center rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-brand-600"
-          >
-            Start aanvraag
-          </Link>
-          <Link
-            href="/zzp/aanmelden"
-            className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
-          >
-            Meld je aan als brandwacht
-          </Link>
-        </div>
-      </div>
-    </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+    </main>
   )
 }
+

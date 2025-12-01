@@ -8,7 +8,6 @@ const canonicalUrl = 'https://www.probrandwacht.nl/opdrachtgevers/aanmelden'
 export const metadata: Metadata = getRouteMetadata('/opdrachtgevers/aanmelden');
 
 
-
 export default function OpdrachtgeverAanmeldenPage() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
@@ -34,16 +33,14 @@ export default function OpdrachtgeverAanmeldenPage() {
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
           <p className="text-sm text-slate-600">
             Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat we betaalafspraken activeren.
           </p>
           <div className="flex flex-wrap gap-3 text-sm">
-            <a href="/opdrachtgevers/brandwacht-inhuren" className="underline text-brand-700">
-              Bekijk eerst hoe inhuur werkt
-            </a>
+            <a href="/opdrachtgevers" className="underline text-brand-700">Bekijk eerst hoe inhuur werkt</a>
             <a href="/faq" className="underline text-brand-700">
               Lees de veelgestelde vragen
             </a>

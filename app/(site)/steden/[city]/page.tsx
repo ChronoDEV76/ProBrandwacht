@@ -6,23 +6,19 @@ import HeroBackground from '@/components/HeroBackground'
 import { HeroShell } from '@/components/layout/hero-shell'
 import { InfoCardsRow } from '@/components/layout/info-cards-row'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { CITY_DATA, CITY_SLUGS, type CityRecord } from '@/lib/city-data'
+import { CITY_RECORD_MAP, CITY_SLUGS, type CitySlug } from '@/lib/city-data'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
-
-export const metadata: Metadata = getRouteMetadata('/steden/[city]')
-
-const CITY_RECORD_MAP = CITY_DATA.reduce((acc, city) => {
-  acc[city.slug] = city
-  return acc
-}, {} as Record<string, CityRecord>)
 
 export function generateStaticParams() {
   return CITY_SLUGS.map(city => ({ city }))
 }
 
 const isCitySlug = (value: string): value is (typeof CITY_SLUGS)[number] => CITY_SLUGS.includes(value as (typeof CITY_SLUGS)[number])
-const resolveLabel = (city: string) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
+const resolveLabel = (city: CitySlug) => CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, ' ')
+export const metadata: Metadata = getRouteMetadata('/steden/[city]');
+
+
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const rawCity = params.city
@@ -80,6 +76,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>

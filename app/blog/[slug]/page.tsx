@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
       </header>
@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           {coreCities.map((city) => (
             <li key={city.slug}>
               <Link
-                href={`/brandwacht-inhuren/${city.slug}`}
+                href="/opdrachtgevers"
                 prefetch={false}
                 className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
               >

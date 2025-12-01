@@ -20,7 +20,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Hoe snel vind ik een brandwacht?',
     answer:
-      'Meestal zie je binnen enkele minuten beschikbare profielen op basis van tarief, certificaten en regio. Je kunt direct chatten, de wensen en afspraken doornemen en de inzet bevestigen. Chatgegevens worden gelogd onder een uniek ID en zijn opvraagbaar bij een dispuut.',
+      'Straks zie je binnen enkele minuten beschikbare profielen op basis van tarief, certificaten en regio. Je kunt direct en E2E beveiligd chatten in het dashboard of op je telefoon om de wensen en afspraken door te nemen en de inzet bevestigen. Chatgegevens worden gelogd onder een uniek ID en zijn opvraagbaar bij een dispuut.',
   },
   {
     question: 'Kan ik vaste teams samenstellen?',

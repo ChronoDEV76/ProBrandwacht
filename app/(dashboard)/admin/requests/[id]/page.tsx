@@ -5,7 +5,6 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/admin/requests/[id]');
 
 
-
 export default async function AdminRequestPage({ params }: { params: { id: string } }) {
   const supabase = getSupabaseAdmin()
   const { data, error } = await supabase

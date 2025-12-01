@@ -9,7 +9,6 @@ const AnalyticsClient = dynamic(() => import('./AnalyticsClient'), { ssr: false 
 export const metadata: Metadata = getRouteMetadata('/admin/analytics');
 
 
-
 export default function AnalyticsDebugPage() {
   const heading = <h1 className="text-2xl font-semibold">Share events (session)</h1>
 

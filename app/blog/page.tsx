@@ -7,6 +7,7 @@ import { coreCities } from '@/lib/cities'
 import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
 const TITLE_CORE = 'Blog brandveiligheid & zzp-brandwachten'
@@ -113,6 +114,8 @@ function normalizeImagePosition(value: unknown) {
   const trimmed = value.trim()
   return trimmed ? trimmed : undefined
 }
+
+
 export default async function BlogIndexPage({ searchParams }: { searchParams?: Record<string, string> }) {
   const cat = (searchParams?.cat as (typeof CATEGORIES)[number]) || 'Alle'
   const city = (searchParams?.city as (typeof CITIES)[number]) || 'Alle'
@@ -208,12 +211,12 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <JSONLD data={itemListSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <header className="space-y-4">
+      <header className="space-y-4 text-slate-900">
         <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
         <p className="mt-2 max-w-3xl text-slate-700">
@@ -265,52 +268,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               </FilterChip>
             ))}
           </nav>
-        </div>
-      </section>
-
-      <section className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
-        <h2 className="text-lg font-semibold text-slate-900">Snelle routes naar onze diensten</h2>
-        <p className="mt-1 text-sm text-slate-600">
-          Verken de belangrijkste flows voor DBA-proof brandwachten, mangatwacht/buitenwacht inzet of gasmeting/gasmeter
-          ondersteuning. Elk pad linkt door naar concrete tarieven, poort-QR check-in uitleg en aanbestedingsklare teksten.
-        </p>
-        <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          <Link
-            href="/opdrachtgevers/brandwacht-inhuren"
-            className="rounded-xl border border-brand-100 bg-white px-4 py-3 text-sm font-semibold text-brand-800 transition hover:bg-brand-50"
-          >
-            DBA-proof brandwacht inhuren
-          </Link>
-          <Link
-            href="/brandwacht/haven-industrie"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
-          >
-            Industriële brandwacht & gasmeting
-          </Link>
-          <Link
-            href="/brandwacht/mangatwacht"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
-          >
-            Mangatwacht / buitenwacht inzetten
-          </Link>
-          <Link
-            href="/brandwacht/turnaround-stop"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
-          >
-            Turnaround & ERT/rescue team ondersteuning
-          </Link>
-          <Link
-            href="/brandwacht-huren"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
-          >
-            Brandwacht huren met poort-QR check-in
-          </Link>
-          <Link
-            href="/probrandwacht-direct"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-100"
-          >
-            24/7 contact via ProBrandwacht Direct
-          </Link>
         </div>
       </section>
 
@@ -375,28 +332,20 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
         <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Bekijk per stad hoe je tarieven samenstelt inclusief 10% platformfee en het nettobedrag dat overblijft.
+          Bekijk per stad indicatieve tariefbanden en meld je aan voor aanvragen in jouw regio.
         </p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {cityLinks.map(city => (
             <li key={city.slug}>
               <Link
-                href={`/brandwacht-inhuren/${city.slug}`}
+                href={`/steden/${city.slug}`}
                 prefetch={false}
                 className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
               >
-                Brandwacht inhuren {city.name}
+                Brandwacht {city.name}
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="/steden/amsterdam"
-              className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
-            >
-              Bekijk calculator →
-            </Link>
-          </li>
         </ul>
       </section>
 
@@ -417,7 +366,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="mt-10 rounded-2xl bg-slate-50 p-6 text-center">
         <h3 className="text-xl font-semibold">Klaar voor eerlijk samenwerken?</h3>
         <p className="mt-2 text-slate-700">
-          Sluit je aan bij de eerste lichting brandwachten of meld je als opdrachtgever aan voor de wachtlijst.
+          Toegang voor de eerste lichting is geopend — voor professionals en vooruitstrevende opdrachtgevers.
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <a
@@ -443,8 +392,10 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
       href={href}
       prefetch={false}
       className={[
-        'rounded-full border px-3 py-1 text-sm',
-        active ? 'border-brand-200 bg-brand-50 text-brand-700' : 'hover:bg-slate-50',
+        'rounded-full border px-3 py-1 text-sm transition',
+        active
+          ? 'border-brand-200 bg-brand-50 text-brand-700'
+          : 'border-slate-200 bg-white/80 text-slate-700 hover:bg-white',
       ].join(' ')}
     >
       {children}

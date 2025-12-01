@@ -1,347 +1,216 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
-import Link from "next/link"
-import type { Metadata } from "next"
-import type { ReactNode } from "react"
-import { getSignupUrl } from "@/lib/config"
+import HeroBackground from '@/components/HeroBackground'
+import { HeroShell } from '@/components/layout/hero-shell'
+import { InfoCardsRow } from '@/components/layout/info-cards-row'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/opdrachtgevers');
 
 
 
 export default function OpdrachtgeversPage() {
-  const signupUrl = getSignupUrl()
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Voor opdrachtgevers', url: 'https://www.probrandwacht.nl/opdrachtgevers' },
+    { name: 'Opdrachtgevers', url: 'https://www.probrandwacht.nl/opdrachtgevers' },
   ]
-  const extraFaqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: opdrachtgeverFaq.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: { '@type': 'Answer', text: item.answer },
-    })),
-  }
+
+  const cards = [
+    {
+      eyebrow: 'Vandaag',
+      title: 'Snel zicht op professionals',
+      body: (
+        <>
+          We denken mee bij aanvragen en leggen direct lijnen met beschikbare brandwachten of hun leveranciers. Geen bemiddelingsbureau: je
+          spreekt zelf uurtarief, rol en verantwoordelijkheid af.
+        </>
+      ),
+    },
+    {
+      eyebrow: 'Morgen',
+      title: 'ProSafetyMatch tooling',
+      body: (
+        <>
+          Digitale omgeving (streefdatum Q1 2026) voor transparante matching, basis-documentatie en optionele escrow. 10% platformfee op het
+          tarief, zonder verborgen marge op de inzet zelf.
+        </>
+      ),
+    },
+    {
+      eyebrow: 'Voor welke vragen',
+      title: 'Van events tot industrie',
+      body: (
+        <>
+          Denk aan evenementen, tijdelijke objectbewaking, bouwplaatsen of industriële inzet waar een rijksgediplomeerde brandwacht gewenst
+          of verplicht is. We denken mee of ProBrandwacht / ProSafetyMatch past bij je casus.
+        </>
+      ),
+    },
+  ]
+
+  const benefits = [
+    {
+      title: 'Helder profiel van elke brandwacht',
+      copy: 'Diploma’s, certificeringen, inzetgebieden en ervaring duidelijk in beeld. Geen gokwerk meer bij het inhuren.',
+    },
+    {
+      title: 'Rechtstreeks contact, geen ruis',
+      copy: 'Je schakelt direct met de brandwacht. Afspraken over tarief, inzet en tijden maak je 1-op-1, zonder tussenbureau.',
+    },
+    {
+      title: 'DBA-proof samenwerken',
+      copy: 'Werken met zelfstandige professionals, met aandacht voor gezag, inhuurconstructies en heldere afspraken.',
+    },
+    {
+      title: 'Transparant tarief',
+      copy: 'De brandwacht bepaalt zijn uurtarief. Jij betaalt geen marge bovenop dat tarief. Wel zo eerlijk en overzichtelijk.',
+    },
+  ]
+
+  const futureItems = [
+    {
+      title: 'ProSafetyMatch (Q1 2026)',
+      copy: 'Digitale omgeving waarin vraag en aanbod elkaar rechtstreeks vinden – DBA-proof, zonder ruis en zonder marge op het uurtarief.',
+    },
+    {
+      title: '10% platformfee + optioneel 1–2% escrow',
+      copy: 'Een eerlijk tariefmodel voor onderhoud, innovatie en betalingszekerheid, zonder dat het uurtarief van de brandwacht wordt uitgehold.',
+    },
+    {
+      title: 'Volledig inzicht in samenwerking',
+      copy: 'Overzicht in diensten, beschikbaarheid, afspraken en – na livegang – facturatie en betalingen via het platform.',
+    },
+  ]
+
   return (
-    <main className="mx-auto w-full min-h-full max-w-6xl space-y-12 px-4 py-10">
-      <StructuredBreadcrumbs items={breadcrumbItems} />
-      {/* Hero */}
-      <section className="space-y-6 rounded-3xl bg-slate-50 p-8 ring-1 ring-slate-200">
-        <div className="rounded-3xl bg-slate-50 p-8 md:p-12 ring-1 ring-slate-200">
-          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Huur veiligheids professionals in zonder verborgen marges – snel, eerlijk en
-            DBA-proof
-          </h1>
-          {/* __seo-badges */}
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Samen zetten we de nieuwe standaard voor veiligheids professionals
-            </span>
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-              Aangescherpt met feedback uit de sector (200+ professionals)
-            </span>
-          </div>
+    <main className="min-h-screen bg-slate-950 text-slate-50">
 {/* SEO-UPGRADE START */}
 <div className="mt-2 text-slate-600 text-sm">
   <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
   Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
 </div>
 {/* SEO-UPGRADE END */}
-          <p className="mt-3 max-w-3xl text-slate-700">
-            ProBrandwacht werft zzp-brandwachten en opdrachtgevers voor <strong>ProSafetyMatch</strong>, het platform in ontwikkeling waar safety professionals en opdrachtgevers elkaar straks ontmoeten.
-            Tot de lancering kan je een directe inzet wens afhandelen via het actuele ProBrandwacht-netwerk: jullie bepalen budget en certificeringseisen, wij regelen het binnen ons actuele netwerk.
-            Eerlijke beloning, duidelijke betaalafspraken en aantoonbare certificaten geven nu al grip zonder extra ketenpartijen; zodra ProSafetyMatch live staat, schuiven dezelfde dossiers door met geautomatiseerde betaalafspraken en Wet DBA-modelclausules. Escrow en automatische uitbetaling volgen bij de lancering.
+      <div className="mx-auto w-full max-w-5xl px-4 py-6">
+        <StructuredBreadcrumbs items={breadcrumbItems} />
+      </div>
+
+      <HeroBackground>
+        <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-16 pt-10">
+          <HeroShell
+            eyebrow="Voor opdrachtgevers · Door brandweermensen"
+            title="Direct schakelen met rijksgediplomeerde brandwachten"
+            body={
+              <>
+                Via ProBrandwacht werk je toe naar <span className="font-semibold">DBA-proof</span>, transparante inzet van brandwachten. Vandaag
+                helpen we met zichtbaarheid en handmatige matching. Morgen brengt <span className="font-semibold">ProSafetyMatch</span> vraag en
+                aanbod digitaal samen, zonder marge op het uurtarief.
+              </>
+            }
+            primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Meld je aan als opdrachtgever' }}
+            secondaryCta={{ href: '/missie', label: 'Lees hoe we werken' }}
+            footer={
+              <>
+                Niet-detacherend: jij maakt altijd rechtstreeks afspraken over tarief, gezag en taken met de brandwacht of leverancier.
+              </>
+            }
+          />
+        </div>
+      </HeroBackground>
+
+      <InfoCardsRow items={cards} />
+
+      <section className="mx-auto max-w-5xl space-y-8 px-4 pb-16">
+        <section className="space-y-4 rounded-[26px] border border-white/10 bg-slate-950/80 px-6 py-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+          <h2 className="text-xl font-semibold text-slate-50">Wat je vandaag al via ProBrandwacht krijgt</h2>
+          <p className="max-w-3xl text-sm text-slate-200">
+            Ook vóór de lancering van ProSafetyMatch helpen we je om betere keuzes te maken rond inhuur. We focussen op zichtbare profielen,
+            directe lijnen en praktische DBA-handvatten.
           </p>
-          <div className="mt-6">
-            <PrimaryCTA href={signupUrl}>Meld je bedrijf aan</PrimaryCTA>
+          <div className="grid gap-4 md:grid-cols-2">
+            {benefits.map(item => (
+              <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_14px_30px_-16px_rgba(0,0,0,0.6)]">
+                <p className="text-sm font-semibold text-slate-50">{item.title}</p>
+                <p className="mt-2 text-sm text-slate-200">{item.copy}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-
-      {/* Uitdaging */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold">Jullie uitdaging</h2>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          <Card
-            title="Onduidelijke tarieven"
-            text="Bureaus houden vaak €15–25 per uur marge over; bij ons zie je de volledige kostenopbouw inclusief 10% platformfee en nettobedrag."
-          />
-          <Card
-            title="Wisselende motivatie"
-            text="Eerlijke beloning en voorspelbare afspraken houden mensen gemotiveerd."
-          />
-          <Card
-            title="Risico & compliance"
-            text="Checklist voor Wet DBA, Arbowet en BGBOP-eisen in één dossier verlaagt je risico."
-          />
-        </div>
-      </section>
-
-      {/* Oplossing */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold">Onze oplossing (straks in ProSafetyMatch)</h2>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <ListItem title="Eerlijke tarieven">
-            Vaste 10% platformfee en een duidelijk netto tarief. Geen verborgen marges,
-            volledig inzicht in de verdeling. Betaalbuffer/escrow staat in voorbereiding voor lancering; tot die tijd werken we met afgesproken betaalmomenten.
-          </ListItem>
-          <ListItem title="Heldere afspraken">
-            We leggen rol en resultaat contractueel vast voor maximale duidelijkheid.
-          </ListItem>
-          <ListItem title="Snel schakelen">
-            Directe inzetten handel je nu af via het ProBrandwacht-netwerk; na lancering automatiseert ProSafetyMatch dezelfde betaalafspraken.
-          </ListItem>
-          <ListItem title="Gecertificeerd netwerk">
-            Inzicht in certificaten, en beschikbaarheid.
-          </ListItem>
-        </div>
-      </section>
-
-      {/* 3 stappen */}
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold">Veelgestelde vragen</h2>
-        <div className="mt-4 space-y-3">
-          {opdrachtgeverFaq.map(item => (
-            <details key={item.question} className="group rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <summary className="cursor-pointer text-sm font-semibold text-slate-900 group-open:text-brand-700">
-                {item.question}
-              </summary>
-              <p className="mt-2 text-sm text-slate-700">{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-12 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-2xl font-semibold">Zo werkt het in 3 stappen</h2>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          <Step n={1} title="Budget & eisen">
-            Stel je budgetrange en certificaat-eisen vast. ProSafetyMatch toont
-            direct passende profielen uit het netwerk.
-          </Step>
-          <Step n={2} title="Selectie & bevestiging">
-            Vergelijk profielen op tarief en kwaliteit. Bevestig direct de inzet
-            met de professional in de chatomgeving van het dashboard; iedere sessie krijgt een uniek ID en is opvraagbaar bij een dispuut.
-          </Step>
-          <Step n={3} title="Betaling & uitvoering">
-            Vooraf gemaakte afspraken met de professional leggen we vast en volgen we op. Dat geeft beide partijen zekerheid,
-            versnelt de uitbetaling voor de professional en ontlast jullie financiële afdeling. Tot de lancering kan je een directe inzet wens afhandelen via het
-            actuele ProBrandwacht-netwerk; na livegang automatiseert ProSafetyMatch de uitbetaling op basis van het bevestigde urenoverzicht (escrow volgt bij lancering).
-          </Step>
-        </div>
-      </section>
-
-      {/* Kosten & helder inzicht */}
-      <section className="mb-12 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <h3 className="font-semibold">Kosten & helder inzicht</h3>
-          <ul className="mt-3 space-y-2 text-slate-700 text-sm">
-            <li>
-              <strong>10% platformfee</strong> – standaard opgenomen in de
-              kostenopbouw.
-            </li>
-            <li>
-              <strong>Tariefverdeling</strong> – het dossier laat zien welk deel
-              rechtstreeks naar de professional gaat.
-            </li>
-          </ul>
-        </div>
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <h3 className="font-semibold">Budget gestuurd selecteren</h3>
-          <p className="mt-2 text-slate-700 text-sm">
-            Stel een bandbreedte in (bijv. €40–50/u). Alleen profielen binnen
-            budget worden getoond. Je kunt kiezen voor een mix van basis en
-            specialisten.
+        <section className="rounded-[26px] border border-white/10 bg-slate-950/80 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-7">
+          <div className="flex flex-wrap items-center gap-2">
+            <h2 className="text-xl font-semibold text-slate-50">ProSafetyMatch – wat je straks mag verwachten</h2>
+            <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+              in ontwikkeling
+            </span>
+          </div>
+          <p className="mt-2 text-sm text-slate-200">
+            ProSafetyMatch wordt het digitale platform waar brandwachten en opdrachtgevers elkaar rechtstreeks vinden – DBA-proof en zonder
+            marge op het uurtarief. We bouwen in stappen en houden verwachtingen realistisch: liever zichtbaar beter maken dan grote beloftes
+            doen.
           </p>
-        </div>
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <h3 className="font-semibold">Administratie op orde</h3>
-          <p className="mt-2 text-slate-700 text-sm">
-            DBA-proof documentatie en volledige urenregistratie. Facturatie
-            verloopt rechtstreeks tussen opdrachtgever en zzp’er; het platform
-            faciliteert, maar bemiddelt niet.
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {futureItems.map(item => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-dashed border-amber-200/70 bg-amber-50/10 p-4 text-sm text-amber-50 shadow-[0_12px_28px_-18px_rgba(0,0,0,0.5)]"
+              >
+                <p className="font-semibold text-white">{item.title}</p>
+                <p className="mt-1 text-amber-50/90">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-slate-400">
+            Alles onder “in ontwikkeling” is onder voorbehoud en kan wijzigen op basis van praktijkervaring en feedback van gebruikers.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* Visie */}
-      <section className="mb-12 rounded-2xl border bg-amber-50 p-6 text-sm text-amber-900">
-        <h3 className="text-lg font-semibold text-amber-900">
-          Waarom een tarief van rond de €40/u nu vaak tegenvalt op de werkvloer
-        </h3>
-        <p className="mt-2">
-          €40/u lijkt een prima tarief, maar na bureau-marges, reistijd en kosten blijft er voor de professional schrikbarend weinig over. Dat zie je direct
-          terug in minder motivatie, hogere uitval en lagere kwaliteit op de werkvloer.
-        </p>
-        <p className="mt-2">
-          Met ProSafetyMatch krijgt de professional wél wat hij verdient en krijgt de opdrachtgever maximale inzet, hogere betrouwbaarheid en betere resultaten.
-          Transparant, eerlijk en efficiënt.
-        </p>
-      </section>
+        <section className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-[26px] border border-white/10 bg-slate-950/85 p-5 text-slate-50 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Voor wie</p>
+            <h3 className="mt-2 text-sm font-semibold">Industrie &amp; petrochemie</h3>
+            <p className="mt-2 text-sm text-slate-200">
+              Voor locaties met hoge veiligheids- en continuïteitseisen, waar betrouwbaarheid en vakkennis cruciaal zijn.
+            </p>
+          </div>
+          <div className="rounded-[26px] border border-white/10 bg-slate-950/85 p-5 text-slate-50 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Voor wie</p>
+            <h3 className="mt-2 text-sm font-semibold">Bouw &amp; renovatie</h3>
+            <p className="mt-2 text-sm text-slate-200">
+              Voor projecten waar brandveiligheid, toezicht en duidelijke afstemming met andere partijen centraal staat.
+            </p>
+          </div>
+          <div className="rounded-[26px] border border-white/10 bg-slate-950/85 p-5 text-slate-50 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Voor wie</p>
+            <h3 className="mt-2 text-sm font-semibold">Evenementen &amp; tijdelijke locaties</h3>
+            <p className="mt-2 text-sm text-slate-200">
+              Voor organisatoren die professioneel, zichtbaar en verantwoord willen omgaan met hun brandveiligheid.
+            </p>
+          </div>
+        </section>
 
-      {/* Samen bouwen */}
-      <section className="mb-12 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h2 className="text-2xl font-semibold">Bouw met ons mee</h2>
-        <p className="mt-2 max-w-3xl text-slate-700">
-          Sluit je aan en help ons de nieuwe standaard voor eerlijk, veilig en efficiënt samenwerken te realiseren. Hoe eerder je meedoet, hoe groter jouw invloed
-          op het platform dat de markt straks eerlijker maakt. Meld je vandaag nog aan.
-        </p>
-        <div className="mt-5">
-          <PrimaryCTA href={signupUrl}>Meld je bedrijf aan</PrimaryCTA>
-        </div>
-      </section>
-
-      {/* Disclaimer */}
-      <section className="mt-4 text-sm text-slate-600 space-y-2">
-        <p>
-          <strong>Let op:</strong> ProSafetyMatch wordt gelanceerd als onafhankelijk platform, niet als traditioneel bemiddelingsbureau. Tot die tijd faciliteert ProBrandwacht dezelfde werkwijze via het bestaande netwerk. Wij zorgen voor volledige transparantie in matching en tariefopbouw, terwijl opdrachtgever en professional zelf de overeenkomst sluiten.
-        </p>
-        <p>
-          Wij adviseren altijd om dit door jullie juridische team te laten toetsen binnen de geldende compliance- en DBA-kaders. In de praktijk kiezen veel partijen echter al voor samenwerking op basis van vertrouwen, zonder formele contracten vooraf.
-        </p>
-      </section>
-
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="text-xl font-semibold">Direct verder lezen</h2>
-        <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
-          <li>
-            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-              Brandwacht inhuren – eerlijk & DBA-proof
+        <section className="rounded-[26px] border border-white/10 bg-slate-950/85 p-6 text-slate-50 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+          <h2 className="text-xl font-semibold">Mee de eerste stap zetten?</h2>
+          <p className="mt-2 text-sm text-slate-200">
+            Meld je bedrijf aan voor de wachtlijst. Dan kijken we samen hoe ProBrandwacht en straks ProSafetyMatch het beste kunnen aansluiten
+            bij jullie risico’s, planning en manier van werken.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/opdrachtgevers/aanmelden"
+              className="inline-flex items-center justify-center rounded-2xl bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600"
+            >
+              Schrijf mijn organisatie in
             </Link>
-          </li>
-          <li>
-            <Link href="/blog" className="underline">
-              Bekijk de nieuwste kennisartikelen
+            <Link
+              href="/steden/amsterdam"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-slate-900"
+            >
+              Bekijk in welke steden we starten
             </Link>
-          </li>
-        </ul>
+          </div>
+        </section>
       </section>
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(extraFaqJsonLd) }} />
     </main>
   )
 }
-
-/* -------------------------- Kleine componenten -------------------------- */
-
-function Card({ title, text }: { title: string; text: string }) {
-  return (
-    <div className="rounded-2xl border bg-white p-5 shadow-sm">
-      <h3 className="font-semibold">{title}</h3>
-      <p className="mt-2 text-slate-700">{text}</p>
-    </div>
-  )
-}
-
-function ListItem({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <div className="rounded-2xl border p-5">
-      <div className="font-semibold">{title}</div>
-      <div className="mt-2 text-slate-700">{children}</div>
-    </div>
-  )
-}
-
-function USP({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div className="rounded-2xl border bg-white p-5 shadow-sm">
-      <div className="flex items-start gap-3">
-        <span
-          className="mt-0.5 inline-block h-2.5 w-2.5 rounded-full bg-brand-600"
-          aria-hidden
-        />
-        <div>
-          <div className="font-semibold">{title}</div>
-          <p className="mt-1 text-sm text-slate-700">{desc}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function PrimaryCTA({
-  href,
-  children,
-}: {
-  href: string
-  children: ReactNode
-}) {
-  const isExternal = href.startsWith("http") || href.startsWith("mailto:")
-  const cls =
-    "rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
-  if (isExternal) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cls}
-      >
-        {children}
-      </a>
-    )
-  }
-  return <Link href={href} className={cls}>{children}</Link>
-}
-
-function Step({
-  n,
-  title,
-  children,
-}: {
-  n: number
-  title: string
-  children: ReactNode
-}) {
-  return (
-    <div className="rounded-2xl border bg-white p-5 shadow-sm">
-      <div className="flex items-start gap-3">
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-800 text-sm font-semibold">
-          {n}
-        </span>
-        <div>
-          <div className="font-semibold">{title}</div>
-          <p className="mt-1 text-sm text-slate-700">{children}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-      {/* USP’s */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold">Waarom ProSafetyMatch (in ontwikkeling)</h2>
-        <p className="mt-2 max-w-3xl text-sm text-slate-600">
-          We bouwen ProSafetyMatch als centrale werkplek voor safety professionals en opdrachtgevers. De pijlers hieronder zie je nu al terug in
-          het bestaande ProBrandwacht-netwerk, zodat huidige inzetten soepel verlopen en straks automatisch worden overgenomen door het platform.
-        </p>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          <USP
-            title="Volledig tariefinzicht"
-            desc="Je ziet exact wat naar de brandwacht gaat en wat de platformfee is."
-          />
-          <USP
-            title="Betaalgarantie"
-            desc="Vooraf gemaakte afspraken leggen we vast en uitbetaling volgt na bevestigde uitvoering."
-          />
-          <USP
-            title="DBA-proof contracten"
-            desc="Contracten lopen rechtstreeks tussen opdrachtgever en professional."
-          />
-          <USP
-            title="Kwaliteit zichtbaar"
-            desc="Certificaten, reviews en badges in één oogopslag."
-          />
-          <USP
-            title="Budgetcontrole"
-            desc="Filter op tariefbandbreedtes en stel je eigen mix samen."
-          />
-          <USP
-            title="Sneller inhuren"
-            desc="Geen tussenlagen, direct contact en bevestiging."
-          />
-        </div>
-      </section>

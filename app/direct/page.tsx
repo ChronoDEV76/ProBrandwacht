@@ -8,7 +8,6 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/direct');
 
 
-
 export default function ProBrandwachtDirectPage() {
   if (!SPOED_ROUTE_ENABLED) {
     notFound();
@@ -18,6 +17,12 @@ export default function ProBrandwachtDirectPage() {
     <main className="mx-auto w-full max-w-4xl px-4 py-10 space-y-10">
       <header className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-700">
           24/7 spoedlijn voor inzet van gecertificeerde brandwachten. Snel, duidelijk en DBA-proof.
           Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.

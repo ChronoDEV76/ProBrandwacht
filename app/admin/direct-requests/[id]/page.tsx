@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const dynamic = 'force-dynamic'
 
@@ -47,6 +48,8 @@ export async function generateMetadata({
     description: 'Detailoverzicht van een ProBrandwacht Direct-aanvraag.',
   }
 }
+
+
 
 
 

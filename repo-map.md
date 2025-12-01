@@ -1,359 +1,384 @@
 # Repository map
 
 ```
-probrandwacht (13.4 MB)
-__tests__ (8.1 KB)
-blog-sorting.test.ts - 1.3 KB
-city-metadata.test.ts - 859.0 B
-cost-calculator.test.tsx - 3.3 KB
-reading.test.ts - 1015.0 B
-site-header.test.tsx - 1.3 KB
-smoke.test.tsx - 367.0 B
-.aider.tags.cache.v4 (132.0 KB)
-cache.db - 132.0 KB
-.github (2.0 KB)
-workflows (2.0 KB)
-ci.yml - 520.0 B
-release.yml - 1.5 KB
-.trash (3.5 KB)
-DirectRequestForm.tsx - 3.5 KB
-app (300.9 KB)
-_shared (146.0 B)
-SectionLayout.tsx - 146.0 B
-(dashboard) (5.3 KB)
-admin (984.0 B)
-requests (984.0 B)
-[id] (984.0 B)
-page.tsx - 984.0 B
-zzp (3.9 KB)
-import (3.9 KB)
-ImportClient.tsx - 3.0 KB
-page.tsx - 875.0 B
-layout.tsx - 435.0 B
-(site) (116.0 KB)
-admin (4.5 KB)
-analytics (4.5 KB)
-AnalyticsClient.tsx - 2.5 KB
-page.tsx - 2.0 KB
-brandwacht-inhuren (12.0 KB)
-[city] (12.0 KB)
-page.tsx - 12.0 KB
-faq (5.6 KB)
-page.tsx - 5.6 KB
-missie (9.7 KB)
-page.tsx - 9.7 KB
-opdrachtgevers (27.3 KB)
-page.tsx - 14.2 KB
-page.tsx.old - 13.1 KB
-privacy (6.6 KB)
-page.tsx - 6.6 KB
-seo-resources (5.3 KB)
-page.tsx - 5.3 KB
-steden (7.4 KB)
-[city] (7.4 KB)
-page.tsx - 7.4 KB
-error.tsx - 662.0 B
-layout.tsx - 2.8 KB
-not-found.tsx - 521.0 B
-opengraph-image.tsx - 323.0 B
-page.tsx - 8.3 KB
-page.tsx.old - 24.8 KB
-shared-metadata.ts - 312.0 B
-admin (8.7 KB)
-direct-requests (8.7 KB)
-[id] (8.7 KB)
-page.tsx - 8.7 KB
-api (72.1 KB)
-_debug (899.0 B)
-slack (899.0 B)
-route.ts - 899.0 B
-chat (769.0 B)
-send (769.0 B)
-route.ts - 769.0 B
-probrandwacht-direct (11.1 KB)
-test (4.3 KB)
-route.ts - 4.3 KB
-route.ts - 6.8 KB
-direct (5.4 KB)
-request (4.7 KB)
-route.ts - 4.7 KB
-spoedchat (743.0 B)
-route.ts - 743.0 B
-direct-messages (2.0 KB)
-route.ts - 2.0 KB
-lead (21.8 KB)
-route.ts - 13.4 KB
-route.ts.old - 8.5 KB
-probrandwacht-direct (8.5 KB)
-slack (5.1 KB)
-route.ts - 5.1 KB
-route.ts - 3.4 KB
-profile (1.1 KB)
-zzp (1.1 KB)
-import (1.1 KB)
-route.ts - 1.1 KB
-revalidate (542.0 B)
-route.ts - 542.0 B
-signup (13.5 KB)
-route.ts - 13.5 KB
-signup-client (453.0 B)
-route.ts - 453.0 B
-slack (6.1 KB)
-interactions (4.9 KB)
-route.ts - 4.9 KB
-messages (1.2 KB)
-route.ts.temp - 1.2 KB
-blog (22.6 KB)
-[slug] (6.8 KB)
-opengraph-image.tsx - 450.0 B
-page.tsx - 6.4 KB
-layout.tsx - 206.0 B
-not-found.tsx - 520.0 B
-page.tsx - 15.1 KB
-brandwacht (11.1 KB)
-haven-industrie (2.2 KB)
-page.tsx - 2.2 KB
-mangatwacht (2.1 KB)
-page.tsx - 2.1 KB
-turnaround-stop (2.0 KB)
-page.tsx - 2.0 KB
-common.tsx - 4.5 KB
-layout.tsx - 307.0 B
-brandwacht-huren (1.5 KB)
-[city] (1.3 KB)
-page.tsx - 1.3 KB
-amsterdam (59.0 B)
-page.tsx - 59.0 B
-den-haag (59.0 B)
-page.tsx - 59.0 B
-rotterdam (59.0 B)
-page.tsx - 59.0 B
-utrecht (59.0 B)
-page.tsx - 59.0 B
-probrandwacht-direct (3.1 KB)
-page.tsx - 3.1 KB
-dashboard (6.1 KB)
-requests (6.1 KB)
-[id] (6.1 KB)
-ChatBox.tsx - 3.8 KB
-page.tsx - 2.3 KB
-direct (3.6 KB)
-page.tsx - 3.6 KB
-opdrachtgevers (22.2 KB)
-aanmelden (5.0 KB)
-page.tsx - 5.0 KB
-brandwacht-inhuren (12.3 KB)
-page.tsx - 12.3 KB
-thank-you (4.5 KB)
-page.tsx - 3.2 KB
-support-client-fallback.tsx - 1.3 KB
-layout.tsx - 444.0 B
-probrandwacht-direct (1.9 KB)
-page.tsx - 1.9 KB
-reports (1.7 KB)
-[id] (1.7 KB)
-route.ts - 1.7 KB
-sitemap-cities.xml (802.0 B)
-route.ts - 802.0 B
-zzp (17.8 KB)
-aanmelden (17.3 KB)
-client-page.tsx - 14.8 KB
-page.tsx - 2.5 KB
-layout.tsx - 439.0 B
-layout.tsx - 3.6 KB
-reportWebVitals.ts - 959.0 B
-robots.ts - 333.0 B
-sitemap.ts - 1.3 KB
-components (137.0 KB)
-mdx (13.2 KB)
-Bronnen.tsx - 801.0 B
-ConclusieMarkt.tsx - 1.6 KB
-FeeVergelijk.tsx - 1.6 KB
-KostenOpbouw.tsx - 4.2 KB
-KostenOpbouwScenarios.tsx - 41.0 B
-next-contentlayer.d.ts - 100.0 B
-RenderMdx.tsx - 490.0 B
-TariefTabel.tsx - 4.3 KB
-Tldr.tsx - 158.0 B
-opdrachtgevers (11.2 KB)
-client-signup-form.tsx - 11.2 KB
-analytics.tsx - 2.3 KB
-ChatPanel.tsx - 4.1 KB
-probrandwacht-direct-form.tsx - 8.6 KB
-city-hero.tsx - 2.7 KB
-cost-calculator.tsx - 34.4 KB
-cpi-chart.tsx - 3.1 KB
-direct-request-form.tsx - 5.4 KB
-dropbox-hint.tsx - 1.0 KB
-impact-info-card.tsx - 2.6 KB
-impact-meter.tsx - 3.0 KB
-lead-calculator.tsx - 10.2 KB
-lead-calculator.tsx.old - 8.1 KB
-pb-direct-form.tsx - 4.7 KB
-prose.tsx - 178.0 B
-Seo.tsx - 2.9 KB
-SeoStructuredData.tsx - 3.8 KB
-share-bar.tsx - 5.6 KB
-site-header.tsx - 7.5 KB
-structured-breadcrumbs.tsx - 2.5 KB
-content (59.2 KB)
-blog (50.8 KB)
-5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx - 2.2 KB
-brandwacht-manschap-ab.mdx - 5.4 KB
-dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx - 4.6 KB
-drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx - 3.8 KB
-industriele-brandwacht-wat-houdt-het-in.mdx - 16.2 KB
-wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx - 6.3 KB
-wat-kost-een-brandwacht-in-2025.mdx - 6.6 KB
-zzp-direct-met-opdrachtgever-wet-dba.mdx - 5.7 KB
-faq.json - 8.4 KB
-data (20.7 KB)
-cpi-monthly.csv - 2.9 KB
-cpi-monthly.json - 17.8 KB
-docs (5.6 KB)
-tone_of_voice_commercial.md - 3.3 KB
-TONE_OF_VOICE.md - 2.3 KB
-lib (42.2 KB)
-api (3.4 KB)
-signupClient.ts - 3.4 KB
-hooks (1.0 KB)
-useSignup.ts - 1.0 KB
-schemas (1.6 KB)
-profile.ts - 1.1 KB
-psm-profile-v1.ts - 527.0 B
-seo (5.3 KB)
-authoritative-sources.ts - 3.0 KB
-commonFaqs.ts - 2.4 KB
-adminLinks.ts - 309.0 B
-blog-index.ts - 1012.0 B
-blog.ts - 1.9 KB
-cities.ts - 4.3 KB
-city-data.ts - 7.9 KB
-config.ts - 748.0 B
-mdx.ts - 2.3 KB
-nearby.ts - 865.0 B
-og.tsx - 753.0 B
-pbDirectSlack.ts - 4.0 KB
-psm-local.ts - 656.0 B
-redis.ts - 1.3 KB
-schema.ts - 1.5 KB
-slackBlocks.ts - 2.1 KB
-supabaseBrowser.ts - 245.0 B
-supabaseServer.ts - 318.0 B
-tariffs.ts - 799.0 B
-public (11.6 MB)
-fonts (298.4 KB)
-Roboto-Regular.ttf - 298.4 KB
-images (0 B)
-.gitkeep - 0 B
-blog-bouw-welder.jpg - 180.1 KB
-blog-brandpreventie-checklist.jpg - 192.0 KB
-blog-evenementen-brandveiligheid.jpg - 337.9 KB
-blog-industriele-brandwacht.jpg - 157.9 KB
-blog-trends-tarieven.jpg - 1.5 MB
-blog-wat-kost-brandwacht.jpg - 337.9 KB
-brandwachten-samenwerking-card.png - 1.3 MB
-brandwachten-samenwerking-hero.png - 1.3 MB
-dba-en-brandwachten-card.png - 1.3 MB
-og-home.jpg - 1.1 MB
-og-home.webp - 137.0 KB
-og.jpg - 1.1 MB
-probrandwacht-logo.png - 1.1 MB
-robots.txt - 132.0 B
-sitemap-0.xml - 901.0 B
-sitemap.xml - 265.0 B
-wat-kost-een-brandwacht-2025-card-v2.png - 1.4 MB
-runway-video-project (16.9 KB)
-assets (0 B)
-edited-clips (0 B)
-exports (1.7 KB)
-audition-markers.csv - 848.0 B
-premiere-markers.csv - 887.0 B
-final-export (0 B)
-raw-footage (0 B)
-subtitles (1.1 KB)
-master.srt - 552.0 B
-sub-shot-01.srt - 77.0 B
-sub-shot-02.srt - 96.0 B
-sub-shot-03.srt - 97.0 B
-sub-shot-04.srt - 108.0 B
-sub-shot-05.srt - 77.0 B
-sub-shot-06.srt - 91.0 B
-voiceover (994.0 B)
-voiceover-shot-01.txt - 45.0 B
-voiceover-shot-02.txt - 64.0 B
-voiceover-shot-03.txt - 65.0 B
-voiceover-shot-04.txt - 76.0 B
-voiceover-shot-05.txt - 45.0 B
-voiceover-shot-06.txt - 59.0 B
-voiceover.txt - 640.0 B
-production-checklist.md - 5.4 KB
-project-overview.json - 2.2 KB
-runway-batch.jsonl - 2.8 KB
-runway-prompts.txt - 1.6 KB
-shots.csv - 1.2 KB
-scripts (88.7 KB)
-add-anchor.mjs - 4.4 KB
-aider-fix-file.sh - 2.6 KB
-aider-sanity.sh - 2.4 KB
-build-cpi-json.mjs - 1.5 KB
-diagnose.js - 5.2 KB
-find-components.mjs - 2.0 KB
-launch-check.mjs - 8.8 KB
-repo-map.mjs - 6.7 KB
-sanityCheck.mjs - 6.1 KB
-seo-check.mjs - 1.1 KB
-seo-upgrade.mjs - 6.7 KB
-seoAudit.mjs - 26.9 KB
-strip-calculator.mjs - 4.8 KB
-Tips & toggles.txt - 415.0 B
-toneCheck.mjs - 7.2 KB
-verifyEnv.mjs - 2.0 KB
-server (945.0 B)
-index.mjs - 945.0 B
-styles (722.0 B)
-globals.css - 722.0 B
-tests (1.1 KB)
-profile.schema.test.ts - 1.1 KB
-tests-e2e (1.4 KB)
-forms.spec.ts - 1.4 KB
-.aider.chat.history.md - 156.3 KB
-.aider.input.history - 14.5 KB
-.env.local - 2.1 KB
-.env.production.local - 3.1 KB
-.eslintrc.json - 223.0 B
-.gitignore - 71.0 B
-.npmrc - 88.0 B
-.prettierignore - 76.0 B
-.prettierrc - 116.0 B
-AGENTS.md - 2.8 KB
-aider.conf.yml - 1.3 KB
-aiderignore - 153.0 B
-bolt-app.ts - 1.2 KB
-CHANGELOG.md - 835.0 B
-content-analyzer-digital.ts - 17.9 KB
-dev.log - 79.0 B
-eslint.config.js - 560.0 B
-middleware.ts - 2.0 KB
-next-contentlayer.d.ts - 216.0 B
-next-env.d.ts - 228.0 B
-next-seo.config.ts - 250.0 B
-next-sitemap.config.js - 447.0 B
-next.config.js - 810.0 B
-openai-test.js - 924.0 B
-package-lock.json - 523.4 KB
-package.json - 4.2 KB
-postcss.config.js - 82.0 B
-README.md - 1.3 KB
-repo-structuur.md - 3.7 KB
-runway-setup.js - 15.6 KB
-seo-checker.ts - 19.6 KB
-signups.csv - 9.6 KB
-signups.xlsx - 9.6 KB
-tailwind.config.js - 427.0 B
-tsconfig.json - 1.0 KB
-tsconfig.tsbuildinfo - 207.1 KB
-vercel.json - 145.0 B
-vitest.config.ts - 872.0 B
-vitest.setup.ts - 43.0 B
+probrandwacht-main
+__tests__
+blog-sorting.test.ts
+city-metadata.test.ts
+cost-calculator.test.tsx
+reading.test.ts
+site-header.test.tsx
+smoke.test.tsx
+.aider.tags.cache.v4
+cache.db
+.github
+workflows
+ci.yml
+release.yml
+tone-check.yml
+app
+_shared
+SectionLayout.tsx
+(dashboard)
+admin
+requests
+[id]
+page.tsx
+zzp
+import
+ImportClient.tsx
+page.tsx
+layout.tsx
+(site)
+admin
+analytics
+AnalyticsClient.tsx
+page.tsx
+faq
+page.tsx
+missie
+page.tsx
+opdrachtgevers
+page.tsx
+page.tsx.old
+privacy
+page.tsx
+seo-resources
+page.tsx
+steden
+[city]
+page.tsx
+error.tsx
+layout.tsx
+not-found.tsx
+opengraph-image.tsx
+page.tsx
+shared-metadata.ts
+admin
+direct-requests
+[id]
+page.tsx
+api
+_debug
+slack
+route.ts
+chat
+send
+route.ts
+direct
+request
+route.ts
+spoedchat
+route.ts
+direct-messages
+route.ts
+lead
+route.ts
+route.ts.old
+probrandwacht-direct
+test
+route.ts
+route.ts
+probrandwacht-direct-spoed
+slack
+route.ts
+route.ts
+profile
+zzp
+import
+route.ts
+revalidate
+route.ts
+signup
+route.ts
+signup-client
+route.ts
+slack
+interactions
+route.ts
+messages
+route.ts.temp
+blog
+[slug]
+opengraph-image.tsx
+page.tsx
+layout.tsx
+not-found.tsx
+page.tsx
+brandwacht-huren
+[city]
+page.tsx
+amsterdam
+page.tsx
+den-haag
+page.tsx
+rotterdam
+page.tsx
+utrecht
+page.tsx
+dashboard
+requests
+[id]
+ChatBox.tsx
+page.tsx
+direct
+page.tsx
+opdrachtgevers
+aanmelden
+page.tsx
+thank-you
+page.tsx
+support-client-fallback.tsx
+layout.tsx
+probrandwacht-direct
+page.tsx
+probrandwacht-direct-spoed
+page.tsx
+reports
+[id]
+route.ts
+sitemap-cities.xml
+route.ts
+tarief-berekenen
+page.tsx
+zzp
+aanmelden
+client-page.tsx
+page.tsx
+layout.tsx
+layout.tsx
+reportWebVitals.ts
+robots.ts
+sitemap.ts
+components
+layout
+hero-shell.tsx
+info-cards-row.tsx
+mdx
+Bronnen.tsx
+ConclusieMarkt.tsx
+FeeVergelijk.tsx
+KostenOpbouw.tsx
+KostenOpbouwScenarios.tsx
+next-contentlayer.d.ts
+RenderMdx.tsx
+TariefTabel.tsx
+Tldr.tsx
+opdrachtgevers
+client-signup-form.tsx
+analytics-tracker.tsx
+analytics.tsx
+ChatBox.tsx
+ChatPanel.tsx
+city-hero.tsx
+cookie-notice.tsx
+cost-calculator.tsx
+cpi-chart.tsx
+direct-request-form.tsx
+dropbox-hint.tsx
+Hero.tsx
+HeroBackground.tsx
+home-hero-cycle.tsx
+HomeHero.tsx
+impact-info-card.tsx
+impact-meter.tsx
+lead-calculator.tsx
+lead-calculator.tsx.old
+pb-direct-form.tsx
+PlatformPricingNote.tsx
+probrandwacht-direct-form.tsx
+prose.tsx
+Seo.tsx
+SeoStructuredData.tsx
+share-bar.tsx
+site-header.tsx
+structured-breadcrumbs.tsx
+content
+blog
+5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx
+brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx
+brandwacht-manschap-ab.mdx
+dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx
+drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx
+industriele-brandwacht-wat-houdt-het-in.mdx
+wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx
+wat-kost-een-brandwacht-in-2025.mdx
+zzp-direct-met-opdrachtgever-wet-dba.mdx
+faq.json
+data
+cpi-monthly.csv
+cpi-monthly.json
+docs
+tone_of_voice_commercial.md
+TONE_OF_VOICE.md
+lib
+api
+signupClient.ts
+hooks
+useSignup.ts
+schemas
+profile.ts
+psm-profile-v1.ts
+seo
+authoritative-sources.ts
+commonFaqs.ts
+metadata.ts
+seo-keywords.ts
+adminLinks.ts
+blog-index.ts
+blog.ts
+cities.ts
+city-copy.ts
+city-data.ts
+config.ts
+featureFlags.ts
+mdx.ts
+nearby.ts
+og.tsx
+pbDirectSlack.ts
+psm-local.ts
+redis.ts
+schema.ts
+slackBlocks.ts
+slackHelpers.ts
+supabase-admin.ts
+supabaseBrowser.ts
+supabaseServer.ts
+tariffs.ts
+public
+fonts
+Roboto-Regular.ttf
+images
+.gitkeep
+blog-bouw-welder.jpg
+blog-bouw-welder.webp
+blog-brandpreventie-checklist.jpg
+blog-brandpreventie-checklist.webp
+blog-evenementen-brandveiligheid.jpg
+blog-evenementen-brandveiligheid.webp
+blog-industriele-brandwacht.jpg
+blog-industriele-brandwacht.webp
+blog-trends-tarieven.jpg
+blog-trends-tarieven.webp
+blog-wat-kost-brandwacht.jpg
+blog-wat-kost-brandwacht.webp
+brandvergrootglas.png
+brandvergrootglas.webp
+brandwachten-samenwerking-card.png
+brandwachten-samenwerking-card.webp
+brandwachten-samenwerking-hero.png
+brandwachten-samenwerking-hero.webp
+brandweer-psm.webp
+dba-en-brandwachten-card.png
+dba-en-brandwachten-card.webp
+og-home.jpg
+og-home.webp
+og.jpg
+og.webp
+probrandwacht-logo.png
+probrandwacht-logo.webp
+prosafetymatch-bg.webp
+robots.txt
+sitemap-0.xml
+sitemap.xml
+wat-kost-een-brandwacht-2025-card-v2.png
+wat-kost-een-brandwacht-2025-card-v2.webp
+runway-video-project
+exports
+audition-markers.csv
+premiere-markers.csv
+subtitles
+master.srt
+sub-shot-01.srt
+sub-shot-02.srt
+sub-shot-03.srt
+sub-shot-04.srt
+sub-shot-05.srt
+sub-shot-06.srt
+voiceover
+voiceover-shot-01.txt
+voiceover-shot-02.txt
+voiceover-shot-03.txt
+voiceover-shot-04.txt
+voiceover-shot-05.txt
+voiceover-shot-06.txt
+voiceover.txt
+production-checklist.md
+project-overview.json
+runway-batch.jsonl
+runway-prompts.txt
+shots.csv
+scripts
+add-anchor.mjs
+aider-fix-file.sh
+aider-sanity.sh
+build-cpi-json.mjs
+check-copy.cjs
+diagnose.js
+find-components.mjs
+generate-city-copy.mjs
+launch-check.mjs
+optimize-images.mjs
+repo-map.mjs
+sanityCheck.mjs
+seo-check.mjs
+seo-upgrade.mjs
+seoAudit.mjs
+strip-calculator.mjs
+sync-metadata.ts
+Tips & toggles.txt
+toneCheck.mjs
+verifyEnv.mjs
+server
+index.mjs
+slack
+bolt-app.ts
+styles
+globals.css
+tests
+profile.schema.test.ts
+tests-e2e
+forms.spec.ts
+types
+gray-matter.d.ts
+.aider.chat.history.md
+.aider.input.history
+.env.local
+.eslintrc.json
+.gitignore
+.npmrc
+.prettierignore
+.prettierrc
+AGENTS.md
+aider.conf.yml
+aiderignore
+bolt-app.ts
+CHANGELOG.md
+content-analyzer-digital.ts
+dev.log
+middleware.ts
+next-contentlayer.d.ts
+next-env.d.ts
+next-seo.config.ts
+next-sitemap.config.js
+next.config.js
+openai-test.js
+package-lock.json
+package.json
+postcss.config.js
+README.md
+repo-map.json
+repo-map.md
+repo-map.tree.txt
+runway-setup.js
+seo_report.json
+seo_report.md
+seo-checker.ts
+signups.csv
+tailwind.config.js
+tsconfig.json
+tsconfig.tsbuildinfo
+vercel.json
+vitest.config.ts
+vitest.setup.ts
 ```

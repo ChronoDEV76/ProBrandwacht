@@ -6,7 +6,6 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/opdrachtgevers/thank-you');
 
 
-
 export default function ThankYouPage({
   searchParams,
 }: { searchParams?: { id?: string } }) {
@@ -18,6 +17,12 @@ export default function ThankYouPage({
     <main className="mx-auto w-full max-w-3xl px-4 py-10 space-y-6">
       <div className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">Bedankt voor uw spoedaanvraag!</h1>
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-700">
           We hebben je aanvraag ontvangen en nemen <strong>snel contact</strong> met je op om de inzet af te stemmen.
           Gaat de inzet langer dan 48 uur duren, dan plannen we alvast een reguliere vervolgstap in via{' '}

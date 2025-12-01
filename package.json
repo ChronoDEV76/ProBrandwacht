@@ -6,43 +6,57 @@
     "dev": "next dev",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap",
-    "seo:check": "node scripts/seo-check.mjs",
     "start": "next start",
     "lint": "next lint",
-    "diagnose": "node scripts/diagnose.js",
     "typecheck": "tsc --noEmit",
+
     "test": "vitest run",
-    "test:ui": "vitest --ui",
     "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "e2e": "playwright test",
+
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "add-anchor": "node scripts/add-anchor.mjs",
+
+    "diagnose": "node scripts/diagnose.js",
+    "fix:metadata": "node scripts/fix-next-metadata.mjs",
+
     "sanity:aider": "bash scripts/aider-sanity.sh",
     "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
     "tone-check": "node scripts/toneCheck.mjs --root content",
-    "seo:audit": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md",
-    "launch:check": "node scripts/launch-check.mjs",
-    "launch:quick": "node scripts/launch-check.mjs --no-build",
+    "check:copy": "ts-node scripts/checkCopy.ts",
+
+    "images:optimize": "node scripts/optimize-images.mjs",
     "find-components": "node scripts/find-components.mjs",
-    "strip-calculator": "node scripts/strip-calculator.mjs",
-    "strip-calculator:dry": "node scripts/strip-calculator.mjs --auto-detect --dry",
+    "add-anchor": "node scripts/add-anchor.mjs",
+
     "repo:map": "node scripts/repo-map.mjs --format=all",
     "repo:map:small": "node scripts/repo-map.mjs --max-depth=3",
     "repo:map:sizes": "node scripts/repo-map.mjs --format=all --sizes --ext-stats",
-    "images:optimize": "node scripts/optimize-images.mjs",
-    "seo-check": "tsx seo-checker.ts",
-    "seo-check:watch": "nodemon --exec ts-node seo-checker.ts",
+
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:check:tsx": "tsx seo-checker.ts",
     "seo:upgrade": "node scripts/seo-upgrade.mjs",
     "seo:upgrade:apply": "node scripts/seo-upgrade.mjs --apply",
     "seo:upgrade:sitemap": "node scripts/seo-upgrade.mjs --apply --sitemap",
-    "metadata-sync": "tsx scripts/sync-metadata.ts",
-    "content-check": "tsx content-analyzer-digital.ts",
-    "quality-check": "npm run seo-check && npm run content-check",
-    "perf:mobile": "npx @lhci/cli autorun --collect.settings.formFactor=mobile --collect.settings.screenEmulation.mobile=true --collect.startServerCommand=\"npm run start\" --collect.startServerReadyPattern=\"Started server on\" --    collect.url=http://localhost:3000 --upload.target=temporary-public-storage",
+
+    "seo:audit": "node scripts/digitalSeoAudit.mjs --site=https://www.probrandwacht.nl",
+    "seo:audit:legacy": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md",
+
+    "content-check": "npm run check:copy && npm run sanity && npm run tone-check",
+    "quality-check": "npm run seo:check && npm run content-check",
+
+    "postbuild": "next-sitemap",
+    "launch:check": "node scripts/launch-check.mjs",
+    "launch:quick": "node scripts/launch-check.mjs --no-build",
+
+    "strip-calculator": "node scripts/strip-calculator.mjs",
+    "strip-calculator:dry": "node scripts/strip-calculator.mjs --auto-detect --dry",
+
+    "perf:mobile": "npx @lhci/cli autorun --collect.settings.formFactor=mobile --collect.settings.screenEmulation.mobile=true --collect.startServerCommand=\"npm run start\" --collect.startServerReadyPattern=\"Started server on\" --collect.url=http://localhost:3000 --upload.target=temporary-public-storage",
     "perf:page": "npx @lhci/cli collect --url=http://localhost:3000 --settings.preset=mobile && npx @lhci/cli assert",
+
     "prepare": "husky"
   },
   "dependencies": {
@@ -52,13 +66,17 @@
     "@supabase/supabase-js": "^2.77.0",
     "@vercel/kv": "^3.0.0",
     "@vercel/postgres": "^0.10.0",
+    "chalk": "^4.1.2",
     "cheerio": "^1.1.2",
+    "clsx": "^2.1.1",
     "coffee-script": "^1.12.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
     "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.2",
+    "glob": "^13.0.0",
     "gray-matter": "^2.0.1",
     "jiti": "^1.21.0",
     "next": "14.2.32",
@@ -96,7 +114,7 @@
     "@vitest/utils": "^2.1.9",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.5",
+    "eslint-config-next": "^14.2.13",
     "eslint-config-prettier": "^9.1.2",
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
@@ -107,7 +125,7 @@
     "tailwindcss": "^3.4.18",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
-    "typescript": "^5.6.3",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
   "packageManager": "npm@10.9.3",
@@ -118,3 +136,4 @@
     "typescript": "5.6.3"
   }
 }
+

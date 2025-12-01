@@ -8,9 +8,10 @@ const LINKS = [
   { href: '/opdrachtgevers', label: 'Opdrachtgevers' },
   { href: '/faq', label: 'FAQ' },
   { href: '/blog', label: 'Blog' },
+  { href: '/tarief-berekenen', label: 'Tarief berekenen' },
 ]
 
-const CTA_TEXT = 'Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch'
+const CTA_TEXT = 'Word zichtbaar (gratis) · wachtlijst ProSafetyMatch'
 
 export default function SiteHeader() {
   const headerList = headers()
@@ -19,7 +20,7 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-700/80 text-white backdrop-blur supports-[backdrop-filter]:bg-brand-700/60">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-2.5">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
         <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight">
           ProBrandwacht.nl
         </Link>
@@ -75,7 +76,7 @@ export default function SiteHeader() {
             href="/zzp/aanmelden"
             className="inline-flex items-center rounded-md bg-white px-3 py-1.5 text-xs font-semibold tracking-tight text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            <span className="xl:hidden">Meld je aan (gratis)</span>
+            <span className="xl:hidden">Word zichtbaar (gratis)</span>
             <span className="hidden xl:inline">{CTA_TEXT}</span>
           </a>
         </div>

@@ -14,7 +14,6 @@ function fmt(v?: string | number | null) {
 export const metadata: Metadata = getRouteMetadata('/dashboard/requests/[id]');
 
 
-
 export default async function RequestDashboardPage({ params }: { params: { id: string } }) {
   const supabase = getSupabaseAdmin()
   const { data: request, error } = await supabase
@@ -27,6 +26,12 @@ export default async function RequestDashboardPage({ params }: { params: { id: s
     return (
       <main className="p-6">
         <h1 className="text-xl font-semibold">Aanvraag niet gevonden</h1>
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-600">{error?.message ?? 'Onbekende fout.'}</p>
         <div className="mt-4">
           <Link href="/" className="underline">Terug naar home</Link>

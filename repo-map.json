@@ -1,92 +1,52 @@
 {
-  "generatedAt": "2025-11-09T14:29:31.648Z",
-  "root": "probrandwacht",
-  "rootPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht",
-  "includeSizes": true,
+  "generatedAt": "2025-11-30T16:12:29.075Z",
+  "root": "probrandwacht-main",
+  "rootPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main",
+  "includeSizes": false,
   "maxDepth": "∞",
   "stats": {
-    "files": 248,
-    "dirs": 107,
-    "bytes": 14047759,
-    "humanBytes": "13.4 MB"
-  },
-  "extStats": {
-    ".tsx": 81,
-    ".ts": 58,
-    ".mjs": 13,
-    ".txt": 10,
-    ".md": 8,
-    ".json": 8,
-    ".mdx": 8,
-    ".js": 8,
-    ".jpg": 8,
-    ".srt": 7,
-    "<no-ext>": 6,
-    ".csv": 5,
-    ".png": 5,
-    ".old": 4,
-    ".yml": 3,
-    ".local": 2,
-    ".xml": 2,
-    ".sh": 2,
-    ".history": 1,
-    ".db": 1,
-    ".temp": 1,
-    ".log": 1,
-    ".ttf": 1,
-    ".webp": 1,
-    ".jsonl": 1,
-    ".xlsx": 1,
-    ".css": 1,
-    ".tsbuildinfo": 1
+    "files": 281,
+    "dirs": 99
   },
   "tree": {
     "type": "dir",
-    "name": "probrandwacht",
+    "name": "probrandwacht-main",
     "path": ".",
-    "size": 14047759,
     "children": [
       {
         "type": "dir",
         "name": "__tests__",
         "path": "__tests__",
-        "size": 8256,
         "children": [
           {
             "type": "file",
             "name": "blog-sorting.test.ts",
-            "path": "__tests__/blog-sorting.test.ts",
-            "size": 1351
+            "path": "__tests__/blog-sorting.test.ts"
           },
           {
             "type": "file",
             "name": "city-metadata.test.ts",
-            "path": "__tests__/city-metadata.test.ts",
-            "size": 859
+            "path": "__tests__/city-metadata.test.ts"
           },
           {
             "type": "file",
             "name": "cost-calculator.test.tsx",
-            "path": "__tests__/cost-calculator.test.tsx",
-            "size": 3363
+            "path": "__tests__/cost-calculator.test.tsx"
           },
           {
             "type": "file",
             "name": "reading.test.ts",
-            "path": "__tests__/reading.test.ts",
-            "size": 1015
+            "path": "__tests__/reading.test.ts"
           },
           {
             "type": "file",
             "name": "site-header.test.tsx",
-            "path": "__tests__/site-header.test.tsx",
-            "size": 1301
+            "path": "__tests__/site-header.test.tsx"
           },
           {
             "type": "file",
             "name": "smoke.test.tsx",
-            "path": "__tests__/smoke.test.tsx",
-            "size": 367
+            "path": "__tests__/smoke.test.tsx"
           }
         ]
       },
@@ -94,13 +54,11 @@
         "type": "dir",
         "name": ".aider.tags.cache.v4",
         "path": ".aider.tags.cache.v4",
-        "size": 135168,
         "children": [
           {
             "type": "file",
             "name": "cache.db",
-            "path": ".aider.tags.cache.v4/cache.db",
-            "size": 135168
+            "path": ".aider.tags.cache.v4/cache.db"
           }
         ]
       },
@@ -108,41 +66,28 @@
         "type": "dir",
         "name": ".github",
         "path": ".github",
-        "size": 2064,
         "children": [
           {
             "type": "dir",
             "name": "workflows",
             "path": ".github/workflows",
-            "size": 2064,
             "children": [
               {
                 "type": "file",
                 "name": "ci.yml",
-                "path": ".github/workflows/ci.yml",
-                "size": 520
+                "path": ".github/workflows/ci.yml"
               },
               {
                 "type": "file",
                 "name": "release.yml",
-                "path": ".github/workflows/release.yml",
-                "size": 1544
+                "path": ".github/workflows/release.yml"
+              },
+              {
+                "type": "file",
+                "name": "tone-check.yml",
+                "path": ".github/workflows/tone-check.yml"
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "dir",
-        "name": ".trash",
-        "path": ".trash",
-        "size": 3581,
-        "children": [
-          {
-            "type": "file",
-            "name": "DirectRequestForm.tsx",
-            "path": ".trash/DirectRequestForm.tsx",
-            "size": 3581
           }
         ]
       },
@@ -150,19 +95,16 @@
         "type": "dir",
         "name": "app",
         "path": "app",
-        "size": 308164,
         "children": [
           {
             "type": "dir",
             "name": "_shared",
             "path": "app/_shared",
-            "size": 146,
             "children": [
               {
                 "type": "file",
                 "name": "SectionLayout.tsx",
-                "path": "app/_shared/SectionLayout.tsx",
-                "size": 146
+                "path": "app/_shared/SectionLayout.tsx"
               }
             ]
           },
@@ -170,31 +112,26 @@
             "type": "dir",
             "name": "(dashboard)",
             "path": "app/(dashboard)",
-            "size": 5390,
             "children": [
               {
                 "type": "dir",
                 "name": "admin",
                 "path": "app/(dashboard)/admin",
-                "size": 984,
                 "children": [
                   {
                     "type": "dir",
                     "name": "requests",
                     "path": "app/(dashboard)/admin/requests",
-                    "size": 984,
                     "children": [
                       {
                         "type": "dir",
                         "name": "[id]",
                         "path": "app/(dashboard)/admin/requests/[id]",
-                        "size": 984,
                         "children": [
                           {
                             "type": "file",
                             "name": "page.tsx",
-                            "path": "app/(dashboard)/admin/requests/[id]/page.tsx",
-                            "size": 984
+                            "path": "app/(dashboard)/admin/requests/[id]/page.tsx"
                           }
                         ]
                       }
@@ -206,25 +143,21 @@
                 "type": "dir",
                 "name": "zzp",
                 "path": "app/(dashboard)/zzp",
-                "size": 3971,
                 "children": [
                   {
                     "type": "dir",
                     "name": "import",
                     "path": "app/(dashboard)/zzp/import",
-                    "size": 3971,
                     "children": [
                       {
                         "type": "file",
                         "name": "ImportClient.tsx",
-                        "path": "app/(dashboard)/zzp/import/ImportClient.tsx",
-                        "size": 3096
+                        "path": "app/(dashboard)/zzp/import/ImportClient.tsx"
                       },
                       {
                         "type": "file",
                         "name": "page.tsx",
-                        "path": "app/(dashboard)/zzp/import/page.tsx",
-                        "size": 875
+                        "path": "app/(dashboard)/zzp/import/page.tsx"
                       }
                     ]
                   }
@@ -233,8 +166,7 @@
               {
                 "type": "file",
                 "name": "layout.tsx",
-                "path": "app/(dashboard)/layout.tsx",
-                "size": 435
+                "path": "app/(dashboard)/layout.tsx"
               }
             ]
           },
@@ -242,53 +174,26 @@
             "type": "dir",
             "name": "(site)",
             "path": "app/(site)",
-            "size": 118798,
             "children": [
               {
                 "type": "dir",
                 "name": "admin",
                 "path": "app/(site)/admin",
-                "size": 4641,
                 "children": [
                   {
                     "type": "dir",
                     "name": "analytics",
                     "path": "app/(site)/admin/analytics",
-                    "size": 4641,
                     "children": [
                       {
                         "type": "file",
                         "name": "AnalyticsClient.tsx",
-                        "path": "app/(site)/admin/analytics/AnalyticsClient.tsx",
-                        "size": 2563
+                        "path": "app/(site)/admin/analytics/AnalyticsClient.tsx"
                       },
                       {
                         "type": "file",
                         "name": "page.tsx",
-                        "path": "app/(site)/admin/analytics/page.tsx",
-                        "size": 2078
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "brandwacht-inhuren",
-                "path": "app/(site)/brandwacht-inhuren",
-                "size": 12333,
-                "children": [
-                  {
-                    "type": "dir",
-                    "name": "[city]",
-                    "path": "app/(site)/brandwacht-inhuren/[city]",
-                    "size": 12333,
-                    "children": [
-                      {
-                        "type": "file",
-                        "name": "page.tsx",
-                        "path": "app/(site)/brandwacht-inhuren/[city]/page.tsx",
-                        "size": 12333
+                        "path": "app/(site)/admin/analytics/page.tsx"
                       }
                     ]
                   }
@@ -298,13 +203,11 @@
                 "type": "dir",
                 "name": "faq",
                 "path": "app/(site)/faq",
-                "size": 5705,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/(site)/faq/page.tsx",
-                    "size": 5705
+                    "path": "app/(site)/faq/page.tsx"
                   }
                 ]
               },
@@ -312,13 +215,11 @@
                 "type": "dir",
                 "name": "missie",
                 "path": "app/(site)/missie",
-                "size": 9936,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/(site)/missie/page.tsx",
-                    "size": 9936
+                    "path": "app/(site)/missie/page.tsx"
                   }
                 ]
               },
@@ -326,19 +227,16 @@
                 "type": "dir",
                 "name": "opdrachtgevers",
                 "path": "app/(site)/opdrachtgevers",
-                "size": 28002,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/(site)/opdrachtgevers/page.tsx",
-                    "size": 14540
+                    "path": "app/(site)/opdrachtgevers/page.tsx"
                   },
                   {
                     "type": "file",
                     "name": "page.tsx.old",
-                    "path": "app/(site)/opdrachtgevers/page.tsx.old",
-                    "size": 13462
+                    "path": "app/(site)/opdrachtgevers/page.tsx.old"
                   }
                 ]
               },
@@ -346,13 +244,11 @@
                 "type": "dir",
                 "name": "privacy",
                 "path": "app/(site)/privacy",
-                "size": 6713,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/(site)/privacy/page.tsx",
-                    "size": 6713
+                    "path": "app/(site)/privacy/page.tsx"
                   }
                 ]
               },
@@ -360,13 +256,11 @@
                 "type": "dir",
                 "name": "seo-resources",
                 "path": "app/(site)/seo-resources",
-                "size": 5383,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/(site)/seo-resources/page.tsx",
-                    "size": 5383
+                    "path": "app/(site)/seo-resources/page.tsx"
                   }
                 ]
               },
@@ -374,19 +268,16 @@
                 "type": "dir",
                 "name": "steden",
                 "path": "app/(site)/steden",
-                "size": 7541,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[city]",
                     "path": "app/(site)/steden/[city]",
-                    "size": 7541,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
-                        "path": "app/(site)/steden/[city]/page.tsx",
-                        "size": 7541
+                        "path": "app/(site)/steden/[city]/page.tsx"
                       }
                     ]
                   }
@@ -395,44 +286,32 @@
               {
                 "type": "file",
                 "name": "error.tsx",
-                "path": "app/(site)/error.tsx",
-                "size": 662
+                "path": "app/(site)/error.tsx"
               },
               {
                 "type": "file",
                 "name": "layout.tsx",
-                "path": "app/(site)/layout.tsx",
-                "size": 2840
+                "path": "app/(site)/layout.tsx"
               },
               {
                 "type": "file",
                 "name": "not-found.tsx",
-                "path": "app/(site)/not-found.tsx",
-                "size": 521
+                "path": "app/(site)/not-found.tsx"
               },
               {
                 "type": "file",
                 "name": "opengraph-image.tsx",
-                "path": "app/(site)/opengraph-image.tsx",
-                "size": 323
+                "path": "app/(site)/opengraph-image.tsx"
               },
               {
                 "type": "file",
                 "name": "page.tsx",
-                "path": "app/(site)/page.tsx",
-                "size": 8462
-              },
-              {
-                "type": "file",
-                "name": "page.tsx.old",
-                "path": "app/(site)/page.tsx.old",
-                "size": 25424
+                "path": "app/(site)/page.tsx"
               },
               {
                 "type": "file",
                 "name": "shared-metadata.ts",
-                "path": "app/(site)/shared-metadata.ts",
-                "size": 312
+                "path": "app/(site)/shared-metadata.ts"
               }
             ]
           },
@@ -440,25 +319,21 @@
             "type": "dir",
             "name": "admin",
             "path": "app/admin",
-            "size": 8932,
             "children": [
               {
                 "type": "dir",
                 "name": "direct-requests",
                 "path": "app/admin/direct-requests",
-                "size": 8932,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[id]",
                     "path": "app/admin/direct-requests/[id]",
-                    "size": 8932,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
-                        "path": "app/admin/direct-requests/[id]/page.tsx",
-                        "size": 8932
+                        "path": "app/admin/direct-requests/[id]/page.tsx"
                       }
                     ]
                   }
@@ -470,25 +345,21 @@
             "type": "dir",
             "name": "api",
             "path": "app/api",
-            "size": 73835,
             "children": [
               {
                 "type": "dir",
                 "name": "_debug",
                 "path": "app/api/_debug",
-                "size": 899,
                 "children": [
                   {
                     "type": "dir",
                     "name": "slack",
                     "path": "app/api/_debug/slack",
-                    "size": 899,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/_debug/slack/route.ts",
-                        "size": 899
+                        "path": "app/api/_debug/slack/route.ts"
                       }
                     ]
                   }
@@ -498,49 +369,18 @@
                 "type": "dir",
                 "name": "chat",
                 "path": "app/api/chat",
-                "size": 769,
                 "children": [
                   {
                     "type": "dir",
                     "name": "send",
                     "path": "app/api/chat/send",
-                    "size": 769,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/chat/send/route.ts",
-                        "size": 769
+                        "path": "app/api/chat/send/route.ts"
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "probrandwacht-direct",
-                "path": "app/api/probrandwacht-direct",
-                "size": 11353,
-                "children": [
-                  {
-                    "type": "dir",
-                    "name": "test",
-                    "path": "app/api/probrandwacht-direct/test",
-                    "size": 4366,
-                    "children": [
-                      {
-                        "type": "file",
-                        "name": "route.ts",
-                        "path": "app/api/probrandwacht-direct/test/route.ts",
-                        "size": 4366
-                      }
-                    ]
-                  },
-                  {
-                    "type": "file",
-                    "name": "route.ts",
-                    "path": "app/api/probrandwacht-direct/route.ts",
-                    "size": 6987
                   }
                 ]
               },
@@ -548,19 +388,16 @@
                 "type": "dir",
                 "name": "direct",
                 "path": "app/api/direct",
-                "size": 5532,
                 "children": [
                   {
                     "type": "dir",
                     "name": "request",
                     "path": "app/api/direct/request",
-                    "size": 4789,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/direct/request/route.ts",
-                        "size": 4789
+                        "path": "app/api/direct/request/route.ts"
                       }
                     ]
                   },
@@ -568,13 +405,11 @@
                     "type": "dir",
                     "name": "spoedchat",
                     "path": "app/api/direct/spoedchat",
-                    "size": 743,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/direct/spoedchat/route.ts",
-                        "size": 743
+                        "path": "app/api/direct/spoedchat/route.ts"
                       }
                     ]
                   }
@@ -584,13 +419,11 @@
                 "type": "dir",
                 "name": "direct-messages",
                 "path": "app/api/direct-messages",
-                "size": 2053,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/direct-messages/route.ts",
-                    "size": 2053
+                    "path": "app/api/direct-messages/route.ts"
                   }
                 ]
               },
@@ -598,19 +431,16 @@
                 "type": "dir",
                 "name": "lead",
                 "path": "app/api/lead",
-                "size": 22366,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/lead/route.ts",
-                    "size": 13689
+                    "path": "app/api/lead/route.ts"
                   },
                   {
                     "type": "file",
                     "name": "route.ts.old",
-                    "path": "app/api/lead/route.ts.old",
-                    "size": 8677
+                    "path": "app/api/lead/route.ts.old"
                   }
                 ]
               },
@@ -618,27 +448,47 @@
                 "type": "dir",
                 "name": "probrandwacht-direct",
                 "path": "app/api/probrandwacht-direct",
-                "size": 8754,
                 "children": [
                   {
                     "type": "dir",
-                    "name": "slack",
-                    "path": "app/api/probrandwacht-direct/slack",
-                    "size": 5256,
+                    "name": "test",
+                    "path": "app/api/probrandwacht-direct/test",
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/probrandwacht-direct/slack/route.ts",
-                        "size": 5256
+                        "path": "app/api/probrandwacht-direct/test/route.ts"
                       }
                     ]
                   },
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/probrandwacht-direct/route.ts",
-                    "size": 3498
+                    "path": "app/api/probrandwacht-direct/route.ts"
+                  }
+                ]
+              },
+              {
+                "type": "dir",
+                "name": "probrandwacht-direct-spoed",
+                "path": "app/api/probrandwacht-direct-spoed",
+                "children": [
+                  {
+                    "type": "dir",
+                    "name": "slack",
+                    "path": "app/api/probrandwacht-direct-spoed/slack",
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "route.ts",
+                        "path": "app/api/probrandwacht-direct-spoed/slack/route.ts"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "file",
+                    "name": "route.ts",
+                    "path": "app/api/probrandwacht-direct-spoed/route.ts"
                   }
                 ]
               },
@@ -646,25 +496,21 @@
                 "type": "dir",
                 "name": "profile",
                 "path": "app/api/profile",
-                "size": 1079,
                 "children": [
                   {
                     "type": "dir",
                     "name": "zzp",
                     "path": "app/api/profile/zzp",
-                    "size": 1079,
                     "children": [
                       {
                         "type": "dir",
                         "name": "import",
                         "path": "app/api/profile/zzp/import",
-                        "size": 1079,
                         "children": [
                           {
                             "type": "file",
                             "name": "route.ts",
-                            "path": "app/api/profile/zzp/import/route.ts",
-                            "size": 1079
+                            "path": "app/api/profile/zzp/import/route.ts"
                           }
                         ]
                       }
@@ -676,13 +522,11 @@
                 "type": "dir",
                 "name": "revalidate",
                 "path": "app/api/revalidate",
-                "size": 542,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/revalidate/route.ts",
-                    "size": 542
+                    "path": "app/api/revalidate/route.ts"
                   }
                 ]
               },
@@ -690,13 +534,11 @@
                 "type": "dir",
                 "name": "signup",
                 "path": "app/api/signup",
-                "size": 13780,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/signup/route.ts",
-                    "size": 13780
+                    "path": "app/api/signup/route.ts"
                   }
                 ]
               },
@@ -704,13 +546,11 @@
                 "type": "dir",
                 "name": "signup-client",
                 "path": "app/api/signup-client",
-                "size": 453,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/api/signup-client/route.ts",
-                    "size": 453
+                    "path": "app/api/signup-client/route.ts"
                   }
                 ]
               },
@@ -718,19 +558,16 @@
                 "type": "dir",
                 "name": "slack",
                 "path": "app/api/slack",
-                "size": 6255,
                 "children": [
                   {
                     "type": "dir",
                     "name": "interactions",
                     "path": "app/api/slack/interactions",
-                    "size": 5030,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts",
-                        "path": "app/api/slack/interactions/route.ts",
-                        "size": 5030
+                        "path": "app/api/slack/interactions/route.ts"
                       }
                     ]
                   },
@@ -738,13 +575,11 @@
                     "type": "dir",
                     "name": "messages",
                     "path": "app/api/slack/messages",
-                    "size": 1225,
                     "children": [
                       {
                         "type": "file",
                         "name": "route.ts.temp",
-                        "path": "app/api/slack/messages/route.ts.temp",
-                        "size": 1225
+                        "path": "app/api/slack/messages/route.ts.temp"
                       }
                     ]
                   }
@@ -756,107 +591,38 @@
             "type": "dir",
             "name": "blog",
             "path": "app/blog",
-            "size": 23177,
             "children": [
               {
                 "type": "dir",
                 "name": "[slug]",
                 "path": "app/blog/[slug]",
-                "size": 6983,
                 "children": [
                   {
                     "type": "file",
                     "name": "opengraph-image.tsx",
-                    "path": "app/blog/[slug]/opengraph-image.tsx",
-                    "size": 450
+                    "path": "app/blog/[slug]/opengraph-image.tsx"
                   },
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/blog/[slug]/page.tsx",
-                    "size": 6533
+                    "path": "app/blog/[slug]/page.tsx"
                   }
                 ]
               },
               {
                 "type": "file",
                 "name": "layout.tsx",
-                "path": "app/blog/layout.tsx",
-                "size": 206
+                "path": "app/blog/layout.tsx"
               },
               {
                 "type": "file",
                 "name": "not-found.tsx",
-                "path": "app/blog/not-found.tsx",
-                "size": 520
+                "path": "app/blog/not-found.tsx"
               },
               {
                 "type": "file",
                 "name": "page.tsx",
-                "path": "app/blog/page.tsx",
-                "size": 15468
-              }
-            ]
-          },
-          {
-            "type": "dir",
-            "name": "brandwacht",
-            "path": "app/brandwacht",
-            "size": 11337,
-            "children": [
-              {
-                "type": "dir",
-                "name": "haven-industrie",
-                "path": "app/brandwacht/haven-industrie",
-                "size": 2227,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht/haven-industrie/page.tsx",
-                    "size": 2227
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "mangatwacht",
-                "path": "app/brandwacht/mangatwacht",
-                "size": 2127,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht/mangatwacht/page.tsx",
-                    "size": 2127
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "turnaround-stop",
-                "path": "app/brandwacht/turnaround-stop",
-                "size": 2074,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht/turnaround-stop/page.tsx",
-                    "size": 2074
-                  }
-                ]
-              },
-              {
-                "type": "file",
-                "name": "common.tsx",
-                "path": "app/brandwacht/common.tsx",
-                "size": 4602
-              },
-              {
-                "type": "file",
-                "name": "layout.tsx",
-                "path": "app/brandwacht/layout.tsx",
-                "size": 307
+                "path": "app/blog/page.tsx"
               }
             ]
           },
@@ -864,19 +630,16 @@
             "type": "dir",
             "name": "brandwacht-huren",
             "path": "app/brandwacht-huren",
-            "size": 1562,
             "children": [
               {
                 "type": "dir",
                 "name": "[city]",
                 "path": "app/brandwacht-huren/[city]",
-                "size": 1326,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/[city]/page.tsx",
-                    "size": 1326
+                    "path": "app/brandwacht-huren/[city]/page.tsx"
                   }
                 ]
               },
@@ -884,13 +647,11 @@
                 "type": "dir",
                 "name": "amsterdam",
                 "path": "app/brandwacht-huren/amsterdam",
-                "size": 59,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/amsterdam/page.tsx",
-                    "size": 59
+                    "path": "app/brandwacht-huren/amsterdam/page.tsx"
                   }
                 ]
               },
@@ -898,13 +659,11 @@
                 "type": "dir",
                 "name": "den-haag",
                 "path": "app/brandwacht-huren/den-haag",
-                "size": 59,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/den-haag/page.tsx",
-                    "size": 59
+                    "path": "app/brandwacht-huren/den-haag/page.tsx"
                   }
                 ]
               },
@@ -912,13 +671,11 @@
                 "type": "dir",
                 "name": "rotterdam",
                 "path": "app/brandwacht-huren/rotterdam",
-                "size": 59,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/rotterdam/page.tsx",
-                    "size": 59
+                    "path": "app/brandwacht-huren/rotterdam/page.tsx"
                   }
                 ]
               },
@@ -926,13 +683,11 @@
                 "type": "dir",
                 "name": "utrecht",
                 "path": "app/brandwacht-huren/utrecht",
-                "size": 59,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/utrecht/page.tsx",
-                    "size": 59
+                    "path": "app/brandwacht-huren/utrecht/page.tsx"
                   }
                 ]
               }
@@ -940,47 +695,28 @@
           },
           {
             "type": "dir",
-            "name": "probrandwacht-direct",
-            "path": "app/probrandwacht-direct",
-            "size": 3223,
-            "children": [
-              {
-                "type": "file",
-                "name": "page.tsx",
-                "path": "app/probrandwacht-direct/page.tsx",
-                "size": 3223
-              }
-            ]
-          },
-          {
-            "type": "dir",
             "name": "dashboard",
             "path": "app/dashboard",
-            "size": 6275,
             "children": [
               {
                 "type": "dir",
                 "name": "requests",
                 "path": "app/dashboard/requests",
-                "size": 6275,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[id]",
                     "path": "app/dashboard/requests/[id]",
-                    "size": 6275,
                     "children": [
                       {
                         "type": "file",
                         "name": "ChatBox.tsx",
-                        "path": "app/dashboard/requests/[id]/ChatBox.tsx",
-                        "size": 3885
+                        "path": "app/dashboard/requests/[id]/ChatBox.tsx"
                       },
                       {
                         "type": "file",
                         "name": "page.tsx",
-                        "path": "app/dashboard/requests/[id]/page.tsx",
-                        "size": 2390
+                        "path": "app/dashboard/requests/[id]/page.tsx"
                       }
                     ]
                   }
@@ -992,13 +728,11 @@
             "type": "dir",
             "name": "direct",
             "path": "app/direct",
-            "size": 3704,
             "children": [
               {
                 "type": "file",
                 "name": "page.tsx",
-                "path": "app/direct/page.tsx",
-                "size": 3704
+                "path": "app/direct/page.tsx"
               }
             ]
           },
@@ -1006,33 +740,16 @@
             "type": "dir",
             "name": "opdrachtgevers",
             "path": "app/opdrachtgevers",
-            "size": 22758,
             "children": [
               {
                 "type": "dir",
                 "name": "aanmelden",
                 "path": "app/opdrachtgevers/aanmelden",
-                "size": 5113,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/opdrachtgevers/aanmelden/page.tsx",
-                    "size": 5113
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "brandwacht-inhuren",
-                "path": "app/opdrachtgevers/brandwacht-inhuren",
-                "size": 12556,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/opdrachtgevers/brandwacht-inhuren/page.tsx",
-                    "size": 12556
+                    "path": "app/opdrachtgevers/aanmelden/page.tsx"
                   }
                 ]
               },
@@ -1040,27 +757,23 @@
                 "type": "dir",
                 "name": "thank-you",
                 "path": "app/opdrachtgevers/thank-you",
-                "size": 4645,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/opdrachtgevers/thank-you/page.tsx",
-                    "size": 3278
+                    "path": "app/opdrachtgevers/thank-you/page.tsx"
                   },
                   {
                     "type": "file",
                     "name": "support-client-fallback.tsx",
-                    "path": "app/opdrachtgevers/thank-you/support-client-fallback.tsx",
-                    "size": 1367
+                    "path": "app/opdrachtgevers/thank-you/support-client-fallback.tsx"
                   }
                 ]
               },
               {
                 "type": "file",
                 "name": "layout.tsx",
-                "path": "app/opdrachtgevers/layout.tsx",
-                "size": 444
+                "path": "app/opdrachtgevers/layout.tsx"
               }
             ]
           },
@@ -1068,13 +781,23 @@
             "type": "dir",
             "name": "probrandwacht-direct",
             "path": "app/probrandwacht-direct",
-            "size": 1952,
             "children": [
               {
                 "type": "file",
                 "name": "page.tsx",
-                "path": "app/probrandwacht-direct/page.tsx",
-                "size": 1952
+                "path": "app/probrandwacht-direct/page.tsx"
+              }
+            ]
+          },
+          {
+            "type": "dir",
+            "name": "probrandwacht-direct-spoed",
+            "path": "app/probrandwacht-direct-spoed",
+            "children": [
+              {
+                "type": "file",
+                "name": "page.tsx",
+                "path": "app/probrandwacht-direct-spoed/page.tsx"
               }
             ]
           },
@@ -1082,19 +805,16 @@
             "type": "dir",
             "name": "reports",
             "path": "app/reports",
-            "size": 1772,
             "children": [
               {
                 "type": "dir",
                 "name": "[id]",
                 "path": "app/reports/[id]",
-                "size": 1772,
                 "children": [
                   {
                     "type": "file",
                     "name": "route.ts",
-                    "path": "app/reports/[id]/route.ts",
-                    "size": 1772
+                    "path": "app/reports/[id]/route.ts"
                   }
                 ]
               }
@@ -1104,13 +824,23 @@
             "type": "dir",
             "name": "sitemap-cities.xml",
             "path": "app/sitemap-cities.xml",
-            "size": 802,
             "children": [
               {
                 "type": "file",
                 "name": "route.ts",
-                "path": "app/sitemap-cities.xml/route.ts",
-                "size": 802
+                "path": "app/sitemap-cities.xml/route.ts"
+              }
+            ]
+          },
+          {
+            "type": "dir",
+            "name": "tarief-berekenen",
+            "path": "app/tarief-berekenen",
+            "children": [
+              {
+                "type": "file",
+                "name": "page.tsx",
+                "path": "app/tarief-berekenen/page.tsx"
               }
             ]
           },
@@ -1118,59 +848,50 @@
             "type": "dir",
             "name": "zzp",
             "path": "app/zzp",
-            "size": 18179,
             "children": [
               {
                 "type": "dir",
                 "name": "aanmelden",
                 "path": "app/zzp/aanmelden",
-                "size": 17740,
                 "children": [
                   {
                     "type": "file",
                     "name": "client-page.tsx",
-                    "path": "app/zzp/aanmelden/client-page.tsx",
-                    "size": 15176
+                    "path": "app/zzp/aanmelden/client-page.tsx"
                   },
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/zzp/aanmelden/page.tsx",
-                    "size": 2564
+                    "path": "app/zzp/aanmelden/page.tsx"
                   }
                 ]
               },
               {
                 "type": "file",
                 "name": "layout.tsx",
-                "path": "app/zzp/layout.tsx",
-                "size": 439
+                "path": "app/zzp/layout.tsx"
               }
             ]
           },
           {
             "type": "file",
             "name": "layout.tsx",
-            "path": "app/layout.tsx",
-            "size": 3734
+            "path": "app/layout.tsx"
           },
           {
             "type": "file",
             "name": "reportWebVitals.ts",
-            "path": "app/reportWebVitals.ts",
-            "size": 959
+            "path": "app/reportWebVitals.ts"
           },
           {
             "type": "file",
             "name": "robots.ts",
-            "path": "app/robots.ts",
-            "size": 333
+            "path": "app/robots.ts"
           },
           {
             "type": "file",
             "name": "sitemap.ts",
-            "path": "app/sitemap.ts",
-            "size": 1296
+            "path": "app/sitemap.ts"
           }
         ]
       },
@@ -1178,67 +899,73 @@
         "type": "dir",
         "name": "components",
         "path": "components",
-        "size": 140252,
         "children": [
+          {
+            "type": "dir",
+            "name": "layout",
+            "path": "components/layout",
+            "children": [
+              {
+                "type": "file",
+                "name": "hero-shell.tsx",
+                "path": "components/layout/hero-shell.tsx"
+              },
+              {
+                "type": "file",
+                "name": "info-cards-row.tsx",
+                "path": "components/layout/info-cards-row.tsx"
+              }
+            ]
+          },
           {
             "type": "dir",
             "name": "mdx",
             "path": "components/mdx",
-            "size": 13519,
             "children": [
               {
                 "type": "file",
                 "name": "Bronnen.tsx",
-                "path": "components/mdx/Bronnen.tsx",
-                "size": 801
+                "path": "components/mdx/Bronnen.tsx"
               },
               {
                 "type": "file",
                 "name": "ConclusieMarkt.tsx",
-                "path": "components/mdx/ConclusieMarkt.tsx",
-                "size": 1596
+                "path": "components/mdx/ConclusieMarkt.tsx"
               },
               {
                 "type": "file",
                 "name": "FeeVergelijk.tsx",
-                "path": "components/mdx/FeeVergelijk.tsx",
-                "size": 1669
+                "path": "components/mdx/FeeVergelijk.tsx"
               },
               {
                 "type": "file",
                 "name": "KostenOpbouw.tsx",
-                "path": "components/mdx/KostenOpbouw.tsx",
-                "size": 4289
+                "path": "components/mdx/KostenOpbouw.tsx"
               },
               {
                 "type": "file",
                 "name": "KostenOpbouwScenarios.tsx",
-                "path": "components/mdx/KostenOpbouwScenarios.tsx",
-                "size": 41
+                "path": "components/mdx/KostenOpbouwScenarios.tsx"
               },
               {
                 "type": "file",
                 "name": "next-contentlayer.d.ts",
-                "path": "components/mdx/next-contentlayer.d.ts",
-                "size": 100
+                "path": "components/mdx/next-contentlayer.d.ts"
               },
               {
                 "type": "file",
                 "name": "RenderMdx.tsx",
-                "path": "components/mdx/RenderMdx.tsx",
-                "size": 490
+                "path": "components/mdx/RenderMdx.tsx"
               },
               {
                 "type": "file",
                 "name": "TariefTabel.tsx",
-                "path": "components/mdx/TariefTabel.tsx",
-                "size": 4375
+                "path": "components/mdx/TariefTabel.tsx"
               },
               {
                 "type": "file",
                 "name": "Tldr.tsx",
-                "path": "components/mdx/Tldr.tsx",
-                "size": 158
+                "path": "components/mdx/Tldr.tsx"
               }
             ]
           },
@@ -1246,129 +973,148 @@
             "type": "dir",
             "name": "opdrachtgevers",
             "path": "components/opdrachtgevers",
-            "size": 11420,
             "children": [
               {
                 "type": "file",
                 "name": "client-signup-form.tsx",
-                "path": "components/opdrachtgevers/client-signup-form.tsx",
-                "size": 11420
+                "path": "components/opdrachtgevers/client-signup-form.tsx"
               }
             ]
           },
           {
             "type": "file",
+            "name": "analytics-tracker.tsx",
+            "path": "components/analytics-tracker.tsx"
+          },
+          {
+            "type": "file",
             "name": "analytics.tsx",
-            "path": "components/analytics.tsx",
-            "size": 2384
+            "path": "components/analytics.tsx"
+          },
+          {
+            "type": "file",
+            "name": "ChatBox.tsx",
+            "path": "components/ChatBox.tsx"
           },
           {
             "type": "file",
             "name": "ChatPanel.tsx",
-            "path": "components/ChatPanel.tsx",
-            "size": 4235
-          },
-          {
-            "type": "file",
-            "name": "probrandwacht-direct-form.tsx",
-            "path": "components/probrandwacht-direct-form.tsx",
-            "size": 8764
+            "path": "components/ChatPanel.tsx"
           },
           {
             "type": "file",
             "name": "city-hero.tsx",
-            "path": "components/city-hero.tsx",
-            "size": 2730
+            "path": "components/city-hero.tsx"
+          },
+          {
+            "type": "file",
+            "name": "cookie-notice.tsx",
+            "path": "components/cookie-notice.tsx"
           },
           {
             "type": "file",
             "name": "cost-calculator.tsx",
-            "path": "components/cost-calculator.tsx",
-            "size": 35266
+            "path": "components/cost-calculator.tsx"
           },
           {
             "type": "file",
             "name": "cpi-chart.tsx",
-            "path": "components/cpi-chart.tsx",
-            "size": 3164
+            "path": "components/cpi-chart.tsx"
           },
           {
             "type": "file",
             "name": "direct-request-form.tsx",
-            "path": "components/direct-request-form.tsx",
-            "size": 5576
+            "path": "components/direct-request-form.tsx"
           },
           {
             "type": "file",
             "name": "dropbox-hint.tsx",
-            "path": "components/dropbox-hint.tsx",
-            "size": 1035
+            "path": "components/dropbox-hint.tsx"
+          },
+          {
+            "type": "file",
+            "name": "Hero.tsx",
+            "path": "components/Hero.tsx"
+          },
+          {
+            "type": "file",
+            "name": "HeroBackground.tsx",
+            "path": "components/HeroBackground.tsx"
+          },
+          {
+            "type": "file",
+            "name": "home-hero-cycle.tsx",
+            "path": "components/home-hero-cycle.tsx"
+          },
+          {
+            "type": "file",
+            "name": "HomeHero.tsx",
+            "path": "components/HomeHero.tsx"
           },
           {
             "type": "file",
             "name": "impact-info-card.tsx",
-            "path": "components/impact-info-card.tsx",
-            "size": 2616
+            "path": "components/impact-info-card.tsx"
           },
           {
             "type": "file",
             "name": "impact-meter.tsx",
-            "path": "components/impact-meter.tsx",
-            "size": 3056
+            "path": "components/impact-meter.tsx"
           },
           {
             "type": "file",
             "name": "lead-calculator.tsx",
-            "path": "components/lead-calculator.tsx",
-            "size": 10476
+            "path": "components/lead-calculator.tsx"
           },
           {
             "type": "file",
             "name": "lead-calculator.tsx.old",
-            "path": "components/lead-calculator.tsx.old",
-            "size": 8278
+            "path": "components/lead-calculator.tsx.old"
           },
           {
             "type": "file",
             "name": "pb-direct-form.tsx",
-            "path": "components/pb-direct-form.tsx",
-            "size": 4837
+            "path": "components/pb-direct-form.tsx"
+          },
+          {
+            "type": "file",
+            "name": "PlatformPricingNote.tsx",
+            "path": "components/PlatformPricingNote.tsx"
+          },
+          {
+            "type": "file",
+            "name": "probrandwacht-direct-form.tsx",
+            "path": "components/probrandwacht-direct-form.tsx"
           },
           {
             "type": "file",
             "name": "prose.tsx",
-            "path": "components/prose.tsx",
-            "size": 178
+            "path": "components/prose.tsx"
           },
           {
             "type": "file",
             "name": "Seo.tsx",
-            "path": "components/Seo.tsx",
-            "size": 2919
+            "path": "components/Seo.tsx"
           },
           {
             "type": "file",
             "name": "SeoStructuredData.tsx",
-            "path": "components/SeoStructuredData.tsx",
-            "size": 3895
+            "path": "components/SeoStructuredData.tsx"
           },
           {
             "type": "file",
             "name": "share-bar.tsx",
-            "path": "components/share-bar.tsx",
-            "size": 5735
+            "path": "components/share-bar.tsx"
           },
           {
             "type": "file",
             "name": "site-header.tsx",
-            "path": "components/site-header.tsx",
-            "size": 7642
+            "path": "components/site-header.tsx"
           },
           {
             "type": "file",
             "name": "structured-breadcrumbs.tsx",
-            "path": "components/structured-breadcrumbs.tsx",
-            "size": 2527
+            "path": "components/structured-breadcrumbs.tsx"
           }
         ]
       },
@@ -1376,69 +1122,63 @@
         "type": "dir",
         "name": "content",
         "path": "content",
-        "size": 60630,
         "children": [
           {
             "type": "dir",
             "name": "blog",
             "path": "content/blog",
-            "size": 51987,
             "children": [
               {
                 "type": "file",
                 "name": "5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx",
-                "path": "content/blog/5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx",
-                "size": 2283
+                "path": "content/blog/5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx"
+              },
+              {
+                "type": "file",
+                "name": "brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx",
+                "path": "content/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx"
               },
               {
                 "type": "file",
                 "name": "brandwacht-manschap-ab.mdx",
-                "path": "content/blog/brandwacht-manschap-ab.mdx",
-                "size": 5490
+                "path": "content/blog/brandwacht-manschap-ab.mdx"
               },
               {
                 "type": "file",
                 "name": "dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx",
-                "path": "content/blog/dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx",
-                "size": 4694
+                "path": "content/blog/dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx"
               },
               {
                 "type": "file",
                 "name": "drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx",
-                "path": "content/blog/drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx",
-                "size": 3868
+                "path": "content/blog/drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx"
               },
               {
                 "type": "file",
                 "name": "industriele-brandwacht-wat-houdt-het-in.mdx",
-                "path": "content/blog/industriele-brandwacht-wat-houdt-het-in.mdx",
-                "size": 16576
+                "path": "content/blog/industriele-brandwacht-wat-houdt-het-in.mdx"
               },
               {
                 "type": "file",
                 "name": "wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
-                "path": "content/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
-                "size": 6405
+                "path": "content/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx"
               },
               {
                 "type": "file",
                 "name": "wat-kost-een-brandwacht-in-2025.mdx",
-                "path": "content/blog/wat-kost-een-brandwacht-in-2025.mdx",
-                "size": 6806
+                "path": "content/blog/wat-kost-een-brandwacht-in-2025.mdx"
               },
               {
                 "type": "file",
                 "name": "zzp-direct-met-opdrachtgever-wet-dba.mdx",
-                "path": "content/blog/zzp-direct-met-opdrachtgever-wet-dba.mdx",
-                "size": 5865
+                "path": "content/blog/zzp-direct-met-opdrachtgever-wet-dba.mdx"
               }
             ]
           },
           {
             "type": "file",
             "name": "faq.json",
-            "path": "content/faq.json",
-            "size": 8643
+            "path": "content/faq.json"
           }
         ]
       },
@@ -1446,19 +1186,16 @@
         "type": "dir",
         "name": "data",
         "path": "data",
-        "size": 21175,
         "children": [
           {
             "type": "file",
             "name": "cpi-monthly.csv",
-            "path": "data/cpi-monthly.csv",
-            "size": 2963
+            "path": "data/cpi-monthly.csv"
           },
           {
             "type": "file",
             "name": "cpi-monthly.json",
-            "path": "data/cpi-monthly.json",
-            "size": 18212
+            "path": "data/cpi-monthly.json"
           }
         ]
       },
@@ -1466,19 +1203,16 @@
         "type": "dir",
         "name": "docs",
         "path": "docs",
-        "size": 5769,
         "children": [
           {
             "type": "file",
             "name": "tone_of_voice_commercial.md",
-            "path": "docs/tone_of_voice_commercial.md",
-            "size": 3399
+            "path": "docs/tone_of_voice_commercial.md"
           },
           {
             "type": "file",
             "name": "TONE_OF_VOICE.md",
-            "path": "docs/TONE_OF_VOICE.md",
-            "size": 2370
+            "path": "docs/TONE_OF_VOICE.md"
           }
         ]
       },
@@ -1486,19 +1220,16 @@
         "type": "dir",
         "name": "lib",
         "path": "lib",
-        "size": 43224,
         "children": [
           {
             "type": "dir",
             "name": "api",
             "path": "lib/api",
-            "size": 3466,
             "children": [
               {
                 "type": "file",
                 "name": "signupClient.ts",
-                "path": "lib/api/signupClient.ts",
-                "size": 3466
+                "path": "lib/api/signupClient.ts"
               }
             ]
           },
@@ -1506,13 +1237,11 @@
             "type": "dir",
             "name": "hooks",
             "path": "lib/hooks",
-            "size": 1040,
             "children": [
               {
                 "type": "file",
                 "name": "useSignup.ts",
-                "path": "lib/hooks/useSignup.ts",
-                "size": 1040
+                "path": "lib/hooks/useSignup.ts"
               }
             ]
           },
@@ -1520,19 +1249,16 @@
             "type": "dir",
             "name": "schemas",
             "path": "lib/schemas",
-            "size": 1638,
             "children": [
               {
                 "type": "file",
                 "name": "profile.ts",
-                "path": "lib/schemas/profile.ts",
-                "size": 1111
+                "path": "lib/schemas/profile.ts"
               },
               {
                 "type": "file",
                 "name": "psm-profile-v1.ts",
-                "path": "lib/schemas/psm-profile-v1.ts",
-                "size": 527
+                "path": "lib/schemas/psm-profile-v1.ts"
               }
             ]
           },
@@ -1540,123 +1266,133 @@
             "type": "dir",
             "name": "seo",
             "path": "lib/seo",
-            "size": 5447,
             "children": [
               {
                 "type": "file",
                 "name": "authoritative-sources.ts",
-                "path": "lib/seo/authoritative-sources.ts",
-                "size": 3032
+                "path": "lib/seo/authoritative-sources.ts"
               },
               {
                 "type": "file",
                 "name": "commonFaqs.ts",
-                "path": "lib/seo/commonFaqs.ts",
-                "size": 2415
+                "path": "lib/seo/commonFaqs.ts"
+              },
+              {
+                "type": "file",
+                "name": "metadata.ts",
+                "path": "lib/seo/metadata.ts"
+              },
+              {
+                "type": "file",
+                "name": "seo-keywords.ts",
+                "path": "lib/seo/seo-keywords.ts"
               }
             ]
           },
           {
             "type": "file",
             "name": "adminLinks.ts",
-            "path": "lib/adminLinks.ts",
-            "size": 309
+            "path": "lib/adminLinks.ts"
           },
           {
             "type": "file",
             "name": "blog-index.ts",
-            "path": "lib/blog-index.ts",
-            "size": 1012
+            "path": "lib/blog-index.ts"
           },
           {
             "type": "file",
             "name": "blog.ts",
-            "path": "lib/blog.ts",
-            "size": 1957
+            "path": "lib/blog.ts"
           },
           {
             "type": "file",
             "name": "cities.ts",
-            "path": "lib/cities.ts",
-            "size": 4449
+            "path": "lib/cities.ts"
+          },
+          {
+            "type": "file",
+            "name": "city-copy.ts",
+            "path": "lib/city-copy.ts"
           },
           {
             "type": "file",
             "name": "city-data.ts",
-            "path": "lib/city-data.ts",
-            "size": 8080
+            "path": "lib/city-data.ts"
           },
           {
             "type": "file",
             "name": "config.ts",
-            "path": "lib/config.ts",
-            "size": 748
+            "path": "lib/config.ts"
+          },
+          {
+            "type": "file",
+            "name": "featureFlags.ts",
+            "path": "lib/featureFlags.ts"
           },
           {
             "type": "file",
             "name": "mdx.ts",
-            "path": "lib/mdx.ts",
-            "size": 2317
+            "path": "lib/mdx.ts"
           },
           {
             "type": "file",
             "name": "nearby.ts",
-            "path": "lib/nearby.ts",
-            "size": 865
+            "path": "lib/nearby.ts"
           },
           {
             "type": "file",
             "name": "og.tsx",
-            "path": "lib/og.tsx",
-            "size": 753
+            "path": "lib/og.tsx"
           },
           {
             "type": "file",
             "name": "pbDirectSlack.ts",
-            "path": "lib/pbDirectSlack.ts",
-            "size": 4089
+            "path": "lib/pbDirectSlack.ts"
           },
           {
             "type": "file",
             "name": "psm-local.ts",
-            "path": "lib/psm-local.ts",
-            "size": 656
+            "path": "lib/psm-local.ts"
           },
           {
             "type": "file",
             "name": "redis.ts",
-            "path": "lib/redis.ts",
-            "size": 1337
+            "path": "lib/redis.ts"
           },
           {
             "type": "file",
             "name": "schema.ts",
-            "path": "lib/schema.ts",
-            "size": 1502
+            "path": "lib/schema.ts"
           },
           {
             "type": "file",
             "name": "slackBlocks.ts",
-            "path": "lib/slackBlocks.ts",
-            "size": 2197
+            "path": "lib/slackBlocks.ts"
+          },
+          {
+            "type": "file",
+            "name": "slackHelpers.ts",
+            "path": "lib/slackHelpers.ts"
+          },
+          {
+            "type": "file",
+            "name": "supabase-admin.ts",
+            "path": "lib/supabase-admin.ts"
           },
           {
             "type": "file",
             "name": "supabaseBrowser.ts",
-            "path": "lib/supabaseBrowser.ts",
-            "size": 245
+            "path": "lib/supabaseBrowser.ts"
           },
           {
             "type": "file",
             "name": "supabaseServer.ts",
-            "path": "lib/supabaseServer.ts",
-            "size": 318
+            "path": "lib/supabaseServer.ts"
           },
           {
             "type": "file",
             "name": "tariffs.ts",
-            "path": "lib/tariffs.ts",
-            "size": 799
+            "path": "lib/tariffs.ts"
           }
         ]
       },
@@ -1664,19 +1400,16 @@
         "type": "dir",
         "name": "public",
         "path": "public",
-        "size": 12180182,
         "children": [
           {
             "type": "dir",
             "name": "fonts",
             "path": "public/fonts",
-            "size": 305608,
             "children": [
               {
                 "type": "file",
                 "name": "Roboto-Regular.ttf",
-                "path": "public/fonts/Roboto-Regular.ttf",
-                "size": 305608
+                "path": "public/fonts/Roboto-Regular.ttf"
               }
             ]
           },
@@ -1684,117 +1417,178 @@
             "type": "dir",
             "name": "images",
             "path": "public/images",
-            "size": 0,
             "children": [
               {
                 "type": "file",
                 "name": ".gitkeep",
-                "path": "public/images/.gitkeep",
-                "size": 0
+                "path": "public/images/.gitkeep"
               }
             ]
           },
           {
             "type": "file",
             "name": "blog-bouw-welder.jpg",
-            "path": "public/blog-bouw-welder.jpg",
-            "size": 184462
+            "path": "public/blog-bouw-welder.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-bouw-welder.webp",
+            "path": "public/blog-bouw-welder.webp"
           },
           {
             "type": "file",
             "name": "blog-brandpreventie-checklist.jpg",
-            "path": "public/blog-brandpreventie-checklist.jpg",
-            "size": 196648
+            "path": "public/blog-brandpreventie-checklist.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-brandpreventie-checklist.webp",
+            "path": "public/blog-brandpreventie-checklist.webp"
           },
           {
             "type": "file",
             "name": "blog-evenementen-brandveiligheid.jpg",
-            "path": "public/blog-evenementen-brandveiligheid.jpg",
-            "size": 346025
+            "path": "public/blog-evenementen-brandveiligheid.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-evenementen-brandveiligheid.webp",
+            "path": "public/blog-evenementen-brandveiligheid.webp"
           },
           {
             "type": "file",
             "name": "blog-industriele-brandwacht.jpg",
-            "path": "public/blog-industriele-brandwacht.jpg",
-            "size": 161726
+            "path": "public/blog-industriele-brandwacht.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-industriele-brandwacht.webp",
+            "path": "public/blog-industriele-brandwacht.webp"
           },
           {
             "type": "file",
             "name": "blog-trends-tarieven.jpg",
-            "path": "public/blog-trends-tarieven.jpg",
-            "size": 1625046
+            "path": "public/blog-trends-tarieven.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-trends-tarieven.webp",
+            "path": "public/blog-trends-tarieven.webp"
           },
           {
             "type": "file",
             "name": "blog-wat-kost-brandwacht.jpg",
-            "path": "public/blog-wat-kost-brandwacht.jpg",
-            "size": 346025
+            "path": "public/blog-wat-kost-brandwacht.jpg"
+          },
+          {
+            "type": "file",
+            "name": "blog-wat-kost-brandwacht.webp",
+            "path": "public/blog-wat-kost-brandwacht.webp"
+          },
+          {
+            "type": "file",
+            "name": "brandvergrootglas.png",
+            "path": "public/brandvergrootglas.png"
+          },
+          {
+            "type": "file",
+            "name": "brandvergrootglas.webp",
+            "path": "public/brandvergrootglas.webp"
           },
           {
             "type": "file",
             "name": "brandwachten-samenwerking-card.png",
-            "path": "public/brandwachten-samenwerking-card.png",
-            "size": 1351385
+            "path": "public/brandwachten-samenwerking-card.png"
+          },
+          {
+            "type": "file",
+            "name": "brandwachten-samenwerking-card.webp",
+            "path": "public/brandwachten-samenwerking-card.webp"
           },
           {
             "type": "file",
             "name": "brandwachten-samenwerking-hero.png",
-            "path": "public/brandwachten-samenwerking-hero.png",
-            "size": 1319110
+            "path": "public/brandwachten-samenwerking-hero.png"
+          },
+          {
+            "type": "file",
+            "name": "brandwachten-samenwerking-hero.webp",
+            "path": "public/brandwachten-samenwerking-hero.webp"
+          },
+          {
+            "type": "file",
+            "name": "brandweer-psm.webp",
+            "path": "public/brandweer-psm.webp"
           },
           {
             "type": "file",
             "name": "dba-en-brandwachten-card.png",
-            "path": "public/dba-en-brandwachten-card.png",
-            "size": 1404867
+            "path": "public/dba-en-brandwachten-card.png"
+          },
+          {
+            "type": "file",
+            "name": "dba-en-brandwachten-card.webp",
+            "path": "public/dba-en-brandwachten-card.webp"
           },
           {
             "type": "file",
             "name": "og-home.jpg",
-            "path": "public/og-home.jpg",
-            "size": 1121986
+            "path": "public/og-home.jpg"
           },
           {
             "type": "file",
             "name": "og-home.webp",
-            "path": "public/og-home.webp",
-            "size": 140270
+            "path": "public/og-home.webp"
           },
           {
             "type": "file",
             "name": "og.jpg",
-            "path": "public/og.jpg",
-            "size": 1121986
+            "path": "public/og.jpg"
+          },
+          {
+            "type": "file",
+            "name": "og.webp",
+            "path": "public/og.webp"
           },
           {
             "type": "file",
             "name": "probrandwacht-logo.png",
-            "path": "public/probrandwacht-logo.png",
-            "size": 1121986
+            "path": "public/probrandwacht-logo.png"
+          },
+          {
+            "type": "file",
+            "name": "probrandwacht-logo.webp",
+            "path": "public/probrandwacht-logo.webp"
+          },
+          {
+            "type": "file",
+            "name": "prosafetymatch-bg.webp",
+            "path": "public/prosafetymatch-bg.webp"
           },
           {
             "type": "file",
             "name": "robots.txt",
-            "path": "public/robots.txt",
-            "size": 132
+            "path": "public/robots.txt"
           },
           {
             "type": "file",
             "name": "sitemap-0.xml",
-            "path": "public/sitemap-0.xml",
-            "size": 901
+            "path": "public/sitemap-0.xml"
           },
           {
             "type": "file",
             "name": "sitemap.xml",
-            "path": "public/sitemap.xml",
-            "size": 265
+            "path": "public/sitemap.xml"
           },
           {
             "type": "file",
             "name": "wat-kost-een-brandwacht-2025-card-v2.png",
-            "path": "public/wat-kost-een-brandwacht-2025-card-v2.png",
-            "size": 1431754
+            "path": "public/wat-kost-een-brandwacht-2025-card-v2.png"
+          },
+          {
+            "type": "file",
+            "name": "wat-kost-een-brandwacht-2025-card-v2.webp",
+            "path": "public/wat-kost-een-brandwacht-2025-card-v2.webp"
           }
         ]
       },
@@ -1802,103 +1596,63 @@
         "type": "dir",
         "name": "runway-video-project",
         "path": "runway-video-project",
-        "size": 17333,
         "children": [
-          {
-            "type": "dir",
-            "name": "assets",
-            "path": "runway-video-project/assets",
-            "size": 0,
-            "children": []
-          },
-          {
-            "type": "dir",
-            "name": "edited-clips",
-            "path": "runway-video-project/edited-clips",
-            "size": 0,
-            "children": []
-          },
           {
             "type": "dir",
             "name": "exports",
             "path": "runway-video-project/exports",
-            "size": 1735,
             "children": [
               {
                 "type": "file",
                 "name": "audition-markers.csv",
-                "path": "runway-video-project/exports/audition-markers.csv",
-                "size": 848
+                "path": "runway-video-project/exports/audition-markers.csv"
               },
               {
                 "type": "file",
                 "name": "premiere-markers.csv",
-                "path": "runway-video-project/exports/premiere-markers.csv",
-                "size": 887
+                "path": "runway-video-project/exports/premiere-markers.csv"
               }
             ]
           },
           {
             "type": "dir",
-            "name": "final-export",
-            "path": "runway-video-project/final-export",
-            "size": 0,
-            "children": []
-          },
-          {
-            "type": "dir",
-            "name": "raw-footage",
-            "path": "runway-video-project/raw-footage",
-            "size": 0,
-            "children": []
-          },
-          {
-            "type": "dir",
             "name": "subtitles",
             "path": "runway-video-project/subtitles",
-            "size": 1098,
             "children": [
               {
                 "type": "file",
                 "name": "master.srt",
-                "path": "runway-video-project/subtitles/master.srt",
-                "size": 552
+                "path": "runway-video-project/subtitles/master.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-01.srt",
-                "path": "runway-video-project/subtitles/sub-shot-01.srt",
-                "size": 77
+                "path": "runway-video-project/subtitles/sub-shot-01.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-02.srt",
-                "path": "runway-video-project/subtitles/sub-shot-02.srt",
-                "size": 96
+                "path": "runway-video-project/subtitles/sub-shot-02.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-03.srt",
-                "path": "runway-video-project/subtitles/sub-shot-03.srt",
-                "size": 97
+                "path": "runway-video-project/subtitles/sub-shot-03.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-04.srt",
-                "path": "runway-video-project/subtitles/sub-shot-04.srt",
-                "size": 108
+                "path": "runway-video-project/subtitles/sub-shot-04.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-05.srt",
-                "path": "runway-video-project/subtitles/sub-shot-05.srt",
-                "size": 77
+                "path": "runway-video-project/subtitles/sub-shot-05.srt"
               },
               {
                 "type": "file",
                 "name": "sub-shot-06.srt",
-                "path": "runway-video-project/subtitles/sub-shot-06.srt",
-                "size": 91
+                "path": "runway-video-project/subtitles/sub-shot-06.srt"
               }
             ]
           },
@@ -1906,81 +1660,68 @@
             "type": "dir",
             "name": "voiceover",
             "path": "runway-video-project/voiceover",
-            "size": 994,
             "children": [
               {
                 "type": "file",
                 "name": "voiceover-shot-01.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-01.txt",
-                "size": 45
+                "path": "runway-video-project/voiceover/voiceover-shot-01.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover-shot-02.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-02.txt",
-                "size": 64
+                "path": "runway-video-project/voiceover/voiceover-shot-02.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover-shot-03.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-03.txt",
-                "size": 65
+                "path": "runway-video-project/voiceover/voiceover-shot-03.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover-shot-04.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-04.txt",
-                "size": 76
+                "path": "runway-video-project/voiceover/voiceover-shot-04.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover-shot-05.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-05.txt",
-                "size": 45
+                "path": "runway-video-project/voiceover/voiceover-shot-05.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover-shot-06.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-06.txt",
-                "size": 59
+                "path": "runway-video-project/voiceover/voiceover-shot-06.txt"
               },
               {
                 "type": "file",
                 "name": "voiceover.txt",
-                "path": "runway-video-project/voiceover/voiceover.txt",
-                "size": 640
+                "path": "runway-video-project/voiceover/voiceover.txt"
               }
             ]
           },
           {
             "type": "file",
             "name": "production-checklist.md",
-            "path": "runway-video-project/production-checklist.md",
-            "size": 5505
+            "path": "runway-video-project/production-checklist.md"
           },
           {
             "type": "file",
             "name": "project-overview.json",
-            "path": "runway-video-project/project-overview.json",
-            "size": 2242
+            "path": "runway-video-project/project-overview.json"
           },
           {
             "type": "file",
             "name": "runway-batch.jsonl",
-            "path": "runway-video-project/runway-batch.jsonl",
-            "size": 2887
+            "path": "runway-video-project/runway-batch.jsonl"
           },
           {
             "type": "file",
             "name": "runway-prompts.txt",
-            "path": "runway-video-project/runway-prompts.txt",
-            "size": 1660
+            "path": "runway-video-project/runway-prompts.txt"
           },
           {
             "type": "file",
             "name": "shots.csv",
-            "path": "runway-video-project/shots.csv",
-            "size": 1212
+            "path": "runway-video-project/shots.csv"
           }
         ]
       },
@@ -1988,103 +1729,106 @@
         "type": "dir",
         "name": "scripts",
         "path": "scripts",
-        "size": 90846,
         "children": [
           {
             "type": "file",
             "name": "add-anchor.mjs",
-            "path": "scripts/add-anchor.mjs",
-            "size": 4457
+            "path": "scripts/add-anchor.mjs"
           },
           {
             "type": "file",
             "name": "aider-fix-file.sh",
-            "path": "scripts/aider-fix-file.sh",
-            "size": 2667
+            "path": "scripts/aider-fix-file.sh"
           },
           {
             "type": "file",
             "name": "aider-sanity.sh",
-            "path": "scripts/aider-sanity.sh",
-            "size": 2433
+            "path": "scripts/aider-sanity.sh"
           },
           {
             "type": "file",
             "name": "build-cpi-json.mjs",
-            "path": "scripts/build-cpi-json.mjs",
-            "size": 1578
+            "path": "scripts/build-cpi-json.mjs"
+          },
+          {
+            "type": "file",
+            "name": "check-copy.cjs",
+            "path": "scripts/check-copy.cjs"
           },
           {
             "type": "file",
             "name": "diagnose.js",
-            "path": "scripts/diagnose.js",
-            "size": 5357
+            "path": "scripts/diagnose.js"
           },
           {
             "type": "file",
             "name": "find-components.mjs",
-            "path": "scripts/find-components.mjs",
-            "size": 2015
+            "path": "scripts/find-components.mjs"
+          },
+          {
+            "type": "file",
+            "name": "generate-city-copy.mjs",
+            "path": "scripts/generate-city-copy.mjs"
           },
           {
             "type": "file",
             "name": "launch-check.mjs",
-            "path": "scripts/launch-check.mjs",
-            "size": 8996
+            "path": "scripts/launch-check.mjs"
+          },
+          {
+            "type": "file",
+            "name": "optimize-images.mjs",
+            "path": "scripts/optimize-images.mjs"
           },
           {
             "type": "file",
             "name": "repo-map.mjs",
-            "path": "scripts/repo-map.mjs",
-            "size": 6816
+            "path": "scripts/repo-map.mjs"
           },
           {
             "type": "file",
             "name": "sanityCheck.mjs",
-            "path": "scripts/sanityCheck.mjs",
-            "size": 6217
+            "path": "scripts/sanityCheck.mjs"
           },
           {
             "type": "file",
             "name": "seo-check.mjs",
-            "path": "scripts/seo-check.mjs",
-            "size": 1092
+            "path": "scripts/seo-check.mjs"
           },
           {
             "type": "file",
             "name": "seo-upgrade.mjs",
-            "path": "scripts/seo-upgrade.mjs",
-            "size": 6845
+            "path": "scripts/seo-upgrade.mjs"
           },
           {
             "type": "file",
             "name": "seoAudit.mjs",
-            "path": "scripts/seoAudit.mjs",
-            "size": 27538
+            "path": "scripts/seoAudit.mjs"
           },
           {
             "type": "file",
             "name": "strip-calculator.mjs",
-            "path": "scripts/strip-calculator.mjs",
-            "size": 4946
+            "path": "scripts/strip-calculator.mjs"
+          },
+          {
+            "type": "file",
+            "name": "sync-metadata.ts",
+            "path": "scripts/sync-metadata.ts"
           },
           {
             "type": "file",
             "name": "Tips & toggles.txt",
-            "path": "scripts/Tips & toggles.txt",
-            "size": 415
+            "path": "scripts/Tips & toggles.txt"
           },
           {
             "type": "file",
             "name": "toneCheck.mjs",
-            "path": "scripts/toneCheck.mjs",
-            "size": 7387
+            "path": "scripts/toneCheck.mjs"
           },
           {
             "type": "file",
             "name": "verifyEnv.mjs",
-            "path": "scripts/verifyEnv.mjs",
-            "size": 2087
+            "path": "scripts/verifyEnv.mjs"
           }
         ]
       },
@@ -2092,13 +1836,23 @@
         "type": "dir",
         "name": "server",
         "path": "server",
-        "size": 945,
         "children": [
           {
             "type": "file",
             "name": "index.mjs",
-            "path": "server/index.mjs",
-            "size": 945
+            "path": "server/index.mjs"
+          }
+        ]
+      },
+      {
+        "type": "dir",
+        "name": "slack",
+        "path": "slack",
+        "children": [
+          {
+            "type": "file",
+            "name": "bolt-app.ts",
+            "path": "slack/bolt-app.ts"
           }
         ]
       },
@@ -2106,13 +1860,11 @@
         "type": "dir",
         "name": "styles",
         "path": "styles",
-        "size": 722,
         "children": [
           {
             "type": "file",
             "name": "globals.css",
-            "path": "styles/globals.css",
-            "size": 722
+            "path": "styles/globals.css"
           }
         ]
       },
@@ -2120,13 +1872,11 @@
         "type": "dir",
         "name": "tests",
         "path": "tests",
-        "size": 1080,
         "children": [
           {
             "type": "file",
             "name": "profile.schema.test.ts",
-            "path": "tests/profile.schema.test.ts",
-            "size": 1080
+            "path": "tests/profile.schema.test.ts"
           }
         ]
       },
@@ -2134,249 +1884,225 @@
         "type": "dir",
         "name": "tests-e2e",
         "path": "tests-e2e",
-        "size": 1449,
         "children": [
           {
             "type": "file",
             "name": "forms.spec.ts",
-            "path": "tests-e2e/forms.spec.ts",
-            "size": 1449
+            "path": "tests-e2e/forms.spec.ts"
+          }
+        ]
+      },
+      {
+        "type": "dir",
+        "name": "types",
+        "path": "types",
+        "children": [
+          {
+            "type": "file",
+            "name": "gray-matter.d.ts",
+            "path": "types/gray-matter.d.ts"
           }
         ]
       },
       {
         "type": "file",
         "name": ".aider.chat.history.md",
-        "path": ".aider.chat.history.md",
-        "size": 160062
+        "path": ".aider.chat.history.md"
       },
       {
         "type": "file",
         "name": ".aider.input.history",
-        "path": ".aider.input.history",
-        "size": 14828
+        "path": ".aider.input.history"
       },
       {
         "type": "file",
         "name": ".env.local",
-        "path": ".env.local",
-        "size": 2146
-      },
-      {
-        "type": "file",
-        "name": ".env.production.local",
-        "path": ".env.production.local",
-        "size": 3205
+        "path": ".env.local"
       },
       {
         "type": "file",
         "name": ".eslintrc.json",
-        "path": ".eslintrc.json",
-        "size": 223
+        "path": ".eslintrc.json"
       },
       {
         "type": "file",
         "name": ".gitignore",
-        "path": ".gitignore",
-        "size": 71
+        "path": ".gitignore"
       },
       {
         "type": "file",
         "name": ".npmrc",
-        "path": ".npmrc",
-        "size": 88
+        "path": ".npmrc"
       },
       {
         "type": "file",
         "name": ".prettierignore",
-        "path": ".prettierignore",
-        "size": 76
+        "path": ".prettierignore"
       },
       {
         "type": "file",
         "name": ".prettierrc",
-        "path": ".prettierrc",
-        "size": 116
+        "path": ".prettierrc"
       },
       {
         "type": "file",
         "name": "AGENTS.md",
-        "path": "AGENTS.md",
-        "size": 2881
+        "path": "AGENTS.md"
       },
       {
         "type": "file",
         "name": "aider.conf.yml",
-        "path": "aider.conf.yml",
-        "size": 1359
+        "path": "aider.conf.yml"
       },
       {
         "type": "file",
         "name": "aiderignore",
-        "path": "aiderignore",
-        "size": 153
+        "path": "aiderignore"
       },
       {
         "type": "file",
         "name": "bolt-app.ts",
-        "path": "bolt-app.ts",
-        "size": 1211
+        "path": "bolt-app.ts"
       },
       {
         "type": "file",
         "name": "CHANGELOG.md",
-        "path": "CHANGELOG.md",
-        "size": 835
+        "path": "CHANGELOG.md"
       },
       {
         "type": "file",
         "name": "content-analyzer-digital.ts",
-        "path": "content-analyzer-digital.ts",
-        "size": 18311
+        "path": "content-analyzer-digital.ts"
       },
       {
         "type": "file",
         "name": "dev.log",
-        "path": "dev.log",
-        "size": 79
-      },
-      {
-        "type": "file",
-        "name": "eslint.config.js",
-        "path": "eslint.config.js",
-        "size": 560
+        "path": "dev.log"
       },
       {
         "type": "file",
         "name": "middleware.ts",
-        "path": "middleware.ts",
-        "size": 2025
+        "path": "middleware.ts"
       },
       {
         "type": "file",
         "name": "next-contentlayer.d.ts",
-        "path": "next-contentlayer.d.ts",
-        "size": 216
+        "path": "next-contentlayer.d.ts"
       },
       {
         "type": "file",
         "name": "next-env.d.ts",
-        "path": "next-env.d.ts",
-        "size": 228
+        "path": "next-env.d.ts"
       },
       {
         "type": "file",
         "name": "next-seo.config.ts",
-        "path": "next-seo.config.ts",
-        "size": 250
+        "path": "next-seo.config.ts"
       },
       {
         "type": "file",
         "name": "next-sitemap.config.js",
-        "path": "next-sitemap.config.js",
-        "size": 447
+        "path": "next-sitemap.config.js"
       },
       {
         "type": "file",
         "name": "next.config.js",
-        "path": "next.config.js",
-        "size": 810
+        "path": "next.config.js"
       },
       {
         "type": "file",
         "name": "openai-test.js",
-        "path": "openai-test.js",
-        "size": 924
+        "path": "openai-test.js"
       },
       {
         "type": "file",
         "name": "package-lock.json",
-        "path": "package-lock.json",
-        "size": 535943
+        "path": "package-lock.json"
       },
       {
         "type": "file",
         "name": "package.json",
-        "path": "package.json",
-        "size": 4325
+        "path": "package.json"
       },
       {
         "type": "file",
         "name": "postcss.config.js",
-        "path": "postcss.config.js",
-        "size": 82
+        "path": "postcss.config.js"
       },
       {
         "type": "file",
         "name": "README.md",
-        "path": "README.md",
-        "size": 1345
+        "path": "README.md"
       },
       {
         "type": "file",
-        "name": "repo-structuur.md",
-        "path": "repo-structuur.md",
-        "size": 3763
+        "name": "repo-map.json",
+        "path": "repo-map.json"
+      },
+      {
+        "type": "file",
+        "name": "repo-map.md",
+        "path": "repo-map.md"
+      },
+      {
+        "type": "file",
+        "name": "repo-map.tree.txt",
+        "path": "repo-map.tree.txt"
       },
       {
         "type": "file",
         "name": "runway-setup.js",
-        "path": "runway-setup.js",
-        "size": 15986
+        "path": "runway-setup.js"
+      },
+      {
+        "type": "file",
+        "name": "seo_report.json",
+        "path": "seo_report.json"
+      },
+      {
+        "type": "file",
+        "name": "seo_report.md",
+        "path": "seo_report.md"
       },
       {
         "type": "file",
         "name": "seo-checker.ts",
-        "path": "seo-checker.ts",
-        "size": 20067
+        "path": "seo-checker.ts"
       },
       {
         "type": "file",
         "name": "signups.csv",
-        "path": "signups.csv",
-        "size": 9864
-      },
-      {
-        "type": "file",
-        "name": "signups.xlsx",
-        "path": "signups.xlsx",
-        "size": 9868
+        "path": "signups.csv"
       },
       {
         "type": "file",
         "name": "tailwind.config.js",
-        "path": "tailwind.config.js",
-        "size": 427
+        "path": "tailwind.config.js"
       },
       {
         "type": "file",
         "name": "tsconfig.json",
-        "path": "tsconfig.json",
-        "size": 1037
+        "path": "tsconfig.json"
       },
       {
         "type": "file",
         "name": "tsconfig.tsbuildinfo",
-        "path": "tsconfig.tsbuildinfo",
-        "size": 212048
+        "path": "tsconfig.tsbuildinfo"
       },
       {
         "type": "file",
         "name": "vercel.json",
-        "path": "vercel.json",
-        "size": 145
+        "path": "vercel.json"
       },
       {
         "type": "file",
         "name": "vitest.config.ts",
-        "path": "vitest.config.ts",
-        "size": 872
+        "path": "vitest.config.ts"
       },
       {
         "type": "file",
         "name": "vitest.setup.ts",
-        "path": "vitest.setup.ts",
-        "size": 43
+        "path": "vitest.setup.ts"
       }
     ]
   }

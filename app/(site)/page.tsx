@@ -1,10 +1,21 @@
 import Image from "next/image"
 import HomeHero from "@/components/HomeHero"
 import HomeUSPs from "@/components/HomeUSPs"
+import type { Metadata } from 'next'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+export const metadata: Metadata = getRouteMetadata('/');
+
+
 
 export default function HomePage() {
   return (
     <main className="relative h-screen overflow-hidden bg-slate-950 text-slate-50">
+{/* SEO-UPGRADE START */}
+<div className="mt-2 text-slate-600 text-sm">
+  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
+  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
+</div>
+{/* SEO-UPGRADE END */}
       {/* Achtergrondfoto + overlay voor hero + USPs samen */}
       <div className="absolute inset-0">
         <Image
