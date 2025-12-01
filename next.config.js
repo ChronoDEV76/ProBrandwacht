@@ -9,6 +9,15 @@ module.exports = withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/brandwacht-inhuren/:city',
+        destination: '/steden/:city',
+        permanent: true,
+      },
+    ]
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     domains: ['www.probrandwacht.nl'],
