@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { cities } from '@/lib/cities'
+import { CITY_SLUGS } from '@/lib/city-data'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
@@ -22,8 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
   }))
 
-  const cityRoutes: MetadataRoute.Sitemap = cities.map((city) => ({
-    url: `${BASE_URL}/brandwacht-inhuren/${city.slug}`,
+  const cityRoutes: MetadataRoute.Sitemap = CITY_SLUGS.map((slug) => ({
+    url: `${BASE_URL}/steden/${slug}`,
     changeFrequency: 'weekly',
     priority: 0.7,
     lastModified: new Date(),

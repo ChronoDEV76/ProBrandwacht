@@ -88,13 +88,18 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       <HeroBackground
         backgroundImage="/brandweer-psm.webp"
+        backgroundAlt={`Brandweerinzet en veiligheid in ${label}`}
         imageClassName="object-[50%_47%]"
         overlayClassName="bg-slate-950/55"
       >
         <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
+          <h1 className="text-center text-3xl font-bold tracking-tight text-slate-50 md:text-4xl">
+            Brandwacht in {label}
+          </h1>
           <HeroShell
             eyebrow={`Brandwacht ${label} · Via ProBrandwacht`}
             title={<>Kies zelf je opdrachten in {label}</>}
+            headingLevel="h2"
             body={
               <>
                 Kies zelf je opdrachten in <span className="font-semibold">{label}</span> — zonder bureau, wel{' '}

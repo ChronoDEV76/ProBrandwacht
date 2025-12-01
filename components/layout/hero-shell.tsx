@@ -16,9 +16,21 @@ type HeroShellProps = {
   secondaryCta?: Cta
   footer?: ReactNode
   className?: string
+  headingLevel?: 'h1' | 'h2' | 'h3'
 }
 
-export function HeroShell({ eyebrow, title, body, primaryCta, secondaryCta, footer, className }: HeroShellProps) {
+export function HeroShell({
+  eyebrow,
+  title,
+  body,
+  primaryCta,
+  secondaryCta,
+  footer,
+  className,
+  headingLevel = 'h1',
+}: HeroShellProps) {
+  const Heading = headingLevel
+
   return (
     <div
       className={clsx(
@@ -31,7 +43,7 @@ export function HeroShell({ eyebrow, title, body, primaryCta, secondaryCta, foot
     >
       <p className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">{eyebrow}</p>
 
-      <h1 className="mt-3 text-center text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl">{title}</h1>
+      <Heading className="mt-3 text-center text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl">{title}</Heading>
 
       <p className="mt-4 text-center text-sm leading-relaxed text-slate-200">{body}</p>
 

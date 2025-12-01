@@ -43,6 +43,7 @@
 
     "seo:audit": "node scripts/digitalSeoAudit.mjs --site=https://www.probrandwacht.nl",
     "seo:audit:legacy": "node scripts/seoAudit.mjs --start=https://www.probrandwacht.nl --max-pages=50 --output=seo_report.json --md=seo_report.md",
+    "seo:dashboard": "node scripts/seo-dashboard.mjs",
 
     "content-check": "npm run check:copy && npm run sanity && npm run tone-check",
     "quality-check": "npm run seo:check && npm run content-check",

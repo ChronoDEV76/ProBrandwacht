@@ -15,6 +15,14 @@ const defaultKeywords: string[] = [
   ...seoKeywordClusters.platform,
 ]
 
+const BASE_URL = 'https://www.probrandwacht.nl'
+
+function normalizeCanonicalPath(pathname: string) {
+  const cleaned = pathname.replace(/\/\[[^\]]+]/g, '')
+  if (!cleaned || cleaned === '/') return '/'
+  return cleaned.replace(/\/+$/, '') || '/'
+}
+
 // centrale map van route → metadata
 export const routeMeta: Record<string, RouteMeta> = {
   // --------------------------------------------------
@@ -51,6 +59,17 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'Aanmelden als opdrachtgever – direct toegang tot brandwachten',
     description:
       'Meld je aan als opdrachtgever en plaats direct aanvragen voor brandwachten. Binnen enkele minuten gekoppeld aan beschikbare professionals met transparante tarieven.',
+    keywords: [
+      ...seoKeywordClusters.core,
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.processSpeed,
+    ],
+  },
+
+  '/opdrachtgevers/brandwacht-inhuren': {
+    title: 'Brandwacht inhuren voor opdrachtgevers | ProBrandwacht',
+    description:
+      'Huur gecertificeerde brandwachten in met transparante tarieven en DBA-proof afspraken. Direct contact met professionals zonder verborgen marges.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -212,6 +231,8 @@ export const routeMeta: Record<string, RouteMeta> = {
 // Helper om metadata per route op te halen
 export function getRouteMetadata(pathname: string): Metadata {
   const meta = routeMeta[pathname]
+  const canonicalPath = normalizeCanonicalPath(pathname)
+  const canonical = `${BASE_URL}${canonicalPath}`
 
   if (!meta) {
     return {
@@ -220,6 +241,13 @@ export function getRouteMetadata(pathname: string): Metadata {
         'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers direct verbindt, met transparante tarieven en directe planning.',
       keywords: defaultKeywords,
       robots: { index: true, follow: true },
+      alternates: { canonical, languages: { 'nl-NL': canonical } },
+      openGraph: {
+        title: 'ProBrandwacht – Platform voor brandwachten',
+        description:
+          'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers direct verbindt, met transparante tarieven en directe planning.',
+        url: canonical,
+      },
     }
   }
 
@@ -228,5 +256,11 @@ export function getRouteMetadata(pathname: string): Metadata {
     description: meta.description,
     keywords: meta.keywords ?? defaultKeywords,
     robots: meta.robots ?? { index: true, follow: true },
+    alternates: { canonical, languages: { 'nl-NL': canonical } },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: canonical,
+    },
   }
 }

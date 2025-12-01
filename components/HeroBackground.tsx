@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 type HeroBackgroundProps = {
   children: ReactNode
   backgroundImage?: string
+  backgroundAlt?: string
   overlayClassName?: string
   imageClassName?: string
 }
@@ -11,6 +12,7 @@ type HeroBackgroundProps = {
 export default function HeroBackground({
   children,
   backgroundImage,
+  backgroundAlt = '',
   overlayClassName = '',
   imageClassName = '',
 }: HeroBackgroundProps) {
@@ -20,7 +22,7 @@ export default function HeroBackground({
         <div className="absolute inset-0">
           <Image
             src={backgroundImage}
-            alt=""
+            alt={backgroundAlt}
             fill
             priority
             className={`object-cover ${imageClassName}`.trim()}

@@ -11,6 +11,13 @@ const nextConfig = {
         permanent: true,
       },
 
+      // Legacy slug zonder city → stuur naar de nieuwe opdrachtgeverspagina
+      {
+        source: '/brandwacht-inhuren',
+        destination: '/opdrachtgevers/brandwacht-inhuren',
+        permanent: true,
+      },
+
       // Eventueel: generieke overzichtspagina
       // (alleen gebruiken als je zo'n pagina hebt)
       // {
@@ -25,4 +32,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-

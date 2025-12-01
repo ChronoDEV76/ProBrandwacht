@@ -1,6 +1,8 @@
 // lib/mdx.ts
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import React from 'react'
+import type { ComponentProps } from 'react'
 import matter from 'gray-matter'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
@@ -66,6 +68,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
       Bronnen,
       ConclusieMarkt,
       Tldr,
+      h1: (props: ComponentProps<'h1'>) => React.createElement('h2', props),
     },
   })
 
