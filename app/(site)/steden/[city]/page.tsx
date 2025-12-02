@@ -87,8 +87,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </div>
 
       <HeroBackground
-        backgroundImage="/brandweer-psm.webp"
-        backgroundAlt={`Brandweerinzet en veiligheid in ${label}`}
+        backgroundImage="/prosafetymatch-bg.webp"
+        backgroundAlt={`ProSafetyMatch background voor ${label}`}
         imageClassName="object-[50%_45%]"
         overlayClassName="bg-slate-950/55"
       >

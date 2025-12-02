@@ -13,8 +13,8 @@ export default function HomePage() {
       {/* Achtergrondfoto + overlay voor hero + USPs samen */}
       <div className="absolute inset-0">
         <Image
-          src="/brandweer-psm.webp"
-          alt="Brandweerauto met ProSafetyMatch kenteken"
+          src="/prosafetymatch-bg.webp"
+          alt="ProSafetyMatch kenteken op brandweerauto"
           fill
           priority
           className="object-cover object-[50%_62%] md:object-center"

@@ -55,7 +55,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      <HeroBackground backgroundImage="/brandweer-psm.webp" backgroundAlt="Brandweerinzet voor opdrachtgevers">
+      <HeroBackground backgroundImage="/prosafetymatch-bg.webp" backgroundAlt="ProSafetyMatch achtergrond voor opdrachtgevers">
         <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
           <h1 className="text-center text-3xl font-bold tracking-tight text-slate-50 md:text-4xl">Brandwacht inhuren via ProBrandwacht</h1>
           <HeroShell
