@@ -77,10 +77,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
 {/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
+{/* Verwijderd op verzoek: extra linkblok bovenaan */}
 {/* SEO-UPGRADE END */}
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
@@ -89,7 +86,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <HeroBackground
         backgroundImage="/prosafetymatch-bg.webp"
         backgroundAlt={`ProSafetyMatch background voor ${label}`}
-        imageClassName="object-[50%_45%]"
+        imageClassName="object-[50%_44%]"
         overlayClassName="bg-slate-950/55"
       >
         <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
