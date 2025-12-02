@@ -89,7 +89,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <HeroBackground
         backgroundImage="/brandweer-psm.webp"
         backgroundAlt={`Brandweerinzet en veiligheid in ${label}`}
-        imageClassName="object-[50%_47%]"
+        imageClassName="object-[50%_45%]"
         overlayClassName="bg-slate-950/55"
       >
         <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">

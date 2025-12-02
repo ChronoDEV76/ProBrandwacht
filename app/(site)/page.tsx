@@ -9,13 +9,7 @@ export const metadata: Metadata = getRouteMetadata('/');
 
 export default function HomePage() {
   return (
-    <main className="relative h-screen overflow-hidden bg-slate-950 text-slate-50">
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
+    <main className="relative min-h-[calc(100vh-64px)] overflow-hidden bg-slate-950 text-slate-50">
       {/* Achtergrondfoto + overlay voor hero + USPs samen */}
       <div className="absolute inset-0">
         <Image
@@ -23,15 +17,15 @@ export default function HomePage() {
           alt="Brandweerauto met ProSafetyMatch kenteken"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[50%_62%] md:object-center"
         />
         <div className="absolute inset-0 bg-slate-950/55" />
       </div>
 
       {/* Content-stacks boven de foto */}
-      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-between px-4 pt-4 pb-4 md:pt-6 md:pb-6">
-        <HomeHero className="mx-auto w-full max-w-xl mt-16 md:mt-24 -translate-x-8 md:-translate-x-16 transform" />
-        <HomeUSPs className="mx-auto mt-8 w-full md:mt-10" />
+      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-between px-4 pt-6 pb-10 md:pt-8 md:pb-12">
+        <HomeHero className="mx-auto w-full max-w-xl mt-4 md:mt-8 transform" />
+        <HomeUSPs className="mx-auto w-full mt-auto translate-y-20 md:translate-y-24" />
       </div>
     </main>
   )

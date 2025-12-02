@@ -19,7 +19,7 @@ export default function SiteHeader() {
   const isActive = (href: string) => currentPath === href || (href !== '/' && currentPath.startsWith(href))
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-700/80 text-white backdrop-blur supports-[backdrop-filter]:bg-brand-700/60">
+    <header className="sticky top-0 z-50 border-b border-brand-900/20 bg-brand-700 text-white shadow-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
         <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight">
           ProBrandwacht.nl

@@ -56,10 +56,59 @@ const clamp = (s: string, n: number) => s.slice(0, n);
 function extractEmail(body: z.infer<typeof PayloadSchema>): string {
   return clamp(body.email ?? body.data.email, 254);
 }
+function withTimeout<T>(promise: Promise<T>, ms: number) {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms`)), ms);
+    promise
+      .then((value) => {
+        clearTimeout(timer);
+        resolve(value);
+      })
+      .catch((err) => {
+        clearTimeout(timer);
+        reject(err);
+      });
+  });
+}
 
 /* ===========================
    Slack helper (Block Kit)
 =========================== */
+type SlackPayload = { text: string; blocks: any[] };
+async function postSlackWebhook(webhook: string, payload: SlackPayload) {
+  const res = await fetch(webhook, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Webhook HTTP ${res.status}`);
+}
+async function postSlackChatMessage(token: string, channel: string, payload: SlackPayload) {
+  const res = await fetch("https://slack.com/api/chat.postMessage", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...payload, channel }),
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(`Slack HTTP ${res.status}`);
+  if (!json?.ok) throw new Error(json?.error || "Slack API error");
+}
+async function postSlackChatMessageTextOnly(token: string, channel: string, text: string) {
+  const res = await fetch("https://slack.com/api/chat.postMessage", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ channel, text }),
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(`Slack HTTP ${res.status}`);
+  if (!json?.ok) throw new Error(json?.error || "Slack API error");
+}
 async function notifySlack(payload: {
   id: string;
   type: "zzp_signup" | "client_signup";
@@ -77,7 +126,8 @@ async function notifySlack(payload: {
   region?: string;
 }) {
   const webhook = process.env.SLACK_WEBHOOK_URL;
-  if (!webhook) return; // geen webhook geconfigureerd -> stil overslaan
+  const botToken = process.env.SLACK_BOT_TOKEN;
+  const botChannel = process.env.SLACK_CHANNEL_ID;
 
   // supabase link voor snelle doorklik
   const explicitRef = process.env.SUPABASE_PROJECT_REF;
@@ -143,11 +193,39 @@ async function notifySlack(payload: {
     `Row ID: ${payload.id}` +
     (supabaseLink ? `\nSupabase: ${supabaseLink}` : "");
 
-  await fetch(webhook, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: fallback, blocks }),
-  }).catch((e) => console.warn("Slack webhook failed:", e?.message ?? e));
+  const payloadForSlack = { text: fallback, blocks };
+  const attempts: string[] = [];
+
+  if (webhook) {
+    try {
+      await postSlackWebhook(webhook, payloadForSlack);
+      return;
+    } catch (err: any) {
+      attempts.push(`webhook: ${err?.message || err}`);
+    }
+  }
+
+  if (botToken && botChannel) {
+    try {
+      await postSlackChatMessage(botToken, botChannel, payloadForSlack);
+      return;
+    } catch (err: any) {
+      attempts.push(`bot(blocks): ${err?.message || err}`);
+      // fallback zonder blocks voor het geval Slack blocks weigert
+      try {
+        await postSlackChatMessageTextOnly(botToken, botChannel, fallback);
+        return;
+      } catch (err2: any) {
+        attempts.push(`bot(text): ${err2?.message || err2}`);
+      }
+    }
+  }
+
+  const msg =
+    attempts.length > 0
+      ? `Slack notify failed (${attempts.join(" | ")})`
+      : "Slack notify skipped (no SLACK_WEBHOOK_URL or SLACK_BOT_TOKEN/SLACK_CHANNEL_ID configured)";
+  throw new Error(msg);
 }
 
 /* ===========================
@@ -204,7 +282,7 @@ export async function POST(req: NextRequest) {
 
     // 4) Slack melding (best-effort; mag response niet blokkeren)
     const d: any = body.data;
-    notifySlack({
+    const slackPayload = {
       id: data!.id,
       type,
       email,
@@ -217,7 +295,11 @@ export async function POST(req: NextRequest) {
       company: d.company,
       contact: d.contact,
       region: d.region,
-    }).catch((e) => console.warn("Slack notify failed:", e?.message ?? e));
+    };
+
+    await withTimeout(notifySlack(slackPayload), 4000).catch((e) =>
+      console.warn("Slack notify failed:", e?.message ?? e)
+    );
 
     return NextResponse.json(
       { ok: true, id: data?.id, createdAt: data?.created_at },
@@ -427,4 +509,3 @@ export async function HEAD() {
     return new Response(null, { status: 500 });
   }
 }
-
