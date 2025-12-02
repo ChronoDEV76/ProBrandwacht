@@ -43,9 +43,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const headerList = headers()
-  const currentPath = headerList.get('next-url') ?? '/'
-  const isHome = currentPath === '/'
-  const isFullWidth = isHome || currentPath.startsWith('/steden')
+  const currentUrl = headerList.get('next-url') ?? '/'
+  const pathname = new URL(currentUrl, 'https://probrandwacht.local').pathname
+  const isHome = pathname === '/'
+  const isFullWidth = isHome || pathname.startsWith('/steden')
 
   return (
     <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col text-slate-50`}>
