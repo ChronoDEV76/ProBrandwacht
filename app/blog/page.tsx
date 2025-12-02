@@ -278,7 +278,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         {filtered.map(post => (
           <article
             key={post.slug}
-            className="group relative overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-md"
+            className="group relative overflow-hidden rounded-2xl border bg-white text-slate-900 shadow-sm transition hover:shadow-md"
           >
             {post.image ? (
               <div className="relative h-64 w-full overflow-hidden">
