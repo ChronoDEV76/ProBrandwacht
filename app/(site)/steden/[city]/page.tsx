@@ -11,6 +11,7 @@ import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const revalidate = 0
+export const dynamic = 'force-dynamic'
 
 export function generateStaticParams() {
   return CITY_SLUGS.map(city => ({ city }))
