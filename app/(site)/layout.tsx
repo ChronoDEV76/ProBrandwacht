@@ -45,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const headerList = headers()
   const currentPath = headerList.get('next-url') ?? '/'
   const isHome = currentPath === '/'
+  const isFullWidth = isHome || currentPath.startsWith('/steden')
 
   return (
     <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col text-slate-50`}>
@@ -61,11 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       ))}
-      <main
-        className={`flex-1 w-full ${
-          isHome ? 'max-w-none px-0 py-0' : 'mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8'
-        }`}
-      >
+      <main className={`flex-1 w-full ${isFullWidth ? 'max-w-none px-0 py-0' : 'mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8'}`}>
         {children}
       </main>
     </div>
