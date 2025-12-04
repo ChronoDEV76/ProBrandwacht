@@ -46,21 +46,6 @@ export default function FAQPage() {
         <div className="space-y-4">
           <h1 className="text-3xl font-semibold text-slate-900">Veelgestelde vragen</h1>
 
-          {/* SEO-UPGRADE START */}
-          <div className="mt-2 text-slate-600 text-sm">
-            <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven
-            en DBA-proof afspraken. Lees meer over{' '}
-            <Link href="/opdrachtgevers/brandwacht-inhuren" className="underline">
-              brandwacht inhuren
-            </Link>{' '}
-            of vraag direct aan via{' '}
-            <Link href="/probrandwacht-direct" className="underline">
-              ProBrandwacht Direct
-            </Link>
-            .
-          </div>
-          {/* SEO-UPGRADE END */}
-
           {/* __seo-badges */}
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
@@ -129,4 +114,3 @@ export default function FAQPage() {
     </main>
   )
 }
-

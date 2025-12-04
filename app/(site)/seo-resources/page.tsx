@@ -30,12 +30,6 @@ export default function SeoResourcesPage() {
         <h1 className="text-3xl font-semibold text-slate-900">
           Autoritaire bronnen voor brandwachtcontent
         </h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="text-sm text-slate-600">
           Gebruik deze lijst wanneer je blogs of landingspagina’s schrijft. Link naar de passende bron
           met een beschrijvende anchor-tekst om Expertise, Authoritativeness en Trustworthiness te

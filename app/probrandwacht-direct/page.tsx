@@ -23,18 +23,18 @@ export default function ProbrandwachtDirectPage() {
           <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             ProBrandwacht Direct — geplande inzet
           </h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
 
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-700">
             <strong>Reguliere aanvragen</strong> lopen via ProBrandwacht Direct. Je aanvraag wordt opgevolgd
             door de beschikbare poule van <strong>ProBrandwacht</strong>; duidelijke afspraken,
             gecertificeerde professionals en betrouwbare uitvoering.
           </p>
+          <p className="mt-1 text-sm text-slate-700">We begeleiden je aanvraag van start tot match.</p>
+          <ul className="mt-2 space-y-1 text-sm text-slate-700">
+            <li>• Dien je inzet in met de basics.</li>
+            <li>• Wij leggen directe lijnen met beschikbare brandwachten.</li>
+            <li>• Jij krijgt bevestiging en afspraken helder terug.</li>
+          </ul>
 
           {/* mini-uitleg onder de vouw op mobiel – zelfde patroon als spoed */}
           <p className="mt-4 text-sm text-slate-600 sm:text-base">

@@ -85,12 +85,6 @@ export default function OpdrachtgeversPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -115,6 +109,7 @@ export default function OpdrachtgeversPage() {
               </>
             }
           />
+          <p className="text-sm text-slate-200">We reageren binnen 1 werkdag.</p>
         </div>
       </HeroBackground>
 

@@ -122,12 +122,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <SeoStructuredData article={structuredArticle} breadcrumbs={breadcrumbItems.map(item => ({ name: item.name, item: item.url }))} faqs={generalPlatformFaq} />
       <header className="mb-6">
         <h1 className="text-3xl font-semibold">{post.frontmatter.title ?? params.slug}</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
       </header>
 
       <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">

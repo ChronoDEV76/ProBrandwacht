@@ -9,7 +9,8 @@ type SiteMainProps = {
 
 export default function SiteMain({ children }: SiteMainProps) {
   const pathname = usePathname() || '/'
-  const isFullWidth = pathname === '/' || pathname.startsWith('/steden')
+  const fullWidthPrefixes = ['/steden', '/missie', '/opdrachtgevers']
+  const isFullWidth = pathname === '/' || fullWidthPrefixes.some(prefix => pathname.startsWith(prefix))
 
   const className = isFullWidth
     ? 'w-full flex-1 max-w-none px-0 py-0'

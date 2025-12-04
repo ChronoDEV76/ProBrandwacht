@@ -30,12 +30,6 @@ export default function OpdrachtgeverAanmeldenPage() {
         <StructuredBreadcrumbs items={breadcrumbItems} />
         <header className="space-y-3">
           <h1 className="text-3xl font-semibold text-slate-900">Meld je bedrijf aan</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
           <p className="text-sm text-slate-600">
             Vul je bedrijfsgegevens in en ontvang een uitnodiging voor het aanvraagportaal. We verifiëren KvK, contactgegevens en contractgegevens voordat we betaalafspraken activeren.
           </p>

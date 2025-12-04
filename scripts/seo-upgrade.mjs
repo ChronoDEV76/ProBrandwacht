@@ -1,5 +1,6 @@
 
 // SEO Upgrade v2 (no block comments)
+// Banner injection is intentionally disabled; keep snippet empty to avoid re-adding sitewide banners.
 // - Scans all app/**/page.tsx (including (site) and dynamic routes)
 // - Skips admin, dashboard, api, layout/not-found/opengraph/etc.
 // - Injects a short SEO snippet with keywords links
@@ -36,14 +37,8 @@ const SKIP_FILE_NAMES = new Set([
 const SEO_MARK_START = "{/* SEO-UPGRADE START */}";
 const SEO_MARK_END = "{/* SEO-UPGRADE END */}";
 
-const SEO_SNIPPET = `
-${SEO_MARK_START}
-<div className=\"mt-2 text-slate-600 text-sm\">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href=\"/opdrachtgevers/brandwacht-inhuren\" className=\"underline\">brandwacht inhuren</a> of vraag direct aan via <a href=\"/probrandwacht-direct\" className=\"underline\">ProBrandwacht Direct</a>.
-</div>
-${SEO_MARK_END}
-`.trim();
+// Banner injection disabled; keep markers for detection but inject nothing.
+const SEO_SNIPPET = "";
 
 const DEFAULT_KEYWORDS = [
   "brandwacht",
@@ -81,6 +76,7 @@ function alreadyHasSnippet(src) {
 }
 
 function injectSnippet(src) {
+  if (!SEO_SNIPPET.trim()) return src;
   if (alreadyHasSnippet(src)) return src;
 
   const headerOpenIdx = src.indexOf("<header");

@@ -25,16 +25,16 @@ export default function PbDirectPage() {
 
       <section className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct — spoed (24/7)</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="mt-2 text-slate-700">
           **Spoedaanvragen** worden direct doorgezet naar het ProBrandwacht Direct Slack-kanaal.
           Beschikbare brandwachten kunnen je inzet claimen; je ontvangt snel bevestiging.
         </p>
+        <p className="mt-1 text-sm text-slate-700">We pakken je aanvraag meteen op en blijven bij je tot het rond is.</p>
+        <ul className="mt-2 space-y-1 text-sm text-slate-700">
+          <li>• Dien je spoedaanvraag in met kerninfo.</li>
+          <li>• We pushen direct naar het Slack-kanaal; beschikbaar team claimt.</li>
+          <li>• Jij krijgt terugkoppeling en afspraken op één plek.</li>
+        </ul>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             Directe matching via Slack
@@ -52,4 +52,3 @@ export default function PbDirectPage() {
     </main>
   )
 }
-

@@ -213,12 +213,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
       <header className="space-y-4 text-slate-900">
         <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
         <p className="mt-2 max-w-3xl text-slate-700">
           We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
         </p>

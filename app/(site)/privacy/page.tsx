@@ -22,12 +22,6 @@ export default function PrivacyPage() {
       <section className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
         <div className="text-sm text-gray-800 space-y-4">
           <h1 className="text-3xl font-semibold text-slate-900">Privacyverklaring</h1>
-{/* SEO-UPGRADE START */}
-<div className="mt-2 text-slate-600 text-sm">
-  <strong>Brandwacht inhuren of huren?</strong> Bij ProBrandwacht vind je eerlijke tarieven en DBA-proof afspraken.
-  Lees meer over <a href="/opdrachtgevers/brandwacht-inhuren" className="underline">brandwacht inhuren</a> of vraag direct aan via <a href="/probrandwacht-direct" className="underline">ProBrandwacht Direct</a>.
-</div>
-{/* SEO-UPGRADE END */}
           <p>
             Deze privacyverklaring is van toepassing op het platform ProBrandwacht, een handelsnaam van Chrono4solutions. ProBrandwacht respecteert de privacy
             van alle gebruikers van haar platform en draagt er zorg voor dat de persoonlijke informatie die je ons verschaft, vertrouwelijk en volgens de
