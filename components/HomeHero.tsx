@@ -9,7 +9,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
   return (
     <section className={clsx("relative text-slate-50", className)}>
       {/* Container die hero op de grill laat landen */}
-      <div className="mx-auto flex min-h-[50vh] max-w-5xl flex-col justify-end px-4 pb-2 sm:pb-3 md:min-h-[55vh]">
+      <div className="mx-auto flex min-h-[44vh] max-w-5xl flex-col justify-end px-4 pb-4 sm:pb-5 md:min-h-[55vh]">
         <div className="mx-auto w-full max-w-xl rounded-3xl border border-white/12 bg-slate-950/88 p-5 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.85)] backdrop-blur-lg md:p-7">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF] drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)]">
             Voor brandweermensen · Door brandweermensen

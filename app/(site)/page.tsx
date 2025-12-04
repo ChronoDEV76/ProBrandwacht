@@ -13,11 +13,11 @@ export default function HomePage() {
       {/* Achtergrondfoto + overlay voor hero + USPs samen */}
       <div className="absolute inset-0">
         <Image
-          src="/brandwachten-samenwerking-hero.webp"
-          alt="Illustratie samenwerken brandwachten"
+          src="/ChatGPT%20Image%20Dec%204,%202025,%2010_59_40%20PM.png"
+          alt="ChatGPT-achtergrond voor brandwacht-samenwerking"
           fill
           priority
-          className="object-contain object-center scale-[0.92] md:scale-[0.96] blur-[0.25px]"
+          className="object-contain object-center scale-[0.9] md:scale-[0.96] blur-[0.25px]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/25 via-slate-950/38 to-slate-950/52" />
         <div className="absolute inset-0 bg-slate-950/06 backdrop-blur-[0.5px]" />
@@ -26,8 +26,8 @@ export default function HomePage() {
 
       {/* Content-stacks boven de foto */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-4 pt-2 pb-12 md:gap-14 md:pt-4 md:pb-14">
-        <HomeHero className="mx-auto w-full max-w-xl -mt-4 md:-mt-3" />
-        <HomeUSPs className="mx-auto w-full mt-6 md:mt-8" />
+        <HomeHero className="mx-auto w-full max-w-xl -mt-6 md:mt-0" />
+        <HomeUSPs className="mx-auto w-full mt-48 md:mt-4" />
       </div>
     </main>
   )

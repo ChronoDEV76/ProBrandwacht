@@ -22,8 +22,8 @@ export default function OpdrachtgeversPage() {
       title: 'Snel zicht op professionals',
       body: (
         <>
-          We denken mee bij aanvragen en leggen direct lijnen met beschikbare brandwachten of hun leveranciers. Geen bemiddelingsbureau: je
-          spreekt zelf uurtarief, rol en verantwoordelijkheid af.
+          Directe inzet via onze eigen poule en betrouwbare derden, DBA-proof en gescreend/gecertificeerd volgens de norm. Geen
+          bemiddelingsbureau: je spreekt zelf uurtarief, rol en verantwoordelijkheid af.
         </>
       ),
     },
@@ -32,8 +32,8 @@ export default function OpdrachtgeversPage() {
       title: 'ProSafetyMatch tooling',
       body: (
         <>
-          Digitale omgeving (streefdatum Q1 2026) voor transparante matching, basis-documentatie en optionele escrow. 10% platformfee op het
-          tarief, zonder verborgen marge op de inzet zelf.
+          Digitale omgeving (streefdatum Q1 2026) voor transparante 1-op-1 matching, basisdocumenten en optionele escrow. 10% platformfee,
+          zonder marge op het uurtarief.
         </>
       ),
     },
@@ -43,7 +43,7 @@ export default function OpdrachtgeversPage() {
       body: (
         <>
           Denk aan evenementen, tijdelijke objectbewaking, bouwplaatsen of industriële inzet waar een rijksgediplomeerde brandwacht gewenst
-          of verplicht is. We denken mee of ProBrandwacht / ProSafetyMatch past bij je casus.
+          of verplicht is. We kijken mee of ProBrandwacht / ProSafetyMatch past bij je casus.
         </>
       ),
     },
@@ -52,30 +52,36 @@ export default function OpdrachtgeversPage() {
   const benefits = [
     {
       title: 'Helder profiel van elke brandwacht',
-      copy: 'Diploma’s, certificeringen, inzetgebieden en ervaring duidelijk in beeld. Geen gokwerk meer bij het inhuren.',
+      copy:
+        'Diploma’s, certificeringen, inzetgebieden en ervaring in beeld. Directe inzet via onze poule en betrouwbare derden: DBA-proof, gescreend en gecertificeerd volgens de norm. Geen gokwerk.',
     },
     {
       title: 'Rechtstreeks contact, geen ruis',
-      copy: 'Je schakelt direct met de brandwacht. Afspraken over tarief, inzet en tijden maak je 1-op-1, zonder tussenbureau.',
+      copy: 'Je schakelt direct met de brandwacht. Tarief, inzet en tijden spreek je 1-op-1 af, zonder tussenbureau.',
     },
     {
       title: 'DBA-proof samenwerken',
-      copy: 'Werken met zelfstandige professionals, met aandacht voor gezag, inhuurconstructies en heldere afspraken.',
+      copy: 'Samenwerken met zelfstandige professionals, met focus op gezag, constructie en heldere afspraken.',
     },
     {
       title: 'Transparant tarief',
-      copy: 'De brandwacht bepaalt zijn uurtarief. Jij betaalt geen marge bovenop dat tarief. Wel zo eerlijk en overzichtelijk.',
+      copy:
+        'Jij bepaalt het budget. We sturen erop dat het grootste deel van het uurtarief bij de professional terechtkomt, zonder marge bovenop zijn tarief.',
     },
   ]
 
   const futureItems = [
     {
       title: 'ProSafetyMatch (Q1 2026)',
-      copy: 'Digitale omgeving waarin vraag en aanbod elkaar rechtstreeks vinden – DBA-proof, zonder ruis en zonder marge op het uurtarief.',
+      copy: 'Digitale omgeving waarin vraag en aanbod elkaar rechtstreeks vinden – DBA-proof en zonder marge op het uurtarief.',
+    },
+    {
+      title: '1-op-1 via slimme tooling',
+      copy: 'Directe koppeling met de juiste professional met tooling en ontzorging, zonder extra tussenlaag.',
     },
     {
       title: '10% platformfee + optioneel 1–2% escrow',
-      copy: 'Een eerlijk tariefmodel voor onderhoud, innovatie en betalingszekerheid, zonder dat het uurtarief van de brandwacht wordt uitgehold.',
+      copy: 'Eerlijk model voor onderhoud, innovatie en betalingszekerheid, zonder dat het uurtarief van de brandwacht wordt uitgehold.',
     },
     {
       title: 'Volledig inzicht in samenwerking',
@@ -96,9 +102,9 @@ export default function OpdrachtgeversPage() {
             title="Direct schakelen met rijksgediplomeerde brandwachten"
             body={
               <>
-                Via ProBrandwacht werk je toe naar <span className="font-semibold">DBA-proof</span>, transparante inzet van brandwachten. Vandaag
-                helpen we met zichtbaarheid en handmatige matching. Morgen brengt <span className="font-semibold">ProSafetyMatch</span> vraag en
-                aanbod digitaal samen, zonder marge op het uurtarief.
+                Directe inzet via onze poule en betrouwbare derden, DBA-proof en gescreend/gecertificeerd. Jij bepaalt het budget; we sturen
+                erop dat het grootste deel van het uurtarief bij de professional terechtkomt. <span className="font-semibold">ProSafetyMatch</span>
+                wordt de tooling voor 1-op-1 matching zonder marge op het uurtarief.
               </>
             }
             primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Meld je aan als opdrachtgever' }}
@@ -119,8 +125,8 @@ export default function OpdrachtgeversPage() {
         <section className="space-y-4 rounded-[26px] border border-white/10 bg-slate-950/80 px-6 py-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
           <h2 className="text-xl font-semibold text-slate-50">Wat je vandaag al via ProBrandwacht krijgt</h2>
           <p className="max-w-3xl text-sm text-slate-200">
-            Ook vóór de lancering van ProSafetyMatch helpen we je om betere keuzes te maken rond inhuur. We focussen op zichtbare profielen,
-            directe lijnen en praktische DBA-handvatten.
+            Vandaag al: zichtbare profielen, directe lijnen en praktische DBA-handvatten. Je bepaalt het budget; wij zorgen dat het grootste
+            deel van het uurtarief bij de professional komt.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
             {benefits.map(item => (

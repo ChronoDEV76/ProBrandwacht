@@ -6,17 +6,12 @@ type HomeUSPsProps = {
 
 export default function HomeUSPs({ className }: HomeUSPsProps) {
   return (
-    <section
-      className={clsx(
-        "relative px-4",
-        className,
-      )}
-    >
+    <section className={clsx("relative px-4", className)}>
       <div className="mx-auto max-w-5xl">
         {/* Mobiel: horizontale scroll, Desktop: grid */}
-        <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+        <div className="flex gap-4 overflow-x-auto pb-4 pt-1 md:grid md:grid-cols-3 md:overflow-visible md:pt-0">
           {/* Vandaag */}
-          <article className="min-w-[260px] flex-1 rounded-3xl bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
+          <article className="min-w-[260px] flex-1 rounded-3xl border border-white/12 bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF]">
               Vandaag
             </p>
@@ -28,7 +23,7 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
           </article>
 
           {/* Morgen */}
-          <article className="min-w-[260px] flex-1 rounded-3xl bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
+          <article className="min-w-[260px] flex-1 rounded-3xl border border-white/12 bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF]">
               Morgen
             </p>
@@ -41,7 +36,7 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
           </article>
 
           {/* Voor wie */}
-          <article className="min-w-[260px] flex-1 rounded-3xl bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
+          <article className="min-w-[260px] flex-1 rounded-3xl border border-white/12 bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF]">
               Voor wie
             </p>
