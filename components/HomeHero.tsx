@@ -11,7 +11,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
       {/* Container die hero op de grill laat landen */}
       <div className="mx-auto flex min-h-[50vh] max-w-5xl flex-col justify-end px-4 pb-2 sm:pb-3 md:min-h-[55vh]">
         <div className="mx-auto w-full max-w-xl rounded-3xl border border-white/12 bg-slate-950/88 p-5 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.85)] backdrop-blur-lg md:p-7">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF] drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)]">
             Voor brandweermensen · Door brandweermensen
           </p>
 
@@ -19,7 +19,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
             ProBrandwacht
           </h1>
 
-          <p className="mt-2 text-sm leading-relaxed text-slate-100 drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
+          <p className="mt-2 text-sm leading-relaxed text-[#E5ECFF] drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
             DBA-proof samenwerken zonder marge op het uurtarief. Vandaag zichtbaarheid en duidelijke afspraken; morgen{" "}
             <span className="font-semibold text-white">ProSafetyMatch</span> — digitaal en transparant.
           </p>
