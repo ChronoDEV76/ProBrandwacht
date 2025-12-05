@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
+  images: {
+    domains: ['www.probrandwacht.nl', 'probrandwacht.nl'],
+  },
 
   async redirects() {
     return [
