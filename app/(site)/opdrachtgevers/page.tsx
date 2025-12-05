@@ -53,7 +53,7 @@ export default function OpdrachtgeversPage() {
     {
       title: 'Helder profiel van elke brandwacht',
       copy:
-        'Diploma’s, certificeringen, inzetgebieden en ervaring in beeld. Directe inzet via onze poule en betrouwbare derden: DBA-proof, gescreend en gecertificeerd volgens de norm. Geen gokwerk.',
+        'Per professional zie je diploma’s, certificeringen, inzetgebieden en ervaring. We verifiëren die gegevens en toetsen op DBA en normering, zodat je weet wie je inhuurt en waarom die matcht. Geen gokwerk.',
     },
     {
       title: 'Rechtstreeks contact, geen ruis',
@@ -125,8 +125,8 @@ export default function OpdrachtgeversPage() {
         <section className="space-y-4 rounded-[26px] border border-white/10 bg-slate-950/80 px-6 py-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
           <h2 className="text-xl font-semibold text-slate-50">Wat je vandaag al via ProBrandwacht krijgt</h2>
           <p className="max-w-3xl text-sm text-slate-200">
-            Vandaag al: zichtbare profielen, directe lijnen en praktische DBA-handvatten. Je bepaalt het budget; wij zorgen dat het grootste
-            deel van het uurtarief bij de professional komt.
+            Vandaag al: zichtbare profielen, directe lijnen en praktische DBA-handvatten. Jij houdt regie over budget en afspraken; wij
+            bewaken dat het grootste deel van het uurtarief bij de professional blijft.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
             {benefits.map(item => (
