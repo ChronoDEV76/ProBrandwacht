@@ -19,9 +19,9 @@ export default function HomePage() {
           fill
           priority
           fetchPriority="high"
-          quality={72}
+          quality={65}
           placeholder="blur"
-          sizes="(min-width: 1024px) 1200px, 100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
           className="object-contain object-center scale-[0.9] md:scale-[0.96] blur-[0.25px]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/25 via-slate-950/38 to-slate-950/52" />
