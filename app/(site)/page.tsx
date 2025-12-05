@@ -3,6 +3,7 @@ import HomeHero from "@/components/HomeHero"
 import HomeUSPs from "@/components/HomeUSPs"
 import type { Metadata } from 'next'
 import { getRouteMetadata } from '@/lib/seo/metadata'
+import heroBackground from '@/public/home-hero.webp'
 export const metadata: Metadata = getRouteMetadata('/');
 
 
@@ -13,10 +14,12 @@ export default function HomePage() {
       {/* Achtergrondfoto + overlay voor hero + USPs samen */}
       <div className="absolute inset-0">
         <Image
-          src="/ChatGPT%20Image%20Dec%204,%202025,%2010_59_40%20PM.png"
+          src={heroBackground}
           alt="ChatGPT-achtergrond voor brandwacht-samenwerking"
           fill
           priority
+          placeholder="blur"
+          sizes="(min-width: 1024px) 1200px, 100vw"
           className="object-contain object-center scale-[0.9] md:scale-[0.96] blur-[0.25px]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/25 via-slate-950/38 to-slate-950/52" />
