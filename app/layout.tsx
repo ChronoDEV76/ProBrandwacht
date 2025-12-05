@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   description:
     "Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – eerlijke tarieven en DBA-proof samenwerking via ProSafetyMatch.",
   metadataBase: new URL(SITE_BASE_URL),
-  icons: { icon: "/og.jpg", shortcut: "/og.jpg", apple: "/og.jpg" },
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   openGraph: {
     type: "website",
     locale: "nl_NL",

@@ -1,6 +1,4 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
+import { headers } from 'next/headers'
 import type { ReactNode } from 'react'
 
 type SiteMainProps = {
@@ -8,7 +6,8 @@ type SiteMainProps = {
 }
 
 export default function SiteMain({ children }: SiteMainProps) {
-  const pathname = usePathname() || '/'
+  const headerList = headers()
+  const pathname = headerList.get('next-url') ?? '/'
   const fullWidthPrefixes = ['/steden', '/missie', '/opdrachtgevers']
   const isFullWidth = pathname === '/' || fullWidthPrefixes.some(prefix => pathname.startsWith(prefix))
 
