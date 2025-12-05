@@ -22,8 +22,8 @@ export default function OpdrachtgeversPage() {
       title: 'Snel zicht op professionals',
       body: (
         <>
-          Directe inzet via onze eigen poule en betrouwbare derden, DBA-proof en gescreend/gecertificeerd volgens de norm. Geen
-          bemiddelingsbureau: je spreekt zelf uurtarief, rol en verantwoordelijkheid af.
+          Binnen één of twee dagen de juiste profielen op tafel; wij checken beschikbaarheid en legitimiteit. Geen tussenlaag: je spreekt
+          zelf tarief, rol en verantwoordelijkheid af met de professional.
         </>
       ),
     },
@@ -103,7 +103,7 @@ export default function OpdrachtgeversPage() {
             body={
               <>
                 Directe inzet via onze poule en betrouwbare derden, DBA-proof en gescreend/gecertificeerd. Jij bepaalt het budget; we sturen
-                erop dat het grootste deel van het uurtarief bij de professional terechtkomt. <span className="font-semibold">ProSafetyMatch</span>
+                erop dat het grootste deel van het uurtarief bij de professional terechtkomt. <span className="font-semibold">ProSafetyMatch</span>{' '}
                 wordt de tooling voor 1-op-1 matching zonder marge op het uurtarief.
               </>
             }
