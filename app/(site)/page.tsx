@@ -21,17 +21,12 @@ export default function HomePage() {
           fetchPriority="high"
           quality={72}
           placeholder="blur"
-          sizes="(min-width: 1280px) 1100px, (min-width: 1024px) 1000px, 100vw"
-          className="object-cover object-center scale-[1.02]"
+          sizes="(min-width: 1024px) 1200px, 100vw"
+          className="object-contain object-center scale-[0.9] md:scale-[0.96] blur-[0.25px]"
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/30 via-slate-950/44 to-slate-950/60"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-radial from-slate-950/35 via-transparent to-transparent"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/25 via-slate-950/38 to-slate-950/52" />
+        <div className="absolute inset-0 bg-slate-950/06 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0 bg-radial from-slate-950/35 via-transparent to-transparent" aria-hidden />
       </div>
 
       {/* Content-stacks boven de foto */}
