@@ -13,7 +13,7 @@ vi.mock('next/headers', () => ({
 vi.mock('next/link', () => {
   type AnchorProps = ComponentProps<'a'> & { children: ReactNode }
   return {
-    default: ({ href, children, ...props }: AnchorProps) => (
+    default: ({ href, children, prefetch: _prefetch, ...props }: AnchorProps) => (
       <a href={href ?? undefined} {...props}>
         {children}
       </a>

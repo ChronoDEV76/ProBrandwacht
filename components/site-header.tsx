@@ -11,7 +11,8 @@ const LINKS = [
   { href: '/tarief-berekenen', label: 'Tarief berekenen' },
 ]
 
-const CTA_TEXT = 'Word zichtbaar (gratis) · wachtlijst ProSafetyMatch'
+const CTA_LABEL = 'Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch'
+const CTA_TEXT_COMPACT = 'Meld je aan (gratis)'
 
 export default function SiteHeader() {
   const headerList = headers()
@@ -74,10 +75,11 @@ export default function SiteHeader() {
 
           <a
             href="/zzp/aanmelden"
+            aria-label={CTA_LABEL}
             className="inline-flex items-center rounded-md bg-white px-3 py-1.5 text-xs font-semibold tracking-tight text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            <span className="xl:hidden">Word zichtbaar (gratis)</span>
-            <span className="hidden xl:inline">{CTA_TEXT}</span>
+            <span className="xl:hidden">{CTA_TEXT_COMPACT}</span>
+            <span className="hidden xl:inline">{CTA_LABEL}</span>
           </a>
         </div>
 
@@ -152,9 +154,10 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         <div className="border-t border-white/15 px-4 py-3">
           <a
             href="/zzp/aanmelden"
+            aria-label={CTA_LABEL}
             className="inline-flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            <span className="max-w-[22ch] text-center leading-snug">{CTA_TEXT}</span>
+            <span className="max-w-[22ch] text-center leading-snug">{CTA_LABEL}</span>
           </a>
         </div>
       </div>
