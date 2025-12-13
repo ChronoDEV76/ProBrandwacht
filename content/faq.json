@@ -1,6 +1,6 @@
 [
   {
-    "title": "Eerlijke tarieven",
+    "title": "Eerlijke tarieven (geen gegarandeerde volumes)",
     "items": [
       {
         "id": "tarief-verdeling",
@@ -38,7 +38,7 @@
         "answer": [
           "€40–€45/u klinkt goed, maar na bureau-marges, reistijd en kosten houdt de professional weinig netto over.",
           "Dat zorgt voor lagere motivatie, meer uitval en uiteindelijk hogere kosten voor de opdrachtgever.",
-          "Met ProSafetyMatch kies je voor eerlijke tarieven, gemotiveerde professionals en betere resultaten."
+          "Met het model achter ProSafetyMatch mikken we op eerlijke tarieven en gemotiveerde professionals, zonder marge op het uurtarief."
         ]
       },
       {
@@ -55,11 +55,11 @@
       {
         "id": "community",
         "question": "Wat houdt de community rond ProSafetyMatch in?",
-        "summary": "We bouwen een digitaal collectief voor zelfstandige veiligheids professionals.",
+        "summary": "We bouwen stap voor stap een digitaal collectief voor zelfstandige veiligheids professionals.",
         "answer": [
           "Nieuws over wetgeving, tarieven en best practices.",
           "Feedback op nieuwe features en toegang tot scholing.",
-          "Gezamenlijk tariefbewustzijn zodat de verdeling eerlijk blijft."
+          "Gezamenlijk tariefbewustzijn zodat de verdeling eerlijk blijft. Geen garantie op opdrachten; wel inzicht en voorbereiding."
         ]
       }
     ]
@@ -70,11 +70,11 @@
       {
         "id": "zzp-verdiensten",
         "question": "Wat verdien ik als zzp’er via ProSafetyMatch straks?",
-        "summary": "Je spreekt het tarief zelf af; dagdiensten liggen gemiddeld rond €38–€45/u.",
+        "summary": "Je spreekt het tarief zelf af; indicatief liggen dagdiensten vaak rond €38–€45/u.",
         "answer": [
           "Je tarief spreek je rechtstreeks af met de opdrachtgever.",
           "Veel dagdiensten liggen tussen €38–€45/u; nacht, weekend en industrie hoger.",
-          "Wij tonen alleen de 10% platformfee en het nettobedrag zodat je direct ziet wat overblijft."
+          "We tonen straks alleen de 10% platformfee en het nettobedrag zodat je direct ziet wat overblijft. Geen gegarandeerde volumes."
         ]
       },
       {
@@ -111,11 +111,21 @@
       {
         "id": "probrandwacht-vs-prosafety",
         "question": "Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?",
-        "summary": "ProBrandwacht is de wervingssite; ProSafetyMatch wordt het platform.",
+        "summary": "ProBrandwacht is de wervingssite (en directe aanvragen); ProSafetyMatch wordt het volledige platform.",
         "answer": [
-          "ProBrandwacht.nl bevat community, kennisbank, voorinschrijving en faciliteert indien gewenst directe inzet.",
-          "ProSafetyMatch lanceert als digitaal platform met reviews en certificaat-checks.",
-          "Meld je via ProBrandwacht aan voor vroege toegang."
+          "ProBrandwacht.nl bevat community, kennisbank, voorinschrijving en directe inzet via ProBrandwacht Direct.",
+          "ProSafetyMatch lanceren we gefaseerd als digitaal platform met self-service planning, certificaat-checks, overeenkomsten, uren en facturatie.",
+          "Meld je via ProBrandwacht aan voor updates en vroege toegang; geen garantie op opdrachten of volumes."
+        ]
+      },
+      {
+        "id": "nu-vs-straks",
+        "question": "Hoe regel ik nu een brandwacht en wat verandert er straks?",
+        "summary": "Nu via ProBrandwacht Direct (handmatige match); straks via ProSafetyMatch (digitaal platform).",
+        "answer": [
+          "Nu: dien je aanvraag in via ProBrandwacht Direct en schakel rechtstreeks met zelfstandige brandwachten.",
+          "Straks: ProSafetyMatch wordt het digitale platform voor self-service planning, documenten, certificaatvalidatie en betalingen.",
+          "De principes blijven gelijk: transparant, DBA-proof en zonder verborgen bureaumarge."
         ]
       },
       {
@@ -123,8 +133,8 @@
         "question": "Wanneer gaat het platform live?",
         "summary": "We werken naar een gefaseerde lancering in 2026.",
         "answer": [
-          "We starten met pilots en rollen daarna landelijk uit.",
-          "Sluit je nu aan voor updates en vroege toegang."
+          "We starten met pilots en rollen daarna gefaseerd uit.",
+          "Sluit je nu aan voor updates en vroege toegang; planning onder voorbehoud."
         ]
       }
     ]
@@ -148,7 +158,7 @@
       {
         "id": "kost-brandwacht",
         "question": "Wat kost een brandwacht?",
-        "summary": "Veel afspraken vallen tussen €40 en €55 per uur (specialistisch werk tot ±€70).",
+        "summary": "Veel afspraken vallen tussen €40 en €55 per uur (specialistisch werk tot ±€70), afhankelijk van context.",
         "answer": [
           "Tarief hangt af van certificaten, inzet, duur, tijdstip en regio.",
           "Gebruik de calculator voor fee- en kosteninzicht.",
@@ -172,9 +182,9 @@
       {
         "id": "certificaten-aanleveren",
         "question": "Hoe lever ik certificaten aan?",
-        "summary": "Upload als PDF of koppel via iDIN voor automatische validatie.",
+        "summary": "Upload als PDF of koppel via iDIN voor automatische validatie (voor zover beschikbaar).",
         "answer": [
-          "Upload bij voorkeur als PDF voor automatische validatie.",
+          "Upload bij voorkeur als PDF; automatische validatie en iDIN-koppeling zijn in opbouw en worden aangevuld met handmatige checks.",
           "PNG/JPG koppelen we aan iDIN en checken we handmatig tegen officiële registers.",
           "Alleen jij en uitgenodigde opdrachtgevers krijgen inzage."
         ]

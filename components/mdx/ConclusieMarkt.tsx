@@ -14,7 +14,7 @@ export default function ConclusieMarkt() {
       </p>
       <p>
         Transparantie over tariefopbouw en gedeelde verantwoordelijkheid zijn essentieel om motivatie en kwaliteit te
-        behouden. Een model waarin opdrachtgever, platform en professional eerlijk delen in risico en beloning, maakt de
+        behouden. Een model waarin opdrachtgever, platform en professional eerlijk delen in risico en beloning maakt de
         markt duurzaam.
       </p>
       <Bronnen

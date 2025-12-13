@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const taglines = [
-  "Het eerlijkste platform voor zzp-brandwachten — geen bureaugedoe, geen prijsdruk, geen flauwekul.",
+  "Eerlijk en transparant werken met zicht op tariefopbouw en afspraken.",
   "Wij matchen expertise aan jouw opdracht.",
   "Bij beschikbaarheid, Snel inzetbaar op locatie.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",
@@ -59,12 +59,6 @@ export default function Hero() {
               className="inline-flex h-11 items-center rounded-md bg-brand-700 px-5 text-sm font-semibold text-white transition hover:bg-brand-600"
             >
               Meld je aan als professional
-            </Link>
-            <Link
-              href="/probrandwacht-direct"
-              className="inline-flex h-11 items-center rounded-md border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-800 transition hover:bg-white"
-            >
-              Zoek direct een brandwacht
             </Link>
           </div>
 

@@ -1,22 +1,18 @@
 #!/usr/bin/env node
 /**
- * Tone of Voice checker (JS/ESM)
- * - Scant .ts/.tsx/.md/.mdx op "harde" woorden en doet herformulatievoorstellen
- * - Telt positieve TOV-signalen (transparantie, balans, bronnen)
- * - Rapporteert KPI's + Tone Score (0–100)
+ * Tone-of-Voice checker (live website mode)
+ * Scant live URLs ipv lokale bestanden.
  *
  * CLI:
- *   --root=<dir>               (default: ".")
- *   --exts=.ts,.tsx,.md,.mdx   (default)
- *   --ignore=dir1,dir2         (default: node_modules,.next,build,dist,.git,docs)
- *   --exitOnIssues=1           (default: 1)
- *   --json=1                   (default: 0)
+ *   --url=https://www.probrandwacht.nl
+ *   --paths=/,/over-ons
+ *   --json=1
  */
 
 import fs from "node:fs";
 import path from "node:path";
 
-// CLI setup
+// CLI PARSER
 const argv = Object.fromEntries(
   process.argv.slice(2).map((a) => {
     const [k, ...rest] = a.replace(/^--/, "").split("=");
@@ -24,253 +20,175 @@ const argv = Object.fromEntries(
   })
 );
 
-const ROOT =
-  typeof argv.root === "string" ? path.resolve(argv.root) : process.cwd();
-const EXTS = (argv.exts || ".ts,.tsx,.md,.mdx")
+if (!argv.url) {
+  console.error("❌ Gebruik: --url=https://example.com");
+  process.exit(1);
+}
+
+const BASE = argv.url.replace(/\/$/, "");
+const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoed")
   .split(",")
-  .map((s) => s.trim());
-const IGNORE_DIRS = new Set(
-  (argv.ignore || "node_modules,.next,build,dist,.git,docs")
-    .split(",")
-    .map((s) => s.trim())
-);
-const EXIT_ON_ISSUES = String(argv.exitOnIssues ?? "1") === "1";
+  .map((p) => p.trim());
 const JSON_OUT = String(argv.json ?? "0") === "1";
 
-// Als we echt iets *nooit* willen flaggen, kan dat hier.
-// Voor nu leeg laten: alles wordt gewoon geëvalueerd.
-const ALLOW_WORDS = new Set([]);
-
-const TLDR_DOUBLE_WARN = true;
-
-// Tone rules (afgestemd op docs/TONE_OF_VOICE.md)
+// Tone-of-Voice regels
 const HARD_WORDS = [
   "kapotmaken",
   "uitbuiting",
   "profiteren",
+  "misbruik",
   "oneerlijk",
-  "strijd",
-  "vechten",
-  "schaamteloos",
-  "slachtoffer",
-  "uitzendconstructie",
-  "payroll",
-  "tussenpersoon",
-  "schijnzelfstandigheid",
-  "verloning",
-  "detacheerder",
   "uitzendbureau",
-  "tussenpartij",
-  "uitzendmodel",
-  "recruiter",
-  "commerciële marge",
+  "detacheerder",
+  "wij bepalen",
+  "inzetten",
+  "aansturen",
+  "geplande uren"
 ];
 
 const SUGGESTIONS = {
   oneerlijk: "niet transparant / uit balans",
-  profiteren: "risico’s doorschuiven / margeverschil",
-  strijd: "verandering / verbetering",
-  vechten: "werken aan / streven naar",
-  kapotmaken: "verzwakken / onder druk zetten",
-  uitbuiting: "structurele scheefgroei",
-  schaamteloos: "onwenselijk / niet passend",
-  slachtoffer: "benadeelde partij / nadeel",
-  uitzendconstructie: "bemiddelingsmodel / externe keten",
-  payroll: "verloningsmodel / tussencontract",
-  tussenpersoon: "intermediair / ketenpartij",
-  schijnzelfstandigheid: "onduidelijke contractvorm / hybride constructie",
-  verloning: "doorbetaling / administratieve afhandeling",
-  detacheerder: "intermediair / specialistisch bureau",
-  uitzendbureau: "arbeidsbemiddelaar / ketenpartner",
-  tussenpartij: "intermediair",
-  uitzendmodel: "klassiek bemiddelingsmodel",
-  recruiter: "bemiddelaar / intermediair",
-  "commerciële marge": "organisatie-opslag / bemiddelingsfee",
+  profiteren: "margeverschil / ketenbelang",
+  misbruik: "scheefgroei",
+  inzetten: "samenwerken / inschakelen op eigen voorwaarden",
+  aansturen: "coördineren / begeleiden",
+  "zelfstandig brandwacht": "gebruik 'zelfstandige brandwacht'",
 };
 
-// Positieve signalen (goed voor TOV-score)
 const POSITIVE_KEYWORDS = [
   "transparantie",
-  "kostendekkend",
-  "balans",
-  "duurzaam model",
-  "verantwoordelijkheid",
-  "bron",
-  "cbs",
-  "statline",
-  "cao",
+  "zelfstandigheid",
+  "dba-proof",
+  "autonomie",
+  "onafhankelijk",
+  "eerlijke tarieven",
+  "vakmanschap",
+  "zelfstandige brandwacht",
+  "zelfstandige brandwachten"
 ];
 
-const CONTENT_EXTS = new Set([".md", ".mdx"]);
-const CODE_PENALTY_MULTIPLIER = 0.5; // code telt half
+const DUPLICATE_PATTERN = /\b([a-z\u00c0-\u017f]+)(\s+\1){1,}\b/gi;
 
-// Helpers
-function walk(dir, out = []) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    if (IGNORE_DIRS.has(entry.name) || entry.name.startsWith(".")) continue;
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, out);
-    else if (EXTS.includes(path.extname(entry.name))) out.push(full);
-  }
-  return out;
+// HTML → plain text
+function stripHtml(html) {
+  return html
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-function escapeForRegex(word) {
-  return word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
+async function scanUrl(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-function scanFile(file) {
-  const text = fs.readFileSync(file, "utf8");
-  const lines = text.split(/\r?\n/);
+  const html = await res.text();
+  const text = stripHtml(html).toLowerCase();
+
   const issues = [];
   const positives = new Set();
-  let words = 0;
 
-  lines.forEach((raw, idx) => {
-    const line = raw.toLowerCase();
-    words += (raw.match(/\S+/g) || []).length;
-
-    HARD_WORDS.forEach((word) => {
-      if (ALLOW_WORDS.has(word)) return;
-      const pattern = new RegExp(`\\b${escapeForRegex(word)}\\b`, "i");
-      if (pattern.test(line)) {
-        const suggestion =
-          SUGGESTIONS[word] ?? "(herformuleer richting systeemtaal)";
-        issues.push({
-          file,
-          line: idx + 1,
-          found: word,
-          suggestion,
-          preview: raw.trim().slice(0, 160),
-          ext: path.extname(file),
-        });
-      }
-    });
-
-    POSITIVE_KEYWORDS.forEach((kw) => {
-      if (line.includes(kw)) positives.add(kw);
-    });
-  });
-
-  // TL;DR dubbele bron check in MDX
-  if (TLDR_DOUBLE_WARN && path.extname(file) === ".mdx") {
-    const hasTag = /<Tldr[\s>]/i.test(text);
-    const hasFrontmatter =
-      /^---[\s\S]*?\btldr\s*:\s*.+?[\r\n]/m.test(text);
-    if (hasTag && hasFrontmatter) {
+  HARD_WORDS.forEach((word) => {
+    const pattern = new RegExp(`\\b${word}\\b`, "i");
+    if (pattern.test(text)) {
       issues.push({
-        file,
-        line: 1,
-        found: "TLDR_DUPLICATE",
-        suggestion:
-          "Verwijder <Tldr> uit de body of gebruik alleen frontmatter tldr; houd één bron aan.",
-        preview:
-          "MDX bevat zowel frontmatter `tldr:` als een `<Tldr>`-component.",
-        ext: ".mdx",
+        url,
+        found: word,
+        suggestion: SUGGESTIONS[word] || "neutraler formuleren",
       });
     }
+  });
+
+  // Flag verkeerd gespelde term
+  if (/\bzelfstandig brandwacht\b/.test(text)) {
+    issues.push({
+      url,
+      found: "zelfstandig brandwacht",
+      suggestion: SUGGESTIONS["zelfstandig brandwacht"],
+    });
   }
 
-  return { issues, positives: [...positives], words };
-}
-
-function formatIssues(issues) {
-  return issues
-    .map(
-      (it) =>
-        `• ${it.file}:${it.line} — '${it.found}' → voorstel: ${it.suggestion}\n  ↳ ${it.preview}`
-    )
-    .join("\n");
-}
-
-// Main
-console.log(`🔍 Tone check gestart — root: ${ROOT}`);
-const files = walk(ROOT);
-let allIssues = [];
-let allWords = 0;
-const seenPositives = new Set();
-
-for (const file of files) {
-  const { issues, positives, words } = scanFile(file);
-  allIssues = allIssues.concat(issues);
-  allWords += words;
-  positives.forEach((p) => seenPositives.add(p));
-}
-
-const totalFiles = files.length;
-const totalIssues = allIssues.length;
-const issuesInContent = allIssues.filter((i) =>
-  CONTENT_EXTS.has(i.ext)
-).length;
-const issuesInCode = totalIssues - issuesInContent;
-const weightedIssues =
-  issuesInContent + issuesInCode * CODE_PENALTY_MULTIPLIER;
-const wordsPerIssue =
-  totalIssues > 0 ? Math.round(allWords / totalIssues) : null;
-const wordsPerWeightedIssue =
-  weightedIssues > 0 ? Math.round(allWords / weightedIssues) : null;
-const penalty = Math.min(
-  100,
-  Math.round((weightedIssues / Math.max(1, allWords)) * 100000)
-);
-const toneScore = Math.max(0, 100 - penalty);
-
-const report = {
-  root: ROOT,
-  filesScanned: totalFiles,
-  wordsScanned: allWords,
-  issues: {
-    total: totalIssues,
-    inContent: issuesInContent,
-    inCode: issuesInCode,
-    weighted: weightedIssues,
-    wordsPerIssue,
-    wordsPerWeightedIssue,
-  },
-  positives: {
-    uniqueSignals: [...seenPositives].sort(),
-    count: seenPositives.size,
-  },
-  toneScore,
-  findings: allIssues.map(
-    ({ file, line, found, suggestion, preview }) => ({
-      file,
-      line,
-      found,
-      suggestion,
-      preview,
+  // Detecteer dubbele of driedubbele woorden
+  const dupes = new Set();
+  let match;
+  while ((match = DUPLICATE_PATTERN.exec(text)) !== null) {
+    dupes.add(match[0]);
+  }
+  dupes.forEach((d) =>
+    issues.push({
+      url,
+      found: `herhaling: ${d}`,
+      suggestion: "verwijder dubbele woorden",
     })
-  ),
-};
-
-// Output
-if (JSON_OUT) {
-  console.log(JSON.stringify(report, null, 2));
-} else {
-  console.log(
-    `📄 Files: ${report.filesScanned}   🔤 Words: ${report.wordsScanned}
-⚠️ Issues: ${report.issues.total} (content: ${report.issues.inContent}, code: ${report.issues.inCode})
-📊 Dichtheid: ${report.issues.wordsPerIssue ?? "∞"} woorden/issue
-✅ Positieve signalen (${report.positives.count}): ${
-      report.positives.uniqueSignals.join(", ") || "—"
-    }
-🏁 Tone Score: ${report.toneScore}/100`
   );
 
-  if (allIssues.length) {
-    console.log("\nDetails:\n" + formatIssues(allIssues));
-    console.log(
-      "\n🧭 Tip: herformuleer volgens docs/TONE_OF_VOICE.md (systeemtaal, neutraal, pro-samenwerking)."
-    );
+  POSITIVE_KEYWORDS.forEach((kw) => {
+    if (text.includes(kw)) positives.add(kw);
+  });
+
+  const ok = issues.length === 0 && positives.size > 0;
+
+  return {
+    url,
+    ok,
+    issues,
+    positives: [...positives],
+  };
+}
+
+async function main() {
+  console.log(`🔎 Tone-of-Voice scan op live site: ${BASE}`);
+  console.log(`🌐 Pagina's: ${PATHS.join(", ")}`);
+  console.log("");
+
+  const results = [];
+
+  for (const p of PATHS) {
+    const full = `${BASE}${p}`;
+    try {
+      const r = await scanUrl(full);
+      results.push(r);
+
+      console.log(`📄 ${full}`);
+      if (r.ok) {
+        console.log("   ✅ OK (neutraal + positieve TOV)");
+      } else {
+        console.log("   ❌ Issues gevonden:");
+        r.issues.forEach((i) =>
+          console.log(`      - ${i.found} → ${i.suggestion}`)
+        );
+      }
+      console.log(`   ⭐ Positieve signalen: ${r.positives.join(", ") || "—"}`);
+      console.log("");
+    } catch (err) {
+      console.log(`📄 ${full}`);
+      console.log(`   💥 Fout: ${err.message}`);
+      console.log("");
+    }
+  }
+
+  const report = {
+    base: BASE,
+    scannedAt: new Date().toISOString(),
+    pages: results,
+  };
+
+  // JSON-bestand opslaan
+  const outDir = path.join(process.cwd(), "reports");
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
+
+  const outFile = path.join(outDir, "tone-live-report.json");
+  fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
+  console.log(`📝 JSON rapport opgeslagen: ${outFile}`);
+
+  // Exit code voor CI
+  if (results.some((r) => !r.ok)) {
+    console.log("❌ Eén of meer pagina’s bevatten TOV-issues.");
+    process.exit(1);
   } else {
-    console.log(
-      "\n✅ Geen toonafwijkingen gevonden. Je copy is netjes in balans!"
-    );
+    console.log("✅ Alle pagina’s voldoen aan de gewenste Tone-of-Voice.");
   }
 }
 
-if (EXIT_ON_ISSUES && allIssues.length > 0) {
-  process.exitCode = 1;
-}
-
+main();

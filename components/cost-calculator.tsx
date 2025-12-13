@@ -796,7 +796,7 @@ export default function CostCalculator({
           >
             calculator
           </Link>{' '}
-          maken we inzichtelijk wat een brandwacht of beveiliger werkelijk nodig heeft om duurzaam te kunnen werken. Niet om te wijzen, maar om bewustzijn te creëren: een eerlijk tarief zorgt voor motivatie, vakbekwaamheid en veiligheid op locatie.
+          maken we inzichtelijk wat een zelfstandige brandwacht of beveiliger werkelijk nodig heeft om duurzaam te kunnen werken. Niet om te wijzen, maar om bewustzijn te creëren: een eerlijk tarief zorgt voor motivatie, vakbekwaamheid en veiligheid op locatie.
         </p>
         <p className="mt-2 text-xs text-slate-600">
           De cijfers zijn gebaseerd op CBS-inflatie en gangbare kostprijsmodellen voor zelfstandigen. Dit is geen oordeel over individuele bureaus, maar een uitnodiging om samen te werken aan een eerlijkere en toekomstbestendige veiligheidssector.

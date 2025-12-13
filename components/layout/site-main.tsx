@@ -8,7 +8,7 @@ type SiteMainProps = {
 export default function SiteMain({ children }: SiteMainProps) {
   const headerList = headers()
   const pathname = headerList.get('next-url') ?? '/'
-  const fullWidthPrefixes = ['/steden', '/missie', '/opdrachtgevers']
+  const fullWidthPrefixes = ['/steden', '/over-ons', '/opdrachtgevers']
   const isFullWidth = pathname === '/' || fullWidthPrefixes.some(prefix => pathname.startsWith(prefix))
 
   const className = isFullWidth

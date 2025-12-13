@@ -1,0 +1,66 @@
+name: Site Quality & Tone-of-Voice
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  site-quality:
+    runs-on: ubuntu-latest
+
+    env:
+      # Pas deze aan als je andere concurrenten wilt scannen
+      COMPETITOR_URLS: https://www.degrootbrandwachten.nl/,https://www.qforcebv.nl
+      # Basis-URL voor je eigen site (in CI draaien we tegen localhost)
+      LOCAL_BASE_URL: http://localhost:3000
+      # Paths die jij belangrijk vindt op je eigen site
+      LOCAL_PATHS: /,/blog,/opdrachtgevers,/probrandwacht-direct-spoed
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build Next.js app
+        run: |
+          npm run build
+
+      - name: Start Next.js app (background)
+        run: |
+          PORT=3000 npm start &
+        env:
+          NODE_ENV: production
+
+      - name: Wait for local server to be ready
+        run: |
+          npx wait-on http://localhost:3000
+
+      - name: Tone-of-Voice check - ProBrandwacht (local)
+        run: |
+          npx ts-node scripts/toneCheck-url.ts --url=$LOCAL_BASE_URL --paths=$LOCAL_PATHS
+
+      - name: Tone-of-Voice check - Competitors (live)
+        run: |
+          npx ts-node scripts/toneCheck-competitors.ts --urls=$COMPETITOR_URLS
+
+      - name: Tone-of-Voice comparison report
+        run: |
+          npx ts-node scripts/toneCompare-report.ts
+
+      - name: Upload JSON reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tone-of-voice-reports
+          path: reports/*.json
+

@@ -83,11 +83,17 @@ function getSiteUrl() {
 
 function routeExistsAppRouter(routePath) {
   // accepteer bronbestand of build-output (Next app router)
-  const fileTsx = path.join(ROOT, "app", ...routePath.split("/"), "page.tsx");
-  const fileJsx = path.join(ROOT, "app", ...routePath.split("/"), "page.jsx");
-  const builtA = path.join(ROOT, ".next", "server", "app", ...routePath.split("/"), "index.html");
-  const builtB = path.join(ROOT, ".next", "server", "app", ...routePath.split("/"), "page.js"); // alt
-  return [fileTsx, fileJsx, builtA, builtB].some((p) => fs.existsSync(p));
+  const segments = routePath.split("/").filter(Boolean);
+  const variants = [
+    path.join(ROOT, "app", ...segments, "page.tsx"),
+    path.join(ROOT, "app", ...segments, "page.jsx"),
+    path.join(ROOT, "app", "(site)", ...segments, "page.tsx"),
+    path.join(ROOT, "app", "(site)", ...segments, "page.jsx"),
+    path.join(ROOT, ".next", "server", "app", ...segments, "index.html"),
+    path.join(ROOT, ".next", "server", "app", ...segments, "page.js"),
+    path.join(ROOT, ".next", "server", "app", "(site)", ...segments, "page.js"),
+  ];
+  return variants.some((p) => fs.existsSync(p));
 }
 
 function apiRouteExists(routePath) {
@@ -237,9 +243,10 @@ else incWarn("Logo voor PDF ontbreekt: public/probrandwacht-logo.png");
 log.info("\n[Routes] Verwachte paden");
 const mustPages = [
   "/opdrachtgevers",
-  "/brandwacht-inhuren", // kan als index of sectie bestaan
-  "/missie",
   "/faq",
+  "/over-ons",
+  "/belangen",
+  "/voor-brandwachten",
 ];
 for (const r of mustPages) {
   if (routeExistsAppRouter(r)) log.ok(`route ${r}`);

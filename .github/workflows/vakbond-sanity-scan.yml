@@ -1,0 +1,40 @@
+name: Vakbond Sanity Scan
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  vakbond-sanity-scan:
+    runs-on: ubuntu-latest
+
+    env:
+      # Je kunt dit aanpassen naar je live site of een preview
+      BASE_URL: https://www.probrandwacht.nl
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run Vakbond Sanity Scan
+        run: |
+          npx ts-node scripts/vakbond-sanity-scan.ts $BASE_URL
+
+      - name: Upload JSON report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vakbond-sanity-report
+          path: reports/vakbond-sanity-report.json
+

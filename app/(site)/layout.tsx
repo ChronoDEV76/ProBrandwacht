@@ -1,83 +1,44 @@
-import localFont from 'next/font/local'
-import type { Metadata } from 'next'
-import SiteHeader from '@/components/site-header'
-import SiteMain from '@/components/layout/site-main'
+// app/(site)/layout.tsx
+import "@/styles/globals.css";
+import localFont from "next/font/local";
+import type { Metadata } from "next";
+
+import SiteHeader from "@/components/site-header";
+import SiteMain from "@/components/layout/site-main";
+import SiteFooter from "@/components/site-footer";
 
 const roboto = localFont({
-  src: [{ path: '../../public/fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' }],
-  display: 'swap',
-})
+  src: [
+    {
+      path: "../../public/fonts/Roboto-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.probrandwacht.nl'),
-  title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform', // Ensure this is descriptive
+  title: "ProBrandwacht.nl – Het alternatieve brandwachtplatform",
   description:
-    'Het alternatieve brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.',
+    "Het alternatieve brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.",
   keywords: [
-    'brandwacht inhuren',
-    'brandwacht tarieven',
-    'brandveiligheid evenementen',
-    'industriële brandwacht',
-    'brandwacht platform',
-    'probrandwacht',
+    "zelfstandige brandwacht inhuren",
+    "zelfstandige brandwacht tarieven",
+    "brandveiligheid evenementen",
+    "industriele zelfstandige brandwacht",
+    "platform voor zelfstandige brandwachten",
+    "probrandwacht",
   ],
-  alternates: { canonical: '/' },
-  other: {
-    hreflang: 'nl-NL',
-  },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.probrandwacht.nl',
-    siteName: 'ProBrandwacht.nl',
-    title: 'ProBrandwacht.nl – Het alternatieve brandwachtplatform',
-    description: 'Brandwacht inhuren in Nederland – alternatief, eerlijk en veilig.',
-    images: [{ url: '/og-home.webp', width: 1200, height: 630, alt: 'ProBrandwacht platform - A visual representation of our services' }], // Ensure alt text is descriptive
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@ProBrandwacht',
-    creator: '@ProBrandwacht',
-    images: ['/og-home.webp'],
-  },
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col text-slate-50`}>
-      <span className="sr-only">ProBrandwacht.nl</span>
+      <span className="sr-only">Hoofdmenu ProBrandwacht</span>
       <SiteHeader />
-      {/* Site-level JSON-LD for LocalBusiness */}
-      {[organizationJsonLd, websiteJsonLd].map((schema, index: number) => (
-        <script
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema),
-          }}
-        />
-      ))}
       <SiteMain>{children}</SiteMain>
+      <SiteFooter />
     </div>
-  )
-}
-
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'ProBrandwacht.nl',
-  url: 'https://www.probrandwacht.nl',
-  serviceType: 'Brandwacht diensten',
-  areaServed: {
-    '@type': 'Country',
-    name: 'Nederland',
-  },
-  logo: 'https://www.probrandwacht.nl/og.jpg',
-}
-
-const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'ProBrandwacht.nl',
-  url: 'https://www.probrandwacht.nl',
+  );
 }

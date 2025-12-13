@@ -1,0 +1,48 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "scannedAt": "2025-12-11T07:17:54.006Z",
+  "pages": [
+    {
+      "url": "http://localhost:3000/",
+      "bad": [],
+      "good": [
+        "/transparantie/i",
+        "/zelfstandigheid/i",
+        "/dba-proof/i",
+        "/autonomie/i",
+        "/eerlijke tarieven/i"
+      ],
+      "ok": true
+    },
+    {
+      "url": "http://localhost:3000/probrandwacht-direct-spoed",
+      "bad": [],
+      "good": [
+        "/dba-proof/i",
+        "/vakmanschap/i",
+        "/autonomie/i",
+        "/onafhankelijk/i",
+        "/eerlijke tarieven/i"
+      ],
+      "ok": true
+    },
+    {
+      "url": "http://localhost:3000/opdrachtgevers",
+      "bad": [],
+      "good": [
+        "/transparantie/i",
+        "/dba-proof/i"
+      ],
+      "ok": true
+    },
+    {
+      "url": "http://localhost:3000/blog",
+      "bad": [],
+      "good": [
+        "/dba-proof/i"
+      ],
+      "ok": true
+    }
+  ],
+  "errors": []
+}

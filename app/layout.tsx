@@ -4,16 +4,25 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import dynamic from "next/dynamic";
 import SeoStructuredData from "@/components/SeoStructuredData";
-import CookieNotice from '@/components/cookie-notice'
+import CookieNotice from "@/components/cookie-notice";
 import { headers } from "next/headers";
-import { seoKeywordClusters } from '@/lib/seo/seo-keywords';
+import { SanityChecker } from "./_sanity-checker";
+// import { SanityChecker } from "./_sanity-checker"; // verwijderd
 
 const roboto = localFont({
-  src: [{ path: "../public/fonts/Roboto-Regular.ttf", weight: "400", style: "normal" }],
+  src: [
+    {
+      path: "../public/fonts/Roboto-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
   display: "swap",
 });
 
-const AnalyticsScripts = dynamic(() => import("@/components/analytics"), { ssr: false });
+const AnalyticsScripts = dynamic(() => import("@/components/analytics"), {
+  ssr: false,
+});
 
 const SITE_BASE_URL = "https://www.probrandwacht.nl";
 
@@ -44,7 +53,10 @@ function buildBreadcrumbs(pathname: string) {
     cumulativePath += `/${segment}`;
     const normalized = segment.toLowerCase();
     const label = SEGMENT_LABELS[normalized] ?? titleizeSegment(normalized);
-    breadcrumbs.push({ name: label, item: `${SITE_BASE_URL}${cumulativePath}` });
+    breadcrumbs.push({
+      name: label,
+      item: `${SITE_BASE_URL}${cumulativePath}`,
+    });
   });
   return breadcrumbs;
 }
@@ -102,19 +114,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const nextUrl = headerList.get("next-url") ?? "/";
   const currentUrl = new URL(nextUrl, SITE_BASE_URL);
   const breadcrumbs = buildBreadcrumbs(currentUrl.pathname);
+  // breadcrumbs worden nu nog niet gebruikt, maar je kunt ze doorgeven aan je layout / header als je wilt
 
   return (
     <html lang="nl">
       <body className={`${roboto.className} text-slate-900`}>
         {/* Globale SEO-schema’s */}
-        <SeoStructuredData
-          website={{ name: "ProBrandwacht.nl", url: SITE_BASE_URL }}
-        />
-        {/* Analytics: Google Tag Manager (googletagmanager.com) & GA4 */}
+        <SeoStructuredData website={{ name: "ProBrandwacht.nl", url: SITE_BASE_URL }} />
+
+        {/* Analytics: Google Tag Manager & GA4 */}
         <AnalyticsScripts />
-        {/* Belangrijk: géén extra header hier — je bestaande (onderste) header blijft zo de enige header */}
+
+        {/* Main content */}
         <div className="flex flex-1 flex-col">{children}</div>
+
+        {/* Cookie notice */}
         <CookieNotice />
+        {/* Dev-only sanity checker; no-op in production */}
+        <SanityChecker />
       </body>
     </html>
   );

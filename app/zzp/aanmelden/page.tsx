@@ -6,7 +6,7 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 const description =
-  'Meld je gratis aan als zzp-brandwacht. Direct contact met opdrachtgevers, eerlijke tarieven en facturatie zonder verborgen kosten.';
+  'Werk als een professional. Ondernemend en vrij. Meld je gratis aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-proof en transparant.';
 
 export const metadata = {
   title: 'ZZP brandwacht aanmelden | ProBrandwacht',
@@ -42,9 +42,9 @@ export default function Page() {
 
   const heading = (
   <>
-    <h1 className="text-3xl font-bold text-gray-900">
+    <h2 className="text-2xl font-bold text-gray-900">
       Direct beschikbaar? Dan hoor jij erbij.
-    </h1>
+    </h2>
   </>
 );
 

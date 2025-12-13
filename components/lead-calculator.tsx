@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 
-type Role = "brandwacht" | "beveiliger" | "mvk";
+type Role = "zelfstandige brandwacht" | "beveiliger" | "mvk";
 
 export default function LeadCalculator() {
   // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [role, setRole] = useState<Role>("brandwacht");
+  const [role, setRole] = useState<Role>("zelfstandige brandwacht");
 
   // “nu via bureau”
   const [bureauHourly, setBureauHourly] = useState<number | "">("");
@@ -154,7 +154,7 @@ export default function LeadCalculator() {
             value={role}
             onChange={(e) => setRole(e.target.value as Role)}
           >
-            <option value="brandwacht">Brandwacht</option>
+            <option value="zelfstandige brandwacht">zelfstandige brandwacht</option>
             <option value="beveiliger">Beveiliger</option>
             <option value="mvk">MVK</option>
           </select>

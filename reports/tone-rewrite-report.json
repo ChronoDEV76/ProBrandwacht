@@ -1,0 +1,484 @@
+[
+  {
+    "file": "app/(site)/belangen/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/layout.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/opdrachtgevers/brandwacht-inhuren/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/opdrachtgevers/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbureaumodel\\b/gi",
+        "replace": "klassieke ketenconstructie",
+        "category": "bureau",
+        "description": "Vervangt 'bureaumodel' door neutralere term."
+      },
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbureaumodel\\b/gi",
+        "replace": "klassieke ketenconstructie",
+        "category": "bureau",
+        "description": "Vervangt 'bureaumodel' door neutralere term."
+      },
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/probrandwacht-direct-spoed/metadata.ts",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/probrandwacht-direct-spoed/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/seo-resources/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/steden/[city]/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bhandig\\b/gi",
+        "replace": "praktisch toepasbaar",
+        "category": "weak",
+        "description": "Maakt het professioneler."
+      },
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/toolkit/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bhelpen\\b/gi",
+        "replace": "ondersteunen met expertise",
+        "category": "weak",
+        "description": "Geeft meer autoriteit."
+      },
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "app/(site)/voor-brandwachten/page.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "components/ChatBox.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/ChatPanel.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/HomeHero.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "components/PlatformPricingNote.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/city-hero.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "components/cost-calculator.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/lead-calculator.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "components/mdx/ConclusieMarkt.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/mdx/FeeVergelijk.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/mdx/KostenOpbouw.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/mdx/TariefTabel.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/opdrachtgevers/client-signup-form.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "components/pb-direct-form.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "components/why-probrandwacht-section.tsx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/brandwacht-manschap-ab.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/industriele-brandwacht-wat-houdt-het-in.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/wat-kost-een-brandwacht-in-2025.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  },
+  {
+    "file": "content/blog/zzp-direct-met-opdrachtgever-wet-dba.mdx",
+    "changes": [
+      {
+        "rulePattern": "/\\bbrandwacht\\b/gi",
+        "replace": "zelfstandig brandwacht",
+        "category": "upgrade",
+        "description": "Benadrukt de zzp-identiteit."
+      },
+      {
+        "rulePattern": "/\\bopdrachtgever\\b/gi",
+        "replace": "opdrachtgever in transparante samenwerking",
+        "category": "upgrade",
+        "description": "Versterkt brug-/samenwerkingstaal."
+      }
+    ]
+  }
+]

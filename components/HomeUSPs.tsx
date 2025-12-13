@@ -18,7 +18,7 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             <h2 className="mt-1 text-sm font-semibold">Directer samenwerken</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
               Zichtbaarheid voor zzp-brandwachten, direct contact met opdrachtgevers en
-              praktische DBA-handvatten. Geen bemiddelingsbureau, geen verborgen marge.
+              praktische DBA-handvatten. Transparante afspraken en zichtbare tariefopbouw.
             </p>
           </article>
 

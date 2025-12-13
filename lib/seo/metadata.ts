@@ -29,9 +29,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   // HOMEPAGE
   // --------------------------------------------------
   '/': {
-    title: 'ProBrandwacht – Slimmer werken. Eerlijk verdienen. Samen vooruit.',
+    title: 'ProBrandwacht – Voor brandwachten die écht ondernemen.',
     description:
-      'Bereken jouw echte waarde als professional. Eerlijke tarieven zonder intermediair. Samen bouwen we aan een gezonde veiligheidsmarkt.',
+      'Voor brandwachten die écht ondernemen. Werk zelfstandig, bepaal je tarief en kies opdrachten die passen bij jouw vak. Transparant, DBA-proof en zonder verborgen marges.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -45,9 +45,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   // --------------------------------------------------
 
   '/opdrachtgevers': {
-    title: 'Brandwacht aanvragen voor jouw organisatie – direct geregeld',
+    title: 'Professionele brandwachten, eenvoudig en betrouwbaar geregeld',
     description:
-      'Vind snel een gecertificeerde brandwacht voor jouw organisatie. Directe matching, heldere tarieven en volledig DBA-proof samenwerken via ProBrandwacht.',
+      'Ervaren brandwachten zonder gedoe, tussenlagen of risico. Gecertificeerde professionals, transparante tarieven, snelle inzet en DBA-proof samenwerking via ProBrandwacht.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -100,11 +100,11 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
-  '/missie': {
-    title: 'Missie van ProBrandwacht – een eerlijke markt voor professionals',
+  '/over-ons': {
+    title: 'Over ProBrandwacht – veiligheid én ondernemerschap',
     description:
-      'ProBrandwacht bouwt aan een markt waarin brandwachten eerlijk verdienen, direct samenwerken met opdrachtgevers en veilig kunnen werken zonder onnodige marges.',
-    keywords: [...seoKeywordClusters.platform, ...seoKeywordClusters.tariefTransparantie],
+      'Lees waarom ProBrandwacht is opgericht, onze missie en visie, kernwaarden en manifest. Voor een moderne, transparante en toekomstbestendige brandwachtsector.',
+    keywords: [...seoKeywordClusters.platform, 'over probrandwacht', 'brandwacht manifest'],
   },
 
   '/faq': {
@@ -183,12 +183,31 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/zzp/aanmelden': {
     title: 'Aanmelden als zzp-brandwacht – direct opdrachten ontvangen',
     description:
-      'Meld je aan als zzp-brandwacht en ontvang opdrachten direct via ProBrandwacht. Meer regie over je planning, transparante tarieven en geen verborgen marges.',
+      'Werk als een professional. Ondernemend en vrij. Meld je aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-proof en zonder verborgen marges.',
     keywords: [
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.tariefTransparantie,
       ...seoKeywordClusters.platform,
     ],
+  },
+
+  '/voor-brandwachten': {
+    title: 'Voor brandwachten – professionaliteit, vrijheid en eerlijkheid',
+    description:
+      'Een platform voor brandwachten die ondernemen. Kies je opdrachten, bepaal je tarief en werk transparant en DBA-proof met toegang tot ProSafetyMatch.',
+    keywords: [
+      ...seoKeywordClusters.zzpFreelance,
+      ...seoKeywordClusters.platform,
+      'brandwacht aanmelden',
+      'zzp brandwacht opdrachten',
+    ],
+  },
+
+  '/tone-of-voice': {
+    title: 'Communicatiestijl ProBrandwacht',
+    description:
+      'Tone of voice en richtlijnen voor communicatie: ondernemend, transparant, respectvol, toekomstgericht en menselijk.',
+    keywords: ['tone of voice', 'communicatiestijl', 'brandwacht communicatie'],
   },
 
   // --------------------------------------------------

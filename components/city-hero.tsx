@@ -10,7 +10,7 @@ type CityHeroProps = {
 export default function CityHero({ cityName, heading }: CityHeroProps) {
   const defaultHeading = (
     <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Brandwacht {cityName}: word gevonden en blijf DBA-proof
+      Zelfstandige brandwacht {cityName}: word gevonden en blijf DBA-proof
     </h1>
   )
 
@@ -28,19 +28,13 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             href="/zzp/aanmelden"
             className="inline-flex items-center rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
-            Meld je aan als brandwacht (gratis)
+            Meld je aan als zelfstandige brandwacht (gratis)
           </a>
           <a
-            href="/missie"
+            href="/over-ons"
             className="inline-flex items-center rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
           >
             Lees hoe we werken
-          </a>
-          <a
-            href="/probrandwacht-direct"
-            className="text-sm font-semibold text-brand-700 underline underline-offset-4"
-          >
-            Heb je een aanvraag? ProBrandwacht Direct
           </a>
           {SPOED_UI_ENABLED ? (
             <a

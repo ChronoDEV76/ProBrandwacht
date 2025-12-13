@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 import { CITY_SLUGS } from '@/lib/city-data'
+import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
@@ -9,12 +10,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     '/',
     '/blog',
-    '/missie',
+    '/over-ons',
     '/faq',
     '/zzp/aanmelden',
     '/opdrachtgevers',
-    '/opdrachtgevers/brandwacht-inhuren',
-    '/probrandwacht-direct',
+    '/voor-brandwachten',
+    ...(SPOED_ROUTE_ENABLED ? ['/probrandwacht-direct', '/probrandwacht-direct-spoed'] : []),
   ].map((path) => ({
     url: `${BASE_URL}${path}`,
     changeFrequency: 'weekly',

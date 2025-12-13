@@ -1,8 +1,11 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
@@ -16,11 +19,31 @@ module.exports = withBundleAnalyzer({
         destination: '/steden/:city',
         permanent: true,
       },
-    ]
+      {
+        source: '/brandwacht-inhuren',
+        destination: '/opdrachtgevers',
+        permanent: true,
+      },
+      {
+        source: '/opdrachtgevers/brandwacht-inhuren',
+        destination: '/opdrachtgevers',
+        permanent: true,
+      },
+      {
+        source: '/missie',
+        destination: '/over-ons',
+        permanent: true,
+      },
+      {
+        source: '/brandwacht-huren',
+        destination: '/opdrachtgevers',
+        permanent: true,
+      },
+    ];
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['www.probrandwacht.nl'],
+    domains: ['www.probrandwacht.nl', 'probrandwacht.nl'],
   },
   async headers() {
     return [
@@ -39,6 +62,8 @@ module.exports = withBundleAnalyzer({
           },
         ],
       },
-    ]
+    ];
   },
-});
+};
+
+export default withBundleAnalyzer(nextConfig);

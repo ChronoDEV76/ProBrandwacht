@@ -22,8 +22,8 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
     <section className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
       <h3 className="text-sm font-semibold text-slate-900">Toekomstig prijsmodel ProSafetyMatch (in ontwikkeling)</h3>
       <p className="mt-2">
-        ProSafetyMatch wordt geen bureau en verdient niet aan het uurtarief van brandwachten. Het geplande platformmodel (verwacht Q1
-        2026) is bewust zo eenvoudig mogelijk gehouden:
+        ProSafetyMatch zet in op transparante tarieven zonder marge op het uurtarief van brandwachten. Het geplande platformmodel (verwacht
+        Q1 2026) is bewust zo eenvoudig mogelijk gehouden:
       </p>
       <ul className="mt-2 list-disc space-y-1 pl-5">
         <li>
@@ -33,7 +33,7 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
           <span className="font-semibold">1–2% escrowkosten</span> wanneer jullie kiezen voor vooraf geborgde betaling.
         </li>
         <li>
-          <span className="font-semibold">Geen marge op uurtarieven</span> en geen bemiddeling: tarief, rol en planning spreek je
+          <span className="font-semibold">Geen marge op uurtarieven</span> en geen directe platform-match: tarief, rol en planning spreek je
           rechtstreeks af tussen opdrachtgever en zzp’er.
         </li>
       </ul>

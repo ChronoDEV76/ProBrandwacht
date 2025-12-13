@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2025-11-30T16:12:29.075Z",
+  "generatedAt": "2025-12-10T12:26:58.193Z",
   "root": "probrandwacht-main",
   "rootPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main",
   "includeSizes": false,
   "maxDepth": "∞",
   "stats": {
-    "files": 281,
-    "dirs": 99
+    "files": 286,
+    "dirs": 107
   },
   "tree": {
     "type": "dir",
@@ -201,6 +201,18 @@
               },
               {
                 "type": "dir",
+                "name": "contact",
+                "path": "app/(site)/contact",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "page.tsx",
+                    "path": "app/(site)/contact/page.tsx"
+                  }
+                ]
+              },
+              {
+                "type": "dir",
                 "name": "faq",
                 "path": "app/(site)/faq",
                 "children": [
@@ -229,14 +241,33 @@
                 "path": "app/(site)/opdrachtgevers",
                 "children": [
                   {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/(site)/opdrachtgevers/page.tsx"
+                    "type": "dir",
+                    "name": "brandwacht-inhuren",
+                    "path": "app/(site)/opdrachtgevers/brandwacht-inhuren",
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "page.tsx",
+                        "path": "app/(site)/opdrachtgevers/brandwacht-inhuren/page.tsx"
+                      }
+                    ]
                   },
                   {
                     "type": "file",
-                    "name": "page.tsx.old",
-                    "path": "app/(site)/opdrachtgevers/page.tsx.old"
+                    "name": "page.tsx",
+                    "path": "app/(site)/opdrachtgevers/page.tsx"
+                  }
+                ]
+              },
+              {
+                "type": "dir",
+                "name": "over-ons",
+                "path": "app/(site)/over-ons",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "page.tsx",
+                    "path": "app/(site)/over-ons/page.tsx"
                   }
                 ]
               },
@@ -280,6 +311,30 @@
                         "path": "app/(site)/steden/[city]/page.tsx"
                       }
                     ]
+                  }
+                ]
+              },
+              {
+                "type": "dir",
+                "name": "tone-of-voice",
+                "path": "app/(site)/tone-of-voice",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "page.tsx",
+                    "path": "app/(site)/tone-of-voice/page.tsx"
+                  }
+                ]
+              },
+              {
+                "type": "dir",
+                "name": "voor-brandwachten",
+                "path": "app/(site)/voor-brandwachten",
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "page.tsx",
+                    "path": "app/(site)/voor-brandwachten/page.tsx"
                   }
                 ]
               },
@@ -436,11 +491,6 @@
                     "type": "file",
                     "name": "route.ts",
                     "path": "app/api/lead/route.ts"
-                  },
-                  {
-                    "type": "file",
-                    "name": "route.ts.old",
-                    "path": "app/api/lead/route.ts.old"
                   }
                 ]
               },
@@ -575,13 +625,7 @@
                     "type": "dir",
                     "name": "messages",
                     "path": "app/api/slack/messages",
-                    "children": [
-                      {
-                        "type": "file",
-                        "name": "route.ts.temp",
-                        "path": "app/api/slack/messages/route.ts.temp"
-                      }
-                    ]
+                    "children": []
                   }
                 ]
               }
@@ -647,47 +691,42 @@
                 "type": "dir",
                 "name": "amsterdam",
                 "path": "app/brandwacht-huren/amsterdam",
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht-huren/amsterdam/page.tsx"
-                  }
-                ]
+                "children": []
               },
               {
                 "type": "dir",
                 "name": "den-haag",
                 "path": "app/brandwacht-huren/den-haag",
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht-huren/den-haag/page.tsx"
-                  }
-                ]
+                "children": []
               },
               {
                 "type": "dir",
                 "name": "rotterdam",
                 "path": "app/brandwacht-huren/rotterdam",
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/brandwacht-huren/rotterdam/page.tsx"
-                  }
-                ]
+                "children": []
               },
               {
                 "type": "dir",
                 "name": "utrecht",
                 "path": "app/brandwacht-huren/utrecht",
+                "children": []
+              }
+            ]
+          },
+          {
+            "type": "dir",
+            "name": "brandwacht-inhuren",
+            "path": "app/brandwacht-inhuren",
+            "children": [
+              {
+                "type": "dir",
+                "name": "[city]",
+                "path": "app/brandwacht-inhuren/[city]",
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
-                    "path": "app/brandwacht-huren/utrecht/page.tsx"
+                    "path": "app/brandwacht-inhuren/[city]/page.tsx"
                   }
                 ]
               }
@@ -914,6 +953,11 @@
                 "type": "file",
                 "name": "info-cards-row.tsx",
                 "path": "components/layout/info-cards-row.tsx"
+              },
+              {
+                "type": "file",
+                "name": "site-main.tsx",
+                "path": "components/layout/site-main.tsx"
               }
             ]
           },
@@ -1053,6 +1097,11 @@
           },
           {
             "type": "file",
+            "name": "HomeUSPs.tsx",
+            "path": "components/HomeUSPs.tsx"
+          },
+          {
+            "type": "file",
             "name": "impact-info-card.tsx",
             "path": "components/impact-info-card.tsx"
           },
@@ -1065,11 +1114,6 @@
             "type": "file",
             "name": "lead-calculator.tsx",
             "path": "components/lead-calculator.tsx"
-          },
-          {
-            "type": "file",
-            "name": "lead-calculator.tsx.old",
-            "path": "components/lead-calculator.tsx.old"
           },
           {
             "type": "file",
@@ -1427,6 +1471,11 @@
           },
           {
             "type": "file",
+            "name": "ASSET-LICENSING.md",
+            "path": "public/ASSET-LICENSING.md"
+          },
+          {
+            "type": "file",
             "name": "blog-bouw-welder.jpg",
             "path": "public/blog-bouw-welder.jpg"
           },
@@ -1517,11 +1566,6 @@
           },
           {
             "type": "file",
-            "name": "brandweer-psm.webp",
-            "path": "public/brandweer-psm.webp"
-          },
-          {
-            "type": "file",
             "name": "dba-en-brandwachten-card.png",
             "path": "public/dba-en-brandwachten-card.png"
           },
@@ -1529,6 +1573,16 @@
             "type": "file",
             "name": "dba-en-brandwachten-card.webp",
             "path": "public/dba-en-brandwachten-card.webp"
+          },
+          {
+            "type": "file",
+            "name": "favicon.svg",
+            "path": "public/favicon.svg"
+          },
+          {
+            "type": "file",
+            "name": "home-hero.webp",
+            "path": "public/home-hero.webp"
           },
           {
             "type": "file",
@@ -1559,11 +1613,6 @@
             "type": "file",
             "name": "probrandwacht-logo.webp",
             "path": "public/probrandwacht-logo.webp"
-          },
-          {
-            "type": "file",
-            "name": "prosafetymatch-bg.webp",
-            "path": "public/prosafetymatch-bg.webp"
           },
           {
             "type": "file",
@@ -1757,13 +1806,28 @@
           },
           {
             "type": "file",
+            "name": "checkCopy.ts",
+            "path": "scripts/checkCopy.ts"
+          },
+          {
+            "type": "file",
             "name": "diagnose.js",
             "path": "scripts/diagnose.js"
           },
           {
             "type": "file",
+            "name": "digitalSeoAudit.mjs",
+            "path": "scripts/digitalSeoAudit.mjs"
+          },
+          {
+            "type": "file",
             "name": "find-components.mjs",
             "path": "scripts/find-components.mjs"
+          },
+          {
+            "type": "file",
+            "name": "fix-next-metadata.mjs",
+            "path": "scripts/fix-next-metadata.mjs"
           },
           {
             "type": "file",
@@ -1797,6 +1861,11 @@
           },
           {
             "type": "file",
+            "name": "seo-dashboard.mjs",
+            "path": "scripts/seo-dashboard.mjs"
+          },
+          {
+            "type": "file",
             "name": "seo-upgrade.mjs",
             "path": "scripts/seo-upgrade.mjs"
           },
@@ -1809,11 +1878,6 @@
             "type": "file",
             "name": "strip-calculator.mjs",
             "path": "scripts/strip-calculator.mjs"
-          },
-          {
-            "type": "file",
-            "name": "sync-metadata.ts",
-            "path": "scripts/sync-metadata.ts"
           },
           {
             "type": "file",
@@ -1905,6 +1969,18 @@
         ]
       },
       {
+        "type": "dir",
+        "name": "utils",
+        "path": "utils",
+        "children": [
+          {
+            "type": "file",
+            "name": "copyAnalyzer.ts",
+            "path": "utils/copyAnalyzer.ts"
+          }
+        ]
+      },
+      {
         "type": "file",
         "name": ".aider.chat.history.md",
         "path": ".aider.chat.history.md"
@@ -1971,11 +2047,6 @@
       },
       {
         "type": "file",
-        "name": "content-analyzer-digital.ts",
-        "path": "content-analyzer-digital.ts"
-      },
-      {
-        "type": "file",
         "name": "dev.log",
         "path": "dev.log"
       },
@@ -2008,6 +2079,11 @@
         "type": "file",
         "name": "next.config.js",
         "path": "next.config.js"
+      },
+      {
+        "type": "file",
+        "name": "next.config.mjs",
+        "path": "next.config.mjs"
       },
       {
         "type": "file",

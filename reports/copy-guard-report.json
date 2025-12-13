@@ -1,0 +1,112 @@
+[
+  {
+    "path": "/",
+    "url": "http://localhost:3000/",
+    "scope": "main",
+    "words": 579,
+    "hits": [
+      {
+        "bucket": "DUPLICATE",
+        "severity": "BLOCK",
+        "term": "herhaalde woordgroep",
+        "count": 1,
+        "snippets": [
+          "Onafhankelijk platform voor zelfstandige brandwachten Voor zelfstandige brandwachten die zelf de regie houden ProBrandwacht verbindt zelfstandige brandwachten en op"
+        ],
+        "suggestion": "Knip herhaling weg of herschrijf de zin zodat elk begrip maar 1× voorkomt."
+      },
+      {
+        "bucket": "POSITIONING",
+        "severity": "INFO",
+        "term": "Positionering aanwezig",
+        "count": 5,
+        "snippets": []
+      }
+    ],
+    "summary": {
+      "block": 1,
+      "warn": 0,
+      "info": 5
+    }
+  },
+  {
+    "path": "/opdrachtgevers",
+    "url": "http://localhost:3000/opdrachtgevers",
+    "scope": "main",
+    "words": 360,
+    "hits": [
+      {
+        "bucket": "POSITIONING",
+        "severity": "INFO",
+        "term": "Positionering aanwezig",
+        "count": 2,
+        "snippets": []
+      }
+    ],
+    "summary": {
+      "block": 0,
+      "warn": 0,
+      "info": 2
+    }
+  },
+  {
+    "path": "/voor-brandwachten",
+    "url": "http://localhost:3000/voor-brandwachten",
+    "scope": "main",
+    "words": 284,
+    "hits": [
+      {
+        "bucket": "POSITIONING",
+        "severity": "INFO",
+        "term": "Positionering aanwezig",
+        "count": 1,
+        "snippets": []
+      }
+    ],
+    "summary": {
+      "block": 0,
+      "warn": 0,
+      "info": 1
+    }
+  },
+  {
+    "path": "/belangen",
+    "url": "http://localhost:3000/belangen",
+    "scope": "main",
+    "words": 419,
+    "hits": [
+      {
+        "bucket": "POSITIONING",
+        "severity": "INFO",
+        "term": "Positionering aanwezig",
+        "count": 2,
+        "snippets": []
+      }
+    ],
+    "summary": {
+      "block": 0,
+      "warn": 0,
+      "info": 2
+    }
+  },
+  {
+    "path": "/toolkit",
+    "url": "http://localhost:3000/toolkit",
+    "scope": "main",
+    "words": 491,
+    "hits": [
+      {
+        "bucket": "POSITIONING",
+        "severity": "INFO",
+        "term": "Positionering aanwezig",
+        "count": 2,
+        "snippets": []
+      }
+    ],
+    "summary": {
+      "block": 0,
+      "warn": 0,
+      "info": 2
+    }
+  }
+]

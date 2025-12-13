@@ -269,13 +269,13 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-6">
       {/* Header */}
-      <div className="space-y-2">
+      <div className="space-y-2" id="aanmelden">
         {(heading ?? (
           <h1 className="text-3xl font-bold text-gray-900">Direct beschikbaar? Dan hoor jij erbij.</h1>
         ))}
         <p className="text-gray-600">
           Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vul je later in tijdens je
-          profielverificatie.
+          profielverificatie. Aanmelden geeft je updates, pilots en kennis — geen garantie op opdrachten of volumes.
         </p>
         <p className="text-sm text-amber-700">
           Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over test momenten, feedbacksessies en de overstap naar het live platform.

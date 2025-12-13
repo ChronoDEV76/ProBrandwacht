@@ -1,7 +1,7 @@
 "use client"
 
 type FeeVergelijkProps = {
-  tarief: number // het uurtarief dat opdrachtgever betaalt (excl. btw)
+  tarief: number // uurtarief dat de opdrachtgever betaalt (excl. btw)
 }
 
 export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {

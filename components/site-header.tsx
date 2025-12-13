@@ -4,15 +4,16 @@ import { headers } from 'next/headers'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
 const LINKS = [
-  { href: '/missie', label: 'Missie' },
-  { href: '/opdrachtgevers', label: 'Opdrachtgevers' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/voor-brandwachten', label: 'Voor brandwachten' },
+  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
+  { href: '/belangen', label: 'Belangen' },
   { href: '/tarief-berekenen', label: 'Tarief berekenen' },
+  { href: '/blog', label: 'Blog / Kennisbank' },
+  { href: '/over-ons', label: 'Over ons' },
 ]
 
-const CTA_LABEL = 'Meld je aan (gratis) en kom straks met je profiel op ProSafetyMatch'
-const CTA_TEXT_COMPACT = 'Meld je aan (gratis)'
+const CTA_LABEL = 'Meld je aan (gratis)'
+const CTA_TEXT_COMPACT = 'Meld je aan'
 
 export default function SiteHeader() {
   const headerList = headers()
@@ -45,19 +46,6 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link
-            href="/probrandwacht-direct"
-            prefetch={false}
-            title="Geplande inzet — powered by Chrono4Solutions"
-            aria-current={currentPath.startsWith('/probrandwacht-direct') ? 'page' : undefined}
-            className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-              currentPath.startsWith('/probrandwacht-direct') ? 'bg-white/10 ring-1 ring-white/40' : ''
-            }`}
-          >
-            <span className="font-semibold flex items-center gap-1">⏱️ ProBrandwacht Direct</span>
-            <span className="opacity-85">geplande inzet</span>
-          </Link>
-
           {SPOED_UI_ENABLED ? (
             <Link
               href="/probrandwacht-direct-spoed"
@@ -69,7 +57,7 @@ export default function SiteHeader() {
               }`}
             >
               <span className="font-semibold flex items-center gap-1">⚡ ProBrandwacht Direct spoed</span>
-              <span className="opacity-85">spoed & 24/7</span>
+              <span className="opacity-85">24/7 inzet</span>
             </Link>
           ) : null}
 
@@ -125,19 +113,8 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
           ))}
         </div>
 
-        <div className={`grid gap-2 border-t border-white/15 px-4 py-3 ${SPOED_UI_ENABLED ? 'grid-cols-2' : 'grid-cols-1'}`}>
-          <Link
-            href="/probrandwacht-direct"
-            prefetch={false}
-            aria-current={currentPath.startsWith('/probrandwacht-direct') ? 'page' : undefined}
-            className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
-              currentPath.startsWith('/probrandwacht-direct') ? 'bg-white/10 ring-1 ring-white/40' : ''
-            }`}
-          >
-            ⏱️ ProBrandwacht Direct
-          </Link>
-
-          {SPOED_UI_ENABLED ? (
+        {SPOED_UI_ENABLED ? (
+          <div className="grid gap-2 border-t border-white/15 px-4 py-3">
             <Link
               href="/probrandwacht-direct-spoed"
               prefetch={false}
@@ -148,8 +125,8 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
             >
               ⚡ ProBrandwacht Direct spoed
             </Link>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
 
         <div className="border-t border-white/15 px-4 py-3">
           <a

@@ -7,6 +7,12 @@ export default function PbDirectForm() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [tarief, setTarief] = useState<number | undefined>(undefined)
+  const [hours, setHours] = useState<number | undefined>(4)
+  const now = new Date()
+  const later = new Date(now.getTime() + 72 * 60 * 60 * 1000)
+  const minDateTime = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16)
+  const maxDateTime = new Date(later.getTime() - later.getTimezoneOffset() * 60000).toISOString().slice(0, 16)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -23,6 +29,8 @@ export default function PbDirectForm() {
       people: String(fd.get('people') || '').trim() || undefined,
       when: String(fd.get('when') || '').trim() || undefined,
       message: String(fd.get('message') || '').trim() || undefined,
+      tarief: tarief ? String(tarief) : undefined,
+      minimumHours: hours ? String(hours) : undefined,
       consent: fd.get('consent') === 'on',
       website: String(fd.get('website') || '').trim() || undefined, // honeypot
       source: 'probrandwacht-direct-spoed',
@@ -55,7 +63,23 @@ export default function PbDirectForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 rounded-3xl bg-white/95 p-7 text-slate-900 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.55)] ring-1 ring-slate-200/80 md:p-8"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Direct - Gecertificeerd - Bereikbaar</p>
+          <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">Start een spoedaanvraag</h2>
+          <p className="text-base text-slate-600">Binnen minuten in Slack, 24/7 reactie van zelfstandige brandwachten.</p>
+        </div>
+        <div className="flex flex-wrap gap-2 text-[11px]">
+          <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">Direct</span>
+          <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 font-semibold text-blue-800">Gecertificeerd</span>
+          <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">E2E-addendum</span>
+          <span className="inline-flex items-center rounded-full bg-brand-700/90 px-3 py-1 font-semibold text-white shadow-sm">ProBrandwacht</span>
+        </div>
+      </div>
       {/* Honeypot */}
       <div className="hidden">
         <label htmlFor="website">Website (laat leeg)</label>
@@ -63,62 +87,137 @@ export default function PbDirectForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700">Bedrijf *</label>
-        <input name="company" required className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
+        <label className="block text-base font-semibold text-slate-800">Bedrijf *</label>
+        <input
+          name="company"
+          required
+          className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+        />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Contactpersoon *</label>
-          <input name="contact" required className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
+          <label className="block text-base font-semibold text-slate-800">Contactpersoon *</label>
+          <input
+            name="contact"
+            required
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">E-mail *</label>
-          <input name="email" type="email" required className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
-        </div>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="block text-sm font-medium text-slate-700">Telefoon</label>
-          <input name="phone" type="tel" className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-slate-700">Locatie / plaats</label>
-          <input name="city" className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
+          <label className="block text-base font-semibold text-slate-800">E-mail *</label>
+          <input
+            name="email"
+            type="email"
+            required
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-slate-700">Aantal brandwachten</label>
-          <input name="people" type="number" min={1} className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
+          <label className="block text-base font-semibold text-slate-800">Telefoon</label>
+          <input
+            name="phone"
+            type="tel"
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700">Wanneer (ASAP, vandaag, datum)</label>
-          <input name="when" className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" placeholder="Bijv. vandaag 16:00" />
+          <label className="block text-base font-semibold text-slate-800">Locatie / plaats</label>
+          <input
+            name="city"
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
+        </div>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label className="block text-base font-semibold text-slate-800">Aantal brandwachten</label>
+          <input
+            name="people"
+            type="number"
+            min={1}
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
+        </div>
+        <div>
+          <label className="block text-base font-semibold text-slate-800">Wanneer (ASAP, vandaag, datum)</label>
+          <input
+            name="when"
+            type="datetime-local"
+            min={minDateTime}
+            max={maxDateTime}
+            step={900}
+            lang="nl"
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+          />
+          <p className="mt-1 text-sm text-slate-500">Kies een tijd binnen 72 uur.</p>
+        </div>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label className="block text-base font-semibold text-slate-800">Tariefkader (min. spoedtarief EUR/uur)</label>
+          <input
+            name="tarief"
+            type="number"
+            min={55}
+            step={1}
+            value={tarief ?? ''}
+            onChange={e => setTarief(e.target.value ? Number(e.target.value) : undefined)}
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+            placeholder="Bijv. 60"
+          />
+          <p className="mt-1 text-sm text-slate-500">Spoed (24/7): verwacht minimum EUR55-EUR70/u afhankelijk van inzet/locatie.</p>
+        </div>
+        <div>
+          <label className="block text-base font-semibold text-slate-800">Minimum uren (spoedblok)</label>
+          <input
+            name="minimumHours"
+            type="number"
+            min={4}
+            step={1}
+            value={hours ?? ''}
+            onChange={e => setHours(e.target.value ? Number(e.target.value) : undefined)}
+            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+            placeholder="Bijv. 4"
+          />
+          <p className="mt-1 text-sm text-slate-500">Indicatief minimumblok 4 uur voor spoed; spreek details 1-op-1 af.</p>
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700">Toelichting</label>
-        <textarea name="message" rows={4} className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2" />
+        <label className="block text-base font-semibold text-slate-800">Toelichting</label>
+        <textarea
+          name="message"
+          rows={4}
+          className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
+        />
+        <p className="mt-1 text-sm text-slate-500">Vermeld certificaten, bijzondere risico&apos;s en contactpersoon op locatie.</p>
       </div>
 
-      <label className="flex items-start gap-3 text-sm text-slate-700">
+      <label className="flex items-start gap-3 text-sm text-slate-700 md:text-base">
         <input id="consent" name="consent" type="checkbox" defaultChecked required className="mt-1" />
         <span>Ik ga akkoord met het verwerken van mijn gegevens voor deze spoedaanvraag.</span>
       </label>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-600 disabled:opacity-60"
-      >
-        {loading ? 'Versturen…' : 'Spoedaanvraag versturen'}
-      </button>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-slate-500">
+          Binnen minuten in Slack; eerste geschikte zelfstandige brandwacht claimt en chat direct 1-op-1. Geen marge op tarief; afspraken in E2E chat.
+        </p>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-2xl bg-brand-700 px-6 py-3.5 text-base font-semibold text-white hover:bg-brand-600 disabled:opacity-60 sm:w-auto"
+        >
+          {loading ? 'Versturen...' : 'Spoedaanvraag versturen'}
+        </button>
+      </div>
     </form>
   )
 }

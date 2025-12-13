@@ -17,7 +17,7 @@ type DirectMessage = {
 
 type Props = {
   requestId: string;
-  /** Wie typt in deze view? 'agent' (brandwacht) of 'customer' (opdrachtgever) */
+  /** Wie typt in deze view? 'agent' (zelfstandige brandwacht) of 'customer' (opdrachtgever) */
   viewer: Viewer;
   className?: string;
 };
@@ -72,7 +72,7 @@ export default function ChatBox({ requestId, viewer, className }: Props) {
       id: `optimistic-${Date.now()}`,
       request_id: requestId,
       sender_id: viewer === 'agent' ? 'agent' : 'customer',
-      sender_name: viewer === 'agent' ? 'Brandwacht' : 'Opdrachtgever',
+      sender_name: viewer === 'agent' ? 'zelfstandige brandwacht' : 'opdrachtgever',
       sender_role: viewer,
       text,
       created_at: new Date().toISOString(),
@@ -145,7 +145,7 @@ export default function ChatBox({ requestId, viewer, className }: Props) {
                 <li key={m.id} className="leading-snug">
                   <div className="flex items-baseline gap-2">
                     <span className="font-medium">
-                      {m.sender_name ?? (m.sender_role === 'agent' ? 'Brandwacht' : 'Opdrachtgever')}
+                      {m.sender_name ?? (m.sender_role === 'agent' ? 'zelfstandige brandwacht' : 'opdrachtgever')}
                     </span>
                     <span className="text-xs text-gray-500">{fmt(m.created_at)}</span>
                   </div>

@@ -8,7 +8,7 @@ type RawMessage = {
   request_id: string
   sender_id: string | null
   sender_name: string | null
-  sender_role: 'brandwacht' | 'opdrachtgever' | 'admin' | null
+  sender_role: 'zelfstandige brandwacht' | 'opdrachtgever in transparante samenwerking' | 'admin' | null
   text?: string | null
   message?: string | null
   content?: string | null
@@ -25,12 +25,12 @@ const mapToMessage = (msg: RawMessage): Message => ({
 export default function ChatPanel({
   requestId,
   viewerName,
-  viewerRole = 'brandwacht',
+  viewerRole = 'zelfstandige brandwacht',
   viewerId,
 }: {
   requestId: string
   viewerName: string
-  viewerRole?: 'brandwacht' | 'opdrachtgever' | 'admin'
+  viewerRole?: 'zelfstandige brandwacht' | 'opdrachtgever in transparante samenwerking' | 'admin'
   viewerId?: string
 }) {
   const supabase = supabaseBrowser()
@@ -104,9 +104,9 @@ export default function ChatPanel({
         body: JSON.stringify({
           request_id: requestId,
           text: content,
-          sender_id: viewerId ?? 'brandwacht-panel',
+          sender_id: viewerId ?? 'zelfstandige-brandwacht-panel',
           sender_name: viewerName,
-          source: 'brandwacht-dashboard',
+          source: 'zelfstandige-brandwacht-dashboard',
         }),
       })
 
@@ -137,7 +137,7 @@ export default function ChatPanel({
     <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 p-3">
         <h3 className="text-sm font-semibold text-slate-900">
-          Chat met opdrachtgever
+          Chat met opdrachtgever in transparante samenwerking
         </h3>
         <p className="text-xs text-slate-500">
           Je reageert als <span className="font-medium">{viewerName}</span> ({viewerRole})

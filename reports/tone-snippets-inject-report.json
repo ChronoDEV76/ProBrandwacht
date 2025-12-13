@@ -1,0 +1,75 @@
+[
+  {
+    "route": "/",
+    "file": "app/(site)/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/voor-brandwachten",
+    "file": "app/(site)/voor-brandwachten/page.tsx",
+    "changed": true
+  },
+  {
+    "route": "/opdrachtgevers",
+    "file": "app/(site)/opdrachtgevers/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/belangen",
+    "file": "app/(site)/belangen/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/toolkit",
+    "file": "app/(site)/toolkit/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/steden/[city]",
+    "file": "app/(site)/steden/[city]/page.tsx",
+    "changed": true
+  },
+  {
+    "route": "/probrandwacht-direct-spoed",
+    "file": "app/(site)/probrandwacht-direct-spoed/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/blog",
+    "file": "app/(site)/blog/page.tsx",
+    "changed": false,
+    "reason": "file_not_found"
+  },
+  {
+    "route": "/over-ons",
+    "file": "app/(site)/over-ons/page.tsx",
+    "changed": true
+  },
+  {
+    "route": "/contact",
+    "file": "app/(site)/contact/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  },
+  {
+    "route": "/faq",
+    "file": "app/(site)/faq/page.tsx",
+    "changed": true
+  },
+  {
+    "route": "/privacy",
+    "file": "app/(site)/privacy/page.tsx",
+    "changed": true
+  },
+  {
+    "route": "/seo-resources",
+    "file": "app/(site)/seo-resources/page.tsx",
+    "changed": false,
+    "reason": "insert_pattern_not_found"
+  }
+]
