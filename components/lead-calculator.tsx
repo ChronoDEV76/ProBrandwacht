@@ -93,11 +93,11 @@ export default function LeadCalculator() {
   const [role, setRole] = useState<Role>("zelfstandige brandwacht");
 
   // “nu via bureau”
-  const [bureauHourly, setBureauHourly] = useState<number | "">(45);
+  const [bureauHourly, setBureauHourly] = useState<number | "">(0);
   // standaard 144u p/m, bewerkbaar
-  const [hoursPerMonth, setHoursPerMonth] = useState<number | "">(144);
+  const [hoursPerMonth, setHoursPerMonth] = useState<number | "">(0);
   // optioneel, indicatief
-  const [costPct, setCostPct] = useState<number | "">(30);
+  const [costPct, setCostPct] = useState<number | "">(0);
 
   // aftrek en verzekeringen (indicatief)
   const [hasInsurance, setHasInsurance] = useState(true);
