@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --app-viewport-height: 100vh;
 }
 
@@ -25,9 +25,8 @@ body {
 }
 
 body {
-  @apply antialiased text-slate-800;
-  background-image: linear-gradient(180deg, rgba(10, 99, 255, 0.15) 0%, rgba(10, 99, 255, 0.05) 18%, rgba(255, 255, 255, 0.6) 48%, rgba(255, 255, 255, 1) 100%);
-  background-color: #f6f9ff;
+  @apply antialiased;
+  background-color: #0b1220;
   min-height: 100vh;
   min-height: var(--app-viewport-height);
   display: flex;
