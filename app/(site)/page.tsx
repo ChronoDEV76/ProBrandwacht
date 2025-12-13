@@ -27,7 +27,7 @@ export default function HomePage() {
 
             <div className="flex flex-wrap items-center gap-3">
               <Link
-                href="/aanmelden"
+                href="/zzp/aanmelden"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
                 Meld je gratis aan en bouw mee aan ProSafetyMatch
