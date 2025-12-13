@@ -117,14 +117,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10">
+    <article className="mx-auto max-w-3xl px-4 py-10 text-slate-50">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <SeoStructuredData article={structuredArticle} breadcrumbs={breadcrumbItems.map(item => ({ name: item.name, item: item.url }))} faqs={generalPlatformFaq} />
       <header className="mb-6">
-        <h1 className="text-3xl font-semibold">{post.frontmatter.title ?? params.slug}</h1>
+        <h1 className="text-3xl font-semibold text-slate-50">{post.frontmatter.title ?? params.slug}</h1>
       </header>
 
-      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
         <Image
           src={heroImageSrc}
           alt={heroAlt}
@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           className="h-auto w-full max-h-[320px] object-cover"
           loading="lazy"
         />
-        <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-100 px-4 py-3 text-xs text-slate-600">
+        <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-800 px-4 py-3 text-xs text-slate-300">
           <span>Geplaatst: {publishedDate ? publishedDate.toLocaleDateString('nl-NL') : 'Onbekend'}</span>
           <span>Leestijd: {readingTimeLabel}</span>
           <span>Type: {categoryLabel}</span>
@@ -142,9 +142,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </figure>
 
       {highlights.length > 0 ? (
-        <section className="mb-6 rounded-2xl border border-amber-100 bg-amber-50 p-5 text-sm text-amber-900">
-          <h2 className="text-base font-semibold text-amber-900">Belangrijkste punten</h2>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+        <section className="mb-6 rounded-2xl border border-amber-400/40 bg-amber-400/10 p-5 text-sm text-amber-50">
+          <h2 className="text-base font-semibold text-amber-100">Belangrijkste punten</h2>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-amber-50">
             {highlights.map(item => (
               <li key={item}>{item}</li>
             ))}
@@ -158,7 +158,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </Prose>
 
       {/* Share */}
-      <p className="mt-6 text-sm text-slate-600">Deel dit artikel:</p>
+      <p className="mt-6 text-sm text-slate-300">Deel dit artikel:</p>
       <ShareBar url={pageUrl} title={post.frontmatter.title ?? 'ProBrandwacht.nl'} utmCampaign="blog_share" />
 
       {/* CTA */}
@@ -167,16 +167,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           href={opdrachtgeverSignupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center rounded-md bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-black"
+          className="inline-flex items-center rounded-md bg-emerald-400 px-5 py-3 text-sm font-medium text-slate-950 hover:bg-emerald-300"
         >
           Zet de nieuwe standaard: meld je aan als opdrachtgever
         </a>
       </div>
 
       {/* Stadspagina-links */}
-      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
-        <h2 className="text-lg font-semibold text-slate-900">Direct naar een stadspagina</h2>
-        <p className="mt-1 text-sm text-slate-600">
+      <section className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+        <h2 className="text-lg font-semibold text-slate-50">Direct naar een stadspagina</h2>
+        <p className="mt-1 text-sm text-slate-200">
           Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en kostenberekening met opdrachtgevers.
         </p>
         <ul className="mt-3 flex flex-wrap gap-2">
@@ -185,7 +185,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               <Link
                 href="/opdrachtgevers"
                 prefetch={false}
-                className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+                className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
               >
                 Brandwacht inhuren {city.name}
               </Link>
