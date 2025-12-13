@@ -118,7 +118,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="nl">
-      <body className={`${roboto.className} bg-slate-950 text-slate-50`}>
+      <body
+        className={`${roboto.className} min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100`}
+      >
         {/* Globale SEO-schema’s */}
         <SeoStructuredData website={{ name: "ProBrandwacht.nl", url: SITE_BASE_URL }} />
 
