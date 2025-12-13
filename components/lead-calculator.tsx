@@ -154,7 +154,7 @@ export default function LeadCalculator() {
             value={role}
             onChange={(e) => setRole(e.target.value as Role)}
           >
-            <option value="zelfstandige brandwacht">zelfstandige brandwacht</option>
+            <option value="zelfstandige brandwacht">Brandwacht</option>
             <option value="beveiliger">Beveiliger</option>
           </select>
         </label>
