@@ -54,7 +54,7 @@ export default function StructuredBreadcrumbs({
   return (
     <>
       {/* Zichtbare breadcrumbs (UI) */}
-      <nav aria-label="Breadcrumb" className={className}>
+      <nav aria-label="Breadcrumb" className={["hidden", className].filter(Boolean).join(" ")}>
         <ol className="flex flex-wrap items-center gap-1 text-sm text-slate-600">
           {items.map((item, i) => {
             const isLast = i === items.length - 1;
@@ -89,4 +89,3 @@ export default function StructuredBreadcrumbs({
     </>
   );
 }
-
