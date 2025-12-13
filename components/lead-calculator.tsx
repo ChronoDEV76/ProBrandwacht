@@ -156,7 +156,6 @@ export default function LeadCalculator() {
           >
             <option value="zelfstandige brandwacht">zelfstandige brandwacht</option>
             <option value="beveiliger">Beveiliger</option>
-            <option value="mvk">MVK</option>
           </select>
         </label>
 
