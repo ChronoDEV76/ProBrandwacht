@@ -86,8 +86,8 @@ export default function BelangenPage() {
               </h3>
               <p className="text-sm text-slate-200">
                 Als zelfstandige brandwacht bepaal je zélf hoe je werkt. Het model van
-                ProBrandwacht versterkt jouw autonomie: je kiest zelf opdrachten,
-                voorwaarden en samenwerkingen.
+                ProSafetyMatch versterkt jouw autonomie: je kiest zelf op welke
+                opdrachten, voorwaarden en samenwerkingen je ingaat.
               </p>
             </div>
 

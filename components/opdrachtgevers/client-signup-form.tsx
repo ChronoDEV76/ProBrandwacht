@@ -10,6 +10,8 @@ type ClientSignupFormProps = {
   cancelHref?: string
   showCancel?: boolean
   successReturnHref?: string
+  headingClassName?: string
+  descriptionClassName?: string
 }
 
 type ProfileEntries = Record<string, string>
@@ -124,6 +126,8 @@ export default function ClientSignupForm({
   cancelHref = '/',
   showCancel = true,
   successReturnHref = '/',
+  headingClassName = 'text-2xl font-semibold text-gray-900 md:text-3xl',
+  descriptionClassName = 'text-sm text-gray-600 md:text-base',
 }: ClientSignupFormProps) {
   const [done, setDone] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -237,8 +241,8 @@ export default function ClientSignupForm({
   return (
     <div className={`mx-auto max-w-3xl space-y-6 ${className}`.trim()}>
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold text-gray-900 md:text-3xl">{heading}</h2>
-        <p className="text-sm text-gray-600 md:text-base">{description}</p>
+        <h2 className={headingClassName}>{heading}</h2>
+        <p className={descriptionClassName}>{description}</p>
       </div>
 
       {error ? (

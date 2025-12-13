@@ -3,6 +3,88 @@
 import { useState } from "react";
 
 type Role = "zelfstandige brandwacht" | "beveiliger" | "mvk";
+type NormalizedRole = "brandwacht" | "beveiliger" | "mvk";
+
+const ROLE_MARKET_HINT: Record<NormalizedRole, number> = {
+  brandwacht: 43,
+  beveiliger: 38,
+  mvk: 65,
+};
+
+function normalizeRole(role: Role): NormalizedRole {
+  if (role === "zelfstandige brandwacht") return "brandwacht";
+  return role;
+}
+
+function calculateMarketHourly(role: NormalizedRole, bureauHourly: number): number {
+  const hint = ROLE_MARKET_HINT[role] ?? bureauHourly + 10;
+  const uplift = Math.min(Math.max(bureauHourly + 12, bureauHourly * 1.2), bureauHourly + 20);
+  return Math.round(((hint + uplift) / 2) * 100) / 100;
+}
+
+function computeIndicative({
+  role,
+  bureauHourly,
+  hoursPerMonth,
+  costPct,
+  aftrekZelf,
+  aftrekMkb,
+  aftrekStart,
+}: {
+  role: Role;
+  bureauHourly: number | "";
+  hoursPerMonth: number | "";
+  costPct: number | "";
+  aftrekZelf: boolean;
+  aftrekMkb: boolean;
+  aftrekStart: boolean;
+}) {
+  if (bureauHourly === "" || hoursPerMonth === "") return null;
+
+  const bureau = Number(bureauHourly);
+  const hours = Number(hoursPerMonth);
+  const costsPct = Number(costPct === "" ? 0 : costPct);
+
+  const roleKey = normalizeRole(role);
+  const marketHourly = calculateMarketHourly(roleKey, bureau);
+
+  const PLATFORM_FEE = 0.1;
+  const ESCROW_MIN = 0.01;
+  const ESCROW_MAX = 0.02;
+
+  const netMin = marketHourly * (1 - PLATFORM_FEE - ESCROW_MAX);
+  const netMax = marketHourly * (1 - PLATFORM_FEE - ESCROW_MIN);
+
+  const revenueMonth = marketHourly * hours;
+  const costsMonth = revenueMonth * (costsPct / 100);
+  const profitBeforeTax = revenueMonth - costsMonth;
+
+  const baseTaxPct = (aftrekZelf ? 0.16 : 0.20) - (aftrekMkb ? 0.02 : 0) - (aftrekStart ? 0.02 : 0);
+  const estTax = Math.max(profitBeforeTax * baseTaxPct, 0);
+  const netMonth = profitBeforeTax - estTax;
+
+  const diffPerHour = Math.max(marketHourly - bureau, 0);
+  const diffPerMonth = diffPerHour * hours;
+
+  const reducedHours = hours * 0.9;
+  const reducedRevenue = marketHourly * reducedHours;
+  const reducedCosts = reducedRevenue * (costsPct / 100);
+  const reducedProfitBeforeTax = reducedRevenue - reducedCosts;
+  const reducedTax = Math.max(reducedProfitBeforeTax * baseTaxPct, 0);
+  const reducedNetMonth = reducedProfitBeforeTax - reducedTax;
+
+  return {
+    marketHourly,
+    netMin,
+    netMax,
+    netMonth,
+    reducedNetMonth,
+    diffPerHour,
+    diffPerMonth,
+  };
+}
+
+const formatCurrency = (value: number) => `€ ${value.toFixed(2)}`;
 
 export default function LeadCalculator() {
   // Form state
@@ -11,7 +93,7 @@ export default function LeadCalculator() {
   const [role, setRole] = useState<Role>("zelfstandige brandwacht");
 
   // “nu via bureau”
-  const [bureauHourly, setBureauHourly] = useState<number | "">("");
+  const [bureauHourly, setBureauHourly] = useState<number | "">(45);
   // standaard 144u p/m, bewerkbaar
   const [hoursPerMonth, setHoursPerMonth] = useState<number | "">(144);
   // optioneel, indicatief
@@ -100,14 +182,26 @@ export default function LeadCalculator() {
       ? "bg-amber-50 text-amber-800 ring-1 ring-amber-200"
       : "bg-rose-50 text-rose-800 ring-1 ring-rose-200";
 
+  const indicative = computeIndicative({
+    role,
+    bureauHourly,
+    hoursPerMonth,
+    costPct,
+    aftrekZelf,
+    aftrekMkb,
+    aftrekStart,
+  });
+  const showFullIndicative = !!indicative && email.trim().length > 0;
+  const showTeaserIndicative = !!indicative && !showFullIndicative;
+
   return (
-    <section className="rounded-3xl p-0 text-slate-900">
-      <h2 className="text-[20px] font-semibold text-slate-900">Bereken wat je écht waard bent</h2>
-      <p className="mt-1 text-[13px] text-slate-700">
+    <section className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-slate-50 shadow-lg">
+      <h2 className="text-[20px] font-semibold text-slate-50">Bereken wat je écht waard bent</h2>
+      <p className="mt-1 text-[13px] text-slate-200">
         Met <strong>2 velden</strong> ontdek je wat je maandelijks laat liggen. Je ontvangt direct een{" "}
         <strong>persoonlijk PDF-rapport</strong> met het verschil — inclusief <em>indicatie bij 10% minder uren</em>.
       </p>
-      <p className="mt-1 text-[11.5px] text-slate-600">
+      <p className="mt-1 text-[11.5px] text-slate-300">
         Aangescherpt met feedback uit de sector (200+ professionals). We delen alleen je e-mail met ProSafetyMatch voor dit rapport.
       </p>
 
@@ -126,7 +220,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">Naam (optioneel)</span>
+          <span className="text-slate-200">Naam (optioneel)</span>
           <input
             className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-brand-400 focus:ring-1 focus:ring-brand-300"
             value={name}
@@ -136,7 +230,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">E-mailadres</span>
+          <span className="text-slate-200">E-mailadres</span>
           <input
             type="email"
             required
@@ -148,7 +242,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">Rol</span>
+          <span className="text-slate-200">Rol</span>
           <select
             className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             value={role}
@@ -160,7 +254,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">Huidig uurtarief via bureau (€)</span>
+          <span className="text-slate-200">Huidig uurtarief via bureau (€)</span>
           <input
             type="number"
             required
@@ -172,7 +266,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">Uren per maand</span>
+          <span className="text-slate-200">Uren per maand</span>
           <input
             type="number"
             required
@@ -184,7 +278,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-700">Kosten (% van omzet)</span>
+          <span className="text-slate-200">Kosten (% van omzet)</span>
           <input
             type="number"
             className="mt-1 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
@@ -194,22 +288,22 @@ export default function LeadCalculator() {
           />
         </label>
 
-        <div className="rounded-md border border-slate-200 bg-white p-3 text-[13px] sm:col-span-2">
-          <p className="font-medium text-slate-900">Belasting & aftrek (indicatief)</p>
+        <div className="rounded-md border border-slate-800 bg-slate-900/80 p-3 text-[13px] sm:col-span-2">
+          <p className="font-medium text-slate-100">Belasting & aftrek (indicatief)</p>
           <div className="mt-2 grid grid-cols-2 gap-2">
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-slate-200">
               <input type="checkbox" checked={hasInsurance} onChange={() => setHasInsurance(!hasInsurance)} />
               AOV/pensioen aanwezig
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-slate-200">
               <input type="checkbox" checked={aftrekZelf} onChange={() => setAftrekZelf(!aftrekZelf)} />
               Zelfstandigenaftrek
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-slate-200">
               <input type="checkbox" checked={aftrekMkb} onChange={() => setAftrekMkb(!aftrekMkb)} />
               MKB-vrijstelling
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2 text-slate-200">
               <input type="checkbox" checked={aftrekStart} onChange={() => setAftrekStart(!aftrekStart)} />
               Startersaftrek
             </label>
@@ -217,7 +311,7 @@ export default function LeadCalculator() {
         </div>
 
         <div className="sm:col-span-2">
-          <label className="flex items-center gap-2 text-xs text-slate-600">
+          <label className="flex items-center gap-2 text-xs text-slate-300">
             <input type="checkbox" checked={consent} onChange={() => setConsent(!consent)} />
             Ik wil mijn persoonlijk PDF-rapport ontvangen en updates over eerlijk werken (geen spam).
           </label>
@@ -243,19 +337,92 @@ export default function LeadCalculator() {
         </button>
       </form>
 
-      {/* Micro-feedback tegeltjes (geen cijfers in UI; alles staat in PDF) */}
+      <div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 shadow-lg">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-300">Indicatie</p>
+            <p className="text-sm font-medium text-slate-50">
+              Marktconform + netto, incl. 10% platformfee
+            </p>
+          </div>
+          <p className="text-[11px] text-slate-400">1–2% betaalbuffer inbegrepen</p>
+        </div>
+        {showFullIndicative ? (
+          <>
+            <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="space-y-1">
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Marktconform (bruto)</dt>
+                <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.marketHourly)} / uur</dd>
+              </div>
+              <div className="space-y-1">
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Netto indicatie</dt>
+                <dd className="text-base font-semibold text-slate-50">
+                  {formatCurrency(indicative.netMin)} – {formatCurrency(indicative.netMax)} / uur
+                </dd>
+              </div>
+              <div className="space-y-1">
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Netto per maand</dt>
+                <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.netMonth)}</dd>
+              </div>
+              <div className="space-y-1">
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Scenario: 10% minder uren</dt>
+                <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.reducedNetMonth)} p/m</dd>
+              </div>
+              <div className="space-y-1 sm:col-span-2 md:col-span-1">
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Extra t.o.v. huidig via bureau</dt>
+                <dd className="text-base font-semibold text-slate-50">
+                  {formatCurrency(indicative.diffPerHour)} / uur · {formatCurrency(indicative.diffPerMonth)} p/m
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-2 text-xs text-slate-300">Volledig rapport (met alle aannames) ontvang je per mail.</p>
+          </>
+        ) : showTeaserIndicative ? (
+          <div className="mt-4 space-y-2">
+            <div className="rounded-lg border border-emerald-300/40 bg-emerald-400/10 px-3 py-2">
+              <p className="text-[11px] uppercase tracking-wide text-emerald-200">Netto indicatie</p>
+              <p className="text-base font-semibold text-emerald-100">
+                {formatCurrency(indicative.netMin)} – {formatCurrency(indicative.netMax)} / uur
+              </p>
+            </div>
+            <p className="text-sm text-slate-200">
+              Vul je e-mail in om de volledige berekening te zien (marketconform, scenario en extra t.o.v. bureau) en
+              ontvang direct het PDF-rapport.
+            </p>
+          </div>
+        ) : (
+          <div className="mt-3 space-y-3">
+            <p className="text-sm text-slate-200">
+              Vul je e-mail, huidig uurtarief en uren per maand in om de indicatie vrij te spelen.
+              Je ziet direct een preview en ontvangt daarna het volledige PDF-rapport.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <p className="text-[11px] uppercase tracking-wide text-slate-400">Marktconform (bruto)</p>
+                <div className="mt-1 h-5 w-24 rounded bg-slate-700" />
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900 p-3">
+                <p className="text-[11px] uppercase tracking-wide text-slate-400">Netto indicatie</p>
+                <div className="mt-1 h-5 w-28 rounded bg-slate-700" />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Micro-feedback tegeltjes */}
       <div className="mt-3 grid gap-2.5 text-sm sm:grid-cols-3">
-        <div className="rounded border border-slate-200 bg-white p-3">
-          <p className="text-[11px] text-slate-700">Preview</p>
-          <p className="text-slate-900">We tonen de uitkomst alleen in je PDF-rapport.</p>
+        <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
+          <p className="text-[11px] text-slate-300">Preview</p>
+          <p className="text-slate-50">Schatting zichtbaar; volledig rapport komt per mail.</p>
         </div>
-        <div className="rounded border border-slate-200 bg-white p-3">
-          <p className="text-[11px] text-slate-700">Indicatie</p>
-          <p className="text-slate-900">Inclusief scenario bij 10% minder uren.</p>
+        <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
+          <p className="text-[11px] text-slate-300">Scenario</p>
+          <p className="text-slate-50">Inclusief 10% minder-uren scenario in het rapport.</p>
         </div>
-        <div className="rounded border border-slate-200 bg-white p-3">
-          <p className="text-[11px] text-slate-700">Transparantie</p>
-          <p className="text-slate-900">Gebaseerd op feedback (200+ professionals).</p>
+        <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
+          <p className="text-[11px] text-slate-300">Transparantie</p>
+          <p className="text-slate-50">Gebaseerd op feedback (200+ professionals).</p>
         </div>
       </div>
     </section>

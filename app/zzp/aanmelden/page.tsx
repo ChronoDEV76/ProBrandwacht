@@ -40,18 +40,9 @@ export default function Page() {
     })),
   }
 
-  const heading = (
-  <>
-    <h2 className="text-2xl font-bold text-gray-900">
-      Direct beschikbaar? Dan hoor jij erbij.
-    </h2>
-  </>
-);
-
-
   return (
     <>
-      <ClientPage heading={heading} />
+      <ClientPage />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   )

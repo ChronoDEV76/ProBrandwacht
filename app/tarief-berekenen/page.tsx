@@ -9,18 +9,26 @@ export const metadata: Metadata = getRouteMetadata('/tarief-berekenen');
 
 export default function TariefBerekenenPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">Bereken je indicatieve uurtarief</h1>
-      <p className="mt-2 max-w-xl text-sm text-slate-600">
-        Deze onafhankelijke calculator helpt je nadenken over een eerlijk tarief.
-        ProBrandwacht en ProSafetyMatch rekenen <strong>geen marge op jouw uurtarief</strong>.
-      </p>
-      <p className="mt-1 text-sm text-slate-700">We denken met je mee; dit blijft jouw tarief, zonder marge van ons.</p>
-      <p className="mt-1 text-sm text-slate-700">Gebruik dit als startpunt in gesprekken; laat het weten als iets niet klopt.</p>
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 md:px-8">
+          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Bereken je indicatieve uurtarief</h1>
+          <p className="mt-2 max-w-2xl text-sm text-slate-200 md:text-base">
+            Deze onafhankelijke calculator helpt je nadenken over een eerlijk tarief.
+            ProBrandwacht en ProSafetyMatch rekenen <strong>geen marge op jouw uurtarief</strong>, alleen een platformfee van 10%.
+          </p>
+          <p className="mt-1 text-sm text-slate-200 md:text-base">
+            We denken met je mee; dit blijft jouw tarief, met slechts die 10% platformfee.
+          </p>
+          <p className="mt-1 text-sm text-slate-200 md:text-base">Gebruik dit als startpunt in gesprekken; laat het weten als iets niet klopt.</p>
+        </div>
+      </section>
 
-      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <LeadCalculator />
-      </div>
+      <section className="bg-slate-950">
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 md:px-8">
+          <LeadCalculator />
+        </div>
+      </section>
     </main>
   )
 }

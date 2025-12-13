@@ -205,168 +205,189 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   }
 
   return (
-    <main className="mx-auto w-full min-h-full max-w-6xl space-y-10 px-4 py-10">
+    <main className="min-h-screen bg-slate-950 text-slate-50">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
       <JSONLD data={itemListSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <header className="space-y-4 text-slate-900">
-        <h1 className="text-3xl font-semibold tracking-tight">Kennis uit de frontlinie van brandveilig werken</h1>
-        <p className="mt-2 max-w-3xl text-slate-700">
-          We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/zzp/aanmelden"
-            prefetch={false}
-            className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
-          >
-            Meld je aan als zzp-brandwacht
-          </Link>
-        </div>
-      </header>
-
-      <section className="flex flex-wrap gap-3">
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-600">Categorie</span>
-          <nav className="flex flex-wrap gap-2">
-            {CATEGORIES.map(c => (
-              <FilterChip
-                key={c}
-                href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
-                active={cat === c}
-              >
-                {c}
-              </FilterChip>
-            ))}
-          </nav>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-slate-600">Stad</span>
-          <nav className="flex flex-wrap gap-2">
-            {CITIES.map(c => (
-              <FilterChip
-                key={c}
-                href={`/blog?cat=${encodeURIComponent(cat)}&city=${encodeURIComponent(c)}`}
-                active={city === c}
-              >
-                {c}
-              </FilterChip>
-            ))}
-          </nav>
-        </div>
-      </section>
-
-      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.length === 0 && (
-          <div className="rounded-2xl border p-6 text-slate-600">Geen artikelen gevonden voor deze filters.</div>
-        )}
-        {filtered.map(post => (
-          <article
-            key={post.slug}
-            className="group relative overflow-hidden rounded-2xl border bg-white text-slate-900 shadow-sm transition hover:shadow-md"
-          >
-            {post.image ? (
-              <div className="relative h-64 w-full overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.imageAlt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 640px"
-                  className="object-cover"
-                  style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
-                />
-              </div>
-            ) : (
-              <div className="h-40 w-full bg-slate-100" />
-            )}
-            <div className="p-5">
-              <div className="mb-2 flex items-center gap-2 text-xs text-slate-500">
-                <span className="rounded-full bg-slate-100 px-2 py-0.5">{post.category}</span>
-                {post.city && <span className="rounded-full bg-slate-100 px-2 py-0.5">{post.city}</span>}
-                <span>{formatDate(post.dateIso)}</span>
-                <span>· {post.minutes} min leestijd</span>
-              </div>
-              <h2 className="line-clamp-2 text-lg font-semibold">
-                <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:underline">
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="mt-2 line-clamp-3 text-sm text-slate-700">{post.excerpt}</p>
-              <div className="mt-4 flex items-center justify-between">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  prefetch={false}
-                  className="text-sm font-medium text-brand-700 hover:underline"
-                >
-                  Lees hoe wij de norm verschuiven →
-                </Link>
-                <a
-                  href="/zzp/aanmelden"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:underline"
-                >
-                  Word onderdeel van de ploeg
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-900">Stadspagina’s met actuele tariefvoorbeelden</h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Bekijk per stad indicatieve tariefbanden en meld je aan voor aanvragen in jouw regio.
-        </p>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {cityLinks.map(city => (
-            <li key={city.slug}>
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
+          <header className="space-y-4">
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Kennis uit de frontlinie van brandveilig werken</h1>
+            <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
+              We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
+            </p>
+            <div className="flex flex-wrap gap-3">
               <Link
-                href={`/steden/${city.slug}`}
+                href="/zzp/aanmelden"
                 prefetch={false}
-                className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+                className="inline-flex items-center rounded-full border border-emerald-300/60 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
               >
-                Brandwacht {city.name}
+                Meld je aan als zzp-brandwacht
               </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </header>
+
+          <section className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-2 text-slate-200">
+              <span className="text-sm">Categorie</span>
+              <nav className="flex flex-wrap gap-2">
+                {CATEGORIES.map(c => (
+                  <FilterChip
+                    key={c}
+                    href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
+                    active={cat === c}
+                  >
+                    {c}
+                  </FilterChip>
+                ))}
+              </nav>
+            </div>
+            <div className="flex items-center gap-2 text-slate-200">
+              <span className="text-sm">Stad</span>
+              <nav className="flex flex-wrap gap-2">
+                {CITIES.map(c => (
+                  <FilterChip
+                    key={c}
+                    href={`/blog?cat=${encodeURIComponent(cat)}&city=${encodeURIComponent(c)}`}
+                    active={city === c}
+                  >
+                    {c}
+                  </FilterChip>
+                ))}
+              </nav>
+            </div>
+          </section>
+        </div>
       </section>
 
-      <section className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/60 p-6 shadow-sm">
-        <h3 className="text-lg font-semibold text-brand-800">Autoritaire bronnen</h3>
-        <p className="mt-2 text-sm text-slate-700">
-          Al onze artikelen verwijzen naar dezelfde officiële bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
-          zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s.
-        </p>
-        <Link
-          href="/seo-resources"
-          className="inline-flex items-center rounded-md border border-brand-200 bg-white px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-100"
-        >
-          Bekijk alle autoritaire bronnen →
-        </Link>
-      </section>
+      <section className="bg-slate-950">
+        <div className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10">
+          <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filtered.length === 0 && (
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-slate-200">Geen artikelen gevonden voor deze filters.</div>
+            )}
+            {filtered.map(post => (
+              <article
+                key={post.slug}
+                className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-emerald-500/20"
+              >
+                {post.image ? (
+                  <div className="relative h-64 w-full overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 640px"
+                      className="object-cover"
+                      style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
+                    />
+                  </div>
+                ) : (
+                  <div className="h-40 w-full bg-slate-800" />
+                )}
+                <div className="p-5">
+                  <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                    <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.category}</span>
+                    <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-emerald-100">
+                      {derivePositionTag(post.category)}
+                    </span>
+                    {post.city && <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.city}</span>}
+                    <span>{formatDate(post.dateIso)}</span>
+                    <span>· {post.minutes} min leestijd</span>
+                  </div>
+                  <h2 className="line-clamp-2 text-lg font-semibold text-slate-50">
+                    <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-emerald-200">
+                      {post.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">{post.excerpt}</p>
+                  <div className="mt-3 text-sm text-slate-300">
+                    Hoe ervaar jij dit in jouw werk? Binnenkort openen we de mogelijkheid om ervaringen te delen.
+                  </div>
+                  <div className="mt-4 flex items-center justify-between text-sm">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      prefetch={false}
+                      className="font-medium text-emerald-200 hover:text-emerald-100"
+                    >
+                      Lees hoe wij de norm verschuiven →
+                    </Link>
+                    <a
+                      href="/zzp/aanmelden"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-300 hover:text-emerald-100"
+                    >
+                      Word onderdeel van de ploeg
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </section>
 
-      <section className="mt-10 rounded-2xl bg-slate-50 p-6 text-center">
-        <h3 className="text-xl font-semibold">Klaar voor eerlijk samenwerken?</h3>
-        <p className="mt-2 text-slate-700">
-          Toegang voor de eerste lichting is geopend — voor professionals en vooruitstrevende opdrachtgevers.
-        </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="/zzp/aanmelden"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-brand-700 px-5 py-3 text-white hover:bg-brand-500"
-          >
-            Sluit je aan bij de ploeg die de norm herschrijft
-          </a>
-          <Link href="/opdrachtgevers" className="rounded-2xl border px-5 py-3 hover:bg-white">
-            Info voor opdrachtgevers
-          </Link>
+          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-50">Stadspagina’s met actuele tariefvoorbeelden</h2>
+            <p className="mt-2 text-sm text-slate-200">
+              Bekijk per stad indicatieve tariefbanden en meld je aan voor aanvragen in jouw regio.
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {cityLinks.map(city => (
+                <li key={city.slug}>
+                  <Link
+                    href={`/steden/${city.slug}`}
+                    prefetch={false}
+                    className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                  >
+                    Brandwacht {city.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="rounded-2xl border border-emerald-400/40 bg-emerald-400/10 p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-emerald-100">Autoritaire bronnen</h3>
+            <p className="mt-2 text-sm text-slate-200">
+              Al onze artikelen verwijzen naar dezelfde officiële bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
+              zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s.
+            </p>
+            <Link
+              href="/seo-resources"
+              className="mt-3 inline-flex items-center rounded-md border border-emerald-300 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
+            >
+              Bekijk alle autoritaire bronnen →
+            </Link>
+          </section>
+
+          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-center">
+            <h3 className="text-xl font-semibold text-slate-50">Klaar voor eerlijk samenwerken?</h3>
+            <p className="mt-2 text-slate-200">
+              Toegang voor de eerste lichting is geopend — voor professionals en vooruitstrevende opdrachtgevers.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="/zzp/aanmelden"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl bg-emerald-400 px-5 py-3 text-slate-950 hover:bg-emerald-300"
+              >
+                Sluit je aan bij de ploeg die de norm herschrijft
+              </a>
+              <Link href="/opdrachtgevers" className="rounded-2xl border border-slate-700 px-5 py-3 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+                Info voor opdrachtgevers
+              </Link>
+            </div>
+          </section>
+
+          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-200">
+            <h4 className="text-base font-semibold text-slate-50">ProSafetyMatch in ontwikkeling</h4>
+            <p className="mt-2">
+              We werken aan ProSafetyMatch: een directe, DBA-proof manier van samenwerken. Wil je op de hoogte blijven?
+            </p>
+          </section>
         </div>
       </section>
     </main>
@@ -381,8 +402,8 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
       className={[
         'rounded-full border px-3 py-1 text-sm transition',
         active
-          ? 'border-brand-200 bg-brand-50 text-brand-700'
-          : 'border-slate-200 bg-white/80 text-slate-700 hover:bg-white',
+          ? 'border-emerald-300 bg-emerald-400/10 text-emerald-100'
+          : 'border-slate-700 bg-slate-900 text-slate-200 hover:border-emerald-300 hover:text-emerald-100',
       ].join(' ')}
     >
       {children}
@@ -397,4 +418,13 @@ function formatDate(iso: string) {
   } catch {
     return ''
   }
+}
+
+function derivePositionTag(category: string | undefined) {
+  if (!category) return 'Praktijkervaring';
+  const lower = category.toLowerCase();
+  if (lower.includes('wet')) return 'Wetgeving & handhaving';
+  if (lower.includes('opdracht')) return 'Voor opdrachtgevers';
+  if (lower.includes('zzp')) return 'Voor zzp-brandwachten';
+  return 'Praktijkervaring';
 }

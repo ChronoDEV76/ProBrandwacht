@@ -30,11 +30,12 @@ type LabelProps = {
   children: ReactNode;
   htmlFor?: string;
   hint?: string;
+  className?: string;
 };
 
-function Label({ children, htmlFor, hint }: LabelProps) {
+function Label({ children, htmlFor, hint, className = "" }: LabelProps) {
   return (
-    <label htmlFor={htmlFor} className="block">
+    <label htmlFor={htmlFor} className={`block ${className}`}>
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-gray-900">{children}</span>
         {hint && <span className="text-xs text-gray-500">{hint}</span>}
@@ -267,131 +268,159 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6">
-      {/* Header */}
-      <div className="space-y-2" id="aanmelden">
-        {(heading ?? (
-          <h1 className="text-3xl font-bold text-gray-900">Direct beschikbaar? Dan hoor jij erbij.</h1>
-        ))}
-        <p className="text-gray-600">
-          Vul je basisgegevens in. <span className="font-medium">IBAN is niet nodig</span>; die vul je later in tijdens je
-          profielverificatie. Aanmelden geeft je updates, pilots en kennis — geen garantie op opdrachten of volumes.
-        </p>
-        <p className="text-sm text-amber-700">
-          Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over test momenten, feedbacksessies en de overstap naar het live platform.
-        </p>
-      </div>
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div className="mx-auto max-w-5xl space-y-6 px-4 py-12 sm:px-6 md:px-8">
+          <div className="space-y-3">
+            {heading ?? (
+              <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+                Direct beschikbaar? Dan hoor jij erbij.
+              </h1>
+            )}
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+              Vul je basisgegevens in. <span className="font-semibold text-emerald-200">IBAN is niet nodig</span>; die vul je later in tijdens je profielverificatie. Aanmelden geeft je updates, pilots en kennis — geen garantie op opdrachten of volumes.
+            </p>
+            <p className="text-sm text-amber-200">
+              Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over testmomenten, feedbacksessies en de overstap naar het live platform.
+            </p>
+          </div>
+          <ol className="flex items-center gap-4 text-sm text-slate-200">
+            <li className="flex items-center gap-2 text-emerald-300">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-200">1</span> Basisgegevens
+            </li>
+            <li className="flex items-center gap-2 text-slate-500">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-800">2</span> Certificaten
+            </li>
+            <li className="flex items-center gap-2 text-slate-500">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-800">3</span> iDIN + Betaalgegevens (IBAN)
+            </li>
+          </ol>
+        </div>
+      </section>
 
-      {/* Progress mini-steps */}
-      <ol className="flex items-center gap-4 text-sm">
-        <li className="flex items-center gap-2 text-blue-700">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">1</span> Basisgegevens
-        </li>
-        <li className="flex items-center gap-2 text-gray-400">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">2</span> Certificaten
-        </li>
-        <li className="flex items-center gap-2 text-gray-400">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">3</span> iDIN + Betaalgegevens (IBAN)
-        </li>
-      </ol>
-
-      {/* Errors uit de hook */}
-      {hookError && (
-        <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
-          <div className="font-semibold">Fout bij opslaan</div>
-          <div className="mt-1">{hookError.message}</div>
-          {hookError.details && hookError.details.length > 0 && (
-            <ul className="list-disc ml-5 mt-2 text-red-800">
-              {hookError.details.map((d, i) => (
-                <li key={i}>{d}</li>
-              ))}
-            </ul>
+      <section className="bg-slate-950">
+        <div className="mx-auto max-w-5xl space-y-6 px-4 py-12 sm:px-6 md:px-8">
+          {/* Errors uit de hook */}
+          {hookError && (
+            <div className="text-sm text-red-200 bg-rose-900/40 border border-rose-500/60 rounded-lg p-3">
+              <div className="font-semibold">Fout bij opslaan</div>
+              <div className="mt-1">{hookError.message}</div>
+              {hookError.details && hookError.details.length > 0 && (
+                <ul className="list-disc ml-5 mt-2 text-rose-100">
+                  {hookError.details.map((d, i) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
           )}
-        </div>
-      )}
 
-      {/* Hint wanneer er al lokaal een profiel staat */}
-      {hasProfile && !hookError && (
-        <div className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3">
-          Er is al een lokaal profiel gevonden. Als je opnieuw indient, wordt het overschreven.
-        </div>
-      )}
-
-      <form onSubmit={onSubmit} className="space-y-6" data-testid="zzp-form">
-        <Card>
-          <CardSection
-            title="Contactgegevens"
-            subtitle="We gebruiken deze gegevens om je profiel op te zetten en contact te houden over opdrachten."
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="firstName">Voornaam</Label>
-                <Input id="firstName" name="firstName" required defaultValue={profile.firstName || ""} placeholder="Jan" />
-              </div>
-              <div>
-                <Label htmlFor="lastName">Achternaam</Label>
-                <Input id="lastName" name="lastName" required defaultValue={profile.lastName || ""} placeholder="Jansen" />
-              </div>
-              <div>
-                <Label htmlFor="email">E‑mail</Label>
-                <Input id="email" name="email" type="email" required defaultValue={profile.email || ""} placeholder="jan@example.com" />
-              </div>
+          {/* Hint wanneer er al lokaal een profiel staat */}
+          {hasProfile && !hookError && (
+            <div className="text-sm text-amber-200 bg-amber-900/30 border border-amber-500/50 rounded-lg p-3">
+              Er is al een lokaal profiel gevonden. Als je opnieuw indient, wordt het overschreven.
             </div>
-          </CardSection>
+          )}
 
-          <Divider />
-
-          <CardSection title="Zakelijke gegevens" subtitle="Vul je KvK en BTW-nummer in.">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="kvk">KvK-nummer</Label>
-                <Input id="kvk" name="kvk" required defaultValue={profile.kvk || ""} placeholder="12345678" />
-              </div>
-              <div>
-                <Label htmlFor="btw">BTW-nummer </Label>
-                <Input id="btw" name="btw" defaultValue={profile.btw || ""} placeholder="NL123456789B01" />
-              </div>
-            </div>
-          </CardSection>
-
-          <Divider />
-
-          <CardSection title="Profiel & certificaten" subtitle="Omschrijf je specialisaties en verwijs naar je certificaten.">
-            <div className="grid gap-4">
-              <div>
-                <Label htmlFor="skills">Specialisaties</Label>
-                <Input id="skills" name="skills" defaultValue={profile.skills || ""} placeholder="Industriële brandwacht, Mangatwacht, Gasmeting…" />
-              </div>
-              <div>
-                <Label htmlFor="certificateRef" hint="bestandsnaam of lijstje">Certificaten (referentie)</Label>
-                <Input id="certificateRef" name="certificateRef" defaultValue={profile.certificateRef || ""} placeholder="VCA_JanJansen.pdf; BHV_JanJansen.pdf" />
-                <div className="mt-3">
-                  <DropboxHint />
+          <form onSubmit={onSubmit} className="space-y-6" data-testid="zzp-form">
+            <Card className="bg-slate-900/80 border-slate-800">
+              <CardSection
+                title="Contactgegevens"
+                subtitle="We gebruiken deze gegevens om je profiel op te zetten en contact te houden over opdrachten."
+              >
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="firstName" className="text-slate-100">
+                      Voornaam
+                    </Label>
+                    <Input id="firstName" name="firstName" required defaultValue={profile.firstName || ""} placeholder="Jan" />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName" className="text-slate-100">
+                      Achternaam
+                    </Label>
+                    <Input id="lastName" name="lastName" required defaultValue={profile.lastName || ""} placeholder="Jansen" />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="text-slate-100">
+                      E‑mail
+                    </Label>
+                    <Input id="email" name="email" type="email" required defaultValue={profile.email || ""} placeholder="jan@example.com" />
+                  </div>
                 </div>
-              </div>
-              <div>
-                <Label htmlFor="notes">Opmerking</Label>
-                <Textarea id="notes" name="notes" rows={3} defaultValue={profile.notes || ""} placeholder="Beschikbaarheid, regio, dag/nacht/weekend…" />
-              </div>
+              </CardSection>
+
+              <Divider />
+
+              <CardSection title="Zakelijke gegevens" subtitle="Vul je KvK en BTW-nummer in.">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="kvk" className="text-slate-100">
+                      KvK-nummer
+                    </Label>
+                    <Input id="kvk" name="kvk" required defaultValue={profile.kvk || ""} placeholder="12345678" />
+                  </div>
+                  <div>
+                    <Label htmlFor="btw" className="text-slate-100">
+                      BTW-nummer{" "}
+                    </Label>
+                    <Input id="btw" name="btw" defaultValue={profile.btw || ""} placeholder="NL123456789B01" />
+                  </div>
+                </div>
+              </CardSection>
+
+              <Divider />
+
+              <CardSection title="Profiel & certificaten" subtitle="Omschrijf je specialisaties en verwijs naar je certificaten.">
+                <div className="grid gap-4">
+                  <div>
+                    <Label htmlFor="skills" className="text-slate-100">
+                      Specialisaties
+                    </Label>
+                    <Input id="skills" name="skills" defaultValue={profile.skills || ""} placeholder="Industriële brandwacht, Mangatwacht, Gasmeting…" />
+                  </div>
+                  <div>
+                    <Label htmlFor="certificateRef" hint="bestandsnaam of lijstje" className="text-slate-100">
+                      Certificaten (referentie)
+                    </Label>
+                    <Input id="certificateRef" name="certificateRef" defaultValue={profile.certificateRef || ""} placeholder="VCA_JanJansen.pdf; BHV_JanJansen.pdf" />
+                    <div className="mt-3">
+                      <DropboxHint />
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="notes" className="text-slate-100">
+                      Opmerking
+                    </Label>
+                    <Textarea id="notes" name="notes" rows={3} defaultValue={profile.notes || ""} placeholder="Beschikbaarheid, regio, dag/nacht/weekend…" />
+                  </div>
+                </div>
+              </CardSection>
+            </Card>
+
+            <div className="flex flex-wrap gap-3">
+              <Button type="submit" data-testid="zzp-submit" disabled={loading}>
+                {loading ? "Bezig met opslaan…" : "Aanmelding opslaan"}
+              </Button>
+              <LinkButton href="/" variant="ghost">
+                Annuleren
+              </LinkButton>
             </div>
-          </CardSection>
-        </Card>
-
-        <div className="flex flex-wrap gap-3">
-          <Button type="submit" data-testid="zzp-submit" disabled={loading}>
-            {loading ? "Bezig met opslaan…" : "Aanmelding opslaan"}
-          </Button>
-          <LinkButton href="/" variant="ghost">
-            Annuleren
-          </LinkButton>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{" "}
+              <a href="mailto:privacy@prosafetymatch.nl" className="underline text-emerald-200">
+                privacy@prosafetymatch.nl
+              </a>{" "}
+              of gebruik het formulier op onze{" "}
+              <a href="/privacy" className="underline text-emerald-200">
+                privacy-pagina
+              </a>
+              .
+            </p>
+          </form>
         </div>
-        <p className="text-xs text-gray-500 leading-relaxed">
-          Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{' '}
-          <a href="mailto:privacy@prosafetymatch.nl" className="underline text-gray-600">privacy@prosafetymatch.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-gray-600">privacy-pagina</a>.
-        </p>
-      </form>
-
-    </div>
+      </section>
+    </main>
   );
 }
 
