@@ -284,7 +284,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       style={
                         post.imagePosition
                           ? { objectPosition: post.imagePosition }
-                          : { objectPosition: "center 20%" }
+                          : { objectPosition: "center 35%" }
                       }
                     />
                   </div>
