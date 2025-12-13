@@ -21,7 +21,7 @@ export default function OpdrachtgeversPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-sm text-slate-200">
               Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
-              jullie zelf af — ProBrandwacht helpt om dat helder, uitlegbaar en praktisch te
+              jullie zelf af — ProSafetyMatch helpt om dat helder, uitlegbaar en praktisch te
               organiseren, zonder klassiek bureaumodel of ketenconstructie.
             </p>
     

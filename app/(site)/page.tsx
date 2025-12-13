@@ -125,7 +125,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="mb-8 space-y-3">
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Zo werkt ProBrandwacht in de praktijk
+              Zo werkt ProSafetyMatch straks in de praktijk
             </h2>
             <p className="text-sm text-slate-200 md:text-base">
               Geen ingewikkelde constructies, maar een helder proces waarin iedereen
@@ -139,7 +139,7 @@ export default function HomePage() {
                 Stap 1
               </div>
               <h3 className="text-sm font-semibold text-slate-50">
-                Je maakt je profiel als zelfstandige brandwacht aan
+                Je maakt je profiel als brandwacht aan
               </h3>
               <p className="text-sm text-slate-200">
                 Je vult ervaring, certificaten, voorkeuren en uurtarief in. Jij houdt
@@ -166,21 +166,9 @@ export default function HomePage() {
                 Directe match en afspraken op eigen voorwaarden
               </h3>
               <p className="text-sm text-slate-200">
-                Via ProBrandwacht kom je rechtstreeks met elkaar in contact. Je maakt
+                Via ProSafetyMatch kom je rechtstreeks met elkaar in contact. Je maakt
                 afspraken binnen duidelijke, DBA-proof kaders - zonder dat een bureau
                 ertussen zit.
-              </p>
-            </li>
-            <li className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <div className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                Stap 4
-              </div>
-              <h3 className="text-sm font-semibold text-slate-50">
-                Doorstromen naar ProSafetyMatch
-              </h3>
-              <p className="text-sm text-slate-200">
-                ProBrandwacht is de niche-voorloper. Met jouw profiel kun je straks
-                ook in de bredere safety-markt via ProSafetyMatch opdrachten vinden.
               </p>
             </li>
           </ol>

@@ -78,7 +78,7 @@ export default function VoorBrandwachtenPage() {
               Professioneel werken als zelfstandige brandwacht
             </h1>
             <p className="max-w-3xl text-sm text-slate-200 md:text-base">
-              ProBrandwacht is gebouwd voor brandwachten die écht zelfstandig willen ondernemen. Geen oude planningsstructuren, maar een
+              ProSafetyMatch wordt gebouwd voor brandwachten die écht zelfstandig willen ondernemen. Geen oude planningsstructuren, maar een
               moderne manier van samenwerken waarin jouw vakmanschap, autonomie en tarief centraal staan.
             </p>
           </div>
@@ -150,14 +150,14 @@ export default function VoorBrandwachtenPage() {
           </div>
 
           {/* Stappen */}
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
-            <div className="space-y-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
-              <p className="text-sm text-slate-200 md:text-base">
-                Via ProBrandwacht werk je nu al op deze manier, en straks via ProSafetyMatch ook volledig digitaal met planning, documentatie
-                en facturatie.
-              </p>
-            </div>
+        <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
+          <div className="space-y-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
+            <p className="text-sm text-slate-200 md:text-base">
+              Via ProSafetyMatch werk je straks volledig digitaal met planning, documentatie en facturatie. Sluit je nu aan voor pilots en
+              vroege toegang.
+            </p>
+          </div>
 
             <div className="grid gap-4 md:grid-cols-3">
               {steps.map((item, idx) => (
