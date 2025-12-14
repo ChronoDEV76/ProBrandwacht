@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import HeroBackground from "@/components/HeroBackground";
@@ -136,7 +137,52 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </div>
       </HeroBackground>
 
-      <div className="pt-6">
+      {/* MOBILE CTA BAR */}
+      <div className="fixed bottom-4 left-4 right-4 z-20 md:hidden">
+        <Link
+          href="/brandwacht-huren"
+          className="flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-300"
+        >
+          Brandwacht inhuren in {label}
+        </Link>
+      </div>
+
+      <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 pt-6 md:flex-row md:items-center">
+        <div className="flex-1 space-y-3">
+          <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
+            Brandwacht inhuren in {label}
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+            Zoek je straks een rijksgediplomeerde brandwacht in {label}? We tonen profielen met certificaten
+            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) en beschikbaarheid. Tarief, taken en gezag spreek je direct
+            af binnen DBA-proof kaders; geen detacheringsmarge.
+          </p>
+          <p className="text-sm text-slate-200 md:text-base">
+            Voor spoed schakelen we handmatig. Voor geplande inzet deel je locatie, risico&apos;s en duur
+            zodat beschikbare brandwachten gericht kunnen reageren.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              href="/brandwacht-huren"
+              className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
+            >
+              Brandwacht inhuren
+            </Link>
+          </div>
+        </div>
+        <div className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)]">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Voor opdrachtgevers
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-slate-200">
+            <li>- Direct zicht op certificaten en ervaring in {label}.</li>
+            <li>- DBA-proof afspraken zonder tussenlagen of verborgen tarieven.</li>
+            <li>- Optioneel handmatige koppeling bij spoed (ProBrandwacht Direct).</li>
+          </ul>
+        </div>
+      </section>
+
+      <div className="pt-2">
         <InfoCardsRow items={cards} />
       </div>
 

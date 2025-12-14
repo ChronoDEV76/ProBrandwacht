@@ -32,7 +32,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       title: 'ProSafetyMatch platform',
       body: (
         <>
-          Digitale omgeving (streefdatum Q1 2026) waarin vraag en aanbod elkaar vinden. DBA-proof, transparant en met optionele escrow (1–2%)
+          Digitale omgeving (streefdatum Q1 2026) waarin vraag en aanbod elkaar vinden. DBA-proof, transparant en met optionele escrow (1-2%)
           naast een vaste 10% platformfee.
         </>
       ),
@@ -68,8 +68,8 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             headingLevel="h2"
             body={
               <>
-                We ondersteunen met expertise je vandaag met zichtbaarheid en handmatige matching. Morgen brengt <span className="font-semibold">ProSafetyMatch</span>{' '}
-                vraag en aanbod digitaal samen – DBA-proof, transparant en zonder marge op het uurtarief.
+                Vandaag helpen we met zichtbaarheid en handmatige matching. Morgen brengt <span className="font-semibold">ProSafetyMatch</span>{' '}
+                vraag en aanbod digitaal samen - DBA-proof, transparant en zonder marge op het uurtarief.
               </>
             }
             primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Aanmelden als opdrachtgever' }}
@@ -81,6 +81,75 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
 
       <section className="mx-auto max-w-5xl space-y-10 px-4 pb-16">
         <InfoCardsRow items={cards} />
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-md shadow-black/30">
+            <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Zo huur je een rijksgediplomeerde brandwacht</h2>
+            <p className="text-sm text-slate-200">
+              Deel locatie, risico&apos;s, werkduur en benodigde certificaten. We koppelen je rechtstreeks aan beschikbare professionals, zodat jij
+              snel weet wie er op het werk staat.
+            </p>
+            <ul className="space-y-2 text-sm text-slate-200">
+              <li>- Industrie, events, infra of turnarounds: helder profiel per inzet.</li>
+              <li>- Tarief, taken en gezag spreek je direct af binnen DBA-proof kaders.</li>
+              <li>- Rijk(s)gediplomeerde brandwachten, gasmeting/mangatwacht beschikbaar.</li>
+            </ul>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/brandwacht-huren"
+                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
+              >
+                Brandwacht inhuren
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              >
+                Plan een intake
+              </Link>
+            </div>
+          </div>
+
+          <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-md shadow-black/30">
+            <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Eerlijke samenwerking zonder detacheringsconstructie</h2>
+            <p className="text-sm text-slate-200">
+              Geen marge op het uurtarief. Je ziet het profiel en spreekt direct met de brandwacht. Wij houden afspraken, certificaten en
+              verantwoordelijkheden zichtbaar zodat de inzet DBA-proof blijft.
+            </p>
+            <ul className="space-y-2 text-sm text-slate-200">
+              <li>- Transparante afspraken over gezag en taken.</li>
+              <li>- Optionele escrow 1-2% en vaste platformfee 10% (vanaf ProSafetyMatch).</li>
+              <li>- Ondersteuning bij raamwerk van opdrachten en toolbox-bijeenkomsten.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-md shadow-black/30">
+          <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">FAQ</h2>
+          <div className="space-y-4">
+            <div className="space-y-1">
+              <h3 className="text-sm font-semibold text-slate-100">Hoe snel kan ik een brandwacht inhuren?</h3>
+              <p className="text-sm text-slate-200">
+                Bij spoed (ProBrandwacht Direct) koppelen we handmatig. Voor geplande inzetten deel je je opdracht; beschikbare
+                brandwachten reageren direct met hun profiel en tarief.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-sm font-semibold text-slate-100">Wat betekent DBA-proof brandwacht?</h3>
+              <p className="text-sm text-slate-200">
+                Rollen, taken en tarieven staan vooraf vast tussen opdrachtgever en brandwacht. Geen schijnzelfstandigheid; afspraken
+                blijven transparant en herleidbaar.
+              </p>
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-sm font-semibold text-slate-100">Welke certificaten kan ik verwachten?</h3>
+              <p className="text-sm text-slate-200">
+                Rijk(s)gediplomeerde brandwacht, BHV, VCA, gasmeting/gasmeter, mangatwacht/buitenwacht en aanvullende industriële
+                veiligheidsopleidingen. Je ziet per profiel welke certificaten beschikbaar zijn.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </section>
     </main>
