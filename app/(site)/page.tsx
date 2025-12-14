@@ -107,16 +107,17 @@ export default function HomePage() {
       {/* POSITIONERING */}
       <section className="border-b border-slate-800 bg-slate-950">
         <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 md:py-12">
-          <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Hybride, praktijkgedreven platform</h2>
-          <p className="text-sm text-slate-200 md:text-base">
-            ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch is de technische, schaalbare laag. Samen vormen ze een hybride
-            platform dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe samenwerking, transparantie en
-            zelfstandigheid als uitgangspunt.
-          </p>
-          <p className="text-sm text-slate-200 md:text-base">
-            We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
-            feature-drop, wel duidelijke afspraken en DBA-bewust werken.
-          </p>
+            <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Hybride, praktijkgedreven platform</h2>
+            <p className="text-sm text-slate-200 md:text-base">
+              ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch is de technische, schaalbare laag. Samen vormen ze een hybride
+              platform dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe samenwerking, transparantie en
+              zelfstandigheid als uitgangspunt.
+            </p>
+            <p className="text-sm text-slate-200 md:text-base">
+              We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
+              feature-drop, wel duidelijke afspraken en DBA-bewust werken. Tarief en fee-inzicht zijn scenario’s en altijd afhankelijk van
+              context.
+            </p>
         </div>
       </section>
 
