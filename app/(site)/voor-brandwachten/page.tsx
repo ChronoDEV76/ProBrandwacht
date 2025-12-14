@@ -18,7 +18,7 @@ const perks = [
   },
   {
     title: "Transparantie zonder marges",
-    body: "Duidelijke uitleg over hoe de samenwerking werkt, zonder verborgen verdienmodellen of onduidelijke afspraken.",
+    body: "Duidelijke uitleg over hoe de samenwerking werkt, zonder verborgen verdienmodellen of onduidelijke afspraken; jij kunt zien en vastleggen wat normaal is.",
   },
   {
     title: "DBA-proof samenwerking",
@@ -37,11 +37,11 @@ const perks = [
 const differentiators = [
   {
     title: "We behandelen jou als ondernemer",
-    body: "Je bent geen uitvoerder in een keten, maar een zelfstandig professional met expertise en verantwoordelijkheid.",
+    body: "Je bent geen uitvoerder in een keten, maar een zelfstandig professional met expertise en verantwoordelijkheid; jij kiest en legt vast.",
   },
   {
     title: "Transparantie als basis",
-    body: "Geen marges in opdracht of tarief. Geen onduidelijkheid — alleen volwassen samenwerking.",
+    body: "Geen marges in opdracht of tarief. Geen onduidelijkheid — alleen volwassen samenwerking waarin afspraken zichtbaar blijven.",
   },
   {
     title: "Groeipad voor zelfstandigen",
@@ -155,7 +155,7 @@ export default function VoorBrandwachtenPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
             <p className="text-sm text-slate-200 md:text-base">
               We werken stap voor stap aan een transparante manier van samenwerken: jouw profiel, certificaten en afspraken blijven van jou,
-              zonder tussenlagen. Meld je aan om mee te bouwen en direct als zelfstandige brandwacht zichtbaar te zijn.
+              zonder tussenlagen. Meld je aan om mee te bouwen, direct zichtbaar te zijn en zelf te kiezen welke inzet je vastlegt.
             </p>
           </div>
 

@@ -192,12 +192,13 @@ export default function HomePage() {
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is de vakinhoudelijke laag, ProSafetyMatch de technische laag. We zoeken
               zelfstandige brandwachten én opdrachtgevers die samen een transparant platform
-              vormgeven: direct contact, DBA-bewust en zonder verborgen marges.
+              vormgeven: direct contact, DBA-bewust en zonder verborgen marges. Brandwachten houden
+              zelf zicht en regie; opdrachtgevers krijgen dezelfde helderheid.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               Aanmelden = invloed op hoe het platform werkt en hoe profielen, certificaten en
               afspraken zichtbaar blijven. Geen roadmap-slogan, wel ruimte om de samenwerking beter te
-              maken.
+              maken met duidelijk bewijs, geheugen en vaste afspraken.
             </p>
           </div>
           <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg shadow-black/40">

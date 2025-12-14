@@ -159,7 +159,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </p>
           <p className="text-sm text-slate-200 md:text-base">
             Spoed? Dan schakelen we handmatig. Geplande inzet? Deel locatie, risico&apos;s en duur zodat beschikbare brandwachten gericht kunnen
-            reageren. Alles zonder detacheringsmarges.
+            reageren. Alles zonder detacheringsmarges en met afspraken die zichtbaar blijven.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link

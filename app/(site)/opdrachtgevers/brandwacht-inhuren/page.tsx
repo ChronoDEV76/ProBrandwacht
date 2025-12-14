@@ -23,7 +23,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       body: (
         <>
           Handmatige matching en transparante communicatie over tarief, certificeringen en inzet. Geen marge op het uurtarief; jij schakelt
-          rechtstreeks met de zelfstandige brandwacht of leverancier.
+          rechtstreeks met de zelfstandige brandwacht of leverancier. Wat je afspreekt, ligt vast en blijft inzichtelijk.
         </>
       ),
     },
@@ -67,7 +67,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             headingLevel="h2"
             body={
               <>
-                We koppelen zichtbaar en zonder marge op het uurtarief. <span className="font-semibold">ProSafetyMatch</span> staat voor directe, DBA-proof afspraken tussen opdrachtgever en brandwacht.
+                We koppelen zichtbaar en zonder marge op het uurtarief. <span className="font-semibold">ProSafetyMatch</span> staat voor directe, DBA-proof afspraken tussen opdrachtgever en brandwacht: jij ziet wat er gebeurt en houdt continuïteit zonder ruis.
               </>
             }
             primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Aanmelden als opdrachtgever' }}
@@ -117,7 +117,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             <ul className="space-y-2 text-sm text-slate-200">
               <li>- Transparante afspraken over gezag en taken.</li>
               <li>- Eventuele escrow is optioneel en zichtbaar; geen verborgen toeslagen op uurtarief.</li>
-              <li>- Ondersteuning bij raamwerk van opdrachten en toolbox-bijeenkomsten.</li>
+              <li>- Ondersteuning bij raamwerk van opdrachten en toolbox-bijeenkomsten zodat niets vaag blijft.</li>
             </ul>
           </div>
         </div>
