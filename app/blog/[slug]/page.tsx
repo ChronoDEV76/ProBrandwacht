@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           height={450}
           sizes="(max-width:768px) 100vw, 768px"
           className="h-auto w-full max-h-[320px] object-cover"
-          style={{ objectPosition: 'center 20%' }}
+          style={{ objectPosition: 'center 0%' }}
           loading="lazy"
         />
         <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-800 px-4 py-3 text-xs text-slate-300">
