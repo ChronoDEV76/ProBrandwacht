@@ -3,7 +3,7 @@ import Bronnen from './Bronnen'
 export default function ConclusieMarkt() {
   return (
     <section className="my-8 space-y-4">
-      <p className="rounded-xl border border-slate-300 bg-white p-3 text-sm text-slate-900">
+      <p className="rounded-xl border border-slate-300 bg-slate-50 p-3 text-sm text-slate-900">
         De huidige tussenstructuur in de brandwachtmarkt legt risico’s bij de zelfstandige, terwijl tarieven nog steeds
         voortkomen uit loondienstmodellen. Dat remt motivatie en kwaliteit.
       </p>
