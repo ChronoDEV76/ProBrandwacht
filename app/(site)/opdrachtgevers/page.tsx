@@ -67,11 +67,11 @@ export default function OpdrachtgeversPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
               <h3 className="text-sm font-semibold text-emerald-300">
-                Transparante profielen
+                Transparante informatie
               </h3>
               <p className="text-sm text-slate-200">
-                In een oogopslag zicht op ervaring, certificaten en specialisaties van zelfstandige
-                brandwachten - zodat je gericht kunt kiezen.
+                In een oogopslag relevante informatie over ervaring en kwalificaties van zelfstandige
+                brandwachten - zonder anonieme dossiers.
               </p>
             </div>
             <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">

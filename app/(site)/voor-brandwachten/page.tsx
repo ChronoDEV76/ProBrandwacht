@@ -26,7 +26,7 @@ const perks = [
   },
   {
     title: "Toegang tot ProSafetyMatch",
-    body: "De digitale laag waarin we transparant werken met profielen, certificaten en afspraken — ontwikkeld samen met zelfstandige professionals.",
+    body: "De digitale laag waarin we transparant werken met de informatie die jij kiest en met afspraken die zichtbaar blijven — ontwikkeld samen met zelfstandige professionals.",
   },
   {
     title: "Geen verplichtingen",
@@ -50,9 +50,9 @@ const differentiators = [
 ];
 
 const steps = [
-  "Maak een profiel aan",
-  "Upload certificaten & ervaring",
-  "Ontvang opdrachten die aansluiten bij jouw vakmanschap",
+  "Maak je profiel aan",
+  "Deel relevante kwalificaties en voorkeuren",
+  "Ontvang voorstellen die passen bij jouw vakmanschap",
 ];
 
 export default function VoorBrandwachtenPage() {

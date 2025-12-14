@@ -17,9 +17,8 @@ export default function BelangenPage() {
               <br className="hidden md:block" /> professioneel en toekomstbestendig organiseren
             </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Dezelfde uitgangspunten zie je terug in alle pagina&apos;s, tools en in de
-            toekomstige ProSafetyMatch-functionaliteiten: transparantie, zelfstandigheid en
-            duidelijke, DBA-proof afspraken voor alle betrokken partijen.
+            Dezelfde uitgangspunten zie je terug in alle pagina&apos;s en tools: transparantie,
+            zelfstandigheid en duidelijke, DBA-proof afspraken voor alle betrokken partijen.
           </p>
     
 

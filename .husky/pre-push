@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+URL="${TONEGUARD_URL:-${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}}"
+
+echo "🛡️  Running tone guard..."
+npx ts-node scripts/tone-guard.ts --url="$URL" --paths=/,/opdrachtgevers,/voor-brandwachten,/belangen

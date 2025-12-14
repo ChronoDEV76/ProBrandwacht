@@ -161,8 +161,7 @@ export default function HomePage() {
               </h3>
               <ul className="space-y-2 text-sm text-slate-200">
                 <li>
-                  - Direct inzicht in profielen, certificaten en ervaring van
-                  zelfstandige brandwachten.
+                  - Relevante info over ervaring en kwalificaties zonder tussenlagen.
                 </li>
                 <li>
                   - Transparante afspraken en DBA-proof samenwerking - zonder
@@ -197,8 +196,8 @@ export default function HomePage() {
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               Aanmelden = invloed op hoe het platform werkt en hoe profielen, certificaten en
-              afspraken zichtbaar blijven. Geen roadmap-slogan, wel ruimte om de samenwerking beter te
-              maken met duidelijk bewijs, geheugen en vaste afspraken.
+              afspraken zichtbaar blijven. Geen roadmap-slogan; heldere afspraken, transparant
+              vastgelegd.
             </p>
           </div>
           <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg shadow-black/40">
