@@ -5,9 +5,9 @@
       {
         "id": "tarief-verdeling",
         "question": "Hoe wordt het tarief verdeeld bij een traditioneel bureau?",
-        "summary": "Bureaus houden vaak €15–€25 per uur over; zelfstandigen zien niet altijd dezelfde duidelijkheid.",
+        "summary": "Bureaus houden vaak €15–€25 per uur over; zelfstandigen zien niet altijd dezelfde duidelijkheid. Dit is indicatief en afhankelijk van sector en inzet.",
         "answer": [
-          "In de praktijk houden tussenpersonen vaak €15–€25 per uur over bij klanttarieven van €40–€60.",
+          "In de praktijk houden tussenpersonen vaak indicatief €15–€25 per uur over bij klanttarieven van €40–€60, afhankelijk van sector en inzet.",
           "Voorbeeld: opdrachtgever betaalt €50/u → €20 overhead, €30 voor de brandwacht.",
           "Industrie-, nacht- of weekendwerk kent hogere tarieven, maar de verdeling blijft zelden volledig zichtbaar."
         ],
@@ -34,9 +34,9 @@
       {
         "id": "lage-tarieven",
         "question": "Waarom lijkt €45 per uur prima, maar pakt het toch duur uit?",
-        "summary": "Een hoger tarief op papier kan alsnog scheef uitpakken in de praktijk.",
+        "summary": "Een hoger tarief op papier kan alsnog scheef uitpakken in de praktijk; dit is indicatief en contextafhankelijk.",
         "answer": [
-          "€40–€45/u klinkt goed, maar na bureau-marges, reistijd en kosten houdt de professional weinig netto over.",
+          "€40–€45/u klinkt goed, maar na bureau-marges, reistijd en kosten houdt de professional vaak minder netto over. Dit is afhankelijk van sector, reistijd en inzetduur.",
           "Dat zorgt voor lagere motivatie, meer uitval en uiteindelijk hogere kosten voor de opdrachtgever.",
           "Met het model achter ProSafetyMatch mikken we op eerlijke tarieven en gemotiveerde professionals, zonder marge op het uurtarief."
         ]
@@ -44,12 +44,12 @@
       {
         "id": "typen-brandwachten",
         "question": "Welke typen brandwachten zijn er?",
-        "summary": "We onderscheiden repressief, volledig zzp en industrieel.",
+        "summary": "We onderscheiden repressief, volledig zzp en industrieel (indicatief, afhankelijk van context).",
         "answer": [
           "Repressieve brandwachten uit korpsen/veiligheidsregio’s verdienen bij naast hun dienst.",
           "Zelfstandige brandwachten werken met rijksdiploma’s en organiseren hun opdrachten zelf.",
           "Industriële brandwachten hebben petrochemische certificaten en werken in risicovolle omgevingen.",
-          "ProSafetyMatch brengt alle profielen samen met volledig inzicht in fee en certificaten."
+          "ProSafetyMatch brengt profielen samen met inzicht in relevante informatie over fee en certificaten."
         ]
       },
       {
@@ -70,10 +70,10 @@
       {
         "id": "zzp-verdiensten",
         "question": "Wat verdien ik als zzp’er via ProSafetyMatch straks?",
-        "summary": "Je spreekt het tarief zelf af; indicatief liggen dagdiensten vaak rond €38–€45/u.",
+        "summary": "Je spreekt het tarief zelf af; indicatief liggen dagdiensten vaak rond €38–€45/u, afhankelijk van context.",
         "answer": [
-          "Je tarief spreek je rechtstreeks af met de opdrachtgever.",
-          "Veel dagdiensten liggen tussen €38–€45/u; nacht, weekend en industrie hoger.",
+          "Je tarief spreek je rechtstreeks af met de opdrachtgever; bedragen zijn indicatief.",
+          "Veel dagdiensten liggen tussen €38–€45/u; nacht, weekend en industrie liggen vaak hoger.",
           "We tonen straks alleen de 10% platformfee en het nettobedrag zodat je direct ziet wat overblijft. Geen gegarandeerde volumes."
         ]
       },
@@ -83,7 +83,7 @@
         "summary": "Ja, baseer je op CBS-loonkosten en spreek het vooraf af.",
         "answer": [
           "Indexeer minimaal jaarlijks op basis van CBS-loonkosten en inflatie.",
-          "Gebruik onze calculator als referentie.",
+          "Gebruik een calculator als referentie.",
           "Leg vooraf vast welke index of percentage je hanteert om discussie te voorkomen."
         ]
       },
@@ -93,7 +93,7 @@
         "summary": "Opdrachtgever en professional bepalen zelf wat er wordt betaald en wanneer.",
         "answer": [
           "Bij ProSafetyMatch bepalen opdrachtgever en professional samen hun betaalafspraken: wat er wordt betaald en wanneer.",
-          "Na een bevestigde uitvoering volgt directe uitbetaling volgens deze afspraken.",
+          "Na een bevestigde uitvoering volgt directe uitbetaling volgens deze afspraken (afhankelijk van overeengekomen termijnen).",
           "Is er een terechte klacht? Dan pauzeren we de betaling totdat beide partijen een oplossing hebben.",
           "ProSafetyMatch blijft onafhankelijk: we bemiddelen niet, houden geen marge achter en zorgen alleen voor een eerlijk, veilig en duidelijk proces."
         ]
@@ -111,7 +111,7 @@
       {
         "id": "probrandwacht-vs-prosafety",
         "question": "Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?",
-        "summary": "ProBrandwacht is de wervingssite (en directe aanvragen); ProSafetyMatch wordt het volledige platform.",
+        "summary": "ProBrandwacht is de wervingssite (en directe aanvragen); ProSafetyMatch wordt het digitale platform (gefaseerd, afhankelijk van ontwikkeling).",
         "answer": [
           "ProBrandwacht.nl bevat community, kennisbank, voorinschrijving en directe inzet via ProBrandwacht Direct.",
           "ProSafetyMatch lanceren we gefaseerd als digitaal platform met self-service planning, certificaat-checks, overeenkomsten, uren en facturatie.",
@@ -121,10 +121,10 @@
       {
         "id": "nu-vs-straks",
         "question": "Hoe regel ik nu een brandwacht en wat verandert er straks?",
-        "summary": "Nu via ProBrandwacht Direct (handmatige match); straks via ProSafetyMatch (digitaal platform).",
+        "summary": "Nu via ProBrandwacht Direct (handmatige match); straks gefaseerd via ProSafetyMatch (digitaal platform).",
         "answer": [
           "Nu: dien je aanvraag in via ProBrandwacht Direct en schakel rechtstreeks met zelfstandige brandwachten.",
-          "Straks: ProSafetyMatch wordt het digitale platform voor self-service planning, documenten, certificaatvalidatie en betalingen.",
+          "Straks: ProSafetyMatch wordt gefaseerd het digitale platform voor self-service planning, documenten, certificaatvalidatie en betalingen.",
           "De principes blijven gelijk: transparant, DBA-proof en zonder verborgen bureaumarge."
         ]
       },
