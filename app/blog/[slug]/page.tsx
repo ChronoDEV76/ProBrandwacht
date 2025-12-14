@@ -122,16 +122,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </header>
 
       <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-        <Image
-          src={heroImageSrc}
-          alt={heroAlt}
-          width={900}
-          height={450}
-          sizes="(max-width:768px) 100vw, 768px"
-          className="h-auto w-full max-h-[420px] object-cover"
-          style={{ objectPosition: 'center 60%' }}
-          loading="lazy"
-        />
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
+          <Image
+            src={heroImageSrc}
+            alt={heroAlt}
+            fill
+            sizes="(max-width:768px) 100vw, 768px"
+            className="object-cover"
+            style={{ objectPosition: 'center 60%' }}
+            loading="lazy"
+          />
+        </div>
         <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-800 px-4 py-3 text-xs text-slate-300">
           <span>Geplaatst: {publishedDate ? publishedDate.toLocaleDateString('nl-NL') : 'Onbekend'}</span>
           <span>Leestijd: {readingTimeLabel}</span>
