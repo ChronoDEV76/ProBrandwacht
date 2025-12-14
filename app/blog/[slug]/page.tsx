@@ -6,8 +6,6 @@ import { notFound } from 'next/navigation'
 
 import { getPostSlugs } from '@/lib/blog'
 import { getPostBySlug } from '@/lib/mdx'
-import { coreCities } from '@/lib/cities'
-import { getSignupUrl } from '@/lib/config'
 
 import Prose from '@/components/prose'
 import SeoStructuredData from '@/components/SeoStructuredData'
@@ -73,7 +71,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   const pageUrl = `https://www.probrandwacht.nl/blog/${params.slug}`
-  const opdrachtgeverSignupUrl = getSignupUrl()
   const publishedDate = parseFrontmatterDate(post.frontmatter.date)
   const articleImage = toAbsoluteUrl(
     (post.frontmatter.ogImage as string | undefined) || (post.frontmatter.image as string | undefined) || '/og-home.webp',
@@ -164,38 +161,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       {/* CTA */}
       <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href={opdrachtgeverSignupUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center rounded-md bg-emerald-400 px-5 py-3 text-sm font-medium text-slate-950 hover:bg-emerald-300"
+        <Link
+          href="/opdrachtgevers"
+          prefetch={false}
+          className="inline-flex items-center rounded-md bg-emerald-400 px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-emerald-300"
         >
-          Zet de nieuwe standaard: meld je aan als opdrachtgever
-        </a>
+          Plan een intake als opdrachtgever
+        </Link>
       </div>
-
-      {/* Stadspagina-links (optioneel) */}
-      {!post.frontmatter.hideCityLinks && (
-        <section className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-          <h2 className="text-lg font-semibold text-slate-50">Direct naar een stadspagina</h2>
-          <p className="mt-1 text-sm text-slate-200">
-            Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en kostenberekening met opdrachtgevers.
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {coreCities.map((city) => (
-              <li key={city.slug}>
-                <Link
-                  href="/opdrachtgevers"
-                  prefetch={false}
-                  className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
-                >
-                  Brandwacht inhuren {city.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
     </article>
   )

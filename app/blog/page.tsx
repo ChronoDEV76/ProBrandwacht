@@ -218,6 +218,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
               We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
             </p>
+            <p className="max-w-3xl text-sm text-slate-300 md:text-[15px]">
+              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel transparante onderbouwing.
+            </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/zzp/aanmelden"
