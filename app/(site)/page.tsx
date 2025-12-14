@@ -280,35 +280,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="border-b border-slate-800 bg-slate-950/90">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-14">
-          <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">Veelgestelde vragen</h2>
-          <dl className="mt-6 space-y-6">
-            <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <dt className="text-sm font-semibold text-slate-100">
-                Hoe huur ik een brandwacht in via ProBrandwacht?
-              </dt>
-              <dd className="text-sm text-slate-200">
-                Via de opdrachtkaart deel je locatie, risico&apos;s, duur en gewenste certificaten. We
-                koppelen je rechtstreeks aan beschikbare brandwachten; afspraken blijven DBA-proof en
-                inzichtelijk.
-              </dd>
-            </div>
-            <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <dt className="text-sm font-semibold text-slate-100">
-                Wat betekent DBA-proof brandwacht?
-              </dt>
-              <dd className="text-sm text-slate-200">
-                Rollen, verantwoordelijkheden en tarieven staan vooraf vast en worden direct tussen
-                opdrachtgever en brandwacht afgestemd. Geen schijnzelfstandigheid, wel transparante
-                afspraken.
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
       {/* VAKBOND-STYLE SLOT */}
       <section className="bg-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
