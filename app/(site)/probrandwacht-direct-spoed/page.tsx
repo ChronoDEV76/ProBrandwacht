@@ -35,8 +35,8 @@ export default function ProbrandwachtDirectSpoedPage() {
               netwerk, binnen heldere afspraken en zonder onnodige tussenlagen.
             </p>
             <p className="text-xs text-slate-400 md:text-sm">
-              Dit kanaal is bewust eenvoudig gehouden: direct contact, transparante afspraken en een korte lijn met de brandwacht. We nemen
-              de praktijkervaring mee om de aanpak scherp te houden.
+              Deze spoed-funnel is een vroege voorloper van de directe opdrachtmatching in ProSafetyMatch. Door nu al je aanvragen via dit
+              kanaal te doen, help je ons de markt slimmer en eerlijker in te richten.
             </p>
           </div>
         </div>
@@ -81,10 +81,11 @@ export default function ProbrandwachtDirectSpoedPage() {
                 </li>
                 <li>
                   <span className="font-semibold text-slate-100">
-                    4. Ervaring houdt de aanpak scherp
+                    4. Ervaring wordt input voor ProSafetyMatch
                   </span>
                   <br />
-                  We leren van elke spoedaanvraag om de aanpak helder en DBA-bewust te houden voor zowel brandwachten als opdrachtgevers.
+                  De manier waarop jouw spoedaanvraag verloopt, gebruiken we als input om ProSafetyMatch verder te ontwikkelen tot een breed
+                  inzetbaar safety-platform.
                 </li>
               </ol>
 
@@ -131,13 +132,13 @@ export default function ProbrandwachtDirectSpoedPage() {
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h2 className="text-xl font-semibold md:text-2xl">
-              Spoed nu, samenwerking beter maken
+              Spoed nu, structurele verbetering straks
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Met ProBrandwacht Direct Spoed los je acute bezetting op, terwijl je tegelijkertijd
               bijdraagt aan bredere professionalisering van de markt. De inzichten uit deze
-              aanvragen gebruiken we om afspraken helder te houden en samenwerking gelijkwaardig te
-              maken.
+              aanvragen nemen we mee naar ProSafetyMatch, zodat brand- en safety-compliance
+              structureel beter georganiseerd kan worden.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Zo combineren we{' '}
