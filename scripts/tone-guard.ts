@@ -3,26 +3,19 @@
 /**
  * 🛡️ Tone Guard — ProBrandwacht / ProSafetyMatch
  *
- * Doel (check-before-upload):
- * - Scan alleen de LIVE app content (HTML -> tekst) op opgegeven routes.
- * - Flag copy-risico’s:
- *   1) Dubbele woorden / herhaalde frasen ("zelfstandig zelfstandig zelfstandig", etc.)
- *   2) Toekomst-features / roadmap leakage (E2E chat, logging, spoed, addendum, etc.)
- *   3) Bureau-/control-taal ("wij regelen", "ontzorgen", "bemiddelen") die niet klopt met positionering
- *   4) Schreeuwerige marketing (optioneel mild)
- *
- * Output:
- * - Kort, alleen issues (default)
- * - JSON report in /reports/tone-guard.json
+ * Doel:
+ * - Check alleen de “app-tekst” (HTML -> plain text) op tone-signalen vóór publish
+ * - Detecteer: bureau/control-taal, feature-leaks, schreeuw/oorlogstaal, te stellige beloftes
+ * - Extra guard: als er "calculator/vergelijking" copy staat, dan moet er ook nuance/disclaimer staan
  *
  * CLI:
  *   npx ts-node scripts/tone-guard.ts --url=http://localhost:3000 --paths=/,/opdrachtgevers,/voor-brandwachten,/belangen
- * Options:
+ *
+ * Opties:
  *   --onlyIssues=true|false   (default true)
  *   --verbose=true|false      (default false)
- *   --json=true|false         (default true)
  *   --maxSnippets=3           (default 3)
- *   --failOn404=true|false    (default false)
+ *   --report=reports/tone-guard.json (default)
  */
 
 import fs from "node:fs";
@@ -31,28 +24,51 @@ import http from "node:http";
 import https from "node:https";
 import { URL } from "node:url";
 
-type Severity = "INFO" | "WARN" | "BLOCK";
-type IssueType = "DUPLICATE" | "REPEAT_PHRASE" | "ROADMAP_LEAK" | "BUREAU_TONE" | "SHOUTY";
+type Level = "ERROR" | "WARN" | "INFO";
 
-type Issue = {
-  severity: Severity;
-  type: IssueType;
-  label: string;
+type Rule = {
+  id: string;
+  level: Level;
+  title: string;
+  why: string;
+  re: RegExp;
+  replacement?: string; // wording suggestion
+  allowIfAlsoMatchesAny?: RegExp[]; // if these are present, don't flag (escape hatch)
+};
+
+type Hit = {
+  ruleId: string;
+  level: Level;
+  title: string;
+  match: string;
   count: number;
   snippets: string[];
-  suggestion?: string;
+  replacement?: string;
 };
 
 type PageReport = {
   path: string;
   url: string;
-  status: number;
+  httpStatus?: number;
   words: number;
-  issues: Issue[];
+  issues: Hit[];
+  notes: string[];
+};
+
+type RunReport = {
+  meta: {
+    timestamp: string;
+    base: string;
+    paths: string[];
+    onlyIssues: boolean;
+    verbose: boolean;
+  };
+  pages: PageReport[];
   summary: {
-    blocks: number;
-    warns: number;
-    infos: number;
+    pagesChecked: number;
+    pagesWithIssues: number;
+    errors: number;
+    warnings: number;
   };
 };
 
@@ -60,26 +76,33 @@ function parseArgs(argv: string[]) {
   const args: Record<string, string | boolean> = {};
   for (const part of argv.slice(2)) {
     if (!part.startsWith("--")) continue;
-    const [k, v] = part.replace(/^--/, "").split("=");
-    args[k] = v === undefined ? true : v;
+    const [k, ...rest] = part.replace(/^--/, "").split("=");
+    args[k] = rest.length ? rest.join("=") : true;
   }
 
-  const url = String(args.url || "http://localhost:3000").replace(/\/$/, "");
+  const url = String(args.url || "");
+  if (!url) {
+    console.error("❌ Gebruik: --url=http://localhost:3000");
+    process.exit(1);
+  }
+
+  const base = url.replace(/\/$/, "");
   const paths = String(args.paths || "/")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
 
-  const onlyIssues = !(args.onlyIssues === "false" || args.onlyIssues === false);
-  const verbose = Boolean(args.verbose === "true" || args.verbose === true);
-  const json = !(args.json === "false" || args.json === false);
+  const onlyIssues =
+    args.onlyIssues === false || args.onlyIssues === "false" ? false : true;
+  const verbose = args.verbose === true || args.verbose === "true";
   const maxSnippets = Number(args.maxSnippets ?? 3) || 3;
-  const failOn404 = Boolean(args.failOn404 === "true" || args.failOn404 === true);
+  const reportPath = String(args.report || "reports/tone-guard.json");
 
-  return { url, paths, onlyIssues, verbose, json, maxSnippets, failOn404 };
+  return { base, paths, onlyIssues, verbose, maxSnippets, reportPath };
 }
 
-function fetchUrl(u: string): Promise<{ status: number; body: string }> {
+/** Fetch HTML (works even if global fetch isn't present / to keep it deterministic) */
+function fetchHtml(u: string): Promise<{ status: number; body: string }> {
   return new Promise((resolve, reject) => {
     const target = new URL(u);
     const lib = target.protocol === "https:" ? https : http;
@@ -88,41 +111,48 @@ function fetchUrl(u: string): Promise<{ status: number; body: string }> {
       u,
       {
         headers: {
-          "User-Agent": "ProBrandwacht-ToneGuard/1.0",
+          "User-Agent": "ToneGuard/1.0 (ProBrandwacht/ProSafetyMatch)",
           Accept: "text/html,application/xhtml+xml",
           "Accept-Language": "nl-NL,nl;q=0.9,en;q=0.8",
         },
       },
       (res) => {
+        const status = res.statusCode || 0;
         let data = "";
         res.setEncoding("utf8");
         res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => resolve({ status: res.statusCode || 0, body: data }));
+        res.on("end", () => resolve({ status, body: data }));
       }
     );
-
     req.on("error", reject);
   });
 }
 
-/** simpele HTML → text; genoeg voor tone checks */
+/** HTML -> plain text (enough for tone check) */
 function htmlToText(html: string): string {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<\/(p|div|li|h1|h2|h3|h4|br|section|article|header|footer|main)>/gi, "\n")
+    .replace(/<\/(p|div|li|h1|h2|h3|h4|h5|br|section|article|header|footer|main|nav)>/gi, "\n")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
-    .replace(/&#39;/g, "'")
     .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function countWords(text: string): number {
+function wordCount(text: string): number {
   const parts = text.split(/\s+/).filter(Boolean);
   return parts.length;
+}
+
+function countMatches(text: string, re: RegExp): number {
+  re.lastIndex = 0;
+  let c = 0;
+  while (re.exec(text)) c++;
+  return c;
 }
 
 function collectSnippets(text: string, re: RegExp, maxSnippets: number): string[] {
@@ -140,400 +170,307 @@ function collectSnippets(text: string, re: RegExp, maxSnippets: number): string[
   return snippets;
 }
 
-function mkIssue(params: Issue): Issue {
-  return {
-    severity: params.severity,
-    type: params.type,
-    label: params.label,
-    count: params.count,
-    snippets: params.snippets,
-    suggestion: params.suggestion,
-  };
+/**
+ * ✅ EXACTE TONE RULES
+ * - Bureau/control-taal (wij regelen, ontzorgen, bemiddelen)
+ * - Feature-leaks (E2E chat, logs, addendum, spoeduitvraag, etc.)
+ * - Oorlogsretoriek / bureau-bashing
+ * - Te stellige beloftes (zekerheden)
+ * - Calculator nuance guard (als je vergelijkt, moet je nuanceren)
+ */
+const RULES: Rule[] = [
+  // 1) Bureau/control-taal (die jij expliciet NIET wilt)
+  {
+    id: "bureau-wij-regelen",
+    level: "ERROR",
+    title: "‘Wij regelen’ / ‘wij nemen over’ framing",
+    why: "Je positioneert als platform + zelf-regie. ‘Wij regelen/ontzorgen/plannen’ klinkt als bureau.",
+    re: /\b(wij\s+regelen|we\s+regelen|wij\s+nemen\s+over|we\s+nemen\s+over|wij\s+plannen|we\s+plannen|wordt\s+ingepland|aansturen)\b/gi,
+    replacement: "‘Jij houdt regie; het platform faciliteert matching, inzicht en tooling.’",
+  },
+  {
+    id: "bureau-ontzorgen",
+    level: "ERROR",
+    title: "‘Ontzorgen’ / ‘bemiddelen’ / ‘bemiddeling’",
+    why: "ProSafetyMatch is geen bemiddelingsbureau; ‘ontzorgen/bemiddeling’ triggert dat frame.",
+    re: /\b(ontzorg(en|t|ing)|bemiddel(ing|en|t)|tussenpersoon|tussenpartij|detacheerder|uitzendbureau)\b/gi,
+    replacement: "Gebruik: ‘directe afspraken’, ‘platform faciliteert’, ‘transparant proces’, ‘zelfstandig’.",
+    // Escape hatch: als je expliciet zegt "geen bemiddelingsbureau" mag het soms
+    allowIfAlsoMatchesAny: [/\b(geen\s+bemiddelingsbureau|geen\s+klassiek\s+bureau|zonder\s+bureau)\b/i],
+  },
+
+  // 2) Feature-leaks (ontwikkelfase: NIET concreet maken)
+  {
+    id: "feature-leak-chat-e2e",
+    level: "ERROR",
+    title: "Feature-leak: (E2E) chat / dashboard / telefoon",
+    why: "Roadmap/features niet noemen in publieke copy (kopieerbaar + belofte-risico).",
+    re: /\b(e2e|end-?to-?end|beveiligd\s+chatten|chatten\s+in\s+het\s+dashboard|chat\s+in\s+het\s+dashboard|op\s+je\s+telefoon)\b/gi,
+    replacement: "Hou het abstract: ‘tooling voor duidelijke afspraken en samenwerking’.",
+  },
+  {
+    id: "feature-leak-logging-dispuut",
+    level: "ERROR",
+    title: "Feature-leak: logging / uniek ID / dispuut",
+    why: "Juridische/operationele details niet lekken in copy tijdens ontwikkeling.",
+    re: /\b(gelogd|chatgegevens|uniek\s+id|opvraagbaar|dispuut|geschil|audit[-\s]?trail)\b/gi,
+    replacement: "Hou het abstract: ‘transparantie en vastlegging van afspraken (waar passend)’.",
+  },
+  {
+    id: "feature-leak-spoed-addendum",
+    level: "ERROR",
+    title: "Feature-leak: spoeduitvraag / addendum / contract-flow",
+    why: "Niet noemen wat straks precies kan (spoed, addendum, basisovereenkomst).",
+    re: /\b(spoed\s*uitvraag|spoeduitvraag|addendum|basis\s*overeenkomst|overeenkomst\s+genereren|contract\s+in\s+het\s+platform)\b/gi,
+    replacement: "Gebruik: ‘ondersteunende tooling voor samenwerking en afspraken’.",
+  },
+
+  // 3) Bureau-bashing / oorlogstaal
+  {
+    id: "war-bureaus-fout",
+    level: "WARN",
+    title: "Bureau-bashing / polariserende taal",
+    why: "Je wilt volwassen, verbindend blijven (brug), zonder ‘oorlog’ frame.",
+    re: /\b(bureaus?\s+(pakken|misleiden|zijn\s+fout|verzieken|stelen)|klanten\s+stelen|slager\s+keurt\s+zijn\s+eigen\s+vlees)\b/gi,
+    replacement: "Herformuleer naar: ‘we kiezen voor transparantie, directheid en betere samenwerking’.",
+  },
+  {
+    id: "war-scheld-sneer",
+    level: "WARN",
+    title: "Schreeuwerige of sneer-taal",
+    why: "Je wil rust + volwassenheid uitstralen, geen aanval.",
+    re: /\b(schreeuw(erd|en)|van\s+de\s+daken\s+schreeuwen|bijdehand|gezeik|dwars\s+liggen)\b/gi,
+    replacement: "Houd het neutraal: ‘wij bouwen aan een rustiger, transparanter proces’.",
+  },
+
+  // 4) Te stellige beloftes (claim-risico)
+  {
+    id: "absolute-promises",
+    level: "WARN",
+    title: "Te absolute beloftes (‘altijd’, ‘zeker’, ‘binnen enkele minuten’)",
+    why: "Voorkom harde beloftes die je (nog) niet kunt garanderen.",
+    re: /\b(altijd|100%|zeker|gegarandeerd|binnen\s+enkele\s+minuten|direct\s+beschikbaar|nooit)\b/gi,
+    replacement: "Gebruik nuance: ‘vaak’, ‘meestal’, ‘waar mogelijk’, ‘indicatief’, ‘afhankelijk van beschikbaarheid’.",
+  },
+];
+
+/**
+ * Calculator/vergelijking nuance guard:
+ * - Als de page tekst duidelijke ‘vergelijking/uurloon/bureau/fee’ signalen bevat,
+ *   dan moet er óók minstens één disclaimer/nuance term staan.
+ */
+const CALC_TRIGGER = /\b(uurtarief|tarief|uur\s*prijs|platformfee|fee|via\s+bureau|t\.o\.v\.|verschil|scenario|indicatie|pdf[-\s]?rapport)\b/i;
+
+const CALC_DISCLAIMERS = [
+  /\bindicatie(f)?\b/i,
+  /\bscenario\b/i,
+  /\bschatting\b/i,
+  /\b(geen\s+garantie|indicatief)\b/i,
+  /\bafhankelijk\s+van\b/i,
+  /\bmarktconform\b/i,
+  /\bvoorbehoud\b/i,
+];
+
+function hasAny(text: string, res: RegExp[]) {
+  return res.some((r) => r.test(text));
 }
 
-/** 1) dubbele woorden: "x x" of "zelfstandig zelfstandig zelfstandig" */
-function findDuplicateWords(text: string, maxSnippets: number): Issue[] {
-  const issues: Issue[] = [];
+function applyRules(text: string, maxSnippets: number): { issues: Hit[]; notes: string[] } {
+  const issues: Hit[] = [];
+  const notes: string[] = [];
 
-  // 2x hetzelfde woord achter elkaar
-  const reDouble = /\b([a-zà-ÿ]+)\s+\1\b/gi;
-  const hits2: Record<string, number> = {};
-  reDouble.lastIndex = 0;
-  let m: RegExpExecArray | null;
-  while ((m = reDouble.exec(text)) !== null) {
-    const w = m[1].toLowerCase();
-    hits2[w] = (hits2[w] || 0) + 1;
+  for (const rule of RULES) {
+    const count = countMatches(text, rule.re);
+    if (!count) continue;
+
+    // allowIfAlsoMatchesAny = escape hatch (e.g. "geen bemiddelingsbureau")
+    if (rule.allowIfAlsoMatchesAny && hasAny(text, rule.allowIfAlsoMatchesAny)) {
+      notes.push(`Rule ${rule.id} matched but was allowed due to explicit counter-framing.`);
+      continue;
+    }
+
+    const snippets = collectSnippets(text, rule.re, maxSnippets);
+    // for reporting: show the first actual match (best-effort)
+    rule.re.lastIndex = 0;
+    const m = rule.re.exec(text);
+    const match = m?.[0] ?? "(match)";
+
+    issues.push({
+      ruleId: rule.id,
+      level: rule.level,
+      title: rule.title,
+      match,
+      count,
+      snippets,
+      replacement: rule.replacement,
+    });
   }
 
-  // 3x of meer: zelfstandig zelfstandig zelfstandig
-  const reTriple = /\b([a-zà-ÿ]+)(?:\s+\1){2,}\b/gi;
-  const triples: Record<string, number> = {};
-  reTriple.lastIndex = 0;
-  while ((m = reTriple.exec(text)) !== null) {
-    const w = m[1].toLowerCase();
-    triples[w] = (triples[w] || 0) + 1;
+  // Calculator nuance guard
+  if (CALC_TRIGGER.test(text)) {
+    const ok = hasAny(text, CALC_DISCLAIMERS);
+    if (!ok) {
+      issues.push({
+        ruleId: "calc-missing-disclaimer",
+        level: "WARN",
+        title: "Calculator/vergelijking zonder nuance/disclaimer",
+        match: "calculator/vergelijking copy",
+        count: 1,
+        snippets: ["(Trigger gevonden: tarief/fee/bureau/verschil, maar geen disclaimer-term)"],
+        replacement: "Voeg 1–2 termen toe zoals: ‘indicatief’, ‘scenario’, ‘afhankelijk van’, ‘marktconform’, ‘geen garantie’.",
+      });
+    }
   }
 
-  for (const [w, c] of Object.entries(triples)) {
-    const re = new RegExp(`\\b(${escapeRegExp(w)})(?:\\s+\\1){2,}\\b`, "gi");
-    issues.push(
-      mkIssue({
-        severity: "BLOCK",
-        type: "DUPLICATE",
-        label: `Herhaald woord 3x+: "${w}"`,
-        count: c,
-        snippets: collectSnippets(text, re, maxSnippets),
-        suggestion: `Vervang door 1x "${w}" (en herlees de zin).`,
-      })
-    );
-  }
-
-  // Alleen report 2x duplicates als ze vaak voorkomen of “gevoelige woorden” zijn
-  const sensitive = new Set(["zelfstandig", "transparante", "samenwerking", "brandwacht"]);
-  for (const [w, c] of Object.entries(hits2)) {
-    if (c < 2 && !sensitive.has(w)) continue;
-    const re = new RegExp(`\\b(${escapeRegExp(w)})\\s+\\1\\b`, "gi");
-    issues.push(
-      mkIssue({
-        severity: sensitive.has(w) ? "BLOCK" : "WARN",
-        type: "DUPLICATE",
-        label: `Dubbel woord: "${w} ${w}"`,
-        count: c,
-        snippets: collectSnippets(text, re, maxSnippets),
-        suggestion: `Haal één "${w}" weg.`,
-      })
-    );
-  }
-
-  return issues;
+  return { issues, notes };
 }
 
-/** 2) herhaalde frases (2-6 woorden) zoals "in transparante samenwerking" herhaald */
-function findRepeatedPhrases(text: string, maxSnippets: number): Issue[] {
-  const issues: Issue[] = [];
+function printPage(pr: PageReport, verbose: boolean) {
+  console.log(`\n📄 ${pr.url}`);
 
-  // hard-coded bekende pijnpunten
-  const patterns: { label: string; re: RegExp; suggestion: string; severity: Severity }[] = [
-    {
-      label: `Herhaalde frase: "in transparante samenwerking"`,
-      re: /\bin\s+transparante\s+samenwerking\b(?:\s+\bin\s+transparante\s+samenwerking\b)+/gi,
-      suggestion: `Gebruik "in transparante samenwerking" één keer. Herstructureer de zin.`,
-      severity: "BLOCK",
-    },
-    {
-      label: `Herhaalde frase: "zelfstandig brandwacht"`,
-      re: /\bzelfstandig\s+brandwacht\b(?:\s+\bzelfstandig\s+brandwacht\b)+/gi,
-      suggestion: `Gebruik "zelfstandig brandwacht" één keer. Herlees kop/zin.`,
-      severity: "BLOCK",
-    },
-  ];
-
-  for (const p of patterns) {
-    const snippets = collectSnippets(text, p.re, maxSnippets);
-    if (!snippets.length) continue;
-    issues.push(
-      mkIssue({
-        severity: p.severity,
-        type: "REPEAT_PHRASE",
-        label: p.label,
-        count: snippets.length,
-        snippets,
-        suggestion: p.suggestion,
-      })
-    );
-  }
-
-  return issues;
-}
-
-/** 3) roadmap leak: toekomstfeatures / te specifieke product-beloftes */
-function findRoadmapLeaks(text: string, maxSnippets: number): Issue[] {
-  const issues: Issue[] = [];
-
-  const leaks: { label: string; re: RegExp; suggestion: string }[] = [
-    {
-      label: "Toekomstfeature: E2E chat / beveiligd chatten",
-      re: /\b(e2e|end[-\s]?to[-\s]?end)\b.*\b(chat|chatten)\b|\b(beveiligd)\s+chatten\b/gi,
-      suggestion: `Vervang door: "Je stemt direct af met de professional." (zonder feature-details)`,
-    },
-    {
-      label: "Toekomstfeature: logging / uniek ID / dispute bewijs",
-      re: /\b(gelogd|loggen|loggegevens|uniek(e)?\s+id|dispuut|bewijs)\b/gi,
-      suggestion: `Laat weg in ontwikkelfase. Houd het op: "Heldere afspraken, transparant vastgelegd."`,
-    },
-    {
-      label: "Toekomstfeature: spoed-uitvraag",
-      re: /\b(spoed[-\s]?uitvraag|spoedaanvraag|binnen\s+enkele\s+minuten)\b/gi,
-      suggestion: `Vervang door: "Snel inzicht in beschikbaarheid." (zonder tijden/claims)`,
-    },
-    {
-      label: "Toekomstfeature: addendum / basisovereenkomst details",
-      re: /\b(addendum|basisovereenkomst|modelovereenkomst)\b/gi,
-      suggestion: `Alleen noemen als het al live is. Anders: "Duidelijke afspraken tussen partijen."`,
-    },
-    {
-      label: "Toekomstfeature: dashboard/app telefoon claim",
-      re: /\b(dashboard|op\s+je\s+telefoon|mobiel)\b/gi,
-      suggestion: `Vervang door: "Via het platform." (geen kanaal/details)`,
-    },
-    {
-      label: "Toekomstfeature: profielen op basis van tarief/certificaten/regio (te concreet)",
-      re: /\b(beschikbare\s+profielen|op\s+basis\s+van\s+tarief|certificaten|regio)\b/gi,
-      suggestion: `Vervang door: "Je vindt passende professionals op basis van relevante criteria."`,
-    },
-  ];
-
-  for (const l of leaks) {
-    const snippets = collectSnippets(text, l.re, maxSnippets);
-    if (!snippets.length) continue;
-
-    issues.push(
-      mkIssue({
-        severity: "BLOCK",
-        type: "ROADMAP_LEAK",
-        label: l.label,
-        count: snippets.length,
-        snippets,
-        suggestion: l.suggestion,
-      })
-    );
-  }
-
-  return issues;
-}
-
-/** 4) bureau-/control-taal die strijdig is met “platform + tooling” */
-function findBureauTone(text: string, maxSnippets: number): Issue[] {
-  const issues: Issue[] = [];
-
-  const terms: { label: string; re: RegExp; suggestion: string; severity: Severity }[] = [
-    {
-      label: `Bureau-taal: "wij regelen"`,
-      re: /\bwij\s+regel(en|t)\b/gi,
-      suggestion: `Vervang door: "Je regelt het rechtstreeks; wij bieden tooling en inzicht."`,
-      severity: "BLOCK",
-    },
-    {
-      label: `Bureau-taal: "ontzorgen"`,
-      re: /\bontzorg(en|t|ing)\b/gi,
-      suggestion: `Vervang door: "De professional voert uit; het platform ondersteunt met tooling."`,
-      severity: "BLOCK",
-    },
-    {
-      label: `Bureau-taal: "bemiddelen/bemiddeling"`,
-      re: /\bbemiddel(ing|en|t)\b/gi,
-      suggestion: `Vervang door: "online matching + tooling voor directe samenwerking."`,
-      severity: "BLOCK",
-    },
-    {
-      label: `Bureau-taal: "wij plannen / ingepland"`,
-      re: /\b(wij\s+plann(en|t)|wordt\s+ingepland|ingepland)\b/gi,
-      suggestion: `Vervang door: "Partijen stemmen direct af; jij houdt regie."`,
-      severity: "WARN",
-    },
-    {
-      label: `Bureau-taal: "tussenpersoon/tussenpartij" (kan oké zijn, maar check context)`,
-      re: /\b(tussenpersoon|tussenpartij)\b/gi,
-      suggestion: `Context check: liever "platform" i.p.v. "tussenpersoon".`,
-      severity: "WARN",
-    },
-  ];
-
-  for (const t of terms) {
-    const snippets = collectSnippets(text, t.re, maxSnippets);
-    if (!snippets.length) continue;
-    issues.push(
-      mkIssue({
-        severity: t.severity,
-        type: "BUREAU_TONE",
-        label: t.label,
-        count: snippets.length,
-        snippets,
-        suggestion: t.suggestion,
-      })
-    );
-  }
-
-  return issues;
-}
-
-/** 5) optioneel: schreeuwerig taalgebruik (mild, vooral voor consistentie) */
-function findShouty(text: string, maxSnippets: number): Issue[] {
-  const issues: Issue[] = [];
-
-  // veel caps / “beste / goedkoopste / nummer 1”
-  const shout: { label: string; re: RegExp; suggestion: string }[] = [
-    {
-      label: "Schreeuwerig: superlatieven / claims",
-      re: /\b(altijd|nooit|nummer\s*1|de\s+beste|goedkoopste|gegarandeerd|100%|beste\s+keuze)\b/gi,
-      suggestion: `Maak het feitelijk: "transparant", "direct", "zonder bureau", "met tooling".`,
-    },
-  ];
-
-  for (const s of shout) {
-    const snippets = collectSnippets(text, s.re, maxSnippets);
-    if (!snippets.length) continue;
-    issues.push(
-      mkIssue({
-        severity: "WARN",
-        type: "SHOUTY",
-        label: s.label,
-        count: snippets.length,
-        snippets,
-        suggestion: s.suggestion,
-      })
-    );
-  }
-
-  return issues;
-}
-
-function escapeRegExp(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function summarize(issues: Issue[]) {
-  const blocks = issues.filter((i) => i.severity === "BLOCK").length;
-  const warns = issues.filter((i) => i.severity === "WARN").length;
-  const infos = issues.filter((i) => i.severity === "INFO").length;
-  return { blocks, warns, infos };
-}
-
-function printIssue(issue: Issue) {
-  const icon = issue.severity === "BLOCK" ? "⛔" : issue.severity === "WARN" ? "⚠️" : "ℹ️";
-  console.log(`   ${icon} [${issue.type}] ${issue.label} (×${issue.count})`);
-  for (const snip of issue.snippets) {
-    console.log(`      ↳ …${snip}…`);
-  }
-  if (issue.suggestion) console.log(`      ✅ Suggestie: ${issue.suggestion}`);
-}
-
-function printPage(r: PageReport, verbose: boolean) {
-  console.log(`\n📄 ${r.url}`);
-  console.log(`   🧮 status: ${r.status} | woorden: ${r.words} | blocks: ${r.summary.blocks} | warns: ${r.summary.warns}`);
-
-  if (!r.issues.length) {
-    console.log(`   ✅ Geen issues gevonden.`);
+  if (pr.httpStatus && pr.httpStatus >= 400) {
+    console.log(`   ❌ HTTP ${pr.httpStatus} (pagina niet beschikbaar)`);
     return;
   }
 
-  const blocks = r.issues.filter((i) => i.severity === "BLOCK");
-  const warns = r.issues.filter((i) => i.severity === "WARN");
-  const infos = r.issues.filter((i) => i.severity === "INFO");
+  console.log(`   🧮 woorden: ${pr.words}`);
 
-  if (blocks.length) {
-    console.log(`   ⛔ Blockers:`);
-    blocks.forEach(printIssue);
+  if (pr.issues.length === 0) {
+    console.log(`   ✅ Geen tone-issues gevonden.`);
+    return;
   }
-  if (warns.length) {
-    console.log(`   ⚠️ Warnings:`);
-    warns.forEach(printIssue);
+
+  const errors = pr.issues.filter((i) => i.level === "ERROR").length;
+  const warns = pr.issues.filter((i) => i.level === "WARN").length;
+
+  console.log(`   ⚠ Issues: ${errors} ERROR, ${warns} WARN`);
+
+  for (const hit of pr.issues) {
+    const badge = hit.level === "ERROR" ? "🟥" : hit.level === "WARN" ? "🟧" : "🟦";
+    console.log(`   ${badge} [${hit.level}] ${hit.title}  (×${hit.count})`);
+    if (hit.replacement) console.log(`      → Suggestie: ${hit.replacement}`);
+    for (const s of hit.snippets) console.log(`      ↳ …${s}…`);
   }
-  if (verbose && infos.length) {
-    console.log(`   ℹ️ Info:`);
-    infos.forEach(printIssue);
+
+  if (verbose && pr.notes.length) {
+    console.log(`   📝 notes:`);
+    pr.notes.forEach((n) => console.log(`      - ${n}`));
   }
 }
 
 async function analysePage(base: string, p: string, maxSnippets: number): Promise<PageReport> {
   const url = new URL(p, base).toString();
-  const { status, body } = await fetchUrl(url);
 
+  const { status, body } = await fetchHtml(url);
   if (status >= 400) {
     return {
       path: p,
       url,
-      status,
+      httpStatus: status,
       words: 0,
       issues: [],
-      summary: { blocks: 0, warns: 0, infos: 0 },
+      notes: [],
     };
   }
 
   const text = htmlToText(body);
-  const words = countWords(text);
+  const words = wordCount(text);
 
-  const issues: Issue[] = [
-    ...findDuplicateWords(text, maxSnippets),
-    ...findRepeatedPhrases(text, maxSnippets),
-    ...findRoadmapLeaks(text, maxSnippets),
-    ...findBureauTone(text, maxSnippets),
-    ...findShouty(text, maxSnippets),
-  ];
+  const { issues, notes } = applyRules(text, maxSnippets);
 
   return {
     path: p,
     url,
-    status,
+    httpStatus: status,
     words,
     issues,
-    summary: summarize(issues),
+    notes,
   };
 }
 
+function shouldPrint(pr: PageReport, onlyIssues: boolean) {
+  if (!onlyIssues) return true;
+  if (pr.httpStatus && pr.httpStatus >= 400) return true; // show broken route
+  return pr.issues.length > 0;
+}
+
+function ensureDir(filePath: string) {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+}
+
 async function main() {
-  const { url: base, paths, onlyIssues, verbose, json, maxSnippets, failOn404 } = parseArgs(process.argv);
+  const { base, paths, onlyIssues, verbose, maxSnippets, reportPath } = parseArgs(process.argv);
 
   console.log("🛡️ Tone Guard — ProBrandwacht / ProSafetyMatch");
   console.log(`🔗 Base: ${base}`);
   console.log(`🌐 Paths: ${paths.join(", ")}`);
+  if (!onlyIssues) console.log("ℹ️ onlyIssues=false (laat ook ‘goede’ pagina’s zien)");
+  if (verbose) console.log("ℹ️ verbose=true (laat extra info zien)");
 
-  const reports: PageReport[] = [];
-  let anyHard = false;
+  const pages: PageReport[] = [];
+  let errors = 0;
+  let warnings = 0;
 
   for (const p of paths) {
-    const pageUrl = new URL(p, base).toString();
-
     try {
-      const r = await analysePage(base, p, maxSnippets);
+      const pr = await analysePage(base, p, maxSnippets);
+      pages.push(pr);
 
-      if (r.status === 404) {
-        console.log(`\n📄 ${pageUrl}`);
-        console.log(`   ⚠️ SKIP (404): route bestaat niet (meer).`);
-        if (failOn404) anyHard = true;
-        reports.push(r);
-        continue;
-      }
+      errors += pr.issues.filter((i) => i.level === "ERROR").length;
+      warnings += pr.issues.filter((i) => i.level === "WARN").length;
 
-      if (r.status >= 400) {
-        console.log(`\n📄 ${pageUrl}`);
-        console.log(`   ❌ HTTP ${r.status}`);
-        anyHard = true;
-        reports.push(r);
-        continue;
-      }
-
-      const shouldPrint = !onlyIssues || r.summary.blocks > 0 || r.summary.warns > 0;
-      if (shouldPrint) printPage(r, verbose);
-
-      if (r.summary.blocks > 0) anyHard = true;
-      reports.push(r);
+      if (shouldPrint(pr, onlyIssues)) printPage(pr, verbose);
     } catch (e: any) {
-      console.log(`\n📄 ${pageUrl}`);
-      console.log(`   ❌ Fout bij ophalen/analyseren: ${e?.message ?? String(e)}`);
-      anyHard = true;
+      const url = new URL(p, base).toString();
+      const pr: PageReport = {
+        path: p,
+        url,
+        httpStatus: 0,
+        words: 0,
+        issues: [
+          {
+            ruleId: "fetch-failed",
+            level: "ERROR",
+            title: "Fout bij ophalen/analyseren",
+            match: e?.message ?? String(e),
+            count: 1,
+            snippets: [],
+          },
+        ],
+        notes: [],
+      };
+      pages.push(pr);
+      errors += 1;
+      if (shouldPrint(pr, onlyIssues)) printPage(pr, verbose);
     }
   }
 
-  // write report
-  if (json) {
-    const outDir = path.join(process.cwd(), "reports");
-    if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-    const outFile = path.join(outDir, "tone-guard.json");
-    fs.writeFileSync(outFile, JSON.stringify(reports, null, 2), "utf8");
-    console.log(`\n📝 Report: ${outFile}`);
-  }
+  const report: RunReport = {
+    meta: {
+      timestamp: new Date().toISOString(),
+      base,
+      paths,
+      onlyIssues,
+      verbose,
+    },
+    pages,
+    summary: {
+      pagesChecked: pages.length,
+      pagesWithIssues: pages.filter((p) => p.issues.length > 0 || (p.httpStatus ?? 0) >= 400).length,
+      errors,
+      warnings,
+    },
+  };
 
-  if (anyHard) {
-    console.log("\n⛔ Tone Guard: FAIL (blockers / errors gevonden). Fix vóór je pusht.");
-    process.exit(1);
-  } else {
-    console.log("\n✅ Tone Guard: OK (geen blockers).");
-  }
+  ensureDir(reportPath);
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), "utf8");
+
+  console.log(`\n📝 Report: ${path.resolve(reportPath)}`);
+
+  // Exit code: fail pipeline on ERROR
+  if (errors > 0) process.exit(2);
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+main();
 
