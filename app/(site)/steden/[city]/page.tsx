@@ -128,9 +128,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
             secondaryCta={secondaryCta}
             footer={
               <>
-                Geen klassieke capaciteitsleverancier: je spreekt altijd zelf
-                tarief, taken en gezag af in transparante samenwerking tussen
-                opdrachtgever en zelfstandige brandwacht.
+                Geen klassieke capaciteitsleverancier: je spreekt zelf tarief, taken en gezag af in
+                transparante samenwerking tussen opdrachtgever en zelfstandige brandwacht.
               </>
             }
           />
