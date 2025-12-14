@@ -5,7 +5,7 @@
       {
         "id": "tarief-verdeling",
         "question": "Hoe wordt het tarief verdeeld bij een traditioneel bureau?",
-        "summary": "Bureaus houden vaak €15–€25 per uur over; zelfstandigen zien niet altijd dezelfde duidelijkheid. Dit is indicatief en afhankelijk van sector en inzet.",
+        "summary": "Bureaus houden vaak €15–€25 per uur over; zelfstandigen zien niet overal dezelfde duidelijkheid. Dit is indicatief en afhankelijk van sector en inzet.",
         "answer": [
           "In de praktijk houden tussenpersonen vaak indicatief €15–€25 per uur over bij klanttarieven van €40–€60, afhankelijk van sector en inzet.",
           "Voorbeeld: opdrachtgever betaalt €50/u → €20 overhead, €30 voor de brandwacht.",
@@ -95,7 +95,7 @@
           "Bij ProSafetyMatch bepalen opdrachtgever en professional samen hun betaalafspraken: wat er wordt betaald en wanneer.",
           "Na een bevestigde uitvoering volgt directe uitbetaling volgens deze afspraken (afhankelijk van overeengekomen termijnen).",
           "Is er een terechte klacht? Dan pauzeren we de betaling totdat beide partijen een oplossing hebben.",
-          "ProSafetyMatch blijft onafhankelijk: we bemiddelen niet, houden geen marge achter en zorgen alleen voor een eerlijk, veilig en duidelijk proces."
+          "ProSafetyMatch blijft onafhankelijk: we faciliteren transparant contact, houden geen marge achter en zorgen alleen voor een eerlijk, veilig en duidelijk proces."
         ]
       },
       {
@@ -161,8 +161,8 @@
         "summary": "Veel afspraken vallen tussen €40 en €55 per uur (specialistisch werk tot ±€70), afhankelijk van context.",
         "answer": [
           "Tarief hangt af van certificaten, inzet, duur, tijdstip en regio.",
-          "Gebruik de calculator voor fee- en kosteninzicht.",
-          "Bepaal het tarief altijd samen met de professional."
+          "Gebruik de calculator indicatief voor fee- en kosteninzicht.",
+          "Bepaal het tarief bij voorkeur samen met de professional."
         ],
         "more": {
           "href": "/blog/wat-kost-een-brandwacht-in-2025",
