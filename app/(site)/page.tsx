@@ -22,7 +22,7 @@ export default function HomePage() {
               liggen. Met elke aanmelding bouwen we samen aan ProSafetyMatch.
             </p>
             <p className="text-base leading-relaxed text-slate-200 md:text-lg">
-              Je deelt straks alleen wat nodig is, kiest je tarief en bewaakt je agenda. Aan de andere
+              Je deelt alleen wat nodig is, kiest je tarief en bewaakt je agenda. Aan de andere
               kant van de tafel zit een opdrachtgever die weet wie je bent, wat je kunt en hoe jullie
               samen veilig kunnen werken. Jouw kennis en zelfstandigheid staan voorop, terwijl
               brandwachten én opdrachtgevers die zich nu aansluiten de eerste versie van ProSafetyMatch
@@ -117,7 +117,7 @@ export default function HomePage() {
               <strong className="font-semibold text-emerald-300">zelfstandige brandwacht</strong>{' '}
               die eigen tarief, agenda en voorwaarden wil bewaken en mee wil bouwen aan ProSafetyMatch.
               Opdrachtgevers in industrie, events en infra krijgen een duidelijk beeld van wie ze inhuren
-              en helpen tegelijk het platform vormgeven dat zij straks gebruiken voor transparante inzet.
+              en helpen tegelijk het platform vormgeven dat zij gebruiken voor transparante inzet.
             </p>
           </div>
 

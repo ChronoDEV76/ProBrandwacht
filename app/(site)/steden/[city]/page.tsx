@@ -153,9 +153,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
             Brandwacht inhuren in {label}
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Zoek je straks een rijksgediplomeerde brandwacht in {label}? We tonen profielen met certificaten
-            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) en beschikbaarheid. Tarief, taken en gezag spreek je direct
-            af binnen DBA-proof kaders; geen detacheringsmarge.
+            Zoek je een rijksgediplomeerde brandwacht in {label}? We tonen profielen met certificaten
+            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) en beschikbaarheid. Tarief, taken en gezag spreek je direct af
+            binnen DBA-proof kaders; geen detacheringsmarge.
           </p>
           <p className="text-sm text-slate-200 md:text-base">
             Voor spoed schakelen we handmatig. Voor geplande inzet deel je locatie, risico&apos;s en duur

@@ -29,11 +29,10 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
     },
     {
       eyebrow: 'Morgen',
-      title: 'ProSafetyMatch platform',
+      title: 'ProSafetyMatch principes',
       body: (
         <>
-          Digitale omgeving (streefdatum Q1 2026) waarin vraag en aanbod elkaar vinden. DBA-proof, transparant en met optionele escrow (1-2%)
-          naast een vaste 10% platformfee.
+          Digitale omgeving waarin vraag en aanbod elkaar direct vinden. DBA-proof, transparant en zonder marge op het uurtarief; afspraken en betalingen blijven inzichtelijk.
         </>
       ),
     },
@@ -68,8 +67,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             headingLevel="h2"
             body={
               <>
-                Vandaag helpen we met zichtbaarheid en handmatige matching. Morgen brengt <span className="font-semibold">ProSafetyMatch</span>{' '}
-                vraag en aanbod digitaal samen - DBA-proof, transparant en zonder marge op het uurtarief.
+                We koppelen zichtbaar en zonder marge op het uurtarief. <span className="font-semibold">ProSafetyMatch</span> staat voor directe, DBA-proof afspraken tussen opdrachtgever en brandwacht.
               </>
             }
             primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Aanmelden als opdrachtgever' }}
@@ -118,7 +116,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             </p>
             <ul className="space-y-2 text-sm text-slate-200">
               <li>- Transparante afspraken over gezag en taken.</li>
-              <li>- Optionele escrow 1-2% en vaste platformfee 10% (vanaf ProSafetyMatch).</li>
+              <li>- Eventuele escrow is optioneel en zichtbaar; geen verborgen toeslagen op uurtarief.</li>
               <li>- Ondersteuning bij raamwerk van opdrachten en toolbox-bijeenkomsten.</li>
             </ul>
           </div>
