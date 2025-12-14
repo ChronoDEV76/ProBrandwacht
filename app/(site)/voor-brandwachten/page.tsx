@@ -69,7 +69,7 @@ export default function VoorBrandwachtenPage() {
 
       {/* HERO */}
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 pb-14 pt-8">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 pb-14 pt-8 text-center">
           <div className="inline-flex w-fit items-center rounded-full border border-brand-200/40 bg-brand-200/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-100">
             Voor zelfstandige brandwachten
           </div>
@@ -83,7 +83,7 @@ export default function VoorBrandwachtenPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
