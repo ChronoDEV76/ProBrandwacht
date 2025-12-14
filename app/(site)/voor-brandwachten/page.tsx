@@ -69,7 +69,7 @@ export default function VoorBrandwachtenPage() {
 
       {/* HERO */}
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 pb-14 pt-8 text-center">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 pb-12 pt-6 text-center md:pb-14 md:pt-8">
           <div className="inline-flex w-fit items-center rounded-full border border-brand-200/40 bg-brand-200/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-100">
             Voor zelfstandige brandwachten
           </div>
