@@ -205,24 +205,24 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-slate-950 text-slate-50">
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
       <JSONLD data={itemListSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <section className="border-b border-slate-200 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-50">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <header className="space-y-4">
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">Kennis uit de frontlinie van brandveilig werken</h1>
-            <p className="mt-2 max-w-3xl text-slate-700 md:text-base">
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Kennis uit de frontlinie van brandveilig werken</h1>
+            <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
               We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/zzp/aanmelden"
                 prefetch={false}
-                className="inline-flex items-center rounded-full border border-emerald-300/60 px-4 py-2 text-sm font-medium text-emerald-700 transition hover:border-emerald-400 hover:text-emerald-900"
+                className="inline-flex items-center rounded-full border border-emerald-300/60 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
               >
                 Meld je aan als zzp-brandwacht
               </Link>
@@ -230,7 +230,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </header>
 
           <section className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-2 text-slate-700">
+            <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>
               <nav className="flex flex-wrap gap-2">
                 {CATEGORIES.map(c => (
@@ -244,7 +244,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                 ))}
               </nav>
             </div>
-            <div className="flex items-center gap-2 text-slate-700">
+            <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Stad</span>
               <nav className="flex flex-wrap gap-2">
                 {CITIES.map(c => (
@@ -262,16 +262,16 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         </div>
       </section>
 
-      <section className="bg-slate-50">
+      <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10">
           <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.length === 0 && (
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 text-slate-700">Geen artikelen gevonden voor deze filters.</div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-slate-200">Geen artikelen gevonden voor deze filters.</div>
             )}
             {filtered.map(post => (
               <article
                 key={post.slug}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:-translate-y-1 hover:shadow-emerald-500/20"
+                className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-emerald-500/20"
               >
                 {post.image ? (
                   <div className="relative h-[380px] w-full overflow-hidden">
@@ -292,29 +292,29 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                   <div className="h-40 w-full bg-slate-800" />
                 )}
                 <div className="p-5">
-                  <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-slate-800">{post.category}</span>
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-emerald-800">
+                  <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                    <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.category}</span>
+                    <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-emerald-100">
                       {derivePositionTag(post.category)}
                     </span>
-                    {post.city && <span className="rounded-full bg-slate-100 px-2 py-0.5 text-slate-800">{post.city}</span>}
+                    {post.city && <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.city}</span>}
                     <span>{formatDate(post.dateIso)}</span>
                     <span>· {post.minutes} min leestijd</span>
                   </div>
-                  <h2 className="line-clamp-2 text-lg font-semibold text-slate-900">
-                    <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-emerald-700">
+                  <h2 className="line-clamp-2 text-lg font-semibold text-slate-50">
+                    <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-emerald-200">
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-700">{post.excerpt}</p>
-                  <div className="mt-3 text-sm text-slate-600">
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">{post.excerpt}</p>
+                  <div className="mt-3 text-sm text-slate-300">
                     Hoe ervaar jij dit in jouw werk? Binnenkort openen we de mogelijkheid om ervaringen te delen.
                   </div>
                   <div className="mt-4 flex items-center justify-between text-sm">
                     <Link
                       href={`/blog/${post.slug}`}
                       prefetch={false}
-                      className="font-medium text-emerald-800 hover:text-emerald-600"
+                      className="font-medium text-emerald-200 hover:text-emerald-100"
                     >
                       Lees hoe wij de norm verschuiven →
                     </Link>
@@ -322,7 +322,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       href="/zzp/aanmelden"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-emerald-700"
+                      className="text-slate-300 hover:text-emerald-100"
                     >
                       Word onderdeel van de ploeg
                     </a>
