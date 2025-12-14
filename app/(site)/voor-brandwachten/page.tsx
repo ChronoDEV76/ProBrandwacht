@@ -26,7 +26,7 @@ const perks = [
   },
   {
     title: "Toegang tot ProSafetyMatch",
-    body: "De nieuwe digitale omgeving voor planning, facturatie, certificaten en communicatie — gebouwd voor zelfstandige professionals.",
+    body: "De digitale laag waarin we transparant werken met profielen, certificaten en afspraken — ontwikkeld samen met zelfstandige professionals.",
   },
   {
     title: "Geen verplichtingen",
@@ -154,8 +154,8 @@ export default function VoorBrandwachtenPage() {
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
             <p className="text-sm text-slate-200 md:text-base">
-              Via ProSafetyMatch werk je straks volledig digitaal met planning, documentatie en facturatie. Sluit je nu aan voor pilots en
-              vroege toegang.
+              We werken stap voor stap aan een transparante manier van samenwerken: jouw profiel, certificaten en afspraken blijven van jou,
+              zonder tussenlagen. Meld je aan om mee te bouwen en direct als zelfstandige brandwacht zichtbaar te zijn.
             </p>
           </div>
 

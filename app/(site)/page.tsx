@@ -24,9 +24,8 @@ export default function HomePage() {
             <p className="text-base leading-relaxed text-slate-200 md:text-lg">
               Je deelt alleen wat nodig is, kiest je tarief en bewaakt je agenda. Aan de andere
               kant van de tafel zit een opdrachtgever die weet wie je bent, wat je kunt en hoe jullie
-              samen veilig kunnen werken. Jouw kennis en zelfstandigheid staan voorop, terwijl
-              brandwachten én opdrachtgevers die zich nu aansluiten de eerste versie van ProSafetyMatch
-              vormen.
+              samen veilig kunnen werken. Jouw kennis en zelfstandigheid staan voorop; die vormen de basis
+              van ProSafetyMatch samen met de ervaringen van brandwachten en opdrachtgevers.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -102,6 +101,22 @@ export default function HomePage() {
               Case: stillegging in de petrochemie voorkomen door directe lijn brandwacht ↔ opdrachtgever
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* POSITIONERING */}
+      <section className="border-b border-slate-800 bg-slate-950">
+        <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 md:py-12">
+          <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Hybride, praktijkgedreven platform</h2>
+          <p className="text-sm text-slate-200 md:text-base">
+            ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch is de technische, schaalbare laag. Samen vormen ze een hybride
+            platform dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe samenwerking, transparantie en
+            zelfstandigheid als uitgangspunt.
+          </p>
+          <p className="text-sm text-slate-200 md:text-base">
+            We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
+            feature-drop, wel duidelijke afspraken en DBA-bewust werken.
+          </p>
         </div>
       </section>
 
