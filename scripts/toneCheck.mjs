@@ -4,7 +4,7 @@
  * Scant live URLs ipv lokale bestanden.
  *
  * CLI:
- *   --url=https://www.probrandwacht.nl
+ *   --url=https://www.probrandwacht.nl (optioneel; valt terug op TONECHECK_URL | NEXT_PUBLIC_SITE_URL | http://localhost:3000)
  *   --paths=/,/over-ons
  *   --json=1
  */
@@ -20,12 +20,13 @@ const argv = Object.fromEntries(
   })
 );
 
-if (!argv.url) {
-  console.error("❌ Gebruik: --url=https://example.com");
-  process.exit(1);
-}
-
-const BASE = argv.url.replace(/\/$/, "");
+const BASE = (
+  argv.url ||
+  process.env.TONECHECK_URL ||
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  "http://localhost:3000"
+).replace(/\/$/, "");
 const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoed")
   .split(",")
   .map((p) => p.trim());
