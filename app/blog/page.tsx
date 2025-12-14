@@ -309,10 +309,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">{post.excerpt}</p>
-                  <div className="mt-3 text-sm text-slate-300">
-                    Hoe ervaar jij dit in jouw werk? Binnenkort openen we de mogelijkheid om ervaringen te delen.
-                  </div>
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">Lees het artikel →</p>
                   <div className="mt-4 flex items-center justify-between text-sm">
                     <Link
                       href={`/blog/${post.slug}`}
