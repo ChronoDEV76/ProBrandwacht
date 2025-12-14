@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           width={900}
           height={450}
           sizes="(max-width:768px) 100vw, 768px"
-          className="h-auto w-full max-h-[320px] object-cover"
+          className="h-auto w-full max-h-[420px] object-cover"
           style={{ objectPosition: 'center 60%' }}
           loading="lazy"
         />
