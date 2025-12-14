@@ -182,41 +182,45 @@ export default function HomePage() {
       {/* WAAROM ANDERS DAN EEN BUREAU */}
       <WhyProBrandwachtSection />
 
-      {/* BRANDWACHT INHUREN */}
+      {/* PLATFORM RECRUITMENT */}
       <section className="border-b border-slate-800 bg-slate-950">
         <div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-12 md:flex-row md:items-center md:py-14">
           <div className="flex-1 space-y-3">
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Brandwacht inhuren zonder tussenlagen
+              Bouw mee aan ProSafetyMatch
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Je krijgt direct zicht op profielen, certificaten en beschikbaarheid. Geen
-              draaiboeken vol aannames, maar feiten die je nodig hebt om veilig te plannen. We houden
-              rollen en tarieven zichtbaar zodat iedereen weet wie waarvoor verantwoordelijk is.
+              ProBrandwacht is de vakinhoudelijke laag, ProSafetyMatch de technische laag. We zoeken
+              zelfstandige brandwachten én opdrachtgevers die samen een transparant platform
+              vormgeven: direct contact, DBA-bewust en zonder verborgen marges.
+            </p>
+            <p className="text-sm text-slate-200 md:text-base">
+              Aanmelden = invloed op hoe het platform werkt en hoe profielen, certificaten en
+              afspraken zichtbaar blijven. Geen roadmap-slogan, wel ruimte om de samenwerking beter te
+              maken.
             </p>
           </div>
           <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg shadow-black/40">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Klaar om te starten
+              Sluit je aan
             </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Plaats je opdracht of vraag om een gesprek; we koppelen je direct aan beschikbare,
-              rijksgediplomeerde brandwachten.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <Link
-                href="/brandwacht-huren"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-              >
-                Brandwacht inhuren
-              </Link>
-              <Link
-                href="/contact"
+                href="/zzp/aanmelden"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
-                Plan een korte intake
+                Aanmelden als brandwacht
+              </Link>
+              <Link
+                href="/opdrachtgevers/aanmelden"
+                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
+              >
+                Aanmelden als opdrachtgever
               </Link>
             </div>
+            <p className="mt-4 text-xs text-slate-400">
+              Focus op platform: transparantie, zelfstandigheid en gelijkwaardige samenwerking.
+            </p>
           </div>
         </div>
       </section>

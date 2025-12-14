@@ -150,23 +150,29 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 pt-6 md:flex-row md:items-center">
         <div className="flex-1 space-y-3">
           <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-            Brandwacht inhuren in {label}
+            Bouw mee aan ProSafetyMatch in {label}
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Zoek je een rijksgediplomeerde brandwacht in {label}? We tonen profielen met certificaten
-            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) en beschikbaarheid. Tarief, taken en gezag spreek je direct af
-            binnen DBA-proof kaders; geen detacheringsmarge.
+            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die transparant willen samenwerken. Profielen met certificaten
+            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) blijven zichtbaar; tarief, taken en gezag spreek je direct af binnen DBA-proof
+            kaders.
           </p>
           <p className="text-sm text-slate-200 md:text-base">
-            Voor spoed schakelen we handmatig. Voor geplande inzet deel je locatie, risico&apos;s en duur
-            zodat beschikbare brandwachten gericht kunnen reageren.
+            Spoed? Dan schakelen we handmatig. Geplande inzet? Deel locatie, risico&apos;s en duur zodat beschikbare brandwachten gericht kunnen
+            reageren. Alles zonder detacheringsmarges.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
-              href="/brandwacht-huren"
+              href="/zzp/aanmelden"
+              className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            >
+              Aanmelden als brandwacht
+            </Link>
+            <Link
+              href="/opdrachtgevers/aanmelden"
               className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
             >
-              Brandwacht inhuren
+              Aanmelden als opdrachtgever
             </Link>
           </div>
         </div>
@@ -177,7 +183,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Direct zicht op certificaten en ervaring in {label}.</li>
             <li>- DBA-proof afspraken zonder tussenlagen of verborgen tarieven.</li>
-            <li>- Optioneel handmatige koppeling bij spoed (ProBrandwacht Direct).</li>
+            <li>- Spoed via ProBrandwacht Direct, geplande inzet via het platform.</li>
           </ul>
         </div>
       </section>
