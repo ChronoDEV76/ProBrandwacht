@@ -17,13 +17,13 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
       {/* ProSafetyMatch kaart */}
       <div className="rounded-2xl border bg-slate-50 p-5 shadow-sm">
         <h3 className="text-lg font-semibold text-slate-900">ProSafetyMatch</h3>
-        <ul className="mt-3 space-y-2 text-sm text-slate-900">
+        <ul className="mt-3 space-y-2 text-sm text-slate-800">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔹 Platformfee 10%: €{platformFee.toFixed(2)}</li>
           <li>
             🔹 Betaalbuffer 1–2% (bij lancering): €{betaalbufferMin.toFixed(2)}–€{betaalbufferMax.toFixed(2)}
           </li>
-          <li className="font-semibold text-green-700">
+          <li className="font-semibold text-green-800">
             ✅ Netto naar zzp’er: €{nettoMin.toFixed(2)}–€{nettoMax.toFixed(2)}
           </li>
         </ul>
@@ -32,10 +32,10 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
       {/* Traditioneel bureau kaart */}
       <div className="rounded-2xl border bg-slate-50 p-5 shadow-sm">
         <h3 className="text-lg font-semibold text-slate-900">Traditioneel bureau</h3>
-        <ul className="mt-3 space-y-2 text-sm text-slate-900">
+        <ul className="mt-3 space-y-2 text-sm text-slate-800">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔸 Gem. bureau-marge 30–50%: ~€{bureauMarge.toFixed(2)}</li>
-          <li className="font-semibold text-slate-900">
+          <li className="font-semibold text-slate-800">
             ❌ Netto naar zzp’er: €{(tarief - bureauMarge).toFixed(2)}
           </li>
         </ul>
