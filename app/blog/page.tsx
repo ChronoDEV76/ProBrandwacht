@@ -284,11 +284,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       fill
                       sizes="(max-width: 640px) 100vw, 640px"
                       className="object-cover"
-                      style={
-                        post.imagePosition
-                          ? { objectPosition: post.imagePosition }
-                          : { objectPosition: "center 20%" }
-                      }
+                      style={{
+                        objectPosition: post.imagePosition ?? "center 60%",
+                      }}
                     />
                   </div>
                 ) : (
