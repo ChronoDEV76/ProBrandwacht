@@ -121,8 +121,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <h1 className="text-3xl font-semibold text-slate-50">{post.frontmatter.title ?? params.slug}</h1>
       </header>
 
-      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-        <div className="relative aspect-[16/9] w-full overflow-hidden">
+      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 py-6">
+        <div className="relative aspect-[5/3] w-full overflow-hidden">
           <Image
             src={heroImageSrc}
             alt={heroAlt}
