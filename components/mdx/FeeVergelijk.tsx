@@ -16,7 +16,7 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
     <div className="mt-6 grid gap-4 md:grid-cols-2">
       {/* ProSafetyMatch kaart */}
       <div className="rounded-2xl border bg-white p-5 shadow-sm">
-        <h3 className="text-lg font-semibold text-brand-700">ProSafetyMatch</h3>
+        <h3 className="text-lg font-semibold text-slate-900">ProSafetyMatch</h3>
         <ul className="mt-3 space-y-2 text-sm text-slate-900">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔹 Platformfee 10%: €{platformFee.toFixed(2)}</li>
@@ -31,7 +31,7 @@ export default function FeeVergelijk({ tarief }: FeeVergelijkProps) {
 
       {/* Traditioneel bureau kaart */}
       <div className="rounded-2xl border bg-white p-5 shadow-sm">
-        <h3 className="text-lg font-semibold text-red-700">Traditioneel bureau</h3>
+        <h3 className="text-lg font-semibold text-slate-900">Traditioneel bureau</h3>
         <ul className="mt-3 space-y-2 text-sm text-slate-900">
           <li>📌 Uurtarief opdrachtgever: €{tarief.toFixed(2)}</li>
           <li>🔸 Gem. bureau-marge 30–50%: ~€{bureauMarge.toFixed(2)}</li>
