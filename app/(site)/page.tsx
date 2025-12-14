@@ -79,13 +79,18 @@ export default function HomePage() {
               Waarom we begonnen
             </p>
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Een incident dat bleef hangen en het startpunt werd
+              Een moment waarop duidelijk werd wat ontbrak
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Onze oprichter stond jaren terug als brandwacht op een industrieterrein waar te veel
-              schakels zorgden voor ruis en risico. In de evaluatie werd duidelijk dat iedereen
-              betere informatie wilde, maar niemand wist wie verantwoordelijk was. Dat moment werd
-              het startpunt voor een platform waar rollen, tarieven en veiligheid helder zijn.
+              Tijdens de voorbereiding van een groot dance event zagen we hoe snel verantwoordelijkheid
+              versnipperde zodra er meerdere lagen tussen zaten. Iedereen wilde betere informatie,
+              maar niemand wist precies wie waarover kon besluiten. Transparantie en directe lijnen
+              bleken het ontbrekende stuk.
+            </p>
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              Dat inzicht is de basis voor dit platform: afspraken, tarieven en rollen worden meteen
+              zichtbaar gemaakt, zodat duidelijk is wie waarvoor aan zet is en wanneer er moet worden
+              gehandeld.
             </p>
           </div>
           <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg shadow-black/40">
@@ -93,12 +98,12 @@ export default function HomePage() {
               Uit het veld
             </p>
             <p className="mt-3 text-sm italic text-slate-100">
-              ProBrandwacht ontstond omdat we zagen hoe snel vertrouwen verdampt als er een extra
-              schakel tussen brandwacht en opdrachtgever staat. Door rechtstreeks te praten, bleven
-              de afspraken helder en liep het project veilig door.
+              ProBrandwacht ontstond toen we merkten hoe snel vertrouwen weglekt zodra er extra
+              lagen tussen brandwacht en opdrachtgever komen.
             </p>
             <p className="mt-4 text-xs font-medium text-emerald-300">
-              Case: stillegging in de petrochemie voorkomen door directe lijn brandwacht ↔ opdrachtgever
+              Case: veiligheidsrisico’s beperken bij een groot dance event door directe afstemming tussen
+              brandwacht en organisatie
             </p>
           </div>
         </div>
