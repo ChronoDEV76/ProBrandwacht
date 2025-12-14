@@ -174,26 +174,28 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         </a>
       </div>
 
-      {/* Stadspagina-links */}
-      <section className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-5">
-        <h2 className="text-lg font-semibold text-slate-50">Direct naar een stadspagina</h2>
-        <p className="mt-1 text-sm text-slate-200">
-          Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en kostenberekening met opdrachtgevers.
-        </p>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {coreCities.map((city) => (
-            <li key={city.slug}>
-              <Link
-                href="/opdrachtgevers"
-                prefetch={false}
-                className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
-              >
-                Brandwacht inhuren {city.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Stadspagina-links (optioneel) */}
+      {!post.frontmatter.hideCityLinks && (
+        <section className="mt-8 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <h2 className="text-lg font-semibold text-slate-50">Direct naar een stadspagina</h2>
+          <p className="mt-1 text-sm text-slate-200">
+            Bekijk hoe tarieven uitpakken in jouw regio en deel dezelfde fee- en kostenberekening met opdrachtgevers.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {coreCities.map((city) => (
+              <li key={city.slug}>
+                <Link
+                  href="/opdrachtgevers"
+                  prefetch={false}
+                  className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                >
+                  Brandwacht inhuren {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
     </article>
   )
