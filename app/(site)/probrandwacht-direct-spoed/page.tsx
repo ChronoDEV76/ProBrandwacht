@@ -24,7 +24,7 @@ export default function ProbrandwachtDirectSpoedPage() {
               nodig?
             </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Ook bij spoed blijven tarief en afspraken transparant: jij kiest als opdrachtgever
+            Ook bij spoed blijven tarief en afspraken eerlijk: jij kiest als opdrachtgever
             samen met de zelfstandige brandwacht hoe de inzet eruitziet. ProBrandwacht zorgt
             alleen voor een veilige, snelle match.
           </p>
@@ -132,13 +132,13 @@ export default function ProbrandwachtDirectSpoedPage() {
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h2 className="text-xl font-semibold md:text-2xl">
-              Spoed nu, structurele verbetering straks
+              Spoed nu, structurele verbetering erin
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Met ProBrandwacht Direct Spoed los je acute bezetting op, terwijl je tegelijkertijd
-              bijdraagt aan bredere professionalisering van de markt. De inzichten uit deze
-              aanvragen nemen we mee naar ProSafetyMatch, zodat brand- en safety-compliance
-              structureel beter georganiseerd kan worden.
+              Met ProBrandwacht Direct Spoed los je acute bezetting op en draag je tegelijkertijd
+              bij aan bredere professionalisering van de markt. De inzichten uit deze aanvragen
+              worden onderdeel van ProSafetyMatch, zodat brand- en safety-compliance structureel
+              beter georganiseerd wordt.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Zo combineren we{' '}

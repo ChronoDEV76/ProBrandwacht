@@ -22,6 +22,9 @@ export default function AnalyticsDebugPage() {
           <p className="mt-2 text-sm text-slate-600">
             Share events verschijnen hier binnen enkele seconden. Test direct hoe de tools reageren en zet de volgende stap via ons platform.
           </p>
+          <p className="mt-2 text-sm text-slate-600">
+            Het is belangrijk dat opdrachtgevers en zzp’ers dezelfde gebeurtenissen zien en de resultaten gezamenlijk goedkeuren, zodat iedereen voelt dat de data stevig en controleerbaar ondersteunt wat er op de werkvloer gebeurt.
+          </p>
           <div className="mt-4 flex flex-wrap gap-3">
             {SPOED_UI_ENABLED ? (
               <Link

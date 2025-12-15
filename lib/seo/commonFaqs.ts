@@ -4,7 +4,7 @@ export const generalPlatformFaq = [
   {
     question: 'Is ProBrandwacht een uitzendbureau of detacheerder?',
     answer:
-      'Nee. ProBrandwacht is een platform waar zelfstandige brandwachten en opdrachtgevers elkaar vinden. Je werkt direct met elkaar samen: tarief, taken en gezag spreken jullie zelf af. Het platform helpt alleen om alles overzichtelijk, transparant en DBA-proof te organiseren – zonder klassiek bureaumodel, tussenlaag of verborgen marges.',
+      'Nee. ProBrandwacht is een platform waar zelfstandige brandwachten en opdrachtgevers elkaar vinden. Je werkt direct met elkaar samen: tarief, taken en gezag spreken jullie zelf af. Het platform helpt alleen om alles overzichtelijk, eerlijk en DBA-proof te organiseren – zonder klassieke bemiddelingslagen, tussenlaag of verborgen marges.',
   },
   {
     question: 'Hoe werken betalingen via het platform?',
@@ -14,7 +14,7 @@ export const generalPlatformFaq = [
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
     answer:
-      'Nu regel je inzet via ProBrandwacht Direct: je doet een aanvraag en schakelt rechtstreeks met zelfstandige brandwachten. Straks komt ProSafetyMatch daarbij als digitaal platform: self-service planning, overeenkomsten, certificaatchecks, uren en facturatie in één omgeving. De uitgangspunten blijven gelijk: transparant, DBA-proof en zonder verborgen bureaumarges.',
+      'Nu regel je inzet via ProBrandwacht Direct: je doet een aanvraag en schakelt rechtstreeks met zelfstandige brandwachten. Straks komt ProSafetyMatch daarbij als digitaal platform: self-service planning, overeenkomsten, certificaatchecks, uren en facturatie in één omgeving. De uitgangspunten blijven gelijk: eerlijk, DBA-proof en zonder verborgen bureaumarges.',
   },
   {
     question: 'Hoe blijven afspraken DBA-proof?',
@@ -24,12 +24,12 @@ export const generalPlatformFaq = [
   {
     question: 'Wat is de rol van ProSafetyMatch?',
     answer:
-      'ProBrandwacht is de praktische voorloper; ProSafetyMatch wordt de bredere SaaS-oplossing voor brand- en safety-samenwerking. Denk aan digitaal plannen, documentenbeheer, facturatie, rapportages en compliance-workflows. De uitgangspunten blijven hetzelfde: transparantie, professionele samenwerking en ruimte voor zelfstandig ondernemerschap – ook als er meerdere partijen in de keten zitten.',
+      'ProBrandwacht is de praktische voorloper; ProSafetyMatch wordt de bredere SaaS-oplossing voor brand- en safety-samenwerking. Denk aan digitaal plannen, documentenbeheer, facturatie, rapportages en compliance-workflows. De uitgangspunten blijven hetzelfde: eerlijkie, professionele samenwerking en ruimte voor zelfstandig ondernemerschap – ook als er meerdere partijen in de keten zitten.',
   },
   {
     question: 'Kunnen bestaande bureaus ook met het platform werken?',
     answer:
-      'Ja. Het platform is niet tegen bureaus, maar vóór transparante samenwerking. Bestaande organisaties kunnen het platform gebruiken om hun processen te structureren, dossiers op orde te houden en duidelijker te zijn richting zowel opdrachtgevers als zelfstandige professionals. Het idee is dat eerlijke opdrachtgevers en eerlijke professionals elkaar beter weten te vinden.',
+      'Ja. Het platform is niet tegen bureaus, maar vóór eerlijke samenwerking. Bestaande organisaties kunnen het platform gebruiken om hun processen te structureren, dossiers op orde te houden en duidelijker te zijn richting zowel opdrachtgevers als zelfstandige professionals. Het idee is dat eerlijke opdrachtgevers en eerlijke professionals elkaar beter weten te vinden.',
   },
   {
     question: 'Wat gebeurt er met mijn gegevens?',
@@ -42,12 +42,12 @@ export const zzpFaq = [
   {
     question: 'Wat kost het om als zzp-brandwacht mee te doen?',
     answer:
-      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een transparante platformfee of abonnementskost worden toegevoegd, maar die wordt dan altijd duidelijk en uitlegbaar vermeld.',
+      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnementskost worden toegevoegd, maar die wordt dan altijd duidelijk en uitlegbaar vermeld.',
   },
   {
     question: 'Ben ik verplicht om al mijn werk via het platform te doen?',
     answer:
-      'Nee. Je blijft zelfstandig ondernemer en behoudt je eigen klanten, kanalen en keuzes. Het platform helpt je om opdrachten overzichtelijk, transparant en DBA-proof te organiseren, maar legt geen relatiebeding op. Als jij merkt dat samenwerking met bepaalde opdrachtgevers via het platform prettig loopt, kun je er samen voor kiezen dat vaker zo te doen.',
+      'Nee. Je blijft zelfstandig ondernemer en behoudt je eigen klanten, kanalen en keuzes. Het platform helpt je om opdrachten overzichtelijk, eerlijk en DBA-proof te organiseren, maar legt geen relatiebeding op. Als jij merkt dat samenwerking met bepaalde opdrachtgevers via het platform prettig loopt, kun je er samen voor kiezen dat vaker zo te doen.',
   },
   {
     question: 'Kan ik mijn eigen tarief en beschikbaarheid instellen?',
@@ -75,7 +75,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Hoe snel vind ik een geschikte brandwacht?',
     answer:
-      'Via spoedaanvragen of gerichte zoekopdrachten zie je snel welke zelfstandige brandwachten beschikbaar zijn op jouw locatie en binnen jouw tijdvak. Je ziet profielen, ervaring en certificaten en kunt direct in gesprek om afspraken te maken. Het doel is: snel schakelen, maar wel transparant en professioneel.',
+      'Via spoedaanvragen of gerichte zoekopdrachten zie je snel welke zelfstandige brandwachten beschikbaar zijn op jouw locatie en binnen jouw tijdvak. Je ziet profielen, ervaring en certificaten en kunt direct in gesprek om afspraken te maken. Het doel is: snel schakelen, maar wel eerlijk en professioneel.',
   },
   {
     question: 'Hoe weet ik dat iemand gekwalificeerd is?',
@@ -85,7 +85,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Hoe werken tarieven en kosten voor opdrachtgevers?',
     answer:
-      'Je spreekt het tarief rechtstreeks af met de zelfstandige brandwacht. Er is geen verborgen marge zoals bij klassieke bureaumodellen. Eventuele platformkosten of servicefees worden helder en apart weergegeven. Dat maakt gesprekken met inkoop, finance en control een stuk eenvoudiger: één tarief, één dossier, één uitleg.',
+      'Je spreekt het tarief rechtstreeks af met de zelfstandige brandwacht. Er is geen verborgen marge zoals bij klassieke ketenconstructies. Eventuele platformkosten of servicefees worden helder en apart weergegeven. Dat maakt gesprekken met inkoop, finance en control een stuk eenvoudiger: één tarief, één dossier, één uitleg.',
   },
   {
     question: 'Hoe helpt het platform om DBA-proof te werken?',
@@ -95,7 +95,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Kan ik het platform gebruiken naast bestaande bureaus en contracten?',
     answer:
-      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor directe samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar transparantie en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
+      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor directe samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijkie en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
   },
   {
     question: 'Hoe zit het met facturen, administratie en rapportages?',

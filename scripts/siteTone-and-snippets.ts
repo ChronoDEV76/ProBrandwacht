@@ -33,6 +33,9 @@ type PageReport = {
   headingFound: boolean;
   badWords: string[];
   positiveSignals: string[];
+  bridgeHits: string[];
+  soloWords: string[];
+  overusedPositives: Array<{ word: string; count: number }>;
   snippetStatus?:
     | "inserted"
     | "skipped_existing"
@@ -70,8 +73,8 @@ const BAD_WORDS = [
 ];
 
 const POSITIVE_WORDS = [
-  "transparantie",
-  "transparant",
+  "eerlijkie",
+  "eerlijk",
   "dba-proof",
   "samenwerking",
   "samen werken",
@@ -79,6 +82,39 @@ const POSITIVE_WORDS = [
   "zelfstandige brandwachten",
   "eerlijke afspraken",
   "heldere afspraken",
+  "duidelijk",
+  "controleerbaar",
+  "goedgekeurd",
+  "gezamenlijk",
+  "samen verantwoordelijk",
+  "helder",
+  "toetsbaar",
+];
+
+const BRIDGE_KEYWORDS = [
+  "gezamenlijk",
+  "samen verantwoordelijk",
+  "goedgekeurd",
+  "controleerbaar",
+  "duidelijk",
+  "helder",
+  "toetsbaar",
+  "eerlijke afspraken",
+  "samenwerking",
+  "afstemming",
+  "documentatie",
+];
+
+const SOLO_WORDS = [
+  "wij bepalen",
+  "wij regelen",
+  "zonder overleg",
+  "zonder feedback",
+  "achter gesloten deuren",
+  "alleen wij",
+  "eenzijdig",
+  "exclusief",
+  "een platform voor ons",
 ];
 
 // ---------- Snippet-config voor kernroutes ----------
@@ -90,7 +126,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
-            vinden in transparante, DBA-proof samenwerking — zonder klassiek bureaumodel of andere
+            vinden in eerlijke, DBA-proof samenwerking — zonder klassieke bemiddelingslagen of andere
             onnodige schakels.
           </p>
     `,
@@ -118,7 +154,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
             jullie zelf af — ProBrandwacht helpt om dat helder, uitlegbaar en praktisch te
-            organiseren, zonder klassiek bureaumodel of ketenconstructie.
+            organiseren, zonder extra tussenlagen of klassieke ketenconstructies.
           </p>
     `,
     preferredAnchors: [
@@ -132,7 +168,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Dezelfde uitgangspunten zie je terug in alle pagina's, tools en in de toekomstige
-            ProSafetyMatch-functionaliteiten: transparantie, zelfstandigheid en duidelijke,
+            ProSafetyMatch-functionaliteiten: eerlijkie, zelfstandigheid en duidelijke,
             DBA-proof afspraken voor alle betrokken partijen.
           </p>
     `,
@@ -146,7 +182,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/steden/[city]/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            De manier van samenwerken blijft overal hetzelfde: transparant, DBA-proof en met ruimte
+            De manier van samenwerken blijft overal hetzelfde: eerlijk, DBA-proof en met ruimte
             voor professioneel ondernemerschap — of je nu in Amsterdam, Rotterdam of op een
             industrieterrein werkt.
           </p>
@@ -161,7 +197,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/probrandwacht-direct-spoed/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Ook bij spoed blijven tarief en afspraken transparant: jij kiest als opdrachtgever
+            Ook bij spoed blijven tarief en afspraken eerlijk: jij kiest als opdrachtgever
             samen met de zelfstandige brandwacht hoe de inzet eruitziet. ProBrandwacht zorgt
             alleen voor een veilige, snelle match.
           </p>
@@ -178,7 +214,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             In de kennisbank van ProBrandwacht leggen we uit hoe de markt voor brandveiligheid
             verandert, wat dat betekent voor zelfstandige brandwachten en opdrachtgevers, en hoe
-            je afspraken transparant en DBA-proof houdt. Geen strijdtaal tegen bureaus, maar
+            je afspraken eerlijk en DBA-proof houdt. Geen strijdtaal tegen bureaus, maar
             praktische uitleg en voorbeelden uit de praktijk.
           </p>
     `,
@@ -204,7 +240,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Deze veelgestelde vragen sluiten aan op de manier van werken die je op de rest van
-            ProBrandwacht ziet: transparant, DBA-proof en met respect voor zelfstandig
+            ProBrandwacht ziet: eerlijk, DBA-proof en met respect voor zelfstandig
             ondernemerschap.
           </p>
     `,
@@ -215,7 +251,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/privacy/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Onze manier van werken is niet alleen inhoudelijk transparant, maar ook in de
+            Onze manier van werken is niet alleen inhoudelijk eerlijk, maar ook in de
             manier waarop we met gegevens omgaan. We verwerken data alleen om samenwerking
             veilig, uitlegbaar en professioneel te ondersteunen.
           </p>
@@ -237,6 +273,10 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
 
 // ---------- Helpers ----------
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function walkSitePages(dir: string): string[] {
   const files: string[] = [];
   if (!fs.existsSync(dir)) return files;
@@ -256,10 +296,36 @@ function walkSitePages(dir: string): string[] {
 function analyzeTone(content: string) {
   const lower = content.toLowerCase();
   const bad = BAD_WORDS.filter((w) => lower.includes(w.toLowerCase()));
-  const positives = POSITIVE_WORDS.filter((w) =>
-    lower.includes(w.toLowerCase())
-  );
-  return { badWords: bad, positiveSignals: positives };
+
+  const positiveCounts = new Map<string, number>();
+  for (const word of POSITIVE_WORDS) {
+    const regex = new RegExp(`\\b${escapeRegExp(word)}\\b`, "gi");
+    const matches = lower.match(regex);
+    if (matches) {
+      positiveCounts.set(word, matches.length);
+    }
+  }
+
+  const positiveSignals = Array.from(positiveCounts.keys());
+  const bridgeHits = BRIDGE_KEYWORDS.filter((word) => {
+    const regex = new RegExp(`\\b${escapeRegExp(word)}\\b`, "i");
+    return regex.test(lower);
+  });
+  const soloHits = SOLO_WORDS.filter((word) => {
+    const regex = new RegExp(`\\b${escapeRegExp(word)}\\b`, "i");
+    return regex.test(lower);
+  });
+  const overusedPositives = Array.from(positiveCounts.entries())
+    .filter(([, count]) => count >= 4)
+    .map(([word, count]) => ({ word, count }));
+
+  return {
+    badWords: bad,
+    positiveSignals,
+    bridgeHits,
+    soloWords: soloHits,
+    overusedPositives,
+  };
 }
 
 function hasMainLayout(content: string): boolean {
@@ -376,6 +442,9 @@ function main() {
       headingFound,
       badWords: tone.badWords,
       positiveSignals: tone.positiveSignals,
+      bridgeHits: tone.bridgeHits,
+      soloWords: tone.soloWords,
+      overusedPositives: tone.overusedPositives,
       snippetStatus,
       snippetStrategy,
     });
@@ -417,6 +486,37 @@ function main() {
       );
     }
 
+    if (r.bridgeHits.length === 0) {
+      toneIssues++;
+      console.log(
+        `   - Brugtaal: geen bridgewoorden gevonden; overweeg woorden zoals ${BRIDGE_KEYWORDS.slice(
+          0,
+          3
+        ).join(", ")}`
+      );
+    } else {
+      const label =
+        r.bridgeHits.length < 3
+          ? `   - Brugtaal (kan sterker): ${r.bridgeHits.join(", ")}`
+          : `   - Brugtaal: ${r.bridgeHits.join(", ")}`;
+      console.log(label);
+    }
+
+    if (r.soloWords.length) {
+      toneIssues++;
+      console.log(
+        `   - Solo-taal (vervang door bridge-taal): ${r.soloWords.join(", ")}`
+      );
+    }
+
+    if (r.overusedPositives.length) {
+      console.log(
+        `   - Herhaling: ${r.overusedPositives
+          .map(({ word, count }) => `${word} (${count}x)`)
+          .join(", ")}`
+      );
+    }
+
     if (r.snippetStatus && r.snippetStatus !== "not_configured") {
       console.log(
         `   - Snippet: ${r.snippetStatus}${
@@ -434,6 +534,10 @@ function main() {
   );
   console.log(
     `   Tone-issues:   ${toneIssues} / ${reports.length} pagina's`
+  );
+  const bridgeWarnings = reports.filter((r) => r.bridgeHits.length === 0).length;
+  console.log(
+    `   Brug-taal-issues: ${bridgeWarnings} / ${reports.length} pagina's`
   );
 
   fs.mkdirSync(path.dirname(REPORT_FILE), { recursive: true });

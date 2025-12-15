@@ -17,19 +17,25 @@ export default function OpdrachtgeversPage() {
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Direct samenwerken met{' '}
               <span className="text-emerald-300">zelfstandige brandwachten</span>{' '}
-              - transparant en DBA-proof
+              - eerlijk en DBA-proof
             </h1>
-            <p className="mt-3 max-w-3xl text-sm text-slate-200 md:text-base">
-              Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
-              jullie zelf af — ProSafetyMatch helpt om dat helder, uitlegbaar en praktisch te
-              organiseren, zonder klassiek bureaumodel of ketenconstructie.
-            </p>
+          <p className="mt-3 max-w-2xl text-sm text-slate-200">
+            Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
+            jullie zelf af — ProBrandwacht helpt om dat helder, uitlegbaar en praktisch te
+            organiseren, zonder extra tussenlagen of klassieke ketenconstructies.
+          </p>
     
-            <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een onafhankelijk platform waar je direct in contact komt met
-              zelfstandige brandwachten. Geen klassieke ketenconstructie, maar duidelijke profielen,
-              heldere afspraken en een samenwerking die past binnen de wet- en regelgeving.
-            </p>
+          <p className="mt-3 max-w-2xl text-sm text-slate-200">
+            Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
+            jullie zelf af — ProBrandwacht en ProSafetyMatch helpen om dat helder, uitlegbaar en
+            praktisch te organiseren zonder extra tussenlagen of klassieke ketenconstructies.
+          </p>
+
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht is een onafhankelijk platform waar je direct in contact komt met
+            zelfstandige brandwachten. Geen klassieke ketenconstructie, maar duidelijke profielen,
+            heldere afspraken en een samenwerking die past binnen de wet- en regelgeving.
+          </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href="/opdrachtgevers/aanmelden"
@@ -59,18 +65,18 @@ export default function OpdrachtgeversPage() {
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Je wilt brandveiligheid goed organiseren en tegelijkertijd netjes
-              omgaan met zelfstandigen en wetgeving. ProBrandwacht helpt je om dat
-              concreet en werkbaar te maken.
+              omgaan met zelfstandigen en wetgeving. ProSafetyMatch helpt je om
+              dat concreet en werkbaar te maken.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
               <h3 className="text-sm font-semibold text-emerald-300">
-                Transparante informatie
+                Heldere informatie
               </h3>
               <p className="text-sm text-slate-200">
-                In een oogopslag relevante informatie over ervaring en kwalificaties van zelfstandige
+                Heldere, toetsbare informatie over ervaring en kwalificaties van zelfstandige
                 brandwachten - zonder anonieme dossiers.
               </p>
             </div>
@@ -91,6 +97,50 @@ export default function OpdrachtgeversPage() {
                 We denken mee in de richting van DBA-proof samenwerking, zonder je
                 organisatie onnodig complex te maken. Praktisch, helder en goed
                 uitlegbaar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BRUG TUSSEN OPDRACHTGEVER EN ZZZP */}
+      <section className="border-b border-slate-900/60 bg-slate-900/80">
+        <div className="mx-auto max-w-5xl px-4 py-10 md:py-12">
+          <div className="space-y-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+              Brug tussen opdrachtgevers en zelfstandigen
+            </p>
+            <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
+              Samen beslissen, samen documenteren
+            </h2>
+            <p className="text-sm text-slate-200 md:text-base">
+              ProSafetyMatch legt alles vast binnen één digitaal dossier: de opdracht, de geschatte uren,
+              de certificaten en de nabesprekingen. Duidelijke, controleerbare notities tonen exact wat er is
+              afgesproken. Opdrachtgevers zien hoe zzp’ers hun beschikbaarheid, tarief en opvolgstappen
+              aanpassen en kunnen wijzigingen goedkeuren; zzp’ers weten precies welke rapportages of
+              certificaten de opdrachtgever nodig heeft. Zo blijven jullie samen verantwoordelijk.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+              <h3 className="text-sm font-semibold text-emerald-300">Gezamenlijke opdrachtkaart</h3>
+              <p className="text-sm text-slate-200">
+                Eén overzicht met tarief, rolverdeling, documenten en contactmomenten die opdrachtgever én zzp’er kunnen aanvullen en goedkeuren.
+              </p>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+              <h3 className="text-sm font-semibold text-sky-300">Afstemming & updates</h3>
+              <p className="text-sm text-slate-200">
+                Alle wijzigingen in planning, wachttijden of reistijd worden samen verwerkt en zijn controleerbaar, zodat iedereen dezelfde verwachting
+                behoudt.
+              </p>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+              <h3 className="text-sm font-semibold text-violet-300">Toetsbare afronding</h3>
+              <p className="text-sm text-slate-200">
+                Evaluaties, foto's en checklists blijven bewaard zodat de opdrachtgever en zzp’er later nog kunnen teruglezen wat er
+                precies is afgesproken en geleverd — een duidelijke, controleerbare geschiedenis die jullie samen verantwoordelijk houdt.
               </p>
             </div>
           </div>
@@ -119,7 +169,7 @@ export default function OpdrachtgeversPage() {
                 Meld je organisatie aan
               </h3>
               <p className="text-sm text-slate-200">
-                Je registreert je als opdrachtgever in transparante samenwerking en geeft aan in welke
+                Je registreert je als opdrachtgever in eerlijke samenwerking en geeft aan in welke
                 context je brandwachten inzet: events, industrie, bouw, infra of combinatie.
               </p>
             </li>
@@ -155,7 +205,7 @@ export default function OpdrachtgeversPage() {
                 Naar een duurzaam safety-model
               </h3>
               <p className="text-sm text-slate-200">
-                Door met zelfstandigen te werken via een transparant platform, bouw
+                Door met zelfstandigen te werken via een eerlijk platform, bouw
                 je aan een duurzaam model dat toekomstbestendig is - en klaar voor
                 de koppeling met ProSafetyMatch.
               </p>

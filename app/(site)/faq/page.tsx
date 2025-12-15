@@ -40,10 +40,18 @@ export default function FaqPage() {
             <h1 className="text-3xl font-semibold text-slate-900">Veelgestelde vragen
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Deze veelgestelde vragen sluiten aan op de manier van werken die je op de rest van
-            ProBrandwacht ziet: transparant, DBA-proof en met respect voor zelfstandig
+            ProBrandwacht ziet: eerlijk, DBA-proof en met respect voor zelfstandig
             ondernemerschap.
           </p>
     </h1>
+            <p className="mt-3 max-w-2xl text-sm text-slate-200">
+              Deze veelgestelde vragen sluiten aan op de manier van werken die je op de rest van
+              ProBrandwacht ziet: eerlijk, DBA-proof en met respect voor zelfstandig
+              ondernemerschap.
+            </p>
+            <p className="text-sm text-slate-200">
+              De antwoorden zijn gezamenlijk opgesteld met opdrachtgevers en zzp’ers, zodat alle processen helder, goedgekeurd en controleerbaar blijven.
+            </p>
 
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
