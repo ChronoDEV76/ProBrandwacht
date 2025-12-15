@@ -195,14 +195,9 @@ export default function VoorBrandwachtenPage() {
         {/* Stappen */}
         <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
           <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen
-          <p className="mt-4 text-xs text-slate-300">
-            Via ProBrandwacht werk je nu al op deze manier, en straks via ProSafetyMatch ook
-            volledig digitaal met planning, documentatie en facturatie.
-          </p>
-    </p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
             <p className="mt-4 text-xs text-slate-300">
-              Via ProBrandwacht werk je nu al op deze manier, ondersteund door ProSafetyMatch die planning, documentatie en facturatie digitaal bij elkaar brengt.
+              Via ProBrandwacht werk je nu al op deze manier, ondersteund door ProSafetyMatch die planning, documentatie en facturatie digitaal bij elkaar brengt. De voorbeelden zijn indicatief en afhankelijk van jouw inzet, beschikbaarheid en risico’s.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               We werken stap voor stap aan een eerlijke manier van samenwerken: jouw profiel, certificaten en afspraken blijven van jou,

@@ -12,22 +12,18 @@ export default function BelangenPage() {
             </span>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              De positie van de{" "}
-              <span className="text-emerald-300">zelfstandige brandwacht</span>
+              De positie van de <span className="text-emerald-300">zelfstandige brandwacht</span>
               <br className="hidden md:block" /> professioneel en toekomstbestendig organiseren
             </h1>
-          <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Dezelfde uitgangspunten zie je terug in alle pagina&apos;s en tools: transparantie,
-            zelfstandigheid en duidelijke, DBA-proof afspraken voor alle betrokken partijen.
-          </p>
-    
-
+            <p className="mt-3 max-w-2xl text-sm text-slate-200">
+              Dezelfde uitgangspunten zie je terug in alle pagina's, tools en in de toekomstige
+              ProSafetyMatch-functionaliteiten: eerlijkie, zelfstandigheid en duidelijke,
+              DBA-proof afspraken voor alle betrokken partijen. 
+            </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              De brandwachtsector is in beweging. De behoefte aan transparantie,
-              duidelijke afspraken en professionele samenwerking groeit – zowel voor
-              zelfstandige brandwachten als voor opdrachtgevers. ProBrandwacht
-              brengt deze belangen bij elkaar en maakt de sector stap voor stap
-              toekomstbestendiger.
+              De brandwachtsector is in beweging. De behoefte aan eerlijkie, duidelijke afspraken en professionele samenwerking
+              groeit – zowel voor zelfstandige brandwachten als voor opdrachtgevers. ProBrandwacht brengt deze belangen bij elkaar en
+              maakt de sector stap voor stap toekomstbestendiger.
             </p>
           </div>
         </div>
@@ -43,8 +39,8 @@ export default function BelangenPage() {
           <p className="text-sm leading-relaxed text-slate-200 md:text-base max-w-3xl">
             Zelfstandige brandwachten leveren cruciale bijdragen op evenementen,
             industriële locaties, bouwplaatsen en in openbare ruimtes. Toch is de
-            manier waarop deze professionals samenwerken met opdrachtgevers niet
-            altijd helder geregeld. Dat is geen onwil, maar vaak een gevolg van
+            manier waarop deze professionals samenwerken met opdrachtgevers nog
+            niet overal helder geregeld. Dat is geen onwil, maar vaak een gevolg van
             wisselende werkwijzen, verschillende verwachtingen en onduidelijke
             contractvormen.
           </p>
@@ -69,7 +65,7 @@ export default function BelangenPage() {
             {/* 1 */}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 space-y-2">
               <h3 className="text-sm font-semibold text-emerald-300">
-                1. Eerlijke en transparante afspraken
+                1. Eerlijke en eerlijke afspraken
               </h3>
               <p className="text-sm text-slate-200">
                 Duidelijke tarieven, heldere verantwoordelijkheden en afspraken die
@@ -127,7 +123,7 @@ export default function BelangenPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 space-y-2">
               <h3 className="text-sm font-semibold text-emerald-300">
-                Toegang tot transparante samenwerking
+                Toegang tot eerlijke samenwerking
               </h3>
               <p className="text-sm text-slate-200">
                 Geen tussenlagen, maar directe samenwerking tussen zelfstandige
@@ -153,7 +149,7 @@ export default function BelangenPage() {
               </h3>
               <p className="text-sm text-slate-200">
                 Van contractuitleg tot tariefstructuren en wetgeving: ProBrandwacht
-                biedt toegankelijke informatie die zelfstandigen helpt professioneel
+                biedt toegankelijke, indicatieve informatie die zelfstandigen helpt professioneel
                 te ondernemen.
               </p>
             </div>
@@ -188,7 +184,7 @@ export default function BelangenPage() {
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht staat voor transparantie, vakmanschap en duidelijke
+              ProBrandwacht staat voor eerlijkie, vakmanschap en duidelijke
               afspraken — de pijlers voor professionele brandveiligheid in
               Nederland.
             </p>

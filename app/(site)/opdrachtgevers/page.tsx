@@ -30,6 +30,9 @@ export default function OpdrachtgeversPage() {
             jullie zelf af — ProBrandwacht en ProSafetyMatch helpen om dat helder, uitlegbaar en
             praktisch te organiseren zonder extra tussenlagen of klassieke ketenconstructies.
           </p>
+          <p className="text-xs text-slate-400">
+            Tariefvoorstellen zijn indicatief en afhankelijk van inzet, locatie en certificering; kijk samen met de zzp’er welke afspraken passend zijn.
+          </p>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is een onafhankelijk platform waar je direct in contact komt met

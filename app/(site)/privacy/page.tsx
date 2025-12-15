@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <div className="space-y-4 text-sm text-gray-800">
             <h1 className="text-3xl font-semibold text-slate-900">Privacyverklaring
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Onze manier van werken is niet alleen inhoudelijk transparant, maar ook in de
+            Onze manier van werken is niet alleen inhoudelijk eerlijk, maar ook in de
             manier waarop we met gegevens omgaan. We verwerken data alleen om samenwerking
             veilig, uitlegbaar en professioneel te ondersteunen.
           </p>
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
             <h2 className="mt-6 text-lg font-semibold">Bewaartermijnen en jouw rechten</h2>
             <p>
               Gegevens die leiden tot onboarding bij ProSafetyMatch bewaren we zolang de samenwerking loopt of zolang de wet dit vereist. Aanvragen zonder
-              vervolg verwijderen we maximaal 12 maanden na ontvangst. Je mag altijd inzage, correctie of verwijdering vragen via onderstaande contactgegevens.
+              vervolg verwijderen we maximaal 12 maanden na ontvangst. Je kunt op elk moment inzage, correctie of verwijdering vragen via onderstaande contactgegevens.
             </p>
 
             <h2 className="mt-6 text-lg font-semibold">Contact</h2>

@@ -15,6 +15,12 @@ export default function HomePage() {
             <h1 className="text-3xl font-semibold leading-tight tracking-tight text-slate-50 md:text-4xl lg:text-5xl">
               Een plek waar brandwachten en opdrachtgevers elkaar écht leren kennen
             </h1>
+          <p className="mt-3 max-w-2xl text-sm text-slate-200">
+            ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
+            vinden in eerlijke, DBA-proof samenwerking — zonder klassieke bemiddelingslagen of andere
+            onnodige schakels.
+          </p>
+    
             <p className="mt-3 max-w-2xl text-sm text-slate-200">
               We begonnen als gesprek aan de keukentafel: hoe kan een brandwacht zijn vakmanschap
               tonen zonder in een doolhof van tussenpartijen te belanden? ProBrandwacht groeide uit
@@ -83,10 +89,10 @@ export default function HomePage() {
               Een moment waarop duidelijk werd wat ontbrak
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Tijdens de voorbereiding van een groot dance event zagen we hoe snel verantwoordelijkheid
-              versnipperde zodra er meerdere lagen tussen zaten. Iedereen wilde betere informatie,
-              maar niemand wist precies wie waarover kon besluiten. Transparantie en directe lijnen
-              bleken het ontbrekende stuk.
+            Tijdens de voorbereiding van een groot dance event zagen we hoe snel verantwoordelijkheid
+            versnipperde zodra er meerdere lagen tussen zaten. Iedereen wilde betere informatie,
+            maar niemand wist precies wie waarover kon besluiten. Heldere, toetsbare informatie en directe lijnen
+            bleken het ontbrekende stuk.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Dat inzicht is de basis voor dit platform: afspraken, tarieven en rollen worden meteen
@@ -118,12 +124,12 @@ export default function HomePage() {
               ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch wordt de technische,
               schaalbare laag die deze verhalen schaalbaar maakt. Samen vormen ze een hybride platform
               dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe
-              samenwerking, transparantie en zelfstandigheid als uitgangspunt.
+              samenwerking, eerlijkie en zelfstandigheid als uitgangspunt.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
-              feature-drop, wel duidelijke afspraken en DBA-bewust werken. Tarief en fee-inzicht zijn scenario’s en altijd afhankelijk van
-              context.
+              feature-drop, wel duidelijke afspraken en DBA-bewust werken. Tarief en fee-inzicht zijn scenario’s en vaak afhankelijk van
+              context; gebruik ze als indicatieve vertrekpunten voor je eigen bespreking.
             </p>
         </div>
       </section>
@@ -140,7 +146,7 @@ export default function HomePage() {
               <strong className="font-semibold text-emerald-300">zelfstandige brandwacht</strong>{' '}
               die eigen tarief, agenda en voorwaarden wil bewaken en mee wil bouwen aan ProSafetyMatch.
               Opdrachtgevers in industrie, events en infra krijgen een duidelijk beeld van wie ze inhuren
-              en helpen tegelijk het platform vormgeven dat zij gebruiken voor transparante inzet.
+              en helpen tegelijk het platform vormgeven dat zij gebruiken voor eerlijke inzet.
             </p>
           </div>
 
@@ -172,7 +178,7 @@ export default function HomePage() {
                   - Relevante info over ervaring en kwalificaties zonder tussenlagen.
                 </li>
                 <li>
-                  - Transparante afspraken en DBA-proof samenwerking - zonder
+                  - Heldere, toetsbare afspraken en DBA-proof samenwerking - zonder
                   ingewikkelde constructies.
                 </li>
                 <li>
@@ -198,13 +204,13 @@ export default function HomePage() {
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is de vakinhoudelijke laag, ProSafetyMatch de technische laag. We zoeken
-              zelfstandige brandwachten én opdrachtgevers die samen een transparant platform
+              zelfstandige brandwachten én opdrachtgevers die samen een eerlijk platform
               vormgeven: direct contact, DBA-bewust en zonder verborgen marges. Brandwachten houden
               zelf zicht en regie; opdrachtgevers krijgen dezelfde helderheid.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               Aanmelden = invloed op hoe het platform werkt en hoe profielen, certificaten en
-              afspraken zichtbaar blijven. Geen roadmap-slogan; heldere afspraken, transparant
+              afspraken zichtbaar blijven. Geen roadmap-slogan; heldere afspraken, eerlijk
               vastgelegd.
             </p>
           </div>
@@ -227,7 +233,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-4 text-xs text-slate-400">
-              Focus op platform: transparantie, zelfstandigheid en gelijkwaardige samenwerking.
+              Focus op platform: eerlijkie, zelfstandigheid en gelijkwaardige samenwerking.
             </p>
           </div>
         </div>
@@ -264,7 +270,7 @@ export default function HomePage() {
                 Stap 2
               </div>
               <h3 className="text-sm font-semibold text-slate-50">
-                Opdrachtgevers plaatsen transparante opdrachten
+                Opdrachtgevers plaatsen eerlijke opdrachten
               </h3>
               <p className="text-sm text-slate-200">
                 Locatie, risico&apos;s, duur en gewenste expertise worden helder omschreven. Geen vage

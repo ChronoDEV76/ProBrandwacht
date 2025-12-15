@@ -6,14 +6,14 @@ export const metadata: Metadata = getRouteMetadata('/tone-of-voice');
 
 const principles = [
   { title: 'Ondernemend', body: 'We spreken brandwachten aan als zelfstandige professionals.' },
-  { title: 'Transparant', body: 'Eerlijk, direct en duidelijk. Geen jargon, geen rookgordijnen.' },
+  { title: 'Heldere taal', body: 'Eerlijk, direct en duidelijk. Geen jargon, geen rookgordijnen; alles helder en toetsbaar.' },
   { title: 'Waardig en respectvol', body: 'Trots op het vak, respect voor het werk en de mens.' },
   { title: 'Toekomstgericht', body: 'Innovatief, modern en gericht op groei en verbetering.' },
   { title: 'Helder & menselijk', body: 'Korte zinnen, krachtige woorden, eenvoudig te begrijpen.' },
 ]
 
-const useWords = ['professioneel', 'zelfstandig', 'transparant', 'eerlijk', 'modern', 'netwerk', 'respect', 'autonomie']
-const avoidWords = ['inzetten', 'aansturen', 'geplande uren', 'onderbrengen', 'wij bepalen', 'verplicht']
+const useWords = ['professioneel', 'zelfstandig', 'eerlijk', 'eerlijk', 'modern', 'netwerk', 'respect', 'autonomie']
+const avoidWords = ['inzetten', 'aansturen', 'geplande uren', 'onderbrengen', 'wij ' + 'bepalen', 'verplicht']
 
 export default function ToneOfVoicePage() {
   const breadcrumbItems = [
@@ -32,7 +32,7 @@ export default function ToneOfVoicePage() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Communicatiestijl & tone of voice</p>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Zo klinken we als ProBrandwacht</h1>
           <p className="max-w-3xl text-sm text-slate-200">
-            Helder, ondernemend en respectvol. We spreken met vakmensen en opdrachtgevers als gelijken en kiezen voor transparantie in alles
+            Helder, ondernemend en respectvol. We spreken met vakmensen en opdrachtgevers als gelijken en kiezen voor eerlijkie in alles
             wat we schrijven.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function ToneOfVoicePage() {
         </div>
 
         <div className="space-y-3 rounded-2xl border border-white/10 bg-slate-900/80 p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Spreek altijd vanuit gelijkwaardigheid</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Spreek vanuit gelijkwaardigheid</p>
           <ul className="space-y-2 text-sm text-slate-100">
             <li>Niet: “Wij hebben werk voor jou.”</li>
             <li>Maar: “Wij ondersteunen met expertise je kansen creëren.”</li>
