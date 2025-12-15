@@ -19,7 +19,8 @@ export default function HomePage() {
               We begonnen als gesprek aan de keukentafel: hoe kan een brandwacht zijn vakmanschap
               tonen zonder in een doolhof van tussenpartijen te belanden? ProBrandwacht groeide uit
               tot een ontmoetingsplek waar verhalen, certificaten en verwachtingen open op tafel
-              liggen. Met elke aanmelding bouwen we samen aan ProSafetyMatch.
+              liggen. Met elke aanmelding bouwen we samen aan ProSafetyMatch, de technische,
+              schaalbare laag die deze menselijke aanpak ondersteunt.
             </p>
             <p className="text-base leading-relaxed text-slate-200 md:text-lg">
               Je deelt alleen wat nodig is, kiest je tarief en bewaakt je agenda. Aan de andere
@@ -114,9 +115,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 md:py-12">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Hybride, praktijkgedreven platform</h2>
             <p className="text-sm text-slate-200 md:text-base">
-              ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch is de technische, schaalbare laag. Samen vormen ze een hybride
-              platform dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe samenwerking, transparantie en
-              zelfstandigheid als uitgangspunt.
+              ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch wordt de technische,
+              schaalbare laag die deze verhalen schaalbaar maakt. Samen vormen ze een hybride platform
+              dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe
+              samenwerking, transparantie en zelfstandigheid als uitgangspunt.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
