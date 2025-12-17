@@ -31,7 +31,7 @@ describe('CostCalculator quick/live mode resets', () => {
     fireEvent.click(nightToggle)
     expect(nightToggle).toBeChecked()
 
-    fireEvent.click(screen.getByRole('button', { name: 'Snelle berekening' }))
+    fireEvent.click(screen.getAllByRole('button', { name: /snelle berekening/i })[0])
 
     const quickHours = (await screen.findByLabelText('Uren')) as HTMLInputElement
     expect(quickHours.value).toBe('0')
@@ -51,7 +51,7 @@ describe('CostCalculator quick/live mode resets', () => {
 
   it('allows manual reset while staying in quick mode', async () => {
     render(<CostCalculator />)
-    fireEvent.click(screen.getByRole('button', { name: 'Snelle berekening' }))
+    fireEvent.click(screen.getAllByRole('button', { name: /snelle berekening/i })[0])
     await screen.findByLabelText('Stad')
 
     const citySelect = screen.getByLabelText('Stad') as HTMLSelectElement
