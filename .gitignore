@@ -7,3 +7,23 @@ coverage/
 .env*
 .aider*
 .vercel
+
+# Local backup / scratch files
+**/*.bak
+**/*.bak2
+**/*.bak-polish
+
+# Local-only SEO audit outputs
+seo_report.local.json
+seo_report.local.md
+
+# Generated reports (created by hooks/scripts)
+reports/failsafe.json
+reports/tone-guard.json
+reports/tone-live-report.json
+
+# Local helper scripts / notes (not part of app)
+scripts/content_audit.py
+scripts/content_conscious_audit.py
+scripts/freeze_site_copy.py
+scripts/herstel freeze site copy.txt
