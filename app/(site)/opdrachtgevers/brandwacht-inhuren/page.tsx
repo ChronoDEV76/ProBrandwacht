@@ -22,7 +22,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       title: 'Direct zicht op beschikbaarheid',
       body: (
         <>
-          Handmatige matching en transparante communicatie over tarief, certificeringen en inzet. Geen marge op het uurtarief; jij schakelt
+          Handmatige matching en eerlijke communicatie over tarief, certificeringen en inzet. Geen marge op het uurtarief; jij schakelt
           rechtstreeks met de zelfstandige brandwacht of leverancier. Wat je afspreekt, ligt vast en blijft inzichtelijk.
         </>
       ),
@@ -32,7 +32,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       title: 'ProSafetyMatch principes',
       body: (
         <>
-          Digitale omgeving waarin vraag en aanbod elkaar direct vinden. DBA-proof, transparant en zonder marge op het uurtarief; afspraken en betalingen blijven inzichtelijk.
+          Digitale omgeving waarin vraag en aanbod elkaar direct vinden. DBA-bewust, eerlijk en zonder marge op het uurtarief; afspraken en betalingen blijven inzichtelijk.
         </>
       ),
     },
@@ -41,7 +41,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
       title: 'Eerlijk en voorspelbaar',
       body: (
         <>
-          Helder profiel van elke professional, duidelijke afspraken over gezag en taken, en geen verborgen kosten. Zo houd je grip op
+          Helder profiel van elke professional, duidelijke afspraken over rolverdeling en taken, en geen verborgen kosten. Zo houd je grip op
           veiligheid én budget.
         </>
       ),
@@ -49,7 +49,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -67,12 +67,12 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             headingLevel="h2"
             body={
               <>
-                We koppelen zichtbaar en zonder marge op het uurtarief. <span className="font-semibold">ProSafetyMatch</span> staat voor directe, DBA-proof afspraken tussen opdrachtgever en brandwacht: jij ziet wat er gebeurt en houdt continuïteit zonder ruis.
+                We koppelen zichtbaar en zonder marge op het uurtarief. <span className="font-semibold">ProSafetyMatch</span> staat voor directe, DBA-bewust afspraken tussen opdrachtgever en brandwacht: jij ziet wat er gebeurt en houdt continuïteit zonder ruis.
               </>
             }
             primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Aanmelden als opdrachtgever' }}
             secondaryCta={{ href: '/probrandwacht-direct', label: 'ProBrandwacht Direct' }}
-            footer={<>Niet-detacherend: je spreekt zelf tarief, taken en gezag af met de zelfstandige brandwacht.</>}
+            footer={<>Niet-detacherend: je spreekt zelf tarief, taken en rolverdeling af met de zelfstandige brandwacht.</>}
           />
         </div>
       </HeroBackground>
@@ -89,7 +89,7 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             </p>
             <ul className="space-y-2 text-sm text-slate-200">
               <li>- Industrie, events, infra of turnarounds: helder profiel per inzet.</li>
-              <li>- Tarief, taken en gezag spreek je direct af binnen DBA-proof kaders.</li>
+              <li>- Tarief, taken en rolverdeling spreek je direct af binnen DBA-bewust kaders.</li>
               <li>- Rijk(s)gediplomeerde brandwachten, gasmeting/mangatwacht beschikbaar.</li>
             </ul>
             <div className="flex flex-wrap gap-3 pt-2">
@@ -112,10 +112,10 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Eerlijke samenwerking zonder detacheringsconstructie</h2>
             <p className="text-sm text-slate-200">
               Geen marge op het uurtarief. Je ziet het profiel en spreekt direct met de brandwacht. Wij houden afspraken, certificaten en
-              verantwoordelijkheden zichtbaar zodat de inzet DBA-proof blijft.
+              verantwoordelijkheden zichtbaar zodat de inzet DBA-bewust blijft.
             </p>
             <ul className="space-y-2 text-sm text-slate-200">
-              <li>- Transparante afspraken over gezag en taken.</li>
+              <li>- Heldere, toetsbare afspraken over rolverdeling en taken.</li>
               <li>- Eventuele escrow is optioneel en zichtbaar; geen verborgen toeslagen op uurtarief.</li>
               <li>- Ondersteuning bij raamwerk van opdrachten en toolbox-bijeenkomsten zodat niets vaag blijft.</li>
             </ul>
@@ -133,10 +133,10 @@ export default function BrandwachtInhurenOpdrachtgeversPage() {
               </p>
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-semibold text-slate-100">Wat betekent DBA-proof brandwacht?</h3>
+              <h3 className="text-sm font-semibold text-slate-100">Wat betekent DBA-bewust brandwacht?</h3>
               <p className="text-sm text-slate-200">
                 Rollen, taken en tarieven staan vooraf vast tussen opdrachtgever en brandwacht. Geen schijnzelfstandigheid; afspraken
-                blijven transparant en herleidbaar.
+                blijven eerlijk en herleidbaar.
               </p>
             </div>
             <div className="space-y-1">

@@ -22,7 +22,7 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
     <section className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
       <h3 className="text-sm font-semibold text-slate-900">Toekomstig prijsmodel ProSafetyMatch (in ontwikkeling)</h3>
       <p className="mt-2">
-        ProSafetyMatch zet in op transparante tarieven zonder marge op het uurtarief van brandwachten. Het geplande platformmodel (verwacht
+        ProSafetyMatch zet in op eerlijke tarieven zonder marge op het uurtarief van brandwachten. Het geplande platformmodel (verwacht
         Q1 2026) is bewust zo eenvoudig mogelijk gehouden:
       </p>
       <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -37,6 +37,9 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
           rechtstreeks af tussen opdrachtgever en zzp’er.
         </li>
       </ul>
+      <p className="mt-2 text-sm text-slate-700">
+        Platformfee en escrowkosten blijven zichtbaar voor zowel opdrachtgever als zzp’er, zodat jullie gezamenlijk beoordelen of de kosten passen bij de inzet en de afspraken die jullie samen verantwoordelijk maken.
+      </p>
       <p className="mt-2 text-xs text-slate-500">
         Functionaliteit en planning kunnen wijzigen op basis van feedback, wetgeving en praktijkervaring. Zie dit als richting, geen
         harde productbelofte.

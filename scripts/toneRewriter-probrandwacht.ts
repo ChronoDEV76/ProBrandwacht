@@ -127,7 +127,7 @@ const upgradeRules: RewriteRule[] = [
   },
   {
     pattern: /\bopdrachtgever\b/gi,
-    replace: "opdrachtgever in transparante samenwerking",
+    replace: "opdrachtgever in eerlijke samenwerking",
     category: "upgrade",
     description: "Versterkt brug-/samenwerkingstaal.",
   },

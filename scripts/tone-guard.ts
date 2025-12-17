@@ -194,7 +194,7 @@ const RULES: Rule[] = [
     title: "‘Ontzorgen’ / ‘bemiddelen’ / ‘bemiddeling’",
     why: "ProSafetyMatch is geen bemiddelingsbureau; ‘ontzorgen/bemiddeling’ triggert dat frame.",
     re: /\b(ontzorg(en|t|ing)|bemiddel(ing|en|t)|tussenpersoon|tussenpartij|detacheerder|uitzendbureau)\b/gi,
-    replacement: "Gebruik: ‘directe afspraken’, ‘platform faciliteert’, ‘transparant proces’, ‘zelfstandig’.",
+    replacement: "Gebruik: ‘directe afspraken’, ‘platform faciliteert’, ‘eerlijk proces’, ‘zelfstandig’.",
     // Escape hatch: als je expliciet zegt "geen bemiddelingsbureau" mag het soms
     allowIfAlsoMatchesAny: [/\b(geen\s+bemiddelingsbureau|geen\s+klassiek\s+bureau|zonder\s+bureau)\b/i],
   },
@@ -214,7 +214,7 @@ const RULES: Rule[] = [
     title: "Feature-leak: logging / uniek ID / dispuut",
     why: "Juridische/operationele details niet lekken in copy tijdens ontwikkeling.",
     re: /\b(gelogd|chatgegevens|uniek\s+id|opvraagbaar|dispuut|geschil|audit[-\s]?trail)\b/gi,
-    replacement: "Hou het abstract: ‘transparantie en vastlegging van afspraken (waar passend)’.",
+    replacement: "Hou het abstract: ‘eerlijkie en vastlegging van afspraken (waar passend)’.",
   },
   {
     id: "feature-leak-spoed-addendum",
@@ -232,7 +232,7 @@ const RULES: Rule[] = [
     title: "Bureau-bashing / polariserende taal",
     why: "Je wilt volwassen, verbindend blijven (brug), zonder ‘oorlog’ frame.",
     re: /\b(bureaus?\s+(pakken|misleiden|zijn\s+fout|verzieken|stelen)|klanten\s+stelen|slager\s+keurt\s+zijn\s+eigen\s+vlees)\b/gi,
-    replacement: "Herformuleer naar: ‘we kiezen voor transparantie, directheid en betere samenwerking’.",
+    replacement: "Herformuleer naar: ‘we kiezen voor eerlijkie, directheid en betere samenwerking’.",
   },
   {
     id: "war-scheld-sneer",
@@ -240,7 +240,7 @@ const RULES: Rule[] = [
     title: "Schreeuwerige of sneer-taal",
     why: "Je wil rust + volwassenheid uitstralen, geen aanval.",
     re: /\b(schreeuw(erd|en)|van\s+de\s+daken\s+schreeuwen|bijdehand|gezeik|dwars\s+liggen)\b/gi,
-    replacement: "Houd het neutraal: ‘wij bouwen aan een rustiger, transparanter proces’.",
+    replacement: "Houd het neutraal: ‘wij bouwen aan een rustiger, eerlijker proces’.",
   },
 
   // 4) Te stellige beloftes (claim-risico)
@@ -256,10 +256,12 @@ const RULES: Rule[] = [
 
 /**
  * Calculator/vergelijking nuance guard:
- * - Als de page tekst duidelijke ‘vergelijking/uurloon/bureau/fee’ signalen bevat,
+ * - Als de page tekst duidelijke ‘vergelijking/calculator/fee/marge/uurtarief’ signalen bevat,
  *   dan moet er óók minstens één disclaimer/nuance term staan.
  */
-const CALC_TRIGGER = /\b(uurtarief|tarief|uur\s*prijs|platformfee|fee|via\s+bureau|t\.o\.v\.|verschil|scenario|indicatie|pdf[-\s]?rapport)\b/i;
+// Let op: "tarief/tarieven" alleen is te breed (bijv. /over-ons). We triggeren pas bij echte vergelijking/calculator-signalen.
+const CALC_TRIGGER =
+  /\b(uurtarief|uur\s*prijs|platformfee|fee|marge|via\s+bureau|t\.o\.v\.|verschil|calculator|bereken|tarief[-\s]?bereken|pdf[-\s]?rapport)\b/i;
 
 const CALC_DISCLAIMERS = [
   /\bindicatie(f)?\b/i,
@@ -316,7 +318,7 @@ function applyRules(text: string, maxSnippets: number): { issues: Hit[]; notes: 
         title: "Calculator/vergelijking zonder nuance/disclaimer",
         match: "calculator/vergelijking copy",
         count: 1,
-        snippets: ["(Trigger gevonden: tarief/fee/bureau/verschil, maar geen disclaimer-term)"],
+        snippets: ["(Trigger gevonden: vergelijking/calculator/fee/marge, maar geen disclaimer-term)"],
         replacement: "Voeg 1–2 termen toe zoals: ‘indicatief’, ‘scenario’, ‘afhankelijk van’, ‘marktconform’, ‘geen garantie’.",
       });
     }
@@ -473,4 +475,3 @@ async function main() {
 }
 
 main();
-

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import HeroBackground from "@/components/HeroBackground";
+import SeoStructuredData from "@/components/SeoStructuredData";
 import StructuredBreadcrumbs from "@/components/structured-breadcrumbs";
+import { zzpFaq } from "@/lib/seo/commonFaqs";
 import { getRouteMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = getRouteMetadata("/voor-brandwachten");
@@ -21,7 +23,7 @@ const perks = [
     body: "Duidelijke uitleg over hoe de samenwerking werkt, zonder verborgen verdienmodellen of onduidelijke afspraken; jij kunt zien en toetsbaar vastleggen wat normaal is.",
   },
   {
-    title: "DBA-proof samenwerking",
+    title: "DBA-bewust samenwerking",
     body: "Documenten, werkwijze en communicatie zijn geoptimaliseerd voor zelfstandigheid en uitlegbaarheid richting opdrachtgevers.",
   },
   {
@@ -30,7 +32,7 @@ const perks = [
   },
   {
     title: "Geen verplichtingen",
-    body: "Geen minimumuren, geen exclusiviteit, geen langdurige binding. Jij blijft ondernemer.",
+    body: "Geen minimumuren of vaste binding. Jij blijft zelfstandig ondernemer.",
   },
 ];
 
@@ -77,7 +79,8 @@ export default function VoorBrandwachtenPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
+      <SeoStructuredData faqs={zzpFaq.slice(0, 4)} />
       <div className="mx-auto w-full max-w-6xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -119,10 +122,10 @@ export default function VoorBrandwachtenPage() {
       <section className="border-b border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-16 md:space-y-12 md:pb-20">
           {/* Wat jij krijgt */}
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
+          <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
             <div className="space-y-1">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Wat jij krijgt bij ProBrandwacht
+                Wat jij krijgt bij ProSafetyMatch
               </p>
               <p className="text-sm text-slate-200 md:text-base">
                 Een manier van samenwerken die past bij modern ondernemerschap in de brandveiligheidssector.
@@ -143,7 +146,7 @@ export default function VoorBrandwachtenPage() {
           </div>
 
           {/* Differentiators */}
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
+          <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/80 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
             <div className="space-y-1">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat ons anders maakt</p>
               <p className="text-sm text-slate-200 md:text-base">
@@ -183,7 +186,7 @@ export default function VoorBrandwachtenPage() {
 
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {bridgeSteps.map(step => (
-                <div key={step.title} className="space-y-2 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+                <div key={step.title} className="space-y-2 rounded-2xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/70 p-5">
                   <h3 className="text-sm font-semibold text-white">{step.title}</h3>
                   <p className="text-sm text-slate-200">{step.body}</p>
                 </div>
@@ -193,11 +196,11 @@ export default function VoorBrandwachtenPage() {
         </section>
 
         {/* Stappen */}
-        <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
+        <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
             <p className="mt-4 text-xs text-slate-300">
-              Via ProBrandwacht werk je nu al op deze manier, ondersteund door ProSafetyMatch die planning, documentatie en facturatie digitaal bij elkaar brengt. De voorbeelden zijn indicatief en afhankelijk van jouw inzet, beschikbaarheid en risico’s.
+              Via ProBrandwacht werk je nu al op deze manier, met het oog op ProSafetyMatch (in ontwikkeling), waarin planning, documentatie en facturatie kunnen samenkomen. De voorbeelden zijn indicatief en afhankelijk van jouw inzet, beschikbaarheid en risico’s.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               We werken stap voor stap aan een eerlijke manier van samenwerken: jouw profiel, certificaten en afspraken blijven van jou,

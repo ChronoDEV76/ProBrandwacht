@@ -10,7 +10,7 @@ type CityHeroProps = {
 export default function CityHero({ cityName, heading }: CityHeroProps) {
   const defaultHeading = (
     <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Zelfstandige brandwacht {cityName}: word gevonden en blijf DBA-proof
+      Zelfstandige brandwacht {cityName}: word gevonden en werk binnen Wet DBA
     </h1>
   )
 
@@ -20,7 +20,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
           Sluit je aan bij ProBrandwacht; wij delen leads in en rond {cityName} en bereiden je voor op werken via ProSafetyMatch
-          (Wet DBA-proof). Huidige status: handmatige matching en kennisdeling.
+          (binnen Wet DBA). Huidige status: handmatige matching en kennisdeling.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">

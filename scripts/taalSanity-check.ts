@@ -2,7 +2,7 @@
 // Doel:
 //  - Alleen content checken op rare herhalingen als:
 //      - "zelfstandig zelfstandig zelfstandig ..."
-//      - "in transparante samenwerking in transparante samenwerking ..."
+//      - "in eerlijke samenwerking in eerlijke samenwerking ..."
 //
 // Scope:
 //  - content/**/*.(md|mdx|json)
@@ -29,6 +29,7 @@ const ROOT_DIR = process.cwd();
 const BASE_DIRS = [
   path.join(ROOT_DIR, "content"),
   path.join(ROOT_DIR, "app", "(site)"),
+  path.join(ROOT_DIR, "components"),
 ];
 
 const EXTENSIONS = new Set<string>([".md", ".mdx", ".json", ".tsx"]);
@@ -42,11 +43,11 @@ const PATTERNS: { id: string; regex: RegExp; message: string }[] = [
     message: 'Herhaling van "zelfstandig" (3x of vaker) – waarschijnlijk typfout.',
   },
   {
-    id: "transparante-samenwerking-2x",
-    // in transparante samenwerking in transparante samenwerking (minimaal 2x)
-    regex: /\bin\s+transparante\s+samenwerking(\s+in\s+transparante\s+samenwerking)+\b/gi,
+    id: "eerlijke-samenwerking-2x",
+    // in eerlijke samenwerking in eerlijke samenwerking (minimaal 2x)
+    regex: /\bin\s+eerlijke\s+samenwerking(\s+in\s+eerlijke\s+samenwerking)+\b/gi,
     message:
-      'Herhaling van "in transparante samenwerking" (2x of vaker) – waarschijnlijk copy-paste fout.',
+      'Herhaling van "in eerlijke samenwerking" (2x of vaker) – waarschijnlijk copy-paste fout.',
   },
 ];
 
@@ -190,7 +191,7 @@ function analyseFile(filePath: string): Hit[] {
 
 function printHits(allHits: Hit[]): void {
   if (allHits.length === 0) {
-    console.log("✅ Geen rare herhalingen gevonden (zelfstandig/transparante samenwerking).");
+    console.log("✅ Geen rare herhalingen gevonden (zelfstandig/eerlijke samenwerking).");
     return;
   }
 
@@ -213,7 +214,7 @@ function printHits(allHits: Hit[]): void {
 }
 
 function main() {
-  console.log("🔍 Taal sanity (light) – zoekt alleen naar 'zelfstandig zelfstandig ...' en 'in transparante samenwerking ...'");
+  console.log("🔍 Taal sanity (light) – zoekt alleen naar 'zelfstandig zelfstandig ...' en 'in eerlijke samenwerking ...'");
 
   const files: string[] = [];
   for (const base of BASE_DIRS) {

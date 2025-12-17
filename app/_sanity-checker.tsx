@@ -19,7 +19,7 @@ const RISKY_TERMS = [
 ];
 
 const POSITIVE_TERMS = [
-  /transparant/i,
+  /eerlijk/i,
   /zelfstandigheid/i,
   /autonomie/i,
   /tariefbewustzijn/i,
@@ -74,7 +74,7 @@ function logResults({ riskyHits, positiveHits }: CheckResult, manual = false) {
   console.log("✅ Controle op positieve autoriteits-taal:");
   if (positiveHits.length === 0) {
     // eslint-disable-next-line no-console
-    console.warn("⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als transparant, zelfstandigheid, autonomie.");
+    console.warn("⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als eerlijk, zelfstandigheid, autonomie.");
   } else {
     positiveHits.forEach((hit) => {
       // eslint-disable-next-line no-console

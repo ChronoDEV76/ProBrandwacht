@@ -22,7 +22,7 @@ en tonen oplossingen op basis van cijfers en officiële bronnen.
 
 ### Do
 - Feiten als uitgangspunt: “Bij €30/u blijft €11 netto over.”
-- Analyse + oplossing: “Dat is niet kostendekkend; transparantie helpt beide partijen.”
+- Analyse + oplossing: “Dat is niet kostendekkend; eerlijkie helpt beide partijen.”
 - Gebruik systeemtaal: “De huidige structuur...”
 - Gebruik bronverwijzingen.
 
@@ -36,7 +36,7 @@ en tonen oplossingen op basis van cijfers en officiële bronnen.
 ## 🔤 Woordenlijst
 | Vermijden | Gebruik liever | Uitleg |
 |------------|----------------|--------|
-| oneerlijk | niet transparant / uit balans | Neutraler |
+| oneerlijk | niet eerlijk / uit balans | Neutraler |
 | bureaus profiteren | bureaumodel schuift risico’s door | Richt op systeem |
 | misbruik | scheefgroei / onevenwicht | Feitelijker |
 | onderbetaald | niet kostendekkend | Professioneel |
@@ -47,7 +47,7 @@ en tonen oplossingen op basis van cijfers en officiële bronnen.
 ## 💬 Standaardzin voor scherpe conclusies
 > “In de huidige markt liggen risico’s vaak bij de zelfstandige, terwijl tarieven nog zijn afgeleid van loondienstmodellen.
 > Dat leidt tot structurele scheefgroei.
-> Met transparantie in tariefopbouw kunnen opdrachtgever en professional dit samen herstellen.”
+> Met eerlijkie in tariefopbouw kunnen opdrachtgever en professional dit samen herstellen.”
 
 ---
 
@@ -55,7 +55,7 @@ en tonen oplossingen op basis van cijfers en officiële bronnen.
 - CBS StatLine – Cao-lonen & inflatie
 - ZZP Nederland – Kostprijsmodel
 - CAO Veiligheidsregio’s
-- ProSafetyMatch – Escrow & transparantiemodel
+- ProSafetyMatch – Escrow & eerlijkiemodel
 
 ---
 

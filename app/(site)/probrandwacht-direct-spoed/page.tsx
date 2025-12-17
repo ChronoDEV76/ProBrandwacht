@@ -10,7 +10,7 @@ export default function ProbrandwachtDirectSpoedPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       {/* HERO SPOED */}
       <section className="border-b border-slate-800 bg-gradient-to-b from-rose-950 via-slate-950 to-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
@@ -35,7 +35,7 @@ export default function ProbrandwachtDirectSpoedPage() {
               netwerk, binnen heldere afspraken en zonder onnodige tussenlagen.
             </p>
             <p className="text-xs text-slate-400 md:text-sm">
-              Deze spoed-funnel is een vroege voorloper van de directe opdrachtmatching in ProSafetyMatch. Door nu al je aanvragen via dit
+              Deze spoed-funnel verkent hoe directe aanvragen kunnen werken; ProSafetyMatch is daarbij een concept in ontwikkeling. Door nu al je aanvragen via dit
               kanaal te doen, help je ons de markt slimmer en eerlijker in te richten.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function ProbrandwachtDirectSpoedPage() {
       </section>
 
       {/* SPOED FUNNEL FORM / STAPPEN */}
-      <section className="border-b border-slate-800 bg-slate-950/95">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/95">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="grid gap-8 md:grid-cols-[2fr,1.3fr]">
             {/* Linkerkant: uitleg + stappen */}
@@ -77,7 +77,7 @@ export default function ProbrandwachtDirectSpoedPage() {
                   <br />
                   Je komt rechtstreeks in contact met de professional(s) en maakt
                   zelf de afspraken over tarief, taken en verantwoordelijkheden - in
-                  lijn met een DBA-proof samenwerking.
+                  lijn met een DBA-bewust samenwerking.
                 </li>
                 <li>
                   <span className="font-semibold text-slate-100">
@@ -128,7 +128,7 @@ export default function ProbrandwachtDirectSpoedPage() {
       </section>
 
       {/* SLOT / CONTEXT */}
-      <section className="bg-slate-950">
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h2 className="text-xl font-semibold md:text-2xl">
@@ -137,7 +137,7 @@ export default function ProbrandwachtDirectSpoedPage() {
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Met ProBrandwacht Direct Spoed los je acute bezetting op en draag je tegelijkertijd
               bij aan bredere professionalisering van de markt. De inzichten uit deze aanvragen
-              worden onderdeel van ProSafetyMatch, zodat brand- en safety-compliance structureel
+              kan aansluiten bij ProSafetyMatch, zodat brand- en safety-compliance structureel
               beter georganiseerd wordt.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">

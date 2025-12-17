@@ -19,7 +19,7 @@ const DEFAULT_KEYWORDS = [
   'brandwacht',
   'brandwacht inhuren',
   'brandwacht huren',
-  'DBA-proof brandwacht',
+  'wet dba brandwacht',
   'brandwacht tarieven',
 ]
 const OG_IMAGE = `${BASE_URL}/og-home.webp`
@@ -214,12 +214,12 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <header className="space-y-4">
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">Kennis uit de frontlinie van brandveilig werken</h1>
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">“Inzichten uit de dagelijkse praktijk van brandveilig werken.”</h1>
             <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
               We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
             </p>
             <p className="max-w-3xl text-sm text-slate-300 md:text-[15px]">
-              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel transparante onderbouwing.
+              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel eerlijke onderbouwing.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -387,7 +387,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-200">
             <h4 className="text-base font-semibold text-slate-50">ProSafetyMatch in ontwikkeling</h4>
             <p className="mt-2">
-              We werken aan ProSafetyMatch: een directe, DBA-proof manier van samenwerken. Wil je op de hoogte blijven?
+              We werken aan ProSafetyMatch: een directe, DBA-bewuste manier van samenwerken. Wil je op de hoogte blijven?
             </p>
           </section>
         </div>

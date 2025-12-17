@@ -119,14 +119,23 @@ const bridgeWords = [
   "partnerschap",
   "samenwerking",
   "in goed overleg",
-  "transparantie",
-  "transparant",
+  "eerlijkie",
+  "eerlijk",
   "balans",
   "evenwicht",
   "eerlijk",
   "eerlijke tarieven",
   "afspraken",
   "heldere afspraken",
+  "helder",
+  "toetsbaar",
+  "toetsbare afspraken",
+  "duidelijk",
+  "duidelijkheid",
+  "controleerbaar",
+  "goedgekeurd",
+  "gezamenlijk",
+  "samen verantwoordelijk",
   "gezamenlijk",
   "samen optrekken",
   "samen bouwen",
@@ -259,7 +268,7 @@ function analyseTextTone(url: string, text: string): SiteProfile {
       dominantTone = "Bruggenbouwer / Samenwerkend";
     }
     interpretationLines.push(
-      "Stevige aanwezigheid van samenwerkings- en transparantie-taal; toon is verbindend."
+      "Stevige aanwezigheid van samenwerkings- en eerlijkie-taal; toon is verbindend."
     );
   }
 
@@ -362,4 +371,3 @@ main().catch((err) => {
   console.error("Fatal error:", err);
   process.exit(1);
 });
-

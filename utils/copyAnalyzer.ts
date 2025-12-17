@@ -45,7 +45,7 @@ const empoweringWords = [
   'jij bepaalt',
   'zelf aan de slag',
   'direct contact',
-  'transparant',
+  'eerlijk',
   'dbA-proof',
   'dba-proof',
 ]

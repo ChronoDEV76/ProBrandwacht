@@ -6,7 +6,7 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 const description =
-  'Werk als een professional. Ondernemend en vrij. Meld je gratis aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-proof en transparant.';
+  'Werk als een professional. Ondernemend en vrij. Meld je gratis aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-bewust en eerlijk.'
 
 export const metadata = {
   title: 'ZZP brandwacht aanmelden | ProBrandwacht',
@@ -15,7 +15,7 @@ export const metadata = {
     'brandwacht',
     'brandwacht inhuren',
     'brandwacht huren',
-    'DBA-proof brandwacht',
+    'wet dba brandwacht',
     'brandwacht tarieven',
   ],
   alternates: {
@@ -26,6 +26,13 @@ export const metadata = {
     title: 'ZZP brandwacht aanmelden | ProBrandwacht',
     description,
     url: canonicalUrl,
+    images: [{ url: ogImage, width: 1200, height: 630, alt: 'ProBrandwacht.nl' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ZZP brandwacht aanmelden | ProBrandwacht',
+    description,
+    images: [ogImage],
   },
 };
 

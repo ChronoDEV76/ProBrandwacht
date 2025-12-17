@@ -40,7 +40,7 @@ Helder, direct en betrokken. Gebruik korte zinnen, spreek de lezer aan met “je
 ## Woordenlijst
 | Vermijden | Zeg liever | Waarom |
 | --- | --- | --- |
-| transparant | duidelijk, open | Voelt warmer en menselijker |
+| eerlijk | duidelijk, open | Voelt warmer en menselijker |
 | activatie, procesoptimalisatie | samenwerking, aanpak, planning | Minder afstandelijk |
 | tarievenstructuur | kostenopbouw, wat iemand verdient | Concreter |
 | efficiëntie | snel en goed geregeld, zonder gedoe | Begrijpelijk |

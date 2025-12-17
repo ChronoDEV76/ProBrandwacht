@@ -31,9 +31,9 @@ export const seoKeywordClusters = {
     'veiligheidswacht zzp platform',
     'veiligheidswacht opdrachten zzp',
   ],
-  tariefTransparantie: [
+  tariefInzicht: [
     'eerlijk brandwacht tarief',
-    'transparante brandwacht tarieven',
+    'eerlijke brandwacht tarieven',
     'brandwacht escrow betaling',
     'brandwacht tarief zonder bureau',
     'netto tarief brandwacht',
@@ -47,6 +47,9 @@ export const seoKeywordClusters = {
     'brandwacht tarief inzicht',
     'DBA-proof brandwacht',
     'brandwacht modelovereenkomst',
+    'heldere tarieven',
+    'toetsbare tariefafspraken',
+    'toetsbaar tarief',
   ],
   niches: [
     'industriële brandwacht',

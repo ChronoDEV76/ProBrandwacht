@@ -74,9 +74,18 @@ function titleizeSegment(segment: string) {
 }
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht.nl | Brandwacht inhuren & eerlijke tarieven",
+  title: "ProBrandwacht.nl | 1-op-1 samenwerken binnen Wet DBA – kennisplatform",
   description:
-    "Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – eerlijke tarieven en DBA-proof samenwerking via ProSafetyMatch.",
+    "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
+  keywords: [
+    "wet dba",
+    "wet dba brandwacht",
+    "dba-bewust samenwerken",
+    "samenwerken binnen wet dba",
+    "zelfstandig werken brandwacht",
+    "platform voor zelfstandige brandwachten",
+    "probrandwacht",
+  ],
   metadataBase: new URL(SITE_BASE_URL),
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   openGraph: {
@@ -84,15 +93,15 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     url: SITE_BASE_URL,
     siteName: "ProBrandwacht.nl",
-    title: "ProBrandwacht.nl | Brandwacht inhuren & eerlijke tarieven",
+    title: "ProBrandwacht.nl | 1-op-1 samenwerken binnen Wet DBA – kennisplatform",
     description:
-      "Huur een brandwacht in zonder tussenbureau. ProBrandwacht.nl – eerlijke tarieven en DBA-proof samenwerking via ProSafetyMatch.",
+      "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "ProBrandwacht.nl – Brandwacht inhuren",
+        alt: "ProBrandwacht.nl – Samenwerken binnen Wet DBA",
       },
     ],
   },

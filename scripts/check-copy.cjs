@@ -38,7 +38,7 @@ const patterns = [
     regex: /\b(laagste tarief|laagste prijs|goedkoopste brandwachten|goedkoopste|onder de marktprijs|dumpprijzen)\b/i,
     issue: "Prijsveiling / race-to-the-bottom taal past niet bij jullie Anti-bureau positie.",
     suggestion:
-      "Leg de nadruk op kwaliteit, veiligheid en eerlijk tarief. Bijvoorbeeld: 'marktconform en transparant', 'eerlijk tarief voor professioneel werk'.",
+      "Leg de nadruk op kwaliteit, veiligheid en eerlijk tarief. Bijvoorbeeld: 'marktconform en eerlijk', 'eerlijk tarief voor professioneel werk'.",
   },
 
   // 4. Absoluut risicoloos / 100%-claims

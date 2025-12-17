@@ -13,9 +13,9 @@ export default function ConclusieMarkt() {
         afgeleid van cao-logica. De risico’s liggen bij de zzp’er, terwijl marges bij intermediairs blijven.
       </p>
       <p>
-        Transparantie over tariefopbouw en gedeelde verantwoordelijkheid zijn essentieel om motivatie en kwaliteit te
-        behouden. Een model waarin opdrachtgever, platform en professional eerlijk delen in risico en beloning maakt de
-        markt duurzaam.
+        Heldere, toetsbare inzichten over tariefopbouw en gedeelde verantwoordelijkheid zijn essentieel om motivatie en
+        kwaliteit te behouden. Een model waarin opdrachtgever, platform en professional eerlijk delen in risico en beloning
+        maakt de markt duurzaam.
       </p>
       <Bronnen
         items={[

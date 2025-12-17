@@ -22,12 +22,12 @@ export default function ToneOfVoicePage() {
   ]
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      <section className="mx-auto max-w-5xl space-y-6 rounded-[26px] border border-white/10 bg-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
+      <section className="mx-auto max-w-5xl space-y-6 rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
         <div className="space-y-2">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Communicatiestijl & tone of voice</p>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Zo klinken we als ProBrandwacht</h1>
@@ -41,7 +41,7 @@ export default function ToneOfVoicePage() {
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Tone of voice</p>
           <div className="grid gap-3 md:grid-cols-2">
             {principles.map(item => (
-              <div key={item.title} className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
+              <div key={item.title} className="rounded-xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/60 p-4">
                 <p className="text-sm font-semibold text-white">⭐ {item.title}</p>
                 <p className="mt-1 text-sm text-slate-200">{item.body}</p>
               </div>
@@ -54,7 +54,7 @@ export default function ToneOfVoicePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Gebruik woorden zoals</p>
             <ul className="mt-2 grid gap-2">
               {useWords.map(word => (
-                <li key={word} className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2 text-sm text-slate-100">
+                <li key={word} className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/60 px-3 py-2 text-sm text-slate-100">
                   <span aria-hidden>•</span>
                   <span className="capitalize">{word}</span>
                 </li>
@@ -65,7 +65,7 @@ export default function ToneOfVoicePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Vermijd woorden zoals</p>
             <ul className="mt-2 grid gap-2">
               {avoidWords.map(word => (
-                <li key={word} className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2 text-sm text-slate-100">
+                <li key={word} className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/60 px-3 py-2 text-sm text-slate-100">
                   <span aria-hidden>•</span>
                   <span className="capitalize">{word}</span>
                 </li>

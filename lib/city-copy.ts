@@ -29,7 +29,7 @@ export const cityCopy: Partial<Record<CitySlug, CityCopy>> = {
     metaTitle:
       'Brandwacht inhuren Amsterdam – zzp-brandwachten voor events, bouw en industrie | ProBrandwacht.nl',
     metaDescription:
-      'Zoek je een brandwacht in Amsterdam? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, transparante afspraken.',
+      'Zoek je een brandwacht in Amsterdam? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, eerlijke afspraken.',
     body: `## Indicatief tarief in Amsterdam
 
 De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tussen:
@@ -44,7 +44,7 @@ De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tar
 - Sterk in evenementen, podiumbouw en tijdelijke locaties
 - Elke brandwacht minimaal rijksgediplomeerd Manschap A/B
 - Duidelijke afspraken over tijden, taken en aanspreekpunt
-- Transparante communicatie over tarief en bereikbaarheid
+- Heldere, toetsbare communicatie over tarief en bereikbaarheid
 - Mogelijkheid om vaste gezichten terug te laten komen bij herhaalopdrachten
 
 ## Veelgevraagde inzet in Amsterdam
@@ -65,7 +65,7 @@ De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tar
     metaTitle:
       'Brandwacht inhuren Rotterdam – zzp-brandwachten voor haven, bouw en industrie | ProBrandwacht.nl',
     metaDescription:
-      'Brandwacht nodig in Rotterdam? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor haven, bouw en industriële inzet. Eerlijke, transparante afspraken.',
+      'Brandwacht nodig in Rotterdam? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor haven, bouw en industriële inzet. Eerlijke, eerlijke afspraken.',
     body: `## Indicatief tarief in Rotterdam
 
 In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg op:

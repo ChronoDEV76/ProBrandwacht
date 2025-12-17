@@ -68,7 +68,7 @@ const HARD_WORDS: string[] = [
 ];
 
 const SUGGESTIONS: Record<string, string> = {
-  oneerlijk: "niet transparant / uit balans",
+  oneerlijk: "niet eerlijk / uit balans",
   profiteren: "risico’s doorschuiven / margeverschil",
   "bureaus profiteren": "bureaumodel schuift risico’s door",
   misbruik: "scheefgroei / onevenwicht",
@@ -99,7 +99,7 @@ const SUGGESTIONS: Record<string, string> = {
 
 // Positieve TOV-signalen
 const POSITIVE_KEYWORDS: string[] = [
-  "transparantie",
+  "eerlijkie",
   "kostendekkend",
   "balans",
   "duurzaam model",
@@ -115,6 +115,15 @@ const POSITIVE_KEYWORDS: string[] = [
   "onafhankelijk",
   "eerlijke tarieven",
   "vakmanschap",
+  "helder",
+  "heldere afspraken",
+  "toetsbaar",
+  "toetsbare afspraken",
+  "duidelijk",
+  "controleerbaar",
+  "goedgekeurd",
+  "gezamenlijk",
+  "samen verantwoordelijk",
   "zelfstandige brandwacht",
   "zelfstandige brandwachten",
 ];

@@ -20,7 +20,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           </h1>
 
           <p className="mt-2 text-sm leading-relaxed text-[#E5ECFF] drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
-            Transparante afspraken, eerlijke tarieven en volledige vrijheid. Gebruik de kennisbank en toolkit om DBA-proof en zonder
+            Heldere, toetsbare afspraken, eerlijke tarieven en volledige vrijheid. Gebruik de kennisbank en toolkit om DBA-bewust en zonder
             verborgen marges te werken.
           </p>
 
@@ -41,7 +41,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           </div>
 
           <p className="mt-3 text-[11px] text-slate-400">
-            Geen planners die bepalen wat jij moet doen — jij bent ondernemer. DBA-proof, transparant en zonder verborgen marges.
+            Geen planners die bepalen wat jij moet doen — jij bent ondernemer. Werk binnen Wet DBA, eerlijk en zonder verborgen marges.
           </p>
         </div>
       </div>

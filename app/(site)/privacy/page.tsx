@@ -1,80 +1,156 @@
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import SeoStructuredData from '@/components/SeoStructuredData'
 import type { Metadata } from 'next'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const canonicalUrl = 'https://www.probrandwacht.nl/privacy'
-const description =
-  'Zo gaat ProBrandwacht.nl om met persoonsgegevens, cookies en spoedaanvragen via Chrono4Solutions.'
-export const metadata: Metadata = getRouteMetadata('/privacy');
 
-
+export const metadata: Metadata = getRouteMetadata('/privacy')
 
 export default function PrivacyPage() {
+  const title = 'Privacyverklaring | ProBrandwacht'
+  const description =
+    'Lees hoe ProBrandwacht omgaat met persoonsgegevens en welke maatregelen we nemen om gegevens zorgvuldig en veilig te verwerken.'
+
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Privacy & cookies', url: canonicalUrl },
   ]
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
+      <SeoStructuredData
+        article={{
+          title,
+          description,
+          url: canonicalUrl,
+        }}
+      />
       <div className="mx-auto max-w-5xl px-4 py-12">
         <StructuredBreadcrumbs items={breadcrumbItems} />
 
         <section className="mt-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
-          <div className="space-y-4 text-sm text-gray-800">
-            <h1 className="text-3xl font-semibold text-slate-900">Privacyverklaring
-          <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Onze manier van werken is niet alleen inhoudelijk eerlijk, maar ook in de
-            manier waarop we met gegevens omgaan. We verwerken data alleen om samenwerking
-            veilig, uitlegbaar en professioneel te ondersteunen.
-          </p>
-    </h1>
+          <div className="space-y-5 text-sm leading-relaxed text-slate-800">
+            <header className="space-y-3">
+              <h1 className="text-3xl font-semibold text-slate-900">
+                Privacyverklaring
+              </h1>
+              <p className="max-w-2xl text-slate-600">
+                Eerlijk werken betekent ook zorgvuldig omgaan met persoonsgegevens.
+                ProBrandwacht verwerkt alleen gegevens die nodig zijn om samenwerking
+                veilig, uitlegbaar en professioneel te ondersteunen.
+              </p>
+            </header>
+
             <p>
-              Deze privacyverklaring is van toepassing op het platform ProBrandwacht, een handelsnaam van Chrono4solutions. ProBrandwacht respecteert de privacy
-              van alle gebruikers van haar platform en draagt er zorg voor dat de persoonlijke informatie die je ons verschaft, vertrouwelijk en volgens de
-              geldende wetgeving wordt behandeld.
+              Deze privacyverklaring is van toepassing op ProBrandwacht.nl.
+              ProBrandwacht is een initiatief binnen dezelfde onderneming als
+              ProSafetyMatch en opereert onder de handelsnaam van Chrono4Solutions.
+              Wij respecteren de privacy van bezoekers en verwerken persoonsgegevens
+              conform de Algemene Verordening Gegevensbescherming (AVG).
             </p>
 
-            <h2 className="mt-6 text-lg font-semibold">Welke gegevens we ontvangen</h2>
-            <p>We verzamelen persoonsgegevens die je zelf invult op ProBrandwacht.nl, waaronder:</p>
-            <ul className="mb-2 list-inside list-disc space-y-1">
-              <li>Contact- en bedrijfsgegevens via formulieren zoals /opdrachtgevers/aanmelden.</li>
-              <li>Projectdetails, budgetindicaties en spoedstatus via /probrandwacht-direct.</li>
-              <li>Anonieme gebruiksstatistieken via privacyvriendelijke analytics om de site te verbeteren.</li>
-            </ul>
-            <p>We vragen nooit om BSN, kopieen van identiteitsbewijzen of andere bijzondere persoonsgegevens via deze site.</p>
-
-            <h2 className="mt-6 text-lg font-semibold">Wanneer we gegevens delen</h2>
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Welke gegevens we verwerken
+            </h2>
             <p>
-              ProBrandwacht.nl gebruikt de gegevens primair om je onboarding bij ProSafetyMatch voor te bereiden. Bij spoed- of directe inzetaanvragen kunnen we
-              jouw contact- en projectgegevens veilig doorzetten naar onze operationele tak binnen Chrono4Solutions. Hiervoor geldt:
+              Wij verwerken uitsluitend gegevens die je zelf aan ons verstrekt, zoals:
             </p>
-            <ul className="mb-2 list-inside list-disc space-y-1">
-              <li>We delen alleen de informatie die nodig is om jouw aanvraag uit te voeren.</li>
-              <li>Chrono4Solutions verwerkt de gegevens enkel voor de betreffende aanvraag en hanteert eigen verwerkersovereenkomsten.</li>
-              <li>Je ontvangt een bevestiging zodra jouw aanvraag is doorgestuurd of opgepakt.</li>
+            <ul className="list-inside list-disc space-y-1">
+              <li>Naam, e-mailadres en contactgegevens via formulieren.</li>
+              <li>Projectinformatie, budgetindicaties en spoedstatus bij aanvragen.</li>
+              <li>Technische gegevens (geanonimiseerd) om de website te verbeteren.</li>
             </ul>
-            <p>Andere derden krijgen jouw gegevens niet, tenzij dit wettelijk verplicht is of je hier vooraf toestemming voor hebt gegeven.</p>
-
-            <h2 className="mt-6 text-lg font-semibold">Cookies en analytics</h2>
-            <p>We beperken cookies tot wat noodzakelijk is voor het functioneren van de site en privacyvriendelijke statistieken. Dat betekent:</p>
-            <ul className="mb-2 list-inside list-disc space-y-1">
-              <li>Functionele cookies om formulieren en beveiligingsmaatregelen goed te laten werken.</li>
-              <li>Geanonimiseerde analytics (zonder advertentiecookies) om te meten welke paginas het best presteren.</li>
-              <li>Geen tracking-cookies van derden en geen heridentificatie buiten ProBrandwacht of ProSafetyMatch.</li>
-            </ul>
-            <p>Als we in de toekomst aanvullende cookies willen plaatsen, vragen we hier vooraf expliciet toestemming voor.</p>
-
-            <h2 className="mt-6 text-lg font-semibold">Bewaartermijnen en jouw rechten</h2>
             <p>
-              Gegevens die leiden tot onboarding bij ProSafetyMatch bewaren we zolang de samenwerking loopt of zolang de wet dit vereist. Aanvragen zonder
-              vervolg verwijderen we maximaal 12 maanden na ontvangst. Je kunt op elk moment inzage, correctie of verwijdering vragen via onderstaande contactgegevens.
+              Wij vragen nooit om BSN, kopieën van identiteitsbewijzen of andere
+              bijzondere persoonsgegevens via deze website.
             </p>
 
-            <h2 className="mt-6 text-lg font-semibold">Contact</h2>
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Waarvoor we deze gegevens gebruiken
+            </h2>
+            <ul className="list-inside list-disc space-y-1">
+              <li>Om aanvragen en inschrijvingen correct te verwerken.</li>
+              <li>Om inzicht en rapportages te leveren (zoals tariefberekeningen).</li>
+              <li>Om contact op te nemen over een lopende aanvraag of samenwerking.</li>
+              <li>Om je op de hoogte te houden van relevante ontwikkelingen (optioneel).</li>
+            </ul>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              E-mail en technische infrastructuur
+            </h2>
             <p>
-              Vragen over privacy of cookies? Mail ons op <a className="underline" href="mailto:privacy@prosafetymatch.nl">privacy@prosafetymatch.nl</a>. Voor
-              algemene vragen kun je contact opnemen via <a className="underline" href="mailto:info@prosafetymatch.nl">info@prosafetymatch.nl</a>.
+              Voor het verzenden van functionele e-mails (zoals bevestigingen,
+              PDF-rapporten en statusupdates) maken wij gebruik van de
+              e-mailinfrastructuur van ProSafetyMatch.
+            </p>
+            <p>
+              Dit gebeurt binnen dezelfde organisatie en uitsluitend voor functionele
+              communicatie. Je gegevens worden niet gebruikt voor ongevraagde marketing
+              en niet gedeeld met externe partijen voor commerciële doeleinden.
+            </p>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Delen van gegevens met derden
+            </h2>
+            <p>
+              Gegevens worden alleen gedeeld wanneer dit noodzakelijk is voor de
+              uitvoering van een aanvraag, bijvoorbeeld bij directe of spoedinzet.
+              In dat geval delen wij uitsluitend de informatie die nodig is.
+            </p>
+            <p>
+              Andere derden ontvangen geen gegevens, tenzij dit wettelijk verplicht is
+              of je hier expliciet toestemming voor hebt gegeven.
+            </p>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Cookies en analytics
+            </h2>
+            <ul className="list-inside list-disc space-y-1">
+              <li>Functionele cookies voor correcte werking van formulieren.</li>
+              <li>Privacyvriendelijke, geanonimiseerde analytics.</li>
+              <li>Geen advertentiecookies en geen tracking door derden.</li>
+            </ul>
+            <p>
+              Mocht dit beleid wijzigen, dan vragen wij vooraf expliciet toestemming.
+            </p>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Bewaartermijnen
+            </h2>
+            <p>
+              Gegevens die leiden tot een samenwerking bewaren wij zolang dit nodig is
+              voor de uitvoering en zolang de wet dit vereist. Aanvragen zonder vervolg
+              verwijderen wij uiterlijk binnen 12 maanden.
+            </p>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Jouw rechten
+            </h2>
+            <p>
+              Je hebt het recht om je gegevens in te zien, te corrigeren of te laten
+              verwijderen. Ook kun je bezwaar maken tegen verwerking of vragen om
+              gegevensoverdracht.
+            </p>
+
+            <h2 className="pt-4 text-lg font-semibold text-slate-900">
+              Contact
+            </h2>
+            <p>
+              Voor vragen over privacy of gegevensverwerking kun je contact opnemen via{' '}
+              <a
+                href="mailto:privacy@prosafetymatch.nl"
+                className="underline underline-offset-4"
+              >
+                privacy@prosafetymatch.nl
+              </a>
+              . Voor algemene vragen:{" "}
+              <a
+                href="mailto:info@prosafetymatch.nl"
+                className="underline underline-offset-4"
+              >
+                info@prosafetymatch.nl
+              </a>.
             </p>
           </div>
         </section>

@@ -17,7 +17,7 @@ export default function OpdrachtgeverAanmeldenPage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: opdrachtgeverFaq.map(item => ({
+    mainEntity: opdrachtgeverFaq.slice(0, 4).map(item => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: { '@type': 'Answer', text: item.answer },

@@ -48,7 +48,7 @@ const HARD_WORDS = [
 ];
 
 const SUGGESTIONS = {
-  oneerlijk: "niet transparant / uit balans",
+  oneerlijk: "niet eerlijk / uit balans",
   profiteren: "margeverschil / ketenbelang",
   misbruik: "scheefgroei",
   inzetten: "samenwerken / inschakelen op eigen voorwaarden",
@@ -57,13 +57,22 @@ const SUGGESTIONS = {
 };
 
 const POSITIVE_KEYWORDS = [
-  "transparantie",
+  "eerlijkie",
   "zelfstandigheid",
   "dba-proof",
   "autonomie",
   "onafhankelijk",
   "eerlijke tarieven",
   "vakmanschap",
+  "helder",
+  "heldere afspraken",
+  "toetsbaar",
+  "toetsbare afspraken",
+  "duidelijk",
+  "controleerbaar",
+  "goedgekeurd",
+  "gezamenlijk",
+  "samen verantwoordelijk",
   "zelfstandige brandwacht",
   "zelfstandige brandwachten"
 ];

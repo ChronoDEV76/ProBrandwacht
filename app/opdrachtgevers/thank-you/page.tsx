@@ -27,7 +27,7 @@ export default function ThankYouPage({
             vakmanschap &amp; duidelijke kostenopbouw
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            eerlijk &amp; DBA-proof
+            eerlijk &amp; DBA-bewust
           </span>
         </div>
       </div>

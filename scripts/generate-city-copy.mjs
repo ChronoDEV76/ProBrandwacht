@@ -92,7 +92,7 @@ Binnen enkele minuten geregeld. Jij houdt de regie.`,
     metaTitle:
       "Brandwacht inhuren Rotterdam | Haven, bouw & events – direct & eerlijk",
     metaDescription:
-      "Rijksgediplomeerde brandwacht in Rotterdam nodig? Direct schakelen met zzp-brandwachten voor haven, bouw, events en industrie. Transparant tarief, zonder bureau-opslag.",
+      "Rijksgediplomeerde brandwacht in Rotterdam nodig? Direct schakelen met zzp-brandwachten voor haven, bouw, events en industrie. Heldere, toetsbare tarieven, zonder bureau-opslag.",
     h1: "Brandwacht inhuren in Rotterdam – direct, eerlijk en zonder bureaumarge",
     intro:
       "Rotterdam draait op haven, bouw en evenementen: van Maasvlakte en Botlek tot Ahoy, De Kuip en de binnenstad. Voor heetwerk, onderhoudsstops, tijdelijke bouwprojecten en events is regelmatig extra brandwachtcapaciteit nodig. Via dit platform huur je rechtstreeks een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder tussenkomst van een bemiddelingsbureau en zonder verborgen opslag.",
@@ -101,7 +101,7 @@ Binnen enkele minuten geregeld. Jij houdt de regie.`,
 [CONVERSIECALCULATOR HIER LADEN]
 
 Je ziet vooraf het uurtarief van de brandwacht + de platformfee.  
-Transparant en eerlijk – geen verrassingen achteraf.
+Heldere, toetsbare tariefinformatie; geen verrassingen achteraf.
 
 ## Waarom opdrachtgevers in Rotterdam voor zzp-brandwachten kiezen
 
@@ -109,7 +109,7 @@ Transparant en eerlijk – geen verrassingen achteraf.
 - Geen bureaumarge, je betaalt het tarief van de professional  
 - Elke brandwacht minimaal rijksgediplomeerd Manschap A/B  
 - Snel schakelen bij spoedklussen en korte opdrachten  
-- Eerlijke, transparante afspraken
+- Eerlijke, eerlijke afspraken
 
 ## Veelgevraagde inzet in Rotterdam
 
@@ -164,16 +164,16 @@ Je houdt zelf de regie over tarief, planning en keuze van de professional.`,
     metaTitle:
       "Brandwacht inhuren Den Haag | Evenementen, overheid & kust – direct geregeld",
     metaDescription:
-      "Brandwacht in Den Haag of Scheveningen nodig? Direct contact met rijksgediplomeerde brandwachten voor events, overheidspanden en tijdelijke projecten. Eerlijke, transparante tarieven.",
-    h1: "Brandwacht inhuren in Den Haag – transparant, direct en zonder omweg",
+      "Brandwacht in Den Haag of Scheveningen nodig? Direct contact met rijksgediplomeerde brandwachten voor events, overheidspanden en tijdelijke projecten. Eerlijke, eerlijke tarieven.",
+    h1: "Brandwacht inhuren in Den Haag – eerlijk, direct en zonder omweg",
     intro:
-      "Den Haag combineert overheid, internationale organisaties, events en kustlocaties. Van Scheveningen tot het World Forum en het Binnenhofgebied: regelmatig zijn extra brandwachten nodig voor evenementen, verbouwingen en tijdelijke veiligheidsmaatregelen. Via dit platform huur je rechtstreeks een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder bureau-opslag en met eerlijke, transparante tarieven.",
+      "Den Haag combineert overheid, internationale organisaties, events en kustlocaties. Van Scheveningen tot het World Forum en het Binnenhofgebied: regelmatig zijn extra brandwachten nodig voor evenementen, verbouwingen en tijdelijke veiligheidsmaatregelen. Via dit platform huur je rechtstreeks een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder bureau-opslag en met eerlijke, eerlijke tarieven.",
     body: `## Tariefcalculator
 
 [CONVERSIECALCULATOR HIER LADEN]
 
 Je ziet vooraf wat je betaalt: uurtarief + platformfee.  
-Geen vaste pakketten, maar transparante prijzen per opdracht.
+Geen vaste pakketten, maar eerlijke prijzen per opdracht.
 
 ## Waarvoor worden brandwachten in Den Haag vaak ingezet?
 
@@ -232,7 +232,7 @@ Je hebt snel zicht op beschikbare, rijksgediplomeerde brandwachten.`,
       "Rijksgediplomeerde brandwacht in Utrecht nodig? Ideaal voor Jaarbeurs-events, bouwprojecten en tijdelijke locaties. Eerlijke tarieven, geen bureaumarge.",
     h1: "Brandwacht inhuren in Utrecht – direct schakelen met rijksgediplomeerde professionals",
     intro:
-      "Utrecht is een knooppunt voor events, kantoren en bouwprojecten. Jaarbeurs, stationsgebied, Leidsche Rijn en binnenstad vragen regelmatig om extra brandwachtcapaciteit. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder bureau-opslag en met transparante tarieven.",
+      "Utrecht is een knooppunt voor events, kantoren en bouwprojecten. Jaarbeurs, stationsgebied, Leidsche Rijn en binnenstad vragen regelmatig om extra brandwachtcapaciteit. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder bureau-opslag en met eerlijke tarieven.",
     body: `## Tariefcalculator
 
 [CONVERSIECALCULATOR HIER LADEN]
@@ -265,7 +265,7 @@ Tijdelijke maatregelen bij verbouwingen, testopstellingen of beperkte vluchtwege
 | Platformfee          | €4–€6         |
 | **Totaal**           | **€42–€56/uur** |
 
-Nuchtere, transparante prijsopbouw.
+Nuchtere, eerlijke prijsopbouw.
 
 ## Veelgestelde vragen
 
@@ -293,8 +293,8 @@ Binnen korte tijd zie je welke rijksgediplomeerde brandwachten beschikbaar zijn.
     metaTitle:
       "Brandwacht inhuren Eindhoven | Hightech, events & bouw – direct geregeld",
     metaDescription:
-      "Brandwacht in Eindhoven nodig? Rechtstreeks rijksgediplomeerde brandwachten voor Strijp-S, High Tech Campus, PSV-events en bouw. Eerlijke, transparante tarieven.",
-    h1: "Brandwacht inhuren in Eindhoven – slim, transparant en zonder bureaumarge",
+      "Brandwacht in Eindhoven nodig? Rechtstreeks rijksgediplomeerde brandwachten voor Strijp-S, High Tech Campus, PSV-events en bouw. Eerlijke, eerlijke tarieven.",
+    h1: "Brandwacht inhuren in Eindhoven – slim, eerlijk en zonder bureaumarge",
     intro:
       "Eindhoven is sterk in hightech, events en stedelijke ontwikkeling. Strijp-S, High Tech Campus, PSV-stadion en binnenstedelijke bouwprojecten vragen geregeld extra brandwachten. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder omweg via een bureau.",
     body: `## Tariefcalculator
@@ -364,7 +364,7 @@ Je houdt zelf de regie over selectie, tarief en planning.`,
 [CONVERSIECALCULATOR HIER LADEN]
 
 Je ziet precies wat de inzet kost: tarief van de brandwacht + platformfee.  
-Transparant en zonder verrassingen.
+Heldere, toetsbare tariefinformatie; geen verrassingen.
 
 ## Veelgevraagde inzet in Tilburg
 
@@ -414,8 +414,8 @@ Je ziet snel wie beschikbaar is en wat het kost.`,
     metaTitle:
       "Brandwacht inhuren Groningen | Stad, zorg & industrie – direct geregeld",
     metaDescription:
-      "Brandwacht in Groningen nodig? Direct rijksgediplomeerde brandwachten voor stad, zorginstellingen en industrie. Transparante tarieven, geen bureaumarge.",
-    h1: "Brandwacht inhuren in Groningen – nuchter, transparant en direct",
+      "Brandwacht in Groningen nodig? Direct rijksgediplomeerde brandwachten voor stad, zorginstellingen en industrie. Heldere, toetsbare tarieven, geen bureaumarge.",
+    h1: "Brandwacht inhuren in Groningen – nuchter, eerlijk en direct",
     intro:
       "Groningen heeft een mix van zorg, onderwijs, evenementen en industrie. Vanuit de stad en omliggende dorpen is er geregeld vraag naar tijdelijke brandwachten. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder tussenkomst van een traditioneel bureau.",
     body: `## Tariefcalculator
@@ -474,7 +474,7 @@ Binnen korte tijd zie je welke rijksgediplomeerde brandwachten kunnen aansluiten
       "Brandwacht inhuren Almere | Nieuwbouw, events & kantoren – direct geregeld",
     metaDescription:
       "Brandwacht in Almere nodig? Direct schakelen met rijksgediplomeerde zzp-brandwachten voor nieuwbouw, events en kantoren. Eerlijke tarieven, geen bureaumarge.",
-    h1: "Brandwacht inhuren in Almere – transparante inzet voor nieuwbouw en events",
+    h1: "Brandwacht inhuren in Almere – eerlijke inzet voor nieuwbouw en events",
     intro:
       "Almere groeit snel in nieuwbouw, kantoren en events. Bij opleveringen, verbouwingen en tijdelijke evenementen is vaak tijdelijk extra brandveiligheid nodig. Via dit platform huur je rechtstreeks een rijksgediplomeerde brandwacht (minimaal Manschap A/B).",
     body: `## Tariefcalculator
@@ -529,7 +529,7 @@ Je ziet snel wie beschikbaar is en tegen welk tarief.`,
     metaTitle:
       "Brandwacht inhuren Breda | Evenementen, horeca & bouw – direct met zzp",
     metaDescription:
-      "Brandwacht in Breda nodig? Direct contact met rijksgediplomeerde zzp-brandwachten voor events, horeca en bouw. Transparante tarieven, zonder bemiddelingsbureau.",
+      "Brandwacht in Breda nodig? Direct contact met rijksgediplomeerde zzp-brandwachten voor events, horeca en bouw. Heldere, toetsbare tarieven, zonder bemiddelingsbureau.",
     h1: "Brandwacht inhuren in Breda – eerlijk tarief, direct contact",
     intro:
       "Breda is sterk in evenementen en horeca, met daarnaast veel bouw- en renovatieprojecten. Vanaf het centrum tot evenementenlocaties en bedrijventerreinen is er regelmatig behoefte aan extra brandwachten. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B), zonder bureaumarge.",
@@ -584,15 +584,15 @@ Je houdt zelf de regie over wie je inhuurt en tegen welk tarief.`,
     metaTitle:
       "Brandwacht inhuren Nijmegen | Events, zorg & bouw – direct geregeld",
     metaDescription:
-      "Brandwacht in Nijmegen nodig? Direct contact met rijksgediplomeerde brandwachten voor Vierdaagse-events, zorg en bouw. Eerlijke, transparante tarieven.",
-    h1: "Brandwacht inhuren in Nijmegen – transparant en zonder bureaumarge",
+      "Brandwacht in Nijmegen nodig? Direct contact met rijksgediplomeerde brandwachten voor Vierdaagse-events, zorg en bouw. Eerlijke, eerlijke tarieven.",
+    h1: "Brandwacht inhuren in Nijmegen – eerlijk en zonder bureaumarge",
     intro:
       "Nijmegen kent grote events, zorginstellingen en een groeiende bouwopgave. Rond de Vierdaagse, stadsfeesten en verbouwingen is regelmatig extra brandwachtcapaciteit nodig. Via dit platform huur je direct een rijksgediplomeerde brandwacht (minimaal Manschap A/B).",
     body: `## Tariefcalculator
 
 [CONVERSIECALCULATOR HIER LADEN]
 
-Transparant inzicht in kosten: tarief van de brandwacht + platformfee.
+Heldere, toetsbare inzichten in kosten: tarief van de brandwacht + platformfee.
 
 ## Veelgevraagde inzet in Nijmegen
 
@@ -661,4 +661,3 @@ const fileContent =
 const targetPath = resolve(process.cwd(), "lib", "city-copy.ts");
 writeFileSync(targetPath, fileContent, "utf8");
 console.log("✅ lib/city-copy.ts gegenereerd op", targetPath);
-

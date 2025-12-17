@@ -1,10 +1,16 @@
 import Link from 'next/link'
 
 import WhyProBrandwachtSection from '@/components/why-probrandwacht-section'
+import SeoStructuredData from '@/components/SeoStructuredData'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
+
+export const metadata = getRouteMetadata('/')
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
+      <SeoStructuredData faqs={generalPlatformFaq.slice(0, 3)} />
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 md:flex-row md:items-center md:py-24">
@@ -17,7 +23,7 @@ export default function HomePage() {
             </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
-            vinden in eerlijke, DBA-proof samenwerking — zonder klassieke bemiddelingslagen of andere
+            vinden in eerlijke, DBA-bewust samenwerking — zonder klassieke bemiddelingslagen of andere
             onnodige schakels.
           </p>
     
@@ -45,7 +51,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-xs text-slate-400">
-              ProBrandwacht is de vakinhoudelijke voorloper van ProSafetyMatch - het
+              ProBrandwacht is de vakinhoudelijke basis voor een nieuw initiatief in ontwikkeling - het
               bredere platform voor brand- en safetyprofessionals.
             </p>
           </div>
@@ -58,7 +64,7 @@ export default function HomePage() {
               <li>- Je certificaten en ervaring als zelfstandige brandwacht.</li>
               <li>- Je eigen uurtarief en beschikbaarheid.</li>
               <li>- Voorkeuren qua projecten, sector en werktijden.</li>
-              <li>- Afspraken die voor iedereen helder en DBA-proof zijn.</li>
+              <li>- Afspraken die voor iedereen helder en DBA-bewust zijn.</li>
             </ul>
             <p className="text-xs text-slate-400">
               Vandaag beginnen we in de niche van brandwachten. Morgen is dit jouw
@@ -79,7 +85,7 @@ export default function HomePage() {
       </section>
 
       {/* FOUNDER STORY */}
-      <section className="border-b border-slate-800 bg-slate-950/90">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/90">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:py-14">
           <div className="flex-1 space-y-3">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
@@ -89,9 +95,9 @@ export default function HomePage() {
               Een moment waarop duidelijk werd wat ontbrak
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Tijdens de voorbereiding van een groot dance event zagen we hoe snel verantwoordelijkheid
+            Tijdens de voorbereiding van een groot Dance Event zagen we hoe snel verantwoordelijkheid
             versnipperde zodra er meerdere lagen tussen zaten. Iedereen wilde betere informatie,
-            maar niemand wist precies wie waarover kon besluiten. Heldere, toetsbare informatie en directe lijnen
+            maar niemand wist precies wie waarover kon besluiten. Heldere, transparante informatie en directe lijnen
             bleken het ontbrekende stuk.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
@@ -117,14 +123,14 @@ export default function HomePage() {
       </section>
 
       {/* POSITIONERING */}
-      <section className="border-b border-slate-800 bg-slate-950">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto max-w-5xl space-y-4 px-4 py-10 md:py-12">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Hybride, praktijkgedreven platform</h2>
             <p className="text-sm text-slate-200 md:text-base">
               ProBrandwacht is de inhoudelijke, menselijke laag; ProSafetyMatch wordt de technische,
-              schaalbare laag die deze verhalen schaalbaar maakt. Samen vormen ze een hybride platform
+              schaalbare laag die deze verhalen digitaal maakt. Samen vormen ze een hybride platform
               dat meebeweegt met wetgeving, markt en praktijk. Geen roadmap-retoriek, wel directe
-              samenwerking, eerlijkie en zelfstandigheid als uitgangspunt.
+              samenwerking, eerlijke en zelfstandigheid als uitgangspunt.
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               We bouwen, toetsen en schaven bij op basis van wat brandwachten en opdrachtgevers ervaren. Geen absolute claims, geen
@@ -135,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* VOOR WIE */}
-      <section className="border-b border-slate-800 bg-slate-950/80">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/80">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="mb-8 max-w-3xl space-y-3">
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
@@ -178,11 +184,11 @@ export default function HomePage() {
                   - Relevante info over ervaring en kwalificaties zonder tussenlagen.
                 </li>
                 <li>
-                  - Heldere, toetsbare afspraken en DBA-proof samenwerking - zonder
+                  - Heldere, toetsbare afspraken en DBA-bewust samenwerking - zonder
                   ingewikkelde constructies.
                 </li>
                 <li>
-                  - Je helpt ProSafetyMatch ontwikkelen terwijl je DBA-proof brandwachten inhuurt voor
+                  - Je helpt ProSafetyMatch ontwikkelen terwijl je DBA-bewust brandwachten inhuurt voor
                   industrie, events of infra.
                 </li>
                 <li>- Je schakelt rechtstreeks met vakmensen die hun eigen inzet en kennis bewaken.</li>
@@ -196,11 +202,11 @@ export default function HomePage() {
       <WhyProBrandwachtSection />
 
       {/* PLATFORM RECRUITMENT */}
-      <section className="border-b border-slate-800 bg-slate-950">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-12 md:flex-row md:items-center md:py-14">
           <div className="flex-1 space-y-3">
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Bouw mee aan ProSafetyMatch
+              Blijf op de hoogte van ProSafetyMatch
             </h2>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is de vakinhoudelijke laag, ProSafetyMatch de technische laag. We zoeken
@@ -210,7 +216,7 @@ export default function HomePage() {
             </p>
             <p className="text-sm text-slate-200 md:text-base">
               Aanmelden = invloed op hoe het platform werkt en hoe profielen, certificaten en
-              afspraken zichtbaar blijven. Geen roadmap-slogan; heldere afspraken, eerlijk
+              afspraken zichtbaar blijven; heldere afspraken, eerlijk
               vastgelegd.
             </p>
           </div>
@@ -233,18 +239,18 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-4 text-xs text-slate-400">
-              Focus op platform: eerlijkie, zelfstandigheid en gelijkwaardige samenwerking.
+              Focus op platform: eerlijke, zelfstandigheid en gelijkwaardige samenwerking.
             </p>
           </div>
         </div>
       </section>
 
       {/* HOE WERKT HET */}
-      <section className="border-b border-slate-800 bg-slate-950">
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="mb-8 space-y-3">
             <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Zo ziet een samenwerking via ProSafetyMatch eruit
+              Zo kan samenwerking via ProSafetyMatch eruitzien (concept in ontwikkeling)
             </h2>
             <p className="text-sm text-slate-200 md:text-base">
               Geen ingewikkelde constructies. Wel een route die voelt alsof je elkaar
@@ -285,8 +291,8 @@ export default function HomePage() {
                 Directe match en afspraken op eigen voorwaarden
               </h3>
               <p className="text-sm text-slate-200">
-                Via ProSafetyMatch kom je rechtstreeks met elkaar in contact. Je spreekt voorwaarden af
-                binnen duidelijke, DBA-proof kaders en houdt de lijn kort.
+                Via ProSafetyMatch kun je straks rechtstreeks met elkaar in contact komen (concept in ontwikkeling). Je spreekt voorwaarden af
+                binnen duidelijke, DBA-bewust kaders en houdt de lijn kort.
               </p>
             </li>
           </ol>
@@ -294,7 +300,7 @@ export default function HomePage() {
       </section>
 
       {/* VAKBOND-STYLE SLOT */}
-      <section className="bg-slate-950">
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">

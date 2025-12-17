@@ -22,7 +22,19 @@ const argv = Object.fromEntries(
   })
 )
 
-const ROOT = typeof argv.root === 'string' ? argv.root : '.'
+const DEFAULT_ROOTS = ['app', 'content', 'components']
+
+function parseRoots(arg) {
+  if (typeof arg !== 'string') return null
+  const roots = arg
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean)
+  return roots.length ? roots : null
+}
+
+const ROOT = typeof argv.root === 'string' ? argv.root : null
+const ROOTS = parseRoots(argv.roots) || (ROOT && ROOT !== '.' ? [ROOT] : DEFAULT_ROOTS)
 const MIN_SENT_LEN = Number(argv['min-sent-len'] || 80)
 const MAX_SENT_LEN = Number(argv['max-sent-len'] || 220)
 const MAX_PAR_LEN = Number(argv['max-par-len'] || 800)
@@ -125,8 +137,8 @@ function wpm(words) {
   return Math.ceil(words / WPM)
 }
 
-const rootPath = path.resolve(ROOT)
-const files = walk(rootPath)
+const rootPaths = ROOTS.map(r => path.resolve(r)).filter(p => fs.existsSync(p))
+const files = [...new Set(rootPaths.flatMap(p => walk(p)))]
 const duplicates = new Map()
 const tooLongSentences = []
 const tooLongParagraphs = []
@@ -189,6 +201,7 @@ const dupelist = [...duplicates.entries()]
 const totalWords = files.reduce((acc, f) => acc + fs.readFileSync(f, 'utf8').split(/\s+/).length, 0)
 
 const report = {
+  scannedRoots: ROOTS,
   scannedFiles: files.length,
   estimatedReadingMinutes: wpm(totalWords),
   duplicates: dupelist.slice(0, 200),

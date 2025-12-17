@@ -66,27 +66,27 @@ export default function CityPage({ params }: { params: { city: string } }) {
     },
     {
       eyebrow: "Samenwerking & wetgeving",
-      title: "DBA-proof samenwerken zonder gedoe",
+      title: "DBA-bewust samenwerken zonder gedoe",
       body: (
         <>
           Hoe je in {label} duidelijke afspraken maakt over wie waarvoor
-          verantwoordelijk is, hoe gezag wordt georganiseerd en welke documenten je
+          verantwoordelijk is, hoe rolverdeling wordt georganiseerd en welke documenten je
           gebruikt voor een uitlegbare zzp-samenwerking tussen opdrachtgever en
           zelfstandige brandwacht.
         </>
       ),
     },
-    {
-      eyebrow: "Tarief & scenario's",
-      title: "Transparante afspraken over inzet en tarief",
-      body: (
-        <>
-          Voorbeelden van dag-, nacht- en weekendinzet, verschil tussen preventieve
-          en repressieve inzet, en hoe je helder communiceert over tarief, reistijd
-          en wachtdiensten - zodat verwachtingen aan beide kanten duidelijk zijn.
-        </>
-      ),
-    },
+      {
+        eyebrow: "Tarief & scenario's",
+        title: "Heldere, toetsbare afspraken over inzet en tarief",
+        body: (
+          <>
+            Voorbeelden van dag-, nacht- en weekendinzet, verschil tussen preventieve
+            en repressieve inzet, en hoe je helder en toetsbaar communiceert over tarief, reistijd
+            en wachtdiensten - zodat verwachtingen aan beide kanten duidelijk zijn.
+          </>
+        ),
+      },
   ];
   const secondaryCta = SPOED_UI_ENABLED
     ? {
@@ -96,7 +96,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     : undefined;
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -109,12 +109,18 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <HeroShell
             eyebrow={`Zelfstandige brandwacht ${label} - Voor professionals & opdrachtgevers`}
-            title={<>Samenwerken met zelfstandige brandwachten in {label}</>}
+            title={<>Samenwerken met zelfstandige brandwachten in
+          <p className="mt-3 max-w-2xl text-sm text-slate-200">
+            De manier van samenwerken blijft overal hetzelfde: eerlijk, DBA-bewust en met ruimte
+            voor professioneel ondernemerschap — of je nu in Amsterdam, Eindhoven of Utrecht
+            werkt.
+          </p>
+     {label}</>}
             headingLevel="h2"
             body={
               <>
                 Alle belangrijke informatie op een plek: rollen, certificaten,
-                verantwoordelijkheden, DBA-afspraken en tarieftransparantie voor
+                verantwoordelijkheden, DBA-afspraken en eerlijke tarieven voor
                 brandwachtinzet in{" "}
                 <span className="font-semibold">{label}</span>. Geschikt als
                 vertrekpunt voor gesprekken tussen zelfstandige brandwachten en
@@ -128,8 +134,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
             secondaryCta={secondaryCta}
             footer={
               <>
-                Geen klassieke capaciteitsleverancier: je spreekt zelf tarief, taken en gezag af in
-                transparante samenwerking tussen opdrachtgever en zelfstandige brandwacht.
+                Geen klassieke capaciteitsleverancier: je spreekt zelf tarief, taken en rolverdeling af in
+                eerlijke samenwerking tussen opdrachtgever en zelfstandige brandwacht.
               </>
             }
           />
@@ -149,16 +155,16 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 pt-6 md:flex-row md:items-center">
         <div className="flex-1 space-y-3">
           <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-            Bouw mee aan ProSafetyMatch in {label}
+            Blijf op de hoogte van ProSafetyMatch in {label}
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die transparant willen samenwerken. Profielen met certificaten
-            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) blijven zichtbaar; tarief, taken en gezag spreek je direct af binnen DBA-proof
+            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die eerlijk willen samenwerken. Profielen met certificaten
+            (gasmeting, mangatwacht/buitenwacht, VCA, BHV) blijven zichtbaar; tarief, taken en rolverdeling spreek je direct af binnen jullie
             kaders.
           </p>
           <p className="text-sm text-slate-200 md:text-base">
-            Spoed? Dan schakelen we handmatig. Geplande inzet? Deel locatie, risico&apos;s en duur zodat beschikbare brandwachten gericht kunnen
-            reageren. Alles zonder detacheringsmarges en met afspraken die zichtbaar blijven.
+            Spoed? straks schakelen we 1 op 1, Deel locatie, risico&apos;s en duur zodat beschikbare brandwachten gericht kunnen
+            reageren. Alles zonder marges enkel een platformfee van 10% en met afspraken die zichtbaar blijven.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
@@ -181,8 +187,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Direct zicht op certificaten en ervaring in {label}.</li>
-            <li>- DBA-proof afspraken zonder tussenlagen of verborgen tarieven.</li>
-            <li>- Spoed via ProBrandwacht Direct, geplande inzet via het platform.</li>
+            <li>- DBA-bewust afspraken zonder tussenlagen of verborgen tarieven.</li>
+            <li>- Spoed via ProBrandwacht Direct ( i.o. ).</li>
           </ul>
         </div>
       </section>
@@ -192,7 +198,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </div>
 
       <section className="mx-auto max-w-5xl px-4 pb-20 pt-6">
-        <section className="rounded-[26px] border border-white/10 bg-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
+        <section className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)]">
           <h2 className="text-xl font-semibold text-slate-50">
             Veelgestelde vragen
           </h2>

@@ -1,9 +1,15 @@
 // app/(site)/over-ons/page.tsx
 
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import HeroBackground from "@/components/HeroBackground";
+import SeoStructuredData from "@/components/SeoStructuredData";
 import StructuredBreadcrumbs from "@/components/structured-breadcrumbs";
+import { generalPlatformFaq } from "@/lib/seo/commonFaqs";
+import { getRouteMetadata } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = getRouteMetadata("/over-ons");
 
 export default function OverOnsPage() {
   const breadcrumbItems = [
@@ -12,7 +18,8 @@ export default function OverOnsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
+      <SeoStructuredData faqs={generalPlatformFaq.slice(0, 3)} />
       <div className="mx-auto w-full max-w-6xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -53,7 +60,7 @@ export default function OverOnsPage() {
       {/* SECTIE: waarom & aanpak */}
       <section className="border-b border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950">
         <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-[1.4fr,1fr] md:py-16">
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/80 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
+          <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/80 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Wij verbeteren de sector samen</p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Eerlijke opdrachtgevers en zelfstandige professionals vinden elkaar steeds vaker. Niet door elkaar te beconcurreren, maar door
@@ -73,14 +80,14 @@ export default function OverOnsPage() {
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze belofte</p>
               <p className="mt-2 text-sm text-slate-200">
-                Heldere, toetsbare afspraken zonder verborgen marges, volledige autonomie voor zelfstandige brandwachten en DBA-proof samenwerking
+                Heldere, toetsbare afspraken zonder verborgen marges, volledige autonomie voor zelfstandige brandwachten en DBA-bewust samenwerking
                 voor opdrachtgevers.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Volgende stap</p>
               <p className="mt-2 text-sm text-slate-200">
-                Fundament voor ProSafetyMatch: dezelfde principes, digitaal ondersteund met planning, documentatie en facturatie.
+                aansluiting op een initiatief in ontwikkeling: dezelfde principes, digitaal ondersteund met planning, documentatie en facturatie.
               </p>
             </div>
           </div>
@@ -88,11 +95,11 @@ export default function OverOnsPage() {
       </section>
 
       {/* MISSIE & VISIE */}
-      <section className="border-b border-slate-900/60 bg-slate-950">
+      <section className="border-b border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:py-16">
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze missie</p>
-            <h3 className="mt-2 text-xl font-semibold text-white md:text-2xl">Heldere en toetsbare samenwerking mogelijk maken</h3>
+            <h2 className="mt-2 text-xl font-semibold text-white md:text-2xl">Heldere en toetsbare samenwerking mogelijk maken</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200">
               Een moderne, uitlegbare manier van samenwerken waarin zelfstandigen, opdrachtgevers en partners helder omgaan met afspraken,
               tarieven en verantwoordelijkheden.
@@ -101,17 +108,17 @@ export default function OverOnsPage() {
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze visie</p>
-            <h3 className="mt-2 text-xl font-semibold text-white md:text-2xl">Vakmanschap centraal, systemen ondersteunend</h3>
+            <h2 className="mt-2 text-xl font-semibold text-white md:text-2xl">Vakmanschap centraal, systemen ondersteunend</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200">
-              ProBrandwacht wordt de standaard voor eerlijke inzet van zelfstandige brandwachten in Nederland en vormt het fundament voor
-              het bredere safety-platform ProSafetyMatch.
+              ProBrandwacht is gebouwd rond eerlijke inzet van zelfstandige brandwachten en sluit inhoudelijk aan op
+              een breder safety-platform in ontwikkeling: ProSafetyMatch.
             </p>
           </div>
         </div>
       </section>
 
       {/* WAAROM PROBRANDWACHT */}
-      <section className="bg-slate-950">
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Waarom ProBrandwacht?
@@ -131,9 +138,9 @@ export default function OverOnsPage() {
             {[
               "Heldere, toetsbare afspraken zonder verborgen marges",
               "Volledige autonomie voor zelfstandige brandwachten",
-              "DBA-proof samenwerking voor opdrachtgevers",
+              "DBA-bewust samenwerking voor opdrachtgevers",
               "Geschikt voor bureaus die modern willen meebewegen",
-              "Fundament voor de volgende stap: ProSafetyMatch",
+              "Volgende stap in ontwikkeling: ProSafetyMatch",
               "Respect voor vakmanschap en duidelijke rollen",
             ].map(item => (
               <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-sm text-slate-200 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.6)]">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const taglines = [
-  "Eerlijk en transparant werken met zicht op tariefopbouw en afspraken.",
+  "Eerlijk en eerlijk werken met zicht op tariefopbouw en afspraken.",
   "Wij matchen expertise aan jouw opdracht.",
   "Bij beschikbaarheid, Snel inzetbaar op locatie.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",

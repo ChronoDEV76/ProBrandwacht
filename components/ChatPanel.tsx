@@ -8,7 +8,7 @@ type RawMessage = {
   request_id: string
   sender_id: string | null
   sender_name: string | null
-  sender_role: 'zelfstandige brandwacht' | 'opdrachtgever in transparante samenwerking' | 'admin' | null
+  sender_role: 'zelfstandige brandwacht' | 'opdrachtgever in eerlijke samenwerking' | 'admin' | null
   text?: string | null
   message?: string | null
   content?: string | null
@@ -30,7 +30,7 @@ export default function ChatPanel({
 }: {
   requestId: string
   viewerName: string
-  viewerRole?: 'zelfstandige brandwacht' | 'opdrachtgever in transparante samenwerking' | 'admin'
+  viewerRole?: 'zelfstandige brandwacht' | 'opdrachtgever in eerlijke samenwerking' | 'admin'
   viewerId?: string
 }) {
   const supabase = supabaseBrowser()
@@ -137,8 +137,11 @@ export default function ChatPanel({
     <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 p-3">
         <h3 className="text-sm font-semibold text-slate-900">
-          Chat met opdrachtgever in transparante samenwerking
+          Chat met opdrachtgever in eerlijke samenwerking
         </h3>
+        <p className="text-xs text-slate-500">
+          Houd bespreking, afspraken en vragen gedeeld bij elkaar zodat iedereen dezelfde context behoudt en jullie een gezamenlijk, toetsbaar spoor hebben.
+        </p>
         <p className="text-xs text-slate-500">
           Je reageert als <span className="font-medium">{viewerName}</span> ({viewerRole})
         </p>

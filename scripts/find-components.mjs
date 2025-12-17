@@ -4,7 +4,7 @@ import path from "node:path";
 
 // Scant app/ en content/ op JSX component-tags en import-paden die lijken op calculators/richtlijnen.
 const ROOT = process.cwd();
-const SEARCH_ROOTS = ["app", "content"].map(p => path.join(ROOT, p));
+const SEARCH_ROOTS = ["app", "content", "components"].map(p => path.join(ROOT, p));
 const EXTS = new Set([".tsx", ".jsx", ".ts", ".js", ".mdx"]);
 const KEYWORDS = ["calculator","tarief","cost","fee","richtlijn","richtlijnen","bereken","slider","tool"];
 
@@ -62,4 +62,3 @@ for (const base of SEARCH_ROOTS) walk(base);
 
 // Output als JSON
 console.log(JSON.stringify([...found].sort(), null, 2));
-

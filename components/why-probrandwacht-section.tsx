@@ -15,22 +15,31 @@ export default function WhyProBrandwachtSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <h3 className="text-sm font-semibold text-emerald-300">
-              Jij houdt de regie
-            </h3>
-            <p className="text-sm text-slate-200">
+          <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+            <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-emerald-300">
+                Jij houdt de regie
+              </h3>
+              <p className="text-sm text-slate-200">
               Je kiest zelf welke opdrachten je aanneemt, welk tarief je hanteert en
               met wie je samenwerkt. Geen planning die over jouw agenda beslist.
-            </p>
-          </div>
-          <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              </p>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-slate-300">
+                Brug tussen opdrachtgevers en zzp’ers
+              </h3>
+              <p className="text-sm text-slate-200">
+                Het platform houdt gesprekken, planning en resultaten gedeeld en gezamenlijk goedgekeurd zodat beide partijen dezelfde geschiedenis zien
+                en samen verantwoordelijk blijven.
+              </p>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-sky-300">
-              Transparante afspraken
+              Heldere afspraken
             </h3>
             <p className="text-sm text-slate-200">
-              Tarieven, rolverdeling en verantwoordelijkheden zijn helder. Dat is
+              Tarieven, rolverdeling en verantwoordelijkheden zijn helder en toetsbaar. Dat is
               beter voor de zelfstandige brandwacht, de opdrachtgever en de kwaliteit van de
               brandveiligheid.
             </p>

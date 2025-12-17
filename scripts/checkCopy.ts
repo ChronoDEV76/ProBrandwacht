@@ -52,7 +52,7 @@ const bureauPatterns: Pattern[] = [
     label: "volledig geregeld",
     pattern: /\b(volledig|helemaal) (voor u )?(geregeld|georganiseerd)\b/i,
     suggestion:
-      "transparant ingericht, met duidelijke stappen die jij zelf doorloopt"
+      "eerlijk ingericht, met duidelijke stappen die jij zelf doorloopt"
   },
   {
     label: "tarief in overleg",
@@ -74,7 +74,14 @@ const empowermentPatterns: Pattern[] = [
   { label: "zelf kiezen", pattern: /\bzelf kiezen\b/i },
   { label: "direct contact", pattern: /\bdirect contact\b/i },
   { label: "DBA-proof", pattern: /\bDBA-?proof\b/i },
-  { label: "transparant", pattern: /\btransparant(e)?\b/i },
+  { label: "eerlijk", pattern: /\beerlijk(e)?\b/i },
+  { label: "helder", pattern: /\bhelder(e|heid)?\b/i },
+  { label: "toetsbaar", pattern: /\btoetsbaar(e)?\b/i },
+  { label: "duidelijk", pattern: /\bduidelijk(e)?\b/i },
+  { label: "controleerbaar", pattern: /\bcontroleerbaar(e)?\b/i },
+  { label: "goedgekeurd", pattern: /\bgoedgekeurd(e)?\b/i },
+  { label: "gezamenlijk", pattern: /\bgezamenlijk(e)?\b/i },
+  { label: "samen verantwoordelijk", pattern: /\bsamen verantwoordelijk\b/i },
   { label: "platform", pattern: /\bplatform\b/i },
   { label: "digitale omgeving", pattern: /\bdigitale? omgeving\b/i },
   { label: "meer overhouden", pattern: /\bmeer overhouden\b/i },
@@ -181,7 +188,7 @@ function analyze(text: string) {
   console.log("\n💡 Positieve (digitale / zelfregie) taal:");
   if (empowermentMatches.length === 0) {
     console.log(
-      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'transparant', 'platform', 'DBA-proof'."
+      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'eerlijk', 'platform', 'DBA-proof'."
     );
   } else {
     const labels = Array.from(new Set(empowermentMatches.map((m) => m.label)));
@@ -227,4 +234,3 @@ if (argText) {
     analyze(buffer);
   });
 }
-

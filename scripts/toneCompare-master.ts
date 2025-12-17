@@ -186,11 +186,11 @@ function seoSuggestions(): string[] {
   // (3) Brug-taal als unique selling point
   if (selfBridge < avgBridge * 2) {
     suggestions.push(
-      "Je brug-/samenwerkingstaal is aanwezig, maar kan nog scherper boven de markt uitsteken. Benadruk vaker ‘samen verantwoordelijkheid nemen’, ‘transparant samenwerken’ en ‘heldere afspraken’."
+      "Je brug-/samenwerkingstaal is aanwezig, maar kan nog scherper boven de markt uitsteken. Benadruk vaker ‘samen verantwoordelijkheid nemen’, ‘eerlijk samenwerken’ en ‘heldere, toetsbare afspraken’."
     );
   } else {
     suggestions.push(
-      "Je brugtaal (samen, transparant, afspraken) ligt ruim boven het marktgemiddelde. Dit maakt je geloofwaardig als verbinding tussen zzp’ers en opdrachtgevers."
+      "Je brugtaal (samen, eerlijk, heldere afspraken) ligt ruim boven het marktgemiddelde. Dit maakt je geloofwaardig als verbinding tussen zzp’ers en opdrachtgevers."
     );
   }
 

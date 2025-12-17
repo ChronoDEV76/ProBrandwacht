@@ -13,14 +13,14 @@ export default function AnalyticsDebugPage() {
   const heading = <h1 className="text-2xl font-semibold">Share events (session)</h1>
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-12 sm:px-6 lg:px-8">
         <AnalyticsClient heading={heading} />
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-900">Realtime acties uitproberen</h2>
           <p className="mt-2 text-sm text-slate-600">
-            Share events verschijnen hier binnen enkele seconden. Test direct hoe de tools reageren en zet de volgende stap via ons platform.
+            Share events verschijnen hier binnen enkele seconden. Test direct hoe de tools reageren en bekijk de resultaten in deze testomgeving.
           </p>
           <p className="mt-2 text-sm text-slate-600">
             Het is belangrijk dat opdrachtgevers en zzp’ers dezelfde gebeurtenissen zien en de resultaten gezamenlijk goedkeuren, zodat iedereen voelt dat de data stevig en controleerbaar ondersteunt wat er op de werkvloer gebeurt.

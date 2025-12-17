@@ -363,7 +363,7 @@ export async function POST(req: Request) {
           <p>Hi ${body.name || "professional"},</p>
           <p>Je rapport is klaar. Download het hier (72 uur geldig):<br/>
           <a href="${signedUrlData.signedUrl}">Download PDF</a></p>
-          <p>Transparant samenwerken zonder tussenlaag? Sluit je aan en werk marktconform:</p>
+          <p>Heldere, toetsbare samenwerking zonder tussenlaag? Sluit je aan en werk marktconform:</p>
           <p><a href="${env.NEXT_PUBLIC_BASE_URL}/zzp/aanmelden">Aanmelden bij ProSafetyMatch</a></p>
           <p>— Team ProBrandwacht · ProSafetyMatch</p>
         `,

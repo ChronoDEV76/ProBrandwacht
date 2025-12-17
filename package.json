@@ -20,7 +20,7 @@
     "diagnose": "node scripts/diagnose.js",
     "fix:metadata": "node scripts/fix-next-metadata.mjs",
     "sanity:aider": "bash scripts/aider-sanity.sh",
-    "sanity": "node scripts/sanityCheck.mjs --root . --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
+    "sanity": "node scripts/sanityCheck.mjs --roots=app,content,components --min-sent-len=80 --max-sent-len=220 --max-par-len=800",
     "tone-check": "node scripts/toneCheck.mjs --root content",
     "check:copy": "ts-node scripts/checkCopy.ts",
     "images:optimize": "node scripts/optimize-images.mjs",

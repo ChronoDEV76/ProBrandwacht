@@ -19,15 +19,19 @@ const roboto = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht.nl – Het alternatieve brandwachtplatform",
+  title:
+    "ProBrandwacht.nl | Kennisplatform voor zelfstandige brandwachten – 1-op-1 samenwerken binnen Wet DBA",
   description:
-    "Het alternatieve brandwachtplatform: gecertificeerde professionals, duidelijke tarieven en veilige betaling.",
+    "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
   keywords: [
-    "zelfstandige brandwacht inhuren",
-    "zelfstandige brandwacht tarieven",
+    "wet dba brandwacht",
+    "dba-bewust samenwerken",
+    "werken binnen wet dba",
     "brandveiligheid evenementen",
-    "industriele zelfstandige brandwacht",
+    "industriële brandwacht",
     "platform voor zelfstandige brandwachten",
+    "kennisplatform brandwacht",
+    "zelfstandig werken brandwacht",
     "probrandwacht",
   ],
 };

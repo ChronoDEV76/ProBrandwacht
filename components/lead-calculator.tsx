@@ -59,7 +59,8 @@ function computeIndicative({
   const costsMonth = revenueMonth * (costsPct / 100);
   const profitBeforeTax = revenueMonth - costsMonth;
 
-  const baseTaxPct = (aftrekZelf ? 0.16 : 0.20) - (aftrekMkb ? 0.02 : 0) - (aftrekStart ? 0.02 : 0);
+  const baseTaxPct =
+    (aftrekZelf ? 0.16 : 0.2) - (aftrekMkb ? 0.02 : 0) - (aftrekStart ? 0.02 : 0);
   const estTax = Math.max(profitBeforeTax * baseTaxPct, 0);
   const netMonth = profitBeforeTax - estTax;
 
@@ -87,38 +88,36 @@ function computeIndicative({
 const formatCurrency = (value: number) => `€ ${value.toFixed(2)}`;
 
 export default function LeadCalculator() {
-  // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState<Role>("zelfstandige brandwacht");
 
-  // “nu via bureau”
   const [bureauHourly, setBureauHourly] = useState<number | "">(0);
-  // standaard 144u p/m, bewerkbaar
   const [hoursPerMonth, setHoursPerMonth] = useState<number | "">(0);
-  // optioneel, indicatief
   const [costPct, setCostPct] = useState<number | "">(0);
 
-  // aftrek en verzekeringen (indicatief)
   const [hasInsurance, setHasInsurance] = useState(true);
   const [aftrekZelf, setAftrekZelf] = useState(true);
   const [aftrekMkb, setAftrekMkb] = useState(true);
   const [aftrekStart, setAftrekStart] = useState(false);
 
-  // consent / anti-spam
   const [consent, setConsent] = useState(true);
-  const [website, setWebsite] = useState(""); // honeypot (leeg laten!)
+  const [website, setWebsite] = useState("");
 
-  // UX state
   const [submitting, setSubmitting] = useState(false);
-  const [status, setStatus] = useState<null | { tone: "ok" | "warn" | "error"; msg: string; link?: string }>(null);
+  const [status, setStatus] = useState<
+    null | { tone: "ok" | "warn" | "error"; msg: string; link?: string }
+  >(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus(null);
 
     if (!email || !bureauHourly || !hoursPerMonth) {
-      setStatus({ tone: "error", msg: "Vul minimaal e-mail, huidig uurtarief en uren per maand in." });
+      setStatus({
+        tone: "error",
+        msg: "Vul minimaal e-mail, huidig uurtarief en uren per maand in.",
+      });
       return;
     }
 
@@ -139,7 +138,7 @@ export default function LeadCalculator() {
         },
         consent,
         source: "lead-calculator",
-        website, // honeypot (leeg laten!)
+        website,
       };
 
       const res = await fetch("/api/lead", {
@@ -158,23 +157,27 @@ export default function LeadCalculator() {
       } else if (!res.ok && data?.error) {
         setStatus({ tone: "error", msg: `Verzenden mislukt: ${data.error}` });
       } else if (data?.warn && data?.link) {
-        // Mail mislukte, maar rapport is wel geüpload — toon downloadlink
         setStatus({
           tone: "warn",
           msg: "Rapport gemaakt, maar e-mail verzenden mislukte. Download hieronder.",
           link: data.link,
         });
       } else {
-        setStatus({ tone: "ok", msg: "Verzonden — check je e-mail voor je persoonlijk PDF-rapport." });
+        setStatus({
+          tone: "ok",
+          msg: "Verzonden — check je e-mail voor je persoonlijk PDF-rapport.",
+        });
       }
-    } catch (err: any) {
-      setStatus({ tone: "error", msg: "Er ging iets mis bij het verzenden. Probeer het zo nog eens." });
+    } catch {
+      setStatus({
+        tone: "error",
+        msg: "Er ging iets mis bij het verzenden. Probeer het zo nog eens.",
+      });
     } finally {
       setSubmitting(false);
     }
   }
 
-  // Badge-styling
   const toneClasses = (t: "ok" | "warn" | "error") =>
     t === "ok"
       ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200"
@@ -191,22 +194,32 @@ export default function LeadCalculator() {
     aftrekMkb,
     aftrekStart,
   });
+
   const showFullIndicative = !!indicative && email.trim().length > 0;
   const showTeaserIndicative = !!indicative && !showFullIndicative;
 
   return (
     <section className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 text-slate-50 shadow-lg">
-      <h2 className="text-[20px] font-semibold text-slate-50">Bereken wat je écht waard bent</h2>
+      <h2 className="text-[20px] font-semibold text-slate-50">
+        Krijg een indicatie van je tariefruimte
+      </h2>
+
       <p className="mt-1 text-[13px] text-slate-200">
-        Met <strong>2 velden</strong> ontdek je wat je maandelijks laat liggen. Je ontvangt direct een{" "}
-        <strong>persoonlijk PDF-rapport</strong> met het verschil — inclusief <em>indicatie bij 10% minder uren</em>.
+        Met <strong>2 velden</strong> zie je een indicatieve bandbreedte. Je ontvangt daarna een{" "}
+        <strong>persoonlijk PDF-rapport</strong> met aannames en scenario’s — inclusief{" "}
+        <em>indicatie bij 10% minder uren</em>.
       </p>
+
       <p className="mt-1 text-[11.5px] text-slate-300">
-        Aangescherpt met feedback uit de sector (200+ professionals). We delen alleen je e-mail met ProSafetyMatch voor dit rapport.
+        Indicatief en context-afhankelijk (o.a. inzet, locatie, certificering en afspraken). Geen aanbod of garantie.
+      </p>
+
+      <p className="mt-1 text-[11.5px] text-slate-300">
+        Voor het rapport gebruiken we je e-mail alleen voor verzending en opvolging over eerlijk samenwerken (opt-in).
       </p>
 
       <form onSubmit={handleSubmit} className="mt-3 grid gap-2.5 sm:grid-cols-2">
-        {/* Honeypot (NIET type="hidden") */}
+        {/* Honeypot */}
         <label className="sr-only">
           <span>Laat dit veld leeg</span>
           <input
@@ -254,7 +267,7 @@ export default function LeadCalculator() {
         </label>
 
         <label className="text-[13px]">
-          <span className="text-slate-200">Huidig uurtarief via bureau (€)</span>
+          <span className="text-slate-200">Huidig uurtarief (nu, via bureau of tussenpartij) (€)</span>
           <input
             type="number"
             required
@@ -313,12 +326,16 @@ export default function LeadCalculator() {
         <div className="sm:col-span-2">
           <label className="flex items-center gap-2 text-xs text-slate-300">
             <input type="checkbox" checked={consent} onChange={() => setConsent(!consent)} />
-            Ik wil mijn persoonlijk PDF-rapport ontvangen en updates over eerlijk werken (geen spam).
+            Ik wil mijn PDF-rapport ontvangen en updates over duidelijk en eerlijk samenwerken (geen spam).
           </label>
         </div>
 
         {status && (
-          <div className={`sm:col-span-2 mt-1 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm ${toneClasses(status.tone)}`}>
+          <div
+            className={`sm:col-span-2 mt-1 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm ${toneClasses(
+              status.tone
+            )}`}
+          >
             <span>{status.msg}</span>
             {status.link && (
               <a className="underline decoration-2 underline-offset-2" href={status.link} target="_blank" rel="noreferrer">
@@ -341,17 +358,21 @@ export default function LeadCalculator() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-300">Indicatie</p>
-            <p className="text-sm font-medium text-slate-50">
-              Marktconform + netto, incl. 10% platformfee
-            </p>
+            <p className="text-sm font-medium text-slate-50">Marktconform + netto (scenario, incl. 10% platformfee)</p>
           </div>
           <p className="text-[11px] text-slate-400">1–2% betaalbuffer inbegrepen</p>
         </div>
+
+        {/* extra nuance-regel (tone-guard proof) */}
+        <p className="mt-2 text-[11.5px] text-slate-300">
+          Indicatief: afhankelijk van context en afspraken. Dit is geen aanbod, geen garantie en geen advies op maat.
+        </p>
+
         {showFullIndicative ? (
           <>
             <dl className="mt-4 grid gap-3 sm:grid-cols-2">
               <div className="space-y-1">
-                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Marktconform (bruto)</dt>
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Marktconform (bruto, indicatief)</dt>
                 <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.marketHourly)} / uur</dd>
               </div>
               <div className="space-y-1">
@@ -361,7 +382,7 @@ export default function LeadCalculator() {
                 </dd>
               </div>
               <div className="space-y-1">
-                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Netto per maand</dt>
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Netto per maand (scenario)</dt>
                 <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.netMonth)}</dd>
               </div>
               <div className="space-y-1">
@@ -369,13 +390,15 @@ export default function LeadCalculator() {
                 <dd className="text-base font-semibold text-slate-50">{formatCurrency(indicative.reducedNetMonth)} p/m</dd>
               </div>
               <div className="space-y-1 sm:col-span-2 md:col-span-1">
-                <dt className="text-[11px] uppercase tracking-wide text-slate-400">Extra t.o.v. huidig via bureau</dt>
+                <dt className="text-[11px] uppercase tracking-wide text-slate-400">
+                  Verschil t.o.v. huidig tarief (indicatief)
+                </dt>
                 <dd className="text-base font-semibold text-slate-50">
                   {formatCurrency(indicative.diffPerHour)} / uur · {formatCurrency(indicative.diffPerMonth)} p/m
                 </dd>
               </div>
             </dl>
-            <p className="mt-2 text-xs text-slate-300">Volledig rapport (met alle aannames) ontvang je per mail.</p>
+            <p className="mt-2 text-xs text-slate-300">Volledig rapport (met aannames en uitleg) ontvang je per mail.</p>
           </>
         ) : showTeaserIndicative ? (
           <div className="mt-4 space-y-2">
@@ -386,8 +409,7 @@ export default function LeadCalculator() {
               </p>
             </div>
             <p className="text-sm text-slate-200">
-              Vul je e-mail in om de volledige berekening te zien (marketconform, scenario en extra t.o.v. bureau) en
-              ontvang direct het PDF-rapport.
+              Vul je e-mail in om de volledige berekening te zien (scenario + aannames) en ontvang direct het PDF-rapport.
             </p>
           </div>
         ) : (
@@ -410,21 +432,21 @@ export default function LeadCalculator() {
         )}
       </div>
 
-      {/* Micro-feedback tegeltjes */}
       <div className="mt-3 grid gap-2.5 text-sm sm:grid-cols-3">
         <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
           <p className="text-[11px] text-slate-300">Preview</p>
-          <p className="text-slate-50">Schatting zichtbaar; volledig rapport komt per mail.</p>
+          <p className="text-slate-50">Indicatie zichtbaar; volledig rapport komt per mail.</p>
         </div>
         <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
           <p className="text-[11px] text-slate-300">Scenario</p>
           <p className="text-slate-50">Inclusief 10% minder-uren scenario in het rapport.</p>
         </div>
         <div className="rounded border border-slate-800 bg-slate-900/80 p-3">
-          <p className="text-[11px] text-slate-300">Transparantie</p>
+          <p className="text-[11px] text-slate-300">Toetsbaarheid</p>
           <p className="text-slate-50">Gebaseerd op feedback (200+ professionals).</p>
         </div>
       </div>
     </section>
   );
 }
+
