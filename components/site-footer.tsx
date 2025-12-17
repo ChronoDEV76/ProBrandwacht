@@ -17,7 +17,12 @@ export default function SiteFooter() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           {/* Merk + tagline + badge */}
           <div className="space-y-2">
-            <p className="text-sm font-semibold">ProBrandwacht.nl</p>
+            <Link
+              href="/"
+              className="inline-flex text-sm font-semibold underline-offset-4 hover:underline"
+            >
+              ProBrandwacht
+            </Link>
             <p className="max-w-md text-xs text-slate-400">
               Inzicht, context en ondersteuning voor bewust zelfstandig werken.
             </p>
@@ -80,4 +85,3 @@ export default function SiteFooter() {
     </footer>
   )
 }
-

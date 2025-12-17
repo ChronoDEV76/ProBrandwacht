@@ -74,7 +74,7 @@ function titleizeSegment(segment: string) {
 }
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht.nl | 1-op-1 samenwerken binnen Wet DBA – kennisplatform",
+  title: "Brandwacht platform | ProBrandwacht",
   description:
     "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
   keywords: [
@@ -92,8 +92,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     url: SITE_BASE_URL,
-    siteName: "ProBrandwacht.nl",
-    title: "ProBrandwacht.nl | 1-op-1 samenwerken binnen Wet DBA – kennisplatform",
+    siteName: "ProBrandwacht",
+    title: "Brandwacht platform | ProBrandwacht",
     description:
       "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
     images: [
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "ProBrandwacht.nl – Samenwerken binnen Wet DBA",
+        alt: "ProBrandwacht – brandwacht platform",
       },
     ],
   },

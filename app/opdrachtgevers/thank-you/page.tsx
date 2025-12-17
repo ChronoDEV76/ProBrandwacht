@@ -2,8 +2,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
-import { getRouteMetadata } from '@/lib/seo/metadata'
-export const metadata: Metadata = getRouteMetadata('/opdrachtgevers/thank-you');
+
+export const metadata: Metadata = {
+  title: 'Bedankt voor je aanvraag | ProBrandwacht',
+  description: 'Bevestigingspagina na het insturen van een aanvraag.',
+  robots: { index: false, follow: false },
+};
 
 
 export default function ThankYouPage({

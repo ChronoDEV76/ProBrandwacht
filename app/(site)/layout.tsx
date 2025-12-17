@@ -19,8 +19,7 @@ const roboto = localFont({
 });
 
 export const metadata: Metadata = {
-  title:
-    "ProBrandwacht.nl | Kennisplatform voor zelfstandige brandwachten – 1-op-1 samenwerken binnen Wet DBA",
+  title: "Brandwacht platform | ProBrandwacht",
   description:
     "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
   keywords: [

@@ -3,7 +3,6 @@ import { getSupabaseAdmin } from '@/lib/supabase-admin';
 import Link from 'next/link';
 import ChatBox from './ChatBox';
 import type { Metadata } from 'next'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +10,13 @@ function fmt(v?: string | number | null) {
   if (v === null || v === undefined || v === '') return '—';
   return String(v);
 }
-export const metadata: Metadata = getRouteMetadata('/dashboard/requests/[id]');
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  return {
+    title: `Inzet dashboard #${params.id} | ProBrandwacht`,
+    robots: { index: false, follow: false },
+  }
+}
 
 
 export default async function RequestDashboardPage({ params }: { params: { id: string } }) {

@@ -30,11 +30,12 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   try {
     const post = await getPostBySlug(params.slug)
-    const title = post.frontmatter.title ?? params.slug
+    const titleCore = post.frontmatter.title ?? params.slug
+    const title = `${titleCore} | ProBrandwacht`
     const description =
       (post.frontmatter.tldr as string | undefined) ??
       (post.frontmatter.description as string | undefined) ??
-      'Brandwacht blog – ProBrandwacht.nl'
+      'Brandwacht blog | ProBrandwacht'
     const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
     const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.webp') as string
     const ogAbs = toAbsoluteUrl(og)
@@ -55,7 +56,7 @@ export async function generateMetadata(
   } catch {
     const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
     return {
-      title: 'Artikel niet gevonden | ProBrandwacht.nl',
+      title: 'Artikel niet gevonden | ProBrandwacht',
       description: 'Het opgevraagde artikel bestaat niet (meer).',
       alternates: { canonical, languages: { 'nl-NL': canonical } },
     }
@@ -158,7 +159,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       {/* Share */}
       <p className="mt-6 text-sm text-slate-300">Deel dit artikel:</p>
-      <ShareBar url={pageUrl} title={post.frontmatter.title ?? 'ProBrandwacht.nl'} utmCampaign="blog_share" />
+      <ShareBar url={pageUrl} title={post.frontmatter.title ?? 'ProBrandwacht'} utmCampaign="blog_share" />
 
       {/* CTA */}
       <div className="mt-8 flex flex-wrap gap-3">

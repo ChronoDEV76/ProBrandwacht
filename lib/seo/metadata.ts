@@ -30,7 +30,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // HOMEPAGE
   // --------------------------------------------------
   '/': {
-    title: 'ProBrandwacht – Voor brandwachten die écht ondernemen.',
+    title: 'ProBrandwacht – Het platform voor gecertificeerde brandwachten',
     description:
       'Voor brandwachten die écht ondernemen. Werk zelfstandig, bepaal je tarief en kies opdrachten die passen bij jouw vak. Heldere, toetsbare afspraken en DBA-bewuste samenwerking, zonder verborgen marges.',
     keywords: [
@@ -46,7 +46,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // --------------------------------------------------
 
   '/opdrachtgevers': {
-    title: 'Professionele brandwachten, eenvoudig en betrouwbaar geregeld',
+    title: 'Professionele brandwachten, eenvoudig en betrouwbaar geregeld | ProBrandwacht',
     description:
       'Ervaren brandwachten zonder gedoe, tussenlagen of ruis. Gecertificeerde professionals, eerlijke tarieven en samenwerking binnen Wet DBA via ProBrandwacht.',
     keywords: [
@@ -57,7 +57,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/opdrachtgevers/aanmelden': {
-    title: 'Aanmelden als opdrachtgever – direct toegang tot brandwachten',
+    title: 'Aanmelden als opdrachtgever – direct toegang tot brandwachten | ProBrandwacht',
     description:
       'Meld je aan als opdrachtgever en plaats direct aanvragen voor brandwachten. Binnen enkele minuten gekoppeld aan beschikbare professionals met eerlijke tarieven.',
     keywords: [
@@ -67,42 +67,8 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
-  '/opdrachtgevers/brandwacht-inhuren': {
-    title: 'Brandwacht inhuren voor opdrachtgevers | ProBrandwacht',
-    description:
-      'Huur gecertificeerde brandwachten in met eerlijke tarieven en afspraken binnen Wet DBA. Direct contact met professionals zonder verborgen marges.',
-    keywords: [
-      ...seoKeywordClusters.core,
-      ...seoKeywordClusters.platform,
-      ...seoKeywordClusters.processSpeed,
-    ],
-  },
-
-  '/brandwacht-inhuren': {
-    title: 'Brandwacht inhuren – eerlijke tarieven & directe planning',
-    description:
-      'Huur een gecertificeerde brandwacht in zonder traditionele intermediair. Direct contact, snelle beschikbaarheid en heldere, eerlijke tarieven via ProBrandwacht.',
-    keywords: [
-      ...seoKeywordClusters.core,
-      ...seoKeywordClusters.platform,
-      ...seoKeywordClusters.processSpeed,
-    ],
-  },
-
-  // dynamische steden onder (site)/brandwacht-inhuren/[city]
-  '/brandwacht-inhuren/[city]': {
-    title: 'Brandwacht inhuren in jouw regio – direct & eerlijk',
-    description:
-      'Huur direct een brandwacht in jouw regio via ProBrandwacht. Heldere, toetsbare prijzen, directe matching en gecertificeerde professionals zonder klassiek bureau.',
-    keywords: [
-      ...seoKeywordClusters.core,
-      ...seoKeywordClusters.processSpeed,
-      ...seoKeywordClusters.platform,
-    ],
-  },
-
   '/over-ons': {
-    title: 'Over ProBrandwacht – veiligheid én ondernemerschap',
+    title: 'Over ons – veiligheid én ondernemerschap | ProBrandwacht',
     description:
       'Lees waarom ProBrandwacht is opgericht, onze missie en visie, kernwaarden en manifest. Voor een moderne, eerlijke en toekomstbestendige brandwachtsector.',
     keywords: [...seoKeywordClusters.platform, 'over probrandwacht', 'brandwacht manifest'],
@@ -122,8 +88,22 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: [...seoKeywordClusters.core],
   },
 
+  '/voorwaarden': {
+    title: 'Algemene voorwaarden | ProBrandwacht',
+    description:
+      'De spelregels van ProBrandwacht: wat je van het platform mag verwachten, welke afspraken indicatief zijn en wat de verantwoordelijkheid is van brandwachten en opdrachtgevers.',
+    keywords: ['algemene voorwaarden', 'voorwaarden probrandwacht', ...seoKeywordClusters.platform],
+  },
+
+  '/disclaimer': {
+    title: 'Disclaimer | ProBrandwacht',
+    description:
+      'Lees hoe informatie en rekenvoorbeelden op ProBrandwacht.nl bedoeld zijn: indicatief, ter bewustwording en zonder garanties.',
+    keywords: ['disclaimer', 'aansprakelijkheid', ...seoKeywordClusters.platform],
+  },
+
   '/privacy': {
-    title: 'Privacyverklaring ProBrandwacht',
+    title: 'Privacyverklaring | ProBrandwacht',
     description:
       'Lees hoe ProBrandwacht omgaat met jouw persoonsgegevens en welke maatregelen wij nemen om data van opdrachtgevers en brandwachten te beschermen.',
     keywords: ['privacy brandwacht', 'privacyverklaring', 'gegevensbescherming brandwacht'],
@@ -137,51 +117,11 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: ['brandwacht bronnen', 'brandwacht data', 'veiligheid bronnen', 'cbs brandwacht'],
   },
 
-  '/steden': {
-    title: 'Brandwacht nodig in jouw stad? Alle regio’s op een rij.',
-    description:
-      'Bekijk in één overzicht in welke steden en regio’s je via ProBrandwacht direct een brandwacht kunt aanvragen. Snel, eerlijk en zonder verborgen marges.',
-    keywords: ['brandwacht steden', 'brandwacht regio', ...seoKeywordClusters.core],
-  },
-
   '/steden/[city]': {
-    title: 'Brandwacht nodig in jouw stad – direct via ProBrandwacht',
+    title: 'Brandwacht nodig in jouw stad – direct geregeld | ProBrandwacht',
     description:
       'Huur direct een brandwacht in jouw stad. ProBrandwacht koppelt je aan beschikbare professionals met eerlijke tarieven en directe communicatie.',
     keywords: [...seoKeywordClusters.core, 'brandwacht stad', 'brandwacht regio'],
-  },
-
-  // --------------------------------------------------
-  // BRANCHES / SPECIALISATIES
-  // --------------------------------------------------
-
-  '/brandwacht/haven-industrie': {
-    title: 'Brandwacht haven & industrie – direct inzetbaar | ProBrandwacht',
-    description:
-      'Brandwachten voor haventerreinen en industriële omgevingen. Gecertificeerde professionals met ervaring in hoog-risico werk en shutdowns.',
-    keywords: [...seoKeywordClusters.niches, 'haven brandwacht', 'industriële brandwacht'],
-  },
-
-  '/brandwacht/mangatwacht': {
-    title: 'Mangatwacht / buitenwacht direct boeken | ProBrandwacht',
-    description:
-      'Specialisten in mangatwacht en buitenwacht voor besloten ruimtes. Ervaren professionals, eerlijke tarieven en directe planning via het platform.',
-    keywords: [...seoKeywordClusters.niches, 'mangatwacht', 'buitenwacht'],
-  },
-
-  '/brandwacht/turnaround-stop': {
-    title: 'Turnaround- en stop-brandwachten – ervaren professionals',
-    description:
-      'Gecertificeerde brandwachten voor turnarounds en stops. Direct inzetbaar via ProBrandwacht met heldere afspraken en eerlijke tarieven.',
-    keywords: [...seoKeywordClusters.niches, 'turnaround brandwacht', 'shutdown brandwacht'],
-  },
-
-  // oudere / alternatieve locatie-URL: /brandwacht-huren/[city]
-  '/brandwacht-huren/[city]': {
-    title: 'Brandwacht huren in jouw stad – snel geregeld',
-    description:
-      'Via ProBrandwacht huur je direct een brandwacht in jouw stad. Heldere, toetsbare tarieven en directe match met zzp-brandwachten.',
-    keywords: [...seoKeywordClusters.core, ...seoKeywordClusters.processSpeed],
   },
 
   // --------------------------------------------------
@@ -189,7 +129,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // --------------------------------------------------
 
   '/zzp/aanmelden': {
-    title: 'Aanmelden als zzp-brandwacht – direct opdrachten ontvangen',
+    title: 'Aanmelden als zzp-brandwacht – direct opdrachten ontvangen | ProBrandwacht',
     description:
       'Werk als een professional. Ondernemend en vrij. Meld je aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-bewust en zonder verborgen marges.',
     keywords: [
@@ -200,7 +140,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/voor-brandwachten': {
-    title: 'Voor brandwachten – professionaliteit, vrijheid en eerlijkheid',
+    title: 'Voor brandwachten – professionaliteit, vrijheid en eerlijkheid | ProBrandwacht',
     description:
       'Een platform voor brandwachten die ondernemen. Kies je opdrachten, bepaal je tarief en werk eerlijk en DBA-bewust met toegang tot ProSafetyMatch.',
     keywords: [
@@ -211,8 +151,15 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
+  '/tarief-berekenen': {
+    title: 'Tarief berekenen als brandwacht (incl. platformfee) | ProBrandwacht',
+    description:
+      'Bereken een indicatief uurtarief als zelfstandige brandwacht. Inclusief platformfee, btw en scenario’s zodat je DBA-bewust en uitlegbaar kunt samenwerken.',
+    keywords: [...seoKeywordClusters.tariefInzicht, ...seoKeywordClusters.platform],
+  },
+
   '/tone-of-voice': {
-    title: 'Communicatiestijl ProBrandwacht',
+    title: 'Communicatiestijl | ProBrandwacht',
     description:
       'Tone of voice en richtlijnen voor communicatie: ondernemend, eerlijk, respectvol, toekomstgericht en menselijk.',
     keywords: ['tone of voice', 'communicatiestijl', 'brandwacht communicatie'],
@@ -222,19 +169,18 @@ export const routeMeta: Record<string, RouteMeta> = {
   // PROBRANDWACHT DIRECT / SPOED
   // --------------------------------------------------
 
+  '/direct': {
+    title: 'Spoed brandwacht aanvragen (24/7) | ProBrandwacht',
+    description:
+      'Dien een spoedaanvraag in voor een gecertificeerde brandwacht. Snelle matching, duidelijke afspraken en DBA-bewust samenwerken.',
+    keywords: [...seoKeywordClusters.processSpeed, 'spoed brandwacht', 'brandwacht 24/7'],
+  },
+
   '/probrandwacht-direct': {
-    title: 'Brandwacht direct regelen via ProBrandwacht Direct',
+    title: 'Brandwacht direct regelen (spoed) | ProBrandwacht',
     description:
       'In spoed een brandwacht nodig? ProBrandwacht Direct koppelt je binnen minuten aan beschikbare professionals met de juiste certificaten.',
     keywords: [...seoKeywordClusters.processSpeed, ...seoKeywordClusters.platform],
-  },
-
-  // (site)-variant van ProBrandwacht Direct
-  '/probrandwacht-direct/site': {
-    title: 'ProBrandwacht Direct – spoedaanvragen voor brandwachten',
-    description:
-      'Spoedaanvraag voor een brandwacht? Via ProBrandwacht Direct regel je snel en eerlijk een professional, zonder tussenbureau.',
-    keywords: [...seoKeywordClusters.processSpeed],
   },
 
   // --------------------------------------------------
@@ -263,14 +209,14 @@ export function getRouteMetadata(pathname: string): Metadata {
 
   if (!meta) {
     return {
-      title: 'ProBrandwacht – Platform voor brandwachten',
+      title: 'Brandwacht platform | ProBrandwacht',
       description:
         'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers direct verbindt, met eerlijke tarieven en directe planning.',
       keywords: defaultKeywords,
       robots: { index: true, follow: true },
       alternates: { canonical, languages: { 'nl-NL': canonical } },
       openGraph: {
-        title: 'ProBrandwacht – Platform voor brandwachten',
+        title: 'Brandwacht platform | ProBrandwacht',
         description:
           'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers direct verbindt, met eerlijke tarieven en directe planning.',
         url: canonical,
@@ -285,7 +231,7 @@ export function getRouteMetadata(pathname: string): Metadata {
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'ProBrandwacht – Platform voor brandwachten',
+        title: 'Brandwacht platform | ProBrandwacht',
         description:
           'ProBrandwacht is het onafhankelijke platform dat brandwachten en opdrachtgevers direct verbindt, met eerlijke tarieven en directe planning.',
         images: [DEFAULT_OG_IMAGE],

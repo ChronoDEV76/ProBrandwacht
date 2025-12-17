@@ -1,8 +1,13 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getSupabaseAdmin } from '@/lib/supabase-admin'
-import { getRouteMetadata } from '@/lib/seo/metadata'
-export const metadata: Metadata = getRouteMetadata('/admin/requests/[id]');
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  return {
+    title: `Admin aanvraag #${params.id} | ProBrandwacht`,
+    robots: { index: false, follow: false },
+  }
+}
 
 
 export default async function AdminRequestPage({ params }: { params: { id: string } }) {

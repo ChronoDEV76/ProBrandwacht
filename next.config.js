@@ -25,8 +25,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/opdrachtgevers/brandwacht-inhuren',
-        destination: '/opdrachtgevers',
+        source: '/brandwacht-huren/:city',
+        destination: '/steden/:city',
         permanent: true,
       },
       {

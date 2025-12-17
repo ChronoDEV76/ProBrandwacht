@@ -27,7 +27,7 @@ export const cityCopy: Partial<Record<CitySlug, CityCopy>> = {
     intro:
       'In Amsterdam heb je brandwachten nodig die gewend zijn aan tempo, evenementen en tijdelijke locaties. ProBrandwacht helpt je snel een passende zzp-brandwacht of klein team te vinden, zonder ingewikkelde tussenlagen.',
     metaTitle:
-      'Brandwacht inhuren Amsterdam – zzp-brandwachten voor events, bouw en industrie | ProBrandwacht.nl',
+      'Brandwacht inhuren Amsterdam – zzp-brandwachten voor events, bouw en industrie | ProBrandwacht',
     metaDescription:
       'Zoek je een brandwacht in Amsterdam? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, eerlijke afspraken.',
     body: `## Indicatief tarief in Amsterdam
@@ -63,7 +63,7 @@ De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tar
     intro:
       'Rotterdam vraagt om brandwachten die gewend zijn aan haven, industrie en grote bouwprojecten. Via ProBrandwacht vind je zzp-brandwachten die hun weg kennen in deze omgeving.',
     metaTitle:
-      'Brandwacht inhuren Rotterdam – zzp-brandwachten voor haven, bouw en industrie | ProBrandwacht.nl',
+      'Brandwacht inhuren Rotterdam – zzp-brandwachten voor haven, bouw en industrie | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Rotterdam? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor haven, bouw en industriële inzet. Eerlijke, eerlijke afspraken.',
     body: `## Indicatief tarief in Rotterdam
@@ -99,7 +99,7 @@ Het uiteindelijke tarief spreek je altijd samen af met de professional, op basis
     intro:
       'In Den Haag en omstreken gaat het vaak om combinaties van evenementen, overheidslocaties en binnenstedelijke bouw. ProBrandwacht helpt je aan zzp-brandwachten die hiermee om kunnen gaan.',
     metaTitle:
-      'Brandwacht inhuren Den Haag – zzp-brandwachten voor events en bouw | ProBrandwacht.nl',
+      'Brandwacht inhuren Den Haag – zzp-brandwachten voor events en bouw | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Den Haag? Via ProBrandwacht huur je rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en tijdelijke projecten. Heldere, nuchtere afspraken.',
     body: `## Indicatief tarief in Den Haag
@@ -133,7 +133,7 @@ We bekijken per aanvraag wat passend is. Jij bespreekt het tarief rechtstreeks m
     intro:
       'Utrecht heeft een mix van evenementen, binnenstedelijke bouw en logistieke hubs. ProBrandwacht koppelt je aan zzp-brandwachten die hier dagelijks mee werken.',
     metaTitle:
-      'Brandwacht inhuren Utrecht – zzp-brandwachten voor evenementen en bouw | ProBrandwacht.nl',
+      'Brandwacht inhuren Utrecht – zzp-brandwachten voor evenementen en bouw | ProBrandwacht',
     metaDescription:
       'Zoek je een brandwacht in Utrecht? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor evenementen, bouwprojecten en logistieke locaties.',
     body: `## Indicatief tarief in Utrecht
@@ -167,7 +167,7 @@ Het tarief wordt vooraf afgestemd tussen jou en de brandwacht. Geen standaardpak
     intro:
       'Eindhoven combineert techniek, industrie en evenementen. ProBrandwacht koppelt je aan zzp-brandwachten die gewend zijn aan dit soort omgevingen.',
     metaTitle:
-      'Brandwacht inhuren Eindhoven – zzp-brandwachten voor industrie en events | ProBrandwacht.nl',
+      'Brandwacht inhuren Eindhoven – zzp-brandwachten voor industrie en events | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Eindhoven? Vind rijksgediplomeerde zzp-brandwachten voor industriële inzet, evenementen en bouwprojecten via ProBrandwacht.',
     body: `## Indicatief tarief in Eindhoven
@@ -201,7 +201,7 @@ We kijken per opdracht naar wat passend is. Jij stemt het uurtarief direct af me
     intro:
       'Tilburg kent grote evenementen en stevige logistiek. ProBrandwacht helpt je aan zzp-brandwachten die hiermee overweg kunnen.',
     metaTitle:
-      'Brandwacht inhuren Tilburg – zzp-brandwachten voor evenementen en logistiek | ProBrandwacht.nl',
+      'Brandwacht inhuren Tilburg – zzp-brandwachten voor evenementen en logistiek | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Tilburg? Huur rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en logistieke locaties via ProBrandwacht.',
     body: `## Indicatief tarief in Tilburg
@@ -235,7 +235,7 @@ Het tarief spreek je vooraf samen af. Daarmee weet je waar je aan toe bent voord
     intro:
       'In Groningen draait het vaak om evenementen, zorglocaties en projecten in en rond de stad. ProBrandwacht helpt je passende zzp-brandwachten te vinden.',
     metaTitle:
-      'Brandwacht inhuren Groningen – zzp-brandwachten voor events en projecten | ProBrandwacht.nl',
+      'Brandwacht inhuren Groningen – zzp-brandwachten voor events en projecten | ProBrandwacht',
     metaDescription:
       'Brandwacht zoeken in Groningen? Via ProBrandwacht huur je rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en andere projecten.',
     body: `## Indicatief tarief in Groningen
@@ -269,7 +269,7 @@ De exacte prijs wordt vooraf besproken tussen jou en de professional. Geen verra
     intro:
       'Almere groeit hard en heeft veel tijdelijke projecten en evenementen. ProBrandwacht koppelt je aan zzp-brandwachten die daarin meebewegen.',
     metaTitle:
-      'Brandwacht inhuren Almere – zzp-brandwachten voor groeiende stad en projecten | ProBrandwacht.nl',
+      'Brandwacht inhuren Almere – zzp-brandwachten voor groeiende stad en projecten | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Almere? Huur rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en tijdelijke projecten via ProBrandwacht.',
     body: `## Indicatief tarief in Almere
@@ -303,7 +303,7 @@ Het uurtarief wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professi
     intro:
       'In Breda draait veel om evenementen, horeca en bouw. ProBrandwacht helpt je snel een passende zzp-brandwacht te vinden.',
     metaTitle:
-      'Brandwacht inhuren Breda – zzp-brandwachten voor events en bouw | ProBrandwacht.nl',
+      'Brandwacht inhuren Breda – zzp-brandwachten voor events en bouw | ProBrandwacht',
     metaDescription:
       'Brandwacht huren in Breda? Vind rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en andere projecten via ProBrandwacht.',
     body: `## Indicatief tarief in Breda
@@ -337,7 +337,7 @@ Tariefafspraken maak je rechtstreeks met de professional. Zo is voor iedereen du
     intro:
       'In Nijmegen gaat het vaak om evenementen, seizoensdrukte en projecten in en rond de stad. ProBrandwacht helpt je aan zzp-brandwachten die dat aankunnen.',
     metaTitle:
-      'Brandwacht inhuren Nijmegen – zzp-brandwachten voor events en projecten | ProBrandwacht.nl',
+      'Brandwacht inhuren Nijmegen – zzp-brandwachten voor events en projecten | ProBrandwacht',
     metaDescription:
       'Brandwacht nodig in Nijmegen? Huur rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en andere projecten via ProBrandwacht.',
     body: `## Indicatief tarief in Nijmegen

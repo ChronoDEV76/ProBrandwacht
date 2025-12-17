@@ -3,10 +3,12 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const AnalyticsClient = dynamic(() => import('./AnalyticsClient'), { ssr: false })
-export const metadata: Metadata = getRouteMetadata('/admin/analytics');
+export const metadata: Metadata = {
+  title: 'Analytics debug | ProBrandwacht',
+  robots: { index: false, follow: false },
+}
 
 
 export default function AnalyticsDebugPage() {

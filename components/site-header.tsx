@@ -24,7 +24,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-brand-900/20 bg-brand-700 text-white shadow-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
         <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight">
-          ProBrandwacht.nl
+          ProBrandwacht
         </Link>
 
         <nav className="hidden items-center gap-1 text-sm lg:flex">

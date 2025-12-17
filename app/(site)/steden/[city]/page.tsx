@@ -13,6 +13,7 @@ import { SPOED_UI_ENABLED } from "@/lib/featureFlags";
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
+const BASE_URL = "https://www.probrandwacht.nl";
 
 export function generateStaticParams() {
   return CITY_SLUGS.map((city) => ({ city }));
@@ -24,7 +25,33 @@ const isCitySlug = (value: string): value is (typeof CITY_SLUGS)[number] =>
 const resolveLabel = (city: CitySlug) =>
   CITY_RECORD_MAP[city]?.name ?? city.replace(/-/g, " ");
 
-export const metadata: Metadata = getRouteMetadata("/steden/[city]");
+export async function generateMetadata({
+  params,
+}: {
+  params: { city: string };
+}): Promise<Metadata> {
+  const rawCity = params.city;
+
+  if (!isCitySlug(rawCity)) {
+    return {
+      title: "Pagina niet gevonden | ProBrandwacht",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const label = resolveLabel(rawCity);
+  const canonical = `${BASE_URL}/steden/${rawCity}`;
+  const base = getRouteMetadata("/steden/[city]");
+  const title = `Zelfstandige brandwacht in ${label} | ProBrandwacht`;
+
+  return {
+    ...base,
+    title,
+    alternates: { canonical, languages: { "nl-NL": canonical } },
+    openGraph: { ...(base.openGraph ?? {}), title, url: canonical },
+    twitter: { ...(base.twitter ?? {}), title },
+  };
+}
 
 export default function CityPage({ params }: { params: { city: string } }) {
   const rawCity = params.city;
@@ -145,7 +172,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       {/* MOBILE CTA BAR */}
       <div className="fixed bottom-4 left-4 right-4 z-20 md:hidden">
         <Link
-          href="/brandwacht-huren"
+          href="/opdrachtgevers/aanmelden"
           className="flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-300"
         >
           Brandwacht inhuren in {label}

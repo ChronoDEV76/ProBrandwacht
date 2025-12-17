@@ -19,14 +19,17 @@ export default function HomePage() {
               Nieuwe route voor brandwachten en opdrachtgevers
             </div>
             <h1 className="text-3xl font-semibold leading-tight tracking-tight text-slate-50 md:text-4xl lg:text-5xl">
-              Een plek waar brandwachten en opdrachtgevers elkaar écht leren kennen
+              ProBrandwacht
             </h1>
-          <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
-            vinden in eerlijke, DBA-bewust samenwerking — zonder klassieke bemiddelingslagen of andere
-            onnodige schakels.
-          </p>
-    
+            <h2 className="max-w-2xl text-lg font-medium leading-snug text-slate-100 md:text-xl">
+              Een plek waar brandwachten en opdrachtgevers elkaar écht leren kennen
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm text-slate-200">
+              ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
+              vinden in eerlijke, DBA-bewust samenwerking — zonder klassieke bemiddelingslagen of andere
+              onnodige schakels.
+            </p>
+
             <p className="mt-3 max-w-2xl text-sm text-slate-200">
               We begonnen als gesprek aan de keukentafel: hoe kan een brandwacht zijn vakmanschap
               tonen zonder in een doolhof van tussenpartijen te belanden? ProBrandwacht groeide uit

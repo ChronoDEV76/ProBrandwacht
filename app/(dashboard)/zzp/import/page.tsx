@@ -8,6 +8,7 @@ const description =
 export const metadata = {
   title: 'Importeer ZZP-profielen | ProBrandwacht',
   description,
+  robots: { index: false, follow: false },
   openGraph: {
     title: 'Importeer ZZP-profielen | ProBrandwacht',
     description,
