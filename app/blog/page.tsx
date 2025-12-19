@@ -31,15 +31,14 @@ export async function generateMetadata({
 }: {
   searchParams?: BlogSearchParams
 }): Promise<Metadata> {
+  const canonical = `${BASE_URL}/blog`
+  const queryKeys = Object.keys(searchParams ?? {})
+  const shouldNoindex = queryKeys.length > 0
+
   const rawCat = typeof searchParams?.cat === 'string' ? searchParams.cat : undefined
   const rawCity = typeof searchParams?.city === 'string' ? searchParams.city : undefined
   const categoryFilter = rawCat && rawCat !== 'Alle' ? rawCat : undefined
   const cityFilter = rawCity && rawCity !== 'Alle' ? rawCity : undefined
-
-  const params = new URLSearchParams()
-  if (categoryFilter) params.set('cat', categoryFilter)
-  if (cityFilter) params.set('city', cityFilter)
-  const canonical = params.toString() ? `${BASE_URL}/blog?${params.toString()}` : `${BASE_URL}/blog`
 
   const hasFilters = Boolean(categoryFilter || cityFilter)
   const title = hasFilters
@@ -66,6 +65,7 @@ export async function generateMetadata({
     title,
     description,
     keywords: DEFAULT_KEYWORDS,
+    robots: { index: !shouldNoindex, follow: true },
     alternates: { canonical, languages: { 'nl-NL': canonical } },
     openGraph: {
       title,

@@ -20,6 +20,14 @@ function unauthorizedResponse(message = "Authentication required") {
 export function middleware(req: NextRequest) {
   const { pathname, origin, search } = req.nextUrl
 
+  // Block hashed OpenGraph-image variants from being indexed/cached
+  if (pathname.startsWith("/opengraph-image-")) {
+    return new NextResponse("Not found", {
+      status: 404,
+      headers: { "x-robots-tag": "noindex, nofollow" },
+    })
+  }
+
   // Basic auth for /admin
   if (pathname.startsWith("/admin")) {
     const authHeader = req.headers.get("authorization") || ""
@@ -69,5 +77,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/steden/:path*"],
+  matcher: ["/admin/:path*", "/steden/:path*", "/opengraph-image-:path*"],
 }
