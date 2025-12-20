@@ -37,7 +37,7 @@ De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tu
 - **${resolveStandardRange('amsterdam')} per uur** bij evenementen en bouw
 - **${resolveIndustryRange('amsterdam')} per uur** bij industriële inzet of nacht/weekend
 
-    De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tariefafspraken maak je in overleg met de professional of het team. ProBrandwacht kan desgewenst meedenken over een passend voorstel.
+    De exacte prijs hangt af van duur van de klus, risico, tijdstip en reistijd. Tariefafspraken worden in de praktijk rechtstreeks afgestemd tussen opdrachtgever en brandwacht. ProBrandwacht kan desgewenst meedenken over een passend voorstel.
 
 ## Waarom opdrachtgevers in Amsterdam voor zzp-brandwachten kiezen
 
@@ -73,7 +73,7 @@ In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg o
 - **${resolveStandardRange('rotterdam')} per uur** voor bouw- en renovatiewerk
 - **${resolveIndustryRange('rotterdam')} per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
 
-    Het uiteindelijke tarief spreek je samen af met de professional, op basis van risico, duur van de opdracht en werktijden. Geen standaard pakketten, maar maatwerk per klus.
+    Het uiteindelijke tarief wordt vooraf besproken en vastgelegd op basis van risico, duur van de opdracht en werktijden. Geen standaard pakketten, maar maatwerk per klus.
 
 ## Waarom opdrachtgevers in Rotterdam voor zzp-brandwachten kiezen
 
@@ -347,7 +347,7 @@ De meeste zzp-brandwachten in Nijmegen werken met:
 - **${resolveStandardRange('nijmegen')} per uur** bij reguliere inzet
 - **${resolveIndustryRange('nijmegen')} per uur** bij drukke periodes of complexere inzet
 
-    Het tarief is een expliciet onderdeel van de afspraak vooraf, zodat je niet voor verrassingen komt te staan.
+    Het tarief maakt onderdeel uit van de afspraken rondom inzet en verantwoordelijkheden, zodat je niet voor verrassingen komt te staan.
 
 ## Waarom opdrachtgevers in Nijmegen voor zzp-brandwachten kiezen
 

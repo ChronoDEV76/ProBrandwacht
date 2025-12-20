@@ -1,5 +1,7 @@
 #!/bin/sh
 
+node scripts/tone-guard-autofix.mjs --dry --check
+
 echo "🔍 Running Tone of Voice check..."
 npm run tone-check
 

@@ -13,17 +13,17 @@ const BRANDWACHTEN_POINTS = [
   {
     title: "Jouw tarief = jouw keuze",
     body:
-      "Je bepaalt zelf je tarief en beschikbaarheid. Wij helpen om afspraken helder vast te leggen, zodat samenwerking toetsbaar blijft.",
+      "Een transparante manier van samenwerken, waarbij tarieven, afspraken en verantwoordelijkheden vooraf duidelijk worden vastgelegd.",
   },
   {
     title: "Directe afstemming",
     body:
-      "Je schakelt rechtstreeks met de opdrachtgever. Taken, rolverdeling en voorwaarden spreek je samen af binnen DBA-bewuste kaders.",
+      "Het platform werkt met een helder verdienmodel dat vooraf inzichtelijk is voor alle betrokken partijen.",
   },
   {
     title: "Transparant over kosten",
     body:
-      "We zijn duidelijk over platformkosten en de werking van het platform. Geen verborgen toeslagen of onverwachte inhoudingen.",
+      "Geen traditionele bureaumarges en een duidelijke scheiding tussen platformrol en uitvoering, zodat afspraken toetsbaar blijven.",
   },
 ];
 

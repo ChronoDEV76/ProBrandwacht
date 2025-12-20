@@ -364,7 +364,7 @@ export default function LeadCalculator() {
         </div>
 
         <p className="mt-2 text-xs text-slate-400">
-          Let op: voorbeelden en vergelijkingen zijn indicatief en contextafhankelijk. Tarief en voorwaarden bepaal je altijd in overleg en leggen jullie samen vast.
+          Let op: voorbeelden en vergelijkingen zijn indicatief en contextafhankelijk. Tarief en voorwaarden bepaal je in de regel in overleg en leggen jullie samen vast.
         </p>
 
         {showFullIndicative ? (

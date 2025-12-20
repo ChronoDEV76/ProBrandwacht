@@ -6,7 +6,7 @@ type HomeHeroProps = {
 }
 
 const HERO_SUBTITLE =
-  "Ingericht voor zelfstandige regie over tarief en inzet — transparant over kosten, afspraken en rolverdeling."
+  "Je werkt als zelfstandig professional met maximale ruimte om je eigen keuzes te maken, zonder onnodige tussenlagen of onduidelijke kostenstructuren."
 
 const HERO_BADGES = [
   "DBA-bewust samenwerken",
@@ -57,7 +57,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           </div>
 
           <p className="mt-3 text-[11px] text-slate-400">
-            Geen planners die bepalen wat jij moet doen — jij bent ondernemer. Werk binnen Wet DBA, eerlijk en zonder verborgen marges.
+            Geen planners die bepalen wat jij moet doen — jij bent ondernemer. Werk binnen Wet DBA, eerlijk en met transparantie over kosten en eventuele marges.
           </p>
         </div>
       </div>

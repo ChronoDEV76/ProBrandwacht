@@ -80,10 +80,8 @@ export default function OverOnsPage() {
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze belofte</p>
               <p className="mt-3 max-w-3xl text-sm text-slate-200">
-                ProBrandwacht is ontwikkeld om samenwerking tussen opdrachtgevers en zelfstandige brandwachten helder, toetsbaar en professioneel
-                te maken. De zelfstandige behoudt regie over tarief en inzet; de opdrachtgever behoudt regie over de opdracht en afspraken. Wij
-                zijn transparant over hoe het platform werkt en welke kosten er zijn, zodat er geen ruis ontstaat over rollen, voorwaarden of
-                vergoedingen.
+                We zijn gebouwd vanuit het idee dat zelfstandige brandwachten hun werk uitvoeren met eigen regie over tarief, inzet en
+                beschikbaarheid, binnen heldere en vooraf inzichtelijke afspraken.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
@@ -139,7 +137,7 @@ export default function OverOnsPage() {
           <div className="grid gap-4 md:grid-cols-3">
             {[
               "Heldere, toetsbare afspraken en transparantie over kosten",
-              "De zelfstandige behoudt regie over tarief en inzet",
+              "Eigen regie over tarief, inzet en beschikbaarheid",
               "DBA-bewust samenwerking voor opdrachtgevers",
               "Geschikt voor bureaus die modern willen meebewegen",
               "Volgende stap in ontwikkeling: ProSafetyMatch",
