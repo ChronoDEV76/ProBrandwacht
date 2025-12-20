@@ -9,7 +9,7 @@ export const generalPlatformFaq = [
   {
     question: 'Hoe werken betalingen via het platform?',
     answer:
-      'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Op basis daarvan wordt een digitale overeenkomst en inzet vastgelegd. Na bevestigde uitvoering wordt de inzet verwerkt in een factuur of betaalopdracht zoals afgesproken. In een volgende fase wordt dit volledig geautomatiseerd via ProSafetyMatch, met heldere overzichten voor zowel zzp’er als opdrachtgever.',
+      'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Op basis daarvan wordt een digitale overeenkomst en inzet vastgelegd. Na bevestigde uitvoering wordt de inzet verwerkt in een factuur of betaalopdracht zoals afgesproken. In een volgende fase kan dit verder worden geautomatiseerd via ProSafetyMatch, afhankelijk van de gekozen inrichting, met heldere overzichten voor zowel zzp’er als opdrachtgever.',
   },
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
@@ -42,7 +42,7 @@ export const zzpFaq = [
   {
     question: 'Wat kost het om als zzp-brandwacht mee te doen?',
     answer:
-      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnementskost worden toegevoegd, maar die wordt dan altijd duidelijk en uitlegbaar vermeld.',
+      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnementskost worden toegevoegd, maar die wordt dan duidelijk en uitlegbaar vermeld op basis van de gekozen inrichting.',
   },
   {
     question: 'Ben ik verplicht om al mijn werk via het platform te doen?',
@@ -62,7 +62,7 @@ export const zzpFaq = [
   {
     question: 'Hoe en wanneer word ik uitbetaald?',
     answer:
-      'De basis is simpel: er wordt vooraf afgesproken hoe er wordt betaald en binnen welke termijn. Na goedkeuring van uren of inzet volgt uitbetaling volgens die afspraak. In de doorontwikkeling naar ProSafetyMatch wordt dit verder geautomatiseerd met duidelijke statusoverzichten per opdracht, zodat je altijd weet waar je aan toe bent.',
+      'De basis is simpel: er wordt vooraf afgesproken hoe er wordt betaald en binnen welke termijn. Na goedkeuring van uren of inzet volgt uitbetaling volgens die afspraak. In de doorontwikkeling naar ProSafetyMatch wordt dit verder geautomatiseerd met duidelijke statusoverzichten per opdracht, zodat je meer grip hebt op afspraken en voortgang.',
   },
   {
     question: 'Wat als een opdrachtgever je toch als werknemer wil aansturen?',

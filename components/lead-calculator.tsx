@@ -363,9 +363,8 @@ export default function LeadCalculator() {
           <p className="text-[11px] text-slate-400">1–2% betaalbuffer inbegrepen</p>
         </div>
 
-        {/* extra nuance-regel (tone-guard proof) */}
-        <p className="mt-2 text-[11.5px] text-slate-300">
-          Indicatief: afhankelijk van context en afspraken. Dit is geen aanbod, geen garantie en geen advies op maat.
+        <p className="mt-2 text-xs text-slate-400">
+          Let op: voorbeelden en vergelijkingen zijn indicatief en contextafhankelijk. Tarief en voorwaarden bepaal je altijd in overleg en leggen jullie samen vast.
         </p>
 
         {showFullIndicative ? (
@@ -449,4 +448,3 @@ export default function LeadCalculator() {
     </section>
   );
 }
-

@@ -9,30 +9,21 @@ import { getRouteMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = getRouteMetadata("/voor-brandwachten");
 
-const perks = [
+const BRANDWACHTEN_POINTS = [
   {
     title: "Jouw tarief = jouw keuze",
-    body: "Geen druk, geen sturing. Jij bepaalt jouw tarief en voorwaarden — volledig eerlijk.",
+    body:
+      "Je bepaalt zelf je tarief en beschikbaarheid. Wij helpen om afspraken helder vast te leggen, zodat samenwerking toetsbaar blijft.",
   },
   {
-    title: "Jij kiest je opdrachten",
-    body: "Geen planning achter de schermen. Jij beslist welke opdrachten bij jouw ervaring en beschikbaarheid passen.",
+    title: "Directe afstemming",
+    body:
+      "Je schakelt rechtstreeks met de opdrachtgever. Taken, rolverdeling en voorwaarden spreek je samen af binnen DBA-bewuste kaders.",
   },
   {
-    title: "Heldere afspraken zonder marges",
-    body: "Duidelijke uitleg over hoe de samenwerking werkt, zonder verborgen verdienmodellen of onduidelijke afspraken; jij kunt zien en toetsbaar vastleggen wat normaal is.",
-  },
-  {
-    title: "DBA-bewust samenwerking",
-    body: "Documenten, werkwijze en communicatie zijn geoptimaliseerd voor zelfstandigheid en uitlegbaarheid richting opdrachtgevers.",
-  },
-  {
-    title: "Toegang tot ProSafetyMatch",
-    body: "De digitale laag waarin we eerlijk werken met de informatie die jij kiest en met afspraken die zichtbaar blijven — ontwikkeld samen met zelfstandige professionals.",
-  },
-  {
-    title: "Geen verplichtingen",
-    body: "Geen minimumuren of vaste binding. Jij blijft zelfstandig ondernemer.",
+    title: "Transparant over kosten",
+    body:
+      "We zijn duidelijk over platformkosten en de werking van het platform. Geen verborgen toeslagen of onverwachte inhoudingen.",
   },
 ];
 
@@ -43,7 +34,7 @@ const differentiators = [
   },
   {
     title: "Heldere afspraken als basis",
-    body: "Geen marges in opdracht of tarief. Geen onduidelijkheid — alleen volwassen samenwerking waarin afspraken zichtbaar en toetsbaar blijven.",
+    body: "Transparant over kosten, afspraken en rolverdeling.",
   },
   {
     title: "Groeipad voor zelfstandigen",
@@ -133,7 +124,7 @@ export default function VoorBrandwachtenPage() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              {perks.map(item => (
+              {BRANDWACHTEN_POINTS.map(item => (
                 <div
                   key={item.title}
                   className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.6)]"

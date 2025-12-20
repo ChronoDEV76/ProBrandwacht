@@ -5,6 +5,15 @@ type HomeHeroProps = {
   className?: string
 }
 
+const HERO_SUBTITLE =
+  "Ingericht voor zelfstandige regie over tarief en inzet — transparant over kosten, afspraken en rolverdeling."
+
+const HERO_BADGES = [
+  "DBA-bewust samenwerken",
+  "Transparant over platformkosten",
+  "Directe afstemming tussen opdrachtgever en professional",
+]
+
 export default function HomeHero({ className }: HomeHeroProps) {
   return (
     <section className={clsx("relative text-slate-50", className)}>
@@ -19,9 +28,16 @@ export default function HomeHero({ className }: HomeHeroProps) {
             ProBrandwacht
           </h1>
 
+          <div className="mt-2 flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">
+            {HERO_BADGES.map(badge => (
+              <span key={badge} className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">
+                {badge}
+              </span>
+            ))}
+          </div>
+
           <p className="mt-2 text-sm leading-relaxed text-[#E5ECFF] drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
-            Heldere, toetsbare afspraken, eerlijke tarieven en volledige vrijheid. Gebruik de kennisbank en toolkit om DBA-bewust en zonder
-            verborgen marges te werken.
+            {HERO_SUBTITLE} Gebruik de kennisbank en toolkit om DBA-bewust te werken.
           </p>
 
           {/* CTA buttons */}
