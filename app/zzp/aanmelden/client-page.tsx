@@ -283,6 +283,9 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             <p className="text-sm text-amber-200">
               Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over testmomenten, feedbacksessies en de overstap naar het live platform.
             </p>
+            <p className="text-sm text-amber-200">
+              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die ook in de praktijk verantwoordelijkheid nemen.
+            </p>
           </div>
           <ol className="flex items-center gap-4 text-sm text-slate-200">
             <li className="flex items-center gap-2 text-emerald-300">

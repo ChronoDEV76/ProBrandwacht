@@ -57,6 +57,10 @@ export default function HomePage() {
               ProBrandwacht is de vakinhoudelijke basis voor een nieuw initiatief in ontwikkeling - het
               bredere platform voor brand- en safetyprofessionals.
             </p>
+            <p className="text-xs text-slate-400">
+              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen
+              vertrouwen op mensen die ook in de praktijk verantwoordelijkheid nemen.
+            </p>
           </div>
 
           <div className="relative ml-auto flex w-full max-w-md flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-xl shadow-black/50 md:w-1/2">
@@ -214,7 +218,7 @@ export default function HomePage() {
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is de vakinhoudelijke laag, ProSafetyMatch de technische laag. We zoeken
               zelfstandige brandwachten én opdrachtgevers die samen een eerlijk platform
-              vormgeven: direct contact, DBA-bewust en zonder verborgen marges. Brandwachten houden
+              vormgeven: direct contact, DBA-bewust en met transparantie over kosten en eventuele marges. Brandwachten houden
               zelf zicht en regie; opdrachtgevers krijgen dezelfde helderheid.
             </p>
             <p className="text-sm text-slate-200 md:text-base">

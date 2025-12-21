@@ -53,6 +53,9 @@ export default function OpdrachtgeverAanmeldenPage() {
               headingClassName="text-2xl font-semibold text-slate-50 md:text-3xl"
               descriptionClassName="text-sm text-slate-200 md:text-base"
             />
+            <p className="mt-4 text-sm text-slate-200">
+              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die ook in de praktijk verantwoordelijkheid nemen.
+            </p>
             <p className="mt-4 text-xs text-slate-400 leading-relaxed">
               Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{' '}
               <a href="mailto:privacy@prosafetymatch.nl" className="underline text-emerald-200">privacy@prosafetymatch.nl</a> of gebruik het formulier op onze <a href="/privacy" className="underline text-emerald-200">privacy-pagina</a>.

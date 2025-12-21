@@ -113,6 +113,10 @@ export default function OverOnsPage() {
               ProBrandwacht is gebouwd rond eerlijke inzet van zelfstandige brandwachten en sluit inhoudelijk aan op
               een breder safety-platform in ontwikkeling: ProSafetyMatch.
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200">
+              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die
+              ook in de praktijk verantwoordelijkheid nemen.
+            </p>
           </div>
         </div>
       </section>
