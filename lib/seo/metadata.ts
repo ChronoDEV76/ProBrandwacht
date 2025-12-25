@@ -117,6 +117,13 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: ['brandwacht bronnen', 'brandwacht data', 'veiligheid bronnen', 'cbs brandwacht'],
   },
 
+  '/steden': {
+    title: 'Brandwacht per stad | ProBrandwacht',
+    description:
+      'Overzicht van stedenpagina’s voor zelfstandige brandwachten en opdrachtgevers. Lokale context, inzettypes en afspraken per stad, met heldere routes om samen te werken.',
+    keywords: [...seoKeywordClusters.core, 'brandwacht per stad', 'brandwacht regio'],
+  },
+
   '/steden/[city]': {
     title: 'Brandwacht nodig in jouw stad – direct geregeld | ProBrandwacht',
     description:

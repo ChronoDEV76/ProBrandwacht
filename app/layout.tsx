@@ -2,11 +2,11 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import dynamic from "next/dynamic";
 import SeoStructuredData from "@/components/SeoStructuredData";
 import CookieNotice from "@/components/cookie-notice";
 import { headers } from "next/headers";
 import { SanityChecker } from "./_sanity-checker";
+import AnalyticsScripts from "@/components/analytics";
 // import { SanityChecker } from "./_sanity-checker"; // verwijderd
 
 const roboto = localFont({
@@ -18,10 +18,6 @@ const roboto = localFont({
     },
   ],
   display: "swap",
-});
-
-const AnalyticsScripts = dynamic(() => import("@/components/analytics"), {
-  ssr: false,
 });
 
 const SITE_BASE_URL = "https://www.probrandwacht.nl";

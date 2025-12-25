@@ -1,77 +1,72 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+// app/(site)/voor-brandwachten/page.tsx
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
-import HeroBackground from "@/components/HeroBackground";
-import SeoStructuredData from "@/components/SeoStructuredData";
-import StructuredBreadcrumbs from "@/components/structured-breadcrumbs";
-import { zzpFaq } from "@/lib/seo/commonFaqs";
-import { getRouteMetadata } from "@/lib/seo/metadata";
+import HeroBackground from '@/components/HeroBackground'
+import SeoStructuredData from '@/components/SeoStructuredData'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { zzpFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = getRouteMetadata("/voor-brandwachten");
+export const metadata: Metadata = getRouteMetadata('/voor-brandwachten')
 
 const BRANDWACHTEN_POINTS = [
   {
-    title: "Jouw tarief = jouw keuze",
-    body:
-      "Een transparante manier van samenwerken, waarbij tarieven, afspraken en verantwoordelijkheden vooraf duidelijk worden vastgelegd.",
+    title: 'Jouw tarief is jouw keuze',
+    body: 'Je bespreekt tarief, inzet en verantwoordelijkheden vooraf en legt dit helder vast — zonder ruis of verrassingen.'
   },
   {
-    title: "Directe afstemming",
-    body:
-      "Het platform werkt met een helder verdienmodel dat vooraf inzichtelijk is voor alle betrokken partijen.",
+    title: 'Directe afstemming',
+    body: 'Je stemt rechtstreeks af met opdrachtgevers. Geen onnodige tussenlagen, wel duidelijke lijnen en verwachtingen.'
   },
   {
-    title: "Transparant over kosten",
-    body:
-      "Geen traditionele bureaumarges en een duidelijke scheiding tussen platformrol en uitvoering, zodat afspraken toetsbaar blijven.",
-  },
-];
+    title: 'Toetsbare afspraken (DBA-bewust)',
+    body: 'Afspraken blijven uitlegbaar en controleerbaar, met respect voor jouw zelfstandigheid en rolverdeling in de praktijk.'
+  }
+]
 
 const differentiators = [
   {
-    title: "We behandelen jou als ondernemer",
-    body: "Je bent geen uitvoerder in een keten, maar een zelfstandig professional met expertise en verantwoordelijkheid; jij kiest en legt vast.",
+    title: 'We behandelen je als ondernemer',
+    body: 'Je bent geen uitvoerder in een keten, maar een zelfstandig professional met expertise. Jij kiest en legt vast.'
   },
   {
-    title: "Heldere afspraken als basis",
-    body: "Transparant over kosten, afspraken en rolverdeling.",
+    title: 'Heldere afspraken als basis',
+    body: 'Transparantie over kosten, afspraken en rolverdeling — zodat iedereen weet waar hij aan toe is.'
   },
   {
-    title: "Groeipad voor zelfstandigen",
-    body: "Met betere opdrachtgevers, eerlijke tarieven, certificeringsroutes en een netwerk van professionals.",
-  },
-];
+    title: 'Groeipad voor zelfstandigen',
+    body: 'Een route naar betere samenwerkingen, professionele zichtbaarheid en een netwerk dat kwaliteit serieus neemt.'
+  }
+]
 
 const bridgeSteps = [
   {
-    title: "Samen aan tafel",
-    body: "Opdrachtgevers zien jouw profiel, certificaten en tariefvoorstel; jij voegt context toe zodat alles duidelijk is en goedgekeurd kan worden.",
+    title: 'Samen aan tafel',
+    body: 'Opdrachtgevers zien jouw profiel, certificaten en tarief. Jij voegt context toe zodat alles helder is vóór start.'
   },
   {
-    title: "Realtime afstemming",
-    body: "Statusupdates, documentatie en bijkomende afspraken leven in één dossier zodat de inzet in de praktijk soepel verloopt en controleerbaar blijft.",
+    title: 'Afstemmen zonder ruis',
+    body: 'Updates en afspraken blijven één verhaal: wat is afgesproken, wat is gewijzigd en waarom — zodat het in de praktijk werkt.'
   },
   {
-    title: "Zichtbaar vertrouwen",
-    body: "Je samenwerking blijft toetsbaar dankzij gedeelde checklists, foto’s en evaluaties die in de platformgeschiedenis blijven en samen verantwoordelijk zijn.",
-  },
-];
+    title: 'Zichtbaar vertrouwen',
+    body: 'Samenwerking blijft toetsbaar via gedeelde evaluaties en vastlegging, zonder dat dit een publiek oordeel wordt.'
+  }
+]
 
-const steps = [
-  "Maak je profiel aan",
-  "Deel relevante kwalificaties en voorkeuren",
-  "Ontvang voorstellen die passen bij jouw vakmanschap",
-];
+const steps = ['Maak je profiel aan', 'Deel relevante kwalificaties en voorkeuren', 'Kies zelf welke inzet je aangaat']
 
 export default function VoorBrandwachtenPage() {
   const breadcrumbItems = [
-  { name: "Home", url: "https://www.probrandwacht.nl/" },
-  { name: "Voor brandwachten", url: "https://www.probrandwacht.nl/voor-brandwachten" },
-  ];
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Voor brandwachten', url: 'https://www.probrandwacht.nl/voor-brandwachten' }
+  ]
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <SeoStructuredData faqs={zzpFaq.slice(0, 4)} />
+
       <div className="mx-auto w-full max-w-6xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
@@ -82,13 +77,15 @@ export default function VoorBrandwachtenPage() {
           <div className="inline-flex w-fit items-center rounded-full border border-brand-200/40 bg-brand-200/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-100">
             Voor zelfstandige brandwachten
           </div>
+
           <div className="space-y-4">
             <h1 className="text-3xl font-semibold text-white md:text-4xl">
-              Professioneel werken als zelfstandige brandwacht
+              Professioneel werken als zelfstandige brandwacht — met regie over je eigen inzet
             </h1>
             <p className="max-w-3xl text-sm text-slate-200 md:text-base">
-              ProSafetyMatch wordt gebouwd voor brandwachten die écht zelfstandig willen ondernemen. Geen oude planningsstructuren, maar een
-              moderne manier van samenwerken waarin jouw vakmanschap, autonomie en tarief centraal staan.
+              ProBrandwacht helpt zelfstandige brandwachten en opdrachtgevers samenwerken zonder ruis: duidelijke afspraken, directe
+              afstemming en DBA-bewuste kaders. ProSafetyMatch is in ontwikkeling als technische laag om dit digitaal te ondersteunen —
+              zonder extra schakels toe te voegen.
             </p>
           </div>
 
@@ -97,7 +94,7 @@ export default function VoorBrandwachtenPage() {
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Meld je gratis aan
+              Meld je vrijblijvend aan
             </Link>
             <Link
               href="/belangen"
@@ -106,6 +103,10 @@ export default function VoorBrandwachtenPage() {
               Bekijk de standpunten
             </Link>
           </div>
+
+          <p className="max-w-3xl text-xs text-slate-400">
+            Geen klachtenplatform. Geen naming &amp; shaming. Wel professionele zelfstandigheid en toetsbare afspraken.
+          </p>
         </div>
       </HeroBackground>
 
@@ -116,7 +117,7 @@ export default function VoorBrandwachtenPage() {
           <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
             <div className="space-y-1">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Wat jij krijgt bij ProSafetyMatch
+                Wat jij krijgt bij ProBrandwacht
               </p>
               <p className="text-sm text-slate-200 md:text-base">
                 Een manier van samenwerken die past bij modern ondernemerschap in de brandveiligheidssector.
@@ -134,6 +135,10 @@ export default function VoorBrandwachtenPage() {
                 </div>
               ))}
             </div>
+
+            <p className="pt-1 text-xs text-slate-400">
+              ProSafetyMatch is in ontwikkeling om vastlegging en samenwerking verder te digitaliseren (o.a. planning/documentatie).
+            </p>
           </div>
 
           {/* Differentiators */}
@@ -141,63 +146,65 @@ export default function VoorBrandwachtenPage() {
             <div className="space-y-1">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat ons anders maakt</p>
               <p className="text-sm text-slate-200 md:text-base">
-                Geen keten, geen tussenlaag — maar een platform dat jouw rol als ondernemer versterkt.
+                Geen keten, geen tussenlaag — maar een route die jouw rol als ondernemer versterkt.
               </p>
             </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {differentiators.map(item => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.6)]"
-              >
-                <p className="text-sm font-semibold text-white">🔥 {item.title}</p>
-                <p className="mt-2 text-sm text-slate-200">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Brug */}
-        <section className="border-y border-white/5 bg-slate-900/70">
-          <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-            <div className="space-y-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Brug tussen zelfstandigen en opdrachtgevers
-              </p>
-              <h2 className="text-2xl font-semibold text-white md:text-3xl">
-                Samen vormgeven aan inzet en kwaliteit
-              </h2>
-            <p className="text-sm text-slate-200 md:text-base">
-              Jij bouwt jouw profiel, deelt certificaten en stelt een tariefvoorstel voor. Opdrachtgevers zien dit, reageren met feedback en bevestigen
-              planning, scope en documenten. Duidelijk beschreven afspraken worden gezamenlijk goedgekeurd, zodat iedereen exact weet wat er van
-              elkaar verwacht wordt.
-            </p>
-            </div>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {bridgeSteps.map(step => (
-                <div key={step.title} className="space-y-2 rounded-2xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/70 p-5">
-                  <h3 className="text-sm font-semibold text-white">{step.title}</h3>
-                  <p className="text-sm text-slate-200">{step.body}</p>
+            <div className="grid gap-4 md:grid-cols-3">
+              {differentiators.map(item => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.6)]"
+                >
+                  <p className="text-sm font-semibold text-white">🔥 {item.title}</p>
+                  <p className="mt-2 text-sm text-slate-200">{item.body}</p>
                 </div>
               ))}
             </div>
           </div>
-        </section>
 
-        {/* Stappen */}
-        <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
-          <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aanmelden in 3 stappen</p>
-            <p className="mt-4 text-xs text-slate-300">
-              Via ProBrandwacht werk je nu al op deze manier, met het oog op ProSafetyMatch (in ontwikkeling), waarin planning, documentatie en facturatie kunnen samenkomen. De voorbeelden zijn indicatief en afhankelijk van jouw inzet, beschikbaarheid en risico’s.
-            </p>
-            <p className="text-sm text-slate-200 md:text-base">
-              We werken stap voor stap aan een eerlijke manier van samenwerken: jouw profiel, certificaten en afspraken blijven van jou,
-              zonder tussenlagen. Meld je aan om mee te bouwen, direct zichtbaar te zijn en zelf te kiezen welke inzet je vastlegt.
-            </p>
-          </div>
+          {/* Brug */}
+          <section className="border-y border-white/5 bg-slate-900/70">
+            <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+              <div className="space-y-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                  Brug tussen zelfstandigen en opdrachtgevers
+                </p>
+                <h2 className="text-2xl font-semibold text-white md:text-3xl">
+                  Samen afspraken maken die kloppen in de praktijk
+                </h2>
+                <p className="text-sm text-slate-200 md:text-base">
+                  Jij bouwt je profiel, deelt certificaten en geeft tarief en beschikbaarheid aan. Opdrachtgevers vullen aan met context,
+                  planning en randvoorwaarden. Alles wat je afspreekt blijft voor beide partijen inzichtelijk en toetsbaar — zonder extra lagen.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {bridgeSteps.map(step => (
+                  <div
+                    key={step.title}
+                    className="space-y-2 rounded-2xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/70 p-5"
+                  >
+                    <h3 className="text-sm font-semibold text-white">{step.title}</h3>
+                    <p className="text-sm text-slate-200">{step.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Stappen */}
+          <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)] md:p-8">
+            <div className="space-y-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Aansluiten in 3 stappen</p>
+              <p className="text-sm text-slate-200 md:text-base">
+                Je hoeft niet te kiezen voor een “nieuw systeem”. Je kiest voor duidelijke afspraken en professionele zelfstandigheid —
+                met tooling die stap voor stap meegroeit.
+              </p>
+              <p className="mt-4 text-xs text-slate-300">
+                Voorbeelden zijn indicatief en afhankelijk van jouw inzet, beschikbaarheid en risico’s. Afspraken maak je altijd in overleg.
+              </p>
+            </div>
 
             <div className="grid gap-4 md:grid-cols-3">
               {steps.map((item, idx) => (
@@ -218,7 +225,7 @@ export default function VoorBrandwachtenPage() {
                 href="/zzp/aanmelden"
                 className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
-                Meld je gratis aan
+                Meld je vrijblijvend aan
               </Link>
 
               <Link
@@ -228,9 +235,16 @@ export default function VoorBrandwachtenPage() {
                 Bekijk de standpunten
               </Link>
             </div>
+
+            <div className="pt-2">
+              <Link href="/opdrachtgevers" className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">
+                Voor opdrachtgevers: bekijk hoe samenwerken werkt →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }
+

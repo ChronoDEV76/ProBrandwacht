@@ -12,7 +12,7 @@ export default function AnalyticsScripts() {
     <>
       {gtmId ? (
         <>
-          <Script id="gtm-loader" strategy="lazyOnload">
+          <Script id="gtm-loader" strategy="afterInteractive">
             {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -54,9 +54,9 @@ export default function AnalyticsScripts() {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
-          <Script id="ga4-init" strategy="lazyOnload">
+          <Script id="ga4-init" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

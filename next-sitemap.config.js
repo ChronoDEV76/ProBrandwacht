@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+const config = {
   siteUrl: 'https://www.probrandwacht.nl',
   generateRobotsTxt: true,
   sitemapSize: 7000,
@@ -21,11 +21,7 @@ module.exports = {
         allow: '/',
       },
     ],
-    // Hier verwijs je expliciet naar je extra steden-sitemap
-    // Let op: je moet wel een route hebben op /sitemap-cities.xml
-    additionalSitemaps: [
-      'https://www.probrandwacht.nl/sitemap-cities.xml',
-    ],
   },
-};
+}
 
+export default config

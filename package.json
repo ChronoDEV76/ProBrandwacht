@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "preflight:live": "node scripts/preflight-live.mjs",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",
