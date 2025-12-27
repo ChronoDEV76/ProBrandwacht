@@ -28,7 +28,7 @@ export default function HomePage() {
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is opgezet als een rationeel samenwerkingsmodel voor zelfstandige
-            brandwachten en opdrachtgevers. Geen tussenpartij die besluitvorming overneemt,
+            brandwachten en opdrachtgevers. Geen tussenlaag die besluitvorming overneemt,
             geen onzichtbare schakels en geen beloftes — maar duidelijke afspraken die vooraf kloppen en uitlegbaar blijven.
           </p>
 

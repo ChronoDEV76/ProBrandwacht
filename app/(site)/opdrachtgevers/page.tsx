@@ -30,7 +30,7 @@ export default function OpdrachtgeversPage() {
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht ondersteunt samenwerking met zelfstandige brandwachten op een uitlegbare manier:
-              directe afstemming, duidelijke rolverdeling en afspraken die vooraf kloppen. Geen tussenpartij die
+              directe afstemming, duidelijke rolverdeling en afspraken die vooraf kloppen. Geen tussenlaag die
               besluitvorming overneemt — wél structuur die rust geeft in uitvoering en compliance.
             </p>
 
