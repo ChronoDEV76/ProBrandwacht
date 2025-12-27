@@ -160,7 +160,7 @@ export default async function DirectRequestDetailPage({
           </DetailCard>
         </section>
 
-        {/* Chat placeholder (replace later with realtime component) */}
+        {/* Chat stub (replace later with realtime component) */}
         <section className="rounded-2xl bg-gray-100 p-6">
           <h2 className="mb-3 font-medium">Chat met opdrachtgever</h2>
           <p className="text-sm text-gray-500">[Chatfunctie komt hier — Supabase Realtime of Slack-thread integratie]</p>

@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { getPostSlugs, getPostBySlug, readingTime } from '@/lib/blog'
-import { coreCities } from '@/lib/cities'
-import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
+
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { getPostBySlug, getPostSlugs, readingTime } from '@/lib/blog'
+import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
+import { coreCities } from '@/lib/cities'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
-import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
 const TITLE_CORE = 'Blog brandveiligheid & zzp-brandwachten'
@@ -58,7 +58,7 @@ export async function generateMetadata({
   ].filter(Boolean)
 
   const description = filterSummary.length
-    ? `${DEFAULT_DESCRIPTION} Focus: ${filterSummary.join(' · ').toLowerCase()}.`
+    ? `${DEFAULT_DESCRIPTION} Focus: ${filterSummary.join(' / ').toLowerCase()}.`
     : DEFAULT_DESCRIPTION
 
   return {
@@ -115,6 +115,25 @@ function normalizeImagePosition(value: unknown) {
   return trimmed ? trimmed : undefined
 }
 
+function resolveCardImage(frontmatter: Record<string, unknown>) {
+  const candidates = [frontmatter.image, frontmatter.cover, frontmatter.ogImage]
+  for (const candidate of candidates) {
+    if (typeof candidate === 'string' && candidate.trim()) {
+      return normalizeImageSrc(candidate)
+    }
+  }
+  return null
+}
+
+function resolveCardAlt(frontmatter: Record<string, unknown>, slug: string) {
+  if (typeof frontmatter.imageAlt === 'string' && frontmatter.imageAlt.trim()) {
+    return frontmatter.imageAlt.trim()
+  }
+  if (typeof frontmatter.title === 'string' && frontmatter.title.trim()) {
+    return frontmatter.title.trim()
+  }
+  return slug
+}
 
 export default async function BlogIndexPage({ searchParams }: { searchParams?: Record<string, string> }) {
   const cat = (searchParams?.cat as (typeof CATEGORIES)[number]) || 'Alle'
@@ -122,19 +141,20 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
   const slugs = await getPostSlugs()
   const posts = await Promise.all(
-    slugs.map(async slug => {
+    slugs.map(async (slug) => {
       const { frontmatter, content } = await getPostBySlug(slug)
       const minutes = Math.max(1, Math.ceil(readingTime(content).minutes))
       const category = normalizeCategory(frontmatter.category)
       const mappedCity = normalizeCity(frontmatter.city)
-      const image = normalizeImageSrc(frontmatter.image as string | undefined)
-      const imageAlt = (frontmatter.imageAlt as string | undefined) ?? frontmatter.title ?? slug
+      const image = resolveCardImage(frontmatter)
+      const imageAlt = resolveCardAlt(frontmatter, slug)
       const imagePosition = normalizeImagePosition(frontmatter.imagePosition)
       const resolvedDate = resolveDate(frontmatter.date as string | undefined)
       const excerpt =
         (frontmatter.tldr as string | undefined) ??
         (frontmatter.description as string | undefined) ??
         ''
+
       return {
         slug,
         title: frontmatter.title ?? slug,
@@ -147,18 +167,17 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         imageAlt,
         imagePosition,
       }
-    }),
+    })
   )
 
   const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
-
-  const filtered = postsSorted.filter(post => {
+  const filtered = postsSorted.filter((post) => {
     const matchCategory = cat === 'Alle' || post.category === cat
     const matchCity = city === 'Alle' || post.city === city
     return matchCategory && matchCity
   })
 
-  const articleSchema = filtered.map(post => ({
+  const articleSchema = filtered.map((post) => ({
     '@type': 'Article',
     headline: post.title,
     datePublished: post.dateIso,
@@ -197,7 +216,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: generalPlatformFaq.map(item => ({
+    mainEntity: generalPlatformFaq.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: { '@type': 'Answer', text: item.answer },
@@ -214,12 +233,16 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <header className="space-y-4">
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">“Inzichten uit de dagelijkse praktijk van brandveilig werken.”</h1>
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              &quot;Inzichten uit de dagelijkse praktijk van brandveilig werken.&quot;
+            </h1>
             <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
-              We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt samenwerken.
+              We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt
+              samenwerken.
             </p>
             <p className="max-w-3xl text-sm text-slate-300 md:text-[15px]">
-              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel eerlijke onderbouwing.
+              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel eerlijke
+              onderbouwing.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -236,7 +259,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>
               <nav className="flex flex-wrap gap-2">
-                {CATEGORIES.map(c => (
+                {CATEGORIES.map((c) => (
                   <FilterChip
                     key={c}
                     href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
@@ -250,7 +273,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Stad</span>
               <nav className="flex flex-wrap gap-2">
-                {CITIES.map(c => (
+                {CITIES.map((c) => (
                   <FilterChip
                     key={c}
                     href={`/blog?cat=${encodeURIComponent(cat)}&city=${encodeURIComponent(c)}`}
@@ -269,25 +292,29 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         <div className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10">
           <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.length === 0 && (
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-slate-200">Geen artikelen gevonden voor deze filters.</div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-slate-200">
+                Geen artikelen gevonden voor deze filters.
+              </div>
             )}
-            {filtered.map(post => (
+            {filtered.map((post) => (
               <article
                 key={post.slug}
                 className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-emerald-500/20"
               >
                 {post.image ? (
-                <div className="relative aspect-[5/3] md:aspect-[5/3] w-full overflow-hidden px-3 pt-3 pb-5">
-                    <Image
-                      src={post.image}
-                      alt={post.imageAlt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 640px"
-                      className="object-cover"
-                      style={{
-                        objectPosition: post.imagePosition ?? "center 60%",
-                      }}
-                    />
+                  <div className="relative w-full overflow-hidden px-3 pb-5 pt-3">
+                    <div className="relative aspect-[5/3]">
+                      <Image
+                        src={post.image}
+                        alt={post.imageAlt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                        style={{
+                          objectPosition: post.imagePosition ?? 'center 60%',
+                        }}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className="h-40 w-full bg-slate-800" />
@@ -300,21 +327,21 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     </span>
                     {post.city && <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.city}</span>}
                     <span>{formatDate(post.dateIso)}</span>
-                    <span>· {post.minutes} min leestijd</span>
+                    <span>- {post.minutes} min leestijd</span>
                   </div>
                   <h2 className="line-clamp-2 text-lg font-semibold text-slate-50">
                     <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-emerald-200">
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">Lees het artikel →</p>
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">Lees het artikel &rarr;</p>
                   <div className="mt-4 flex items-center justify-between text-sm">
                     <Link
                       href={`/blog/${post.slug}`}
                       prefetch={false}
                       className="font-medium text-emerald-200 hover:text-emerald-100"
                     >
-                      Lees hoe wij de norm verschuiven →
+                      Lees hoe wij de norm verschuiven &rarr;
                     </Link>
                     <a
                       href="/zzp/aanmelden"
@@ -331,19 +358,19 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-50">Stadspagina’s met actuele tariefvoorbeelden</h2>
+            <h2 className="text-lg font-semibold text-slate-50">Stadspagina&apos;s met actuele tariefvoorbeelden</h2>
             <p className="mt-2 text-sm text-slate-200">
               Bekijk per stad indicatieve tariefbanden en meld je aan voor aanvragen in jouw regio.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {cityLinks.map(city => (
-                <li key={city.slug}>
+              {cityLinks.map((cityLink) => (
+                <li key={cityLink.slug}>
                   <Link
-                    href={`/steden/${city.slug}`}
+                    href={`/steden/${cityLink.slug}`}
                     prefetch={false}
                     className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-100 transition hover:border-emerald-300 hover:text-emerald-200"
                   >
-                    Brandwacht {city.name}
+                    Brandwacht {cityLink.name}
                   </Link>
                 </li>
               ))}
@@ -353,21 +380,21 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="rounded-2xl border border-emerald-400/40 bg-emerald-400/10 p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-emerald-100">Autoritaire bronnen</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Al onze artikelen verwijzen naar dezelfde officiële bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
-              zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio’s.
+              Al onze artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
+              zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio&apos;s.
             </p>
             <Link
               href="/seo-resources"
               className="mt-3 inline-flex items-center rounded-md border border-emerald-300 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
             >
-              Bekijk alle autoritaire bronnen →
+              Bekijk alle autoritaire bronnen &rarr;
             </Link>
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-center">
             <h3 className="text-xl font-semibold text-slate-50">Klaar voor eerlijk samenwerken?</h3>
             <p className="mt-2 text-slate-200">
-              Toegang voor de eerste lichting is geopend — voor professionals en vooruitstrevende opdrachtgevers.
+              Toegang voor de eerste lichting is geopend - voor professionals en vooruitstrevende opdrachtgevers.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
               <a
@@ -378,7 +405,10 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               >
                 Sluit je aan bij de ploeg die de norm herschrijft
               </a>
-              <Link href="/opdrachtgevers" className="rounded-2xl border border-slate-700 px-5 py-3 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+              <Link
+                href="/opdrachtgevers"
+                className="rounded-2xl border border-slate-700 px-5 py-3 text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
+              >
                 Info voor opdrachtgevers
               </Link>
             </div>
@@ -423,10 +453,10 @@ function formatDate(iso: string) {
 }
 
 function derivePositionTag(category: string | undefined) {
-  if (!category) return 'Praktijkervaring';
-  const lower = category.toLowerCase();
-  if (lower.includes('wet')) return 'Wetgeving & handhaving';
-  if (lower.includes('opdracht')) return 'Voor opdrachtgevers';
-  if (lower.includes('zzp')) return 'Voor zzp-brandwachten';
-  return 'Praktijkervaring';
+  if (!category) return 'Praktijkervaring'
+  const lower = category.toLowerCase()
+  if (lower.includes('wet')) return 'Wetgeving & handhaving'
+  if (lower.includes('opdracht')) return 'Voor opdrachtgevers'
+  if (lower.includes('zzp')) return 'Voor zzp-brandwachten'
+  return 'Praktijkervaring'
 }

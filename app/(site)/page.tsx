@@ -1,247 +1,190 @@
-// app/(site)/page.tsx
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import WhyProBrandwachtSection from '@/components/why-probrandwacht-section'
+import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
-export const metadata = getRouteMetadata('/')
+export const metadata: Metadata = getRouteMetadata('/')
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <SeoStructuredData faqs={generalPlatformFaq.slice(0, 3)} />
 
-      {/* HERO (ZZP EERST) */}
-      <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 md:flex-row md:items-center md:py-24">
-          <div className="relative z-10 max-w-xl space-y-6">
-            <div className="inline-flex rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-emerald-300">
-              Voor zelfstandige brandwachten
-            </div>
+      {/* HERO */}
+      <HeroBackground>
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-10">
+          <span className="inline-flex w-fit rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+            Werkbaar model voor samenwerking
+          </span>
 
-            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-slate-50 md:text-4xl lg:text-5xl">
-              Je bent zelfstandig — maar zo voelt het niet altijd.
-            </h1>
+          <h1 className="max-w-4xl text-3xl font-semibold tracking-tight md:text-4xl">
+            Samenwerken in brandveiligheid werkt alleen
+            <br className="hidden md:block" />
+            als rollen, tarieven en verantwoordelijkheden vooraf vastliggen.
+          </h1>
 
-            <h2 className="max-w-2xl text-lg font-medium leading-snug text-slate-100 md:text-xl">
-              ProBrandwacht helpt je regie, afspraken en zelfstandigheid weer helder te krijgen.
-            </h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht is opgezet als een rationeel samenwerkingsmodel voor zelfstandige
+            brandwachten en opdrachtgevers. Geen tussenpartij die besluitvorming overneemt,
+            geen onzichtbare schakels en geen beloftes — maar duidelijke afspraken die vooraf kloppen en uitlegbaar blijven.
+          </p>
 
-            <p className="mt-3 max-w-2xl text-sm text-slate-200">
-              Onduidelijke contracten, wisselende voorwaarden en steeds meer tussenlagen maken samenwerken onnodig
-              ingewikkeld. ProBrandwacht is er voor zelfstandige brandwachten die professioneel willen ondernemen — met
-              duidelijke, toetsbare afspraken.
-            </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              href="/voor-brandwachten"
+              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            >
+              Route voor brandwachten
+            </Link>
 
-            <ul className="mt-4 space-y-2 text-sm text-slate-200">
-              <li>
-                - Jij bepaalt je <strong className="font-semibold text-slate-100">tarief, agenda en inzet</strong>.
-              </li>
-              <li>
-                - Afspraken zijn <strong className="font-semibold text-slate-100">toetsbaar en DBA-bewust</strong>.
-              </li>
-              <li>- Geen verborgen werkgeverschap of onzichtbare schakels.</li>
-            </ul>
+            <Link
+              href="/opdrachtgevers"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Route voor opdrachtgevers
+            </Link>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Bekijk of dit bij jou past
-              </Link>
-
-              <Link
-                href="/zzp/aanmelden"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-5 py-2.5 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-              >
-                Vrijblijvend aansluiten
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap gap-4 text-xs font-medium text-emerald-200">
-              <Link href="/belangen" className="hover:text-emerald-100">
-                Bekijk de kaders
-              </Link>
-              <Link href="/steden" className="hover:text-emerald-100">
-                Alle steden &amp; regio’s
-              </Link>
-            </div>
-
-            <p className="pt-2 text-xs text-slate-400">
-              Geen klachtenplatform. Geen naming &amp; shaming. Wel duidelijke afspraken en professionele zelfstandigheid.
-            </p>
-
-            <p className="text-xs text-slate-400">
-              ProBrandwacht is de vakinhoudelijke basis; ProSafetyMatch wordt de technische laag (in ontwikkeling) die
-              afspraken en samenwerking digitaal ondersteunt — zonder extra schakels toe te voegen.
-            </p>
+            <Link
+              href="/belangen"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Waarom dit werkt
+            </Link>
           </div>
 
-          {/* RECHTERKAART */}
-          <div className="relative ml-auto flex w-full max-w-md flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-xl shadow-black/50 md:w-1/2">
-            <h3 className="text-sm font-semibold text-slate-100">Wat jij vastlegt (alleen wat nodig is)</h3>
-            <ul className="space-y-2 text-sm text-slate-200">
-              <li>- Je certificaten en ervaring als zelfstandige brandwacht.</li>
-              <li>- Je eigen uurtarief en beschikbaarheid.</li>
-              <li>- Voorkeuren qua projecten, sector en werktijden.</li>
-              <li>- Heldere afspraken over inzet, rol en verantwoordelijkheid.</li>
-            </ul>
-            <p className="text-xs text-slate-400">
-              Dit start in de niche van brandwachten, met een route naar een breder safety-netwerk.
-            </p>
+          <p className="text-xs text-slate-400">
+            ProSafetyMatch is in ontwikkeling als technische laag om afspraken, planning en
+            documentatie later digitaal te ondersteunen — zonder extra schakels toe te voegen.
+          </p>
+        </div>
+      </HeroBackground>
 
-            <div className="pt-1">
-              <Link href="/opdrachtgevers" className="text-xs font-medium text-emerald-200 hover:text-emerald-100">
-                Ben je opdrachtgever? Bekijk de route voor opdrachtgevers →
-              </Link>
+      {/* WAAROM DIT NODIG IS */}
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <h2 className="text-2xl font-semibold md:text-3xl">
+                Waar samenwerking vaak vastloopt
+              </h2>
+
+              <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+                In de praktijk ontstaan problemen niet door onwil, maar door onduidelijke
+                afspraken. Tarieven zijn afgeleid, verantwoordelijkheden verschuiven en
+                verwachtingen worden achteraf ingevuld.
+              </p>
+
+              <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+                Dat leidt tot discussie, juridisch risico en verlies van vertrouwen — voor
+                zelfstandigen, opdrachtgevers en bemiddelende partijen.
+              </p>
             </div>
-          </div>
-        </div>
 
-        {/* MOBILE CTA BAR */}
-        <div className="fixed bottom-4 left-4 right-4 z-20 md:hidden">
-          <Link
-            href="/voor-brandwachten"
-            className="flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/50 transition hover:bg-emerald-300"
-          >
-            Bekijk of dit bij jou past
-          </Link>
-        </div>
-      </section>
-
-      {/* WAT PROBRANDWACHT DOET */}
-      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/90">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-14">
-          <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Wat ProBrandwacht doet</p>
-            <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">Duidelijke afspraken, zonder extra lagen</h2>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een onafhankelijke basis waar zelfstandige brandwachten en opdrachtgevers elkaar leren kennen
-              via duidelijke profielen, heldere afspraken en directe lijnen. Vanuit die inhoud bouwen we aan ProSafetyMatch:
-              de technische laag (in ontwikkeling) die planning, documentatie en vastlegging kan ondersteunen.
-            </p>
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">
+                Gevolg in de praktijk
+              </p>
+              <ul className="space-y-2 text-sm text-slate-200">
+                <li>– Onduidelijkheid over rol en verantwoordelijkheid</li>
+                <li>– Discussie over tarief en inzet achteraf</li>
+                <li>– Verhoogd DBA- en aansprakelijkheidsrisico</li>
+                <li>– Afhankelijkheid zonder expliciete afspraken</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* WHY PROBRANDWACHT */}
-      <WhyProBrandwachtSection />
+      {/* HET MODEL */}
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <h2 className="mb-6 text-2xl font-semibold md:text-3xl">
+            Hoe ProBrandwacht dit anders inricht
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-emerald-300">
+                1. Directe relatie
+              </h3>
+              <p className="mt-2 text-sm text-slate-200">
+                De zelfstandige brandwacht werkt rechtstreeks met de opdrachtgever.
+                Er is geen onzichtbare laag die beslissingen of marges overneemt.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-sky-300">
+                2. Afspraken vooraf vastgelegd
+              </h3>
+              <p className="mt-2 text-sm text-slate-200">
+                Rol, inzet, tarief en verantwoordelijkheden worden vooraf afgestemd
+                en blijven inzichtelijk voor beide partijen.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-violet-300">
+                3. Autonomie blijft intact
+              </h3>
+              <p className="mt-2 text-sm text-slate-200">
+                Geen exclusiviteit, geen tariefsturing en geen planning namens de
+                professional. De zzp’er blijft ondernemer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* VOOR WIE */}
-      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/80">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-          <div className="mb-8 max-w-3xl space-y-3">
-            <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Voor professionals en organisaties die het goed willen regelen
-            </h2>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              We beginnen bij de <strong className="font-semibold text-emerald-300">zelfstandige brandwacht</strong>: regie
-              over tarief, agenda en inzet, met afspraken die kloppen. Opdrachtgevers krijgen een duidelijk beeld van wie ze
-              inhuren en werken samen binnen uitlegbare kaders.
-            </p>
-          </div>
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          <h2 className="mb-6 text-2xl font-semibold md:text-3xl">
+            Voor wie dit model werkt
+          </h2>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Voor zelfstandige brandwachten</h3>
-              <ul className="space-y-2 text-sm text-slate-200">
-                <li>- Je bepaalt zelf je tarief en beschikbaarheid.</li>
-                <li>- Je behoudt je zelfstandigheid en eigen naam — geen verborgen werkgeverschap.</li>
-                <li>- Je werkt met afspraken die vooraf duidelijk en toetsbaar zijn.</li>
-                <li>- Je kiest zelf welke inzet je vastlegt en aangaat.</li>
-              </ul>
-              <div className="pt-2">
-                <Link href="/voor-brandwachten" className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">
-                  Lees de route voor brandwachten →
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">Voor opdrachtgevers</h3>
-              <ul className="space-y-2 text-sm text-slate-200">
-                <li>- Direct contact met vakmensen zonder onnodige schakels.</li>
-                <li>- Afspraken over tarief, rol en verantwoordelijkheden vooraf duidelijk.</li>
-                <li>- DBA-bewust samenwerken binnen wet- en regelgeving.</li>
-                <li>- Uitlegbaar richting HR, OR en toezichthouders.</li>
-              </ul>
-              <div className="pt-2">
-                <Link href="/opdrachtgevers" className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">
-                  Lees de route voor opdrachtgevers →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AANSLUITEN (PROSAFETYMATCH) */}
-      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-12 md:flex-row md:items-center md:py-14">
-          <div className="flex-1 space-y-3">
-            <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-              Vrijblijvend aansluiten bij ProSafetyMatch (in ontwikkeling)
-            </h2>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is de vakinhoudelijke laag; ProSafetyMatch wordt de technische laag die afspraken en samenwerking
-              digitaal kan ondersteunen. Aansluiten betekent: meebouwen aan wat werkt in de praktijk — met heldere afspraken
-              als basis.
-            </p>
-            <p className="text-sm text-slate-200 md:text-base">
-              Geen grote beloftes, wel stap voor stap verbeteren: profielen, certificaten en afspraken blijven inzichtelijk en
-              toetsbaar.
-            </p>
-          </div>
-
-          <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg shadow-black/40">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Sluit je aan</p>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-emerald-300">
+                Zelfstandige brandwachten
+              </h3>
+              <p className="mt-2 text-sm text-slate-200">
+                Voor professionals die zelfstandig willen blijven werken, maar
+                behoefte hebben aan duidelijke kaders en uitlegbare afspraken.
+              </p>
               <Link
-                href="/zzp/aanmelden"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+                href="/voor-brandwachten"
+                className="mt-4 inline-block text-sm font-semibold text-emerald-200 hover:text-emerald-100"
               >
-                Als brandwacht
-              </Link>
-              <Link
-                href="/opdrachtgevers/aanmelden"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-              >
-                Als opdrachtgever
+                Bekijk de route →
               </Link>
             </div>
-            <p className="mt-4 text-xs text-slate-400">
-              Focus: zelfstandigheid, duidelijke afspraken en gelijkwaardige samenwerking.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* SLOT */}
-      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-            <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Wij kiezen geen kamp, we kiezen voor duidelijke afspraken
-            </h2>
-            <p className="text-sm text-slate-200 md:text-base">
-              ProBrandwacht is geen klassieke vakbond en geen bureau. Geen wij-zij, wel samen helder krijgen wat nodig is:
-              duidelijke afspraken, kostendekkende tarieven en een rolverdeling die klopt.
-            </p>
-            <p className="text-sm text-slate-200 md:text-base">
-              Zo maken we samen het werkveld veiliger, professioneler en eerlijker — zonder goede samenwerking in de weg te
-              zitten.
-            </p>
-            <div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <h3 className="text-sm font-semibold text-sky-300">
+                Opdrachtgevers & bureaus
+              </h3>
+              <p className="mt-2 text-sm text-slate-200">
+                Voor partijen die professioneel willen samenwerken met zelfstandigen
+                en behoefte hebben aan duidelijkheid, compliance en rust in uitvoering.
+              </p>
               <Link
-                href="/over-ons"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 hover:bg-emerald-400/10"
+                href="/opdrachtgevers"
+                className="mt-4 inline-block text-sm font-semibold text-sky-200 hover:text-sky-100"
               >
-                Lees onze missie en achtergrond
+                Bekijk de route →
               </Link>
             </div>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <p className="text-sm leading-relaxed text-slate-200">
+              ProBrandwacht is geen platform dat overtuigt, maar een systeem dat standhoudt.
+              Als samenwerking klopt, hoeft die niet verkocht te worden.
+            </p>
           </div>
         </div>
       </section>

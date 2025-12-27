@@ -47,9 +47,15 @@ export default function Page() {
     })),
   }
 
+  const heading = (
+    <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+      Aanmelden als zelfstandige brandwacht
+    </h1>
+  )
+
   return (
     <>
-      <ClientPage />
+      <ClientPage heading={heading} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>
   )
