@@ -67,6 +67,10 @@ export default function VoorwaardenPage() {
               zelf verantwoordelijk voor naleving van wet- en regelgeving,
               waaronder de Wet DBA.
             </p>
+            <p className="mt-4 text-sm text-slate-500">
+              In de praktijk betekent dit: jullie leggen vooraf rolverdeling, communicatie-afspraken en verantwoordelijkheden vast,
+              zodat de uitvoering op locatie helder en toetsbaar blijft.
+            </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
               4. Informatie & tools
@@ -92,7 +96,7 @@ export default function VoorwaardenPage() {
             <p>
               Deze voorwaarden kunnen worden aangepast wanneer wetgeving of de
               werking van het platform daarom vraagt. De meest actuele versie
-              is altijd leidend.
+              is in de regel leidend.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">

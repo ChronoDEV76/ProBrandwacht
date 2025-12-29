@@ -13,7 +13,7 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
         Het toekomstige platformmodel van ProSafetyMatch (verwacht Q1 2026) gaat uit van{' '}
         <span className="font-semibold">10% platformfee</span> en{' '}
         <span className="font-semibold">1–2% optionele escrowkosten</span>. Geen marge op uurtarieven;
-        afspraken over tarief maak je altijd rechtstreeks tussen opdrachtgever en zzp’er.
+        afspraken over tarief maak je in de regel rechtstreeks tussen opdrachtgever en zzp’er.
       </p>
     )
   }

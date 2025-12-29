@@ -12,8 +12,8 @@ const LINKS = [
   { href: '/over-ons', label: 'Over ons' },
 ]
 
-const CTA_LABEL = 'Meld je aan (gratis)'
-const CTA_TEXT_COMPACT = 'Meld je aan'
+const CTA_LABEL = 'Ik wil onderzoeken of dit past'
+const CTA_TEXT_COMPACT = 'Past dit bij mij?'
 
 export default function SiteHeader() {
   const headerList = headers()
@@ -64,7 +64,7 @@ export default function SiteHeader() {
           <a
             href="/zzp/aanmelden"
             aria-label={CTA_LABEL}
-            className="inline-flex items-center rounded-md bg-white px-3 py-1.5 text-xs font-semibold tracking-tight text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="inline-flex items-center rounded-md border border-white/60 bg-transparent px-3 py-1.5 text-xs font-semibold tracking-tight text-white shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span className="xl:hidden">{CTA_TEXT_COMPACT}</span>
             <span className="hidden xl:inline">{CTA_LABEL}</span>
@@ -132,7 +132,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
           <a
             href="/zzp/aanmelden"
             aria-label={CTA_LABEL}
-            className="inline-flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-brand-700 shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="inline-flex w-full items-center justify-center rounded-md border border-white/60 bg-transparent px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span className="max-w-[22ch] text-center leading-snug">{CTA_LABEL}</span>
           </a>

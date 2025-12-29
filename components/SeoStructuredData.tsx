@@ -32,6 +32,7 @@ interface SeoStructuredDataProps {
     datePublished?: string
     dateModified?: string
     image?: string
+    author?: string
   }
   faqs?: FAQ[]
   breadcrumbs?: { name: string; item: string }[]
@@ -113,12 +114,13 @@ export default function SeoStructuredData({
   }
 
   if (article) {
+    const authorName = article.author ?? DEFAULT_ORGANIZATION.name
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: article.title,
       description: article.description,
-      author: { '@type': 'Organization', name: DEFAULT_ORGANIZATION.name },
+      author: { '@type': 'Organization', name: authorName },
       publisher: {
         '@type': 'Organization',
         name: DEFAULT_ORGANIZATION.name,

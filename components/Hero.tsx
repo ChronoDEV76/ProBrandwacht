@@ -56,9 +56,9 @@ export default function Hero() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/zzp/aanmelden"
-              className="inline-flex h-11 items-center rounded-md bg-brand-700 px-5 text-sm font-semibold text-white transition hover:bg-brand-600"
+              className="inline-flex h-11 items-center rounded-md border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
             >
-              Meld je aan als professional
+              Ik wil onderzoeken of deze manier van samenwerken bij mij past
             </Link>
           </div>
 

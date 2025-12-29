@@ -23,6 +23,7 @@ export type BlogFrontmatter = {
   title?: string
   description?: string
   date?: string
+  updated?: string
   faq?: BlogFaq[]
   h1?: string
   howto?: BlogHowTo

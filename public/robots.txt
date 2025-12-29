@@ -7,4 +7,3 @@ Host: https://www.probrandwacht.nl
 
 # Sitemaps
 Sitemap: https://www.probrandwacht.nl/sitemap.xml
-Sitemap: https://www.probrandwacht.nl/sitemap-cities.xml

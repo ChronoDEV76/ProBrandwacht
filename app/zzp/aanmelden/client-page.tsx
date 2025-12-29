@@ -64,7 +64,7 @@ function Textarea({ className = "", ...props }: TextareaProps) {
   );
 }
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant };
 function Button({ children, variant = "primary", className = "", ...props }: ButtonProps) {
@@ -75,6 +75,8 @@ function Button({ children, variant = "primary", className = "", ...props }: But
       ? "text-blue-700 bg-blue-100 hover:bg-blue-200 focus:ring-blue-100"
       : variant === "ghost"
       ? "text-gray-700 hover:bg-gray-100 focus:ring-gray-100"
+      : variant === "outline"
+      ? "text-slate-100 border border-slate-500/70 bg-transparent hover:bg-slate-900/40 focus:ring-slate-500/30"
       : "text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-200";
   return (
     <button {...props} className={`${base} ${styles} ${className}`}>
@@ -287,6 +289,27 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
               ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die ook in de praktijk verantwoordelijkheid nemen.
             </p>
           </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
+            <p className="text-sm md:text-base">
+              ProSafetyMatch is geen bureau en geen aanbieder van werk.
+            </p>
+            <p className="mt-2 text-sm md:text-base">
+              Wij faciliteren samenwerking tussen zelfstandige professionals en opdrachtgevers
+              die zelf verantwoordelijkheid dragen voor tarief, inzet en uitvoering.
+            </p>
+            <p className="mt-3 text-sm md:text-base">
+              Als je zoekt naar:
+            </p>
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm md:text-base">
+              <li>vaste roosters</li>
+              <li>iemand die je inplant</li>
+              <li>juridische afdekking door een derde</li>
+              <li>of werkgarantie</li>
+            </ul>
+            <p className="mt-3 text-sm md:text-base">
+              dan past een bureau waarschijnlijk beter bij jou.
+            </p>
+          </div>
           <ol className="flex items-center gap-4 text-sm text-slate-200">
             <li className="flex items-center gap-2 text-emerald-300">
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-200">1</span> Basisgegevens
@@ -402,8 +425,13 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             </Card>
 
             <div className="flex flex-wrap gap-3">
-              <Button type="submit" data-testid="zzp-submit" disabled={loading}>
-                {loading ? "Bezig met opslaan…" : "Aanmelding opslaan"}
+              <Button type="submit" data-testid="zzp-submit" disabled={loading} variant="outline" className="flex-col items-start">
+                {loading ? "Bezig met opslaan…" : "Ik wil onderdeel zijn van een selectieve bètaversie"}
+                {!loading ? (
+                  <span className="mt-1 text-xs text-slate-300">
+                    Alleen voor wie verantwoordelijkheid begrijpt en accepteert.
+                  </span>
+                ) : null}
               </Button>
               <LinkButton href="/" variant="ghost">
                 Annuleren

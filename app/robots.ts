@@ -1,3 +1,4 @@
+// app/robots.ts
 import type { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
@@ -8,10 +9,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        crawlDelay: 10,
       },
     ],
     host: BASE_URL,
-    sitemap: [`${BASE_URL}/sitemap.xml`, `${BASE_URL}/sitemap-cities.xml`],
+    sitemap: `${BASE_URL}/sitemap.xml`,
   }
 }
+

@@ -56,7 +56,7 @@ export default function DisclaimerPage() {
             <h2 className="mt-6 text-lg font-semibold">Wet DBA</h2>
             <p>
               ProBrandwacht werkt DBA-bewust: we stimuleren heldere afspraken en rolverdeling.
-              De uiteindelijke beoordeling van arbeidsrelaties blijft altijd contextafhankelijk
+              De uiteindelijke beoordeling van arbeidsrelaties blijft in de regel contextafhankelijk
               en ligt bij de samenwerkende partijen en bevoegde instanties.
             </p>
 

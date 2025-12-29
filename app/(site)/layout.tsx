@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/site-header";
 import SiteMain from "@/components/layout/site-main";
 import SiteFooter from "@/components/site-footer";
+import SiteHeroBackground from "@/components/site-hero-background";
 
 const roboto = localFont({
   src: [
@@ -40,7 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col text-slate-50`}>
       <span className="sr-only">Hoofdmenu ProBrandwacht</span>
       <SiteHeader />
-      <SiteMain>{children}</SiteMain>
+      <SiteHeroBackground>
+        <SiteMain>{children}</SiteMain>
+      </SiteHeroBackground>
       <SiteFooter />
     </div>
   );

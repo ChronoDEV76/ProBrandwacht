@@ -44,17 +44,20 @@ export default function HomeHero({ className }: HomeHeroProps) {
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/zzp/aanmelden"
-              className="inline-flex flex-1 items-center justify-center rounded-2xl bg-brand-700 px-4 py-2.75 text-sm font-semibold text-white shadow-lg shadow-brand-900/20 transition hover:bg-brand-600 focus-visible:ring-2 focus-visible:ring-brand-300"
+              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-white/25 bg-white/5 px-4 py-2.75 text-sm font-semibold text-white shadow-lg shadow-slate-950/20 transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Meld je aan als zelfstandige brandwacht
+              Ik wil onderzoeken of deze manier van samenwerken bij mij past
             </Link>
             <Link
               href="/belangen"
-              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-white/25 bg-slate-900/60 px-4 py-2.75 text-sm font-semibold text-slate-50 transition hover:border-white/40 focus-visible:ring-2 focus-visible:ring-white/30"
+              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-white/25 bg-white/5 px-4 py-2.75 text-sm font-semibold text-slate-50 transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Lees de standpunten
+              Ik wil de kaders begrijpen
             </Link>
           </div>
+          <p className="mt-2 text-[11px] text-slate-400">
+            Geen beloftes. Geen verplichtingen. Wel verantwoordelijkheid.
+          </p>
 
           <p className="mt-3 text-[11px] text-slate-400">
             Geen planners die bepalen wat jij moet doen — jij bent ondernemer. Werk binnen Wet DBA, eerlijk en met transparantie over kosten en eventuele marges.

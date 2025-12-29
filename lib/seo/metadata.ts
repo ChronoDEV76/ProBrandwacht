@@ -59,7 +59,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/opdrachtgevers/aanmelden': {
     title: 'Aanmelden als opdrachtgever – direct toegang tot brandwachten | ProBrandwacht',
     description:
-      'Meld je aan als opdrachtgever en plaats direct aanvragen voor brandwachten. Binnen enkele minuten gekoppeld aan beschikbare professionals met eerlijke tarieven.',
+      'Meld je aan als opdrachtgever en plaats direct aanvragen voor brandwachten. Snel gekoppeld, afhankelijk van beschikbaarheid, aan professionals met eerlijke tarieven.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,

@@ -22,7 +22,7 @@ export default function ImpactInfoCard() {
           <div className="text-xs font-medium uppercase tracking-wide text-slate-500">Wat we níet zeggen</div>
           <p className="mt-1 text-sm text-slate-700">
             Dit is geen verwijt aan bureaus. Het maakt zichtbaar dat risico’s zijn verschoven naar de zzp’er, terwijl het tarief
-            daar niet altijd in meebeweegt.
+            daar niet in alle gevallen in meebeweegt.
           </p>
         </div>
         <div className="rounded-xl bg-white p-4 ring-1 ring-slate-200">

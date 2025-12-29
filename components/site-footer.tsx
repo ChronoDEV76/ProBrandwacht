@@ -81,6 +81,24 @@ export default function SiteFooter() {
             Disclaimer
           </Link>
         </div>
+
+        <section className="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-400">
+          <p>
+            ProBrandwacht is een onafhankelijk kennis- en platforminitiatief voor
+            bewust zelfstandig werken in brandveiligheid.
+          </p>
+          <p className="mt-1">
+            Inhoud en inzichten zijn gebaseerd op praktijkervaring in industriele,
+            repressieve en evenementenomgevingen, aangevuld met actuele wet- en
+            regelgeving (o.a. Wet DBA).
+          </p>
+          <p className="mt-1">
+            Contact:{" "}
+            <a href="mailto:info@prosafetymatch.nl" className="underline">
+              info@prosafetymatch.nl
+            </a>
+          </p>
+        </section>
       </div>
     </footer>
   )

@@ -44,23 +44,26 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-950/30 transition hover:bg-white/10"
             >
-              Ik ben opdrachtgever
+              Ik wil onderzoeken of deze manier van samenwerken bij mij past
             </Link>
             <Link
               href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Ik ben brandwacht (zzp)
+              Ik wil verkennen als brandwacht (zzp)
             </Link>
             <Link
               href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Kaders & spelregels
+              Ik wil de kaders begrijpen
             </Link>
           </div>
+          <p className="text-xs text-slate-300">
+            Geen beloftes. Geen verplichtingen. Wel verantwoordelijkheid.
+          </p>
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {[
@@ -97,6 +100,15 @@ export default function HomePage() {
               <li>• Brandwachten komen op een wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
             </ul>
           </div>
+
+          <div className="mt-6 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <h2 className="text-lg font-semibold text-white">Dit platform is waarschijnlijk niet voor jou als:</h2>
+            <ul className="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• Je zoekt naar een partij die werk voor je regelt.</li>
+              <li>• Je liever gestuurd wordt dan zelf verantwoordelijk bent.</li>
+              <li>• Je DBA ziet als papierwerk in plaats van gedrag.</li>
+            </ul>
+          </div>
         </div>
       </HeroBackground>
 
@@ -113,15 +125,15 @@ export default function HomePage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/opdrachtgevers"
-                  className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Naar opdrachtgevers
+                  Ik wil verkennen als opdrachtgever
                 </Link>
                 <Link
                   href="/disclaimer"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Disclaimer / DBA-kaders
+                  Ik wil de DBA-kaders kennen
                 </Link>
               </div>
             </div>
@@ -136,17 +148,49 @@ export default function HomePage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/voor-brandwachten"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Naar brandwachten
+                  Ik wil verkennen als brandwacht
                 </Link>
                 <Link
                   href="/blog"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Lees de kennisbank
+                  Ik wil de kennisbank lezen
                 </Link>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Volgende stap (oriëntatie)</p>
+            <p className="mt-3 text-sm text-slate-200">
+              Geen funnel, wel richting. Kies een rustig startpunt dat bij je past.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/bewust-zelfstandig-werken"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Lees hoe wij naar verantwoordelijkheid kijken
+              </Link>
+              <Link
+                href="/probrandwacht-direct-spoed"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Bekijk hoe een spoedinzet is ingericht
+              </Link>
+              <Link
+                href="/missie"
+                className="inline-flex items-start justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                <span className="text-left">
+                  <span className="block">Ik wil mij verdiepen in samenwerken zonder bureau-sturing</span>
+                  <span className="mt-1 block text-xs font-normal text-slate-300">
+                    Voor professionals die autonomie ook in de praktijk dragen.
+                  </span>
+                </span>
+              </Link>
             </div>
           </div>
 
