@@ -64,7 +64,7 @@ export default function BelangenPage() {
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             Deze pagina is bewust concreet. Niet om te “verkopen”, maar om verwachtingen goed te zetten — zonder
-            bemiddeling of schijnzekerheden. In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat
+            tussenlagen of schijnzekerheden. In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat
             in de praktijk standhoudt.
           </p>
 

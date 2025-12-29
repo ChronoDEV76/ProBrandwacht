@@ -82,7 +82,7 @@ export default function OpdrachtgeversPage() {
               Wat dit níet is
             </p>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Geen bezettingsgarantie of “altijd iemand”.</li>
+              <li>• Geen bezettingsgarantie of vaste bezetting.</li>
               <li>• Geen klassiek bureau dat roosters dicteert.</li>
               <li>• Geen one-size-fits-all: uitvoering blijft contextafhankelijk.</li>
               <li>• Geen vervanging voor je eigen veiligheidsorganisatie — wél een werkbare schakel.</li>
