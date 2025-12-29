@@ -112,7 +112,7 @@ const problematicRules: ProblemRule[] = [
 ];
 
 const authorityIndicators: RegExp[] = [
-  /eerlijkie/i,
+  /eerlijke/i,
   /eerlijk\b/i,
   /zelfstandigheid/i,
   /dba-proof/i,

@@ -44,40 +44,51 @@ export default function TariefBerekenenPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Een goed tarief is uitlegbaar: risico, rol, tijd, locatie en randvoorwaarden bepalen de inzet.
-              Deze pagina helpt je om het gesprek volwassen te voeren - zonder vage &quot;marktprijzen&quot; of afgeleide marges.
+              Een werkbaar tarief is uitlegbaar: rol, risico, inzet, locatie en randvoorwaarden bepalen de waarde.
+              Deze pagina helpt je om het gesprek professioneel te voeren - zonder vage marktprijzen of afgeleide marges.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
-                href="/voor-brandwachten"
+                href="#calculator"
                 className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
-                Route voor brandwachten
+                Bereken indicatieve tariefruimte
               </Link>
               <Link
-                href="/opdrachtgevers"
+                href="/voor-brandwachten"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Route voor opdrachtgevers
+                Bekijk route voor brandwachten
               </Link>
               <Link
                 href="/belangen"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Kaders & afspraken
+                Bekijk afspraken & kaders
               </Link>
             </div>
 
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">
+                Rationeel kader
+              </p>
+              <p className="mt-2 text-sm text-slate-200">
+                Deze berekening toont hoe factoren doorwerken in een tarief. Niet wat je zou moeten vragen,
+                maar hoe je een tarief onderbouwt.
+              </p>
+            </div>
+
             <p className="text-xs text-slate-400">
-              Let op: voorbeelden zijn indicatief. Het doel is structuur in het gesprek, niet &quot;1 tarief voor iedereen&quot;.
+              Dit blijft jouw tarief. ProBrandwacht en ProSafetyMatch rekenen geen marge op jouw inzet -
+              alleen een transparante platformfee.
             </p>
           </div>
         </div>
       </section>
 
       {/* CALCULATOR */}
-      <section className="border-b border-slate-800 bg-slate-950">
+      <section id="calculator" className="border-b border-slate-800 bg-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6 md:px-8">
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Bereken je indicatieve uurtarief</h2>
           <p className="mt-2 text-sm text-slate-200 md:text-base">
@@ -151,7 +162,7 @@ export default function TariefBerekenenPage() {
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Aanmelden als brandwacht
+              Aanmelden (wachtlijst)
             </Link>
             <Link
               href="/opdrachtgevers/aanmelden"

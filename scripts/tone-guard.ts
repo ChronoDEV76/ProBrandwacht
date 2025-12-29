@@ -214,7 +214,7 @@ const RULES: Rule[] = [
     title: "Feature-leak: logging / uniek ID / dispuut",
     why: "Juridische/operationele details niet lekken in copy tijdens ontwikkeling.",
     re: /\b(gelogd|chatgegevens|uniek\s+id|opvraagbaar|dispuut|geschil|audit[-\s]?trail)\b/gi,
-    replacement: "Hou het abstract: ‘eerlijkie en vastlegging van afspraken (waar passend)’.",
+    replacement: "Hou het abstract: ‘eerlijke en vastlegging van afspraken (waar passend)’.",
   },
   {
     id: "feature-leak-spoed-addendum",
@@ -232,7 +232,7 @@ const RULES: Rule[] = [
     title: "Bureau-bashing / polariserende taal",
     why: "Je wilt volwassen, verbindend blijven (brug), zonder ‘oorlog’ frame.",
     re: /\b(bureaus?\s+(pakken|misleiden|zijn\s+fout|verzieken|stelen)|klanten\s+stelen|slager\s+keurt\s+zijn\s+eigen\s+vlees)\b/gi,
-    replacement: "Herformuleer naar: ‘we kiezen voor eerlijkie, directheid en betere samenwerking’.",
+    replacement: "Herformuleer naar: ‘we kiezen voor eerlijke, directheid en betere samenwerking’.",
   },
   {
     id: "war-scheld-sneer",

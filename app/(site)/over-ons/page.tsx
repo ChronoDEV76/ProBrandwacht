@@ -1,159 +1,113 @@
-// app/(site)/over-ons/page.tsx
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
-import Link from "next/link";
-import type { Metadata } from "next";
+import HeroBackground from '@/components/HeroBackground'
+import SeoStructuredData from '@/components/SeoStructuredData'
+import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
-import HeroBackground from "@/components/HeroBackground";
-import SeoStructuredData from "@/components/SeoStructuredData";
-import StructuredBreadcrumbs from "@/components/structured-breadcrumbs";
-import { generalPlatformFaq } from "@/lib/seo/commonFaqs";
-import { getRouteMetadata } from "@/lib/seo/metadata";
-
-export const metadata: Metadata = getRouteMetadata("/over-ons");
+export const metadata: Metadata = getRouteMetadata('/over-ons')
 
 export default function OverOnsPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://www.probrandwacht.nl/" },
-    { name: "Over ons", url: "https://www.probrandwacht.nl/over-ons" },
-  ];
+    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
+    { name: 'Over ons', url: 'https://www.probrandwacht.nl/over-ons' },
+  ]
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <SeoStructuredData faqs={generalPlatformFaq.slice(0, 3)} />
+
       <div className="mx-auto w-full max-w-6xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      {/* HERO */}
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 pb-14 pt-8">
-          <div className="inline-flex w-fit items-center rounded-full border border-brand-300/40 bg-brand-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-100">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
+          <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
             Over ProBrandwacht
-          </div>
-          <div className="space-y-4">
-            <h1 className="text-3xl font-semibold text-white md:text-4xl">
-              Een moderne manier van samenwerken in brandveiligheid
-            </h1>
-            <p className="max-w-3xl text-sm text-slate-200 md:text-base">
-              De praktijk van brandveiligheid verandert, maar de manier van samenwerken bleef te lang hetzelfde. Wij verbinden zelfstandige
-              brandwachten, opdrachtgevers en partners op een eerlijke, professionele en uitlegbare manier.
-            </p>
-          </div>
+          </span>
 
-          <div className="flex flex-wrap gap-3">
+          <h1 className="text-3xl font-semibold text-white md:text-4xl">
+            Geen mooie praat —
+            <br className="hidden md:block" />
+            een model dat standhoudt{' '}
+            <span className="text-emerald-300">in uitvoering</span>.
+          </h1>
+
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht is ontstaan omdat veel samenwerking “DBA-proof op papier” lijkt, maar in de praktijk
+            schuurt: sturing, rolverwarring en risico-afschuiving. Wij kiezen voor duidelijkheid vooraf, en voor een
+            selecte aanpak.
+          </p>
+
+          <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/belangen"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Bekijk onze standpunten
+              Kaders & intentie
             </Link>
             <Link
               href="/blog"
               className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Lees de kennisbank
+              Kennisbank
             </Link>
+            <a
+              href="mailto:info@prosafetymatch.nl"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </HeroBackground>
 
-      {/* SECTIE: waarom & aanpak */}
-      <section className="border-b border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-[1.4fr,1fr] md:py-16">
-          <div className="space-y-4 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/80 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Wij verbeteren de sector samen</p>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Eerlijke opdrachtgevers en zelfstandige professionals vinden elkaar steeds vaker. Niet door elkaar te beconcurreren, maar door
-              helderheid over rollen, verantwoordelijkheden en verwachtingen.
-            </p>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen tegenhanger van bureaus, maar een aanvullende laag: een plek waar zelfstandigheid, vakmanschap en
-              eerlijkie centraal staan. Dat geeft opdrachtgevers én zelfstandigen ruimte om professioneel samen te werken.
-            </p>
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Zo bouwen we stap voor stap aan een sector waarin afspraken helder zijn, tarieven uitlegbaar zijn en iedereen in zijn eigen rol
-              kan excelleren.
+      <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:py-16">
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Waarom</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Inzet is vaak afhankelijk van “wie je kent”, onduidelijke tariefopbouw en afspraken die pas op locatie
+              zichtbaar worden. Dat creëert stress op de verkeerde plek: in uitvoering. Daarom bouwen wij op
+              rolverdeling, toetsbare afspraken en directe afstemming.
             </p>
           </div>
 
           <div className="grid gap-4">
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze belofte</p>
-              <p className="mt-3 max-w-3xl text-sm text-slate-200">
-                We zijn gebouwd vanuit het idee dat zelfstandige brandwachten hun werk uitvoeren met eigen regie over tarief, inzet en
-                beschikbaarheid, binnen heldere en vooraf inzichtelijke afspraken.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Volgende stap</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat we bouwen</p>
               <p className="mt-2 text-sm text-slate-200">
-                aansluiting op een initiatief in ontwikkeling: dezelfde principes, digitaal ondersteund met planning, documentatie en facturatie.
+                ProBrandwacht: de vakinhoudelijke laag en bètacommunity. ProSafetyMatch (in ontwikkeling): de
+                technische laag voor communicatie, dossieropbouw en afhandeling.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat je merkt</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Minder ruis. Meer uitlegbaarheid. En een hogere lat voor gedrag op de vloer. Niet perfect — wel
+                gericht op wat in de praktijk werkt.
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* MISSIE & VISIE */}
-      <section className="border-b border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:py-16">
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze missie</p>
-            <h2 className="mt-2 text-xl font-semibold text-white md:text-2xl">Heldere en toetsbare samenwerking mogelijk maken</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200">
-              Een moderne, uitlegbare manier van samenwerken waarin zelfstandigen, opdrachtgevers en partners helder omgaan met afspraken,
-              tarieven en verantwoordelijkheden.
+          <div className="md:col-span-2 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <p className="text-sm font-semibold text-white">Transparantie & contact</p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              ProBrandwacht gebruikt aanmeldingen om testmomenten en feedbacksessies te plannen. Reactiesnelheid
+              en doorlooptijden zijn afhankelijk van capaciteit.
+              Vragen? Mail{' '}
+              <a className="underline hover:text-white" href="mailto:info@prosafetymatch.nl">
+                info@prosafetymatch.nl
+              </a>
+              .
             </p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Onze visie</p>
-            <h2 className="mt-2 text-xl font-semibold text-white md:text-2xl">Vakmanschap centraal, systemen ondersteunend</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200">
-              ProBrandwacht is gebouwd rond eerlijke inzet van zelfstandige brandwachten en sluit inhoudelijk aan op
-              een breder safety-platform in ontwikkeling: ProSafetyMatch.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200">
-              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die
-              ook in de praktijk verantwoordelijkheid nemen.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WAAROM PROBRANDWACHT */}
-      <section className="bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
-          <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Waarom ProBrandwacht?
-          <p className="mt-3 text-sm text-slate-200">
-            Alles wat je op ProBrandwacht ziet — van spoedaanvraag tot kennisbank — is gebouwd
-            vanuit dezelfde gedachte: we verbeteren de sector samen, stap voor stap.
-          </p>
-    </p>
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Eén lijn in alles wat we bouwen</h2>
-            <p className="max-w-3xl text-sm text-slate-200 md:text-base">
-              Alles wat je ziet — van spoedaanvraag tot kennisbank — is gebouwd vanuit dezelfde gedachte: we verbeteren de sector samen, stap
-              voor stap.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {[
-              "Heldere, toetsbare afspraken en transparantie over kosten",
-              "Eigen regie over tarief, inzet en beschikbaarheid",
-              "DBA-bewust samenwerking voor opdrachtgevers",
-              "Geschikt voor bureaus die modern willen meebewegen",
-              "Volgende stap in ontwikkeling: ProSafetyMatch",
-              "Respect voor vakmanschap en duidelijke rollen",
-            ].map(item => (
-              <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-sm text-slate-200 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.6)]">
-                {item}
-              </div>
-            ))}
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }

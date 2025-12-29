@@ -73,7 +73,7 @@ const BAD_WORDS = [
 ];
 
 const POSITIVE_WORDS = [
-  "eerlijkie",
+  "eerlijke",
   "eerlijk",
   "dba-proof",
   "samenwerking",
@@ -168,7 +168,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Dezelfde uitgangspunten zie je terug in alle pagina's, tools en in de toekomstige
-            ProSafetyMatch-functionaliteiten: eerlijkie, zelfstandigheid en duidelijke,
+            ProSafetyMatch-functionaliteiten: eerlijke, zelfstandigheid en duidelijke,
             DBA-proof afspraken voor alle betrokken partijen.
           </p>
     `,

@@ -86,7 +86,7 @@ export default function SeoResourcesPage() {
             zelfstandige brandwacht inhuren
           </Link>
           <Link href="/zzp/aanmelden" className="rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50">
-            ZZP aanmelden
+            Aanmelden (wachtlijst)
           </Link>
         </section>
 

@@ -99,7 +99,7 @@ const SUGGESTIONS: Record<string, string> = {
 
 // Positieve TOV-signalen
 const POSITIVE_KEYWORDS: string[] = [
-  "eerlijkie",
+  "eerlijke",
   "kostendekkend",
   "balans",
   "duurzaam model",

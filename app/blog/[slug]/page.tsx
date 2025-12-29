@@ -1,182 +1,197 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 
+import HeroBackground from '@/components/HeroBackground'
+import SeoStructuredData from '@/components/SeoStructuredData'
+import Prose from '@/components/prose'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 import { getPostSlugs } from '@/lib/blog'
 import { getPostBySlug } from '@/lib/mdx'
 
-import Prose from '@/components/prose'
-import SeoStructuredData from '@/components/SeoStructuredData'
-import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
+const BASE_URL = 'https://www.probrandwacht.nl'
 
-const ShareBar = dynamic(() => import('@/components/share-bar'), { ssr: false })
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
 
-// ISR
-export const revalidate = 60 * 60 // 1 uur
-export const dynamicParams = true
-
-// SSG params
 export async function generateStaticParams() {
   const slugs = await getPostSlugs()
   return slugs.map((slug) => ({ slug }))
 }
 
-// Metadata per artikel
-export async function generateMetadata(
-  { params }: { params: { slug: string } }
-): Promise<Metadata> {
+function formatDate(date?: string) {
+  if (!date) return null
   try {
-    const post = await getPostBySlug(params.slug)
-    const titleCore = post.frontmatter.title ?? params.slug
-    const title = `${titleCore} | ProBrandwacht`
+    return new Intl.DateTimeFormat('nl-NL', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+    }).format(new Date(date))
+  } catch {
+    return date
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const base = getRouteMetadata('/blog/[slug]')
+
+  try {
+    const { frontmatter } = await getPostBySlug(params.slug)
+
+    const rawTitle = frontmatter.title as string | undefined
+    const title = rawTitle ? `${rawTitle} | ProBrandwacht` : 'Kennisbank | ProBrandwacht'
+    const canonical = `${BASE_URL}/blog/${params.slug}`
     const description =
-      (post.frontmatter.tldr as string | undefined) ??
-      (post.frontmatter.description as string | undefined) ??
-      'Brandwacht blog | ProBrandwacht'
-    const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
-    const og = (post.frontmatter.ogImage || post.frontmatter.image || '/og-home.webp') as string
-    const ogAbs = toAbsoluteUrl(og)
+      (frontmatter.tldr as string | undefined) ??
+      (frontmatter.excerpt as string | undefined) ??
+      (frontmatter.description as string | undefined) ??
+      'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
 
     return {
+      ...base,
       title,
       description,
       alternates: { canonical, languages: { 'nl-NL': canonical } },
-      openGraph: {
-        url: canonical,
-        type: 'article',
-        title,
-        description,
-        images: [{ url: ogAbs, width: 1200, height: 630, alt: title }],
-      },
-      twitter: { card: 'summary_large_image', title, description, images: [ogAbs] },
+      openGraph: { ...(base.openGraph ?? {}), title, description, url: canonical },
+      twitter: { ...(base.twitter ?? {}), title, description },
     }
   } catch {
-    const canonical = `https://www.probrandwacht.nl/blog/${params.slug}`
     return {
+      ...base,
       title: 'Artikel niet gevonden | ProBrandwacht',
-      description: 'Het opgevraagde artikel bestaat niet (meer).',
-      alternates: { canonical, languages: { 'nl-NL': canonical } },
+      robots: { index: false, follow: false },
     }
   }
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  let post: Awaited<ReturnType<typeof getPostBySlug>>
+  let post: any
+
   try {
     post = await getPostBySlug(params.slug)
   } catch {
     return notFound()
   }
 
-  const pageUrl = `https://www.probrandwacht.nl/blog/${params.slug}`
-  const publishedDate = parseFrontmatterDate(post.frontmatter.date)
-  const articleImage = toAbsoluteUrl(
-    (post.frontmatter.ogImage as string | undefined) || (post.frontmatter.image as string | undefined) || '/og-home.webp',
-  )
+  const frontmatter = post.frontmatter ?? {}
+  const title = (frontmatter.title as string | undefined) ?? 'Artikel'
+  const date = (frontmatter.date as string | undefined) ?? undefined
+  const updated = (frontmatter.updated as string | undefined) ?? undefined
+  const author = (frontmatter.author as string | undefined) ?? 'ProBrandwacht Redactie'
+  const readingTime = frontmatter.readingTime as string | number | undefined
+  const pageUrl = `${BASE_URL}/blog/${params.slug}`
+  const publishedDate = parseFrontmatterDate(frontmatter.date)
+  const updatedDate = parseFrontmatterDate(frontmatter.updated) ?? publishedDate
   const description =
-    (post.frontmatter.tldr as string | undefined) ??
-    (post.frontmatter.description as string | undefined) ??
-    ''
-  const heroImage = toAbsoluteUrl(
-    (post.frontmatter.image as string | undefined) || (post.frontmatter.ogImage as string | undefined) || '/og-home.webp',
+    (frontmatter.tldr as string | undefined) ??
+    (frontmatter.excerpt as string | undefined) ??
+    (frontmatter.description as string | undefined) ??
+    'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
+  const articleImage = toAbsoluteUrl(
+    (frontmatter.ogImage as string | undefined) ??
+      (frontmatter.image as string | undefined) ??
+      '/og-home.webp'
   )
-  const heroImageSrc = heroImage.startsWith('https://www.probrandwacht.nl')
-    ? heroImage.replace('https://www.probrandwacht.nl', '') || '/og-home.webp'
-    : heroImage
-  const heroAlt = (post.frontmatter.imageAlt as string | undefined) ?? post.frontmatter.title ?? params.slug
-  const highlights = Array.isArray(post.frontmatter.highlights)
-    ? post.frontmatter.highlights.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
-    : []
-  const readingTimeValue = post.frontmatter.readingTime
-  const readingTimeLabel =
-    typeof readingTimeValue === 'string'
-      ? readingTimeValue
-      : typeof readingTimeValue === 'number'
-        ? `${Math.max(1, Math.round(readingTimeValue))} min`
-        : 'ca. 5 min'
-  const categoryLabel = typeof post.frontmatter.category === 'string' && post.frontmatter.category.trim().length > 0
-    ? post.frontmatter.category
-    : 'Algemeen'
   const breadcrumbItems = [
-    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
-    { name: post.frontmatter.title ?? params.slug, url: pageUrl },
+    { name: 'Home', item: 'https://www.probrandwacht.nl/' },
+    { name: 'Kennisbank', item: 'https://www.probrandwacht.nl/blog' },
+    { name: title, item: pageUrl },
   ]
-  const structuredArticle = {
-    title: post.frontmatter.title ?? params.slug,
-    description,
-    url: pageUrl,
-    datePublished: publishedDate?.toISOString(),
-    dateModified: publishedDate?.toISOString(),
-    image: articleImage,
-  }
+
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10 text-slate-50">
-      <StructuredBreadcrumbs items={breadcrumbItems} />
-      <SeoStructuredData article={structuredArticle} breadcrumbs={breadcrumbItems.map(item => ({ name: item.name, item: item.url }))} faqs={generalPlatformFaq} />
-      <header className="mb-6">
-        <h1 className="text-3xl font-semibold text-slate-50">{post.frontmatter.title ?? params.slug}</h1>
-      </header>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
+      <SeoStructuredData
+        article={{
+          title,
+          description,
+          url: pageUrl,
+          datePublished: publishedDate?.toISOString(),
+          dateModified: updatedDate?.toISOString(),
+          image: articleImage,
+          author,
+        }}
+        breadcrumbs={breadcrumbItems}
+      />
+      {/* HERO */}
+      <HeroBackground>
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 pb-10 pt-8">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300">
+            <Link href="/blog" className="font-semibold text-emerald-200 hover:text-emerald-100">
+              Kennisbank
+            </Link>
+            <span>-&gt;</span>
+            <span className="text-slate-200">{title}</span>
+          </div>
 
-      <figure className="mb-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 py-6">
-        <div className="relative aspect-[5/3] w-full overflow-hidden">
-          <Image
-            src={heroImageSrc}
-            alt={heroAlt}
-            fill
-            sizes="(max-width:768px) 100vw, 768px"
-            className="object-cover"
-            style={{ objectPosition: 'center 60%' }}
-            loading="lazy"
-          />
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
+
+          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+            <span>Door: {author}</span>
+            {date ? <span>• Geplaatst: {formatDate(date)}</span> : null}
+            {updated ? <span>• Laatst bijgewerkt: {formatDate(updated)}</span> : null}
+            {readingTime ? <span>• {readingTime}</span> : null}
+          </div>
+
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link
+              href="/voor-brandwachten"
+              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            >
+              Route voor brandwachten
+            </Link>
+            <Link
+              href="/opdrachtgevers"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Route voor opdrachtgevers
+            </Link>
+            <Link
+              href="/belangen"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Kaders & richtlijnen
+            </Link>
+          </div>
         </div>
-        <figcaption className="flex flex-wrap items-center gap-3 border-t border-slate-800 px-4 py-3 text-xs text-slate-300">
-          <span>Geplaatst: {publishedDate ? publishedDate.toLocaleDateString('nl-NL') : 'Onbekend'}</span>
-          <span>Leestijd: {readingTimeLabel}</span>
-          <span>Type: {categoryLabel}</span>
-        </figcaption>
-      </figure>
+      </HeroBackground>
 
-      {highlights.length > 0 ? (
-        <section className="mb-6 rounded-2xl border border-amber-400/40 bg-amber-400/10 p-5 text-sm text-amber-50">
-          <h2 className="text-base font-semibold text-amber-100">Belangrijkste punten</h2>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-amber-50">
-            {highlights.map(item => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      {/* CONTENT */}
+      <section className="mx-auto max-w-5xl px-4 pb-16 pt-8">
+        <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
+          <Prose>{post.compiled}</Prose>
+        </article>
 
-      {/* MDX-uitvoer uit compileMDX (geleverd door lib/mdx) */}
-      <Prose>
-        {post.compiled}
-      </Prose>
-
-      {/* Share */}
-      <p className="mt-6 text-sm text-slate-300">Deel dit artikel:</p>
-      <ShareBar url={pageUrl} title={post.frontmatter.title ?? 'ProBrandwacht'} utmCampaign="blog_share" />
-
-      {/* CTA */}
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link
-          href="/opdrachtgevers"
-          prefetch={false}
-          className="inline-flex items-center rounded-md bg-emerald-400 px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-emerald-300"
-        >
-          Plan een intake als opdrachtgever
-        </Link>
-      </div>
-
-    </article>
+        {/* FOOTER CTA */}
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Volgende stap</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200">
+            Als je dit artikel herkent: leg de afspraken vooraf vast. Dat maakt uitvoering rustiger en samenwerking sterker.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/zzp/aanmelden"
+              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            >
+              Aanmelden (wachtlijst)
+            </Link>
+            <Link
+              href="/opdrachtgevers/aanmelden"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Aanmelden als opdrachtgever
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
 
-// helpers
 function toAbsoluteUrl(url: string) {
   const trimmed = url.trim()
   if (!trimmed) return 'https://www.probrandwacht.nl/og-home.webp'
@@ -184,6 +199,7 @@ function toAbsoluteUrl(url: string) {
   const normalized = trimmed.startsWith('/') ? trimmed : `/${trimmed}`
   return `https://www.probrandwacht.nl${normalized}`
 }
+
 function parseFrontmatterDate(value: unknown) {
   if (typeof value !== 'string') return undefined
   const trimmed = value.trim()

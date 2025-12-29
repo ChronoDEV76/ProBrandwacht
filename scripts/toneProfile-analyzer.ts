@@ -119,7 +119,7 @@ const bridgeWords = [
   "partnerschap",
   "samenwerking",
   "in goed overleg",
-  "eerlijkie",
+  "eerlijke",
   "eerlijk",
   "balans",
   "evenwicht",
@@ -268,7 +268,7 @@ function analyseTextTone(url: string, text: string): SiteProfile {
       dominantTone = "Bruggenbouwer / Samenwerkend";
     }
     interpretationLines.push(
-      "Stevige aanwezigheid van samenwerkings- en eerlijkie-taal; toon is verbindend."
+      "Stevige aanwezigheid van samenwerkings- en eerlijke-taal; toon is verbindend."
     );
   }
 

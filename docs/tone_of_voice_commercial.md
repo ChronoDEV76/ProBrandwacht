@@ -11,7 +11,7 @@ ProBrandwacht verbindt opdrachtgevers en brandwachten zonder tussenlaag, dus de 
 | --- | --- | --- |
 | **Eerlijk** | Iedereen ziet dezelfde afspraken | “We laten precies zien wat je betaalt en wat de brandwacht overhoudt.” |
 | **Betrouwbaar** | We doen wat we beloven | “Afspraak is afspraak — voor zzp’er én opdrachtgever.” |
-| **Professioneel** | Vakmensen waar je op kunt bouwen | “Gecertificeerde teams, duidelijke dossiers, altijd voorbereid.” |
+| **Professioneel** | Vakmensen waar je op kunt bouwen | “Gecertificeerde teams, duidelijke dossiers, in de regel voorbereid.” |
 | **Toegankelijk** | Geen franje, wel snelheid | “Bel, app of meld je online aan; binnen een dag heb je duidelijkheid.” |
 
 ---

@@ -24,7 +24,7 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
   ];
 
   const authorityIndicators: RegExp[] = [
-    /eerlijkie/i,
+    /eerlijke/i,
     /zelfstandigheid/i,
     /dba-proof/i,
     /dbaproof/i,
@@ -66,7 +66,7 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
   }
   if (!foundGood) {
     console.warn(
-      "⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als 'eerlijkie', 'zelfstandigheid', 'autonomie', 'kennisplatform', 'onafhankelijk'."
+      "⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als 'eerlijke', 'zelfstandigheid', 'autonomie', 'kennisplatform', 'onafhankelijk'."
     );
   }
 

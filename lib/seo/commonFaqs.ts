@@ -24,7 +24,7 @@ export const generalPlatformFaq = [
   {
     question: 'Wat is de rol van ProSafetyMatch?',
     answer:
-      'ProBrandwacht is de praktische voorloper; ProSafetyMatch wordt de bredere SaaS-oplossing voor brand- en safety-samenwerking. Denk aan digitaal plannen, documentenbeheer, facturatie, rapportages en compliance-workflows. De uitgangspunten blijven hetzelfde: eerlijkie, professionele samenwerking en ruimte voor zelfstandig ondernemerschap – ook als er meerdere partijen in de keten zitten.',
+      'ProBrandwacht is de praktische voorloper; ProSafetyMatch wordt de bredere SaaS-oplossing voor brand- en safety-samenwerking. Denk aan digitaal plannen, documentenbeheer, facturatie, rapportages en compliance-workflows. De uitgangspunten blijven hetzelfde: eerlijke, professionele samenwerking en ruimte voor zelfstandig ondernemerschap – ook als er meerdere partijen in de keten zitten.',
   },
   {
     question: 'Kunnen bestaande bureaus ook met het platform werken?',
@@ -90,7 +90,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Kan ik het platform gebruiken naast bestaande bureaus en contracten?',
     answer:
-      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor directe samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijkie en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
+      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor directe samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
   },
   {
     question: 'Hoe zit het met facturen, administratie en rapportages?',

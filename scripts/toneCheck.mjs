@@ -57,7 +57,7 @@ const SUGGESTIONS = {
 };
 
 const POSITIVE_KEYWORDS = [
-  "eerlijkie",
+  "eerlijke",
   "zelfstandigheid",
   "dba-proof",
   "autonomie",

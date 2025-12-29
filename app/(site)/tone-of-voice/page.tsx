@@ -32,7 +32,7 @@ export default function ToneOfVoicePage() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Communicatiestijl & tone of voice</p>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Zo klinken we als ProBrandwacht</h1>
           <p className="max-w-3xl text-sm text-slate-200">
-            Helder, ondernemend en respectvol. We spreken met vakmensen en opdrachtgevers als gelijken en kiezen voor eerlijkie in alles
+            Helder, ondernemend en respectvol. We spreken met vakmensen en opdrachtgevers als gelijken en kiezen voor eerlijke in alles
             wat we schrijven.
           </p>
         </div>

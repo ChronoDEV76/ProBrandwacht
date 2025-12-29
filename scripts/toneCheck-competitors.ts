@@ -95,7 +95,7 @@ const SUGGESTIONS: Record<string, string> = {
 };
 
 const POSITIVE_KEYWORDS: string[] = [
-  "eerlijkie",
+  "eerlijke",
   "kostendekkend",
   "balans",
   "duurzaam model",

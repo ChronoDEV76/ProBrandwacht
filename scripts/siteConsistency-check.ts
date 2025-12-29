@@ -8,7 +8,7 @@
  *     - <main className="min-h-screen bg-slate-950 text-slate-50">
  *  2) Simpele tone-of-voice check:
  *     - flagt harde/ongewenste termen
- *     - telt positieve signalen (eerlijkie, zelfstandige brandwacht, samenwerking, dba-proof)
+ *     - telt positieve signalen (eerlijke, zelfstandige brandwacht, samenwerking, dba-proof)
  *
  * Gebruik:
  *   npx ts-node scripts/siteConsistency-check.ts
@@ -49,7 +49,7 @@ const BAD_WORDS = [
 
 // woorden die passen bij jouw pro-ZZP / platform / brugtoon
 const POSITIVE_WORDS = [
-  "eerlijkie",
+  "eerlijke",
   "eerlijk",
   "dba-proof",
   "samenwerking",

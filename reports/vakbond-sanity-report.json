@@ -1,47 +1,76 @@
 {
   "baseUrl": "http://localhost:3000",
-  "scannedAt": "2025-12-11T07:17:54.006Z",
+  "strict": false,
+  "scannedAt": "2025-12-20T10:26:47.510Z",
+  "paths": [
+    "/",
+    "/opdrachtgevers",
+    "/voor-brandwachten",
+    "/belangen",
+    "/over-ons"
+  ],
   "pages": [
     {
       "url": "http://localhost:3000/",
       "bad": [],
       "good": [
-        "/transparantie/i",
+        "/eerlijk\\b/i",
         "/zelfstandigheid/i",
-        "/dba-proof/i",
-        "/autonomie/i",
-        "/eerlijke tarieven/i"
-      ],
-      "ok": true
-    },
-    {
-      "url": "http://localhost:3000/probrandwacht-direct-spoed",
-      "bad": [],
-      "good": [
-        "/dba-proof/i",
+        "/dba-bewust/i",
         "/vakmanschap/i",
-        "/autonomie/i",
-        "/onafhankelijk/i",
-        "/eerlijke tarieven/i"
+        "/onafhankelijk/i"
       ],
-      "ok": true
+      "ok": true,
+      "status": 200
     },
     {
       "url": "http://localhost:3000/opdrachtgevers",
       "bad": [],
       "good": [
-        "/transparantie/i",
-        "/dba-proof/i"
+        "/eerlijk\\b/i",
+        "/dba-bewust/i",
+        "/vakmanschap/i",
+        "/onafhankelijk/i",
+        "/indicatief/i"
       ],
-      "ok": true
+      "ok": true,
+      "status": 200
     },
     {
-      "url": "http://localhost:3000/blog",
+      "url": "http://localhost:3000/voor-brandwachten",
       "bad": [],
       "good": [
-        "/dba-proof/i"
+        "/vakmanschap/i",
+        "/autonomie/i",
+        "/indicatief/i"
       ],
-      "ok": true
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/belangen",
+      "bad": [],
+      "good": [
+        "/zelfstandigheid/i",
+        "/dba-bewust/i",
+        "/vakmanschap/i",
+        "/autonomie/i",
+        "/indicatief/i"
+      ],
+      "ok": true,
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/over-ons",
+      "bad": [],
+      "good": [
+        "/eerlijke/i",
+        "/zelfstandigheid/i",
+        "/dba-bewust/i",
+        "/vakmanschap/i"
+      ],
+      "ok": true,
+      "status": 200
     }
   ],
   "errors": []

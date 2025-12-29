@@ -1,141 +1,79 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import faqContent from '@/content/faq.json'
+import SeoStructuredData from '@/components/SeoStructuredData'
+import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
-const canonicalUrl = 'https://www.probrandwacht.nl/faq'
 export const metadata: Metadata = getRouteMetadata('/faq')
 
-const sections = Array.isArray((faqContent as any).sections)
-  ? (faqContent as any).sections
-  : (faqContent as any)
-
 export default function FaqPage() {
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: sections.flatMap((section: any) =>
-      section.items.map((item: any) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: Array.isArray(item.answer) ? item.answer.join('\n') : item.answer,
-        },
-      })),
-    ),
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
-      <div className="mx-auto w-full max-w-5xl space-y-10 px-4 py-12 sm:px-6 lg:px-8">
-        <StructuredBreadcrumbs
-          items={[
-            { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-            { name: 'FAQ', url: canonicalUrl },
-          ]}
-        />
+      <SeoStructuredData faqs={generalPlatformFaq.slice(0, 6)} />
 
-        <article className="space-y-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
-          {/* HEADER */}
-          <header className="space-y-4">
-            <h1 className="text-3xl font-semibold text-slate-900">
+      {/* HERO */}
+      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+          <div className="max-w-3xl space-y-5">
+            <span className="inline-flex w-fit rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-300">
               Veelgestelde vragen
+            </span>
+
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              Antwoorden die vooraf kloppen en achteraf uitlegbaar blijven.
             </h1>
 
-            <p className="max-w-2xl text-sm text-slate-700">
-              Deze veelgestelde vragen sluiten aan op de manier van werken die je op de rest van
-              ProBrandwacht ziet: eerlijk, DBA-bewust en met respect voor zelfstandig ondernemerschap.
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht is ingericht rond een simpele eis: samenwerking moet vooraf kloppen en achteraf
+              uitlegbaar blijven — zonder bemiddeling, sturing of schijnzekerheden. Hieronder staan de vragen die het
+              vaakst terugkomen bij zelfstandigen en opdrachtgevers.
             </p>
 
-            <p className="text-sm text-slate-600">
-              De antwoorden zijn gezamenlijk opgesteld met opdrachtgevers en zzp’ers, zodat processen
-              helder, goedgekeurd en controleerbaar blijven.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
-                Samen zetten we de nieuwe standaard voor veiligheidsprofessionals
-              </span>
-              <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700">
-                Aangescherpt met feedback uit de sector (200+ professionals)
-              </span>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/voor-brandwachten"
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              >
+                Route voor brandwachten
+              </Link>
+              <Link
+                href="/opdrachtgevers"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Route voor opdrachtgevers
+              </Link>
+              <Link
+                href="/belangen"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Bekijk de kaders
+              </Link>
             </div>
-          </header>
-
-          {/* FAQ SECTIONS */}
-          <div className="space-y-6">
-            {sections.map((section: any) => (
-              <section key={section.title} className="space-y-4">
-                <h2 className="text-xl font-semibold text-slate-900">
-                  {section.title}
-                </h2>
-
-                <ul className="space-y-3">
-                  {section.items.map((item: any) => (
-                    <li
-                      key={item.id ?? item.question}
-                      id={item.id}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
-                    >
-                      <p className="font-medium text-slate-900">
-                        {item.question}
-                      </p>
-
-                      {item.summary && (
-                        <p className="text-sm text-slate-600">
-                          {item.summary}
-                        </p>
-                      )}
-
-                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
-                        {item.answer.map((line: string, idx: number) => (
-                          <li key={idx}>{line}</li>
-                        ))}
-                      </ul>
-
-                      {item.more && (
-                        <p className="mt-2 text-sm">
-                          <Link
-                            href={item.more.href}
-                            className="font-medium text-slate-800 underline hover:text-slate-900"
-                          >
-                            {item.more.label}
-                          </Link>
-                        </p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
           </div>
+        </div>
+      </section>
 
-          {/* TRUST BLOCK */}
-          <section className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Waarom opdrachtgevers vertrouwen op ProBrandwacht
-            </h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li>
-                Certificaten worden handmatig gecontroleerd; verlopen documenten worden opnieuw
-                opgevraagd bij aanmelding.
-              </li>
-              <li>
-                Gebruikt door veiligheidsregio-adviseurs als referentie bij vergunningstrajecten.
-              </li>
-            </ul>
-          </section>
-        </article>
+      {/* FAQ LIST */}
+      <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+        <div className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
+          <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">FAQ</h2>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
-      </div>
+          <ul className="mt-5 space-y-4">
+            {generalPlatformFaq.map((f) => (
+              <li key={f.question} className="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <p className="text-sm font-semibold text-slate-50">{f.question}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-200">{f.answer}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6 text-xs text-slate-400">
+            Tip: twijfel je of iets écht DBA-bewust is, kijk dan niet alleen naar contracten, maar vooral naar
+            rolverdeling, besluitvorming op de vloer en toetsbaarheid in de praktijk.
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
-

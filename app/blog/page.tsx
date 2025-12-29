@@ -171,6 +171,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
   )
 
   const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
+  const latestDate = postsSorted[0]?.dateIso
   const filtered = postsSorted.filter((post) => {
     const matchCategory = cat === 'Alle' || post.category === cat
     const matchCity = city === 'Alle' || post.city === city
@@ -233,24 +234,56 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <header className="space-y-4">
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              &quot;Inzichten uit de dagelijkse praktijk van brandveilig werken.&quot;
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Kennisbank</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+              Blog: brandwacht-inzet, DBA-bewust samenwerken en praktische afspraken
             </h1>
-            <p className="mt-2 max-w-3xl text-slate-200 md:text-base">
-              We ontleden tarieven, DBA, wetgeving en praktijkcases zodat jij morgen al slimmer, veiliger en eerlijker kunt
-              samenwerken.
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+              Dit is geen “SEO-blog”. We schrijven vanuit de praktijk: situaties op de vloer, veelgemaakte
+              misverstanden, en afspraken die in de regel het verschil maken tussen gedoe en rust. Voorbeelden
+              zijn indicatief en contextafhankelijk.
             </p>
-            <p className="max-w-3xl text-sm text-slate-300 md:text-[15px]">
-              Tariefvoorbeelden zijn indicatief en afhankelijk van opdracht, locatie en certificering; geen garanties, wel eerlijke
-              onderbouwing.
-            </p>
-            <div className="flex flex-wrap gap-3">
+
+            <div className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-5 md:grid-cols-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Door wie</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  ProBrandwacht (team) — focus: inzetbaarheid, rolverdeling, DBA-bewuste samenwerking
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Waarom dit bestaat</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Omdat papier alleen niet genoeg is: op de vloer telt gedrag, verantwoordelijkheid en
+                  uitlegbare afspraken.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Laatst bijgewerkt</p>
+                <p className="mt-2 text-sm text-slate-200">{latestDate ? formatDate(latestDate) : ''}</p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href="/zzp/aanmelden"
-                prefetch={false}
-                className="inline-flex items-center rounded-full border border-emerald-300/60 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
+                href="/opdrachtgevers"
+                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
-                Meld je aan als zzp-brandwacht
+                Route voor opdrachtgevers
+              </Link>
+              <Link
+                href="/voor-brandwachten"
+                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
+              >
+                Route voor brandwachten
+              </Link>
+              <Link
+                href="/belangen"
+                className="inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
+              >
+                Bekijk de kaders
               </Link>
             </div>
           </header>
