@@ -4,11 +4,11 @@ export default function WhyProBrandwachtSection() {
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8 max-w-3xl space-y-3">
           <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-            Geen klassiek bureau, maar een onafhankelijk platform
+            Anders dan klassieke bureauconstructies: transparant en rechtstreeks
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             Veel brandwachten kennen het klassieke model: diensten worden voor je doorgestuurd,
-            er wordt namens jou onderhandeld en er verdwijnt marge in de keten. ProBrandwacht werkt
+            er wordt namens jou onderhandeld en afspraken worden minder transparant. ProBrandwacht werkt
             anders. Wij zijn geen klassieke capaciteitsleverancier, maar een{' '}
             <span className="font-semibold text-emerald-300">onafhankelijk platform</span>{' '}
             voor zelfstandige professionals.

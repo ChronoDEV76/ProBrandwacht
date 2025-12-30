@@ -41,7 +41,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
               href="/probrandwacht-direct-spoed"
               className="text-sm font-semibold text-brand-700 underline underline-offset-4"
             >
-              Spoed (24/7) →
+              Spoed (op basis van beschikbaarheid) →
             </a>
           ) : null}
         </div>
@@ -51,7 +51,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             Direct contact met opdrachtgevers
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Geen concurrentiebeding · geen race to the bottom
+            Geen concurrentiebeding · transparante tariefafspraken
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             Voorbereiding op Wet DBA-afspraken

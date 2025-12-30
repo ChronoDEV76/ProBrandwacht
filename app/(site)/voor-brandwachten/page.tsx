@@ -37,9 +37,9 @@ export default function VoorBrandwachtenPage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is bedoeld voor zelfstandige brandwachten die hun vak serieus nemen en begrijpen dat
-            “DBA-bewust” niet alleen papier is, maar ook gedrag op de vloer. Aanmeldingen komen op een wachtlijst,
-            inzet is contextafhankelijk en selectie kan onderdeel zijn van onboarding.
+            Dit platform past bij brandwachten die hun zelfstandige rol actief willen dragen — juridisch,
+            operationeel en op de werkvloer. Aanmeldingen komen op een wachtlijst, inzet is contextafhankelijk en
+            selectie kan onderdeel zijn van onboarding.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -82,23 +82,23 @@ export default function VoorBrandwachtenPage() {
 
             <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Dit is wat we níet verkopen
+                Dit is wat het niet is
               </p>
               <ul className="mt-3 space-y-2 text-sm text-slate-200">
                 <li>• Geen garantie op werk.</li>
                 <li>• Geen “planners” die je sturen alsof je werknemer bent.</li>
-                <li>• Geen plek voor mensen die blind tekenen of de intentie niet lezen.</li>
+                <li>• Geen standaardinstroom zonder dat de intentie en afspraken zijn besproken.</li>
                 <li>• Geen snelle bulk-aanwas; kwaliteit gaat vóór volume.</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <p className="text-sm font-semibold text-white">Waarom zo streng?</p>
+            <p className="text-sm font-semibold text-white">Waarom deze focus?</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
               Omdat vertrouwen niet uit marketing komt, maar uit voorspelbaarheid in uitvoering. Opdrachtgevers
-              kiezen onder druk vaak voor hiërarchie. Als jij als zelfstandige die verantwoordelijkheid wél kunt dragen,
-              onderscheid je je. ProSafetyMatch (in ontwikkeling) bouwt hier later technisch op door.
+              kiezen onder druk vaak voor hiërarchie. Daarom werken we met duidelijke kaders en kan selectie onderdeel
+              zijn van onboarding. ProSafetyMatch (in ontwikkeling) bouwt hier later technisch op door.
             </p>
           </div>
         </div>

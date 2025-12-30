@@ -44,9 +44,9 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
               Brandwachten &amp; opdrachtgevers
             </h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
-              Voor professionals die bewust kiezen voor eerlijk, eerlijk en
-              DBA-bewust samenwerken — zonder ruis, onduidelijke constructies of
-              uurtarieven die uitgehold worden door marges.
+              Voor professionals die bewust kiezen voor autonomie, duidelijke
+              afspraken en verantwoordelijkheid in de uitvoering — DBA-bewust en
+              transparant over kosten.
             </p>
           </article>
         </div>

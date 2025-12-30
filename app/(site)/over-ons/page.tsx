@@ -37,9 +37,8 @@ export default function OverOnsPage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is ontstaan omdat veel samenwerking “DBA-proof op papier” lijkt, maar in de praktijk
-            schuurt: sturing, rolverwarring en risico-afschuiving. Wij kiezen voor duidelijkheid vooraf, en voor een
-            selecte aanpak.
+            ProBrandwacht is ontstaan vanuit praktijkervaring met samenwerkingen waarin verantwoordelijkheid en
+            rolverdeling niet in alle gevallen helder waren. Wij kiezen voor duidelijkheid vooraf, en voor een selecte aanpak.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

@@ -71,7 +71,7 @@ export default function PbDirectForm() {
         <div className="space-y-1">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Direct - Gecertificeerd - Bereikbaar</p>
           <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">Start een spoedaanvraag</h2>
-          <p className="text-base text-slate-600">Binnen minuten in Slack, 24/7 reactie van zelfstandige brandwachten.</p>
+          <p className="text-base text-slate-600">We plaatsen je aanvraag in Slack; beschikbare professionals reageren als het past.</p>
         </div>
         <div className="flex flex-wrap gap-2 text-[11px]">
           <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">Direct</span>
@@ -171,7 +171,7 @@ export default function PbDirectForm() {
             className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
             placeholder="Bijv. 60"
           />
-          <p className="mt-1 text-sm text-slate-500">Spoed (24/7): verwacht minimum EUR55-EUR70/u afhankelijk van inzet/locatie.</p>
+          <p className="mt-1 text-sm text-slate-500">Spoed (korte oproep): verwacht minimum EUR55-EUR70/u afhankelijk van inzet/locatie.</p>
         </div>
         <div>
           <label className="block text-base font-semibold text-slate-800">Minimum uren (spoedblok)</label>
@@ -208,7 +208,7 @@ export default function PbDirectForm() {
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-slate-500">
-          Binnen minuten in Slack; eerste geschikte zelfstandige brandwacht claimt en chat direct 1-op-1. Geen marge op tarief; afspraken in E2E chat.
+          We plaatsen je aanvraag in Slack; beschikbare zelfstandige brandwachten reageren en stemmen 1-op-1 af. Geen marge op tarief; afspraken in E2E chat.
         </p>
         <button
           type="submit"

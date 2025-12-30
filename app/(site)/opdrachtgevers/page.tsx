@@ -36,8 +36,9 @@ export default function OpdrachtgeversPage() {
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             Veel “gedoe” ontstaat niet door het werk, maar door onduidelijke rolverdeling, tariefafspraken en
-            verwachtingen. ProBrandwacht helpt dit vooraf te structureren, in de regel direct tussen opdrachtgever en
-            zelfstandige — zonder bemiddeling of sturing. Matching en beschikbaarheid blijven contextafhankelijk.
+            verwachtingen. Opdrachtgevers werken direct samen met zelfstandige professionals, met vooraf vastgelegde
+            afspraken over rol, inzet en verantwoordelijkheden. ProBrandwacht helpt dit vooraf te structureren, in de
+            regel direct tussen opdrachtgever en zelfstandige. Matching en beschikbaarheid blijven contextafhankelijk.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

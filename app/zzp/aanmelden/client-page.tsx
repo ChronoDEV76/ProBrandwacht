@@ -307,7 +307,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
               <li>of werkgarantie</li>
             </ul>
             <p className="mt-3 text-sm md:text-base">
-              dan past een bureau waarschijnlijk beter bij jou.
+              dan is het verstandig om te vergelijken welke samenwerkingsvorm het beste past.
             </p>
           </div>
           <ol className="flex items-center gap-4 text-sm text-slate-200">
@@ -429,7 +429,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
                 {loading ? "Bezig met opslaan…" : "Ik wil onderdeel zijn van een selectieve bètaversie"}
                 {!loading ? (
                   <span className="mt-1 text-xs text-slate-300">
-                    Alleen voor wie verantwoordelijkheid begrijpt en accepteert.
+                    Meld je aan als je wilt meedenken, testen en bouwen aan een manier van samenwerken die bewust en transparant is opgezet.
                   </span>
                 ) : null}
               </Button>

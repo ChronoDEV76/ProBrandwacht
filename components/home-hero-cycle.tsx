@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const messages = [
   "Eerlijke tarieven. Direct contact.",
-  "Geen bureau-constructies. Geen race to the bottom.",
+  "Anders dan klassieke bureauconstructies: transparant en zonder ketensturing.",
   "Rijksgediplomeerd en/of repressief.",
   "Bij beschikbaarheid. Snel inzetbaar. Zonder loze beloftes.",
 ];

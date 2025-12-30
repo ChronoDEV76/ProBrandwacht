@@ -56,11 +56,11 @@ export default function HomeHero({ className }: HomeHeroProps) {
             </Link>
           </div>
           <p className="mt-2 text-[11px] text-slate-400">
-            Geen beloftes. Geen verplichtingen. Wel verantwoordelijkheid.
+            Je werkt zelfstandig, met ruimte voor eigen keuzes én met verantwoordelijkheid voor hoe die keuzes op de werkvloer worden ingevuld.
           </p>
 
           <p className="mt-3 text-[11px] text-slate-400">
-            Geen planners die bepalen wat jij moet doen — jij bent ondernemer. Werk binnen Wet DBA, eerlijk en met transparantie over kosten en eventuele marges.
+            ProBrandwacht werkt anders dan klassieke bureauconstructies: transparant, zonder ketensturing en met heldere afspraken vooraf.
           </p>
         </div>
       </div>

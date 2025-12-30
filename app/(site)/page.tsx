@@ -35,8 +35,9 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is geen “werk-belofte” en geen klassiek bureau. Het is een voorloper op
-            ProSafetyMatch: een DBA-bewuste manier van samenwerken waarbij tarief, inzet en rolverdeling
+            ProBrandwacht is er voor professionals en opdrachtgevers die bewust kiezen voor autonomie, duidelijke
+            afspraken en verantwoordelijkheid in de uitvoering. Het is een voorloper op ProSafetyMatch: een
+            DBA-bewuste manier van samenwerken waarbij tarief, inzet en rolverdeling
             <strong className="font-semibold text-slate-100"> vooraf</strong> worden afgestemd — in de regel direct tussen
             opdrachtgever en zelfstandige.
           </p>
@@ -62,7 +63,8 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-xs text-slate-300">
-            Geen beloftes. Geen verplichtingen. Wel verantwoordelijkheid.
+            Je werkt zelfstandig, met ruimte voor eigen keuzes én met verantwoordelijkheid voor hoe die keuzes op de
+            werkvloer worden ingevuld.
           </p>
 
           <div className="mt-6 grid gap-3 md:grid-cols-3">
@@ -73,7 +75,7 @@ export default function HomePage() {
               },
               {
                 t: 'Selectief netwerk',
-                d: 'We bouwen met vakmensen die situatie-gedrag en verantwoordelijkheid kunnen dragen (niet iedereen past).',
+                d: 'We bouwen met vakmensen die hun zelfstandige rol actief willen dragen — juridisch, operationeel en op de werkvloer.',
               },
               {
                 t: 'Transparantie over kosten',
@@ -97,16 +99,16 @@ export default function HomePage() {
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
               <li>• Geen garantie op werk of bezetting — inzet is contextafhankelijk.</li>
               <li>• Wel: duidelijke kaders, directe afstemming en toetsbare afspraken.</li>
-              <li>• Brandwachten komen op een wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
+              <li>• Aanmeldingen komen op een wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
             </ul>
           </div>
 
           <div className="mt-6 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <h2 className="text-lg font-semibold text-white">Dit platform is waarschijnlijk niet voor jou als:</h2>
+            <h2 className="text-lg font-semibold text-white">Dit platform past bij professionals die:</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Je zoekt naar een partij die werk voor je regelt.</li>
-              <li>• Je liever gestuurd wordt dan zelf verantwoordelijk bent.</li>
-              <li>• Je DBA ziet als papierwerk in plaats van gedrag.</li>
+              <li>• Autonomie willen combineren met duidelijke afspraken vooraf.</li>
+              <li>• Hun zelfstandige rol actief willen dragen op papier én op de werkvloer.</li>
+              <li>• DBA-bewust samenwerken zien als gedrag in de praktijk.</li>
             </ul>
           </div>
         </div>

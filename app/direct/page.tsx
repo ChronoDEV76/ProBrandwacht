@@ -18,14 +18,14 @@ export default function ProBrandwachtDirectPage() {
       <header className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
         <p className="mt-2 text-slate-700">
-          24/7 spoedlijn voor inzet van gecertificeerde brandwachten. Snel, duidelijk en DBA-bewust.
+          Spoedlijn voor inzet van gecertificeerde brandwachten. Bij spoedinzet wordt gezocht naar beschikbare professionals die passen bij de context en het risicoprofiel van de opdracht. Duidelijk en DBA-bewust.
           Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
           Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 10% inbegrepen).
         </p>
-        <p className="mt-1 text-sm text-slate-700">We reageren direct—je staat er niet alleen voor.</p>
+        <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk—je staat er niet alleen voor.</p>
         <ul className="mt-2 space-y-1 text-sm text-slate-700">
           <li>• Dien je spoedaanvraag in (we delen alleen wat nodig is).</li>
-          <li>• We posten direct in het Slack-kanaal; eerste beschikbare brandwacht claimt.</li>
+          <li>• We posten in het Slack-kanaal; beschikbare brandwachten reageren als het past.</li>
           <li>• Je krijgt bevestiging en afspraken op één plek.</li>
         </ul>
 
@@ -37,7 +37,7 @@ export default function ProBrandwachtDirectPage() {
             Samenwerken binnen Wet DBA
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            24/7 inzet bij spoed
+            Spoedinzet op basis van beschikbaarheid
           </span>
         </div>
       </header>
@@ -56,7 +56,7 @@ export default function ProBrandwachtDirectPage() {
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">Aanvraagformulier</h2>
           <p className="mt-1 text-slate-700 text-sm">
-            Dien je project in binnen een paar minuten. We posten je aanvraag direct in het operationele Slack-kanaal zodat beschikbare brandwachten kunnen reageren.
+            Dien je project in. We posten je aanvraag in het operationele Slack-kanaal zodat beschikbare brandwachten kunnen reageren.
           </p>
           <div className="mt-4">
             <DirectRequestForm />
@@ -66,7 +66,7 @@ export default function ProBrandwachtDirectPage() {
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">Spoedchat (live)</h2>
           <p className="mt-1 text-slate-700 text-sm">
-            Start direct een live-chat met de pool. Handig bij acute inzet buiten kantoortijden.
+            Start een live-chat met de pool. Handig bij acute inzet buiten kantoortijden.
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-slate-600">
             <li>Je bedrijf en contact worden ter verificatie vastgelegd.</li>
