@@ -134,16 +134,6 @@
         ]
       },
       {
-        "id": "calculator",
-        "question": "Waarom gebruiken jullie een tariefcalculator als alles indicatief is?",
-        "summary": "Juist om inzicht te geven, niet om te sturen.",
-        "answer": [
-          "De calculator toont scenario’s en bandbreedtes.",
-          "Alle uitkomsten zijn indicatief; er kunnen geen rechten aan worden ontleend.",
-          "Het doel is bewustwording en betere gesprekken."
-        ]
-      },
-      {
         "id": "doelgroep",
         "question": "Voor wie is ProBrandwacht bedoeld?",
         "summary": "Voor bewuste zelfstandigen en opdrachtgevers.",
@@ -156,4 +146,3 @@
     ]
   }
 ]
-

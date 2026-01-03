@@ -76,9 +76,8 @@ export default function VoorwaardenPage() {
               4. Informatie & tools
             </h2>
             <p>
-              Informatie, blogs, calculators en tools zijn bedoeld als
-              ondersteuning en bewustwording. Er kunnen geen rechten aan worden
-              ontleend.
+              Informatie, blogs en tools zijn bedoeld als ondersteuning en
+              bewustwording. Er kunnen geen rechten aan worden ontleend.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">

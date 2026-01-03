@@ -16,7 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/missie',
     '/over-ons',
     '/faq',
-    '/tarief-berekenen',
     '/brandwacht-inhuren',
     '/zzp/aanmelden',
     '/opdrachtgevers',

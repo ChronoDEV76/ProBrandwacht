@@ -7,7 +7,6 @@ const LINKS = [
   { href: '/voor-brandwachten', label: 'Voor brandwachten' },
   { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
   { href: '/belangen', label: 'Belangen' },
-  { href: '/tarief-berekenen', label: 'Tarief berekenen' },
   { href: '/blog', label: 'Blog / Kennisbank' },
   { href: '/over-ons', label: 'Over ons' },
 ]

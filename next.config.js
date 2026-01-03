@@ -35,6 +35,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/tarief-berekenen',
+        destination: '/voor-brandwachten',
+        permanent: true,
+      },
+      {
         source: '/brandwacht-huren',
         destination: '/opdrachtgevers',
         permanent: true,
