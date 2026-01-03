@@ -146,6 +146,17 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
+  '/voor-brandwachten/aanmelden': {
+    title: 'Aanmelden als zelfstandige brandwacht | ProBrandwacht',
+    description:
+      'Geef je interesse door als zelfstandige brandwacht. Je verkent directe samenwerking zonder bureau; geen garantie op inzet en selectie op basis van passendheid.',
+    keywords: [
+      ...seoKeywordClusters.zzpFreelance,
+      ...seoKeywordClusters.platform,
+      'zelfstandige brandwacht aanmelden',
+    ],
+  },
+
   '/voor-brandwachten': {
     title: 'Voor brandwachten – professionaliteit, vrijheid en eerlijkheid | ProBrandwacht',
     description:

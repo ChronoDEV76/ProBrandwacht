@@ -12,18 +12,22 @@ export default function BewustZelfstandigWerkenPage() {
             certificaten. Het vraagt professioneel oordeel, rolvastheid en
             weten waar jouw verantwoordelijkheid begint - en waar die eindigt.
           </p>
+          <p className="text-sm text-slate-400">
+            ProBrandwacht is een selectief platform, geen bureau. Deze pagina
+            helpt duiden wat zelfstandig werken in de praktijk vraagt.
+          </p>
         </header>
 
         {/* Content blocks */}
         <div className="space-y-10 text-sm leading-relaxed text-slate-200">
           <Block
             title="1. Je werkt als zelfstandig professional"
-            body="Je voert opdrachten uit als zelfstandig ondernemer. Dat betekent: geen hierarchisch gezag, geen operationele aansturing vanuit een bureau en geen leiding vanuit ProBrandwacht. Je handelt op basis van je vakmanschap en ervaring."
+            body="Je levert diensten als zelfstandig ondernemer. Dat betekent: geen hierarchisch gezag, geen operationele aansturing vanuit een bureau en geen leiding vanuit ProBrandwacht. Je handelt op basis van je vakmanschap en ervaring."
           />
 
           <Block
-            title="2. Jij bepaalt hoe je je werk uitvoert"
-            body="Binnen de afgesproken opdracht en geldende veiligheidskaders bepaal jij zelf je werkwijze, de volgorde van handelingen en je professionele afwegingen. Dit is essentieel voor zelfstandig werken en voor DBA-bewuste samenwerking."
+            title="2. Jij bepaalt hoe je je inzet uitvoert"
+            body="Binnen de afgesproken inzet en geldende veiligheidskaders bepaal jij zelf je werkwijze, de volgorde van handelingen en je professionele afwegingen. Dit is essentieel voor zelfstandig werken en voor DBA-bewuste samenwerking."
           />
 
           <Block

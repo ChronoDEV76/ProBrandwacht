@@ -169,7 +169,7 @@ export default async function DirectRequestDetailPage({
         {/* Actions */}
         <div className="flex flex-wrap gap-3">
           <Link
-            href="mailto:info@probrandwacht.nl"
+            href="mailto:info@prosafetymatch.nl"
             className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-white"
           >
             Escaleren naar support

@@ -10,7 +10,7 @@ type CityHeroProps = {
 export default function CityHero({ cityName, heading }: CityHeroProps) {
   const defaultHeading = (
     <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-      Zelfstandige brandwacht {cityName}: word gevonden en werk binnen Wet DBA
+      Zelfstandige brandwacht {cityName}: helder samenwerken binnen Wet DBA
     </h1>
   )
 
@@ -19,8 +19,8 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          Sluit je aan bij ProBrandwacht; wij delen leads in en rond {cityName} en bereiden je voor op werken via ProSafetyMatch
-          (binnen Wet DBA). Huidige status: handmatige matching en kennisdeling.
+          ProBrandwacht is een orienterend platform. We delen inzichten over inzet in en rond {cityName} en bereiden je voor op
+          werken via ProSafetyMatch (binnen Wet DBA). Huidige status: handmatige matching en kennisdeling.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -28,7 +28,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             href="/zzp/aanmelden"
             className="inline-flex items-center rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
-            Meld je aan als zelfstandige brandwacht (gratis)
+            Ik wil verkennen als brandwacht
           </a>
           <a
             href="/over-ons"

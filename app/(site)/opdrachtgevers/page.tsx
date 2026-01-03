@@ -35,10 +35,10 @@ export default function OpdrachtgeversPage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Veel “gedoe” ontstaat niet door het werk, maar door onduidelijke rolverdeling, tariefafspraken en
-            verwachtingen. Opdrachtgevers werken direct samen met zelfstandige professionals, met vooraf vastgelegde
-            afspraken over rol, inzet en verantwoordelijkheden. ProBrandwacht helpt dit vooraf te structureren, in de
-            regel direct tussen opdrachtgever en zelfstandige. Matching en beschikbaarheid blijven contextafhankelijk.
+            Veel “gedoe” ontstaat niet door de uitvoering, maar door onduidelijke rolverdeling, tariefafspraken en
+            verwachtingen. Opdrachtgevers werken direct samen met zelfstandige professionals, met vooraf
+            vastgelegde afspraken over rol, inzet en verantwoordelijkheden. Matching en beschikbaarheid blijven
+            contextafhankelijk.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -46,7 +46,7 @@ export default function OpdrachtgeversPage() {
               href="/opdrachtgevers/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Aanmelden als opdrachtgever
+              Ik wil verkennen als opdrachtgever
             </Link>
             <Link
               href="/disclaimer"
@@ -95,7 +95,7 @@ export default function OpdrachtgeversPage() {
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
               Het echte risico is vaak operationeel en politiek: “wie is aanspreekbaar als het spannend wordt?”
               ProBrandwacht adresseert dat met vooraf afgesproken rolverdeling en communicatie-kaders. Dat werkt
-              alleen als beide kanten volwassen organiseren — daarom is selectie mogelijk onderdeel
+              alleen als beide kanten volwassen organiseren — daarom is selectie en instroom onderdeel
               van de aanpak.
             </p>
             <p className="mt-3 text-sm text-slate-200">

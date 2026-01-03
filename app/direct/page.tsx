@@ -22,6 +22,7 @@ export default function ProBrandwachtDirectPage() {
           Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
           Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 10% inbegrepen).
         </p>
+        <p className="mt-1 text-sm text-slate-700">Spoedflow is in beta (technische route); beschikbaarheid blijft contextafhankelijk.</p>
         <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk—je staat er niet alleen voor.</p>
         <ul className="mt-2 space-y-1 text-sm text-slate-700">
           <li>• Dien je spoedaanvraag in (we delen alleen wat nodig is).</li>

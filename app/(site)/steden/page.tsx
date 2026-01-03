@@ -14,7 +14,9 @@ export default function StedenIndexPage() {
       <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Stedenoverzicht</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+              Stedenoverzicht
+            </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Brandwacht per stad: context, risico’s en werkbare afspraken
@@ -23,20 +25,22 @@ export default function StedenIndexPage() {
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               De kern verandert niet per stad: <span className="font-semibold">rolverdeling</span>,{' '}
               <span className="font-semibold">verwachtingen</span> en{' '}
-              <span className="font-semibold">afspraken</span> moeten vooraf kloppen. Wat wél verschilt is de
-              omgeving (event, industrie, utiliteit, bouw) en de praktische frictie op de vloer.
+              <span className="font-semibold">afspraken</span> moeten vooraf kloppen.
+              Wat wél verschilt is de omgeving (event, industrie, utiliteit, bouw) en de praktische
+              frictie op de vloer.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Daarom is elke stedenpagina een compacte “werkkaart”: wat komt vaak voor, waar let je op, en welke
-              afspraken voorkomen gedoe. Voorbeelden zijn <span className="font-semibold">indicatief</span> en{' '}
+              Daarom is elke stedenpagina een compacte “werkkaart”: wat komt vaak voor, waar let je op,
+              en welke afspraken voorkomen gedoe. Voorbeelden zijn{' '}
+              <span className="font-semibold">indicatief</span> en{' '}
               <span className="font-semibold">contextafhankelijk</span>.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is géén “wij leveren”-platform. Het is een vakinhoudelijke route voor
-              opdrachtgevers en zelfstandigen die professioneel willen samenwerken — en meebouwen aan een digitaal
-              vervolg (ProSafetyMatch).
+              Belangrijk: ProBrandwacht is géén “wij leveren standaard”-platform. Het is een vakinhoudelijke
+              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken — en
+              meebouwen aan een digitaal vervolg (ProSafetyMatch).
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -81,11 +85,13 @@ export default function StedenIndexPage() {
         </div>
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Niche & verwachting</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Niche & verwachting
+          </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            ProBrandwacht focust op samenwerking die “inspectie-proof” en operationeel werkbaar is. Niet iedereen past
-            in die manier van werken — en dat is oké. Als je vooral “snel uren” zoekt zonder heldere afspraken, dan is
-            een klassiek bureau-model vaak logischer.
+            ProBrandwacht focust op samenwerking die “inspectie-proof” en operationeel werkbaar is.
+            Niet iedereen past in die manier van werken — en dat is oké. Als je vooral “snel uren”
+            zoekt zonder heldere afspraken, dan is een klassiek bureau-model vaak logischer.
           </p>
         </div>
       </section>

@@ -25,6 +25,7 @@ import {
   existsSync,
   readFileSync,
   readdirSync,
+  mkdirSync,
 } from "node:fs";
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -47,7 +48,9 @@ if (!START) {
   process.exit(2);
 }
 const MAX_PAGES = Number(args["max-pages"] || 50);
-const OUTPUT = String(args.output || "seo_report.json");
+const OUT_DIR = path.join(process.cwd(), "reports");
+mkdirSync(OUT_DIR, { recursive: true });
+const OUTPUT = path.join(OUT_DIR, "seo_report.json");
 const MDOUT = args.md ? String(args.md) : null;
 const TIMEOUT_MS = Number(args.timeout || 15000);
 const SAME_DOMAIN_ONLY =
@@ -1299,4 +1302,3 @@ async function autofixContent(dirs) {
     );
   process.exit(hasSerious ? 1 : 0);
 })();
-

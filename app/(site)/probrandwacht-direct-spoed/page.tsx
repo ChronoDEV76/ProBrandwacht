@@ -15,13 +15,23 @@ export default function ProBrandwachtDirectSpoedPage() {
               Spoed
             </span>
 
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
+              die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
+              verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
+              Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
+              Spoed is bedoeld voor korte, duidelijke afspraken; matching is afhankelijk van beschikbaarheid en locatie.
+            </p>
+
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
               Spoed betekent tempo. Niet minder duidelijkheid.
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Als je vandaag nog inzet nodig hebt, wil je een ding voorkomen: ruis. Deze route focust op een snelle aanvraag
-              met minimale, noodzakelijke parameters zodat een zelfstandige direct kan beoordelen of het past.
+              met minimale, noodzakelijke parameters zodat een zelfstandige direct kan beoordelen of het past. Bij
+              spoedinzet wordt gezocht naar beschikbare professionals die passen bij de context en het risicoprofiel
+              van de inzet.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -29,7 +39,7 @@ export default function ProBrandwachtDirectSpoedPage() {
                 href="/opdrachtgevers/aanmelden"
                 className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
               >
-                Spoedaanvraag starten
+                Ik wil de spoedroute verkennen
               </Link>
               <Link
                 href="/probrandwacht-direct"

@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
+// app/(site)/page.tsx
+import type { Metadata } from "next";
+import Link from "next/link";
 
-import HeroBackground from '@/components/HeroBackground'
-import SeoStructuredData from '@/components/SeoStructuredData'
-import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
-import { getRouteMetadata } from '@/lib/seo/metadata'
+import HeroBackground from "@/components/HeroBackground";
+import SeoStructuredData from "@/components/SeoStructuredData";
+import StructuredBreadcrumbs from "@/components/structured-breadcrumbs";
+import { getRouteMetadata } from "@/lib/seo/metadata";
+import { generalPlatformFaq } from "@/lib/seo/commonFaqs";
 
-export const metadata: Metadata = getRouteMetadata('/')
+export const metadata: Metadata = getRouteMetadata("/");
 
 export default function HomePage() {
-  const breadcrumbItems = [{ name: 'Home', url: 'https://www.probrandwacht.nl/' }]
+  const breadcrumbItems = [{ name: "Home", url: "https://www.probrandwacht.nl/" }];
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
@@ -20,66 +21,71 @@ export default function HomePage() {
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
+      {/* HERO (layout from your first snippet) */}
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8 px-4">
           <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
             ProBrandwacht
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-5xl">
-            Voor opdrachtgevers die{' '}
-            <span className="text-emerald-300">helderheid vóór uitvoering</span> willen,
+            Directe samenwerking vraagt om{" "}
+            <span className="text-emerald-300">helderheid</span>
             <br className="hidden md:block" />
-            en voor brandwachten die{' '}
-            <span className="text-emerald-300">verantwoordelijkheid</span> durven te dragen.
+            vóórdat je afspraken maakt en uitvoert.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is er voor professionals en opdrachtgevers die bewust kiezen voor autonomie, duidelijke
-            afspraken en verantwoordelijkheid in de uitvoering. Het is een voorloper op ProSafetyMatch: een
-            DBA-bewuste manier van samenwerken waarbij tarief, inzet en rolverdeling
-            <strong className="font-semibold text-slate-100"> vooraf</strong> worden afgestemd — in de regel direct tussen
-            opdrachtgever en zelfstandige.
+            ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
+            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
+            verantwoordelijkheid en ondernemerschap.
+          </p>
+
+          <p className="max-w-3xl text-xs leading-relaxed text-slate-300 md:text-sm">
+            ProBrandwacht is{" "}
+            <strong className="font-semibold text-slate-100">geen</strong> bureau,{" "}
+            <strong className="font-semibold text-slate-100">geen</strong> bemiddelaar
+            en biedt{" "}
+            <strong className="font-semibold text-slate-100">geen</strong> garantie op inzet.
+            Het platform is bedoeld om inzicht te geven in hoe samenwerking contextafhankelijk en DBA-bewust
+            kan worden ingericht.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-950/30 transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Ik wil onderzoeken of deze manier van samenwerken bij mij past
+              Voor opdrachtgevers
             </Link>
             <Link
               href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Ik wil verkennen als brandwacht (zzp)
+              Voor zelfstandige brandwachten
             </Link>
             <Link
               href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Ik wil de kaders begrijpen
+              Kaders & spelregels
             </Link>
           </div>
-          <p className="text-xs text-slate-300">
-            Je werkt zelfstandig, met ruimte voor eigen keuzes én met verantwoordelijkheid voor hoe die keuzes op de
-            werkvloer worden ingevuld.
-          </p>
 
+          {/* 3 cards (keep your layout, align copy to v2 framing) */}
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {[
               {
-                t: 'Spoed = kort & scherp',
-                d: 'Voor uitvragen waar snelheid telt. Matching is afhankelijk van beschikbaarheid en locatie.',
+                t: "Verkennen vóór afspraken",
+                d: "Helderheid over rol, afstemming en verantwoordelijkheid — vóórdat je samenwerkt.",
               },
               {
-                t: 'Selectief netwerk',
-                d: 'We bouwen met vakmensen die hun zelfstandige rol actief willen dragen — juridisch, operationeel en op de werkvloer.',
+                t: "Spoed kan, afhankelijk",
+                d: "Voor situaties waar snelheid telt. Matching en opvolging zijn afhankelijk van beschikbaarheid en locatie.",
               },
               {
-                t: 'Transparantie over kosten',
-                d: 'Je ziet de opbouw en afspraken. Geen marketing-rookgordijnen; wél uitlegbaarheid.',
+                t: "Uitlegbaarheid centraal",
+                d: "Transparantie over kosten en afspraken, zonder tarief-dwang. Jij maakt keuzes met elkaar.",
               },
             ].map((x) => (
               <div
@@ -92,30 +98,82 @@ export default function HomePage() {
             ))}
           </div>
 
+          {/* Expectations block (keep layout) */}
           <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Wat je hier wél en niet mag verwachten
+              Wat je wél en niet mag verwachten
             </p>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Geen garantie op werk of bezetting — inzet is contextafhankelijk.</li>
-              <li>• Wel: duidelijke kaders, directe afstemming en toetsbare afspraken.</li>
-              <li>• Aanmeldingen komen op een wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
-            </ul>
-          </div>
-
-          <div className="mt-6 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <h2 className="text-lg font-semibold text-white">Dit platform past bij professionals die:</h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Autonomie willen combineren met duidelijke afspraken vooraf.</li>
-              <li>• Hun zelfstandige rol actief willen dragen op papier én op de werkvloer.</li>
-              <li>• DBA-bewust samenwerken zien als gedrag in de praktijk.</li>
+              <li>• Geen garantie op inzet of bezetting — inzet is contextafhankelijk.</li>
+              <li>• Wel: kaders om samenwerking vooraf helder en uitlegbaar te maken.</li>
+              <li>• Selectieve instroom; niet iedere aanmelding leidt tot deelname.</li>
             </ul>
           </div>
         </div>
       </HeroBackground>
 
+      {/* CONTENT SECTIONS (merged from your second snippet, styled like the first) */}
       <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16 space-y-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* What we DO */}
+            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                Wat ProBrandwacht wél doet
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold text-white">Inzicht, kaders en verkenning</h2>
+              <ul className="mt-4 space-y-2 text-sm text-slate-200">
+                <li>• Inzicht geven in directe samenwerking zonder tussenkomst van een bureau.</li>
+                <li>• Kaders schetsen voor rolverdeling, afstemming en verantwoordelijkheid.</li>
+                <li>• Bewustwording rondom DBA, gezag en uitvoeringspraktijk.</li>
+                <li>• Ruimte bieden om intenties te verkennen — zonder verplichtingen.</li>
+              </ul>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href="/over-ons"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Lees onze uitgangspunten
+                </Link>
+                <Link
+                  href="/disclaimer"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Juridische positie
+                </Link>
+              </div>
+            </div>
+
+            {/* What we are NOT */}
+            <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                Wat ProBrandwacht niet is
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold text-white">Geen rol tussen partijen</h2>
+              <ul className="mt-4 space-y-2 text-sm text-slate-200">
+                <li>• Geen bureau en geen detacheringspartij.</li>
+                <li>• Geen partij in overeenkomsten.</li>
+                <li>• Geen garantie op inzet of inkomen.</li>
+                <li>• Geen sturing op tarief, inzet of planning.</li>
+              </ul>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href="/opdrachtgevers"
+                  className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+                >
+                  Voor opdrachtgevers
+                </Link>
+                <Link
+                  href="/voor-brandwachten"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Voor brandwachten
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Your existing two cards section can stay; we tighten copy to match framing */}
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Voor opdrachtgevers</p>
@@ -127,87 +185,84 @@ export default function HomePage() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/opdrachtgevers"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
                 >
-                  Ik wil verkennen als opdrachtgever
+                  Naar opdrachtgevers
                 </Link>
                 <Link
                   href="/disclaimer"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Ik wil de DBA-kaders kennen
+                  Disclaimer / DBA-kaders
                 </Link>
               </div>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Voor brandwachten</p>
-              <h2 className="mt-2 text-2xl font-semibold text-white">Ondernemerschap mét rugdekking</h2>
+              <h2 className="mt-2 text-2xl font-semibold text-white">Zelfstandig, met discipline</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                Jij blijft zelfstandig. Tegelijk maken we zichtbaar wat “verantwoordelijkheid op de vloer” betekent:
+                Jij blijft zelfstandig. Tegelijk maken we zichtbaar wat verantwoordelijkheid op de vloer betekent:
                 rolbegrip, communicatie, dossier-discipline en professioneel gedrag onder druk.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/voor-brandwachten"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Ik wil verkennen als brandwacht
+                  Naar brandwachten
                 </Link>
                 <Link
                   href="/blog"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Ik wil de kennisbank lezen
+                  Lees de kennisbank
                 </Link>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Volgende stap (oriëntatie)</p>
-            <p className="mt-3 text-sm text-slate-200">
-              Geen funnel, wel richting. Kies een rustig startpunt dat bij je past.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href="/bewust-zelfstandig-werken"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Lees hoe wij naar verantwoordelijkheid kijken
-              </Link>
-              <Link
-                href="/probrandwacht-direct-spoed"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Bekijk hoe een spoedinzet is ingericht
-              </Link>
-              <Link
-                href="/missie"
-                className="inline-flex items-start justify-center rounded-2xl border border-white/30 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                <span className="text-left">
-                  <span className="block">Ik wil mij verdiepen in samenwerken zonder bureau-sturing</span>
-                  <span className="mt-1 block text-xs font-normal text-slate-300">
-                    Voor professionals die autonomie ook in de praktijk dragen.
-                  </span>
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <p className="text-sm font-semibold text-white">Contact & transparantie</p>
+          {/* Final CTA block (merged “Verkennen begint met begrijpen”, but in your style) */}
+          <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <p className="text-sm font-semibold text-white">Verkennen begint met begrijpen</p>
             <p className="mt-2 text-sm text-slate-200">
-              Vragen of een scenario bespreken? Neem contact op via{' '}
+              ProBrandwacht is bedoeld voor professionals en organisaties die bewust willen nadenken over hoe
+              samenwerking eruitziet — vóórdat afspraken worden gemaakt. Vragen of een scenario bespreken?
+              Neem contact op via{" "}
               <a className="underline hover:text-white" href="mailto:info@prosafetymatch.nl">
                 info@prosafetymatch.nl
               </a>
               . Reageertijden zijn afhankelijk van drukte.
             </p>
           </div>
+
+          <section className="mt-16 border-t border-white/10 pt-8">
+            <h3 className="text-sm font-semibold text-white">
+              Waarom ProBrandwacht bewust beperkt blijft
+            </h3>
+
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300">
+              ProBrandwacht is geen eindproduct en ook geen marktplaats.
+              Het is een verkennend platform om zichtbaar te maken
+              welke zelfstandigen en opdrachtgevers daadwerkelijk
+              passen bij directe samenwerking.
+            </p>
+
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300">
+              Wat hier werkt — in gedrag, rolverdeling en uitvoeringspraktijk —
+              vormt de basis voor ProSafetyMatch:
+              een afzonderlijk, gesloten platform dat uitsluitend
+              bedoeld is voor partijen die deze manier van samenwerken
+              aantoonbaar kunnen dragen.
+            </p>
+
+            <p className="mt-3 max-w-3xl text-xs text-slate-400">
+              ProSafetyMatch is niet openbaar en niet bedoeld voor volume.
+              Toegang is contextafhankelijk en volgt pas na bewezen praktijk.
+            </p>
+          </section>
         </div>
       </section>
     </main>
-  )
+  );
 }

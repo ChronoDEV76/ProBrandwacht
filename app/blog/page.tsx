@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
+import BlogTrustHeader from '@/components/BlogTrustHeader'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getPostBySlug, getPostSlugs, readingTime } from '@/lib/blog'
 import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
@@ -154,6 +155,19 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         (frontmatter.tldr as string | undefined) ??
         (frontmatter.description as string | undefined) ??
         ''
+      const author = typeof frontmatter.author === 'string' ? frontmatter.author : undefined
+      const publishedAt =
+        typeof frontmatter.publishedAt === 'string'
+          ? frontmatter.publishedAt
+          : typeof frontmatter.date === 'string'
+            ? frontmatter.date
+            : undefined
+      const updatedAt =
+        typeof frontmatter.updatedAt === 'string'
+          ? frontmatter.updatedAt
+          : typeof frontmatter.updated === 'string'
+            ? frontmatter.updated
+            : undefined
 
       return {
         slug,
@@ -166,12 +180,16 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         image,
         imageAlt,
         imagePosition,
+        author,
+        publishedAt,
+        updatedAt,
       }
     })
   )
 
   const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
-  const latestDate = postsSorted[0]?.dateIso
+  const latestDate =
+    postsSorted[0]?.updatedAt ?? postsSorted[0]?.publishedAt ?? postsSorted[0]?.dateIso
   const filtered = postsSorted.filter((post) => {
     const matchCategory = cat === 'Alle' || post.category === cat
     const matchCity = city === 'Alle' || post.city === city
@@ -231,63 +249,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <JSONLD data={itemListSchema} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <BlogTrustHeader lastUpdatedISO={latestDate} />
+
+      <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
-          <header className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Kennisbank</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Blog: brandwacht-inzet, DBA-bewust samenwerken en praktische afspraken
-            </h1>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Dit is geen “SEO-blog”. We schrijven vanuit de praktijk: situaties op de vloer, veelgemaakte
-              misverstanden, en afspraken die in de regel het verschil maken tussen gedoe en rust. Voorbeelden
-              zijn indicatief en contextafhankelijk.
-            </p>
-
-            <div className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-5 md:grid-cols-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Door wie</p>
-                <p className="mt-2 text-sm text-slate-200">
-                  ProBrandwacht (team) — focus: inzetbaarheid, rolverdeling, DBA-bewuste samenwerking
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Waarom dit bestaat</p>
-                <p className="mt-2 text-sm text-slate-200">
-                  Omdat papier alleen niet genoeg is: op de vloer telt gedrag, verantwoordelijkheid en
-                  uitlegbare afspraken.
-                </p>
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Laatst bijgewerkt</p>
-                <p className="mt-2 text-sm text-slate-200">{latestDate ? formatDate(latestDate) : ''}</p>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Route voor opdrachtgevers
-              </Link>
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-              >
-                Route voor brandwachten
-              </Link>
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
-              >
-                Bekijk de kaders
-              </Link>
-            </div>
-          </header>
-
+          <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
           <section className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>
@@ -298,7 +264,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
                     active={cat === c}
                   >
-                    {c}
+                    {c === 'Wetgeving' ? 'Wet & regels' : c}
                   </FilterChip>
                 ))}
               </nav>
@@ -368,6 +334,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     </Link>
                   </h2>
                   <p className="mt-2 line-clamp-3 text-sm text-slate-200">Lees het artikel &rarr;</p>
+                  <p className="mt-2 text-xs text-slate-400">
+                    Door {post.author ?? 'ProBrandwacht'} ·{' '}
+                    {post.updatedAt
+                      ? `Laatst bijgewerkt: ${formatDate(post.updatedAt)}`
+                      : post.publishedAt
+                        ? `Gepubliceerd: ${formatDate(post.publishedAt)}`
+                        : ''}
+                  </p>
                   <div className="mt-4 flex items-center justify-between text-sm">
                     <Link
                       href={`/blog/${post.slug}`}
@@ -382,7 +356,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       rel="noopener noreferrer"
                       className="text-slate-300 hover:text-emerald-100"
                     >
-                      Word onderdeel van de ploeg
+                      Ik wil verkennen als brandwacht
                     </a>
                   </div>
                 </div>
@@ -436,7 +410,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                 rel="noopener noreferrer"
                 className="rounded-2xl bg-emerald-400 px-5 py-3 text-slate-950 hover:bg-emerald-300"
               >
-                Sluit je aan bij de ploeg die de norm herschrijft
+                Ik wil verkennen als brandwacht
               </a>
               <Link
                 href="/opdrachtgevers"
@@ -488,7 +462,7 @@ function formatDate(iso: string) {
 function derivePositionTag(category: string | undefined) {
   if (!category) return 'Praktijkervaring'
   const lower = category.toLowerCase()
-  if (lower.includes('wet')) return 'Wetgeving & handhaving'
+  if (lower.includes('wet')) return 'Juridisch & handhaving'
   if (lower.includes('opdracht')) return 'Voor opdrachtgevers'
   if (lower.includes('zzp')) return 'Voor zzp-brandwachten'
   return 'Praktijkervaring'

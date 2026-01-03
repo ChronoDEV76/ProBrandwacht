@@ -7,7 +7,7 @@ export const metadata: Metadata = getRouteMetadata('/tone-of-voice');
 const principles = [
   { title: 'Ondernemend', body: 'We spreken brandwachten aan als zelfstandige professionals.' },
   { title: 'Heldere taal', body: 'Eerlijk, direct en duidelijk. Geen jargon, geen rookgordijnen; alles helder en toetsbaar.' },
-  { title: 'Waardig en respectvol', body: 'Trots op het vak, respect voor het werk en de mens.' },
+  { title: 'Waardig en respectvol', body: 'Trots op het vak, respect voor vakmanschap en de mens.' },
   { title: 'Toekomstgericht', body: 'Innovatief, modern en gericht op groei en verbetering.' },
   { title: 'Helder & menselijk', body: 'Korte zinnen, krachtige woorden, eenvoudig te begrijpen.' },
 ]
@@ -34,6 +34,9 @@ export default function ToneOfVoicePage() {
           <p className="max-w-3xl text-sm text-slate-200">
             Helder, ondernemend en respectvol. We spreken met vakmensen en opdrachtgevers als gelijken en kiezen voor eerlijke in alles
             wat we schrijven.
+          </p>
+          <p className="max-w-3xl text-sm text-slate-200">
+            ProBrandwacht is een selectief platform, geen bureau. We doen geen werkbeloftes; we maken kaders en taal helder.
           </p>
         </div>
 
@@ -77,10 +80,10 @@ export default function ToneOfVoicePage() {
         <div className="space-y-3 rounded-2xl border border-white/10 bg-slate-900/80 p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">Spreek vanuit gelijkwaardigheid</p>
           <ul className="space-y-2 text-sm text-slate-100">
-            <li>Niet: “Wij hebben werk voor jou.”</li>
+            <li>Niet: “Wij hebben inzet voor jou.”</li>
             <li>Maar: “Wij ondersteunen met expertise je kansen creëren.”</li>
             <li>Niet: “Wij zetten je op een project.”</li>
-            <li>Maar: “Jij kiest opdrachten.”</li>
+            <li>Maar: “Jij kiest inzetten.”</li>
           </ul>
         </div>
       </section>

@@ -41,7 +41,7 @@ export async function generateMetadata({
   const canonical = `${BASE_URL}/brandwacht-inhuren/${rawCity}`
   const base = getRouteMetadata('/brandwacht-inhuren/[city]')
   const title = `Brandwacht inhuren in ${label} | ProBrandwacht`
-  const description = `Brandwacht inhuren in ${label}? Werk rechtstreeks met zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.`
+  const description = `Brandwacht inhuren in ${label}? Samenwerken rechtstreeks met zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.`
 
   return {
     ...base,
@@ -101,6 +101,18 @@ export function BrandwachtInhurenCityPage({
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
+      <section className="mx-auto max-w-5xl px-4 pb-2">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
+          <p>
+            ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
+            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
+            verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
+            Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
+            Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+          </p>
+        </div>
+      </section>
+
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
           {includeSrOnlyH1 ? (
@@ -122,7 +134,7 @@ export function BrandwachtInhurenCityPage({
                 Geen onzichtbare schakels: je spreekt tarief, inzet en verantwoordelijkheid direct af - DBA-bewust en uitlegbaar.
               </>
             }
-            primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Start als opdrachtgever' }}
+            primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Ik wil verkennen als opdrachtgever' }}
             secondaryCta={secondaryCta}
             footer={
               <>

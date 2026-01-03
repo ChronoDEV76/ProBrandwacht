@@ -77,6 +77,9 @@ export default function TariefBerekenenPage() {
                 Deze berekening toont hoe factoren doorwerken in een tarief. Niet wat je zou moeten vragen,
                 maar hoe je een tarief onderbouwt.
               </p>
+              <p className="mt-2 text-sm text-slate-200">
+                Dit is een indicatie, geen garantie. Tarief en inzet zijn contextafhankelijk en worden tussen partijen afgesproken.
+              </p>
             </div>
 
             <p className="text-xs text-slate-400">
@@ -162,13 +165,13 @@ export default function TariefBerekenenPage() {
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Aanmelden (wachtlijst)
+              Ik wil verkennen als brandwacht
             </Link>
             <Link
               href="/opdrachtgevers/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Aanmelden als opdrachtgever
+              Ik wil verkennen als opdrachtgever
             </Link>
           </div>
         </div>

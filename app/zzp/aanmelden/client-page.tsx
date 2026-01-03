@@ -237,7 +237,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
         <Card>
           <CardSection
             title="Aanmelding opgeslagen ✅"
-            subtitle="Je gegevens zijn gelogd voor ons platform en lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in tijdens de profielverificatie zodra je toegang krijgt tot de beta."
+            subtitle="Je gegevens zijn gelogd voor ons platform en lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in tijdens de profielverificatie zodra je toegang krijgt tot de volgende fase."
           >
             <div className="grid gap-4">
               <DropboxHint />
@@ -276,39 +276,32 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
           <div className="space-y-3">
             {heading ?? (
               <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                Aanmelden als zelfstandige brandwacht
+                Interesse doorgeven
               </h1>
             )}
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Vul je basisgegevens in. <span className="font-semibold text-emerald-200">IBAN is niet nodig</span>; die vul je later in tijdens je profielverificatie. Aanmelden geeft je updates, pilots en kennis — geen garantie op opdrachten of volumes.
+              Je laat hiermee weten dat je openstaat voor directe samenwerking binnen DBA-bewuste,
+              contextafhankelijke afspraken. Dit is geen inschrijving voor werk en geen garantie op opdrachten.
             </p>
-            <p className="text-sm text-amber-200">
-              Deze aanmelding zet je op de wachtlijst voor onze bètaversie. We gebruiken je gegevens om je te informeren over testmomenten, feedbacksessies en de overstap naar het live platform.
-            </p>
-            <p className="text-sm text-amber-200">
-              ProBrandwacht groeit bewust en zorgvuldig, omdat opdrachtgevers moeten kunnen vertrouwen op mensen die ook in de praktijk verantwoordelijkheid nemen.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-slate-200">
-            <p className="text-sm md:text-base">
-              ProSafetyMatch is geen bureau en geen aanbieder van werk.
-            </p>
-            <p className="mt-2 text-sm md:text-base">
-              Wij faciliteren samenwerking tussen zelfstandige professionals en opdrachtgevers
-              die zelf verantwoordelijkheid dragen voor tarief, inzet en uitvoering.
-            </p>
-            <p className="mt-3 text-sm md:text-base">
-              Als je zoekt naar:
-            </p>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm md:text-base">
-              <li>vaste roosters</li>
-              <li>iemand die je inplant</li>
-              <li>juridische afdekking door een derde</li>
-              <li>of werkgarantie</li>
-            </ul>
-            <p className="mt-3 text-sm md:text-base">
-              dan is het verstandig om te vergelijken welke samenwerkingsvorm het beste past.
-            </p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">
+                <p className="font-medium">Wat we wél doen</p>
+                <ul className="mt-2 list-disc pl-5 text-sm text-slate-300">
+                <li>We informeren je over testmomenten en pilot-rondes</li>
+                  <li>We vragen soms om feedback op flow, rollen en afspraken</li>
+                  <li>We nodigen een beperkte groep uit als het past bij de fase</li>
+                </ul>
+              </div>
+
+              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">
+                <p className="font-medium">Wat we níet doen</p>
+                <ul className="mt-2 list-disc pl-5 text-sm text-slate-300">
+                  <li>Geen bemiddeling of “plaatsing”</li>
+                  <li>Geen pool met beschikbaarheidsdruk</li>
+                  <li>Geen toezeggingen over volume, uren of inkomsten</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <ol className="flex items-center gap-4 text-sm text-slate-200">
             <li className="flex items-center gap-2 text-emerald-300">
@@ -352,7 +345,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             <Card className="bg-slate-900/80 border-slate-800">
               <CardSection
                 title="Contactgegevens"
-                subtitle="We gebruiken deze gegevens om je profiel op te zetten en contact te houden over opdrachten."
+                subtitle="We gebruiken deze gegevens om contact te houden over de verkenningsfase."
               >
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -426,27 +419,18 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
 
             <div className="flex flex-wrap gap-3">
               <Button type="submit" data-testid="zzp-submit" disabled={loading} variant="outline" className="flex-col items-start">
-                {loading ? "Bezig met opslaan…" : "Ik wil onderdeel zijn van een selectieve bètaversie"}
-                {!loading ? (
-                  <span className="mt-1 text-xs text-slate-300">
-                    Meld je aan als je wilt meedenken, testen en bouwen aan een manier van samenwerken die bewust en transparant is opgezet.
-                  </span>
-                ) : null}
+                {loading ? "Bezig met opslaan…" : "Interesse doorgeven"}
               </Button>
               <LinkButton href="/" variant="ghost">
                 Annuleren
               </LinkButton>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Gegevens worden opgeslagen conform de AVG (Algemene Verordening Gegevensbescherming) op beveiligde servers binnen de EU. U heeft te allen tijde recht op inzage, correctie of verwijdering van uw gegevens. Neem hiervoor contact op via{" "}
-              <a href="mailto:privacy@prosafetymatch.nl" className="underline text-emerald-200">
-                privacy@prosafetymatch.nl
-              </a>{" "}
-              of gebruik het formulier op onze{" "}
-              <a href="/privacy" className="underline text-emerald-200">
-                privacy-pagina
-              </a>
-              .
+            <p className="text-xs text-slate-400">
+              Door te versturen bevestig je dat je begrijpt dat dit een selectieve wachtlijst is en geen garantie op inzet.
+            </p>
+            <p className="text-xs text-slate-400">
+              We gebruiken je gegevens alleen voor contact over de verkenningsfase. Je kunt je afmelden wanneer je wilt;
+              daarna verwijderen we je gegevens binnen een redelijke termijn.
             </p>
           </form>
         </div>

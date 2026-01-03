@@ -31,6 +31,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-white;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-slate-400;
+  }
+}
 .prose h1,
 .prose h2,
 .prose h3 {

@@ -52,7 +52,7 @@ const DEFAULT_ORGANIZATION = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      email: 'info@probrandwacht.nl',
+      email: 'info@prosafetymatch.nl',
       contactType: 'customer support',
       areaServed: 'NL',
       availableLanguage: 'Dutch',

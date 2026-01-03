@@ -111,7 +111,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: `Steden`, url: 'https://www.probrandwacht.nl/steden' },
+    { name: 'Steden', url: 'https://www.probrandwacht.nl/steden' },
     {
       name: `Zelfstandige brandwacht in ${label}`,
       url: `https://www.probrandwacht.nl/steden/${rawCity}`,
@@ -124,8 +124,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
       title: `Werken als zelfstandige brandwacht in ${label}`,
       body: (
         <>
-          Praktische duiding van rollen (bijv. industrieel, event, mangat/buitenwacht), verantwoordelijkheden en
-          professioneel gedrag op de vloer. Gericht op zelfstandig werken met duidelijke afspraken — zonder ruis.
+          Praktische duiding van rollen (bijv. industrieel, event, mangat/buitenwacht),
+          verantwoordelijkheden en professioneel gedrag op de vloer. Gericht op zelfstandig
+          werken met duidelijke afspraken — zonder ruis.
         </>
       ),
     },
@@ -134,8 +135,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
       title: 'DBA-bewust en uitlegbaar samenwerken',
       body: (
         <>
-          Hoe je vooraf vastlegt wie beslist, wie aanspreekpunt is, welke verwachtingen gelden en hoe je dit
-          toetsbaar houdt voor opdrachtgever én professional. Afspraken zijn in de regel contextafhankelijk.
+          Hoe je vooraf vastlegt wie beslist, wie aanspreekpunt is, welke verwachtingen gelden en
+          hoe je dit toetsbaar houdt voor opdrachtgever én professional. Afspraken zijn in de regel
+          contextafhankelijk.
         </>
       ),
     },
@@ -144,8 +146,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
       title: 'Tarief, inzet en voorwaarden bespreek je vooraf',
       body: (
         <>
-          Verschil tussen preventief en repressief, dag/nacht/weekend, reis- en wachttijd. Voorbeelden zijn
-          indicatief: het uiteindelijke tarief en de voorwaarden spreken jullie 1-op-1 af.
+          Verschil tussen preventief en repressief, dag/nacht/weekend, reis- en wachttijd.
+          Voorbeelden zijn indicatief: het uiteindelijke tarief en de voorwaarden spreken jullie 1-op-1 af.
         </>
       ),
     },
@@ -160,6 +162,18 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
+
+      <section className="mx-auto max-w-5xl px-4 pb-2">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
+          <p>
+            ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
+            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
+            verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
+            Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
+            Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+          </p>
+        </div>
+      </section>
 
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
@@ -182,9 +196,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
                 ProBrandwacht helpt zelfstandige brandwachten en opdrachtgevers elkaar vinden op basis van{' '}
                 <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
-                <span className="font-semibold">uitlegbaar</span> blijven. We zijn geen “urenfabriek” en doen geen
-                tarief-dwang: je spreekt samen inzet, tarief en verantwoordelijkheid af — DBA-bewust en
-                contextafhankelijk.
+                <span className="font-semibold">uitlegbaar</span> blijven.
+                We zijn geen “urenfabriek” en doen geen tarief-dwang: je spreekt samen inzet, tarief en
+                verantwoordelijkheid af — DBA-bewust en contextafhankelijk.
               </>
             }
             primaryCta={{ href: '/voor-brandwachten', label: 'Route voor brandwachten' }}
@@ -215,19 +229,19 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </h2>
 
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen samenwerken: met
-            heldere profielen (certificaten/ervaring), directe afstemming en afspraken die vooraf kloppen.
+            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen samenwerken:
+            met heldere profielen (certificaten/ervaring), directe afstemming en afspraken die vooraf kloppen.
           </p>
 
           <p className="text-sm text-slate-200 md:text-base">
-            ProBrandwacht is de vakinhoudelijke basis. ProSafetyMatch is in ontwikkeling als technische laag (o.a.
-            dossiervorming, afspraken, communicatie), zodat samenwerking later makkelijker kan — zonder dat autonomie
-            verdwijnt.
+            ProBrandwacht is de vakinhoudelijke basis. ProSafetyMatch is in ontwikkeling als technische laag
+            (o.a. dossiervorming, afspraken, communicatie), zodat samenwerking later makkelijker kan — zonder
+            dat autonomie verdwijnt.
           </p>
 
           <p className="text-xs text-slate-400">
-            Voorbeelden en formuleringen zijn indicatief. Het uiteindelijke kader is afhankelijk van context, risico en
-            de afspraken die jullie vastleggen.
+            Voorbeelden en formuleringen zijn indicatief. Het uiteindelijke kader is afhankelijk van context,
+            risico en de afspraken die jullie vastleggen.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -235,19 +249,21 @@ export default function CityPage({ params }: { params: { city: string } }) {
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Aanmelden (wachtlijst)
+              Ik wil verkennen als brandwacht
             </Link>
             <Link
               href="/opdrachtgevers/aanmelden"
               className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
             >
-              Aanmelden als opdrachtgever
+              Ik wil verkennen als opdrachtgever
             </Link>
           </div>
         </div>
 
         <div className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)]">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Voor opdrachtgevers</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Voor opdrachtgevers
+          </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Zicht op certificaten, ervaring en rolprofielen in {label}.</li>
             <li>- Afspraken vooraf: tarief, inzet, rolverdeling en escalatie.</li>
@@ -255,7 +271,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </ul>
 
           <div className="mt-4">
-            <Link href="/opdrachtgevers" className="text-sm font-semibold text-emerald-200 hover:text-emerald-100">
+            <Link
+              href="/opdrachtgevers"
+              className="text-sm font-semibold text-emerald-200 hover:text-emerald-100"
+            >
               Lees de opdrachtgever-route →
             </Link>
           </div>
@@ -268,13 +287,15 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-10">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">Lokale context in {label}</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Lokale context in {label}
+          </p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-50 md:text-3xl">
             Waar kom je dit type inzet vaak tegen in {label}?
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-            In {label} zie je brandwacht-inzet terug bij projecten waar tijdelijke installaties, publieksveiligheid of
-            verhoogd brandrisico samenkomen. {venueLine} {industrialLine}
+            In {label} zie je brandwacht-inzet terug bij projecten waar tijdelijke installaties, publieksveiligheid
+            of verhoogd brandrisico samenkomen. {venueLine} {industrialLine}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">{sectorLine}</p>
 

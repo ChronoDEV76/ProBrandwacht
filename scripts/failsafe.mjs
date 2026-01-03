@@ -11,6 +11,7 @@ const argv = parseArgs(process.argv.slice(2));
 const BASE = String(argv.base || "http://localhost:3000");
 const STRICT = !!argv.strict;
 const RUN_SEO = !!argv.seo;
+const SEO_START = String(argv.seoStart || BASE);
 
 // Tone Guard routes (één string, comma-separated)
 const TONE_PATHS = String(
@@ -118,6 +119,82 @@ function add(res, finalOverride = null) {
   printBlock(res, final);
 }
 
+function summarizeSeoJson(reportPath) {
+  try {
+    const root = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+
+    const issues = [];
+    const stack = [root];
+
+    const isIssue = (x) =>
+      x &&
+      typeof x === "object" &&
+      (x.severity || x.level || x.type || x.code || x.message || x.title);
+
+    const pushIssuesFrom = (node) => {
+      if (!node || typeof node !== "object") return;
+
+      const candidates = [
+        node.issues,
+        node.findings,
+        node.items,
+        node.results,
+        node.warnings,
+        node.criticals,
+      ].filter(Boolean);
+
+      for (const c of candidates) {
+        if (Array.isArray(c)) {
+          for (const it of c) if (isIssue(it)) issues.push(it);
+        }
+      }
+    };
+
+    while (stack.length) {
+      const node = stack.pop();
+      pushIssuesFrom(node);
+
+      if (Array.isArray(node)) {
+        for (const it of node) stack.push(it);
+      } else if (node && typeof node === "object") {
+        for (const k of Object.keys(node)) stack.push(node[k]);
+      }
+    }
+
+    let critical = 0;
+    let warn = 0;
+    let info = 0;
+    let rollupCritical = 0;
+
+    for (const it of issues) {
+      const lvl = String(it.severity || it.level || it.type || "")
+        .toLowerCase()
+        .trim();
+
+      if (lvl.includes("critical")) critical++;
+      else if (lvl.includes("warn")) warn++;
+      else if (lvl.includes("info")) info++;
+    }
+
+    const pageList = root.pages || root.results || root.checked || root.urls || [];
+    if (Array.isArray(pageList) && pageList.length) {
+      for (const p of pageList) {
+        if (typeof p?.critical === "number") critical += p.critical;
+        if (typeof p?.warning === "number") warn += p.warning;
+        if (typeof p?.warnings === "number") warn += p.warnings;
+        if (typeof p?.info === "number") info += p.info;
+        if (typeof p?._severityCounts?.critical === "number") {
+          rollupCritical += p._severityCounts.critical;
+        }
+      }
+    }
+
+    return { critical, warn, info, issuesFound: issues.length, rollupCritical };
+  } catch {
+    return null;
+  }
+}
+
 function parseArgs(args) {
   // ondersteunt:
   // --base http://...
@@ -185,15 +262,45 @@ add(runNode("Tarief / Indicatie Check", "scripts/tarief-indicatie.mjs", []));
 // 4) Content Consistency (optional)
 add(runNode("Content Consistency", "scripts/content-consistency.mjs", []));
 
+// 4b) Copy Migration (optional)
+add(runNode("Copy migration", "scripts/copy-migration-check.v2.mjs", []));
+
 // 5) SEO Sanity — only fail in STRICT mode, otherwise warn on non-zero
 if (RUN_SEO) {
+  const seoJsonPath = path.join(REPORT_DIR, "seo_report.json");
   const seoRes = runNode("SEO Sanity", "scripts/seoAudit.mjs", [
-    "--start=https://www.probrandwacht.nl",
+    `--start=${SEO_START}`,
+    `--output=${seoJsonPath}`,
   ]);
 
-  const seoStatus = computeStatusFromResult(seoRes);
-  const seoFinal =
-    seoStatus === "ok" ? "ok" : STRICT ? "fail" : "warn";
+  let seoFinal = computeStatusFromResult(seoRes) === "ok" ? "ok" : STRICT ? "fail" : "warn";
+
+  const seoSummary = summarizeSeoJson(seoJsonPath);
+  if (seoSummary) {
+    const realCritical = seoSummary.critical;
+    const realWarn = seoSummary.warn;
+    const rollupCritical = seoSummary.rollupCritical || 0;
+
+    console.log(
+      `SEO JSON summary — Critical: ${seoSummary.critical} · Warnings: ${seoSummary.warn} · Info: ${seoSummary.info} (issuesFound: ${seoSummary.issuesFound})`
+    );
+
+    if (rollupCritical > 0 && realCritical === 0) {
+      console.log(
+        "⚠️ WARN: report heeft rollup criticals zonder details (audit export bug)."
+      );
+    }
+
+    if (realCritical > 0) {
+      seoFinal = STRICT ? "fail" : "warn";
+    } else if (realWarn > 0 && seoFinal === "ok") {
+      seoFinal = "warn";
+    } else if (rollupCritical > 0 && realCritical === 0) {
+      seoFinal = seoFinal === "fail" ? "warn" : seoFinal;
+    }
+  } else {
+    console.log("SEO JSON summary — kon report niet parsen.");
+  }
 
   add(seoRes, seoFinal);
 } else {
@@ -232,4 +339,3 @@ if (summary.fail > 0) {
 
 console.log(`\n✅ FAILSAFE OK (warnings zijn toegestaan${STRICT ? " (strict mode)" : ""}).`);
 process.exit(0);
-

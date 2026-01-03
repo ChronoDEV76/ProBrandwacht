@@ -11,6 +11,26 @@ type Pattern = {
 // Bureautaal: wat we willen ontmoedigen
 const bureauPatterns: Pattern[] = [
   {
+    label: "anti-bureau framing",
+    pattern: /\b(wij|we)\s+zijn\s+tegen\s+bureaus?\b/i,
+    suggestion: "Wij zijn vóór uitlegbaarheid, autonomie en volwassen samenwerking."
+  },
+  {
+    label: "anti-bureau framing",
+    pattern: /\banti-?\s*bureaus?\b/i,
+    suggestion: "Wij zijn vóór uitlegbaarheid, autonomie en volwassen samenwerking."
+  },
+  {
+    label: "bureaus doen het fout",
+    pattern: /\bbureaus?\s+(doen|gaan)\s+(het\s+)?fout\b/i,
+    suggestion: "Focus op uitlegbaarheid, autonomie en volwassen samenwerking."
+  },
+  {
+    label: "bureaus onbetrouwbaar",
+    pattern: /\bbureaus?\s+zijn\s+onbetrouwbaar\b/i,
+    suggestion: "Focus op uitlegbaarheid, autonomie en volwassen samenwerking."
+  },
+  {
     label: "bemiddelingsbureau",
     pattern: /\bbemiddelings?bureau\b/i,
     suggestion:
@@ -85,7 +105,10 @@ const empowermentPatterns: Pattern[] = [
   { label: "platform", pattern: /\bplatform\b/i },
   { label: "digitale omgeving", pattern: /\bdigitale? omgeving\b/i },
   { label: "meer overhouden", pattern: /\bmeer overhouden\b/i },
-  { label: "zonder marge", pattern: /\bzonder marge\b/i }
+  { label: "zonder marge", pattern: /\bzonder marge\b/i },
+  { label: "uitlegbaarheid", pattern: /\buitlegbaar(heid)?\b/i },
+  { label: "autonomie", pattern: /\bautonomie\b/i },
+  { label: "volwassen samenwerking", pattern: /\bvolwassen samenwerking\b/i }
 ];
 
 // Locus-of-control / Circle of Influence:

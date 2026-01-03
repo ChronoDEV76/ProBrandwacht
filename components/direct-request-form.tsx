@@ -92,6 +92,7 @@ export default function DirectRequestForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
+      <p className="text-xs text-slate-500">Spoedformulier (beta): technische flow, geen garantie op beschikbaarheid.</p>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="block">
           <span className="block text-sm text-slate-700">Bedrijf</span>

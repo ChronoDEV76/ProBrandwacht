@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className={`${roboto.className} relative flex min-h-screen flex-1 flex-col text-slate-50`}>
-      <span className="sr-only">Hoofdmenu ProBrandwacht</span>
+      <span className="sr-only">Hoofdmenu</span>
       <SiteHeader />
       <SiteHeroBackground>
         <SiteMain>{children}</SiteMain>

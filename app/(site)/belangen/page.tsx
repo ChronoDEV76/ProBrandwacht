@@ -63,9 +63,8 @@ export default function BelangenPage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Deze pagina is bewust concreet. Niet om te “verkopen”, maar om verwachtingen goed te zetten — zonder
-            tussenlagen of schijnzekerheden. In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat
-            in de praktijk standhoudt.
+            Deze pagina is bewust concreet. Niet om te “verkopen”, maar om verwachtingen goed te zetten.
+            In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat in de praktijk standhoudt.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

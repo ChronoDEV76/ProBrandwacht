@@ -38,7 +38,8 @@ export default function OverOnsPage() {
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is ontstaan vanuit praktijkervaring met samenwerkingen waarin verantwoordelijkheid en
-            rolverdeling niet in alle gevallen helder waren. Wij kiezen voor duidelijkheid vooraf, en voor een selecte aanpak.
+            rolverdeling niet overal helder waren. Wij kiezen voor duidelijkheid vooraf, en voor een selecte aanpak
+            in de verkenningsfase.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -79,7 +80,7 @@ export default function OverOnsPage() {
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat we bouwen</p>
               <p className="mt-2 text-sm text-slate-200">
-                ProBrandwacht: de vakinhoudelijke laag en bètacommunity. ProSafetyMatch (in ontwikkeling): de
+                ProBrandwacht: de vakinhoudelijke laag en selectieve community. ProSafetyMatch (in ontwikkeling): de
                 technische laag voor communicatie, dossieropbouw en afhandeling.
               </p>
             </div>
@@ -96,9 +97,9 @@ export default function OverOnsPage() {
           <div className="md:col-span-2 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
             <p className="text-sm font-semibold text-white">Transparantie & contact</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              ProBrandwacht gebruikt aanmeldingen om testmomenten en feedbacksessies te plannen. Reactiesnelheid
-              en doorlooptijden zijn afhankelijk van capaciteit.
-              Vragen? Mail{' '}
+              ProBrandwacht bevindt zich in een selectieve verkenningsfase. We gebruiken aanmeldingen om
+              testmomenten en feedbacksessies te plannen. Reactiesnelheid en doorlooptijden zijn afhankelijk van
+              capaciteit. Vragen? Mail{' '}
               <a className="underline hover:text-white" href="mailto:info@prosafetymatch.nl">
                 info@prosafetymatch.nl
               </a>

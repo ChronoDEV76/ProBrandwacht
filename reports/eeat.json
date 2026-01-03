@@ -1,7 +1,7 @@
 {
   "base": "http://localhost:3000",
   "strict": false,
-  "scannedAt": "2025-12-28T09:17:45.623Z",
+  "scannedAt": "2026-01-03T23:00:36.277Z",
   "pages": [
     {
       "url": "http://localhost:3000/",
@@ -184,7 +184,7 @@
         {
           "level": "ok",
           "key": "jsonld_present",
-          "msg": "JSON-LD aanwezig (types match: Organization, WebSite, WebPage, Article)"
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
         },
         {
           "level": "ok",
@@ -307,8 +307,8 @@
     {
       "url": "http://localhost:3000/blog",
       "path": "/blog",
-      "final": "warn",
-      "warnCount": 2,
+      "final": "ok",
+      "warnCount": 0,
       "findings": [
         {
           "level": "ok",
@@ -331,9 +331,9 @@
           "msg": "Contact/bedrijfsgegevens signalen gevonden (2)."
         },
         {
-          "level": "warn",
+          "level": "ok",
           "key": "experience",
-          "msg": "Geen duidelijke ‘ervaring in de praktijk’ signalen gevonden."
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
         },
         {
           "level": "ok",
@@ -346,9 +346,9 @@
           "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
         },
         {
-          "level": "warn",
+          "level": "ok",
           "key": "author",
-          "msg": "Geen auteur-signaal gevonden (overweeg ‘door ProBrandwacht’ of naam/rol)."
+          "msg": "Auteur-signaal gevonden (door/auteur)."
         },
         {
           "level": "ok",
@@ -365,8 +365,8 @@
   ],
   "errors": [],
   "summary": {
-    "ok": 7,
-    "warn": 1,
+    "ok": 8,
+    "warn": 0,
     "fail": 0
   }
 }

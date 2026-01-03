@@ -13,11 +13,6 @@
 import fs from "node:fs";
 import path from "node:path";
 
-type ProblemRule = {
-  pattern: RegExp;
-  ignoreIfContains?: string[];
-};
-
 type PageResult = {
   url: string;
   bad: string[];
@@ -79,37 +74,49 @@ function uniq<T>(arr: T[]): T[] {
  * - "bureau" NIET als probleemterm (jij wilt het kunnen noemen).
  * - Focus op termen die "we sturen/regelen/garanderen" impliceren.
  */
-const problematicRules: ProblemRule[] = [
-  {
-    pattern: /exclusiviteit/i,
-    ignoreIfContains: [
-      "geen exclusiviteit",
-      "zonder exclusiviteit",
-      "geen verplichtingen of exclusiviteit",
-      "zonder verplichtingen of exclusiviteit",
-    ],
-  },
-  // Bureau mag genoemd worden → geen rule meer
-  { pattern: /\b(detacheringsbureau|uitzendbureau)\b/i },
+// LET OP: match alleen "werkgarantie" als het niet duidelijk ontkend wordt.
+const BAD_TERMS = [
+  /\buitzendbureau\b/i,
+  /\bdetacheringsbureau\b/i,
+  /\bwij garanderen\b/i,
+  /\bgegarandeerd\b/i,
+  /\baltijd meer\b/i,
+  /\b100%\b.*\bzeker\b/i,
+  /\bnooit\b.*\brisico\b/i,
+  /\bwij regelen alles\b/i,
 
-  { pattern: /wij zetten je in/i },
-  { pattern: /wij zetten jou in/i },
-  { pattern: /wij plannen je in/i },
-  { pattern: /wij plannen jou in/i },
-  { pattern: /wordt ingepland/i },
-  { pattern: /uurtarief wordt bepaald/i },
-
-  { pattern: /exclusief voor ons/i },
-  { pattern: /verboden relatiebeding/i },
-  { pattern: /relatiebeding/i },
-
-  // Belofte/garantie framing
-  { pattern: /wij garanderen/i },
-  { pattern: /werkgarantie/i },
-  { pattern: /gegarandeerd/i },
-  { pattern: /\b100%\b.*\bzeker\b/i },
-  { pattern: /wij regelen alles/i },
+  // "werkgarantie" = alleen problematisch als het positief/claimend gebruikt wordt
+  /\bwerkgarantie\b/i,
 ];
+
+const NEGATION_WINDOW = 32; // chars terugkijken
+const NEGATION_RE = /\b(geen|zonder|nimmer)\b/i;
+
+function isNegated(text: string, index: number) {
+  const start = Math.max(0, index - NEGATION_WINDOW);
+  const chunk = text.slice(start, index);
+  return NEGATION_RE.test(chunk);
+}
+
+function countBadHits(text: string) {
+  const hits: string[] = [];
+
+  for (const re of BAD_TERMS) {
+    const rx = new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g");
+    let m: RegExpExecArray | null;
+    while ((m = rx.exec(text)) !== null) {
+      const idx = m.index ?? 0;
+
+      // Special case: werkgarantie in negatie-context => niet tellen
+      if (re.source.includes("werkgarantie") && isNegated(text, idx)) continue;
+
+      hits.push(re.toString());
+      break; // 1 hit per regex is genoeg
+    }
+  }
+
+  return hits;
+}
 
 const authorityIndicators: RegExp[] = [
   /eerlijke/i,
@@ -150,21 +157,7 @@ async function fetchText(url: string): Promise<{ ok: boolean; status: number; te
 }
 
 function scanText(text: string, url: string, status?: number): PageResult {
-  const lowerText = text.toLowerCase();
-
-  const bad: string[] = [];
-  for (const rule of problematicRules) {
-    if (!rule.pattern.test(text)) continue;
-
-    if (rule.ignoreIfContains && rule.ignoreIfContains.length > 0) {
-      const hasSafeContext = rule.ignoreIfContains.some((safe) =>
-        lowerText.includes(safe.toLowerCase())
-      );
-      if (hasSafeContext) continue;
-    }
-
-    bad.push(rule.pattern.toString());
-  }
+  const bad = countBadHits(text);
 
   const good: string[] = [];
   for (const pattern of authorityIndicators) {
@@ -293,4 +286,3 @@ main().catch((err) => {
   console.error("Fatal error:", err);
   process.exit(2);
 });
-

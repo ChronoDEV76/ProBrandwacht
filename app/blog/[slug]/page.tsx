@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-            <span>Door: {author}</span>
+            <span>Door {author} · Kennisbank</span>
             {date ? <span>• Geplaatst: {formatDate(date)}</span> : null}
             {updated ? <span>• Laatst bijgewerkt: {formatDate(updated)}</span> : null}
             {readingTime ? <span>• {readingTime}</span> : null}
@@ -177,13 +177,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               href="/zzp/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
             >
-              Aanmelden (wachtlijst)
+              Ik wil verkennen als brandwacht
             </Link>
             <Link
               href="/opdrachtgevers/aanmelden"
               className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Aanmelden als opdrachtgever
+              Ik wil verkennen als opdrachtgever
             </Link>
           </div>
         </div>

@@ -192,7 +192,7 @@ export default function ClientSignupForm({
       setDone(true)
     } catch (err) {
       console.error('Failed to submit client signup', err)
-      setError('We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@probrandwacht.nl.')
+      setError('We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@prosafetymatch.nl.')
     }
 
     setSubmitting(false)

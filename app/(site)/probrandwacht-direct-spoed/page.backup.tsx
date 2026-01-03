@@ -111,7 +111,7 @@ export default function ProbrandwachtDirectSpoedPage() {
               <PbDirectForm />
 
               <div className="space-y-2 text-xs text-slate-400 md:text-sm">
-                <p>Toch liever per e-mail? Stuur je aanvraag naar info@probrandwacht.nl.</p>
+                <p>Toch liever per e-mail? Stuur je aanvraag naar info@prosafetymatch.nl.</p>
                 <p>
                   Liever eerst rustig verkennen hoe ProBrandwacht en ProSafetyMatch werken?
                 </p>
