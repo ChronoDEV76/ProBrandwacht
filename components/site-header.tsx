@@ -11,8 +11,8 @@ const LINKS = [
   { href: '/over-ons', label: 'Over ons' },
 ]
 
-const CTA_LABEL = 'Ik wil onderzoeken of dit past'
-const CTA_TEXT_COMPACT = 'Past dit bij mij?'
+const CTA_LABEL = 'Ik herken mijzelf, dit past'
+const CTA_TEXT_COMPACT = 'Ik herken mijzelf'
 
 export default function SiteHeader() {
   const headerList = headers()
