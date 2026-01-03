@@ -30,16 +30,15 @@ export default function BlogTrustHeader({
         </h1>
 
         <p className="mt-2 text-sm text-slate-300">
-          Artikelen door ProBrandwacht (praktijk-gedreven kennisbank).
+          Praktijk-gedreven kennisbank voor brandwachten en opdrachtgevers.
         </p>
 
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
           We schrijven vanuit de praktijk: situaties op de vloer, veelgemaakte
           misverstanden, en afspraken die in de regel het verschil maken.
-          Voorbeelden zijn indicatief en contextafhankelijk.
         </p>
 
-        <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
+        <p className="text-xs text-slate-400">Kennisbank · praktijknotities</p>
 
         <div className="mt-6 grid gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-5 md:grid-cols-3">
           <div>
@@ -47,7 +46,7 @@ export default function BlogTrustHeader({
               Door wie
             </p>
             <p className="mt-2 text-sm text-slate-200">
-              Door ProBrandwacht (team) — vakinhoudelijk, operationeel en DBA-bewust
+              Redactie & praktijkteam — vakinhoudelijk, operationeel en DBA-bewust
             </p>
           </div>
 
