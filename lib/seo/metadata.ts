@@ -37,6 +37,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.tariefInzicht,
+      ...seoKeywordClusters.positioning,
     ],
     robots: { index: true, follow: true },
   },
@@ -60,6 +61,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.processSpeed,
+      ...seoKeywordClusters.positioning,
     ],
   },
 
@@ -78,28 +80,48 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'Over ons – veiligheid én ondernemerschap | ProBrandwacht',
     description:
       'Lees waarom ProBrandwacht is opgericht, onze missie en visie, kernwaarden en manifest. Voor een moderne, eerlijke en toekomstbestendige brandwachtsector.',
-    keywords: [...seoKeywordClusters.platform, 'over probrandwacht', 'brandwacht manifest'],
+    keywords: [
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+      'over probrandwacht',
+      'brandwacht manifest',
+    ],
   },
 
   '/missie': {
     title: 'Missie | ProBrandwacht',
     description:
       'Waarom ProBrandwacht bestaat: samenwerking vooraf helder maken zodat uitvoering rustig, toetsbaar en DBA-bewust blijft in de praktijk.',
-    keywords: [...seoKeywordClusters.platform, 'missie probrandwacht', 'brandwacht visie'],
+    keywords: [
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+      'missie probrandwacht',
+      'brandwacht visie',
+    ],
   },
 
   '/contact': {
     title: 'Contact | ProBrandwacht',
     description:
       'Stel je vraag over rolverdeling, afspraken of inzet. We helpen je de juiste context te kiezen en helderheid te krijgen voor samenwerking.',
-    keywords: [...seoKeywordClusters.platform, 'contact probrandwacht', 'brandwacht contact'],
+    keywords: [
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+      'contact probrandwacht',
+      'brandwacht contact',
+    ],
   },
 
   '/belangen': {
     title: 'Belangen van zelfstandige brandwachten | ProBrandwacht',
     description:
       'Context en standpunten over zelfstandig werken in brandveiligheid, met focus op rolverdeling, afspraken en Wet DBA. Voor brandwachten en opdrachtgevers.',
-    keywords: [...seoKeywordClusters.platform, 'belangen zelfstandige brandwacht', 'wet dba brandwacht'],
+    keywords: [
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+      'belangen zelfstandige brandwacht',
+      'wet dba brandwacht',
+    ],
   },
 
   '/faq': {
@@ -113,14 +135,24 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'Algemene voorwaarden | ProBrandwacht',
     description:
       'De voorwaarden van ProBrandwacht: wat het platform wel en niet doet, en hoe verantwoordelijkheid bij samenwerking ligt. Lees de spelregels en beperkingen.',
-    keywords: ['algemene voorwaarden', 'voorwaarden probrandwacht', ...seoKeywordClusters.platform],
+    keywords: [
+      'algemene voorwaarden',
+      'voorwaarden probrandwacht',
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+    ],
   },
 
   '/disclaimer': {
     title: 'Disclaimer | ProBrandwacht',
     description:
       'Lees hoe informatie en rekenvoorbeelden op ProBrandwacht.nl bedoeld zijn: indicatief, ter bewustwording en zonder garanties.',
-    keywords: ['disclaimer', 'aansprakelijkheid', ...seoKeywordClusters.platform],
+    keywords: [
+      'disclaimer',
+      'aansprakelijkheid',
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+    ],
   },
 
   '/privacy': {
@@ -156,7 +188,12 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'Brandwacht inhuren | ProBrandwacht',
     description:
       'Kaders voor het inhuren van zelfstandige brandwachten: rol, afspraken en verantwoordelijkheid vooraf duidelijk, zonder tussenlagen.',
-    keywords: [...seoKeywordClusters.core, 'brandwacht inhuren', 'zelfstandige brandwacht'],
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandwacht inhuren',
+      'zelfstandige brandwacht',
+      ...seoKeywordClusters.positioning,
+    ],
   },
 
   '/brandwacht-inhuren/[city]': {
@@ -189,6 +226,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.platform,
       'zelfstandige brandwacht aanmelden',
+      ...seoKeywordClusters.positioning,
     ],
   },
 
@@ -201,6 +239,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.platform,
       'brandwacht aanmelden',
       'zzp brandwacht opdrachten',
+      ...seoKeywordClusters.positioning,
     ],
   },
 
@@ -255,6 +294,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.tariefInzicht,
       ...seoKeywordClusters.zzpFreelance,
+      ...seoKeywordClusters.positioning,
     ],
   },
 
