@@ -1,13 +1,13 @@
-// scripts/vakbond-sanity-scan.ts
+// scripts/content/vakbond-sanity-scan.ts
 //
 // Run locally:
-//   npx ts-node scripts/vakbond-sanity-scan.ts --base http://localhost:3000
+//   npx ts-node scripts/content/vakbond-sanity-scan.ts --base http://localhost:3000
 //
 // Strict mode (CI / pre-push):
-//   npx ts-node scripts/vakbond-sanity-scan.ts --base http://localhost:3000 --strict
+//   npx ts-node scripts/content/vakbond-sanity-scan.ts --base http://localhost:3000 --strict
 //
 // Custom paths:
-//   npx ts-node scripts/vakbond-sanity-scan.ts --base https://www.probrandwacht.nl --paths /,/opdrachtgevers,/blog
+//   npx ts-node scripts/content/vakbond-sanity-scan.ts --base https://www.probrandwacht.nl --paths /,/opdrachtgevers,/blog
 //
 
 import fs from "node:fs";

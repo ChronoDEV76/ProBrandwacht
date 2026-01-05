@@ -1,4 +1,4 @@
-// scripts/verifyEnv.mjs
+// scripts/ops/verifyEnv.mjs
 import fs from "node:fs";
 import path from "node:path";
 import dotenv from "dotenv";
@@ -79,4 +79,3 @@ if (!ok) {
 }
 
 console.log("\n🎉 All required environment variables are present.\n");
-

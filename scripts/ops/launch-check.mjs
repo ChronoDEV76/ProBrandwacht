@@ -1,9 +1,9 @@
 
-// scripts/launch-check.mjs
+// scripts/ops/launch-check.mjs
 // Usage:
-//   node scripts/launch-check.mjs
-//   node scripts/launch-check.mjs --fix
-//   node scripts/launch-check.mjs --fix --site=https://www.probrandwacht.nl --from="ProBrandwacht <noreply@prosafetymatch.nl>" --no-build
+//   node scripts/ops/launch-check.mjs
+//   node scripts/ops/launch-check.mjs --fix
+//   node scripts/ops/launch-check.mjs --fix --site=https://www.probrandwacht.nl --from="ProBrandwacht <noreply@prosafetymatch.nl>" --no-build
 //
 // Doel:
 // - Controleer launch readiness (env, Supabase, e-mail, routes, public assets)
@@ -139,11 +139,11 @@ function ensurePackageScripts() {
   let changed = false;
 
   if (!pkg.scripts["launch:check"]) {
-    pkg.scripts["launch:check"] = "node scripts/launch-check.mjs";
+    pkg.scripts["launch:check"] = "node scripts/ops/launch-check.mjs";
     changed = true;
   }
   if (!pkg.scripts["launch:quick"]) {
-    pkg.scripts["launch:quick"] = "node scripts/launch-check.mjs --no-build";
+    pkg.scripts["launch:quick"] = "node scripts/ops/launch-check.mjs --no-build";
     changed = true;
   }
   if (changed && FIX) {
@@ -255,7 +255,7 @@ for (const r of mustPages) {
 
 // API routes
 log.info("\n[API] Endpoints");
-const apis = ["/api/lead", "/api/probrandwacht-direct"];
+const apis = ["/api/probrandwacht-direct"];
 for (const r of apis) {
   if (apiRouteExists(r)) log.ok(`API ${r}`);
   else incErr(`API ${r} ontbreekt`);

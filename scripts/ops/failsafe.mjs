@@ -240,7 +240,7 @@ const results = [];
 
 // 1) Tone Guard — ALWAYS pass explicit flags (no booleans)
 add(
-  runNode("Tone Guard", "scripts/tone-guard.ts", [
+  runNode("Tone Guard", "scripts/tone/tone-guard.ts", [
     `--url=${BASE}`,
     `--paths=${TONE_PATHS}`,
     ...(STRICT ? ["--strict"] : []),
@@ -249,7 +249,7 @@ add(
 
 // 2) Vakbond Scan — run TS script with same flags
 add(
-  runTypeScript("Vakbond Scan", "scripts/vakbond-sanity-scan.ts", [
+  runTypeScript("Vakbond Scan", "scripts/content/vakbond-sanity-scan.ts", [
     `--base=${BASE}`,
     `--paths=${TONE_PATHS}`,
     ...(STRICT ? ["--strict"] : []),
@@ -257,18 +257,18 @@ add(
 );
 
 // 3) Tarief / Indicatie Check (optional)
-add(runNode("Tarief / Indicatie Check", "scripts/tarief-indicatie.mjs", []));
+add(runNode("Tarief / Indicatie Check", "scripts/utils/tarief-indicatie.mjs", []));
 
 // 4) Content Consistency (optional)
-add(runNode("Content Consistency", "scripts/content-consistency.mjs", []));
+add(runNode("Content Consistency", "scripts/content/content-consistency.v2.mjs", []));
 
 // 4b) Copy Migration (optional)
-add(runNode("Copy migration", "scripts/copy-migration-check.v2.mjs", []));
+add(runNode("Copy migration", "scripts/content/copy-migration-check.v2.mjs", []));
 
 // 5) SEO Sanity — only fail in STRICT mode, otherwise warn on non-zero
 if (RUN_SEO) {
   const seoJsonPath = path.join(REPORT_DIR, "seo_report.json");
-  const seoRes = runNode("SEO Sanity", "scripts/seoAudit.mjs", [
+  const seoRes = runNode("SEO Sanity", "scripts/seo/seoAudit.mjs", [
     `--start=${SEO_START}`,
     `--output=${seoJsonPath}`,
   ]);

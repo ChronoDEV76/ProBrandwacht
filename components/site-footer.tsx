@@ -98,6 +98,11 @@ export default function SiteFooter() {
               info@prosafetymatch.nl
             </a>
           </p>
+          <p className="mt-2">
+            ProBrandwacht faciliteert verkenning en dialoog tussen zelfstandigen en opdrachtgevers; het platform draagt
+            geen verantwoordelijkheid voor specifieke samenwerkingen, contracten, uitvoeringsbeslissingen of
+            operationele uitkomsten.
+          </p>
         </section>
       </div>
     </footer>

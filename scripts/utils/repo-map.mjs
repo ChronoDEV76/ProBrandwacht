@@ -9,9 +9,9 @@
  * - Extensiestats (–ext-stats) met aantallen per bestandstype
  *
  * Voorbeelden:
- *   node scripts/repo-map.mjs
- *   node scripts/repo-map.mjs --root . --format=all --out=repo-map --sizes --ext-stats
- *   node scripts/repo-map.mjs --max-depth=3 --exclude=.vercel,.next,coverage
+ *   node scripts/utils/repo-map.mjs
+ *   node scripts/utils/repo-map.mjs --root . --format=all --out=repo-map --sizes --ext-stats
+ *   node scripts/utils/repo-map.mjs --max-depth=3 --exclude=.vercel,.next,coverage
  */
 
 import fs from "fs";

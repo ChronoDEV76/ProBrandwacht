@@ -1,6 +1,6 @@
-// scripts/launch-copy-check.ts
-// Run:  npx tsx scripts/launch-copy-check.ts
-// (or)  node --loader tsx scripts/launch-copy-check.ts
+// scripts/content/launch-copy-check.ts
+// Run:  npx tsx scripts/content/launch-copy-check.ts
+// (or)  node --loader tsx scripts/content/launch-copy-check.ts
 //
 // What it checks (fast, no browser needed):
 // 1) No placeholder copy (TODO/lorem/xxx/..)

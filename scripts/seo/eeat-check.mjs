@@ -5,10 +5,10 @@
  *   organization/contact schema, outbound references, clear identity.
  *
  * Usage:
- *   node scripts/eeat-check.mjs --base http://localhost:3000
- *   node scripts/eeat-check.mjs --base https://www.probrandwacht.nl --strict
- *   node scripts/eeat-check.mjs --base http://localhost:3000 --paths "/,/over-ons,/blog"
- *   node scripts/eeat-check.mjs --base http://localhost:3000 --json reports/eeat.json
+ *   node scripts/seo/eeat-check.mjs --base http://localhost:3000
+ *   node scripts/seo/eeat-check.mjs --base https://www.probrandwacht.nl --strict
+ *   node scripts/seo/eeat-check.mjs --base http://localhost:3000 --paths "/,/over-ons,/blog"
+ *   node scripts/seo/eeat-check.mjs --base http://localhost:3000 --json reports/eeat.json
  */
 
 import fs from "node:fs";
@@ -56,6 +56,11 @@ function parseArgs(argv) {
 
 function safeBase(b) {
   return String(b || "").replace(/\/+$/, "");
+}
+
+function localhostFallbackBase(base) {
+  if (!/^https?:\/\/localhost(?::\d+)?/i.test(base)) return null;
+  return base.replace("://localhost", "://127.0.0.1");
 }
 
 function uniq(arr) {
@@ -290,6 +295,7 @@ function scorePage({ url, html, text }) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const base = safeBase(args.base);
+  const fallbackBase = localhostFallbackBase(base);
   const strict = !!args.strict;
 
   let paths = defaultPaths();
@@ -327,11 +333,24 @@ async function main() {
     try {
       fetched = await fetchHtml(url, { timeoutMs: args.timeoutMs, userAgent: args.userAgent });
     } catch (e) {
-      const msg = String(e?.message || e);
-      console.log(`   💥 Fetch error: ${msg}\n`);
-      report.errors.push({ url, error: msg });
-      if (strict) hardFail = true;
-      continue;
+      if (fallbackBase) {
+        const fallbackUrl = new URL(p, fallbackBase).toString();
+        try {
+          fetched = await fetchHtml(fallbackUrl, { timeoutMs: args.timeoutMs, userAgent: args.userAgent });
+        } catch (fallbackError) {
+          const msg = String(fallbackError?.message || fallbackError);
+          console.log(`   💥 Fetch error: ${msg}\n`);
+          report.errors.push({ url, error: msg });
+          if (strict) hardFail = true;
+          continue;
+        }
+      } else {
+        const msg = String(e?.message || e);
+        console.log(`   💥 Fetch error: ${msg}\n`);
+        report.errors.push({ url, error: msg });
+        if (strict) hardFail = true;
+        continue;
+      }
     }
 
     if (!fetched.ok) {
@@ -398,4 +417,3 @@ main().catch((e) => {
   console.error("E-E-A-T check crashed:", e);
   process.exit(2);
 });
-

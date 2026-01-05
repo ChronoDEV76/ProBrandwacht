@@ -1,7 +1,7 @@
-// scripts/strip-calculator.mjs
+// scripts/utils/strip-calculator.mjs
 // Usage:
-//   node scripts/strip-calculator.mjs --dry
-//   node scripts/strip-calculator.mjs
+//   node scripts/utils/strip-calculator.mjs --dry
+//   node scripts/utils/strip-calculator.mjs
 //
 // Doel:
 // - Verwijder calculator-componenten van city/blog/brandwacht-inhuren pagina’s

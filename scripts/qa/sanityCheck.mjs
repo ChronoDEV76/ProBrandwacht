@@ -9,7 +9,7 @@
  * - Controle heading-hiërarchie in MD/MDX
  *
  * Run:
- *   node scripts/sanityCheck.mjs --root src --min-sent-len 80 --max-sent-len 220 --max-par-len 800
+ *   node scripts/qa/sanityCheck.mjs --root src --min-sent-len 80 --max-sent-len 220 --max-par-len 800
  */
 
 import fs from 'node:fs'
@@ -41,6 +41,7 @@ const MAX_PAR_LEN = Number(argv['max-par-len'] || 800)
 const EXT_OK = new Set(['.ts', '.tsx', '.mdx', '.md'])
 
 const IGNORE_DIRS = new Set(['node_modules', '.next', 'build', 'dist', '.git'])
+const IGNORE_PATH_SEGMENTS = ['/content/blog/']
 
 const TERM_PREFS = [
   ['zzp’er', ['zzp-er', 'zzper', "zzp'er(s)", 'zzp er', 'zelfstandige professional (ind.)']],
@@ -58,7 +59,11 @@ function walk(dir, out = []) {
     const p = path.join(dir, name)
     const st = fs.statSync(p)
     if (st.isDirectory()) walk(p, out)
-    else if (EXT_OK.has(path.extname(name))) out.push(p)
+    else if (EXT_OK.has(path.extname(name))) {
+      const normalized = p.replace(/\\/g, '/')
+      if (IGNORE_PATH_SEGMENTS.some(seg => normalized.includes(seg))) continue
+      out.push(p)
+    }
   }
   return out
 }

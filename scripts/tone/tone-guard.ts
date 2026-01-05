@@ -9,7 +9,7 @@
  * - Extra guard: als er "calculator/vergelijking" copy staat, dan moet er ook nuance/disclaimer staan
  *
  * CLI:
- *   npx ts-node scripts/tone-guard.ts --url=http://localhost:3000 --paths=/,/opdrachtgevers,/voor-brandwachten,/belangen
+ *   npx ts-node scripts/tone/tone-guard.ts --url=http://localhost:3000 --paths=/,/opdrachtgevers,/voor-brandwachten,/belangen
  *
  * Opties:
  *   --onlyIssues=true|false   (default true)

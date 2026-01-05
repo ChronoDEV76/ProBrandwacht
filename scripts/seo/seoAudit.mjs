@@ -11,7 +11,7 @@
  *   - Canonical moet op het juiste domein zitten als --domain=... is meegegeven
  *
  * Voorbeeld:
- * node scripts/seoAudit.mjs \
+ * node scripts/seo/seoAudit.mjs \
  *   --start=https://www.probrandwacht.nl \
  *   --max-pages=200 \
  *   --seed-sitemap=true \

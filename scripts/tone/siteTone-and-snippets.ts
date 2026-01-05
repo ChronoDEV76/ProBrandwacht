@@ -13,7 +13,7 @@
  *  - JSON-rapport in reports/site-tone-snippet-report.json
  *
  * Gebruik:
- *   npx ts-node scripts/siteTone-and-snippets.ts
+ *   npx ts-node scripts/tone/siteTone-and-snippets.ts
  */
 
 import fs from "node:fs";

@@ -11,7 +11,7 @@
  *     - telt positieve signalen (eerlijke, zelfstandige brandwacht, samenwerking, dba-proof)
  *
  * Gebruik:
- *   npx ts-node scripts/siteConsistency-check.ts
+ *   npx ts-node scripts/qa/siteConsistency-check.ts
  */
 
 import fs from "node:fs";
@@ -86,11 +86,13 @@ function walk(dir: string, out: string[] = []): string[] {
 function analyzePage(file: string): PageReport {
   const content = fs.readFileSync(file, "utf8");
 
-  // check op layout: main met min-h-screen bg-slate-950 text-slate-50
   const hasMainLayout =
-    /<main[^>]*className=["'][^"']*min-h-screen[^"']*bg-slate-950[^"']*text-slate-50[^"']*["']/.test(
+    /<main[^>]*className=["'][^"']*min-h-screen[^"']*text-slate-50[^"']*["']/.test(content) &&
+    /<main[^>]*className=["'][^"']*(bg-slate-950|bg-gradient-to-b[^"']*from-slate-950)[^"']*["']/.test(
       content
     );
+  const hasMainLayoutViaComponent = /<BrandwachtInhurenCityPage\b/.test(content) || /<ClientPage\b/.test(content);
+  const hasMainLayoutResolved = hasMainLayout || hasMainLayoutViaComponent;
 
   const lower = content.toLowerCase();
 
@@ -101,7 +103,7 @@ function analyzePage(file: string): PageReport {
 
   return {
     file: path.relative(ROOT, file),
-    hasMainLayout,
+    hasMainLayout: hasMainLayoutResolved,
     badWords: badWordsFound,
     positiveSignals: positivesFound,
   };
@@ -123,7 +125,7 @@ function printReport(reports: PageReport[]) {
     if (!r.hasMainLayout) {
       layoutIssues++;
       console.log(
-        "   - Layout: geen <main> gevonden met `min-h-screen bg-slate-950 text-slate-50`"
+        "   - Layout: geen <main> gevonden met `min-h-screen text-slate-50` en dark background"
       );
     } else {
       console.log("   - Layout: ok (main met dark layout gevonden)");

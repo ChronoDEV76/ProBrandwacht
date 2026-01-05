@@ -6,7 +6,7 @@ import path from "node:path";
 // ---------------- CLI parsing ----------------
 //
 // Voorbeeld gebruik:
-//   npx ts-node scripts/toneCheck-competitors.ts --urls=https://site1.nl/,https://site2.nl/zzp
+//   npx ts-node scripts/tone/toneCheck-competitors.ts --urls=https://site1.nl/,https://site2.nl/zzp
 //
 
 const argv = Object.fromEntries(

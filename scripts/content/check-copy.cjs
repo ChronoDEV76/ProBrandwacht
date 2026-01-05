@@ -1,6 +1,6 @@
-// scripts/check-copy.cjs
+// scripts/content/check-copy.cjs
 // Script 2.0 – Anti-bureau / Circle of Influence copy-checker
-// Gebruik: node scripts/check-copy.cjs https://www.probrandwacht.nl
+// Gebruik: node scripts/content/check-copy.cjs https://www.probrandwacht.nl
 
 const axios = require("axios");
 const cheerio = require("cheerio");
@@ -8,7 +8,7 @@ const cheerio = require("cheerio");
 const url = process.argv[2];
 
 if (!url) {
-  console.error("Gebruik: node scripts/check-copy.cjs https://jouwdomein.nl");
+  console.error("Gebruik: node scripts/content/check-copy.cjs https://jouwdomein.nl");
   process.exit(1);
 }
 

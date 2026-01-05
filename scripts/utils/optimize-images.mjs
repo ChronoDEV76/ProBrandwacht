@@ -6,7 +6,7 @@ import sharp from 'sharp'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const root = path.resolve(__dirname, '..')
+const root = path.resolve(__dirname, '..', '..')
 const publicDir = path.join(root, 'public')
 const allowedExt = new Set(['.jpg', '.jpeg', '.png'])
 

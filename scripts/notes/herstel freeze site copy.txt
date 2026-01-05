@@ -1,0 +1,1 @@
+mv app/(site)/page.tsx.bak2 app/(site)/page.tsx

@@ -73,12 +73,12 @@ export default function ProBrandwachtDirectPage() {
             <li>Je bedrijf en contact worden ter verificatie vastgelegd.</li>
             <li>Aanvragen worden gemodereerd door Chrono4Solutions.</li>
           </ul>
-          <a
-            href="/api/direct/spoedchat"
-            className="mt-4 inline-flex items-center rounded-md bg-brand-700 px-4 py-2 text-white text-sm font-semibold hover:bg-brand-600"
+          <Link
+            href="/probrandwacht-direct-spoed"
+            className="mt-4 inline-flex items-center rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600"
           >
-            Start spoedchat →
-          </a>
+            Start spoedroute →
+          </Link>
           <p className="mt-2 text-xs text-slate-500">
             Nog geen toegang? Je ontvangt automatisch een uitnodiging.
           </p>

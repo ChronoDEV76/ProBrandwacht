@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// scripts/add-anchor.mjs
+// scripts/utils/add-anchor.mjs
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';

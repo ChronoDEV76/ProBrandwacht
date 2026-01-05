@@ -175,10 +175,10 @@ export default async function DirectRequestDetailPage({
             Escaleren naar support
           </Link>
           <Link
-            href="/admin/direct-requests"
+            href={`/dashboard/requests/${params.id}`}
             className="inline-flex items-center rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50"
           >
-            Terug naar overzicht
+            Naar inzet-dashboard
           </Link>
         </div>
       </div>

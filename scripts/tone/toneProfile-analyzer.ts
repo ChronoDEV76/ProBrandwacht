@@ -16,7 +16,7 @@
  *   - Bruggenbouwend / neutraal?
  *
  * Gebruik:
- *   npx ts-node scripts/toneProfile-analyzer.ts --urls=https://www.degrootbrandwachten.nl/,https://www.qforcebv.nl
+ *   npx ts-node scripts/tone/toneProfile-analyzer.ts --urls=https://www.degrootbrandwachten.nl/,https://www.qforcebv.nl
  */
 
 import fs from "node:fs";

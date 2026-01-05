@@ -9,10 +9,10 @@
  * - Forbidden economische claims (platformfee/10% etc.) met regex.
  *
  * Gebruik:
- *   node scripts/content-consistency.v2.mjs
- *   node scripts/content-consistency.v2.mjs --root=.
- *   node scripts/content-consistency.v2.mjs --strict
- *   node scripts/content-consistency.v2.mjs --json=reports/content-consistency.json
+ *   node scripts/content/content-consistency.v2.mjs
+ *   node scripts/content/content-consistency.v2.mjs --root=.
+ *   node scripts/content/content-consistency.v2.mjs --strict
+ *   node scripts/content/content-consistency.v2.mjs --json=reports/content-consistency.json
  *
  * Exit codes:
  * - 0 = OK (of alleen WARN in non-strict)

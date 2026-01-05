@@ -1,4 +1,4 @@
-// scripts/copy-migration-check.v2.mjs
+// scripts/content/copy-migration-check.v2.mjs
 import fs from "fs";
 import path from "path";
 

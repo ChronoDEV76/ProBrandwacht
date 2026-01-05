@@ -50,14 +50,32 @@ export async function generateMetadata({
       (frontmatter.excerpt as string | undefined) ??
       (frontmatter.description as string | undefined) ??
       'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
+    const ogImage = toAbsoluteUrl(
+      (frontmatter.ogImage as string | undefined) ??
+        (frontmatter.image as string | undefined) ??
+        '/og-home.webp'
+    )
 
     return {
       ...base,
       title,
       description,
       alternates: { canonical, languages: { 'nl-NL': canonical } },
-      openGraph: { ...(base.openGraph ?? {}), title, description, url: canonical },
-      twitter: { ...(base.twitter ?? {}), title, description },
+      openGraph: {
+        ...(base.openGraph ?? {}),
+        title,
+        description,
+        url: canonical,
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: rawTitle ?? 'ProBrandwacht',
+          },
+        ],
+      },
+      twitter: { ...(base.twitter ?? {}), title, description, images: [ogImage] },
     }
   } catch {
     return {
