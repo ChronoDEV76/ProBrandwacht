@@ -65,6 +65,11 @@ function safeBase(b: string): string {
   return String(b || "").replace(/\/+$/, "");
 }
 
+function localhostFallbackBase(base: string): string | null {
+  if (!/^https?:\/\/localhost(?::\d+)?/i.test(base)) return null;
+  return base.replace("://localhost", "://127.0.0.1");
+}
+
 function uniq<T>(arr: T[]): T[] {
   return [...new Set(arr)];
 }
@@ -177,6 +182,7 @@ function defaultPaths(): string[] {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const base = safeBase(args.base);
+  const fallbackBase = localhostFallbackBase(base);
   const strict = !!args.strict;
 
   const paths = uniq(args.paths?.length ? args.paths : defaultPaths());
@@ -194,7 +200,12 @@ async function main() {
     console.log(`📄 ${url}`);
 
     try {
-      const { ok, status, text } = await fetchText(url);
+      let { ok, status, text } = await fetchText(url);
+
+      if (!ok && fallbackBase) {
+        const fallbackUrl = new URL(p, fallbackBase).toString();
+        ({ ok, status, text } = await fetchText(fallbackUrl));
+      }
 
       if (!ok) {
         const msg = `HTTP ${status} for ${url}`;

@@ -9,12 +9,12 @@ export const generalPlatformFaq = [
   {
     question: 'Hoe werken betalingen via het platform?',
     answer:
-      'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Op basis daarvan wordt een digitale overeenkomst en inzet vastgelegd. Na bevestigde uitvoering wordt de inzet verwerkt in een factuur of betaalopdracht zoals afgesproken. Het proces is grotendeels geautomatiseerd, met ruimte voor handmatige controle waar nodig.',
+      'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Die afspraken worden vastgelegd in een gezamenlijke context, zodat uitvoering en betaling uitlegbaar blijven. De manier van betalen is afhankelijk van de afspraken tussen partijen en kan per inzet verschillen.',
   },
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
     answer:
-      'Nu regel je inzet direct. Straks komt ProSafetyMatch daarbij als digitaal platform: self-service planning, overeenkomsten, certificaatchecks, uren en facturatie in één omgeving. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
+      'Nu regel je inzet direct. ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
   },
   {
     question: 'Hoe blijft samenwerking binnen Wet DBA?',
@@ -24,7 +24,7 @@ export const generalPlatformFaq = [
   {
     question: 'Wat is de rol van ProSafetyMatch?',
     answer:
-      'ProBrandwacht is de praktische voorloper; ProSafetyMatch wordt de bredere SaaS-oplossing voor brand- en safety-samenwerking. Denk aan digitaal plannen, documentenbeheer, facturatie, rapportages en compliance-workflows. De uitgangspunten blijven hetzelfde: eerlijke, professionele samenwerking en ruimte voor zelfstandig ondernemerschap – ook als er meerdere partijen in de keten zitten.',
+      'ProBrandwacht is de praktische voorloper; ProSafetyMatch is de bredere digitale laag in ontwikkeling voor brand- en safety-samenwerking. Denk aan plannen, documentenbeheer en rapportage als ondersteunende functies, zonder een extra schakel toe te voegen. De uitgangspunten blijven hetzelfde: eerlijke, professionele samenwerking en ruimte voor zelfstandig ondernemerschap.',
   },
   {
     question: 'Kunnen bestaande bureaus ook met het platform werken?',
@@ -34,7 +34,7 @@ export const generalPlatformFaq = [
   {
     question: 'Wat gebeurt er met mijn gegevens?',
     answer:
-      'Gegevens worden alleen gebruikt om samenwerking professioneel te ondersteunen: profielinformatie, certificaten, afspraken, uren en facturen. Documenten en logregels worden gekoppeld aan concrete opdrachten, zodat je aantoonbaar kunt laten zien hoe er is samengewerkt. Gegevens worden niet verkocht en niet gebruikt om buiten jullie om afspraken te maken.',
+      'Gegevens worden alleen gebruikt om samenwerking professioneel te ondersteunen: profielinformatie, certificaten en afspraken die nodig zijn voor de inzet. Wat er wordt vastgelegd is afhankelijk van de context en afspraken tussen partijen. Gegevens worden niet verkocht en niet gebruikt om buiten jullie om afspraken te maken.',
   },
 ];
 
@@ -42,7 +42,7 @@ export const zzpFaq = [
   {
     question: 'Wat kost het om als zzp-brandwacht mee te doen?',
     answer:
-      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnementskost worden toegevoegd. Afspraken zijn zo ingericht dat ze helder, uitlegbaar en controleerbaar blijven.',
+      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnement worden toegevoegd. Afspraken blijven gericht op helderheid en uitlegbaarheid.',
   },
   {
     question: 'Ben ik verplicht om al mijn werk via het platform te doen?',
@@ -57,7 +57,7 @@ export const zzpFaq = [
   {
     question: 'Hoe worden certificaten en ervaring gecontroleerd?',
     answer:
-      'Je kunt certificaten zoals VCA, BHV/Manschap A/B, mangatwacht, gasmeten en relevante trainingen uploaden. Waar mogelijk worden die gekoppeld aan geldigheidsdata en aanvullende checks. Opdrachtgevers zien in één oogopslag wat er is vastgelegd. In een volgende fase kunnen aanvullende verificaties worden toegevoegd wanneer ProSafetyMatch live gaat.',
+      'Je kunt certificaten zoals VCA, BHV/Manschap A/B, mangatwacht, gasmeten en relevante trainingen uploaden. Opdrachtgevers zien wat er is vastgelegd en kunnen daarover aanvullende vragen stellen. In latere fases kunnen aanvullende verificaties worden toegevoegd wanneer ProSafetyMatch verder uitrolt.',
   },
   {
     question: 'Hoe en wanneer word ik uitbetaald?',
@@ -95,6 +95,6 @@ export const opdrachtgeverFaq = [
   {
     question: 'Hoe zit het met facturen, administratie en rapportages?',
     answer:
-      'Het doel is om alle informatie rondom inzet van zelfstandige brandwachten op één plek inzichtelijk te maken: opdrachten, uren, tarieven, facturen en relevante documenten. In de doorontwikkeling naar ProSafetyMatch komen daar meer functies bij zoals exports voor finance, kostenplaatsen, rapportages per locatie en ondersteuning richting interne en externe audits.',
+      'Het doel is om informatie rondom inzet van zelfstandige brandwachten overzichtelijk te maken: opdrachten, uren, tarieven, facturen en relevante documenten. In de doorontwikkeling naar ProSafetyMatch kunnen functies volgen zoals exports voor finance, kostenplaatsen en rapportages per locatie.',
   },
 ];

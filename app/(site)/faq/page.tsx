@@ -26,8 +26,8 @@ export default function FaqPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is ingericht rond een simpele eis: samenwerking moet vooraf kloppen en achteraf
-              uitlegbaar blijven — zonder bemiddeling, sturing of schijnzekerheden. Hieronder staan de vragen die het
-              vaakst terugkomen bij zelfstandigen en opdrachtgevers.
+              uitlegbaar blijven — zonder bemiddeling, sturing of schijnzekerheden. Antwoorden blijven
+              contextafhankelijk en sluiten aan op de afspraken die jullie samen maken.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
