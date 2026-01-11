@@ -47,15 +47,15 @@ jobs:
 
       - name: Tone-of-Voice check - ProBrandwacht (local)
         run: |
-          npx ts-node --esm scripts/tone/toneCheck-url.ts --url=$LOCAL_BASE_URL --paths=$LOCAL_PATHS
+          npx tsx scripts/tone/toneCheck-url.ts --url=$LOCAL_BASE_URL --paths=$LOCAL_PATHS
 
       - name: Tone-of-Voice check - Competitors (live)
         run: |
-          npx ts-node --esm scripts/tone/toneCheck-competitors.ts --urls=$COMPETITOR_URLS
+          npx tsx scripts/tone/toneCheck-competitors.ts --urls=$COMPETITOR_URLS
 
       - name: Tone-of-Voice comparison report
         run: |
-          npx ts-node --esm scripts/tone/toneCompare-report.ts
+          npx tsx scripts/tone/toneCompare-report.ts
 
       - name: Upload JSON reports
         if: always()
