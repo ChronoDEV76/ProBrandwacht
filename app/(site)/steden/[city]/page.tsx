@@ -288,7 +288,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-8">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-            Herkenbare scenario's in {label}
+            Herkenbare scenario&apos;s in {label}
           </p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-50 md:text-3xl">
             Waar deze aanpak het verschil maakt

@@ -120,7 +120,7 @@ export default function OpdrachtgeversPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Herkenbare scenario's</p>
+            <p className="text-sm font-semibold text-white">Herkenbare scenario&apos;s</p>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
                 <p className="text-sm font-semibold text-white">Complex risico, weinig tijd</p>

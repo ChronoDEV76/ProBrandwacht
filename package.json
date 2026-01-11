@@ -100,7 +100,7 @@
     "@vitest/utils": "^2.1.9",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^16.1.1",
+    "eslint-config-next": "^14.2.35",
     "eslint-config-prettier": "^9.1.2",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
