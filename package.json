@@ -117,6 +117,11 @@
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "glob": "^10.5.0"
+    }
+  },
   "packageManager": "npm@10.9.3",
   "peerDependencies": {
     "@types/node": "^20.11.30",
