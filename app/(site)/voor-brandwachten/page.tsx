@@ -32,28 +32,33 @@ export default function VoorBrandwachtenPage() {
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-4xl">
-            Zelfstandig werken vraagt{" "}
-            <span className="text-emerald-300">helderheid</span>
+            Niet voor iedereen, wel{" "}
+            <span className="text-emerald-300">voor vakprofessionals</span>
             <br className="hidden md:block" />
-            in afspraken én gedrag op de vloer.
+            die verantwoordelijkheid tot op de vloer dragen.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is bedoeld voor zelfstandige brandwachten die bewust kiezen voor directe samenwerking
-            met opdrachtgevers — zonder inzetbelofte, zonder aansturing en zonder “iemand die het regelt”.
+            ProBrandwacht is bedoeld voor zelfstandige brandwachten die directe samenwerking aankunnen
+            zonder inzetbelofte, zonder aansturing en zonder iemand die het regelt.
             Aanmeldingen worden selectief beoordeeld; niet iedere aanmelding leidt tot deelname.
           </p>
 
           <p className="mt-4 max-w-3xl text-sm text-slate-300">
             ProBrandwacht is niet bedoeld voor iedere zelfstandige.
-            Veel professionals werken prettig via bureaus — en dat is prima.
+            Veel professionals werken prettig via bureaus - en dat is prima.
             Dit platform is er voor brandwachten die bewust kiezen voor directe
-            afstemming en de verantwoordelijkheid die daarbij hoort.
+            afstemming en verantwoordelijkheid in de uitvoering.
+          </p>
+
+          <p className="max-w-3xl text-sm text-slate-300">
+            Of je nu industrieel, evenementen, utiliteit of bouw draait: het gaat om dezelfde basis
+            van rolvastheid, gedrag onder druk en afspraken die je kunt uitleggen.
           </p>
 
           <p className="max-w-3xl text-xs leading-relaxed text-slate-300 md:text-sm">
             DBA-bewust werken is niet alleen papier. Het gaat ook om rolbegrip, voorspelbaarheid in uitvoering,
-            en afspraken die je kunt uitleggen én naleven — contextafhankelijk per klus.
+            en afspraken die je kunt uitleggen en naleven - contextafhankelijk per klus.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -100,9 +105,9 @@ export default function VoorBrandwachtenPage() {
 
               <ul className="mt-3 space-y-2 text-sm text-slate-200">
                 <li>• Je zelfstandig opereert en dat ook zo wilt houden.</li>
-                <li>• Je afspraken kunt uitleggen én naleven (schriftelijk + in de praktijk).</li>
+                <li>• Je afspraken kunt uitleggen en naleven (schriftelijk en in de praktijk).</li>
                 <li>• Je verantwoordelijkheid draagt op de werkvloer, ook onder druk.</li>
-                <li>• Je snapt dat geen enkele inzet “standaard” is: context bepaalt veel.</li>
+                <li>• Je snapt dat geen enkele inzet standaard is: context bepaalt veel.</li>
                 <li>• Je tarief en voorwaarden in overleg bepaalt, zonder sturing van derden.</li>
               </ul>
             </div>
@@ -114,10 +119,10 @@ export default function VoorBrandwachtenPage() {
               </p>
 
               <ul className="mt-3 space-y-2 text-sm text-slate-200">
-                <li>• Je zoekt naar vaste aansturing, planning of “iemand boven je”.</li>
+                <li>• Je zoekt naar vaste aansturing, planning of iemand boven je.</li>
                 <li>• Je verwacht dat een platform inzet regelt of bezetting garandeert.</li>
-                <li>• Je liever geen inhoudelijke verantwoordelijkheid draagt.</li>
-                <li>• Je de intentie niet leest en “blind” wilt inschrijven.</li>
+                <li>• Je vooral vaste uren wilt zonder gedeelde verantwoordelijkheid.</li>
+                <li>• Je de intentie niet leest en blind wilt inschrijven.</li>
                 <li>• Je vooral volume zoekt in plaats van voorspelbare, professionele uitvoering.</li>
               </ul>
             </div>
@@ -125,7 +130,7 @@ export default function VoorBrandwachtenPage() {
 
           {/* De lat (in de regel) */}
           <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
-            <p className="text-sm font-semibold text-white">De lat (in de regel)</p>
+            <p className="text-sm font-semibold text-white">Waar we op selecteren</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200 max-w-4xl">
               We proberen zichtbaar te maken wat “zelfstandig” in de praktijk betekent. Niet als oordeel,
               maar als selectiecriterium voor samenwerking die uitlegbaar blijft.
@@ -137,7 +142,7 @@ export default function VoorBrandwachtenPage() {
                 <ul className="mt-3 space-y-2 text-sm text-slate-200">
                   <li>• Rolbegrip: weten wat jouw verantwoordelijkheid is (en wat niet).</li>
                   <li>• Situatiegedrag: kalm communiceren als het spannend wordt.</li>
-                  <li>• Professionele afstemming: duidelijk, zakelijk, zonder ruis.</li>
+                  <li>• Communicatie zonder narratief-spin of verhalen achteraf.</li>
                 </ul>
               </div>
 
@@ -148,6 +153,33 @@ export default function VoorBrandwachtenPage() {
                   <li>• Tarief/voorwaarden: in overleg, passend bij risico en context.</li>
                   <li>• Grenzen: tijdig aangeven wat wel/niet kan binnen jouw rol.</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+            <p className="text-sm font-semibold text-white">Herkenbare scenario's</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Opdracht zonder rolvastheid</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Je wordt verwacht de klus te fixen, maar niemand kan uitleggen wie wat beslist.
+                  Dit past niet. Eerst rolafbakening, anders geen start.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Spoed met onduidelijke afspraken</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Een opdrachtgever wil direct starten zonder verslaglegging of afspraken over gezag.
+                  Dan zeg je nee, of je stelt expliciet vast wat er wel kan.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Nabeschouwing onder druk</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Er ontstaat discussie achteraf. Dossierdiscipline en duidelijke grenzen maken
+                  het verschil tussen conflict en professionele afhandeling.
+                </p>
               </div>
             </div>
           </div>

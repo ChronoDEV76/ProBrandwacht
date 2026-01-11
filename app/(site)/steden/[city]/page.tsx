@@ -285,6 +285,40 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <InfoCardsRow items={cards} />
       </div>
 
+      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Herkenbare scenario's in {label}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-slate-50 md:text-3xl">
+            Waar deze aanpak het verschil maakt
+          </h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Complexe locatie, onduidelijk gezag</p>
+              <p className="mt-2 text-sm text-slate-200">
+                In {label} ontstaat frictie als niemand kan uitleggen wie beslist. Deze route dwingt
+                rolafbakening vooraf af, zodat uitvoering rustig blijft.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Spoed zonder randvoorwaarden</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Er is haast, maar afspraken over toegang, meldpunt en verslaglegging ontbreken.
+                Dan eerst kaders, pas daarna inzet.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Verantwoording achteraf</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Bij audit of incident wil je kunnen aantonen wie wat deed en waarom. Dossierdiscipline
+                maakt die uitleg mogelijk.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-10">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">

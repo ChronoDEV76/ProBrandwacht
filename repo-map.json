@@ -1,35 +1,33 @@
 {
-  "generatedAt": "2025-12-28T20:37:07.913Z",
+  "generatedAt": "2026-01-07T12:29:01.328Z",
   "root": "probrandwacht-main-new",
   "rootPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new",
   "includeSizes": true,
   "maxDepth": "∞",
   "stats": {
-    "files": 373,
-    "dirs": 110,
-    "bytes": 17570960,
-    "humanBytes": "16.8 MB"
+    "files": 346,
+    "dirs": 112,
+    "bytes": 17407845,
+    "humanBytes": "16.6 MB"
   },
   "extStats": {
-    ".tsx": 108,
-    ".ts": 82,
-    ".json": 26,
-    ".mjs": 23,
+    ".tsx": 107,
+    ".ts": 81,
+    ".json": 27,
+    ".mjs": 26,
     ".webp": 16,
-    ".txt": 13,
-    ".md": 11,
+    ".mdx": 11,
     ".bak2": 9,
-    ".mdx": 9,
     ".js": 8,
     ".jpg": 8,
-    ".srt": 7,
+    ".md": 7,
     ".yml": 6,
     "<no-ext>": 6,
-    ".bak": 6,
     ".png": 6,
     ".backup": 5,
-    ".csv": 5,
+    ".txt": 3,
     ".py": 3,
+    ".csv": 2,
     ".log": 2,
     ".svg": 2,
     ".xml": 2,
@@ -38,7 +36,6 @@
     ".db": 1,
     ".local": 1,
     ".ttf": 1,
-    ".jsonl": 1,
     ".cjs": 1,
     ".css": 1,
     ".tsbuildinfo": 1
@@ -47,13 +44,13 @@
     "type": "dir",
     "name": "probrandwacht-main-new",
     "path": ".",
-    "size": 17570960,
+    "size": 17407845,
     "children": [
       {
         "type": "dir",
         "name": "__tests__",
         "path": "__tests__",
-        "size": 7906,
+        "size": 4529,
         "children": [
           {
             "type": "file",
@@ -66,12 +63,6 @@
             "name": "city-metadata.test.ts",
             "path": "__tests__/city-metadata.test.ts",
             "size": 426
-          },
-          {
-            "type": "file",
-            "name": "cost-calculator.test.tsx",
-            "path": "__tests__/cost-calculator.test.tsx",
-            "size": 3377
           },
           {
             "type": "file",
@@ -157,7 +148,7 @@
         "type": "dir",
         "name": "app",
         "path": "app",
-        "size": 544396,
+        "size": 464502,
         "children": [
           {
             "type": "dir",
@@ -249,8 +240,22 @@
             "type": "dir",
             "name": "(site)",
             "path": "app/(site)",
-            "size": 345963,
+            "size": 282657,
             "children": [
+              {
+                "type": "dir",
+                "name": "aanmelden",
+                "path": "app/(site)/aanmelden",
+                "size": 2356,
+                "children": [
+                  {
+                    "type": "file",
+                    "name": "page.tsx",
+                    "path": "app/(site)/aanmelden/page.tsx",
+                    "size": 2356
+                  }
+                ]
+              },
               {
                 "type": "dir",
                 "name": "admin",
@@ -289,25 +294,19 @@
                 "type": "dir",
                 "name": "belangen",
                 "path": "app/(site)/belangen",
-                "size": 19350,
+                "size": 11981,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/belangen/page.tsx",
-                    "size": 5228
+                    "size": 5249
                   },
                   {
                     "type": "file",
                     "name": "page.tsx.backup",
                     "path": "app/(site)/belangen/page.tsx.backup",
                     "size": 6732
-                  },
-                  {
-                    "type": "file",
-                    "name": "page.tsx.bak",
-                    "path": "app/(site)/belangen/page.tsx.bak",
-                    "size": 7390
                   }
                 ]
               },
@@ -315,13 +314,13 @@
                 "type": "dir",
                 "name": "bewust-zelfstandig-werken",
                 "path": "app/(site)/bewust-zelfstandig-werken",
-                "size": 4342,
+                "size": 4548,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/bewust-zelfstandig-werken/page.tsx",
-                    "size": 4342
+                    "size": 4548
                   }
                 ]
               },
@@ -329,19 +328,19 @@
                 "type": "dir",
                 "name": "brandwacht-huren",
                 "path": "app/(site)/brandwacht-huren",
-                "size": 889,
+                "size": 1231,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[city]",
                     "path": "app/(site)/brandwacht-huren/[city]",
-                    "size": 889,
+                    "size": 1231,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
                         "path": "app/(site)/brandwacht-huren/[city]/page.tsx",
-                        "size": 889
+                        "size": 1231
                       }
                     ]
                   }
@@ -351,19 +350,19 @@
                 "type": "dir",
                 "name": "brandwacht-inhuren",
                 "path": "app/(site)/brandwacht-inhuren",
-                "size": 12971,
+                "size": 14380,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[city]",
                     "path": "app/(site)/brandwacht-inhuren/[city]",
-                    "size": 7649,
+                    "size": 8414,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
                         "path": "app/(site)/brandwacht-inhuren/[city]/page.tsx",
-                        "size": 7649
+                        "size": 8414
                       }
                     ]
                   },
@@ -371,7 +370,7 @@
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/brandwacht-inhuren/page.tsx",
-                    "size": 5322
+                    "size": 5966
                   }
                 ]
               },
@@ -393,13 +392,13 @@
                 "type": "dir",
                 "name": "disclaimer",
                 "path": "app/(site)/disclaimer",
-                "size": 3294,
+                "size": 2886,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/disclaimer/page.tsx",
-                    "size": 3294
+                    "size": 2886
                   }
                 ]
               },
@@ -407,7 +406,7 @@
                 "type": "dir",
                 "name": "faq",
                 "path": "app/(site)/faq",
-                "size": 9005,
+                "size": 9155,
                 "children": [
                   {
                     "type": "file",
@@ -419,7 +418,7 @@
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/faq/page.tsx",
-                    "size": 3617
+                    "size": 3767
                   }
                 ]
               },
@@ -441,25 +440,19 @@
                 "type": "dir",
                 "name": "opdrachtgevers",
                 "path": "app/(site)/opdrachtgevers",
-                "size": 42988,
+                "size": 28666,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/opdrachtgevers/page.tsx",
-                    "size": 9932
+                    "size": 5752
                   },
                   {
                     "type": "file",
                     "name": "page.tsx.backup",
                     "path": "app/(site)/opdrachtgevers/page.tsx.backup",
                     "size": 13319
-                  },
-                  {
-                    "type": "file",
-                    "name": "page.tsx.bak",
-                    "path": "app/(site)/opdrachtgevers/page.tsx.bak",
-                    "size": 10142
                   },
                   {
                     "type": "file",
@@ -473,25 +466,19 @@
                 "type": "dir",
                 "name": "over-ons",
                 "path": "app/(site)/over-ons",
-                "size": 33756,
+                "size": 22715,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/over-ons/page.tsx",
-                    "size": 7758
+                    "size": 5715
                   },
                   {
                     "type": "file",
                     "name": "page.tsx.backup",
                     "path": "app/(site)/over-ons/page.tsx.backup",
                     "size": 8855
-                  },
-                  {
-                    "type": "file",
-                    "name": "page.tsx.bak",
-                    "path": "app/(site)/over-ons/page.tsx.bak",
-                    "size": 8998
                   },
                   {
                     "type": "file",
@@ -505,7 +492,7 @@
                 "type": "dir",
                 "name": "privacy",
                 "path": "app/(site)/privacy",
-                "size": 15076,
+                "size": 15070,
                 "children": [
                   {
                     "type": "file",
@@ -517,7 +504,7 @@
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/privacy/page.tsx",
-                    "size": 3035
+                    "size": 3029
                   },
                   {
                     "type": "file",
@@ -531,13 +518,13 @@
                 "type": "dir",
                 "name": "probrandwacht-direct",
                 "path": "app/(site)/probrandwacht-direct",
-                "size": 4562,
+                "size": 5206,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/probrandwacht-direct/page.tsx",
-                    "size": 4562
+                    "size": 5206
                   }
                 ]
               },
@@ -545,13 +532,13 @@
                 "type": "dir",
                 "name": "probrandwacht-direct-spoed",
                 "path": "app/(site)/probrandwacht-direct-spoed",
-                "size": 20193,
+                "size": 21000,
                 "children": [
                   {
                     "type": "file",
                     "name": "metadata.ts",
                     "path": "app/(site)/probrandwacht-direct-spoed/metadata.ts",
-                    "size": 591
+                    "size": 583
                   },
                   {
                     "type": "file",
@@ -563,13 +550,13 @@
                     "type": "file",
                     "name": "page.backup.tsx",
                     "path": "app/(site)/probrandwacht-direct-spoed/page.backup.tsx",
-                    "size": 7680
+                    "size": 7681
                   },
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/probrandwacht-direct-spoed/page.tsx",
-                    "size": 3827
+                    "size": 4641
                   },
                   {
                     "type": "file",
@@ -583,13 +570,13 @@
                 "type": "dir",
                 "name": "seo-resources",
                 "path": "app/(site)/seo-resources",
-                "size": 4325,
+                "size": 4343,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/seo-resources/page.tsx",
-                    "size": 4325
+                    "size": 4343
                   }
                 ]
               },
@@ -597,25 +584,19 @@
                 "type": "dir",
                 "name": "steden",
                 "path": "app/(site)/steden",
-                "size": 40978,
+                "size": 33133,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[city]",
                     "path": "app/(site)/steden/[city]",
-                    "size": 33787,
+                    "size": 24435,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
                         "path": "app/(site)/steden/[city]/page.tsx",
-                        "size": 14898
-                      },
-                      {
-                        "type": "file",
-                        "name": "page.tsx.bak",
-                        "path": "app/(site)/steden/[city]/page.tsx.bak",
-                        "size": 9860
+                        "size": 15406
                       },
                       {
                         "type": "file",
@@ -629,7 +610,7 @@
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/steden/page.tsx",
-                    "size": 3323
+                    "size": 4830
                   },
                   {
                     "type": "file",
@@ -641,29 +622,15 @@
               },
               {
                 "type": "dir",
-                "name": "tarief-berekenen",
-                "path": "app/(site)/tarief-berekenen",
-                "size": 8636,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "page.tsx",
-                    "path": "app/(site)/tarief-berekenen/page.tsx",
-                    "size": 8636
-                  }
-                ]
-              },
-              {
-                "type": "dir",
                 "name": "tone-of-voice",
                 "path": "app/(site)/tone-of-voice",
-                "size": 4930,
+                "size": 5130,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/tone-of-voice/page.tsx",
-                    "size": 4930
+                    "size": 5130
                   }
                 ]
               },
@@ -678,25 +645,33 @@
                 "type": "dir",
                 "name": "voor-brandwachten",
                 "path": "app/(site)/voor-brandwachten",
-                "size": 42476,
+                "size": 33809,
                 "children": [
+                  {
+                    "type": "dir",
+                    "name": "aanmelden",
+                    "path": "app/(site)/voor-brandwachten/aanmelden",
+                    "size": 1785,
+                    "children": [
+                      {
+                        "type": "file",
+                        "name": "page.tsx",
+                        "path": "app/(site)/voor-brandwachten/aanmelden/page.tsx",
+                        "size": 1785
+                      }
+                    ]
+                  },
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/voor-brandwachten/page.tsx",
-                    "size": 8269
+                    "size": 8953
                   },
                   {
                     "type": "file",
                     "name": "page.tsx.backup",
                     "path": "app/(site)/voor-brandwachten/page.tsx.backup",
                     "size": 11752
-                  },
-                  {
-                    "type": "file",
-                    "name": "page.tsx.bak",
-                    "path": "app/(site)/voor-brandwachten/page.tsx.bak",
-                    "size": 11136
                   },
                   {
                     "type": "file",
@@ -710,13 +685,13 @@
                 "type": "dir",
                 "name": "voorwaarden",
                 "path": "app/(site)/voorwaarden",
-                "size": 4663,
+                "size": 4649,
                 "children": [
                   {
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/(site)/voorwaarden/page.tsx",
-                    "size": 4663
+                    "size": 4649
                   }
                 ]
               },
@@ -730,7 +705,7 @@
                 "type": "file",
                 "name": "layout.tsx",
                 "path": "app/(site)/layout.tsx",
-                "size": 1405
+                "size": 1516
               },
               {
                 "type": "file",
@@ -748,19 +723,13 @@
                 "type": "file",
                 "name": "page.backup.tsx",
                 "path": "app/(site)/page.backup.tsx",
-                "size": 13253
+                "size": 13263
               },
               {
                 "type": "file",
                 "name": "page.tsx",
                 "path": "app/(site)/page.tsx",
-                "size": 6553
-              },
-              {
-                "type": "file",
-                "name": "page.tsx.bak",
-                "path": "app/(site)/page.tsx.bak",
-                "size": 18533
+                "size": 13835
               },
               {
                 "type": "file",
@@ -786,25 +755,25 @@
             "type": "dir",
             "name": "admin",
             "path": "app/admin",
-            "size": 8969,
+            "size": 8982,
             "children": [
               {
                 "type": "dir",
                 "name": "direct-requests",
                 "path": "app/admin/direct-requests",
-                "size": 8969,
+                "size": 8982,
                 "children": [
                   {
                     "type": "dir",
                     "name": "[id]",
                     "path": "app/admin/direct-requests/[id]",
-                    "size": 8969,
+                    "size": 8982,
                     "children": [
                       {
                         "type": "file",
                         "name": "page.tsx",
                         "path": "app/admin/direct-requests/[id]/page.tsx",
-                        "size": 8969
+                        "size": 8982
                       }
                     ]
                   }
@@ -816,7 +785,7 @@
             "type": "dir",
             "name": "api",
             "path": "app/api",
-            "size": 65501,
+            "size": 51807,
             "children": [
               {
                 "type": "dir",
@@ -909,20 +878,6 @@
                     "name": "route.ts",
                     "path": "app/api/direct-messages/route.ts",
                     "size": 5099
-                  }
-                ]
-              },
-              {
-                "type": "dir",
-                "name": "lead",
-                "path": "app/api/lead",
-                "size": 13694,
-                "children": [
-                  {
-                    "type": "file",
-                    "name": "route.ts",
-                    "path": "app/api/lead/route.ts",
-                    "size": 13694
                   }
                 ]
               },
@@ -1089,13 +1044,13 @@
             "type": "dir",
             "name": "blog",
             "path": "app/blog",
-            "size": 58991,
+            "size": 58959,
             "children": [
               {
                 "type": "dir",
                 "name": "[slug]",
                 "path": "app/blog/[slug]",
-                "size": 19976,
+                "size": 20408,
                 "children": [
                   {
                     "type": "file",
@@ -1119,7 +1074,7 @@
                     "type": "file",
                     "name": "page.tsx",
                     "path": "app/blog/[slug]/page.tsx",
-                    "size": 8073
+                    "size": 8505
                   }
                 ]
               },
@@ -1151,7 +1106,7 @@
                 "type": "file",
                 "name": "page.tsx",
                 "path": "app/blog/page.tsx",
-                "size": 18828
+                "size": 18364
               }
             ]
           },
@@ -1195,13 +1150,13 @@
             "type": "dir",
             "name": "direct",
             "path": "app/direct",
-            "size": 4684,
+            "size": 4947,
             "children": [
               {
                 "type": "file",
                 "name": "page.tsx",
                 "path": "app/direct/page.tsx",
-                "size": 4684
+                "size": 4947
               }
             ]
           },
@@ -1305,35 +1260,21 @@
           },
           {
             "type": "dir",
-            "name": "tarief-berekenen",
-            "path": "app/tarief-berekenen",
-            "size": 2596,
-            "children": [
-              {
-                "type": "file",
-                "name": "page.backup.tsx",
-                "path": "app/tarief-berekenen/page.backup.tsx",
-                "size": 2596
-              }
-            ]
-          },
-          {
-            "type": "dir",
             "name": "zzp",
             "path": "app/zzp",
-            "size": 21065,
+            "size": 20548,
             "children": [
               {
                 "type": "dir",
                 "name": "aanmelden",
                 "path": "app/zzp/aanmelden",
-                "size": 20629,
+                "size": 20112,
                 "children": [
                   {
                     "type": "file",
                     "name": "client-page.tsx",
                     "path": "app/zzp/aanmelden/client-page.tsx",
-                    "size": 18807
+                    "size": 18290
                   },
                   {
                     "type": "file",
@@ -1379,7 +1320,7 @@
             "type": "file",
             "name": "sitemap.ts",
             "path": "app/sitemap.ts",
-            "size": 1845
+            "size": 1820
           }
         ]
       },
@@ -1387,7 +1328,7 @@
         "type": "dir",
         "name": "components",
         "path": "components",
-        "size": 177049,
+        "size": 129240,
         "children": [
           {
             "type": "dir",
@@ -1481,13 +1422,13 @@
             "type": "dir",
             "name": "opdrachtgevers",
             "path": "components/opdrachtgevers",
-            "size": 11569,
+            "size": 11570,
             "children": [
               {
                 "type": "file",
                 "name": "client-signup-form.tsx",
                 "path": "components/opdrachtgevers/client-signup-form.tsx",
-                "size": 11569
+                "size": 11570
               }
             ]
           },
@@ -1505,6 +1446,12 @@
           },
           {
             "type": "file",
+            "name": "BlogTrustHeader.tsx",
+            "path": "components/BlogTrustHeader.tsx",
+            "size": 3421
+          },
+          {
+            "type": "file",
             "name": "ChatBox.tsx",
             "path": "components/ChatBox.tsx",
             "size": 5877
@@ -1519,19 +1466,13 @@
             "type": "file",
             "name": "city-hero.tsx",
             "path": "components/city-hero.tsx",
-            "size": 2861
+            "size": 2895
           },
           {
             "type": "file",
             "name": "cookie-notice.tsx",
             "path": "components/cookie-notice.tsx",
             "size": 1783
-          },
-          {
-            "type": "file",
-            "name": "cost-calculator.tsx",
-            "path": "components/cost-calculator.tsx",
-            "size": 35270
           },
           {
             "type": "file",
@@ -1543,7 +1484,7 @@
             "type": "file",
             "name": "direct-request-form.tsx",
             "path": "components/direct-request-form.tsx",
-            "size": 5581
+            "size": 5703
           },
           {
             "type": "file",
@@ -1555,7 +1496,7 @@
             "type": "file",
             "name": "Hero.tsx",
             "path": "components/Hero.tsx",
-            "size": 3148
+            "size": 3205
           },
           {
             "type": "file",
@@ -1567,19 +1508,19 @@
             "type": "file",
             "name": "home-hero-cycle.tsx",
             "path": "components/home-hero-cycle.tsx",
-            "size": 762
+            "size": 788
           },
           {
             "type": "file",
             "name": "HomeHero.tsx",
             "path": "components/HomeHero.tsx",
-            "size": 3019
+            "size": 3252
           },
           {
             "type": "file",
             "name": "HomeUSPs.tsx",
             "path": "components/HomeUSPs.tsx",
-            "size": 2784
+            "size": 2765
           },
           {
             "type": "file",
@@ -1595,15 +1536,9 @@
           },
           {
             "type": "file",
-            "name": "lead-calculator.tsx",
-            "path": "components/lead-calculator.tsx",
-            "size": 17876
-          },
-          {
-            "type": "file",
             "name": "pb-direct-form.tsx",
             "path": "components/pb-direct-form.tsx",
-            "size": 9155
+            "size": 9326
           },
           {
             "type": "file",
@@ -1639,7 +1574,7 @@
             "type": "file",
             "name": "SeoStructuredData.tsx",
             "path": "components/SeoStructuredData.tsx",
-            "size": 3967
+            "size": 3968
           },
           {
             "type": "file",
@@ -1651,13 +1586,19 @@
             "type": "file",
             "name": "site-footer.tsx",
             "path": "components/site-footer.tsx",
-            "size": 3748
+            "size": 4060
           },
           {
             "type": "file",
             "name": "site-header.tsx",
             "path": "components/site-header.tsx",
-            "size": 6460
+            "size": 6489
+          },
+          {
+            "type": "file",
+            "name": "site-hero-background.tsx",
+            "path": "components/site-hero-background.tsx",
+            "size": 929
           },
           {
             "type": "file",
@@ -1669,7 +1610,7 @@
             "type": "file",
             "name": "why-probrandwacht-section.tsx",
             "path": "components/why-probrandwacht-section.tsx",
-            "size": 3038
+            "size": 3058
           }
         ]
       },
@@ -1677,13 +1618,13 @@
         "type": "dir",
         "name": "content",
         "path": "content",
-        "size": 61255,
+        "size": 70056,
         "children": [
           {
             "type": "dir",
             "name": "blog",
             "path": "content/blog",
-            "size": 54062,
+            "size": 63313,
             "children": [
               {
                 "type": "file",
@@ -1696,6 +1637,12 @@
                 "name": "brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx",
                 "path": "content/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx",
                 "size": 8548
+              },
+              {
+                "type": "file",
+                "name": "brandwacht-aanwezigheid-verantwoordelijkheid.mdx",
+                "path": "content/blog/brandwacht-aanwezigheid-verantwoordelijkheid.mdx",
+                "size": 4881
               },
               {
                 "type": "file",
@@ -1723,6 +1670,12 @@
               },
               {
                 "type": "file",
+                "name": "veiligheid-vraagt-om-nuance-niet-om-zwart-witdenken.mdx",
+                "path": "content/blog/veiligheid-vraagt-om-nuance-niet-om-zwart-witdenken.mdx",
+                "size": 4371
+              },
+              {
+                "type": "file",
                 "name": "wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
                 "path": "content/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
                 "size": 6844
@@ -1731,7 +1684,7 @@
                 "type": "file",
                 "name": "wat-kost-een-brandwacht-in-2025.mdx",
                 "path": "content/blog/wat-kost-een-brandwacht-in-2025.mdx",
-                "size": 6870
+                "size": 6869
               },
               {
                 "type": "file",
@@ -1745,7 +1698,7 @@
             "type": "file",
             "name": "faq.json",
             "path": "content/faq.json",
-            "size": 7193
+            "size": 6743
           }
         ]
       },
@@ -1773,7 +1726,7 @@
         "type": "dir",
         "name": "docs",
         "path": "docs",
-        "size": 5807,
+        "size": 5805,
         "children": [
           {
             "type": "file",
@@ -1785,7 +1738,7 @@
             "type": "file",
             "name": "TONE_OF_VOICE.md",
             "path": "docs/TONE_OF_VOICE.md",
-            "size": 2354
+            "size": 2352
           }
         ]
       },
@@ -1793,7 +1746,7 @@
         "type": "dir",
         "name": "lib",
         "path": "lib",
-        "size": 94057,
+        "size": 96660,
         "children": [
           {
             "type": "dir",
@@ -1847,7 +1800,7 @@
             "type": "dir",
             "name": "seo",
             "path": "lib/seo",
-            "size": 24497,
+            "size": 27102,
             "children": [
               {
                 "type": "file",
@@ -1859,19 +1812,19 @@
                 "type": "file",
                 "name": "commonFaqs.ts",
                 "path": "lib/seo/commonFaqs.ts",
-                "size": 8179
+                "size": 7918
               },
               {
                 "type": "file",
                 "name": "metadata.ts",
                 "path": "lib/seo/metadata.ts",
-                "size": 10936
+                "size": 13521
               },
               {
                 "type": "file",
                 "name": "seo-keywords.ts",
                 "path": "lib/seo/seo-keywords.ts",
-                "size": 2333
+                "size": 2614
               }
             ]
           },
@@ -2005,7 +1958,7 @@
             "type": "file",
             "name": "vakbondSanityCheck.ts",
             "path": "lib/vakbondSanityCheck.ts",
-            "size": 1943
+            "size": 1941
           }
         ]
       },
@@ -2265,13 +2218,13 @@
         "type": "dir",
         "name": "reports",
         "path": "reports",
-        "size": 164254,
+        "size": 265163,
         "children": [
           {
             "type": "file",
             "name": "content-consistency.json",
             "path": "reports/content-consistency.json",
-            "size": 4799
+            "size": 4187
           },
           {
             "type": "file",
@@ -2287,15 +2240,27 @@
           },
           {
             "type": "file",
+            "name": "eeat-report.json",
+            "path": "reports/eeat-report.json",
+            "size": 4258
+          },
+          {
+            "type": "file",
             "name": "eeat.json",
             "path": "reports/eeat.json",
-            "size": 10356
+            "size": 10279
           },
           {
             "type": "file",
             "name": "failsafe.json",
             "path": "reports/failsafe.json",
-            "size": 4513
+            "size": 4787
+          },
+          {
+            "type": "file",
+            "name": "seo_report.json",
+            "path": "reports/seo_report.json",
+            "size": 97701
           },
           {
             "type": "file",
@@ -2361,165 +2326,7 @@
             "type": "file",
             "name": "vakbond-sanity-report.json",
             "path": "reports/vakbond-sanity-report.json",
-            "size": 1519
-          }
-        ]
-      },
-      {
-        "type": "dir",
-        "name": "runway-video-project",
-        "path": "runway-video-project",
-        "size": 17333,
-        "children": [
-          {
-            "type": "dir",
-            "name": "exports",
-            "path": "runway-video-project/exports",
-            "size": 1735,
-            "children": [
-              {
-                "type": "file",
-                "name": "audition-markers.csv",
-                "path": "runway-video-project/exports/audition-markers.csv",
-                "size": 848
-              },
-              {
-                "type": "file",
-                "name": "premiere-markers.csv",
-                "path": "runway-video-project/exports/premiere-markers.csv",
-                "size": 887
-              }
-            ]
-          },
-          {
-            "type": "dir",
-            "name": "subtitles",
-            "path": "runway-video-project/subtitles",
-            "size": 1098,
-            "children": [
-              {
-                "type": "file",
-                "name": "master.srt",
-                "path": "runway-video-project/subtitles/master.srt",
-                "size": 552
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-01.srt",
-                "path": "runway-video-project/subtitles/sub-shot-01.srt",
-                "size": 77
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-02.srt",
-                "path": "runway-video-project/subtitles/sub-shot-02.srt",
-                "size": 96
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-03.srt",
-                "path": "runway-video-project/subtitles/sub-shot-03.srt",
-                "size": 97
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-04.srt",
-                "path": "runway-video-project/subtitles/sub-shot-04.srt",
-                "size": 108
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-05.srt",
-                "path": "runway-video-project/subtitles/sub-shot-05.srt",
-                "size": 77
-              },
-              {
-                "type": "file",
-                "name": "sub-shot-06.srt",
-                "path": "runway-video-project/subtitles/sub-shot-06.srt",
-                "size": 91
-              }
-            ]
-          },
-          {
-            "type": "dir",
-            "name": "voiceover",
-            "path": "runway-video-project/voiceover",
-            "size": 994,
-            "children": [
-              {
-                "type": "file",
-                "name": "voiceover-shot-01.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-01.txt",
-                "size": 45
-              },
-              {
-                "type": "file",
-                "name": "voiceover-shot-02.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-02.txt",
-                "size": 64
-              },
-              {
-                "type": "file",
-                "name": "voiceover-shot-03.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-03.txt",
-                "size": 65
-              },
-              {
-                "type": "file",
-                "name": "voiceover-shot-04.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-04.txt",
-                "size": 76
-              },
-              {
-                "type": "file",
-                "name": "voiceover-shot-05.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-05.txt",
-                "size": 45
-              },
-              {
-                "type": "file",
-                "name": "voiceover-shot-06.txt",
-                "path": "runway-video-project/voiceover/voiceover-shot-06.txt",
-                "size": 59
-              },
-              {
-                "type": "file",
-                "name": "voiceover.txt",
-                "path": "runway-video-project/voiceover/voiceover.txt",
-                "size": 640
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "production-checklist.md",
-            "path": "runway-video-project/production-checklist.md",
-            "size": 5505
-          },
-          {
-            "type": "file",
-            "name": "project-overview.json",
-            "path": "runway-video-project/project-overview.json",
-            "size": 2242
-          },
-          {
-            "type": "file",
-            "name": "runway-batch.jsonl",
-            "path": "runway-video-project/runway-batch.jsonl",
-            "size": 2887
-          },
-          {
-            "type": "file",
-            "name": "runway-prompts.txt",
-            "path": "runway-video-project/runway-prompts.txt",
-            "size": 1660
-          },
-          {
-            "type": "file",
-            "name": "shots.csv",
-            "path": "runway-video-project/shots.csv",
-            "size": 1212
+            "size": 884
           }
         ]
       },
@@ -2527,283 +2334,357 @@
         "type": "dir",
         "name": "scripts",
         "path": "scripts",
-        "size": 333943,
+        "size": 349228,
         "children": [
           {
-            "type": "file",
-            "name": "add-anchor.mjs",
-            "path": "scripts/add-anchor.mjs",
-            "size": 4457
+            "type": "dir",
+            "name": "content",
+            "path": "scripts/content",
+            "size": 104470,
+            "children": [
+              {
+                "type": "file",
+                "name": "build-cpi-json.mjs",
+                "path": "scripts/content/build-cpi-json.mjs",
+                "size": 1578
+              },
+              {
+                "type": "file",
+                "name": "check-copy.cjs",
+                "path": "scripts/content/check-copy.cjs",
+                "size": 5594
+              },
+              {
+                "type": "file",
+                "name": "checkCopy.ts",
+                "path": "scripts/content/checkCopy.ts",
+                "size": 8981
+              },
+              {
+                "type": "file",
+                "name": "content_audit.py",
+                "path": "scripts/content/content_audit.py",
+                "size": 4439
+              },
+              {
+                "type": "file",
+                "name": "content_conscious_audit.py",
+                "path": "scripts/content/content_conscious_audit.py",
+                "size": 8134
+              },
+              {
+                "type": "file",
+                "name": "content-consistency.v2.mjs",
+                "path": "scripts/content/content-consistency.v2.mjs",
+                "size": 10597
+              },
+              {
+                "type": "file",
+                "name": "copy-migration-check.v2.mjs",
+                "path": "scripts/content/copy-migration-check.v2.mjs",
+                "size": 5262
+              },
+              {
+                "type": "file",
+                "name": "freeze_site_copy.py",
+                "path": "scripts/content/freeze_site_copy.py",
+                "size": 9655
+              },
+              {
+                "type": "file",
+                "name": "generate-city-copy.mjs",
+                "path": "scripts/content/generate-city-copy.mjs",
+                "size": 27977
+              },
+              {
+                "type": "file",
+                "name": "launch-copy-check.ts",
+                "path": "scripts/content/launch-copy-check.ts",
+                "size": 7845
+              },
+              {
+                "type": "file",
+                "name": "taalSanity-check.ts",
+                "path": "scripts/content/taalSanity-check.ts",
+                "size": 6286
+              },
+              {
+                "type": "file",
+                "name": "vakbond-sanity-scan.ts",
+                "path": "scripts/content/vakbond-sanity-scan.ts",
+                "size": 8122
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "aider-fix-file.sh",
-            "path": "scripts/aider-fix-file.sh",
-            "size": 2667
+            "type": "dir",
+            "name": "notes",
+            "path": "scripts/notes",
+            "size": 463,
+            "children": [
+              {
+                "type": "file",
+                "name": "herstel freeze site copy.txt",
+                "path": "scripts/notes/herstel freeze site copy.txt",
+                "size": 48
+              },
+              {
+                "type": "file",
+                "name": "Tips & toggles.txt",
+                "path": "scripts/notes/Tips & toggles.txt",
+                "size": 415
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "aider-sanity.sh",
-            "path": "scripts/aider-sanity.sh",
-            "size": 2433
+            "type": "dir",
+            "name": "ops",
+            "path": "scripts/ops",
+            "size": 31173,
+            "children": [
+              {
+                "type": "file",
+                "name": "aider-fix-file.sh",
+                "path": "scripts/ops/aider-fix-file.sh",
+                "size": 2667
+              },
+              {
+                "type": "file",
+                "name": "aider-sanity.sh",
+                "path": "scripts/ops/aider-sanity.sh",
+                "size": 2433
+              },
+              {
+                "type": "file",
+                "name": "diagnose.js",
+                "path": "scripts/ops/diagnose.js",
+                "size": 5357
+              },
+              {
+                "type": "file",
+                "name": "failsafe.mjs",
+                "path": "scripts/ops/failsafe.mjs",
+                "size": 9476
+              },
+              {
+                "type": "file",
+                "name": "launch-check.mjs",
+                "path": "scripts/ops/launch-check.mjs",
+                "size": 9150
+              },
+              {
+                "type": "file",
+                "name": "verifyEnv.mjs",
+                "path": "scripts/ops/verifyEnv.mjs",
+                "size": 2090
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "audit-community.js",
-            "path": "scripts/audit-community.js",
-            "size": 4743
+            "type": "dir",
+            "name": "qa",
+            "path": "scripts/qa",
+            "size": 11593,
+            "children": [
+              {
+                "type": "file",
+                "name": "sanityCheck.mjs",
+                "path": "scripts/qa/sanityCheck.mjs",
+                "size": 6842
+              },
+              {
+                "type": "file",
+                "name": "siteConsistency-check.ts",
+                "path": "scripts/qa/siteConsistency-check.ts",
+                "size": 4751
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "build-cpi-json.mjs",
-            "path": "scripts/build-cpi-json.mjs",
-            "size": 1578
+            "type": "dir",
+            "name": "seo",
+            "path": "scripts/seo",
+            "size": 76911,
+            "children": [
+              {
+                "type": "file",
+                "name": "digitalSeoAudit.mjs",
+                "path": "scripts/seo/digitalSeoAudit.mjs",
+                "size": 9070
+              },
+              {
+                "type": "file",
+                "name": "eeat-check.mjs",
+                "path": "scripts/seo/eeat-check.mjs",
+                "size": 13482
+              },
+              {
+                "type": "file",
+                "name": "seo-check.mjs",
+                "path": "scripts/seo/seo-check.mjs",
+                "size": 1092
+              },
+              {
+                "type": "file",
+                "name": "seo-critical-summary.mjs",
+                "path": "scripts/seo/seo-critical-summary.mjs",
+                "size": 1990
+              },
+              {
+                "type": "file",
+                "name": "seo-dashboard.mjs",
+                "path": "scripts/seo/seo-dashboard.mjs",
+                "size": 9728
+              },
+              {
+                "type": "file",
+                "name": "seo-real-severity-summary.mjs",
+                "path": "scripts/seo/seo-real-severity-summary.mjs",
+                "size": 2085
+              },
+              {
+                "type": "file",
+                "name": "seo-upgrade.mjs",
+                "path": "scripts/seo/seo-upgrade.mjs",
+                "size": 6646
+              },
+              {
+                "type": "file",
+                "name": "seoAudit.mjs",
+                "path": "scripts/seo/seoAudit.mjs",
+                "size": 32818
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "check-copy.cjs",
-            "path": "scripts/check-copy.cjs",
-            "size": 5570
+            "type": "dir",
+            "name": "tone",
+            "path": "scripts/tone",
+            "size": 94327,
+            "children": [
+              {
+                "type": "file",
+                "name": "siteTone-and-snippets.ts",
+                "path": "scripts/tone/siteTone-and-snippets.ts",
+                "size": 16112
+              },
+              {
+                "type": "file",
+                "name": "tone-guard-autofix.mjs",
+                "path": "scripts/tone/tone-guard-autofix.mjs",
+                "size": 7701
+              },
+              {
+                "type": "file",
+                "name": "tone-guard.ts",
+                "path": "scripts/tone/tone-guard.ts",
+                "size": 15356
+              },
+              {
+                "type": "file",
+                "name": "toneAdvice-probrandwacht.ts",
+                "path": "scripts/tone/toneAdvice-probrandwacht.ts",
+                "size": 5180
+              },
+              {
+                "type": "file",
+                "name": "toneCheck-competitors.ts",
+                "path": "scripts/tone/toneCheck-competitors.ts",
+                "size": 7900
+              },
+              {
+                "type": "file",
+                "name": "toneCheck-url.ts",
+                "path": "scripts/tone/toneCheck-url.ts",
+                "size": 8272
+              },
+              {
+                "type": "file",
+                "name": "toneCheck.mjs",
+                "path": "scripts/tone/toneCheck.mjs",
+                "size": 4948
+              },
+              {
+                "type": "file",
+                "name": "toneCompare-master.ts",
+                "path": "scripts/tone/toneCompare-master.ts",
+                "size": 7504
+              },
+              {
+                "type": "file",
+                "name": "toneCompare-report.ts",
+                "path": "scripts/tone/toneCompare-report.ts",
+                "size": 5499
+              },
+              {
+                "type": "file",
+                "name": "toneProfile-analyzer.ts",
+                "path": "scripts/tone/toneProfile-analyzer.ts",
+                "size": 9654
+              },
+              {
+                "type": "file",
+                "name": "toneRewriter-probrandwacht.ts",
+                "path": "scripts/tone/toneRewriter-probrandwacht.ts",
+                "size": 6201
+              }
+            ]
           },
           {
-            "type": "file",
-            "name": "checkCopy.ts",
-            "path": "scripts/checkCopy.ts",
-            "size": 8065
-          },
-          {
-            "type": "file",
-            "name": "content_audit.py",
-            "path": "scripts/content_audit.py",
-            "size": 4439
-          },
-          {
-            "type": "file",
-            "name": "content_conscious_audit.py",
-            "path": "scripts/content_conscious_audit.py",
-            "size": 8134
-          },
-          {
-            "type": "file",
-            "name": "content-consistency.v2.mjs",
-            "path": "scripts/content-consistency.v2.mjs",
-            "size": 10565
-          },
-          {
-            "type": "file",
-            "name": "diagnose.js",
-            "path": "scripts/diagnose.js",
-            "size": 5357
-          },
-          {
-            "type": "file",
-            "name": "digitalSeoAudit.mjs",
-            "path": "scripts/digitalSeoAudit.mjs",
-            "size": 9070
-          },
-          {
-            "type": "file",
-            "name": "eeat-check.mjs",
-            "path": "scripts/eeat-check.mjs",
-            "size": 12725
-          },
-          {
-            "type": "file",
-            "name": "failsafe.mjs",
-            "path": "scripts/failsafe.mjs",
-            "size": 6198
-          },
-          {
-            "type": "file",
-            "name": "find-components.mjs",
-            "path": "scripts/find-components.mjs",
-            "size": 2028
-          },
-          {
-            "type": "file",
-            "name": "fix-next-metadata.mjs",
-            "path": "scripts/fix-next-metadata.mjs",
-            "size": 3111
-          },
-          {
-            "type": "file",
-            "name": "freeze_site_copy.py",
-            "path": "scripts/freeze_site_copy.py",
-            "size": 9655
-          },
-          {
-            "type": "file",
-            "name": "generate-city-copy.mjs",
-            "path": "scripts/generate-city-copy.mjs",
-            "size": 27969
-          },
-          {
-            "type": "file",
-            "name": "herstel freeze site copy.txt",
-            "path": "scripts/herstel freeze site copy.txt",
-            "size": 48
-          },
-          {
-            "type": "file",
-            "name": "launch-check.mjs",
-            "path": "scripts/launch-check.mjs",
-            "size": 9139
-          },
-          {
-            "type": "file",
-            "name": "launch-copy-check.ts",
-            "path": "scripts/launch-copy-check.ts",
-            "size": 7821
-          },
-          {
-            "type": "file",
-            "name": "optimize-images.mjs",
-            "path": "scripts/optimize-images.mjs",
-            "size": 1569
-          },
-          {
-            "type": "file",
-            "name": "polish-backgrounds.mjs",
-            "path": "scripts/polish-backgrounds.mjs",
-            "size": 2573
-          },
-          {
-            "type": "file",
-            "name": "repo-map.mjs",
-            "path": "scripts/repo-map.mjs",
-            "size": 6816
-          },
-          {
-            "type": "file",
-            "name": "sanityCheck.mjs",
-            "path": "scripts/sanityCheck.mjs",
-            "size": 6651
-          },
-          {
-            "type": "file",
-            "name": "seo-check.mjs",
-            "path": "scripts/seo-check.mjs",
-            "size": 1092
-          },
-          {
-            "type": "file",
-            "name": "seo-dashboard.mjs",
-            "path": "scripts/seo-dashboard.mjs",
-            "size": 9728
-          },
-          {
-            "type": "file",
-            "name": "seo-upgrade.mjs",
-            "path": "scripts/seo-upgrade.mjs",
-            "size": 6646
-          },
-          {
-            "type": "file",
-            "name": "seoAudit.mjs",
-            "path": "scripts/seoAudit.mjs",
-            "size": 32711
-          },
-          {
-            "type": "file",
-            "name": "siteConsistency-check.ts",
-            "path": "scripts/siteConsistency-check.ts",
-            "size": 4504
-          },
-          {
-            "type": "file",
-            "name": "siteTone-and-snippets.ts",
-            "path": "scripts/siteTone-and-snippets.ts",
-            "size": 16109
-          },
-          {
-            "type": "file",
-            "name": "strip-calculator.mjs",
-            "path": "scripts/strip-calculator.mjs",
-            "size": 4946
-          },
-          {
-            "type": "file",
-            "name": "taalSanity-check.ts",
-            "path": "scripts/taalSanity-check.ts",
-            "size": 6286
-          },
-          {
-            "type": "file",
-            "name": "Tips & toggles.txt",
-            "path": "scripts/Tips & toggles.txt",
-            "size": 415
-          },
-          {
-            "type": "file",
-            "name": "tone-guard-autofix.mjs",
-            "path": "scripts/tone-guard-autofix.mjs",
-            "size": 7701
-          },
-          {
-            "type": "file",
-            "name": "tone-guard.ts",
-            "path": "scripts/tone-guard.ts",
-            "size": 15353
-          },
-          {
-            "type": "file",
-            "name": "toneAdvice-probrandwacht.ts",
-            "path": "scripts/toneAdvice-probrandwacht.ts",
-            "size": 5180
-          },
-          {
-            "type": "file",
-            "name": "toneCheck-competitors.ts",
-            "path": "scripts/toneCheck-competitors.ts",
-            "size": 7896
-          },
-          {
-            "type": "file",
-            "name": "toneCheck-url.ts",
-            "path": "scripts/toneCheck-url.ts",
-            "size": 8273
-          },
-          {
-            "type": "file",
-            "name": "toneCheck.mjs",
-            "path": "scripts/toneCheck.mjs",
-            "size": 4949
-          },
-          {
-            "type": "file",
-            "name": "toneCompare-master.ts",
-            "path": "scripts/toneCompare-master.ts",
-            "size": 7504
-          },
-          {
-            "type": "file",
-            "name": "toneCompare-report.ts",
-            "path": "scripts/toneCompare-report.ts",
-            "size": 5499
-          },
-          {
-            "type": "file",
-            "name": "toneProfile-analyzer.ts",
-            "path": "scripts/toneProfile-analyzer.ts",
-            "size": 9651
-          },
-          {
-            "type": "file",
-            "name": "toneRewriter-probrandwacht.ts",
-            "path": "scripts/toneRewriter-probrandwacht.ts",
-            "size": 6201
-          },
-          {
-            "type": "file",
-            "name": "vakbond-sanity-scan.ts",
-            "path": "scripts/vakbond-sanity-scan.ts",
-            "size": 7831
-          },
-          {
-            "type": "file",
-            "name": "verifyEnv.mjs",
-            "path": "scripts/verifyEnv.mjs",
-            "size": 2087
+            "type": "dir",
+            "name": "utils",
+            "path": "scripts/utils",
+            "size": 30291,
+            "children": [
+              {
+                "type": "file",
+                "name": "add-anchor.mjs",
+                "path": "scripts/utils/add-anchor.mjs",
+                "size": 4463
+              },
+              {
+                "type": "file",
+                "name": "audit-community.js",
+                "path": "scripts/utils/audit-community.js",
+                "size": 4743
+              },
+              {
+                "type": "file",
+                "name": "find-components.mjs",
+                "path": "scripts/utils/find-components.mjs",
+                "size": 2028
+              },
+              {
+                "type": "file",
+                "name": "fix-next-metadata.mjs",
+                "path": "scripts/utils/fix-next-metadata.mjs",
+                "size": 3111
+              },
+              {
+                "type": "file",
+                "name": "optimize-images.mjs",
+                "path": "scripts/utils/optimize-images.mjs",
+                "size": 1575
+              },
+              {
+                "type": "file",
+                "name": "polish-backgrounds.mjs",
+                "path": "scripts/utils/polish-backgrounds.mjs",
+                "size": 2573
+              },
+              {
+                "type": "file",
+                "name": "repo-map.mjs",
+                "path": "scripts/utils/repo-map.mjs",
+                "size": 6834
+              },
+              {
+                "type": "file",
+                "name": "strip-calculator.mjs",
+                "path": "scripts/utils/strip-calculator.mjs",
+                "size": 4964
+              }
+            ]
           }
         ]
       },
@@ -2839,13 +2720,13 @@
         "type": "dir",
         "name": "styles",
         "path": "styles",
-        "size": 759,
+        "size": 900,
         "children": [
           {
             "type": "file",
             "name": "globals.css",
             "path": "styles/globals.css",
-            "size": 759
+            "size": 900
           }
         ]
       },
@@ -2985,12 +2866,6 @@
       },
       {
         "type": "file",
-        "name": "community-audit.txt",
-        "path": "community-audit.txt",
-        "size": 481
-      },
-      {
-        "type": "file",
         "name": "dev.log",
         "path": "dev.log",
         "size": 79
@@ -3029,7 +2904,7 @@
         "type": "file",
         "name": "next.config.js",
         "path": "next.config.js",
-        "size": 1614
+        "size": 1736
       },
       {
         "type": "file",
@@ -3047,7 +2922,7 @@
         "type": "file",
         "name": "package.json",
         "path": "package.json",
-        "size": 4962
+        "size": 5019
       },
       {
         "type": "file",
@@ -3065,19 +2940,7 @@
         "type": "file",
         "name": "repo-map.json",
         "path": "repo-map.json",
-        "size": 63334
-      },
-      {
-        "type": "file",
-        "name": "repo-map.md",
-        "path": "repo-map.md",
-        "size": 5883
-      },
-      {
-        "type": "file",
-        "name": "repo-map.tree.txt",
-        "path": "repo-map.tree.txt",
-        "size": 6402
+        "size": 92796
       },
       {
         "type": "file",
@@ -3089,25 +2952,13 @@
         "type": "file",
         "name": "seo_report.json",
         "path": "seo_report.json",
-        "size": 98706
+        "size": 2011
       },
       {
         "type": "file",
         "name": "seo_report.local.json",
         "path": "seo_report.local.json",
         "size": 98760
-      },
-      {
-        "type": "file",
-        "name": "seo_report.local.md",
-        "path": "seo_report.local.md",
-        "size": 15446
-      },
-      {
-        "type": "file",
-        "name": "seo_report.md",
-        "path": "seo_report.md",
-        "size": 47173
       },
       {
         "type": "file",

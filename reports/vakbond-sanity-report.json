@@ -1,13 +1,11 @@
 {
   "baseUrl": "http://localhost:3000",
   "strict": false,
-  "scannedAt": "2026-01-03T23:00:22.356Z",
+  "scannedAt": "2026-01-05T17:17:34.310Z",
   "paths": [
     "/",
     "/opdrachtgevers",
-    "/voor-brandwachten",
-    "/belangen",
-    "/over-ons"
+    "/blog"
   ],
   "pages": [
     {
@@ -33,31 +31,12 @@
       "status": 200
     },
     {
-      "url": "http://localhost:3000/voor-brandwachten",
+      "url": "http://localhost:3000/blog",
       "bad": [],
       "good": [
+        "/eerlijke/i",
+        "/eerlijk\\b/i",
         "/dba-bewust/i",
-        "/onafhankelijk/i",
-        "/contextafhankelijk/i"
-      ],
-      "ok": true,
-      "status": 200
-    },
-    {
-      "url": "http://localhost:3000/belangen",
-      "bad": [],
-      "good": [
-        "/dba-bewust/i",
-        "/onafhankelijk/i",
-        "/contextafhankelijk/i"
-      ],
-      "ok": true,
-      "status": 200
-    },
-    {
-      "url": "http://localhost:3000/over-ons",
-      "bad": [],
-      "good": [
         "/onafhankelijk/i"
       ],
       "ok": true,

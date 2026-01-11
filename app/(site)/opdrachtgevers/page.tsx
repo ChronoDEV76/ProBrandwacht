@@ -30,15 +30,20 @@ export default function OpdrachtgeversPage() {
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-4xl">
-            Inzet organiseren zonder ruis —{' '}
-            <span className="text-emerald-300">afspraken vooraf</span>, uitvoering strak.
+            Geen garantie, wel{" "}
+            <span className="text-emerald-300">rolvaste uitvoering</span>
+            die uitlegbaar blijft.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Veel “gedoe” ontstaat niet door de uitvoering, maar door onduidelijke rolverdeling, tariefafspraken en
+            Veel gedoe ontstaat niet door de uitvoering, maar door onduidelijke rolverdeling, tariefafspraken en
             verwachtingen. Opdrachtgevers werken direct samen met zelfstandige professionals, met vooraf
-            vastgelegde afspraken over rol, inzet en verantwoordelijkheden. Matching en beschikbaarheid blijven
+            vastgelegde afspraken over rol, inzet en verantwoordelijkheid. Matching en beschikbaarheid blijven
             contextafhankelijk.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            Of het nu gaat om industrie, evenementen, utiliteit of bouw: de lat blijft gelijk en de uitvoering
+            moet uitlegbaar zijn richting audit, OR en de mensen op locatie.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -88,6 +93,57 @@ export default function OpdrachtgeversPage() {
               <li>• Geen one-size-fits-all: uitvoering blijft contextafhankelijk.</li>
               <li>• Geen vervanging voor je eigen veiligheidsorganisatie — wél een werkbare schakel.</li>
             </ul>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+              Dit past bij je als
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• Je vooraf kunt uitleggen wie beslist en wie uitvoert.</li>
+              <li>• Je rolafbakening belangrijker vindt dan snelle bezetting.</li>
+              <li>• Je verantwoordelijkheden wilt kunnen verantwoorden richting audit/OR.</li>
+              <li>• Je samenwerking beoordeelt op gedrag en uitvoering, niet op beloftes.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+              Dit past waarschijnlijk niet als
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-slate-200">
+              <li>• Je volledige bezettingsgarantie of vaste roosters eist.</li>
+              <li>• Je inzet wilt afdekken met een bureau dat alle verantwoordelijkheid overneemt.</li>
+              <li>• Je afspraken pas na de start wilt uitwerken.</li>
+              <li>• Je liever snelheid boven uitlegbaarheid zet.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
+            <p className="text-sm font-semibold text-white">Herkenbare scenario's</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Complex risico, weinig tijd</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Je hebt snel inzet nodig, maar alleen als rol, gezag en rapportage vooraf kloppen.
+                  Dat is hier het eerste filter.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Rolverdeling vervaagt op uitvoering</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Afspraken zijn gemaakt, maar op locatie is niet helder wie beslist.
+                  Directe afstemming voorkomt dit gat.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Uitleg aan audit of OR</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Je moet kunnen laten zien wie wat deed en waarom.
+                  Dossierdiscipline maakt de keuze verdedigbaar.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">

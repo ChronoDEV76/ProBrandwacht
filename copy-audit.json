@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "appPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new/app",
+    "filesScanned": 82,
+    "filesWithTextish": 45,
+    "errors": 0,
+    "warnings": 0,
+    "info": 0,
+    "signals": {
+      "safety_leading": true,
+      "honesty_traceable": true,
+      "inclusion_intent_sentence": true
+    },
+    "matchCounts": {
+      "safety_leading": 1,
+      "honesty_traceable": 57,
+      "inclusion_intent_sentence": 1
+    },
+    "matchEvidence": {
+      "safety_leading": {
+        "file": "app/(site)/page.tsx",
+        "line": 54,
+        "excerpt": "Veiligheid blijft leidend. Iedereen mag zich aanmelden, zolang je intenties kloppen met onze manier van werken."
+      },
+      "honesty_traceable": {
+        "file": "app/(site)/belangen/page.tsx",
+        "line": 28,
+        "excerpt": "title: 'Transparantie over kosten',"
+      },
+      "inclusion_intent_sentence": {
+        "file": "app/(site)/page.tsx",
+        "line": 54,
+        "excerpt": "Veiligheid blijft leidend. Iedereen mag zich aanmelden, zolang je intenties kloppen met onze manier van werken."
+      }
+    }
+  },
+  "findings": []
+}

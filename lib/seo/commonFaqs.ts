@@ -4,12 +4,22 @@ export const generalPlatformFaq = [
   {
     question: 'Is ProBrandwacht een uitzendbureau of detacheerder?',
     answer:
-      'Nee. ProBrandwacht is een platform waar zelfstandige brandwachten en opdrachtgevers elkaar vinden. Je werkt direct met elkaar samen: tarief, taken en gezag spreken jullie zelf af. Het platform helpt om alles overzichtelijk, eerlijk en DBA-bewust te organiseren – zonder klassieke bemiddelingslagen, tussenlaag of verborgen marges.',
+      'Nee. ProBrandwacht is geen bureau en geen tussenlaag in de overeenkomst. Opdrachtgever en zelfstandige maken zelf afspraken over tarief, rol en gezag. Het platform helpt die afspraken vast te leggen zodat ze op de werkvloer uitlegbaar blijven - zonder verborgen marge of sturing.',
   },
   {
     question: 'Hoe werken betalingen via het platform?',
     answer:
       'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Die afspraken worden vastgelegd in een gezamenlijke context, zodat uitvoering en betaling uitlegbaar blijven. De manier van betalen is afhankelijk van de afspraken tussen partijen en kan per inzet verschillen.',
+  },
+  {
+    question: 'Welke samenwerkingen passen niet bij ProBrandwacht?',
+    answer:
+      'Samenwerkingen die volledige bezettingsgarantie eisen, een bureau als buffer willen of afspraken pas na start willen uitwerken. Als rol, gezag en grenzen niet vooraf te bepalen zijn, past het niet bij dit model.',
+  },
+  {
+    question: 'Hoe merk je in de praktijk wanneer verantwoordelijkheid ontbreekt?',
+    answer:
+      'Als beslissingen op locatie onduidelijk zijn, verslaglegging ontbreekt of afspraken steeds verschuiven. Dan is er geen rolvastheid en wordt uitvoering onvoorspelbaar. ProBrandwacht stuurt op vooraf vastgelegde afspraken die je op locatie kunt uitleggen.',
   },
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',

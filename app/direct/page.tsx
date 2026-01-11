@@ -19,15 +19,15 @@ export default function ProBrandwachtDirectPage() {
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
         <p className="mt-2 text-slate-700">
           Spoedlijn voor inzet van gecertificeerde brandwachten. Bij spoedinzet wordt gezocht naar beschikbare professionals die passen bij de context en het risicoprofiel van de opdracht. Duidelijk en DBA-bewust.
-          Uitvoering via <strong>Chrono4Solutions</strong>. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
-          Bij akkoord betaal je <strong>50% aan</strong> (facilitatiefee 10% inbegrepen).
+          Uitvoering via de spoedroute van ProBrandwacht. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
+          Bij akkoord betaal je <strong>50% aanbetaling</strong> (facilitatiefee 10% inbegrepen).
         </p>
         <p className="mt-1 text-sm text-slate-700">Spoedflow is in beta (technische route); beschikbaarheid blijft contextafhankelijk.</p>
         <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk—je staat er niet alleen voor.</p>
         <ul className="mt-2 space-y-1 text-sm text-slate-700">
           <li>• Dien je spoedaanvraag in (we delen alleen wat nodig is).</li>
-          <li>• We posten in het Slack-kanaal; beschikbare brandwachten reageren als het past.</li>
-          <li>• Je krijgt bevestiging en afspraken op één plek.</li>
+          <li>• We verwerken de aanvraag en stemmen af via e-mail.</li>
+          <li>• Je krijgt bevestiging en afspraken per mail.</li>
         </ul>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -65,13 +65,13 @@ export default function ProBrandwachtDirectPage() {
         </div>
 
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold">Spoedchat (live)</h2>
+          <h2 className="text-xl font-semibold">Spoedroute</h2>
           <p className="mt-1 text-slate-700 text-sm">
-            Start een live-chat met de pool. Handig bij acute inzet buiten kantoortijden.
+            Versnelde route voor acute inzet, met bevestiging en afstemming per e-mail.
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-slate-600">
             <li>Je bedrijf en contact worden ter verificatie vastgelegd.</li>
-            <li>Aanvragen worden gemodereerd door Chrono4Solutions.</li>
+            <li>Aanvragen worden beoordeeld door ons operations-team.</li>
           </ul>
           <Link
             href="/probrandwacht-direct-spoed"

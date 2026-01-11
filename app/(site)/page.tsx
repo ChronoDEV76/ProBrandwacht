@@ -29,16 +29,16 @@ export default function HomePage() {
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-5xl">
-            Directe samenwerking vraagt om{" "}
-            <span className="text-emerald-300">helderheid</span>
+            Geen garanties, wel{" "}
+            <span className="text-emerald-300">uitvoerbare afspraken</span>
             <br className="hidden md:block" />
-            vóórdat je afspraken maakt en uitvoert.
+            die je op de vloer kunt uitleggen.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
-            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
-            verantwoordelijkheid en ondernemerschap.
+            die directe samenwerking aankunnen en vooraf vastleggen wat er gebeurt als het spannend wordt.
+            Niet voor iedereen. Alleen voor partijen die verantwoordelijkheid dragen tot en met de uitvoering.
           </p>
 
           <p className="max-w-3xl text-xs leading-relaxed text-slate-300 md:text-sm">
@@ -47,8 +47,11 @@ export default function HomePage() {
             <strong className="font-semibold text-slate-100">geen</strong> bemiddelaar
             en biedt{" "}
             <strong className="font-semibold text-slate-100">geen</strong> garantie op inzet.
-            Het platform is bedoeld om inzicht te geven in hoe samenwerking contextafhankelijk en DBA-bewust
-            kan worden ingericht.
+            Wel: toetsbare rolverdeling, dossierdiscipline en afspraken die in de praktijk standhouden.
+          </p>
+
+          <p className="max-w-3xl text-xs leading-relaxed text-slate-300 md:text-sm">
+            Veiligheid blijft leidend. Iedereen mag zich aanmelden, zolang je intenties kloppen met onze manier van werken.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -76,16 +79,16 @@ export default function HomePage() {
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {[
               {
-                t: "Verkennen vóór afspraken",
-                d: "Helderheid over rol, afstemming en verantwoordelijkheid — vóórdat je samenwerkt.",
+                t: "Uitvoerbaar voor start",
+                d: "Afspraken die je op locatie kunt uitleggen: rol, gezag, grenzen en verslaglegging.",
               },
               {
-                t: "Spoed kan, afhankelijk",
-                d: "Voor situaties waar snelheid telt. Matching en opvolging zijn afhankelijk van beschikbaarheid en locatie.",
+                t: "Spoed kan, maar niet blind",
+                d: "Snel schakelen kan alleen als randvoorwaarden kloppen en verantwoordelijkheid expliciet is.",
               },
               {
-                t: "Uitlegbaarheid centraal",
-                d: "Transparantie over kosten en afspraken, zonder tarief-dwang. Jij maakt keuzes met elkaar.",
+                t: "Geen tariefdwang",
+                d: "Transparante fee en heldere afspraken. Tarief en voorwaarden bepaal je samen.",
               },
             ].map((x) => (
               <div
@@ -104,9 +107,10 @@ export default function HomePage() {
               Wat je wél en niet mag verwachten
             </p>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Geen garantie op inzet of bezetting — inzet is contextafhankelijk.</li>
-              <li>• Wel: kaders om samenwerking vooraf helder en uitlegbaar te maken.</li>
+              <li>• Niet geschikt als je volledige bezettingsgarantie of aansturing wilt.</li>
+              <li>• Wel: uitvoerbare afspraken die je kunt uitleggen onder druk.</li>
               <li>• Selectieve instroom; niet iedere aanmelding leidt tot deelname.</li>
+              <li>• Verwacht gedrag, dossierdiscipline en context-bewuste rolafbakening.</li>
             </ul>
           </div>
         </div>
@@ -121,12 +125,12 @@ export default function HomePage() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
                 Wat ProBrandwacht wél doet
               </p>
-              <h2 className="mt-2 text-2xl font-semibold text-white">Inzicht, kaders en verkenning</h2>
+              <h2 className="mt-2 text-2xl font-semibold text-white">Inzicht, kaders en uitvoering</h2>
               <ul className="mt-4 space-y-2 text-sm text-slate-200">
-                <li>• Inzicht geven in directe samenwerking zonder tussenkomst van een bureau.</li>
-                <li>• Kaders schetsen voor rolverdeling, afstemming en verantwoordelijkheid.</li>
-                <li>• Bewustwording rondom DBA, gezag en uitvoeringspraktijk.</li>
-                <li>• Ruimte bieden om intenties te verkennen — zonder verplichtingen.</li>
+                <li>• Afspraken die op de werkvloer kloppen, niet alleen op papier.</li>
+                <li>• Kaders voor rolverdeling, gezag, grenzen en verslaglegging.</li>
+                <li>• DBA-bewust werken zichtbaar maken in gedrag en uitvoering.</li>
+                <li>• Verkennen zonder verplichtingen, maar wel met duidelijke lat.</li>
               </ul>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
@@ -155,6 +159,7 @@ export default function HomePage() {
                 <li>• Geen partij in overeenkomsten.</li>
                 <li>• Geen garantie op inzet of inkomen.</li>
                 <li>• Geen sturing op tarief, inzet of planning.</li>
+                <li>• Geen buffer die verantwoordelijkheid overneemt als het misgaat.</li>
               </ul>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link

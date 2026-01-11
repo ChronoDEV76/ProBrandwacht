@@ -30,7 +30,7 @@ function assertEnv() {
     SUPABASE_SERVICE_ROLE_KEY,
     RESEND_API_KEY,
     RESEND_FROM,
-    OPS_EMAIL, // bv. sales@chronosolutions.nl
+    OPS_EMAIL,
   } = process.env;
 
   const missing: string[] = [];
@@ -54,11 +54,7 @@ function assertEnv() {
 }
 
 // simpele allowlist voor test e-mails die niet geratelimited worden
-const TEST_ALLOW = new Set([
-  "info@chronosolutions.nl",
-  "rokro@ziggo.nl",
-  // voeg hier jouw testadressen toe
-]);
+const TEST_ALLOW = new Set(["rokro@ziggo.nl"]);
 
 export async function POST(req: Request) {
   try {
@@ -119,7 +115,7 @@ export async function POST(req: Request) {
       // we proberen alsnog mail te sturen, maar geven 200 terug met waarschuwing
     }
 
-    // e-mail naar operations (Chrono4Solutions)
+    // e-mail naar operations
     const htmlOps = `
       <h2>Nieuwe directe inzetaanvraag</h2>
       <p><strong>Bedrijf:</strong> ${escapeHtml(body.company)}</p>
@@ -144,7 +140,7 @@ export async function POST(req: Request) {
       <p>Beste ${escapeHtml(body.contact)},</p>
       <p>Bedankt voor je aanvraag. We nemen snel contact op om de inzet af te stemmen.<br/>
       Indien het binnen <strong>ProSafetyMatch</strong> past, regelen we de inzet eerlijk en DBA-bewust. 
-      Is directe levering nodig, dan schakelen we via <strong>Chrono4Solutions</strong>.</p>
+      Als directe levering nodig is, stemmen we dat per mail met je af.</p>
       <p>— Team ProBrandwacht</p>
     `;
 
@@ -178,7 +174,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: process.env.RESEND_FROM,
         to: [body.email],
-        subject: "Ontvangen: directe inzetaanvraag — ProBrandwacht / Chrono4Solutions",
+        subject: "Ontvangen: directe inzetaanvraag — ProBrandwacht",
         html: htmlUser,
       }),
     });

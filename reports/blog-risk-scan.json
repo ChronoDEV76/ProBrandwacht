@@ -1,0 +1,329 @@
+{
+  "generatedAt": "2026-01-07T12:33:30.485Z",
+  "reports": [
+    {
+      "file": "content/blog/wanneer-is-een-brandwacht-verplicht-bij-evenementen.mdx",
+      "slug": "wanneer-is-een-brandwacht-verplicht-bij-evenementen",
+      "title": "Wanneer is een zelfstandige brandwacht verplicht bij evenementen?",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "--- title: Wanneer is een zelfstandige brandwacht verplicht bij evenementen? date: '2025-10-13' tldr: >- Een zelfstandige brandwacht is verplicht bij evenementen waar sprake is van v"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "nter 60% slug: wanneer-is-een-zelfstandige-brandwacht-verplicht-bij-evenementen updated: '2025-10-17' tags: - zelfstandige brandwacht verplicht - evenementen - vergunning - veilighei"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "pverlening Overige Plaatsen (BGBOP) – Overheid.nl](https://wetten.overheid.nl/BWBR0041297/2025-07-01/0) 3. [Brandweer Nederland – Evenement organiseren](https://www.brandweer.nl/onderwerpe"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "--- title: Wanneer is een zelfstandige brandwacht verplicht bij evenementen? date: '2025-10-13' tldr: >- Een zelfstandige brandwacht is verplicht b"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "t verplicht bij evenementen? date: '2025-10-13' tldr: >- Een zelfstandige brandwacht is verplicht bij evenementen waar sprake is van verhoogd brandrisico — denk aan open vuur, pyrotechn"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "is van het BGBOP en de HEV 2018. description: >- Wanneer is een zelfstandige brandwacht verplicht bij evenementen? Checklist volgens BGBOP en Handreiking Evenementenveiligheid 2018 met"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "t een buitenpodium imagePosition: center 60% slug: wanneer-is-een-zelfstandige-brandwacht-verplicht-bij-evenementen updated: '2025-10-17' tags: - zelfstandige brandwacht verplicht - eve"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "ndwacht-verplicht-bij-evenementen updated: '2025-10-17' tags: - zelfstandige brandwacht verplicht - evenementen - vergunning - veiligheidsregio - HEV 2018 - BGBOP --- # Wanneer"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "- veiligheidsregio - HEV 2018 - BGBOP --- # Wanneer is een zelfstandige brandwacht verplicht bij evenementen? De inhoud is getoetst aan de Omgevingswet, het Besluit brandveilig gebr"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "en de Handreiking Evenementenveiligheid 2018. ## Wanneer is een zelfstandige brandwacht verplicht bij evenementen? ## In het kort - **zelfstandige brandwacht verplicht bij evenementen me"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "tandige brandwacht verplicht bij evenementen? ## In het kort - **zelfstandige brandwacht verplicht bij evenementen met verhoogd brandrisico**, zoals open vuur, pyrotechniek of grote bezoek"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "* zijn. > 🔍 Er bestaat géén landelijke norm die exact voorschrijft hoeveel brandwachten verplicht zijn. > De verplichting ontstaat **via de vergunning** en de bijbehorende **risicobeoor"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "erkadvies | | **C** | Hoog risico | dance-event, vuurwerkshow | integraal veiligheidsplan verplicht | Bij **klasse B** en **C** kan de veiligheidsregio adviseren dat er **brandwachten of m"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "verleent de gemeente de vergunning. Daarin wordt expliciet vastgelegd of **brandwachten verplicht** zijn en hoeveel. --- ## 4. Certificaten en kwalificaties Afhankelijk van het risico"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "it. --- ## 7. Samenvattend Een zelfstandige brandwacht is **niet automatisch wettelijk verplicht**, maar kan wél verplicht worden gesteld via de **vergunning**, op basis van de **BGB"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "Een zelfstandige brandwacht is **niet automatisch wettelijk verplicht**, maar kan wél verplicht worden gesteld via de **vergunning**, op basis van de **BGBOP** en de **HEV 2018**. D"
+        },
+        {
+          "category": "Identifiability:case-story combo",
+          "severity": "medium",
+          "snippet": "Contextwoorden (klant/opdrachtgever/locatie/etc.) én datum gevonden: check of dit herleidbaar wordt."
+        }
+      ],
+      "score": 25,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/5-meest-gemaakte-fouten-bij-brandwacht-inhuur.mdx",
+      "slug": "5-meest-gemaakte-fouten-bij-brandwacht-inhuur",
+      "title": "5 meest gemaakte fouten bij zelfstandige brandwacht-inhuur",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "op wit staan. slug: 5-meest-gemaakte-fouten-bij-zelfstandige-brandwacht-inhuur updated: '2025-10-17' tags: - zelfstandige brandwacht inhuren - evenementenveiligheid - certificaten -"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "anpak schijnconstructies', href: 'https://www.nlarbeidsinspectie.nl/publicaties/rapporten/2018/06/15/aanpak-schijnconstructies-en-cao-naleving-2014-2018' }, { label: 'Veiligheidsre"
+        },
+        {
+          "category": "Tone:accusatory",
+          "severity": "medium",
+          "snippet": "derstaande checklist sluit daarop aan. ## 1. Certificaten niet checken Een veelgemaakte fout is het niet expliciet bespreken van verantwoordelijkheden en verwachtingen vooraf. Via Pr"
+        }
+      ],
+      "score": 9,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/brandwacht-aanwezigheid-verantwoordelijkheid.mdx",
+      "slug": "brandwacht-aanwezigheid-verantwoordelijkheid",
+      "title": "Brandwacht aanwezig zijn is iets anders dan verantwoordelijkheid dragen",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "id voor brandwachten en opdrachtgevers - neutraal, praktijkgericht en DBA-bewust. date: 2026-01-03 updated: 2026-01-03 author: 'ProBrandwacht' category: Wetgeving image: /blog-brandprevent"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "en opdrachtgevers - neutraal, praktijkgericht en DBA-bewust. date: 2026-01-03 updated: 2026-01-03 author: 'ProBrandwacht' category: Wetgeving image: /blog-brandpreventie-checklist.webp og"
+        },
+        {
+          "category": "Identifiability:case-story combo",
+          "severity": "medium",
+          "snippet": "Contextwoorden (klant/opdrachtgever/locatie/etc.) én datum gevonden: check of dit herleidbaar wordt."
+        }
+      ],
+      "score": 9,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/wat-kost-een-brandwacht-in-2025.mdx",
+      "slug": "wat-kost-een-brandwacht-in-2025",
+      "title": "ZZP brandwacht tarieven in 2025: wat zijn reële kosten voor 24/7 inzet?",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "uw en wettelijke kaders. Heldere bandbreedtes zonder concurrentievergelijkingen. date: '2025-12-14' author: ProBrandwacht image: /wat-kost-een-brandwacht-2025-card-v2.webp imageAlt: Tarief"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "dragen bij aan veilige inzet. slug: zzp-brandwacht-tarieven-2025-wat-is-reeel updated: '2025-10-20' --- import FeeVergelijk from \"@/components/mdx/FeeVergelijk\" # ZZP brandwacht tarieven"
+        },
+        {
+          "category": "Identifiability:case-story combo",
+          "severity": "medium",
+          "snippet": "Contextwoorden (klant/opdrachtgever/locatie/etc.) én datum gevonden: check of dit herleidbaar wordt."
+        }
+      ],
+      "score": 9,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/industriele-brandwacht-wat-houdt-het-in.mdx",
+      "slug": "industriele-brandwacht-wat-houdt-het-in",
+      "title": "Industriële brandwacht: wat houdt het in en waarom is het onmisbaar?",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": ", wanneer is inzet verplicht en welke wet- en regelgeving speelt hierbij een rol?\" date: \"2024-01-01\" author: \"ProBrandwacht\" cover: \"/blog-industriele-brandwacht.webp\" image: \"/blog-industr"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "isbaar?\" description: \"Wat doet een industriële zelfstandige brandwacht, wanneer is inzet verplicht en welke wet- en regelgeving speelt hierbij een rol?\" date: \"2024-01-01\" author: \"ProBran"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "aande brandveiligheidsvoorzieningen tijdelijk onvoldoende zijn. In veel gevallen is inzet verplicht op basis van wetgeving, vergunningseisen of verzekeringsvoorwaarden. #### Heet werk Bij"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": ", zoals verstikking, vergiftiging of explosiegevaar. In deze situaties is een buitenwacht verplicht die permanent contact houdt met de personen binnen en direct kan ingrijpen bij een incide"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "erbouwingen of tijdelijke functiewijzigingen van gebouwen kan de inzet van een brandwacht verplicht worden gesteld. Dit geldt met name voor locaties met grote aantallen bezoekers of minder"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "iële brandwachten is verankerd in meerdere wettelijke kaders. De Arbeidsomstandighedenwet verplicht werkgevers om passende maatregelen te nemen bij risicovolle werkzaamheden en een veilige"
+        }
+      ],
+      "score": 8,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving.mdx",
+      "slug": "brandveiligheidsmarkt-nederland-trends-en-regelgeving",
+      "title": "De brandveiligheidsmarkt in Nederland: trends en regelgeving",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": ", met aandacht voor brandwachten, regelgeving, innovaties en marktontwikkelingen.' date: '2025-11-16' category: Overig image: /brandvergrootglas.webp ogImage: /brandvergrootglas.webp imageAl"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "n of bij activiteiten met open vuur en vuurwerk vaak minimaal één zelfstandige brandwacht verplicht aanwezig. Ook bij risicovolle werkzaamheden in de industrie – zoals lassen of heetwerk –"
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "wikkelingen in regelgeving ### Rookmelderplicht woningen (2022) Sinds 1 juli 2022 is het verplicht om in elke woning op iedere verdieping een goedgekeurde rookmelder te hebben ([brandweer."
+        },
+        {
+          "category": "Legal:advice-like phrasing",
+          "severity": "low",
+          "snippet": "llaties en normen Voor specifieke situaties (zoals hoge parkeergarages) worden sprinklers verplicht. Het Bbl verwijst naar normen als NEN 2535 (brandmeldinstallaties), NEN 2575 (ontruimings"
+        }
+      ],
+      "score": 6,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/brandwacht-manschap-ab.mdx",
+      "slug": "brandwacht-manschap-ab",
+      "title": "Zelfstandige brandwacht Manschap A/B: taken & regels",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "raktische uitleg voor industrie en bouw met verwijzing naar Arbowet, VCA en SIR. date: '2025-10-16' author: ProBrandwacht category: Industrie image: /blog-industriele-brandwacht.webp ogIma"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "-een-zelfstandige-brandwacht-manschap-a-b-taken-verantwoordelijkheden-en-regels updated: '2025-10-17' --- # Zelfstandige brandwacht Manschap A/B: taken & regels ## Wat doet een zelfstandig"
+        }
+      ],
+      "score": 6,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/dba-en-brandwachten-wat-opdrachtgevers-moeten-weten.mdx",
+      "slug": "dba-en-brandwachten-wat-opdrachtgevers-moeten-weten",
+      "title": "DBA en brandwachten: wat opdrachtgevers moeten weten",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "e regels samenwerken. slug: dba-en-brandwachten-wat-opdrachtgevers-moeten-weten updated: '2025-10-17' tags: - wet dba - zelfstandige brandwacht inhuren - opdrachtgever in eerlijke same"
+        },
+        {
+          "category": "Identifiability:case-story combo",
+          "severity": "medium",
+          "snippet": "Contextwoorden (klant/opdrachtgever/locatie/etc.) én datum gevonden: check of dit herleidbaar wordt."
+        }
+      ],
+      "score": 6,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/veiligheid-vraagt-om-nuance-niet-om-zwart-witdenken.mdx",
+      "slug": "veiligheid-vraagt-om-nuance-niet-om-zwart-witdenken",
+      "title": "Veiligheid vraagt om nuance – niet om zwart-witdenken",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "sche verantwoordelijkheid en reflectie op wat op dat moment mogelijk en nodig is. date: 2026-01-05 updated: 2026-01-05 author: 'ProBrandwacht' category: Wetgeving image: /brandvergrootglas"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "kheid en reflectie op wat op dat moment mogelijk en nodig is. date: 2026-01-05 updated: 2026-01-05 author: 'ProBrandwacht' category: Wetgeving image: /brandvergrootglas.webp ogImage: /bran"
+        }
+      ],
+      "score": 6,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/zzp-direct-met-opdrachtgever-wet-dba.mdx",
+      "slug": "zzp-direct-met-opdrachtgever-wet-dba",
+      "title": "ZZP direct met opdrachtgever in eerlijke samenwerking: waarom het werkt",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "in eerlijke samenwerking grip op kosten, afspraken en Wet DBA zonder bureaumarge. date: 2025-10-17 updated: 2025-10-17 author: 'ProBrandwacht Redactie' category: Wetgeving image: /blog-bra"
+        },
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "king grip op kosten, afspraken en Wet DBA zonder bureaumarge. date: 2025-10-17 updated: 2025-10-17 author: 'ProBrandwacht Redactie' category: Wetgeving image: /blog-brandpreventie-checklis"
+        }
+      ],
+      "score": 6,
+      "rendered": null
+    },
+    {
+      "file": "content/blog/drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken.mdx",
+      "slug": "drie-soorten-brandwachten-en-waarom-ze-elkaar-versterken",
+      "title": "Drie soorten brandwachten – en waarom ze elkaar juist versterken",
+      "findings": [
+        {
+          "category": "Identifiability:date",
+          "severity": "medium",
+          "snippet": "ige inzet. slug: drie-soorten-brandwachten-en-waarom-ze-elkaar-juist-versterken updated: '2025-10-17' tags: - zelfstandige brandwacht - repressieve zelfstandige brandwacht - zzp zelfst"
+        }
+      ],
+      "score": 3,
+      "rendered": null
+    }
+  ]
+}

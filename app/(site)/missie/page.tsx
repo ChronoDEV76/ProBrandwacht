@@ -20,12 +20,17 @@ export default function MissiePage() {
             </span>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Veiligheid organiseer je met structuur, niet met ruis.
+              Veiligheid organiseer je met structuur, niet met beloftes.
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is gebouwd rondom één praktische keuze: samenwerking tussen zelfstandige brandwachten en opdrachtgevers
-              moet vooraf helder zijn, zodat uitvoering rustig en toetsbaar blijft.
+              ProBrandwacht is gebouwd rondom een praktische keuze: samenwerking tussen zelfstandige brandwachten
+              en opdrachtgevers moet vooraf helder zijn, zodat uitvoering rustig en toetsbaar blijft.
+            </p>
+
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              Professioneel betekent: vooraf uitleggen wat je niet doet als het misgaat.
+              Geen garanties, wel verantwoordelijkheid die je op locatie kunt uitleggen.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -54,6 +59,7 @@ export default function MissiePage() {
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               Rol, tarief en verantwoordelijkheid moeten vooraf kloppen. Dat maakt samenwerking uitlegbaar richting HR/OR,
               toezichthouders en vooral: richting de mensen op locatie.
+              Het gaat om gedrag onder druk, niet om mooie woorden.
             </p>
           </div>
 
@@ -61,7 +67,8 @@ export default function MissiePage() {
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">Wat we niet doen</p>
             <h2 className="mt-2 text-2xl font-semibold md:text-3xl">Geen macht via software</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Geen lock-in, geen exclusiviteit, geen verborgen afhankelijkheid. Het platform ondersteunt afspraken — het neemt ze niet over.
+              Geen lock-in, geen exclusiviteit, geen verborgen afhankelijkheid.
+              Het platform ondersteunt afspraken - het neemt ze niet over en neemt geen rol over bij uitvoering.
             </p>
           </div>
         </div>

@@ -2,12 +2,12 @@
   "tool": "content-consistency.v2",
   "root": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new",
   "strict": false,
-  "scannedAt": "2025-12-28T08:31:59.110Z",
+  "scannedAt": "2026-01-05T17:20:54.959Z",
   "summary": {
     "ok": 12,
     "warn": 2,
     "fail": 0,
-    "info": 11
+    "info": 8
   },
   "checks": [
     {
@@ -86,13 +86,6 @@
       "level": "info",
       "code": "ECONOMIC_SOFT",
       "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
-      "file": "app/(site)/tarief-berekenen/page.tsx",
-      "line": 84
-    },
-    {
-      "level": "info",
-      "code": "ECONOMIC_SOFT",
-      "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
       "file": "components/HomeUSPs.tsx",
       "line": 34
     },
@@ -102,20 +95,6 @@
       "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
       "file": "components/PlatformPricingNote.tsx",
       "line": 14
-    },
-    {
-      "level": "info",
-      "code": "ECONOMIC_SOFT",
-      "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
-      "file": "components/cost-calculator.tsx",
-      "line": 537
-    },
-    {
-      "level": "info",
-      "code": "ECONOMIC_SOFT",
-      "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
-      "file": "components/lead-calculator.tsx",
-      "line": 361
     },
     {
       "level": "info",
@@ -150,7 +129,7 @@
       "code": "ECONOMIC_SOFT",
       "message": "Economische term gevonden (/\\bplatformfee\\b/i)",
       "file": "lib/seo/metadata.ts",
-      "line": 162
+      "line": 249
     },
     {
       "level": "warn",

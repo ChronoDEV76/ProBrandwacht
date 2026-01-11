@@ -145,6 +145,40 @@ export function BrandwachtInhurenCityPage({
         </div>
       </HeroBackground>
 
+      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Herkenbare scenario's in {label}
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
+            Wanneer directe afstemming helpt
+          </h2>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Complex risico, weinig tijd</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Je moet in {label} snel schakelen, maar alleen als rol en gezag vooraf helder zijn.
+                Dat voorkomt discussies op locatie.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Rolverdeling vervaagt in de praktijk</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Afspraken lijken rond, maar verantwoordelijkheid blijft onduidelijk.
+                Directe afspraken maken het besluitvormingspad zichtbaar.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+              <p className="text-sm font-semibold text-white">Uitleg richting audit of OR</p>
+              <p className="mt-2 text-sm text-slate-200">
+                Je moet later kunnen uitleggen waarom je voor deze inzet koos. Dossierdiscipline
+                houdt die keuze verdedigbaar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-10">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">

@@ -109,7 +109,7 @@ export async function POST(req: Request) {
         ],
       }] : []),
       { type: "context", elements: [
-        { type: "mrkdwn", text: "_ProBrandwacht Direct — gemodereerd door Chrono4Solutions._" }
+        { type: "mrkdwn", text: "_ProBrandwacht Direct — gemodereerd door het operations-team._" }
       ]},
     ];
 
@@ -136,4 +136,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: err?.message || "Server error" }, { status: 500 });
   }
 }
-
