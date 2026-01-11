@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Vakbond Sanity Scan
         run: |
-          npx ts-node scripts/vakbond-sanity-scan.ts $BASE_URL
+          npx ts-node scripts/content/vakbond-sanity-scan.ts $BASE_URL
 
       - name: Upload JSON report
         if: always()
@@ -37,4 +37,3 @@ jobs:
         with:
           name: vakbond-sanity-report
           path: reports/vakbond-sanity-report.json
-
