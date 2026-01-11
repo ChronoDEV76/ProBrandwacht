@@ -43,7 +43,7 @@ export default function OpdrachtgeversPage() {
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             Of het nu gaat om industrie, evenementen, utiliteit of bouw: de lat blijft gelijk en de uitvoering
-            moet uitlegbaar zijn richting audit, OR en de mensen op locatie.
+            moet uitlegbaar zijn richting audit, OR, inspectie of verzekeraar.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -120,6 +120,17 @@ export default function OpdrachtgeversPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
+            <p className="text-sm font-semibold text-white">Voor wie dit vaak relevant is</p>
+            <ul className="mt-3 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
+              <li>• Gemeentelijke evenementenorganisaties met tijdelijke risico&apos;s.</li>
+              <li>• Bouwers en projectontwikkelaars met wisselende inzetcontext.</li>
+              <li>• Facility managers op industriële of logistieke locaties.</li>
+              <li>• Vastgoedbeheerders met onderhouds- of verbouwtrajecten.</li>
+              <li>• Organisaties waar DBA en aansprakelijkheid zwaar wegen.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
             <p className="text-sm font-semibold text-white">Herkenbare scenario&apos;s</p>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
@@ -141,6 +152,41 @@ export default function OpdrachtgeversPage() {
                 <p className="mt-2 text-sm text-slate-200">
                   Je moet kunnen laten zien wie wat deed en waarom.
                   Dossierdiscipline maakt de keuze verdedigbaar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
+            <p className="text-sm font-semibold text-white">Wat je kunt aantonen als het erop aankomt</p>
+            <ul className="mt-3 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
+              <li>• Wie besluit, wie uitvoert en waar de verantwoordelijkheid ligt.</li>
+              <li>• Welke randvoorwaarden vooraf zijn afgestemd (toegang, meldpunt, verslaglegging).</li>
+              <li>• Wie aanspreekbaar is bij vragen van audit, OR of inspectie.</li>
+              <li>• Hoe rapportage en overdracht zijn vastgelegd.</li>
+              <li>• Waarom keuzes passen bij risico, context en inzetduur.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
+            <p className="text-sm font-semibold text-white">Praktische voorbeelden</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Tijdelijke installatie bij evenement</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Extra toezicht bij op- en afbouw met duidelijke rolafbakening en korte rapportagelijnen.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Industrieel onderhoud met uitvalmeldingen</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Tijdelijke vervanging bij uitval van brandmeld- of detectiesystemen, inclusief overdracht.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <p className="text-sm font-semibold text-white">Bouw- of renovatieproject met afwijkingen</p>
+                <p className="mt-2 text-sm text-slate-200">
+                  Inzet rond werken in risicogebieden met heldere randvoorwaarden en aanspreekpunten.
                 </p>
               </div>
             </div>
