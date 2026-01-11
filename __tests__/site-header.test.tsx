@@ -24,13 +24,13 @@ vi.mock('next/link', () => {
 describe('SiteHeader', () => {
   it('renders brand and primary links', () => {
     render(<SiteHeader />)
-    expect(screen.getByText('ProBrandwacht.nl')).toBeInTheDocument()
+    expect(screen.getByText('ProBrandwacht')).toBeInTheDocument()
     const blogLinks = screen.getAllByRole('link', { name: /blog/i })
     expect(blogLinks.some(link => link.getAttribute('href') === '/blog')).toBe(true)
     const aboutLinks = screen.getAllByRole('link', { name: /over ons/i })
     expect(aboutLinks.some(link => link.getAttribute('href') === '/over-ons')).toBe(true)
 
-    const ctaLinks = screen.getAllByRole('link', { name: /meld je aan/i })
+    const ctaLinks = screen.getAllByRole('link', { name: /ik herken/i })
     expect(ctaLinks.length).toBeGreaterThan(0)
     expect(ctaLinks.every(link => link.getAttribute('href') === '/zzp/aanmelden')).toBe(true)
   })
