@@ -36,7 +36,7 @@ const nextConfig = {
       },
       {
         source: '/tarief-berekenen',
-        destination: '/voor-brandwachten',
+        destination: '/blog/wat-kost-een-brandwacht-in-2025',
         permanent: true,
       },
       {

@@ -52,9 +52,19 @@ export default function ContactPage() {
               Voeg in je bericht toe: context (event/industrie/bouw), locatie, gewenste inzetduur, en wat er nu onduidelijk is.
               Dan krijg je een antwoord dat direct bruikbaar is.
             </p>
-            <p className="mt-4 text-xs text-slate-400">
-              (Je eigen contactformulier/gegevens kun je hier laten renderen, afhankelijk van je componenten.)
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-12">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Verkennende intake</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            Geen inschrijving of verkooppraat. Eerst toetsen of de vraag past en uitvoerbaar is.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Cta id="brandwacht_interest_waitlist" />
+            <Cta id="opdrachtgever_explore" />
           </div>
         </div>
       </section>

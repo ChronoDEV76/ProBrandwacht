@@ -166,8 +166,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto max-w-5xl px-4 pb-2">
         <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
           <p>
-            ProBrandwacht is geen klassiek bureau. We bewaken de uitvoerbaarheid van brandveiligheid en
-            selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk
+            ProBrandwacht is geen klassiek bureau. We toetsen of inzet en rolverdeling in de praktijk kloppen
+            en selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk
             en hangt af van beschikbaarheid en afspraken tussen partijen. Je verkent hier vooral de kaders:
             rolverdeling, afstemming en verantwoordelijkheid.
           </p>
@@ -208,19 +208,13 @@ export default function CityPage({ params }: { params: { city: string } }) {
             }
           />
           <div className="flex flex-wrap justify-center gap-3">
-            <Cta id="primary_select" />
+            <Cta id="brandwacht_learn_selection" />
+            <Cta id="opdrachtgever_fit_your_case" />
             <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
             {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
           </div>
         </div>
       </HeroBackground>
-
-      <div className="fixed bottom-4 left-4 right-4 z-20 md:hidden">
-        <Cta
-          id="primary_select_compact"
-          className="w-full rounded-full border-white/30 px-4 py-3 text-sm shadow-lg shadow-emerald-500/30"
-        />
-      </div>
 
       <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 pt-6 md:flex-row md:items-center">
         <div className="flex-1 space-y-3">
@@ -245,8 +239,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="primary_select" className="rounded-full px-4 py-2" />
+            <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
             <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
+            <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>
 
@@ -260,9 +255,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <li>- DBA-bewust samenwerken zonder onnodige schakels.</li>
           </ul>
 
-          <div className="mt-4">
-            <Cta id="opdrachtgever_fit_your_case" />
-          </div>
         </div>
       </section>
 
@@ -346,8 +338,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
             <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
-            <Cta id="about_kaders_intentie" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
-            <Cta id="secondary_steden_overview" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
+            <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>
       </section>

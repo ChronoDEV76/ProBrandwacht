@@ -141,7 +141,8 @@ export function BrandwachtInhurenCityPage({
             }
           />
           <div className="flex flex-wrap justify-center gap-3">
-            <Cta id="tertiary_contact_exploratory" />
+            <Cta id="brandwacht_learn_selection" />
+            <Cta id="opdrachtgever_fit_your_case" />
             <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
             {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
           </div>
@@ -219,9 +220,9 @@ export function BrandwachtInhurenCityPage({
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
+            <Cta id="brandwacht_learn_selection" />
             <Cta id="opdrachtgever_fit_your_case" />
-            <Cta id="about_kaders_intentie" className="border-white/20" />
-            <Cta id="secondary_steden_overview" className="border-white/20" />
+            <Cta id="secondary_why_no" />
           </div>
         </div>
       </section>

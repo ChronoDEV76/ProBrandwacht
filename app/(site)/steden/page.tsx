@@ -47,7 +47,7 @@ export default function StedenIndexPage() {
             <div className="flex flex-wrap gap-3 pt-2">
               <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
               <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
-              <Cta id="about_kaders_intentie" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
+              <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
             </div>
 
             <p className="pt-1 text-xs text-slate-400">
