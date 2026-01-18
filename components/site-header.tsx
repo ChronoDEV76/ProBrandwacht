@@ -57,12 +57,6 @@ export default function SiteHeader() {
               <span className="opacity-85">Spoedinzet op basis van beschikbaarheid</span>
             </Link>
           ) : null}
-
-          <Cta
-            id="primary_select_compact"
-            ariaLabel="Dit past bij mijn manier van werken"
-            className="rounded-md border-white/60 bg-transparent px-3 py-1.5 text-xs tracking-tight text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-          />
         </div>
 
         <MobileMenu currentPath={currentPath} />
@@ -122,13 +116,6 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
           </div>
         ) : null}
 
-        <div className="border-t border-white/15 px-4 py-3">
-          <Cta
-            id="primary_select_compact"
-            ariaLabel="Dit past bij mijn manier van werken"
-            className="w-full rounded-md border-white/60 bg-transparent px-3 py-2 text-sm text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-          />
-        </div>
       </div>
     </details>
   )
