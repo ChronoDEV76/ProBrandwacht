@@ -250,6 +250,7 @@ const RULES: Rule[] = [
     title: "Te absolute beloftes (‘altijd’, ‘zeker’, ‘binnen enkele minuten’)",
     why: "Voorkom harde beloftes die je (nog) niet kunt garanderen.",
     re: /\b(altijd|100%|zeker|gegarandeerd|binnen\s+enkele\s+minuten|direct\s+beschikbaar|nooit)\b/gi,
+    allowIfAlsoMatchesAny: [/\baltijd\s+vooraf\s+transparant\s+afgestemd\b/i],
     replacement: "Gebruik nuance: ‘vaak’, ‘meestal’, ‘waar mogelijk’, ‘indicatief’, ‘afhankelijk van beschikbaarheid’.",
   },
 ];
