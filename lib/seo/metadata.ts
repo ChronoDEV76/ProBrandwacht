@@ -51,6 +51,7 @@ export const routeMeta: Record<string, RouteMeta> = {
     description:
       'Verkennende intake voor zelfstandigen. Geen klassiek bureau en geen garantie op inzet, wel duidelijkheid over uitgangspunten en selectie.',
     keywords: [...seoKeywordClusters.zzpFreelance, ...seoKeywordClusters.platform],
+    robots: { index: false, follow: false },
   },
 
   '/opdrachtgevers': {
@@ -74,6 +75,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.processSpeed,
     ],
+    robots: { index: false, follow: false },
   },
 
   '/platform': {
@@ -229,6 +231,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.tariefInzicht,
       ...seoKeywordClusters.platform,
     ],
+    robots: { index: false, follow: false },
   },
 
   '/voor-brandwachten/aanmelden': {
@@ -241,6 +244,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'zelfstandige brandwacht aanmelden',
       ...seoKeywordClusters.positioning,
     ],
+    robots: { index: false, follow: false },
   },
 
   '/voor-brandwachten': {

@@ -6,10 +6,10 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 const description =
-  'Werk als een professional. Ondernemend en vrij. Meld je gratis aan als zzp-brandwacht, bepaal je tarief en kies opdrachten die bij je passen — DBA-bewust en eerlijk.'
+  'Verkennende intake voor zelfstandige brandwachten. Geen inschrijving en geen garanties, wel toetsen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.'
 
 export const metadata = {
-  title: 'ZZP brandwacht aanmelden | ProBrandwacht',
+  title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
   description,
   keywords: [
     'brandwacht',
@@ -23,17 +23,18 @@ export const metadata = {
     languages: { 'nl-NL': canonicalUrl },
   },
   openGraph: {
-    title: 'ZZP brandwacht aanmelden | ProBrandwacht',
+    title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
     description,
     url: canonicalUrl,
     images: [{ url: ogImage, width: 1200, height: 630, alt: 'ProBrandwacht.nl' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZZP brandwacht aanmelden | ProBrandwacht',
+    title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
     description,
     images: [ogImage],
   },
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {
@@ -49,7 +50,7 @@ export default function Page() {
 
   const heading = (
     <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-      Aanmelden als zelfstandige brandwacht
+      Verkennende intake voor zelfstandige brandwachten
     </h1>
   )
 
