@@ -31,7 +31,8 @@ export default function VoorBrandwachtenAanmeldenPage() {
             Belangrijk om te weten
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
-            <li>• ProBrandwacht is een verkennend platform — geen bureau en geen bemiddelaar.</li>
+            <li>• ProBrandwacht is een verkennend platform - geen klassiek bureau en geen tussenlaag.</li>
+            <li>• We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.</li>
             <li>• We doen geen garantie op inzet: samenwerking en inzet blijven contextafhankelijk.</li>
             <li>• Aanmelding = wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
             <li>• Doel: DBA-bewuste, uitlegbare afspraken en professioneel gedrag in de praktijk.</li>

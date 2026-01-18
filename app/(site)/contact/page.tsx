@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/contact')
@@ -20,29 +20,15 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Snelste route: kies eerst de juiste context. De meeste vragen gaan over rolverdeling, afspraken vooraf
-              en hoe je samenwerking professioneel en uitlegbaar organiseert.
+              Wij zijn geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat er inzet is.
+              Snelste route: kies eerst de juiste context. De meeste vragen gaan over rolverdeling, afspraken
+              vooraf en hoe je samenwerking professioneel en uitlegbaar organiseert.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Ik ben brandwacht
-              </Link>
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Ik ben opdrachtgever
-              </Link>
-              <Link
-                href="/faq"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Eerst de FAQ
-              </Link>
+              <Cta id="primary_select" />
+              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
+              <Cta id="secondary_faq" />
             </div>
           </div>
         </div>

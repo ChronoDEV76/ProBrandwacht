@@ -2,17 +2,15 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
+import { Cta } from '@/components/Cta'
 
 const LINKS = [
   { href: '/voor-brandwachten', label: 'Voor brandwachten' },
   { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
-  { href: '/belangen', label: 'Belangen' },
+  { href: '/waarom-wij-soms-nee-zeggen', label: 'Waarom wij soms nee zeggen' },
   { href: '/blog', label: 'Blog / Kennisbank' },
   { href: '/over-ons', label: 'Over ons' },
 ]
-
-const CTA_LABEL = 'Ik herken mijzelf, dit past'
-const CTA_TEXT_COMPACT = 'Ik herken mijzelf'
 
 export default function SiteHeader() {
   const headerList = headers()
@@ -60,14 +58,11 @@ export default function SiteHeader() {
             </Link>
           ) : null}
 
-          <a
-            href="/zzp/aanmelden"
-            aria-label={CTA_LABEL}
-            className="inline-flex items-center rounded-md border border-white/60 bg-transparent px-3 py-1.5 text-xs font-semibold tracking-tight text-white shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-          >
-            <span className="xl:hidden">{CTA_TEXT_COMPACT}</span>
-            <span className="hidden xl:inline">{CTA_LABEL}</span>
-          </a>
+          <Cta
+            id="primary_select_compact"
+            ariaLabel="Dit past bij mijn manier van werken"
+            className="rounded-md border-white/60 bg-transparent px-3 py-1.5 text-xs tracking-tight text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          />
         </div>
 
         <MobileMenu currentPath={currentPath} />
@@ -128,13 +123,11 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         ) : null}
 
         <div className="border-t border-white/15 px-4 py-3">
-          <a
-            href="/zzp/aanmelden"
-            aria-label={CTA_LABEL}
-            className="inline-flex w-full items-center justify-center rounded-md border border-white/60 bg-transparent px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-          >
-            <span className="max-w-[22ch] text-center leading-snug">{CTA_LABEL}</span>
-          </a>
+          <Cta
+            id="primary_select_compact"
+            ariaLabel="Dit past bij mijn manier van werken"
+            className="w-full rounded-md border-white/60 bg-transparent px-3 py-2 text-sm text-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          />
         </div>
       </div>
     </details>

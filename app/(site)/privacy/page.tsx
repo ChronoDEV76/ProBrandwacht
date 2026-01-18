@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/privacy')
@@ -21,22 +21,12 @@ export default function PrivacyPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is niet gebouwd om zoveel mogelijk data te verzamelen. Het is gebouwd om afspraken, rolverdeling
-              en professionaliteit zichtbaar te maken — met minimale gegevens en maximale controle voor de gebruiker.
+              en professionaliteit zichtbaar te maken - met minimale gegevens en maximale controle voor de gebruiker.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Bekijk de kaders
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Vraag stellen
-              </Link>
+              <Cta id="about_kaders_intentie" />
+              <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
             </div>
           </div>
         </div>

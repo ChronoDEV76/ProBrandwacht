@@ -1,5 +1,6 @@
 import clsx from "clsx"
-import Link from "next/link"
+
+import { Cta } from "@/components/Cta"
 
 type HomeHeroProps = {
   className?: string
@@ -42,18 +43,14 @@ export default function HomeHero({ className }: HomeHeroProps) {
 
           {/* CTA buttons */}
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/zzp/aanmelden"
-              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-white/25 bg-white/5 px-4 py-2.75 text-sm font-semibold text-white shadow-lg shadow-slate-950/20 transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40"
-            >
-              Ik wil onderzoeken of deze manier van samenwerken bij mij past
-            </Link>
-            <Link
-              href="/belangen"
-              className="inline-flex flex-1 items-center justify-center rounded-2xl border border-white/25 bg-white/5 px-4 py-2.75 text-sm font-semibold text-slate-50 transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/40"
-            >
-              Ik wil de kaders begrijpen
-            </Link>
+            <Cta
+              id="primary_select"
+              className="flex-1 rounded-2xl border-white/25 bg-white/5 px-4 py-2.5 text-white shadow-lg shadow-slate-950/20 focus-visible:ring-2 focus-visible:ring-white/40"
+            />
+            <Cta
+              id="about_kaders_intentie"
+              className="flex-1 rounded-2xl border-white/25 bg-white/5 px-4 py-2.5 text-slate-50 focus-visible:ring-2 focus-visible:ring-white/40"
+            />
           </div>
           <p className="mt-2 text-[11px] text-slate-400">
             Je werkt zelfstandig, met ruimte voor eigen keuzes én met verantwoordelijkheid voor hoe die keuzes op de werkvloer worden ingevuld.

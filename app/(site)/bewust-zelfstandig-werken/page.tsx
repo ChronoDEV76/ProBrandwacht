@@ -1,3 +1,5 @@
+import { Cta } from '@/components/Cta'
+
 export default function BewustZelfstandigWerkenPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
@@ -13,8 +15,9 @@ export default function BewustZelfstandigWerkenPage() {
             weten waar jouw verantwoordelijkheid begint - en waar die eindigt.
           </p>
           <p className="text-sm text-slate-400">
-            ProBrandwacht is een selectief platform, geen bureau. Deze pagina
-            helpt duiden wat zelfstandig werken in de praktijk vraagt.
+            ProBrandwacht is een selectief platform, geen bureau. We bewaken
+            uitvoerbaarheid en rolhelderheid. Deze pagina helpt duiden wat
+            zelfstandig werken in de praktijk vraagt.
           </p>
         </header>
 
@@ -77,6 +80,10 @@ export default function BewustZelfstandigWerkenPage() {
             Twijfel je of dit bij je past? Dan gaan we daar graag open over in
             gesprek. Liever helder vooraf, dan ruis achteraf.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Cta id="primary_select" />
+            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+          </div>
         </div>
       </section>
     </main>

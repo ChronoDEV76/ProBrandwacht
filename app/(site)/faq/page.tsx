@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
@@ -8,9 +8,18 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/faq')
 
 export default function FaqPage() {
+  const faqItems = [
+    ...generalPlatformFaq,
+    {
+      question: 'Zijn jullie een klassiek bureau?',
+      answer:
+        'Nee. We plaatsen niet op volume. We bewaken uitvoerbaarheid en rolhelderheid en zeggen soms nee als voorwaarden niet kloppen.',
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
-      <SeoStructuredData faqs={generalPlatformFaq.slice(0, 6)} />
+      <SeoStructuredData faqs={faqItems.slice(0, 7)} />
 
       {/* HERO */}
       <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -26,29 +35,14 @@ export default function FaqPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is ingericht rond een simpele eis: samenwerking moet vooraf kloppen en achteraf
-              uitlegbaar blijven — zonder bemiddeling, sturing of schijnzekerheden. Antwoorden blijven
+              uitlegbaar blijven - zonder tussenlagen, sturing of schijnzekerheden. Antwoorden blijven
               contextafhankelijk en sluiten aan op de afspraken die jullie samen maken.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Route voor brandwachten
-              </Link>
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Route voor opdrachtgevers
-              </Link>
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Bekijk de kaders
-              </Link>
+              <Cta id="brandwacht_learn_selection" />
+              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
+              <Cta id="about_kaders_intentie" className="border-white/20" />
             </div>
           </div>
         </div>
@@ -60,7 +54,7 @@ export default function FaqPage() {
           <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">FAQ</h2>
 
           <ul className="mt-5 space-y-4">
-            {generalPlatformFaq.map((f) => (
+            {faqItems.map((f) => (
               <li key={f.question} className="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
                 <p className="text-sm font-semibold text-slate-50">{f.question}</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-200">{f.answer}</p>

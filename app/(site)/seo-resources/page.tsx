@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+
+import { Cta } from '@/components/Cta'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { authoritativeSources } from '@/lib/seo/authoritative-sources'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
-export const metadata: Metadata = getRouteMetadata('/seo-resources');
+
+export const metadata: Metadata = getRouteMetadata('/seo-resources')
 
 
 export default function SeoResourcesPage() {
@@ -33,7 +36,7 @@ export default function SeoResourcesPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Deze SEO-hulpmiddelen zijn gemaakt vanuit dezelfde visie als het platform:
-            eerlijk, uitlegbaar en gericht op duurzame samenwerking — niet op snelle trucjes.
+            eerlijk, uitlegbaar en gericht op duurzame samenwerking - niet op snelle trucjes.
           </p>
     
           <p className="text-sm text-slate-600">
@@ -82,12 +85,8 @@ export default function SeoResourcesPage() {
         </section>
 
         <section className="flex flex-wrap gap-3">
-          <Link href="/opdrachtgevers" className="rounded-md bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-brand-700/90">
-            zelfstandige brandwacht inhuren
-          </Link>
-          <Link href="/zzp/aanmelden" className="rounded-md border border-brand-200 px-4 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50">
-            Ik wil verkennen als brandwacht
-          </Link>
+          <Cta id="opdrachtgever_fit_your_case" className="rounded-md px-5 py-3" />
+          <Cta id="primary_select_compact" className="rounded-md px-4 py-2" />
         </section>
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

@@ -1,9 +1,9 @@
 // components/Hero.tsx
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { Cta } from "@/components/Cta";
 const taglines = [
   "Eerlijk en eerlijk werken met zicht op tariefopbouw en afspraken.",
   "Wij matchen expertise aan jouw opdracht.",
@@ -54,12 +54,10 @@ export default function Hero() {
 
           {/* CTA’s */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/zzp/aanmelden"
-              className="inline-flex h-11 items-center rounded-md border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-            >
-              Ik wil onderzoeken of deze manier van samenwerken bij mij past
-            </Link>
+            <Cta
+              id="primary_select"
+              className="h-11 rounded-md border-slate-300 bg-white px-5 text-slate-700 hover:bg-slate-50"
+            />
           </div>
 
           {/* trust badges */}
@@ -68,7 +66,7 @@ export default function Hero() {
               Rijksgediplomeerd en/of repressief
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Eerlijke tarieven. Direct contact. Snel geregeld.
+              Eerlijke tarieven. Direct contact. Helder geregeld.
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Bij beschikbaarheid, Snel inzetbaar

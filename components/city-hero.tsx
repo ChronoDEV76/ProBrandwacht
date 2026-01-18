@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 
+import { Cta } from '@/components/Cta'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
 type CityHeroProps = {
@@ -19,30 +20,22 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht is een orienterend platform. We delen inzichten over inzet in en rond {cityName} en bereiden je voor op
-          werken via ProSafetyMatch (binnen Wet DBA). Huidige status: handmatige matching en kennisdeling.
+          ProBrandwacht is geen klassiek bureau. We delen inzichten over inzet in en rond {cityName} en bewaken
+          uitvoerbaarheid en rolhelderheid in de samenwerking. ProSafetyMatch (in ontwikkeling) ondersteunt dit
+          straks technisch, zonder extra tussenlagen.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <a
-            href="/zzp/aanmelden"
-            className="inline-flex items-center rounded-2xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
-          >
-            Ik wil verkennen als brandwacht
-          </a>
-          <a
-            href="/over-ons"
-            className="inline-flex items-center rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-200"
-          >
-            Lees hoe we werken
-          </a>
+          <Cta
+            id="primary_select_compact"
+            className="rounded-2xl border-slate-200 bg-white px-5 py-3 text-slate-900 hover:bg-slate-50"
+          />
+          <Cta
+            id="secondary_why_no"
+            className="rounded-2xl border border-slate-200 px-5 py-3 text-slate-800 hover:bg-white"
+          />
           {SPOED_UI_ENABLED ? (
-            <a
-              href="/probrandwacht-direct-spoed"
-              className="text-sm font-semibold text-brand-700 underline underline-offset-4"
-            >
-              Spoed (op basis van beschikbaarheid) →
-            </a>
+            <Cta id="secondary_spoed_direct" className="text-brand-700" />
           ) : null}
         </div>
 

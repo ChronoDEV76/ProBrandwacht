@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import Prose from '@/components/prose'
@@ -156,24 +157,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Route voor brandwachten
-            </Link>
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Route voor opdrachtgevers
-            </Link>
-            <Link
-              href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Kaders & richtlijnen
-            </Link>
+            <Cta id="primary_select" />
+            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+            <Cta id="about_kaders_intentie" className="border-white/20" />
           </div>
         </div>
       </HeroBackground>
@@ -191,18 +177,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             Als je dit artikel herkent: leg de afspraken vooraf vast. Dat maakt uitvoering rustiger en samenwerking sterker.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link
-              href="/zzp/aanmelden"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Ik wil verkennen als brandwacht
-            </Link>
-            <Link
-              href="/opdrachtgevers/aanmelden"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Ik wil verkennen als opdrachtgever
-            </Link>
+            <Cta id="primary_select_compact" />
+            <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
           </div>
         </div>
       </section>

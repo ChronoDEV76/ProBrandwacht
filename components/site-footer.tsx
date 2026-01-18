@@ -2,10 +2,10 @@ import Link from "next/link"
 import Image from "next/image"
 
 const LINKS = [
-  { href: "/belangen", label: "Belangen & standpunten" },
   { href: "/blog", label: "Blog / Kennisbank" },
   { href: "/voor-brandwachten", label: "Voor brandwachten" },
   { href: "/opdrachtgevers", label: "Voor opdrachtgevers" },
+  { href: "/waarom-wij-soms-nee-zeggen", label: "Waarom wij soms nee zeggen" },
   { href: "/over-ons", label: "Over ons" },
 ]
 
@@ -99,9 +99,10 @@ export default function SiteFooter() {
             </a>
           </p>
           <p className="mt-2">
-            ProBrandwacht faciliteert verkenning en dialoog tussen zelfstandigen en opdrachtgevers; het platform draagt
-            geen verantwoordelijkheid voor specifieke samenwerkingen, contracten, uitvoeringsbeslissingen of
-            operationele uitkomsten.
+            ProBrandwacht faciliteert verkenning en dialoog tussen zelfstandigen en opdrachtgevers; het platform is geen
+            klassiek bureau of tussenlaag, bewaakt uitvoerbaarheid en zegt soms nee als randvoorwaarden niet kloppen. Het draagt geen
+            verantwoordelijkheid voor specifieke samenwerkingen, contracten, uitvoeringsbeslissingen of operationele
+            uitkomsten.
           </p>
         </section>
       </div>

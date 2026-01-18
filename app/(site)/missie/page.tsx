@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
@@ -29,23 +29,13 @@ export default function MissiePage() {
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Professioneel betekent: vooraf uitleggen wat je niet doet als het misgaat.
-              Geen garanties, wel verantwoordelijkheid die je op locatie kunt uitleggen.
+              Professioneel betekent: vooraf uitleggen wat je niet doet als het misgaat. We werken alleen
+              zo: met selectie op uitvoerbaarheid en verantwoordelijkheid die je op locatie kunt uitleggen.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Bekijk de kaders
-              </Link>
-              <Link
-                href="/over-ons"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Lees het verhaal
-              </Link>
+              <Cta id="about_kaders_intentie" />
+              <Cta id="secondary_over_ons" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
             </div>
           </div>
         </div>
@@ -77,7 +67,7 @@ export default function MissiePage() {
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">ProSafetyMatch (i.o.)</p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is de vakinhoudelijke basis. ProSafetyMatch wordt de technische laag om planning/documentatie/dossiers
-            stap voor stap digitaal te ondersteunen — zonder extra schakels toe te voegen.
+            stap voor stap digitaal te ondersteunen - zonder extra schakels toe te voegen.
           </p>
         </div>
       </section>

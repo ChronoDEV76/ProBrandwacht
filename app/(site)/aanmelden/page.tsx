@@ -13,7 +13,7 @@ export default function AanmeldenPage() {
 
         <p className="mt-4 max-w-3xl text-slate-300">
           Deze aanmelding is bedoeld voor zelfstandigen die willen onderzoeken
-          of directe samenwerking zonder bureau bij hen past. Het platform biedt
+          of directe samenwerking zonder klassiek bureau bij hen past. Het platform biedt
           geen garantie op inzet. Niet iedere aanmelding leidt tot deelname.
         </p>
 
@@ -30,7 +30,7 @@ export default function AanmeldenPage() {
           <h2 className="text-lg font-semibold">Wat je niet krijgt</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Geen garantie op inzet of inkomensbelofte</li>
-            <li>Geen planning, aansturing of bemiddeling</li>
+            <li>Geen planning, aansturing of tussenlaag</li>
             <li>Geen instroom = toegang: selectie kan per fase verschillen</li>
           </ul>
         </div>
@@ -42,8 +42,9 @@ export default function AanmeldenPage() {
 
           <p className="mt-4 text-xs text-slate-400">
             Door je interesse door te geven bevestig je dat je begrijpt dat
-            ProBrandwacht een orienterend platform is en geen bureau of
-            bemiddelaar. Deelname is vrijwillig en contextafhankelijk.
+            ProBrandwacht een orienterend platform is en geen klassiek bureau of
+            tussenlaag. We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden
+            niet kloppen. Deelname is vrijwillig en contextafhankelijk.
           </p>
         </div>
 

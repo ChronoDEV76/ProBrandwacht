@@ -46,7 +46,8 @@ export default function VoorwaardenPage() {
             <p>
               ProBrandwacht is een informatie- en wervingsplatform voor
               zelfstandige brandwachten en opdrachtgevers. Wij zijn geen
-              bemiddelaar, geen detacheringspartij en geen werkgever.
+              klassiek bureau, geen detacheringspartij en geen werkgever. We bewaken
+              uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">

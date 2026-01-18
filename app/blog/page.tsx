@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 import BlogTrustHeader from '@/components/BlogTrustHeader'
+import { Cta } from '@/components/Cta'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getPostBySlug, getPostSlugs, readingTime } from '@/lib/blog'
 import { CATEGORY_LABELS, CITY_FILTERS, normalizeCategory, normalizeCity, resolveDate } from '@/lib/blog-index'
@@ -350,14 +351,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     >
                       Lees hoe wij de norm verschuiven &rarr;
                     </Link>
-                    <a
-                      href="/zzp/aanmelden"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-300 hover:text-emerald-100"
-                    >
-                      Ik wil verkennen als brandwacht
-                    </a>
+                    <Cta id="primary_select_compact" className="text-slate-300 hover:text-emerald-100" />
                   </div>
                 </div>
               </article>
@@ -390,12 +384,10 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               Al onze artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
               zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio&apos;s.
             </p>
-            <Link
-              href="/seo-resources"
+            <Cta
+              id="secondary_seo_resources"
               className="mt-3 inline-flex items-center rounded-md border border-emerald-300 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200 hover:text-emerald-50"
-            >
-              Bekijk alle autoritaire bronnen &rarr;
-            </Link>
+            />
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-center">
@@ -404,20 +396,8 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               Toegang voor de eerste lichting is geopend - voor professionals en vooruitstrevende opdrachtgevers.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="/zzp/aanmelden"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl bg-emerald-400 px-5 py-3 text-slate-950 hover:bg-emerald-300"
-              >
-                Ik wil verkennen als brandwacht
-              </a>
-              <Link
-                href="/opdrachtgevers"
-                className="rounded-2xl border border-slate-700 px-5 py-3 text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
-              >
-                Info voor opdrachtgevers
-              </Link>
+              <Cta id="primary_select_compact" className="rounded-2xl px-5 py-3" />
+              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-3" />
             </div>
           </section>
 

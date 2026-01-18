@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
@@ -24,43 +24,28 @@ export default function OverOnsPage() {
       </div>
 
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 pb-14 pt-8">
           <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
             Over ProBrandwacht
           </span>
 
-          <h1 className="text-3xl font-semibold text-white md:text-4xl">
-            Geen mooie praat —
+          <h1 className="text-3xl font-semibold text-white md:text-5xl">
+            Geen mooie praat,
             <br className="hidden md:block" />
             een model dat standhoudt{' '}
             <span className="text-emerald-300">in uitvoering</span>.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is ontstaan vanuit praktijkervaring met samenwerkingen waarin verantwoordelijkheid en
-            rolverdeling niet overal helder waren. Wij kiezen voor duidelijkheid vooraf, en voor een selecte aanpak
-            in de verkenningsfase.
+            ProBrandwacht is ontstaan vanuit praktijkervaring met samenwerkingen waarin verantwoordelijkheid
+            en rolverdeling niet overal helder waren. Wij kiezen voor duidelijkheid vooraf, en voor selectie
+            op uitvoerbaarheid in de verkenningsfase.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Kaders & intentie
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Kennisbank
-            </Link>
-            <a
-              href="mailto:info@prosafetymatch.nl"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Contact
-            </a>
+            <Cta id="about_kaders_intentie" className="border-white/20" />
+            <Cta id="about_kennisbank" className="border-white/20" />
+            <Cta id="about_contact_email" className="border-white/20" />
           </div>
         </div>
       </HeroBackground>
@@ -85,13 +70,13 @@ export default function OverOnsPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat je merkt</p>
-              <p className="mt-2 text-sm text-slate-200">
-                Minder ruis. Meer uitlegbaarheid. En een hogere lat voor gedrag op de vloer. Niet perfect — wel
-                gericht op wat in de praktijk werkt.
-              </p>
-            </div>
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">Wat je merkt</p>
+            <p className="mt-2 text-sm text-slate-200">
+              Minder ruis. Meer uitlegbaarheid. En een hogere lat voor gedrag op de vloer. Niet perfect - wel
+              gericht op wat in de praktijk werkt.
+            </p>
+          </div>
           </div>
 
           <div className="md:col-span-2 rounded-3xl border border-white/10 bg-slate-900/60 p-6">

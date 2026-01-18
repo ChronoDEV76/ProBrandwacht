@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/disclaimer')
@@ -20,23 +20,14 @@ export default function DisclaimerPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een informatief en verkennend platform. Wij zijn geen bemiddelaar, geen opdrachtgever
-              en geen opdrachtnemer. Afspraken en samenwerking komen tot stand tussen de betrokken partijen.
+              ProBrandwacht is een informatief en verkennend platform. Wij zijn geen klassiek bureau, geen
+              opdrachtgever en geen opdrachtnemer. We bewaken uitvoerbaarheid en zeggen soms nee als
+              randvoorwaarden niet kloppen. Afspraken en samenwerking komen tot stand tussen de betrokken partijen.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Bekijk de kaders
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Vraag stellen
-              </Link>
+              <Cta id="about_kaders_intentie" />
+              <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
             </div>
           </div>
         </div>
@@ -46,7 +37,7 @@ export default function DisclaimerPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Wat dit betekent</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li>– Geen bemiddeling of gezagsverhouding via het platform.</li>
+            <li>– Geen tussenlaag of gezagsverhouding via het platform.</li>
             <li>– Verantwoordelijkheid ligt bij opdrachtgevers en professionals.</li>
             <li>– Uitleg is gebaseerd op praktijkervaring en sectorcontext.</li>
           </ul>

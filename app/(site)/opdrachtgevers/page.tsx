@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
+import { Cta } from '@/components/Cta'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
@@ -24,189 +24,116 @@ export default function OpdrachtgeversPage() {
       </div>
 
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 pb-14 pt-8">
           <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Voor opdrachtgevers
+            Voor opdrachtgevers • Zekerheid door uitvoerbaarheid
           </span>
 
-          <h1 className="text-3xl font-semibold text-white md:text-4xl">
-            Geen garantie, wel{" "}
-            <span className="text-emerald-300">rolvaste uitvoering</span>
-            die uitlegbaar blijft.
+          <h1 className="text-3xl font-semibold text-white md:text-5xl">
+            Zekerheid ontstaat vooraf,
+            <br />
+            <span className="text-emerald-300">niet bij toezicht.</span>
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Veel gedoe ontstaat niet door de uitvoering, maar door onduidelijke rolverdeling, tariefafspraken en
-            verwachtingen. Opdrachtgevers werken direct samen met zelfstandige professionals, met vooraf
-            vastgelegde afspraken over rol, inzet en verantwoordelijkheid. Matching en beschikbaarheid blijven
-            contextafhankelijk.
-          </p>
-          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Of het nu gaat om industrie, evenementen, utiliteit of bouw: de lat blijft gelijk en de uitvoering
-            moet uitlegbaar zijn richting audit, OR, inspectie of verzekeraar.
+            ProBrandwacht levert geen papieren brandveiligheid. Wij helpen u de inzet zo te organiseren
+            dat rollen helder zijn, verwachtingen kloppen en uitvoering aansluit op vergunning en realiteit.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/opdrachtgevers/aanmelden"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Ik wil verkennen als opdrachtgever
-            </Link>
-            <Link
-              href="/disclaimer"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Kaders / disclaimer
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Lees de kennisbank
-            </Link>
+            <Cta id="tertiary_contact_exploratory" />
+            <Cta
+              id="secondary_why_no"
+              className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5"
+            />
           </div>
         </div>
       </HeroBackground>
 
       <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-12 md:grid-cols-2 md:py-16">
+        <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Wat dit wél is
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Directe afstemming met de uitvoerder (in de regel 1-op-1).</li>
-              <li>• Duidelijke rolverdeling en randvoorwaarden vóór start.</li>
-              <li>• Transparantie over kosten/fee en afspraken (scenario-afhankelijk).</li>
-              <li>• Spoed-flow mogelijk voor korte inzet met weinig binding.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Wat dit níet is
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Geen bezettingsgarantie of vaste bezetting.</li>
-              <li>• Geen klassiek bureau dat roosters dicteert.</li>
-              <li>• Geen one-size-fits-all: uitvoering blijft contextafhankelijk.</li>
-              <li>• Geen vervanging voor je eigen veiligheidsorganisatie — wél een werkbare schakel.</li>
+            <h2 className="text-2xl font-semibold text-white">Wat u van ons mag verwachten</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
+              <li>
+                <strong>Heldere rolverdeling</strong> (geen aannames, geen grijze zones).
+              </li>
+              <li>
+                <strong>Uitvoerbare afspraken</strong>: wat u vraagt moet ook daadwerkelijk kunnen.
+              </li>
+              <li>
+                <strong>Professionals met verantwoordelijkheid</strong> die kunnen ingrijpen en alarmeren.
+              </li>
+              <li>
+                <strong>Minder verrassingen achteraf</strong> door vooraf beter te organiseren.
+              </li>
             </ul>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Dit past bij je als
+            <h2 className="text-2xl font-semibold text-white">Waarom dit belangrijk is</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              In een markt met toenemende bureaucratie ontstaat risico vaak in de ruimte tussen papier en
+              praktijk. Als rollen niet expliciet zijn, ontstaat discussie - soms pas bij controle.
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Je vooraf kunt uitleggen wie beslist en wie uitvoert.</li>
-              <li>• Je rolafbakening belangrijker vindt dan snelle bezetting.</li>
-              <li>• Je verantwoordelijkheden wilt kunnen verantwoorden richting audit/OR.</li>
-              <li>• Je samenwerking beoordeelt op gedrag en uitvoering, niet op beloftes.</li>
-            </ul>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Wij helpen u dat voor te zijn: niet door extra regels, maar door{' '}
+              <strong>duidelijkheid</strong>.
+            </p>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-              Dit past waarschijnlijk niet als
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>• Je volledige bezettingsgarantie of vaste roosters eist.</li>
-              <li>• Je inzet wilt afdekken met een bureau dat alle verantwoordelijkheid overneemt.</li>
-              <li>• Je afspraken pas na de start wilt uitwerken.</li>
-              <li>• Je liever snelheid boven uitlegbaarheid zet.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Voor wie dit vaak relevant is</p>
-            <ul className="mt-3 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
-              <li>• Gemeentelijke evenementenorganisaties met tijdelijke risico&apos;s.</li>
-              <li>• Bouwers en projectontwikkelaars met wisselende inzetcontext.</li>
-              <li>• Facility managers op industriële of logistieke locaties.</li>
-              <li>• Vastgoedbeheerders met onderhouds- of verbouwtrajecten.</li>
-              <li>• Organisaties waar DBA en aansprakelijkheid zwaar wegen.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Herkenbare scenario&apos;s</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
+            <h2 className="text-2xl font-semibold text-white">Onze toets: werkt het in het echt?</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Complex risico, weinig tijd</p>
+                <h3 className="text-lg font-semibold text-white">Rolzuiverheid</h3>
                 <p className="mt-2 text-sm text-slate-200">
-                  Je hebt snel inzet nodig, maar alleen als rol, gezag en rapportage vooraf kloppen.
-                  Dat is hier het eerste filter.
+                  Is de brandwachtrol expliciet? Is zichtbaar wie toezicht houdt en wie mag ingrijpen?
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Rolverdeling vervaagt op uitvoering</p>
+                <h3 className="text-lg font-semibold text-white">Uitvoering & bezetting</h3>
                 <p className="mt-2 text-sm text-slate-200">
-                  Afspraken zijn gemaakt, maar op locatie is niet helder wie beslist.
-                  Directe afstemming voorkomt dit gat.
+                  Past de bezetting bij de risico&apos;s? Of is de inzet gebaseerd op aannames die niet
+                  houdbaar zijn?
                 </p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Uitleg aan audit of OR</p>
+                <h3 className="text-lg font-semibold text-white">Vergunning / voorschriften</h3>
                 <p className="mt-2 text-sm text-slate-200">
-                  Je moet kunnen laten zien wie wat deed en waarom.
-                  Dossierdiscipline maakt de keuze verdedigbaar.
+                  Sluit de uitvoering aan op wat is voorgeschreven? Zo voorkomt u discussie bij toezicht.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Communicatie & verantwoordelijkheid</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  Is duidelijk wie beslist bij escalatie? Duidelijkheid voorkomt vertraging als het
+                  spannend wordt.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Wat je kunt aantonen als het erop aankomt</p>
-            <ul className="mt-3 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
-              <li>• Wie besluit, wie uitvoert en waar de verantwoordelijkheid ligt.</li>
-              <li>• Welke randvoorwaarden vooraf zijn afgestemd (toegang, meldpunt, verslaglegging).</li>
-              <li>• Wie aanspreekbaar is bij vragen van audit, OR of inspectie.</li>
-              <li>• Hoe rapportage en overdracht zijn vastgelegd.</li>
-              <li>• Waarom keuzes passen bij risico, context en inzetduur.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Praktische voorbeelden</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Tijdelijke installatie bij evenement</p>
-                <p className="mt-2 text-sm text-slate-200">
-                  Extra toezicht bij op- en afbouw met duidelijke rolafbakening en korte rapportagelijnen.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Industrieel onderhoud met uitvalmeldingen</p>
-                <p className="mt-2 text-sm text-slate-200">
-                  Tijdelijke vervanging bij uitval van brandmeld- of detectiesystemen, inclusief overdracht.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <p className="text-sm font-semibold text-white">Bouw- of renovatieproject met afwijkingen</p>
-                <p className="mt-2 text-sm text-slate-200">
-                  Inzet rond werken in risicogebieden met heldere randvoorwaarden en aanspreekpunten.
-                </p>
-              </div>
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Waarom wij soms nee zeggen</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Soms is een vraag formeel mogelijk, maar praktisch niet uitvoerbaar. Dan zeggen we nee -
+              liever vooraf dan achteraf. Dat beschermt niet alleen de brandwacht, maar ook uw organisatie.
+            </p>
+            <div className="mt-5">
+              <Cta id="secondary_how_we_work" />
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 md:col-span-2">
-            <p className="text-sm font-semibold text-white">Waarom opdrachtgevers toch vaak bij “één partij” blijven</p>
-            <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Het echte risico is vaak operationeel en politiek: “wie is aanspreekbaar als het spannend wordt?”
-              ProBrandwacht adresseert dat met vooraf afgesproken rolverdeling en communicatie-kaders. Dat werkt
-              alleen als beide kanten volwassen organiseren — daarom is selectie en instroom onderdeel
-              van de aanpak.
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Leg uw situatie voor</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              We kijken graag verkennend mee: wat is vereist, wat is uitvoerbaar, en hoe organiseren we
+              dit zo dat het klopt.
             </p>
-            <p className="mt-3 text-sm text-slate-200">
-              Wil je sparren over jouw scenario? Mail{' '}
-              <a className="underline hover:text-white" href="mailto:info@prosafetymatch.nl">
-                info@prosafetymatch.nl
-              </a>{' '}
-              (reactiesnelheid is afhankelijk van drukte).
-            </p>
+            <div className="mt-6">
+              <Cta id="tertiary_contact_exploratory" />
+            </div>
           </div>
         </div>
       </section>

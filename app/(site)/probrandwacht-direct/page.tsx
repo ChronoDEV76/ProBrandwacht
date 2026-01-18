@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
@@ -19,11 +19,9 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
-              die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
-              verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
-              Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
-              Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+              ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
+              we iets bevestigen. Of een inzet haalbaar is, is contextafhankelijk en hangt af van
+              beschikbaarheid en afspraken tussen partijen.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -31,35 +29,22 @@ export default function ProBrandwachtDirectPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht Direct is bedoeld voor situaties waarin je tempo nodig hebt, maar niet wilt inleveren op helderheid.
-              We sturen op minimale, noodzakelijke informatie: rol, risico, tijd, locatie en beslislijnen.
+              ProBrandwacht Direct is bedoeld voor situaties waarin je tempo nodig hebt, maar niet wilt
+              inleveren op helderheid. We stellen eerst drie vragen: rol, risico en beslislijnen.
+              Pas daarna kijken we naar timing, locatie en beschikbaarheid.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/opdrachtgevers/aanmelden"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Ik wil verkennen als opdrachtgever
-              </Link>
-              <Link
-                href="/brandwacht-inhuren"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Lees hoe inhuren werkt
-              </Link>
+              <Cta id="tertiary_contact_exploratory" />
+              <Cta id="secondary_how_inhuren" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
               {showSpoed && (
-                <Link
-                  href="/probrandwacht-direct-spoed"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Spoed: direct aanvragen
-                </Link>
+                <Cta id="secondary_spoed_direct" />
               )}
             </div>
 
             <p className="text-xs text-slate-400">
-              Dit is geen &quot;snelle bemiddeling&quot;. Het is een snellere route met dezelfde eis: afspraken vooraf, toetsbaar in uitvoering.
+              Dit is geen snelle bureau-route. Het is een snellere route met dezelfde eis: afspraken vooraf,
+              toetsbaar in uitvoering.
             </p>
           </div>
         </div>

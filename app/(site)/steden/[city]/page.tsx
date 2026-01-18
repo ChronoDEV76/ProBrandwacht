@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import { HeroShell } from '@/components/layout/hero-shell'
 import { InfoCardsRow } from '@/components/layout/info-cards-row'
@@ -126,7 +126,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <>
           Praktische duiding van rollen (bijv. industrieel, event, mangat/buitenwacht),
           verantwoordelijkheden en professioneel gedrag op de vloer. Gericht op zelfstandig
-          werken met duidelijke afspraken — zonder ruis.
+          werken met duidelijke afspraken - zonder ruis.
         </>
       ),
     },
@@ -166,11 +166,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto max-w-5xl px-4 pb-2">
         <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
           <p>
-            ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
-            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
-            verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
-            Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
-            Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+            ProBrandwacht is geen klassiek bureau. We bewaken de uitvoerbaarheid van brandveiligheid en
+            selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk
+            en hangt af van beschikbaarheid en afspraken tussen partijen. Je verkent hier vooral de kaders:
+            rolverdeling, afstemming en verantwoordelijkheid.
           </p>
         </div>
       </section>
@@ -193,33 +192,34 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                ProBrandwacht helpt zelfstandige brandwachten en opdrachtgevers elkaar vinden op basis van{' '}
+                Geen volume-gedreven plaatsing: wij kijken eerst of inzet klopt in de praktijk. We brengen
+                zelfstandige brandwachten en opdrachtgevers samen op basis van{' '}
                 <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
-                <span className="font-semibold">uitlegbaar</span> blijven.
-                We zijn geen “urenfabriek” en doen geen tarief-dwang: je spreekt samen inzet, tarief en
-                verantwoordelijkheid af — DBA-bewust en contextafhankelijk.
+                <span className="font-semibold">uitlegbaar</span> blijven. Inzet, tarief en
+                verantwoordelijkheid spreek je 1-op-1 af - DBA-bewust en contextafhankelijk.
               </>
             }
-            primaryCta={{ href: '/voor-brandwachten', label: 'Route voor brandwachten' }}
-            secondaryCta={secondaryCta}
             footer={
               <>
                 ProSafetyMatch is in ontwikkeling als technische laag om afspraken en samenwerking stap voor stap
-                digitaal te ondersteunen — zonder extra tussenlagen toe te voegen.
+                digitaal te ondersteunen - zonder extra tussenlagen toe te voegen.
               </>
             }
           />
+          <div className="flex flex-wrap justify-center gap-3">
+            <Cta id="primary_select" />
+            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+            {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
+          </div>
         </div>
       </HeroBackground>
 
       <div className="fixed bottom-4 left-4 right-4 z-20 md:hidden">
-        <Link
-          href="/opdrachtgevers/aanmelden"
-          className="flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/40 transition hover:bg-emerald-300"
-        >
-          Brandwacht inhuren in {label}
-        </Link>
+        <Cta
+          id="primary_select_compact"
+          className="w-full rounded-full border-white/30 px-4 py-3 text-sm shadow-lg shadow-emerald-500/30"
+        />
       </div>
 
       <section className="mx-auto flex max-w-5xl flex-col gap-6 px-4 pb-10 pt-6 md:flex-row md:items-center">
@@ -235,7 +235,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <p className="text-sm text-slate-200 md:text-base">
             ProBrandwacht is de vakinhoudelijke basis. ProSafetyMatch is in ontwikkeling als technische laag
-            (o.a. dossiervorming, afspraken, communicatie), zodat samenwerking later makkelijker kan — zonder
+            (o.a. dossiervorming, afspraken, communicatie), zodat samenwerking later makkelijker kan - zonder
             dat autonomie verdwijnt.
           </p>
 
@@ -245,18 +245,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/zzp/aanmelden"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Ik wil verkennen als brandwacht
-            </Link>
-            <Link
-              href="/opdrachtgevers/aanmelden"
-              className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-            >
-              Ik wil verkennen als opdrachtgever
-            </Link>
+            <Cta id="primary_select" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
           </div>
         </div>
 
@@ -271,13 +261,21 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </ul>
 
           <div className="mt-4">
-            <Link
-              href="/opdrachtgevers"
-              className="text-sm font-semibold text-emerald-200 hover:text-emerald-100"
-            >
-              Lees de opdrachtgever-route →
-            </Link>
+            <Cta id="opdrachtgever_fit_your_case" />
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-10">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Zo toetsen we of inzet klopt
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-slate-200">
+            <li>- Rolzuiverheid: wie beslist, wie voert uit, en wat is de scope?</li>
+            <li>- Uitvoerbaarheid: sluit de inzet aan op vergunning, risico en context?</li>
+            <li>- Verantwoordelijkheid: afspraken vooraf, toetsbaar tijdens uitvoering.</li>
+          </ul>
         </div>
       </section>
 
@@ -346,30 +344,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Route voor brandwachten
-            </Link>
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-            >
-              Route voor opdrachtgevers
-            </Link>
-            <Link
-              href="/belangen"
-              className="inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
-            >
-              Bekijk de kaders
-            </Link>
-            <Link
-              href="/steden"
-              className="inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
-            >
-              Terug naar stedenoverzicht
-            </Link>
+            <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
+            <Cta id="about_kaders_intentie" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
+            <Cta id="secondary_steden_overview" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
           </div>
         </div>
       </section>

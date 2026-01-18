@@ -1,8 +1,8 @@
 {
   "summary": {
     "appPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new/app",
-    "filesScanned": 82,
-    "filesWithTextish": 45,
+    "filesScanned": 84,
+    "filesWithTextish": 44,
     "errors": 0,
     "warnings": 0,
     "info": 0,
@@ -13,22 +13,22 @@
     },
     "matchCounts": {
       "safety_leading": 1,
-      "honesty_traceable": 57,
+      "honesty_traceable": 56,
       "inclusion_intent_sentence": 1
     },
     "matchEvidence": {
       "safety_leading": {
-        "file": "app/(site)/page.tsx",
+        "file": "app/(site)/OLD/page.backup1.tsx",
         "line": 54,
         "excerpt": "Veiligheid blijft leidend. Iedereen mag zich aanmelden, zolang je intenties kloppen met onze manier van werken."
       },
       "honesty_traceable": {
-        "file": "app/(site)/belangen/page.tsx",
-        "line": 28,
-        "excerpt": "title: 'Transparantie over kosten',"
+        "file": "app/(site)/OLD/page.backup.tsx",
+        "line": 43,
+        "excerpt": "- Afspraken zijn <strong className=\"font-semibold text-slate-100\">toetsbaar en DBA-bewust</strong>."
       },
       "inclusion_intent_sentence": {
-        "file": "app/(site)/page.tsx",
+        "file": "app/(site)/OLD/page.backup1.tsx",
         "line": 54,
         "excerpt": "Veiligheid blijft leidend. Iedereen mag zich aanmelden, zolang je intenties kloppen met onze manier van werken."
       }

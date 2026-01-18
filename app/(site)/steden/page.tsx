@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { CITY_DATA } from '@/lib/city-data'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
@@ -39,29 +40,14 @@ export default function StedenIndexPage() {
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               Belangrijk: ProBrandwacht is géén “wij leveren standaard”-platform. Het is een vakinhoudelijke
-              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken — en
+              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken - en
               meebouwen aan een digitaal vervolg (ProSafetyMatch).
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Route voor brandwachten
-              </Link>
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/10"
-              >
-                Route voor opdrachtgevers
-              </Link>
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-100 hover:border-emerald-300 hover:text-emerald-200"
-              >
-                Bekijk de kaders
-              </Link>
+              <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
+              <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
+              <Cta id="about_kaders_intentie" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
             </div>
 
             <p className="pt-1 text-xs text-slate-400">
@@ -90,7 +76,7 @@ export default function StedenIndexPage() {
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
             ProBrandwacht focust op samenwerking die “inspectie-proof” en operationeel werkbaar is.
-            Niet iedereen past in die manier van werken — en dat is oké. Als je vooral “snel uren”
+            Niet iedereen past in die manier van werken - en dat is oké. Als je vooral &quot;snel uren&quot;
             zoekt zonder heldere afspraken, dan is een klassiek bureau-model vaak logischer.
           </p>
         </div>

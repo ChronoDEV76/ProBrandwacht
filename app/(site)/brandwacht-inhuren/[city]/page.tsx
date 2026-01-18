@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { Cta } from '@/components/Cta'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import HeroBackground from '@/components/HeroBackground'
 import { HeroShell } from '@/components/layout/hero-shell'
@@ -104,11 +104,10 @@ export function BrandwachtInhurenCityPage({
       <section className="mx-auto max-w-5xl px-4 pb-2">
         <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
           <p>
-            ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
-            die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
-            verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
-            Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
-            Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+            ProBrandwacht is geen klassiek bureau. We bewaken de uitvoerbaarheid van brandveiligheid en
+            selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk
+            en hangt af van beschikbaarheid en afspraken tussen partijen. Je verkent hier vooral de kaders:
+            rolverdeling, afstemming en verantwoordelijkheid.
           </p>
         </div>
       </section>
@@ -130,20 +129,37 @@ export function BrandwachtInhurenCityPage({
             headingLevel="h1"
             body={
               <>
-                ProBrandwacht helpt je samenwerken met zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.
-                Geen onzichtbare schakels: je spreekt tarief, inzet en verantwoordelijkheid direct af - DBA-bewust en uitlegbaar.
+                Geen volume-gedreven plaatsing: we kijken eerst of inzet klopt in de praktijk. Je werkt samen met
+                zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.
+                Tarief, inzet en verantwoordelijkheid spreek je direct af - DBA-bewust en uitlegbaar.
               </>
             }
-            primaryCta={{ href: '/opdrachtgevers/aanmelden', label: 'Ik wil verkennen als opdrachtgever' }}
-            secondaryCta={secondaryCta}
             footer={
               <>
                 ProSafetyMatch is in ontwikkeling als technische laag om afspraken, planning en documentatie later stap voor stap digitaal te ondersteunen.
               </>
             }
           />
+          <div className="flex flex-wrap justify-center gap-3">
+            <Cta id="tertiary_contact_exploratory" />
+            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+            {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
+          </div>
         </div>
       </HeroBackground>
+
+      <section className="mx-auto max-w-5xl px-4 pb-8">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+            Zo toetsen we of inzet klopt
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-slate-200">
+            <li>- Rolzuiverheid: wie beslist, wie voert uit, en wat is de scope?</li>
+            <li>- Uitvoerbaarheid: sluit de inzet aan op vergunning, risico en context?</li>
+            <li>- Verantwoordelijkheid: afspraken vooraf, toetsbaar tijdens uitvoering.</li>
+          </ul>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-8">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
@@ -203,24 +219,9 @@ export function BrandwachtInhurenCityPage({
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Lees opdrachtgever-route
-            </Link>
-            <Link
-              href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Bekijk kaders
-            </Link>
-            <Link
-              href="/steden"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Terug naar steden
-            </Link>
+            <Cta id="opdrachtgever_fit_your_case" />
+            <Cta id="about_kaders_intentie" className="border-white/20" />
+            <Cta id="secondary_steden_overview" className="border-white/20" />
           </div>
         </div>
       </section>

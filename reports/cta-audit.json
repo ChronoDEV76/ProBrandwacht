@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "root": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new",
+    "scannedAt": "2026-01-18T19:29:09.336Z",
+    "filesScanned": 85,
+    "totalFindings": 0,
+    "fixApplied": false,
+    "includeLayout": true
+  },
+  "fileSummaries": [
+    {
+      "file": "app/(dashboard)/admin/requests/[id]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(dashboard)/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(dashboard)/zzp/import/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/aanmelden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/admin/analytics/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/belangen/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/bewust-zelfstandig-werken/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/brandwacht-huren/[city]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/brandwacht-inhuren/[city]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/brandwacht-inhuren/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/contact/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/disclaimer/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/faq/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/missie/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/opdrachtgevers/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/over-ons/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/privacy/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/probrandwacht-direct/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/probrandwacht-direct-spoed/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/seo-resources/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/steden/[city]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/steden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/tone-of-voice/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/(site)/voor-brandwachten/aanmelden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/voor-brandwachten/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/voorwaarden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/(site)/waarom-wij-soms-nee-zeggen/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "app/admin/direct-requests/[id]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/blog/[slug]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/blog/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/blog/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/dashboard/requests/[id]/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/direct/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/opdrachtgevers/aanmelden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/opdrachtgevers/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/opdrachtgevers/thank-you/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/zzp/aanmelden/page.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "app/zzp/layout.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/BlogTrustHeader.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/ChatBox.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/ChatPanel.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/Cta.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/Hero.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/HeroBackground.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/HomeHero.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/HomeUSPs.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/PlatformPricingNote.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/SanityChecker.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/Seo.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/SeoStructuredData.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/analytics-tracker.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/analytics.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/city-hero.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "components/cookie-notice.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/cpi-chart.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/direct-request-form.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/dropbox-hint.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/home-hero-cycle.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/impact-info-card.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/impact-meter.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/layout/hero-shell.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/layout/info-cards-row.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/layout/site-main.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/Bronnen.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/ConclusieMarkt.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/FeeVergelijk.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/KostenOpbouw.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/KostenOpbouwScenarios.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/RenderMdx.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/TariefTabel.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/Tldr.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/mdx/next-contentlayer.d.ts",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/opdrachtgevers/client-signup-form.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/pb-direct-form.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/probrandwacht-direct-form.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/prose.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/share-bar.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/site-footer.tsx",
+      "hitCount": 0,
+      "positioningHasAny": true
+    },
+    {
+      "file": "components/site-header.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/site-hero-background.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/structured-breadcrumbs.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    },
+    {
+      "file": "components/why-probrandwacht-section.tsx",
+      "hitCount": 0,
+      "positioningHasAny": false
+    }
+  ],
+  "findings": []
+}

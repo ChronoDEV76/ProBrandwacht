@@ -1,9 +1,10 @@
 // app/direct/page.tsx
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from 'next'
+
+import { Cta } from "@/components/Cta";
 import DirectRequestForm from "@/components/direct-request-form";
 import { SPOED_ROUTE_ENABLED } from "@/lib/featureFlags";
-import type { Metadata } from 'next'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = getRouteMetadata('/direct');
 
@@ -23,7 +24,7 @@ export default function ProBrandwachtDirectPage() {
           Bij akkoord betaal je <strong>50% aanbetaling</strong> (facilitatiefee 10% inbegrepen).
         </p>
         <p className="mt-1 text-sm text-slate-700">Spoedflow is in beta (technische route); beschikbaarheid blijft contextafhankelijk.</p>
-        <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk—je staat er niet alleen voor.</p>
+        <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk - je staat er niet alleen voor.</p>
         <ul className="mt-2 space-y-1 text-sm text-slate-700">
           <li>• Dien je spoedaanvraag in (we delen alleen wat nodig is).</li>
           <li>• We verwerken de aanvraag en stemmen af via e-mail.</li>
@@ -73,24 +74,20 @@ export default function ProBrandwachtDirectPage() {
             <li>Je bedrijf en contact worden ter verificatie vastgelegd.</li>
             <li>Aanvragen worden beoordeeld door ons operations-team.</li>
           </ul>
-          <Link
-            href="/probrandwacht-direct-spoed"
+          <Cta
+            id="secondary_spoed_direct"
             className="mt-4 inline-flex items-center rounded-md bg-brand-700 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600"
-          >
-            Start spoedroute →
-          </Link>
+          />
           <p className="mt-2 text-xs text-slate-500">
             Nog geen toegang? Je ontvangt automatisch een uitnodiging.
           </p>
           <hr className="my-4" />
           <h3 className="text-sm font-semibold text-slate-900">Beschikbaar als brandwacht?</h3>
           <p className="text-sm text-slate-700">Zet jezelf op beschikbaar en reageer op aanvragen.</p>
-          <Link
-            href="/zzp/aanmelden"
+          <Cta
+            id="primary_select_compact"
             className="mt-2 inline-flex items-center rounded-md border px-3 py-2 text-sm hover:bg-slate-50"
-          >
-            Meld je aan
-          </Link>
+          />
         </div>
       </section>
     </main>

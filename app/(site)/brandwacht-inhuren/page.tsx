@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
+import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
@@ -19,11 +19,9 @@ export default function BrandwachtInhurenPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een selectief platform voor zelfstandige brandwachten en opdrachtgevers
-              die bewust kiezen voor directe samenwerking — en begrijpen wat dat vraagt in gedrag,
-              verantwoordelijkheid en ondernemerschap. We zijn geen bureau en bieden geen garantie op inzet.
-              Of een inzet haalbaar is, is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen partijen.
-              Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
+              ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
+              er inzet is. Inzet is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen
+              partijen. Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -36,27 +34,14 @@ export default function BrandwachtInhurenPage() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/opdrachtgevers/aanmelden"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
-                Ik wil verkennen als opdrachtgever
-              </Link>
-
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Lees de opdrachtgever-route
-              </Link>
+              <Cta id="tertiary_contact_exploratory" />
+              <Cta
+                id="secondary_why_no"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5"
+              />
 
               {showSpoed && (
-                <Link
-                  href="/probrandwacht-direct-spoed"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Spoed: Direct inzetten
-                </Link>
+                <Cta id="secondary_spoed_direct" />
               )}
             </div>
 
@@ -101,18 +86,8 @@ export default function BrandwachtInhurenPage() {
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link
-              href="/belangen"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Bekijk kaders & richtlijnen
-            </Link>
-            <Link
-              href="/steden"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Bekijk stedenpagina&apos;s
-            </Link>
+            <Cta id="about_kaders_intentie" className="border-white/20" />
+            <Cta id="secondary_steden_overview" className="border-white/20" />
           </div>
         </div>
       </section>

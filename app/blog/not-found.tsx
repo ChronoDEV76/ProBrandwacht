@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Cta } from '@/components/Cta'
 
 export default function BlogNotFound() {
   return (
@@ -18,24 +18,9 @@ export default function BlogNotFound() {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
-              Terug naar kennisbank
-            </Link>
-            <Link
-              href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Route voor brandwachten
-            </Link>
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Route voor opdrachtgevers
-            </Link>
+            <Cta id="secondary_blog_index" />
+            <Cta id="primary_select" className="rounded-2xl px-5 py-2.5" />
+            <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
           </div>
         </div>
       </section>
