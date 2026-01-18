@@ -109,16 +109,13 @@ export default function PrivacyPage() {
           <p className="mt-3 text-sm text-slate-200">Om onze dienstverlening te leveren, kunnen wij verwerkers inschakelen zoals:</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>
-              <strong>Serverhosting</strong>: Vercel (hosting en deployment).
+              <strong>Serverhosting en website-infrastructuur</strong> (EU).
             </li>
             <li>
-              <strong>Database/opslag</strong>: Supabase (gegevensopslag en beheer).
+              <strong>Formulier- en gegevensopslag</strong> voor intake.
             </li>
             <li>
-              <strong>E-mail</strong>: Resend (transactie-e-mails en notificaties).
-            </li>
-            <li>
-              <strong>Bestandsuploads</strong>: Dropbox File Request (tijdelijke inzending van certificaten).
+              <strong>Bestandsuploads</strong> via Dropbox File Request (tijdelijke opslag).
             </li>
           </ul>
         </div>
@@ -127,9 +124,9 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold md:text-2xl">Bewaartermijnen</h2>
           <p className="mt-3 text-sm text-slate-200">
             Wij bewaren persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld,
-            tenzij wettelijke verplichtingen een langere bewaartermijn voorschrijven. Bestanden die u uploadt behouden
-            wij alleen zolang dit nodig is voor de intake en toetsing en worden daarna verwijderd, tenzij u expliciet
-            anders hebt ingestemd.
+            tenzij wettelijke verplichtingen een langere bewaartermijn voorschrijven. Intakegegevens en uploads worden
+            verwijderd zodra toetsing en eventuele samenwerking zijn afgerond, tenzij wettelijke verplichtingen anders
+            vereisen.
           </p>
         </div>
 
@@ -146,6 +143,15 @@ export default function PrivacyPage() {
           </ul>
           <p className="mt-3 text-sm text-slate-200">
             U kunt uw rechten uitoefenen door te mailen naar: <strong>privacy@prosafetymatch.nl</strong>
+          </p>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Klachten en toezicht</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            Indien u een klacht heeft over de verwerking van uw persoonsgegevens, kunt u contact opnemen via{' '}
+            <strong>privacy@probrandwacht.nl</strong>. U heeft daarnaast het recht een klacht in te dienen bij
+            de Autoriteit Persoonsgegevens.
           </p>
         </div>
       </section>

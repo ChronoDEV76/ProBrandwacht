@@ -166,7 +166,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
           <h1 className="text-center text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-            Zelfstandige brandwacht in {label}
+            Brandwacht in {label}
           </h1>
           <div className="w-full rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
             <p>
