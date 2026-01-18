@@ -87,7 +87,7 @@ export default function Page() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Voor brandwachten
+                Voor brandwachten - selectieve samenwerking
               </p>
               <h3 className="mt-3 text-xl font-semibold text-white">Professionele ruimte blijft leidend</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
@@ -102,7 +102,7 @@ export default function Page() {
 
             <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-                Voor opdrachtgevers
+                Voor opdrachtgevers - uitvoerbaarheid vooraf
               </p>
               <h3 className="mt-3 text-xl font-semibold text-white">Zekerheid ontstaat vóór inzet</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">

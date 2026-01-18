@@ -5,8 +5,8 @@ import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 import { Cta } from '@/components/Cta'
 
 const LINKS = [
-  { href: '/voor-brandwachten', label: 'Voor brandwachten' },
-  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
+  { href: '/voor-brandwachten', label: 'Voor brandwachten (selectief)' },
+  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers (uitvoerbaar)' },
   { href: '/waarom-wij-soms-nee-zeggen', label: 'Waarom wij soms nee zeggen' },
   { href: '/blog', label: 'Blog / Kennisbank' },
   { href: '/over-ons', label: 'Over ons' },

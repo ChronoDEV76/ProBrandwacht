@@ -252,7 +252,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
         <div className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)]">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-            Voor opdrachtgevers
+            Voor opdrachtgevers - uitvoerbaar vooraf
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Zicht op certificaten, ervaring en rolprofielen in {label}.</li>

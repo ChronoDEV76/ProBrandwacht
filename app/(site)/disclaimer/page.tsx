@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import Link from 'next/link'
+
 import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
@@ -40,7 +42,16 @@ export default function DisclaimerPage() {
             <li>– Geen tussenlaag of gezagsverhouding via het platform.</li>
             <li>– Verantwoordelijkheid ligt bij opdrachtgevers en professionals.</li>
             <li>– Uitleg is gebaseerd op praktijkervaring en sectorcontext.</li>
+            <li>– Geen tariefdwang of garantierol vanuit ProBrandwacht.</li>
           </ul>
+
+          <p className="mt-4 text-xs text-slate-400">
+            Meer context? Bekijk de{' '}
+            <Link href="/faq" className="underline underline-offset-4">
+              FAQ
+            </Link>{' '}
+            over onze werkwijze.
+          </p>
 
           <p className="mt-6 text-xs text-slate-500">
             De uiteindelijke beoordeling van arbeidsrelaties blijft contextafhankelijk en ligt bij de betrokken

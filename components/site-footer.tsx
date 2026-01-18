@@ -3,8 +3,8 @@ import Image from "next/image"
 
 const LINKS = [
   { href: "/blog", label: "Blog / Kennisbank" },
-  { href: "/voor-brandwachten", label: "Voor brandwachten" },
-  { href: "/opdrachtgevers", label: "Voor opdrachtgevers" },
+  { href: "/voor-brandwachten", label: "Voor brandwachten (selectief)" },
+  { href: "/opdrachtgevers", label: "Voor opdrachtgevers (uitvoerbaar)" },
   { href: "/waarom-wij-soms-nee-zeggen", label: "Waarom wij soms nee zeggen" },
   { href: "/over-ons", label: "Over ons" },
 ]

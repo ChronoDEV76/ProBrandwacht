@@ -11,9 +11,9 @@ export default function FaqPage() {
   const faqItems = [
     ...generalPlatformFaq,
     {
-      question: 'Zijn jullie een klassiek bureau?',
+      question: 'Wat maakt dit anders dan een klassiek bureau?',
       answer:
-        'Nee. We plaatsen niet op volume. We bewaken uitvoerbaarheid en rolhelderheid en zeggen soms nee als voorwaarden niet kloppen.',
+        'Wij zijn geen tussenlaag of garantierol. We bewaken uitvoerbaarheid en rolhelderheid vooraf en zeggen soms nee als randvoorwaarden niet kloppen.',
     },
   ]
 

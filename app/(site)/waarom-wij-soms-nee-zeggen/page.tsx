@@ -60,7 +60,7 @@ export default function Page() {
             <h2 className="text-2xl font-semibold text-white">Wat levert dat op?</h2>
             <div className="mt-4 grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Voor brandwachten</h3>
+                <h3 className="text-lg font-semibold text-white">Voor brandwachten die bewust kiezen</h3>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200">
                   <li>Bescherming tegen onuitvoerbare constructies.</li>
                   <li>Duidelijkheid over rol en verantwoordelijkheid.</li>
@@ -68,7 +68,7 @@ export default function Page() {
                 </ul>
               </div>
               <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Voor opdrachtgevers</h3>
+                <h3 className="text-lg font-semibold text-white">Voor opdrachtgevers die vooraf helder willen</h3>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200">
                   <li>Minder kans op handhavingsproblemen.</li>
                   <li>Rust tijdens uitvoering.</li>

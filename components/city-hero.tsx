@@ -20,8 +20,8 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht is geen klassiek bureau. We delen inzichten over inzet in en rond {cityName} en bewaken
-          uitvoerbaarheid en rolhelderheid in de samenwerking. ProSafetyMatch (in ontwikkeling) ondersteunt dit
+          ProBrandwacht is geen klassiek bureau en geen tariefdwang. We helpen afspraken vooraf helder krijgen,
+          zodat inzet in en rond {cityName} in de praktijk klopt. ProSafetyMatch (in ontwikkeling) ondersteunt dit
           straks technisch, zonder extra tussenlagen.
         </p>
 
