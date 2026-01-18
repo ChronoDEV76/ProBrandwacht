@@ -1,7 +1,7 @@
 {
   "base": "http://localhost:3000",
   "strict": false,
-  "scannedAt": "2026-01-05T16:48:27.256Z",
+  "scannedAt": "2026-01-18T20:44:51.600Z",
   "pages": [
     {
       "url": "http://localhost:3000/",
@@ -12,7 +12,7 @@
         {
           "level": "ok",
           "key": "jsonld_present",
-          "msg": "JSON-LD aanwezig (types match: Organization, WebSite, FAQPage)"
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
         },
         {
           "level": "ok",

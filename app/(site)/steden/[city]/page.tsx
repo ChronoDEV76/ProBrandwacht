@@ -163,27 +163,24 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
-      <section className="mx-auto max-w-5xl px-4 pb-2">
-        <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
-          <p>
-            <strong>ProBrandwacht is geen klassiek bemiddelingsbureau.</strong> Wij toetsen vooraf of de inzet
-            van een brandwacht in <strong>{label}</strong> uitvoerbaar is in de praktijk — met heldere
-            rolverdeling en afspraken die standhouden tijdens uitvoering. Past dat niet? Dan zeggen we soms
-            ook nee.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_explore" className="rounded-full px-4 py-2" />
-            <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
-          </div>
-        </div>
-      </section>
-
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
           <h1 className="text-center text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
             Zelfstandige brandwacht in {label}
           </h1>
+          <div className="w-full rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
+            <p>
+              <strong>ProBrandwacht is geen klassiek bemiddelingsbureau.</strong> Wij toetsen vooraf of de
+              inzet van een brandwacht in <strong>{label}</strong> uitvoerbaar is in de praktijk — met
+              heldere rolverdeling en afspraken die standhouden tijdens uitvoering. Past dat niet? Dan
+              zeggen we soms ook nee.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
+              <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
+              <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
+            </div>
+          </div>
 
           <HeroShell
             eyebrow={`Voor zelfstandige brandwachten & opdrachtgevers in ${label}`}
@@ -212,12 +209,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
               </>
             }
           />
-          <div className="flex flex-wrap justify-center gap-3">
-            <Cta id="brandwacht_intake_fit" />
-            <Cta id="opdrachtgever_explore" />
-            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
-            {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
-          </div>
         </div>
       </HeroBackground>
 
@@ -245,7 +236,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_explore" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
             <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>
@@ -342,7 +333,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_explore" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
             <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>

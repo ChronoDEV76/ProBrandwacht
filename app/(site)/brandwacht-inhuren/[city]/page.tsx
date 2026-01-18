@@ -142,9 +142,8 @@ export function BrandwachtInhurenCityPage({
           />
           <div className="flex flex-wrap justify-center gap-3">
             <Cta id="brandwacht_intake_fit" />
-            <Cta id="opdrachtgever_explore" />
+            <Cta id="opdrachtgever_intake_fit" />
             <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
-            {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
           </div>
         </div>
       </HeroBackground>
@@ -221,7 +220,7 @@ export function BrandwachtInhurenCityPage({
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Cta id="brandwacht_intake_fit" />
-            <Cta id="opdrachtgever_explore" />
+            <Cta id="opdrachtgever_intake_fit" />
             <Cta id="secondary_why_no" />
           </div>
         </div>

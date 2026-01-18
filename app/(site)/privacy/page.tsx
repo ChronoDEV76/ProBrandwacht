@@ -105,16 +105,20 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Derden en verwerkers</h2>
+          <h2 className="text-xl font-semibold md:text-2xl">Verwerkers</h2>
           <p className="mt-3 text-sm text-slate-200">Om onze dienstverlening te leveren, kunnen wij verwerkers inschakelen zoals:</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>
-              <strong>Hosting/technische partijen</strong> (bijv. serverhosting). Zij handelen uitsluitend in
-              opdracht en onder onze instructie.
+              <strong>Serverhosting</strong>: Vercel (hosting en deployment).
             </li>
             <li>
-              <strong>File upload services</strong> (zoals Dropbox File Request). Wij gebruiken dit alleen om
-              bestanden tijdelijk te verzamelen; zie ook de bewaartermijnen hieronder.
+              <strong>Database/opslag</strong>: Supabase (gegevensopslag en beheer).
+            </li>
+            <li>
+              <strong>E-mail</strong>: Resend (transactie-e-mails en notificaties).
+            </li>
+            <li>
+              <strong>Bestandsuploads</strong>: Dropbox File Request (tijdelijke inzending van certificaten).
             </li>
           </ul>
         </div>

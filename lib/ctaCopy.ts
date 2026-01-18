@@ -13,6 +13,7 @@ export type CtaId =
   // Audience specific
   | 'brandwacht_learn_selection'
   | 'brandwacht_intake_fit'
+  | 'opdrachtgever_intake_fit'
   | 'brandwacht_interest_waitlist'
   | 'brandwacht_kaders'
   | 'brandwacht_principles'
@@ -106,6 +107,14 @@ const CTA: Record<CtaId, Cta> = {
     variant: 'outline',
     intent: 'primary',
     audience: 'brandwacht',
+  },
+  opdrachtgever_intake_fit: {
+    id: 'opdrachtgever_intake_fit',
+    label: 'Bekijk of dit past bij uw vraag →',
+    href: '/opdrachtgevers/aanmelden',
+    variant: 'outline',
+    intent: 'primary',
+    audience: 'opdrachtgever',
   },
   brandwacht_interest_waitlist: {
     id: 'brandwacht_interest_waitlist',
