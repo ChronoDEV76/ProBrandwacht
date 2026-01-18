@@ -123,6 +123,19 @@ export default function PlatformPage() {
             Professionele samenwerking begint bij eerlijkheid - over rollen, risico&apos;s en ook over geld.
           </p>
         </div>
+
+        <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+          <h2 className="text-2xl font-semibold text-white">Bronnen & verantwoording</h2>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+            We bouwen op praktijkervaring en controleerbare bronnen. Bekijk onze bronverzameling, FAQ en
+            achtergrond om de context te zien.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Cta id="secondary_seo_resources" />
+            <Cta id="secondary_faq" />
+            <Cta id="secondary_over_ons" />
+          </div>
+        </div>
       </section>
     </main>
   )

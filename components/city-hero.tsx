@@ -20,14 +20,14 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht is geen klassiek bureau en geen tariefdwang. We helpen afspraken vooraf helder krijgen,
-          zodat inzet in en rond {cityName} in de praktijk klopt. ProSafetyMatch (in ontwikkeling) ondersteunt dit
-          straks technisch, zonder extra tussenlagen.
+          ProBrandwacht is geen klassiek bemiddelingsbureau. Wij toetsen vooraf of de inzet van een brandwacht in{' '}
+          {cityName} uitvoerbaar is in de praktijk, met heldere rolverdeling en afspraken die standhouden tijdens
+          uitvoering. Past dat niet? Dan zeggen we soms ook nee.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Cta
-            id="primary_select_compact"
+            id="tertiary_contact_exploratory"
             className="rounded-2xl border-slate-200 bg-white px-5 py-3 text-slate-900 hover:bg-slate-50"
           />
           <Cta
@@ -37,6 +37,21 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
           {SPOED_UI_ENABLED ? (
             <Cta id="secondary_spoed_direct" className="text-brand-700" />
           ) : null}
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm text-slate-700">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+            Zo toetsen wij een inzet
+          </p>
+          <ul className="mt-3 space-y-2">
+            <li>- Is de rol van de brandwacht expliciet?</li>
+            <li>- Sluit de inzet aan op vergunning en praktijk?</li>
+            <li>- Is verantwoordelijkheid helder bij escalatie?</li>
+            <li>- Is de inzet uitvoerbaar zonder improvisatie?</li>
+          </ul>
+          <p className="mt-3 text-xs text-slate-600">
+            Alleen als dit klopt, brengen we partijen samen.
+          </p>
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">

@@ -44,7 +44,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           {/* CTA buttons */}
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
             <Cta
-              id="primary_select"
+              id="brandwacht_interest_waitlist"
               className="flex-1 rounded-2xl border-white/25 bg-white/5 px-4 py-2.5 text-white shadow-lg shadow-slate-950/20 focus-visible:ring-2 focus-visible:ring-white/40"
             />
             <Cta

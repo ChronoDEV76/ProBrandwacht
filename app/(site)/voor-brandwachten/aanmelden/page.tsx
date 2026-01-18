@@ -19,7 +19,7 @@ export default function VoorBrandwachtenAanmeldenPage() {
 
   const heading = (
     <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-      Aanmelden als zelfstandige brandwacht
+      Verkennende intake voor zelfstandige brandwachten
     </h1>
   )
 
@@ -34,7 +34,7 @@ export default function VoorBrandwachtenAanmeldenPage() {
             <li>• ProBrandwacht is een verkennend platform - geen klassiek bureau en geen tussenlaag.</li>
             <li>• We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.</li>
             <li>• We doen geen garantie op inzet: samenwerking en inzet blijven contextafhankelijk.</li>
-            <li>• Aanmelding = wachtlijst; selectie kan onderdeel zijn van onboarding.</li>
+            <li>• Verkennende intake = geen inschrijving; selectie kan onderdeel zijn van onboarding.</li>
             <li>• Doel: DBA-bewuste, uitlegbare afspraken en professioneel gedrag in de praktijk.</li>
           </ul>
         </div>

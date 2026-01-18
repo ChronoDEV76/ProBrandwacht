@@ -31,6 +31,11 @@ export default function Page() {
             praktijk klopt — niet alleen op papier. We matchen alleen waar rollen helder zijn, risico’s
             bespreekbaar zijn en afspraken daadwerkelijk uitvoerbaar zijn tijdens inzet.
           </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            <strong>Geen verborgen opslagen op het uurtarief.</strong> Eventuele platform- of servicekosten
+            worden afzonderlijk berekend en in de regel vooraf transparant afgestemd met zowel zelfstandige
+            brandwachten als opdrachtgevers.
+          </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="brandwacht_interest_waitlist" />

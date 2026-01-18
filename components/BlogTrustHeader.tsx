@@ -71,7 +71,7 @@ export default function BlogTrustHeader({
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <Cta id="primary_select" className="rounded-full px-4 py-2" />
+          <Cta id="brandwacht_interest_waitlist" className="rounded-full px-4 py-2" />
           <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           <Cta id="about_kaders_intentie" className="rounded-full px-4 py-2 border-slate-600 text-slate-100" />
         </div>

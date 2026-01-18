@@ -9,12 +9,12 @@ export default function AanmeldenPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
       <section className="mx-auto max-w-4xl px-6 py-20">
-        <h1 className="text-2xl font-semibold">Interesse voor de verkenningsfase</h1>
+        <h1 className="text-2xl font-semibold">Verkennende intake</h1>
 
         <p className="mt-4 max-w-3xl text-slate-300">
-          Deze aanmelding is bedoeld voor zelfstandigen die willen onderzoeken
-          of directe samenwerking zonder klassiek bureau bij hen past. Het platform biedt
-          geen garantie op inzet. Niet iedere aanmelding leidt tot deelname.
+          Deze intake is bedoeld voor zelfstandigen die willen onderzoeken of
+          directe samenwerking zonder klassiek bureau bij hen past. Het platform biedt
+          geen garantie op inzet. Niet iedere intake leidt tot deelname.
         </p>
 
         <div className="mt-10 rounded-xl border border-slate-800 p-6">
@@ -41,7 +41,7 @@ export default function AanmeldenPage() {
           </p>
 
           <p className="mt-4 text-xs text-slate-400">
-            Door je interesse door te geven bevestig je dat je begrijpt dat
+            Door je intake te versturen bevestig je dat je begrijpt dat
             ProBrandwacht een orienterend platform is en geen klassiek bureau of
             tussenlaag. We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden
             niet kloppen. Deelname is vrijwillig en contextafhankelijk.

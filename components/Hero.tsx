@@ -55,7 +55,7 @@ export default function Hero() {
           {/* CTA’s */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Cta
-              id="primary_select"
+              id="brandwacht_interest_waitlist"
               className="h-11 rounded-md border-slate-300 bg-white px-5 text-slate-700 hover:bg-slate-50"
             />
           </div>

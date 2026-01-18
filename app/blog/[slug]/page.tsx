@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="primary_select" />
+            <Cta id="brandwacht_interest_waitlist" />
             <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
             <Cta id="about_kaders_intentie" className="border-white/20" />
           </div>
@@ -174,11 +174,24 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Volgende stap</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            Als je dit artikel herkent: leg de afspraken vooraf vast. Dat maakt uitvoering rustiger en samenwerking sterker.
+            Als dit herkenbaar is: toets uitvoerbaarheid en rolverdeling vooraf. Dat maakt uitvoering rustiger en
+            samenwerking sterker.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Cta id="primary_select_compact" />
+            <Cta id="brandwacht_interest_waitlist" />
             <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Bronnen & redactie</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200">
+            We baseren artikelen op praktijkervaring en controleerbare bronnen. Bekijk de bronverzameling en
+            achtergrond van ProBrandwacht.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Cta id="secondary_seo_resources" />
+            <Cta id="secondary_over_ons" />
           </div>
         </div>
       </section>

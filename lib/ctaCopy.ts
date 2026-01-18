@@ -12,6 +12,7 @@ export type CtaId =
   | 'secondary_back_home'
   // Audience specific
   | 'brandwacht_learn_selection'
+  | 'brandwacht_intake_fit'
   | 'brandwacht_interest_waitlist'
   | 'brandwacht_kaders'
   | 'brandwacht_principles'
@@ -98,12 +99,20 @@ const CTA: Record<CtaId, Cta> = {
     intent: 'secondary',
     audience: 'brandwacht',
   },
+  brandwacht_intake_fit: {
+    id: 'brandwacht_intake_fit',
+    label: 'Dit past bij mijn manier van werken',
+    href: '/voor-brandwachten/aanmelden',
+    variant: 'outline',
+    intent: 'primary',
+    audience: 'brandwacht',
+  },
   brandwacht_interest_waitlist: {
     id: 'brandwacht_interest_waitlist',
-    label: 'Interesse doorgeven (wachtlijst)',
+    label: 'Start verkennende intake',
     href: '/voor-brandwachten/aanmelden',
-    variant: 'default',
-    intent: 'primary',
+    variant: 'outline',
+    intent: 'secondary',
     audience: 'brandwacht',
   },
   brandwacht_kaders: {
@@ -140,10 +149,10 @@ const CTA: Record<CtaId, Cta> = {
   },
   opdrachtgever_explore: {
     id: 'opdrachtgever_explore',
-    label: 'Ik wil verkennen als opdrachtgever',
+    label: 'Leg uw situatie voor',
     href: '/opdrachtgevers/aanmelden',
-    variant: 'default',
-    intent: 'primary',
+    variant: 'outline',
+    intent: 'tertiary',
     audience: 'opdrachtgever',
   },
   opdrachtgever_kaders_disclaimer: {

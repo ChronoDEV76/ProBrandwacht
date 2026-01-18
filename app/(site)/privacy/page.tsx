@@ -48,6 +48,102 @@ export default function PrivacyPage() {
           </p>
 
         </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Verwerkingsverantwoordelijke</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            ProBrandwacht is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze
+            privacyverklaring.
+          </p>
+          <p className="mt-3 text-sm text-slate-200">
+            <strong>Contactgegevens:</strong>
+            <br />
+            E: info@prosafetymatch.nl
+            <br />
+            Adres: op verzoek beschikbaar
+          </p>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Doeleinden van gegevensverwerking</h2>
+          <p className="mt-3 text-sm text-slate-200">Wij verwerken persoonsgegevens voor de volgende doeleinden:</p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li>
+              <strong>Intake en samenwerkingstoetsing:</strong> om verkennende intakeformulieren te verwerken en
+              de uitvoerbaarheid van inzet te beoordelen.
+            </li>
+            <li>
+              <strong>Contact en communicatie:</strong> om vragen, reacties en verzoeken te beantwoorden.
+            </li>
+            <li>
+              <strong>Website analytics:</strong> om de functionaliteit van de site te verbeteren met behulp van
+              geanonimiseerde gegevens.
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Rechtsgrond voor verwerking</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            Wij verwerken persoonsgegevens op basis van de volgende wettelijke grondslagen:
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li><strong>Toestemming:</strong> voor intakeformulieren en direct contact.</li>
+            <li><strong>Uitvoering van overeenkomst:</strong> voor de verkennende intake en samenwerking.</li>
+            <li><strong>Gerechtvaardigd belang:</strong> voor websiteoptimalisatie en veiligheid.</li>
+          </ul>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Categorieën persoonsgegevens</h2>
+          <p className="mt-3 text-sm text-slate-200">Wij kunnen de volgende gegevens verwerken:</p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li>Naam, e-mail, telefoonnummer.</li>
+            <li>Beroepsgegevens (rol, kwalificaties, contextinformatie).</li>
+            <li>Uploadbestanden zoals certificaten (alleen als u die dient aan te leveren).</li>
+          </ul>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Derden en verwerkers</h2>
+          <p className="mt-3 text-sm text-slate-200">Om onze dienstverlening te leveren, kunnen wij verwerkers inschakelen zoals:</p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li>
+              <strong>Hosting/technische partijen</strong> (bijv. serverhosting). Zij handelen uitsluitend in
+              opdracht en onder onze instructie.
+            </li>
+            <li>
+              <strong>File upload services</strong> (zoals Dropbox File Request). Wij gebruiken dit alleen om
+              bestanden tijdelijk te verzamelen; zie ook de bewaartermijnen hieronder.
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Bewaartermijnen</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            Wij bewaren persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld,
+            tenzij wettelijke verplichtingen een langere bewaartermijn voorschrijven. Bestanden die u uploadt behouden
+            wij alleen zolang dit nodig is voor de intake en toetsing en worden daarna verwijderd, tenzij u expliciet
+            anders hebt ingestemd.
+          </p>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Uw rechten</h2>
+          <p className="mt-3 text-sm text-slate-200">U heeft volgens de AVG de volgende rechten:</p>
+          <ul className="mt-4 space-y-2 text-sm text-slate-200">
+            <li>Inzage in uw gegevens.</li>
+            <li>Correctie / verbetering.</li>
+            <li>Dataportabiliteit.</li>
+            <li>Verwijdering (recht om vergeten te worden).</li>
+            <li>Beperking van verwerking.</li>
+            <li>Bezwaar tegen verwerking.</li>
+          </ul>
+          <p className="mt-3 text-sm text-slate-200">
+            U kunt uw rechten uitoefenen door te mailen naar: <strong>privacy@prosafetymatch.nl</strong>
+          </p>
+        </div>
       </section>
     </main>
   )

@@ -131,7 +131,11 @@ export default function OpdrachtgeversPage() {
               We kijken graag verkennend mee: wat is vereist, wat is uitvoerbaar, en hoe organiseren we
               dit zo dat het klopt.
             </p>
-            <div className="mt-6">
+            <p className="mt-3 text-sm text-slate-200">
+              Geen offerte en geen snelle plaatsing - wel een verkennende intake.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Cta id="opdrachtgever_explore" />
               <Cta id="tertiary_contact_exploratory" />
             </div>
           </div>

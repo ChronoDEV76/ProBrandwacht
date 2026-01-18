@@ -121,7 +121,11 @@ export default function VoorBrandwachtenPage() {
               Als jij veiligheid inhoudelijk benadert en verantwoordelijkheid serieus neemt, dan past
               onze werkwijze waarschijnlijk goed. Liever eerst aftasten dan overtuigen.
             </p>
-            <div className="mt-6">
+            <p className="mt-3 text-sm text-slate-200">
+              Geen inschrijving en geen verplichtingen - wel een verkennende intake.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Cta id="brandwacht_interest_waitlist" />
               <Cta id="tertiary_contact_exploratory" />
             </div>
           </div>

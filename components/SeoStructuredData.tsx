@@ -43,6 +43,19 @@ const DEFAULT_ORGANIZATION = {
   '@type': 'Organization',
   name: 'ProBrandwacht.nl',
   url: 'https://www.probrandwacht.nl',
+  description:
+    'Platform voor uitvoerbare brandveiligheid met nadruk op rolhelderheid, professionele verantwoordelijkheid en DBA-bewuste samenwerking.',
+  knowsAbout: [
+    'brandveiligheid',
+    'brandwacht',
+    'wet dba',
+    'uitvoerbaarheid',
+    'rolverdeling',
+    'gasmeting',
+    'mangatwacht',
+    'industriele brandwacht',
+    'evenementenveiligheid',
+  ],
   logo: 'https://www.probrandwacht.nl/og.jpg',
   sameAs: [
     'https://www.linkedin.com/company/probrandwacht',

@@ -85,7 +85,7 @@ export default function ProBrandwachtDirectPage() {
           <h3 className="text-sm font-semibold text-slate-900">Beschikbaar als brandwacht?</h3>
           <p className="text-sm text-slate-700">Zet jezelf op beschikbaar en reageer op aanvragen.</p>
           <Cta
-            id="primary_select_compact"
+            id="brandwacht_interest_waitlist"
             className="mt-2 inline-flex items-center rounded-md border px-3 py-2 text-sm hover:bg-slate-50"
           />
         </div>
