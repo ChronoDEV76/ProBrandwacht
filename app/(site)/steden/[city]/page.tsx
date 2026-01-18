@@ -209,7 +209,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           />
           <div className="flex flex-wrap justify-center gap-3">
             <Cta id="brandwacht_learn_selection" />
-            <Cta id="opdrachtgever_fit_your_case" />
+            <Cta id="opdrachtgever_explore" />
             <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
             {secondaryCta ? <Cta id="secondary_spoed_direct" /> : null}
           </div>
@@ -240,7 +240,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_explore" className="rounded-full px-4 py-2" />
             <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Cta id="brandwacht_learn_selection" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_fit_your_case" className="rounded-full px-4 py-2" />
+            <Cta id="opdrachtgever_explore" className="rounded-full px-4 py-2" />
             <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
           </div>
         </div>

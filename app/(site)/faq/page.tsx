@@ -41,7 +41,7 @@ export default function FaqPage() {
 
             <div className="flex flex-wrap gap-3 pt-2">
               <Cta id="brandwacht_learn_selection" />
-              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
+              <Cta id="opdrachtgever_explore" className="rounded-2xl px-5 py-2.5" />
               <Cta id="about_kaders_intentie" className="border-white/20" />
             </div>
           </div>

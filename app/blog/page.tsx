@@ -349,9 +349,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                       prefetch={false}
                       className="font-medium text-emerald-200 hover:text-emerald-100"
                     >
-                      Lees hoe wij de norm verschuiven &rarr;
+                      Lees hoe we uitvoerbaarheid borgen &rarr;
                     </Link>
-                    <Cta id="primary_select_compact" className="text-slate-300 hover:text-emerald-100" />
+                    <Cta id="brandwacht_interest_waitlist" className="text-slate-300 hover:text-emerald-100" />
                   </div>
                 </div>
               </article>
@@ -359,9 +359,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-50">Stadspagina&apos;s met actuele tariefvoorbeelden</h2>
+            <h2 className="text-lg font-semibold text-slate-50">Stadspagina&apos;s met indicatieve tariefcontext</h2>
             <p className="mt-2 text-sm text-slate-200">
-              Bekijk per stad indicatieve tariefbanden en meld je aan voor aanvragen in jouw regio.
+              Bekijk per stad indicatieve tariefbanden en de kaders die vooraf uitvoerbaarheid toetsen.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {cityLinks.map((cityLink) => (
@@ -391,20 +391,21 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-center">
-            <h3 className="text-xl font-semibold text-slate-50">Klaar voor eerlijk samenwerken?</h3>
+            <h3 className="text-xl font-semibold text-slate-50">Past deze aanpak bij jullie?</h3>
             <p className="mt-2 text-slate-200">
-              Toegang voor de eerste lichting is geopend - voor professionals en vooruitstrevende opdrachtgevers.
+              Voor professionals en opdrachtgevers die vooraf willen toetsen of inzet uitvoerbaar is.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <Cta id="primary_select_compact" className="rounded-2xl px-5 py-3" />
-              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-3" />
+              <Cta id="brandwacht_interest_waitlist" className="rounded-2xl px-5 py-3" />
+              <Cta id="opdrachtgever_explore" className="rounded-2xl px-5 py-3" />
             </div>
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-200">
             <h4 className="text-base font-semibold text-slate-50">ProSafetyMatch in ontwikkeling</h4>
             <p className="mt-2">
-              We werken aan ProSafetyMatch: een directe, DBA-bewuste manier van samenwerken. Wil je op de hoogte blijven?
+              We werken aan ProSafetyMatch: een directe, DBA-bewuste manier van samenwerken. Wil je volgen hoe
+              we uitvoerbaarheid ondersteunen?
             </p>
           </section>
         </div>

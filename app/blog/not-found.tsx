@@ -19,8 +19,8 @@ export default function BlogNotFound() {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="secondary_blog_index" />
-            <Cta id="primary_select" className="rounded-2xl px-5 py-2.5" />
-            <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
+            <Cta id="brandwacht_interest_waitlist" className="rounded-2xl px-5 py-2.5" />
+            <Cta id="opdrachtgever_explore" className="rounded-2xl px-5 py-2.5" />
           </div>
         </div>
       </section>

@@ -33,7 +33,7 @@ export default function Page() {
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="primary_select" />
+            <Cta id="brandwacht_interest_waitlist" />
             <Cta
               id="secondary_why_no"
               className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5"
@@ -110,7 +110,7 @@ export default function Page() {
                 dat ze in de praktijk kloppen. Minder discussie achteraf, meer rust tijdens uitvoering.
               </p>
               <div className="mt-5">
-                <Cta id="opdrachtgever_fit_your_case" />
+                <Cta id="opdrachtgever_explore" />
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function Page() {
               maar in de regel eerlijk — en uiteindelijk goedkoper dan herstellen.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Cta id="tertiary_contact_exploratory" />
+              <Cta id="brandwacht_interest_waitlist" />
               <Cta
                 id="secondary_how_we_work"
                 className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5"

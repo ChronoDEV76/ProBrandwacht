@@ -26,8 +26,8 @@ export default function ContactPage() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Cta id="primary_select" />
-              <Cta id="opdrachtgever_fit_your_case" className="rounded-2xl px-5 py-2.5" />
+              <Cta id="brandwacht_interest_waitlist" />
+              <Cta id="opdrachtgever_explore" className="rounded-2xl px-5 py-2.5" />
               <Cta id="secondary_faq" />
             </div>
           </div>

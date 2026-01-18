@@ -102,7 +102,7 @@ export default function Page() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Cta id="tertiary_contact_exploratory" />
-              <Cta id="opdrachtgever_fit_your_case" />
+              <Cta id="opdrachtgever_explore" />
               <Cta id="brandwacht_learn_selection" />
             </div>
           </div>

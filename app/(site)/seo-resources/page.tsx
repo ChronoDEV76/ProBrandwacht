@@ -85,8 +85,8 @@ export default function SeoResourcesPage() {
         </section>
 
         <section className="flex flex-wrap gap-3">
-          <Cta id="opdrachtgever_fit_your_case" className="rounded-md px-5 py-3" />
-          <Cta id="primary_select_compact" className="rounded-md px-4 py-2" />
+          <Cta id="opdrachtgever_explore" className="rounded-md px-5 py-3" />
+          <Cta id="brandwacht_interest_waitlist" className="rounded-md px-4 py-2" />
         </section>
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
