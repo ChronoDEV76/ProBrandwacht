@@ -163,12 +163,21 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           : typeof frontmatter.date === 'string'
             ? frontmatter.date
             : undefined
-      const updatedAt =
+      let updatedAt =
         typeof frontmatter.updatedAt === 'string'
           ? frontmatter.updatedAt
           : typeof frontmatter.updated === 'string'
             ? frontmatter.updated
             : undefined
+      if (publishedAt && updatedAt) {
+        const publishedDate = new Date(publishedAt)
+        const updatedDate = new Date(updatedAt)
+        if (!Number.isNaN(publishedDate.getTime()) && !Number.isNaN(updatedDate.getTime())) {
+          if (updatedDate < publishedDate) {
+            updatedAt = undefined
+          }
+        }
+      }
 
       return {
         slug,
@@ -351,7 +360,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     >
                       Lees hoe we uitvoerbaarheid borgen &rarr;
                     </Link>
-                    <Cta id="brandwacht_interest_waitlist" className="text-slate-300 hover:text-emerald-100" />
+                    <Cta id="secondary_platform_fit" className="text-slate-300 hover:text-emerald-100" />
                   </div>
                 </div>
               </article>

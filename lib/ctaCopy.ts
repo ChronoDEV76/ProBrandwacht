@@ -28,6 +28,7 @@ export type CtaId =
   | 'secondary_steden_overview'
   | 'secondary_spoed_direct'
   | 'secondary_direct_route'
+  | 'secondary_platform_fit'
   | 'secondary_faq'
   | 'secondary_how_inhuren'
   | 'secondary_over_ons'
@@ -224,6 +225,14 @@ const CTA: Record<CtaId, Cta> = {
     id: 'secondary_direct_route',
     label: 'Lees de Direct-route →',
     href: '/probrandwacht-direct',
+    variant: 'link',
+    intent: 'secondary',
+    audience: 'generic',
+  },
+  secondary_platform_fit: {
+    id: 'secondary_platform_fit',
+    label: 'Bekijk of deze werkwijze bij je past',
+    href: '/platform',
     variant: 'link',
     intent: 'secondary',
     audience: 'generic',
