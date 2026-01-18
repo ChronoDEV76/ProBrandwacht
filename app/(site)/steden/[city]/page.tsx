@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import { HeroShell } from '@/components/layout/hero-shell'
 import { InfoCardsRow } from '@/components/layout/info-cards-row'
@@ -14,7 +14,6 @@ import {
 } from '@/lib/city-data'
 import { opdrachtgeverFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
-import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
 export const revalidate = 86400
 
@@ -153,35 +152,51 @@ export default function CityPage({ params }: { params: { city: string } }) {
     },
   ]
 
-  const secondaryCta = SPOED_UI_ENABLED
-    ? { href: '/probrandwacht-direct-spoed', label: 'Spoed? ProBrandwacht Direct' }
-    : undefined
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
       <div className="mx-auto w-full max-w-5xl px-4 py-6">
         <StructuredBreadcrumbs items={breadcrumbItems} />
       </div>
 
+      <section className="mx-auto max-w-5xl px-4 pt-10">
+        <h1 className="text-3xl font-semibold text-white">
+          Brandwacht in {label}
+        </h1>
+
+        <p className="mt-4 text-base leading-relaxed text-slate-200">
+          <strong className="text-white">ProBrandwacht is geen klassiek bemiddelingsbureau.</strong>{' '}
+          Wij toetsen vooraf of de inzet van een brandwacht in{' '}
+          <strong className="text-white">{label}</strong> uitvoerbaar is in de praktijk — met
+          heldere rolverdeling en afspraken die standhouden tijdens uitvoering. Past dat niet?
+          Dan zeggen we soms ook nee.
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            href="/voor-brandwachten/aanmelden"
+            className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
+          >
+            Dit past bij mijn manier van werken
+          </Link>
+
+          <Link
+            href="/opdrachtgevers/aanmelden"
+            className="inline-flex items-center rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-3 text-sm font-medium text-emerald-100 hover:bg-emerald-300/15"
+          >
+            Bekijk of dit past bij uw vraag →
+          </Link>
+
+          <Link
+            href="/waarom-wij-soms-nee-zeggen"
+            className="inline-flex items-center px-2 py-3 text-sm font-medium text-slate-200 hover:text-white"
+          >
+            Waarom wij soms nee zeggen →
+          </Link>
+        </div>
+      </section>
+
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-6 pb-14 pt-8">
-          <h1 className="text-center text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-            Brandwacht in {label}
-          </h1>
-          <div className="w-full rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
-            <p>
-              <strong>ProBrandwacht is geen klassiek bemiddelingsbureau.</strong> Wij toetsen vooraf of de
-              inzet van een brandwacht in <strong>{label}</strong> uitvoerbaar is in de praktijk — met
-              heldere rolverdeling en afspraken die standhouden tijdens uitvoering. Past dat niet? Dan
-              zeggen we soms ook nee.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-              <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
-              <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
-            </div>
-          </div>
-
           <HeroShell
             eyebrow={`Voor zelfstandige brandwachten & opdrachtgevers in ${label}`}
             title={
@@ -234,11 +249,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
             risico en de afspraken die jullie vastleggen.
           </p>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
-          </div>
         </div>
 
         <div className="flex-1 rounded-2xl border border-white/10 bg-slate-900/70 p-5 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)]">
@@ -331,11 +341,6 @@ export default function CityPage({ params }: { params: { city: string } }) {
             </ul>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
-            <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
-          </div>
         </div>
       </section>
 
