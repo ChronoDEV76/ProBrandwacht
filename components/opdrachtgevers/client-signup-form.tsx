@@ -120,9 +120,9 @@ function SecondaryButton({ children, className = '', ...props }: React.ButtonHTM
 
 export default function ClientSignupForm({
   className = '',
-  heading = 'Aanmelden als opdrachtgever',
+  heading = 'Verkennende intake voor opdrachtgevers',
   description =
-    'Vul je bedrijfsgegevens in. We versturen de gegevens direct naar het platform en bewaren een kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren.',
+    'Vul je basisgegevens in. Dit is geen offerte of plaatsing; we toetsen eerst of de inzet uitvoerbaar is en bewaren een kopie in je browser (localStorage) zodat je deze later kunt hergebruiken.',
   cancelHref = '/',
   showCancel = true,
   successReturnHref = '/',
@@ -192,7 +192,7 @@ export default function ClientSignupForm({
       setDone(true)
     } catch (err) {
       console.error('Failed to submit client signup', err)
-      setError('We konden je aanmelding niet naar het platform versturen. Probeer het opnieuw of mail ons via info@prosafetymatch.nl.')
+      setError('We konden je intake niet naar het platform versturen. Probeer het opnieuw of mail ons via info@prosafetymatch.nl.')
     }
 
     setSubmitting(false)
@@ -205,8 +205,8 @@ export default function ClientSignupForm({
       <div className={`mx-auto max-w-3xl space-y-6 ${className}`.trim()}>
         <Card>
           <CardSection
-            title="Accountaanvraag opgeslagen ✅"
-            subtitle="Je bedrijfsgegevens zijn gelogd voor het platform en lokaal opgeslagen. Je kunt dit later importeren in je dashboard."
+            title="Intake ontvangen ✅"
+            subtitle="Je bedrijfsgegevens zijn vastgelegd voor de verkennende intake en lokaal opgeslagen. Je kunt dit later importeren in je dashboard."
           >
             <div className="text-sm text-gray-700">
               <div className="mb-1 font-semibold">Samenvatting (JSON)</div>
@@ -303,9 +303,20 @@ export default function ClientSignupForm({
           </CardSection>
         </Card>
 
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
+          <p className="font-semibold text-gray-900">Wat betekent ProBrandwacht als platform?</p>
+          <p className="mt-2">
+            ProBrandwacht faciliteert samenwerking. Zoals ieder platform kan hier een platform- of servicefee
+            bij horen. Dit wordt vooraf transparant afgestemd; geen verborgen opslagen.
+          </p>
+          <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">
+            Lees hoe het platform werkt
+          </Link>
+        </div>
+
         <div className="flex flex-wrap gap-3">
           <PrimaryButton type="submit" disabled={submitting}>
-            {submitting ? 'Bezig met opslaan…' : 'Aanmelding opslaan'}
+            {submitting ? 'Bezig met opslaan…' : 'Intake versturen'}
           </PrimaryButton>
           {showCancel ? (
             <Link href={cancelHref} className={`${linkBase} text-gray-700 hover:bg-gray-100`}>

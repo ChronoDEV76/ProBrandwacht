@@ -12,7 +12,7 @@ export default function OpdrachtgeverAanmeldenPage() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Voor opdrachtgevers', url: 'https://www.probrandwacht.nl/opdrachtgevers' },
-    { name: 'Aanmelden', url: canonicalUrl },
+    { name: 'Verkennende intake', url: canonicalUrl },
   ]
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -30,10 +30,17 @@ export default function OpdrachtgeverAanmeldenPage() {
         <div className="mx-auto w-full max-w-5xl space-y-8 px-4 py-12 sm:px-6 md:px-8">
           <StructuredBreadcrumbs items={breadcrumbItems} />
           <header className="space-y-3">
-            <h1 className="text-3xl font-semibold md:text-4xl">Meld je bedrijf aan</h1>
+            <h1 className="text-3xl font-semibold md:text-4xl">Verkennende intake voor opdrachtgevers</h1>
+            <p className="max-w-3xl text-sm text-slate-200 md:text-base">
+              Geen offerte en geen snelle plaatsing. We bespreken eerst of de inzet uitvoerbaar is en past
+              binnen onze werkwijze.
+            </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <a href="/opdrachtgevers" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
                 Bekijk hoe inhuur werkt
+              </a>
+              <a href="/platform" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+                Hoe werkt het platform?
               </a>
               <a href="/faq" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
                 Veelgestelde vragen
@@ -48,8 +55,8 @@ export default function OpdrachtgeverAanmeldenPage() {
           <div className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-lg">
             <ClientSignupForm
               className="px-0"
-              heading="Aanmelden als opdrachtgever"
-              description="Gegevens gaan direct naar het platform; we bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
+              heading="Verkennende intake voor opdrachtgevers"
+              description="Gegevens gaan direct naar het platform; dit is geen verplichting, maar een eerste toets op uitvoerbaarheid. We bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
               headingClassName="text-2xl font-semibold text-slate-50 md:text-3xl"
               descriptionClassName="text-sm text-slate-200 md:text-base"
             />

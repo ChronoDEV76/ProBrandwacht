@@ -329,7 +329,7 @@ Tariefafspraken maak je rechtstreeks met de professional. Zo is voor iedereen du
 - Extra toezicht bij tijdelijke locaties en opslag`,
     localCaseTitle: 'Voorbeeld: inzet tijdens een stadsfestival',
     localCaseBody:
-      'Tijdens een stadsfestival in Breda is een brandwacht ingezet die bekend was met de binnenstad en de locatie. Taken, aanmelding en afstemming met beveiliging zijn vooraf helder doorgenomen, zodat de organisatie één aanspreekpunt had voor de brandveiligheid.'
+      'Tijdens een stadsfestival in Breda is een brandwacht ingezet die bekend was met de binnenstad en de locatie. Taken, afstemming en contact met beveiliging zijn vooraf helder doorgenomen, zodat de organisatie één aanspreekpunt had voor de brandveiligheid.'
   },
 
   nijmegen: {

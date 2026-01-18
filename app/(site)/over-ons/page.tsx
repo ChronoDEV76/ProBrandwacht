@@ -82,7 +82,7 @@ export default function OverOnsPage() {
           <div className="md:col-span-2 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
             <p className="text-sm font-semibold text-white">Transparantie & contact</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              ProBrandwacht bevindt zich in een selectieve verkenningsfase. We gebruiken aanmeldingen om
+              ProBrandwacht bevindt zich in een selectieve verkenningsfase. We gebruiken intakes om
               testmomenten en feedbacksessies te plannen. Reactiesnelheid en doorlooptijden zijn afhankelijk van
               capaciteit. Vragen? Mail{' '}
               <a className="underline hover:text-white" href="mailto:info@prosafetymatch.nl">

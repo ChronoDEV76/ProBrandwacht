@@ -32,9 +32,10 @@ const SEGMENT_LABELS: Record<string, string> = {
   opdrachtgevers: "Opdrachtgevers",
   brandwacht: "Brandwacht",
   "brandwacht-inhuren": "Brandwacht inhuren",
+  platform: "Platform",
   zzp: "ZZP",
-  aanmelding: "Aanmelding",
-  aanmelden: "Aanmelden",
+  aanmelding: "Verkennende intake",
+  aanmelden: "Verkennende intake",
   seo: "SEO",
   "seo-resources": "SEO resources",
 };

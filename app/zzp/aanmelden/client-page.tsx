@@ -236,8 +236,8 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
       <div className="max-w-3xl mx-auto p-6 space-y-6">
         <Card>
           <CardSection
-            title="Aanmelding opgeslagen ✅"
-            subtitle="Je gegevens zijn gelogd voor ons platform en lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in tijdens de profielverificatie zodra je toegang krijgt tot de volgende fase."
+            title="Intake ontvangen ✅"
+            subtitle="Je gegevens zijn vastgelegd voor de verkenningsfase en lokaal opgeslagen. Betaal- en uitbetalingsgegevens (zoals IBAN) vul je later in tijdens de profielverificatie zodra je toegang krijgt tot de volgende fase."
           >
             <div className="grid gap-4">
               <DropboxHint />
@@ -276,12 +276,15 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
           <div className="space-y-3">
             {heading ?? (
               <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                Interesse doorgeven
+                Verkennende intake
               </h1>
             )}
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Je laat hiermee weten dat je openstaat voor directe samenwerking binnen DBA-bewuste,
-              contextafhankelijke afspraken. Dit is geen inschrijving voor werk en geen garantie op opdrachten.
+              Je legt hiermee vrijblijvend je situatie voor. Dit is geen inschrijving voor werk en geen garantie
+              op opdrachten. We toetsen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.{' '}
+              <Link href="/platform" className="underline underline-offset-4">
+                Hoe werkt het platform?
+              </Link>
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">
@@ -417,16 +420,27 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
               </CardSection>
             </Card>
 
+            <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200">
+              <p className="font-semibold text-slate-100">Wat betekent ProBrandwacht als platform?</p>
+              <p className="mt-2">
+                ProBrandwacht faciliteert samenwerking. Zoals ieder platform kan hier een platform- of servicefee
+                bij horen. Dit wordt vooraf transparant afgestemd; geen verborgen opslagen.
+              </p>
+              <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">
+                Lees hoe het platform werkt
+              </Link>
+            </div>
+
             <div className="flex flex-wrap gap-3">
               <Button type="submit" data-testid="zzp-submit" disabled={loading} variant="outline" className="flex-col items-start">
-                {loading ? "Bezig met opslaan…" : "Interesse doorgeven"}
+                {loading ? "Bezig met opslaan…" : "Start verkennende intake"}
               </Button>
               <LinkButton href="/" variant="ghost">
                 Annuleren
               </LinkButton>
             </div>
             <p className="text-xs text-slate-400">
-              Door te versturen bevestig je dat je begrijpt dat dit een selectieve wachtlijst is en geen garantie op inzet.
+              Door te versturen bevestig je dat dit een verkennende intake is en geen garantie op inzet.
             </p>
             <p className="text-xs text-slate-400">
               We gebruiken je gegevens alleen voor contact over de verkenningsfase. Je kunt je afmelden wanneer je wilt;

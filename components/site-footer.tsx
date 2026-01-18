@@ -3,6 +3,7 @@ import Image from "next/image"
 
 const LINKS = [
   { href: "/blog", label: "Blog / Kennisbank" },
+  { href: "/platform", label: "Hoe werkt het platform?" },
   { href: "/voor-brandwachten", label: "Voor brandwachten (selectief)" },
   { href: "/opdrachtgevers", label: "Voor opdrachtgevers (uitvoerbaar)" },
   { href: "/waarom-wij-soms-nee-zeggen", label: "Waarom wij soms nee zeggen" },
@@ -79,6 +80,23 @@ export default function SiteFooter() {
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >
             Disclaimer
+          </Link>
+        </div>
+
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+          <span className="text-slate-500">Verkennende intake:</span>
+          <Link
+            href="/voor-brandwachten/aanmelden"
+            className="underline-offset-4 hover:text-slate-200 hover:underline"
+          >
+            Voor brandwachten
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link
+            href="/opdrachtgevers/aanmelden"
+            className="underline-offset-4 hover:text-slate-200 hover:underline"
+          >
+            Voor opdrachtgevers
           </Link>
         </div>
 
