@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import BlogLegalNote from '@/components/BlogLegalNote'
 import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
@@ -105,6 +106,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const pageUrl = `${BASE_URL}/blog/${params.slug}`
   const publishedDate = parseFrontmatterDate(frontmatter.date)
   const updatedDate = parseFrontmatterDate(frontmatter.updated) ?? publishedDate
+  const legalNoteVariant = resolveLegalNoteVariant(frontmatter.legalNote)
   const description =
     (frontmatter.tldr as string | undefined) ??
     (frontmatter.excerpt as string | undefined) ??
@@ -170,6 +172,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <Prose>{post.compiled}</Prose>
         </article>
 
+        <BlogLegalNote variant={legalNoteVariant} />
+
         {/* FOOTER CTA */}
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Volgende stap</h2>
@@ -213,4 +217,11 @@ function parseFrontmatterDate(value: unknown) {
   if (!trimmed) return undefined
   const parsed = new Date(trimmed)
   return Number.isNaN(parsed.getTime()) ? undefined : parsed
+}
+
+function resolveLegalNoteVariant(value: unknown): 'standard' | 'dba' | 'extended' {
+  if (value === 'standard' || value === 'dba' || value === 'extended') {
+    return value
+  }
+  return 'standard'
 }

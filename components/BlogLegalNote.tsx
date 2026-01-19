@@ -1,0 +1,45 @@
+type LegalNoteVariant = 'standard' | 'dba' | 'extended'
+
+const LEGAL_NOTE_COPY: Record<
+  LegalNoteVariant,
+  { title: string; body: string }
+> = {
+  standard: {
+    title: 'Juridische nuance',
+    body:
+      'Dit artikel beschrijft hoe zelfstandige samenwerking in de praktijk kan worden ingericht. Of een samenwerking voldoet aan wet- en regelgeving, zoals de Wet DBA, wordt altijd bepaald door de feitelijke uitvoering en de omstandigheden in de praktijk. Aan dit artikel kunnen geen rechten worden ontleend.',
+  },
+  dba: {
+    title: 'Belangrijk om te weten',
+    body:
+      'Directe samenwerking of het gebruik van bepaalde contracten betekent niet automatisch dat sprake is van een zelfstandige arbeidsrelatie. Toezichthouders beoordelen altijd de feitelijke gezagsverhouding, mate van zelfstandigheid en wijze van uitvoering. Dit artikel biedt geen garantie op een specifieke kwalificatie.',
+  },
+  extended: {
+    title: 'Context en verantwoordelijkheid',
+    body:
+      'De inhoud van dit artikel is informatief van aard en gebaseerd op praktijkervaring en publiek beschikbare regelgeving. De uiteindelijke beoordeling van een arbeidsrelatie ligt bij opdrachtgever en uitvoerende, en – indien van toepassing – bij toezichthouders. ProBrandwacht geeft geen juridisch of fiscaal advies en aanvaardt geen verantwoordelijkheid voor de kwalificatie van individuele samenwerkingen.',
+  },
+}
+
+const DEFAULT_CLOSING_LINE =
+  'Professionele samenwerking vraagt niet om standaardantwoorden, maar om bewuste keuzes in de praktijk.'
+
+export default function BlogLegalNote({
+  variant = 'standard',
+  showClosingLine = true,
+}: {
+  variant?: LegalNoteVariant
+  showClosingLine?: boolean
+}) {
+  const copy = LEGAL_NOTE_COPY[variant]
+
+  return (
+    <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+      <h2 className="text-xl font-semibold md:text-2xl">{copy.title}</h2>
+      <p className="mt-2 text-sm leading-relaxed text-slate-200">{copy.body}</p>
+      {showClosingLine ? (
+        <p className="mt-3 text-sm font-medium text-slate-100">{DEFAULT_CLOSING_LINE}</p>
+      ) : null}
+    </div>
+  )
+}
