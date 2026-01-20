@@ -30,8 +30,10 @@ describe('SiteHeader', () => {
     const aboutLinks = screen.getAllByRole('link', { name: /over ons/i })
     expect(aboutLinks.some(link => link.getAttribute('href') === '/over-ons')).toBe(true)
 
-    const ctaLinks = screen.getAllByRole('link', { name: /ik herken/i })
-    expect(ctaLinks.length).toBeGreaterThan(0)
-    expect(ctaLinks.every(link => link.getAttribute('href') === '/zzp/aanmelden')).toBe(true)
+    const brandwachtLinks = screen.getAllByRole('link', { name: /voor brandwachten/i })
+    expect(brandwachtLinks.some(link => link.getAttribute('href') === '/voor-brandwachten')).toBe(true)
+
+    const opdrachtgeverLinks = screen.getAllByRole('link', { name: /voor opdrachtgevers/i })
+    expect(opdrachtgeverLinks.some(link => link.getAttribute('href') === '/opdrachtgevers')).toBe(true)
   })
 })
