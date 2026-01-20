@@ -37,6 +37,10 @@ export default function OverOnsPage() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+            - geen bureau, geen werkgever, geen matching-engine.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is ontstaan vanuit praktijkervaring met samenwerkingen waarin verantwoordelijkheid
             en rolverdeling niet overal helder waren. Wij kiezen voor duidelijkheid vooraf, en voor selectie
             op uitvoerbaarheid in de verkenningsfase.

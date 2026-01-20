@@ -24,6 +24,11 @@ export default function StedenIndexPage() {
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+              - geen bureau, geen werkgever, geen matching-engine.
+            </p>
+
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               De kern verandert niet per stad: <span className="font-semibold">rolverdeling</span>,{' '}
               <span className="font-semibold">verwachtingen</span> en{' '}
               <span className="font-semibold">afspraken</span> moeten vooraf kloppen.

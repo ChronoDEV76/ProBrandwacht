@@ -22,16 +22,16 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             </p>
           </article>
 
-          {/* Morgen */}
+          {/* Straks */}
           <article className="min-w-[260px] flex-1 rounded-3xl border border-white/12 bg-slate-950/60 p-4 text-[#E5ECFF] shadow-lg backdrop-blur transition hover:bg-slate-900/70 md:min-w-0">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF]">
-              Morgen
+              Straks
             </p>
             <h2 className="mt-1 text-sm font-semibold">ProSafetyMatch</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
-              Digitale omgeving (streefdatum Q1 2026) waar vraag en aanbod elkaar
-              rechtstreeks vinden — werken binnen Wet DBA, eerlijk en zonder marge op het
-              uurtarief. 10% platformfee, optioneel escrow 1–2%. Indicatief en afhankelijk
+              Digitale omgeving (streefdatum Q1 2026) die afspraken, planning en
+              documentatie ondersteunt — werken binnen Wet DBA, eerlijk en zonder marge op
+              het uurtarief. 10% platformfee, optioneel escrow 1–2%. Indicatief en afhankelijk
               van afspraken.
             </p>
           </article>

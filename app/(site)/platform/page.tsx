@@ -18,12 +18,12 @@ export default function PlatformPage() {
               Hoe werkt ProBrandwacht als platform?
             </h1>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen klassiek bemiddelingsbureau en geen uitzendmodel. Wij faciliteren
-              samenwerking tussen zelfstandige brandwachten en opdrachtgevers met nadruk op uitvoerbaarheid,
-              rolhelderheid en professionele verantwoordelijkheid.
+              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+              - geen bureau, geen werkgever, geen matching-engine. Wij zijn geen klassiek bemiddelingsbureau en
+              geen uitzendmodel. De nadruk ligt op uitvoerbaarheid, rolhelderheid en professionele verantwoordelijkheid.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Dat betekent ook: we werken niet met automatische matches of standaardinschrijvingen.
+              Dat betekent ook: we werken niet met automatische koppelingen of standaardinschrijvingen.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function PlatformPage() {
             <li>begrijpen dat niet elke samenwerking automatisch klopt</li>
           </ul>
           <p className="mt-4 text-sm text-slate-200 md:text-base">
-            Wie een snelle, onvoorwaardelijke match zoekt, past meestal minder goed bij onze werkwijze.
+            Wie snelle inzet zonder verkenning zoekt, past meestal minder goed bij onze werkwijze.
           </p>
         </div>
 

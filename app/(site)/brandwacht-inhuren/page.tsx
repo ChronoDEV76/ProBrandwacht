@@ -19,6 +19,11 @@ export default function BrandwachtInhurenPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+              - geen bureau, geen werkgever, geen matching-engine.
+            </p>
+
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
               er inzet is. Inzet is contextafhankelijk en hangt af van beschikbaarheid en afspraken tussen
               partijen. Je verkent hier vooral de kaders: rolverdeling, afstemming en verantwoordelijkheid.

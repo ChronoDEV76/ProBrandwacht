@@ -286,16 +286,16 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/probrandwacht-direct': {
-    title: 'Spoedroute brandwacht aanvragen | ProBrandwacht',
+    title: 'ProBrandwacht Direct (spoed) | ProBrandwacht',
     description:
       'Snel inzetten kan, mits rol, risico en beslislijnen kloppen. Geen klassiek bureau; uitvoerbaarheid staat voorop.',
     keywords: [...seoKeywordClusters.processSpeed, ...seoKeywordClusters.platform],
   },
 
   '/probrandwacht-direct-spoed': {
-    title: 'Spoed brandwacht route | ProBrandwacht',
+    title: 'ProBrandwacht Direct (spoed) | ProBrandwacht',
     description:
-      'Spoedroute met minimale, noodzakelijke parameters. Beschikbaarheid hangt af van locatie en risicoprofiel.',
+      'ProBrandwacht Direct (spoed) met minimale, noodzakelijke parameters. Beschikbaarheid hangt af van locatie en risicoprofiel.',
     keywords: [...seoKeywordClusters.processSpeed, 'spoed brandwacht', 'brandwacht spoedroute'],
   },
 

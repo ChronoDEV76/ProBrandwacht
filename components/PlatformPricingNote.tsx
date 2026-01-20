@@ -33,7 +33,7 @@ export default function PlatformPricingNote({ compact }: PlatformPricingNoteProp
           <span className="font-semibold">1–2% escrowkosten</span> wanneer jullie kiezen voor vooraf geborgde betaling.
         </li>
         <li>
-          <span className="font-semibold">Geen marge op uurtarieven</span> en geen automatische platform-match: tarief, rol en planning spreek je
+          <span className="font-semibold">Geen marge op uurtarieven</span> en geen automatische platform-koppeling: tarief, rol en planning spreek je
           rechtstreeks af tussen opdrachtgever en zzp’er.
         </li>
       </ul>

@@ -16,6 +16,11 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+              - geen bureau, geen werkgever, geen matching-engine.
+            </p>
+
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
               we iets bevestigen. Spoed is bedoeld voor korte, duidelijke afspraken; beschikbaarheid blijft
               afhankelijk van locatie en context.

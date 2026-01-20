@@ -36,15 +36,15 @@ export default function PrivacyPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Principes</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li>– Dataminimalisatie: alleen wat nodig is voor matching en afspraken.</li>
+            <li>– Dataminimalisatie: alleen wat nodig is voor verkennend contact en afspraken.</li>
             <li>– Transparantie: je ziet wat er wordt opgeslagen en waarom.</li>
             <li>– Controle: je beheert je profiel en zichtbaarheid.</li>
             <li>– Geen verkoop van persoonsgegevens.</li>
           </ul>
 
           <p className="mt-6 text-xs text-slate-500">
-            In de praktijk werken we met dataminimalisatie: we vragen alleen gegevens die nodig zijn voor matching,
-            communicatie en wettelijke verplichtingen. De exacte verwerking kan per situatie contextafhankelijk zijn.
+            In de praktijk werken we met dataminimalisatie: we vragen alleen gegevens die nodig zijn voor verkennend
+            contact, communicatie en wettelijke verplichtingen. De exacte verwerking kan per situatie contextafhankelijk zijn.
           </p>
 
         </div>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
             Wij verwerken persoonsgegevens op basis van de volgende wettelijke grondslagen:
           </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li><strong>Toestemming:</strong> voor intakeformulieren en direct contact.</li>
+            <li><strong>Toestemming:</strong> voor intakeformulieren en contact.</li>
             <li><strong>Uitvoering van overeenkomst:</strong> voor de verkennende intake en samenwerking.</li>
             <li><strong>Gerechtvaardigd belang:</strong> voor websiteoptimalisatie en veiligheid.</li>
           </ul>

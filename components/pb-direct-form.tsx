@@ -69,13 +69,13 @@ export default function PbDirectForm() {
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="space-y-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Direct - Gecertificeerd - Bereikbaar</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">ProBrandwacht Direct - Gecertificeerd - Bereikbaar</p>
           <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">Start een spoedaanvraag</h2>
           <p className="text-base text-slate-600">We plaatsen je aanvraag in Slack; beschikbare professionals reageren als het past.</p>
         </div>
         <div className="flex flex-wrap gap-2 text-[11px]">
           <span className="inline-flex items-center rounded-full bg-slate-200 px-3 py-1 font-semibold text-slate-700">Beta (spoedflow)</span>
-          <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">Direct</span>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">ProBrandwacht Direct</span>
           <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 font-semibold text-blue-800">Gecertificeerd</span>
           <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">E2E-addendum</span>
           <span className="inline-flex items-center rounded-full bg-brand-700/90 px-3 py-1 font-semibold text-white shadow-sm">ProBrandwacht</span>
@@ -209,7 +209,7 @@ export default function PbDirectForm() {
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-slate-500">
-          We plaatsen je aanvraag in Slack; beschikbare zelfstandige brandwachten reageren en stemmen 1-op-1 af. Geen marge op tarief; afspraken in E2E chat.
+          We plaatsen je aanvraag in Slack; beschikbare zelfstandige brandwachten reageren en stemmen 1-op-1 af. Geen marge op tarief; afspraken in E2E-chat.
         </p>
         <button
           type="submit"

@@ -27,8 +27,12 @@ export default function Page() {
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+            - geen bureau, geen werkgever, geen matching-engine.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is geen klassiek bureau. Wij bewaken dat brandveiligheid in de
-            praktijk klopt — niet alleen op papier. We matchen alleen waar rollen helder zijn, risico’s
+            praktijk klopt — niet alleen op papier. We leggen alleen contact waar rollen helder zijn, risico’s
             bespreekbaar zijn en afspraken daadwerkelijk uitvoerbaar zijn tijdens inzet.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
@@ -75,7 +79,7 @@ export default function Page() {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-              <h2 className="text-2xl font-semibold text-white">Wanneer wij wél en niet matchen</h2>
+              <h2 className="text-2xl font-semibold text-white">Wanneer wij wél en niet verbinden</h2>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
                 <li>Rollen zijn helder (geen aannames, geen grijze zones).</li>
                 <li>Risico’s zijn bespreekbaar (geen eenzijdige afwenteling).</li>

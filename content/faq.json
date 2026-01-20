@@ -61,7 +61,7 @@
           "Repressieve brandwachten uit korpsen of veiligheidsregio’s die naast hun dienst werken.",
           "Zelfstandige brandwachten met rijksdiploma’s die hun opdrachten zelf organiseren.",
           "Industriële brandwachten met aanvullende petrochemische certificaten voor risicovolle omgevingen.",
-          "ProSafetyMatch brengt profielen samen met inzicht in relevante informatie zoals certificaten en tariefcontext."
+          "ProSafetyMatch maakt profielen inzichtelijk met relevante informatie zoals certificaten en tariefcontext."
         ]
       }
     ]
@@ -102,10 +102,10 @@
       {
         "id": "probrandwacht-vs-prosafety",
         "question": "Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?",
-        "summary": "Het zijn verschillende onderdelen met elk een eigen rol.",
+        "summary": "Het zijn verschillende onderdelen met elk een eigen rol (geen bureau, geen werkgever, geen matching-engine).",
         "answer": [
-          "ProBrandwacht is de wervings- en kennisomgeving.",
-          "ProSafetyMatch wordt een digitaal platform (gefaseerd, in ontwikkeling).",
+          "ProBrandwacht is de vakinhoudelijke en verkennende omgeving.",
+          "ProSafetyMatch wordt een digitale laag (gefaseerd, in ontwikkeling).",
           "Aanmelden geeft geen garantie op opdrachten of volumes."
         ]
       },
@@ -130,7 +130,8 @@
         "answer": [
           "ProBrandwacht werkt DBA-bewust, niet DBA-verklarend.",
           "Dat betekent heldere afspraken vooraf en zichtbare rolverdeling.",
-          "De uiteindelijke beoordeling blijft contextafhankelijk en ligt bij opdrachtgever en zelfstandige."
+          "De uiteindelijke beoordeling blijft contextafhankelijk en ligt bij opdrachtgever en zelfstandige.",
+          "ProBrandwacht is geen bureau, geen werkgever en geen matching-engine."
         ]
       },
       {

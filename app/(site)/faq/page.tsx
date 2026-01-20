@@ -34,6 +34,11 @@ export default function FaqPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+              - geen bureau, geen werkgever, geen matching-engine.
+            </p>
+
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is ingericht rond een simpele eis: samenwerking moet vooraf kloppen en achteraf
               uitlegbaar blijven - zonder tussenlagen, sturing of schijnzekerheden. Antwoorden blijven
               contextafhankelijk en sluiten aan op de afspraken die jullie samen maken.

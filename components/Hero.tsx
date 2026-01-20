@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { Cta } from "@/components/Cta";
 const taglines = [
   "Eerlijk en eerlijk werken met zicht op tariefopbouw en afspraken.",
-  "Wij matchen expertise aan jouw opdracht.",
-  "Bij beschikbaarheid, Snel inzetbaar op locatie.",
+  "Wij faciliteren contact tussen opdrachtgevers en vakmensen.",
+  "Bij beschikbaarheid, snel inzetbaar op locatie.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",
 ];
 
@@ -41,7 +41,7 @@ export default function Hero() {
           <p className="mx-auto mt-4 max-w-2xl text-base font-semibold leading-relaxed text-slate-900 sm:text-lg">
             Een netwerk van industriële, repressieve & rijksgediplomeerde professionals.
             <br />
-            Direct, Eerlijk , Zonder tussenlagen 
+            Eerlijk, helder, zonder tussenlagen
           </p>
 
           {/* roterende payoff */}
@@ -66,10 +66,10 @@ export default function Hero() {
               Rijksgediplomeerd en/of repressief
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Eerlijke tarieven. Direct contact. Helder geregeld.
+              Eerlijke tarieven. Rechtstreekse afstemming. Helder geregeld.
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Bij beschikbaarheid, Snel inzetbaar
+              Bij beschikbaarheid, snel inzetbaar
             </span>
           </div>
         </div>

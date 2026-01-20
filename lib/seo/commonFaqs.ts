@@ -4,7 +4,7 @@ export const generalPlatformFaq = [
   {
     question: 'Is ProBrandwacht een uitzendbureau of detacheerder?',
     answer:
-      'Nee. ProBrandwacht is geen bureau en geen tussenlaag in de overeenkomst. Opdrachtgever en zelfstandige maken zelf afspraken over tarief, rol en gezag. Het platform helpt die afspraken vast te leggen zodat ze op de werkvloer uitlegbaar blijven - zonder verborgen marge of sturing.',
+      'Nee. ProBrandwacht is geen bureau, geen werkgever en geen matching-engine. Opdrachtgever en zelfstandige maken zelf afspraken over tarief, rol en gezag. Het platform helpt die afspraken vast te leggen zodat ze op de werkvloer uitlegbaar blijven - zonder verborgen marge of sturing.',
   },
   {
     question: 'Hoe werken betalingen via het platform?',
@@ -24,7 +24,7 @@ export const generalPlatformFaq = [
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
     answer:
-      'Nu toets je inzet eerst op uitvoerbaarheid. ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
+      'Nu toets je inzet eerst op uitvoerbaarheid (verkennend contact via ProBrandwacht, en waar nodig ProBrandwacht Direct). ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
   },
   {
     question: 'Hoe blijft samenwerking binnen Wet DBA?',
@@ -44,7 +44,7 @@ export const generalPlatformFaq = [
   {
     question: 'Wat gebeurt er met mijn gegevens?',
     answer:
-      'Gegevens worden alleen gebruikt om samenwerking professioneel te ondersteunen: profielinformatie, certificaten en afspraken die nodig zijn voor de inzet. Wat er wordt vastgelegd is afhankelijk van de context en afspraken tussen partijen. Gegevens worden niet verkocht en niet gebruikt om buiten jullie om afspraken te maken.',
+      'Gegevens worden alleen gebruikt om samenwerking professioneel te ondersteunen: informatie voor verkennend contact, certificaten en afspraken die nodig zijn voor de inzet. Wat er wordt vastgelegd is afhankelijk van de context en afspraken tussen partijen. Gegevens worden niet verkocht en niet gebruikt om buiten jullie om afspraken te maken.',
   },
 ];
 

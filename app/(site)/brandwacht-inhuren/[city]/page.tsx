@@ -86,7 +86,7 @@ export function BrandwachtInhurenCityPage({
     'De inzet wisselt tussen preventief toezicht, brandmeldinstallaties en ondersteuning bij projecten met verhoogd risico.'
 
   const secondaryCta = SPOED_UI_ENABLED
-    ? { href: '/probrandwacht-direct-spoed', label: 'Spoed? ProBrandwacht Direct' }
+    ? { href: '/probrandwacht-direct-spoed', label: 'ProBrandwacht Direct (spoed)' }
     : undefined
 
   const breadcrumbItems = [
@@ -104,10 +104,11 @@ export function BrandwachtInhurenCityPage({
       <section className="mx-auto max-w-5xl px-4 pb-2">
         <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
           <p>
-            ProBrandwacht is geen klassiek bureau. We bewaken de uitvoerbaarheid van brandveiligheid en
-            selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk
-            en hangt af van beschikbaarheid en afspraken tussen partijen. Je verkent hier vooral de kaders:
-            rolverdeling, afstemming en verantwoordelijkheid.
+            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+            - geen bureau, geen werkgever, geen matching-engine. We bewaken de uitvoerbaarheid van brandveiligheid
+            en selecteren op rolhelderheid, afspraken en verantwoordelijkheid. Inzet is contextafhankelijk en hangt
+            af van beschikbaarheid en afspraken tussen partijen. Je verkent hier vooral de kaders: rolverdeling,
+            afstemming en verantwoordelijkheid.
           </p>
         </div>
       </section>
@@ -147,6 +148,29 @@ export function BrandwachtInhurenCityPage({
           </div>
         </div>
       </HeroBackground>
+
+      <section className="mx-auto max-w-5xl px-4 pb-8">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+              Vandaag: ProBrandwacht
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              Verkennend contact, werkbare afspraken en inzet die uitvoerbaar is. Geen bureau en geen automatische
+              koppeling, wel rolhelderheid en verantwoordelijkheid.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+              Straks: ProSafetyMatch
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              Digitale ondersteuning voor planning, dossiers en documentatie. Ondersteunt afspraken, zonder een
+              extra tussenlaag toe te voegen.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-8">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">

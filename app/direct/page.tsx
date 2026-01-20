@@ -20,7 +20,7 @@ export default function ProBrandwachtDirectPage() {
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
         <p className="mt-2 text-slate-700">
           Spoedlijn voor inzet van gecertificeerde brandwachten. Bij spoedinzet wordt gezocht naar beschikbare professionals die passen bij de context en het risicoprofiel van de opdracht. Duidelijk en DBA-bewust.
-          Uitvoering via de spoedroute van ProBrandwacht. Voorbeeld spoedtarief: <strong>€50/uur</strong>.
+          Uitvoering via ProBrandwacht Direct (spoed). Voorbeeld spoedtarief: <strong>€50/uur</strong>.
           Bij akkoord betaal je <strong>50% aanbetaling</strong> (facilitatiefee 10% inbegrepen).
         </p>
         <p className="mt-1 text-sm text-slate-700">Spoedflow is in beta (technische route); beschikbaarheid blijft contextafhankelijk.</p>
@@ -53,7 +53,7 @@ export default function ProBrandwachtDirectPage() {
         </ul>
       </div>
 
-      {/* Keuze: formulier of live-chat */}
+        {/* Keuze: formulier of live-chat */}
       <section className="grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold">Aanvraagformulier</h2>
@@ -66,7 +66,7 @@ export default function ProBrandwachtDirectPage() {
         </div>
 
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-semibold">Spoedroute</h2>
+          <h2 className="text-xl font-semibold">ProBrandwacht Direct (spoed)</h2>
           <p className="mt-1 text-slate-700 text-sm">
             Versnelde route voor acute inzet, met bevestiging en afstemming per e-mail.
           </p>

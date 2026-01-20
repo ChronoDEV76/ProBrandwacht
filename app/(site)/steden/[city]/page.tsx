@@ -164,6 +164,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
+          ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+          - geen bureau, geen werkgever, geen matching-engine.
+        </p>
+
+        <p className="mt-4 text-base leading-relaxed text-slate-200">
           <strong className="text-white">Deze pagina is een werkkaart, geen aanbod.</strong>{' '}
           ProBrandwacht is geen klassiek bemiddelingsbureau. Wij maken inzichtelijk hoe
           brandwacht-inzet in {label} kan worden ingericht binnen een zelfstandige 1-op-1
@@ -196,6 +201,27 @@ export default function CityPage({ params }: { params: { city: string } }) {
           >
             Waarom wij soms nee zeggen →
           </Link>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+              Vandaag: ProBrandwacht
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              Werkkaart, verkennend contact en afspraken vooraf. Geen bureau en geen automatische koppeling,
+              wel rolhelderheid en uitvoerbaarheid.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+              Straks: ProSafetyMatch
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              Digitale laag voor planning, dossiers en documentatie. Ondersteunt afspraken, zonder een
+              extra tussenlaag toe te voegen.
+            </p>
+          </div>
         </div>
       </section>
 

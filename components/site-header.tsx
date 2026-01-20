@@ -53,7 +53,7 @@ export default function SiteHeader() {
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
               }`}
             >
-              <span className="font-semibold flex items-center gap-1">⚡ ProBrandwacht Direct spoed</span>
+              <span className="font-semibold flex items-center gap-1">⚡ ProBrandwacht Direct (spoed)</span>
               <span className="opacity-85">Spoedinzet op basis van beschikbaarheid</span>
             </Link>
           ) : null}
@@ -111,7 +111,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
               }`}
             >
-              ⚡ ProBrandwacht Direct spoed
+              ⚡ ProBrandwacht Direct (spoed)
             </Link>
           </div>
         ) : null}

@@ -4,7 +4,7 @@ import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
 
 export const metadata: Metadata = SPOED_ROUTE_ENABLED
   ? {
-      title: 'SPOED - zelfstandige brandwacht aanvragen | ProBrandwacht',
+      title: 'SPOED - ProBrandwacht Direct | ProBrandwacht',
       description:
         'Een gecertificeerde zelfstandige brandwacht aanvragen bij spoed. Transparant, DBA-bewust en zonder marge of tussenbureau. Concept van ProSafetyMatch (in ontwikkeling).',
     }

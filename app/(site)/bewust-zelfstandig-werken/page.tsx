@@ -15,9 +15,9 @@ export default function BewustZelfstandigWerkenPage() {
             weten waar jouw verantwoordelijkheid begint - en waar die eindigt.
           </p>
           <p className="text-sm text-slate-400">
-            ProBrandwacht is een selectief platform, geen bureau. We bewaken
-            uitvoerbaarheid en rolhelderheid. Deze pagina helpt duiden wat
-            zelfstandig werken in de praktijk vraagt.
+            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+            - geen bureau, geen werkgever, geen matching-engine. We zijn een selectief platform en bewaken
+            uitvoerbaarheid en rolhelderheid. Deze pagina helpt duiden wat zelfstandig werken in de praktijk vraagt.
           </p>
         </header>
 
@@ -35,7 +35,7 @@ export default function BewustZelfstandigWerkenPage() {
 
           <Block
             title="3. ProBrandwacht stuurt niet op de werkvloer"
-            body="ProBrandwacht faciliteert matching en transparante afspraken, maar is geen operationele partij. Er is geen planner, geen voorman en geen centrale sturing tijdens de inzet."
+            body="ProBrandwacht faciliteert verkennend contact en transparante afspraken, maar is geen operationele partij. Er is geen planner, geen voorman en geen centrale sturing tijdens de inzet."
           />
 
           <Block
