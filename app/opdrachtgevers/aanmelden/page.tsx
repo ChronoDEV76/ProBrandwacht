@@ -31,9 +31,13 @@ export default function OpdrachtgeverAanmeldenPage() {
           <StructuredBreadcrumbs items={breadcrumbItems} />
           <header className="space-y-3">
             <h1 className="text-3xl font-semibold md:text-4xl">Verkennende intake voor opdrachtgevers</h1>
-            <p className="max-w-3xl text-sm text-slate-200 md:text-base">
-              Geen offerte en geen snelle plaatsing. We bespreken eerst of de inzet uitvoerbaar is en past
-              binnen onze werkwijze.
+            <p className="text-base leading-relaxed text-slate-200">
+              ProBrandwacht faciliteert samenwerking tussen opdrachtgevers en zelfstandig uitvoerende
+              professionals. Wij zijn geen klassiek bemiddelingsbureau en leveren geen snelle plaatsingen.
+            </p>
+            <p className="text-base leading-relaxed text-slate-200">
+              Deze intake is bedoeld om samen te toetsen of een vraag uitvoerbaar is binnen een 1-op-1
+              samenwerking, met heldere rolverdeling en afspraken die in de praktijk standhouden.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <a href="/opdrachtgevers" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
@@ -46,6 +50,9 @@ export default function OpdrachtgeverAanmeldenPage() {
                 Veelgestelde vragen
               </a>
             </div>
+            <p className="mt-6 text-sm text-slate-400">
+              Deze intake is verkennend van aard en houdt geen verplichting in tot samenwerking of plaatsing.
+            </p>
           </header>
         </div>
       </section>
@@ -56,7 +63,7 @@ export default function OpdrachtgeverAanmeldenPage() {
             <ClientSignupForm
               className="px-0"
               heading="Verkennende intake voor opdrachtgevers"
-              description="Gegevens gaan direct naar het platform; dit is geen verplichting, maar een eerste toets op uitvoerbaarheid. We bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
+              description="Gegevens gaan naar het platform; dit is geen verplichting, maar een eerste toets op uitvoerbaarheid. We bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
               headingClassName="text-2xl font-semibold text-slate-50 md:text-3xl"
               descriptionClassName="text-sm text-slate-200 md:text-base"
             />

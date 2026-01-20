@@ -7,12 +7,12 @@ const LEGAL_NOTE_COPY: Record<
   standard: {
     title: 'Juridische nuance',
     body:
-      'Dit artikel beschrijft hoe zelfstandige samenwerking in de praktijk kan worden ingericht. Of een samenwerking voldoet aan wet- en regelgeving, zoals de Wet DBA, wordt altijd bepaald door de feitelijke uitvoering en de omstandigheden in de praktijk. Aan dit artikel kunnen geen rechten worden ontleend.',
+      'Dit artikel is informatief van aard. Of een samenwerking voldoet aan wet- en regelgeving, zoals de Wet DBA, wordt in de regel bepaald door de feitelijke uitvoering en omstandigheden in de praktijk. Aan deze tekst kunnen geen rechten worden ontleend.',
   },
   dba: {
     title: 'Belangrijk om te weten',
     body:
-      'Directe samenwerking of het gebruik van bepaalde contracten betekent niet automatisch dat sprake is van een zelfstandige arbeidsrelatie. Toezichthouders beoordelen altijd de feitelijke gezagsverhouding, mate van zelfstandigheid en wijze van uitvoering. Dit artikel biedt geen garantie op een specifieke kwalificatie.',
+      'Directe samenwerking of het gebruik van bepaalde contracten betekent niet automatisch dat sprake is van een zelfstandige arbeidsrelatie. Toezichthouders beoordelen in de regel de feitelijke gezagsverhouding, mate van zelfstandigheid en wijze van uitvoering. Dit artikel biedt geen garantie op een specifieke kwalificatie.',
   },
   extended: {
     title: 'Context en verantwoordelijkheid',

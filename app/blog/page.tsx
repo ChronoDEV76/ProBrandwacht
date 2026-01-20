@@ -413,7 +413,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-200">
             <h4 className="text-base font-semibold text-slate-50">ProSafetyMatch in ontwikkeling</h4>
             <p className="mt-2">
-              We werken aan ProSafetyMatch: een directe, DBA-bewuste manier van samenwerken. Wil je volgen hoe
+              We werken aan ProSafetyMatch: een 1-op-1, DBA-bewuste manier van samenwerken. Wil je volgen hoe
               we uitvoerbaarheid ondersteunen?
             </p>
           </section>

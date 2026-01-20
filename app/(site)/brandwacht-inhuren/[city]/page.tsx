@@ -41,7 +41,7 @@ export async function generateMetadata({
   const canonical = `${BASE_URL}/brandwacht-inhuren/${rawCity}`
   const base = getRouteMetadata('/brandwacht-inhuren/[city]')
   const title = `Brandwacht inhuren in ${label} | ProBrandwacht`
-  const description = `Brandwacht inhuren in ${label}? Samenwerken rechtstreeks met zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.`
+  const description = `Brandwacht inhuren in ${label}? Samenwerken in 1-op-1 verband met zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.`
 
   return {
     ...base,
@@ -121,7 +121,7 @@ export function BrandwachtInhurenCityPage({
             eyebrow={`Brandwacht inhuren in ${label}`}
             title={
               <>
-                Directe afstemming. Heldere afspraken.
+            Rechtstreekse afstemming. Heldere afspraken.
                 <br />
                 Inhuren in {label} zonder ruis.
               </>
@@ -131,7 +131,7 @@ export function BrandwachtInhurenCityPage({
               <>
                 Geen volume-gedreven plaatsing: we kijken eerst of inzet klopt in de praktijk. Je werkt samen met
                 zelfstandige brandwachten op basis van rolprofielen, certificaten en afspraken die vooraf kloppen.
-                Tarief, inzet en verantwoordelijkheid spreek je direct af - DBA-bewust en uitlegbaar.
+                Tarief, inzet en verantwoordelijkheid spreek je 1-op-1 af - DBA-bewust en uitlegbaar.
               </>
             }
             footer={
@@ -167,7 +167,7 @@ export function BrandwachtInhurenCityPage({
             Herkenbare scenario&apos;s in {label}
           </p>
           <h2 className="mt-3 text-2xl font-semibold md:text-3xl">
-            Wanneer directe afstemming helpt
+            Wanneer rechtstreekse afstemming helpt
           </h2>
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
@@ -181,7 +181,7 @@ export function BrandwachtInhurenCityPage({
               <p className="text-sm font-semibold text-white">Rolverdeling vervaagt in de praktijk</p>
               <p className="mt-2 text-sm text-slate-200">
                 Afspraken lijken rond, maar verantwoordelijkheid blijft onduidelijk.
-                Directe afspraken maken het besluitvormingspad zichtbaar.
+                Rechtstreekse afspraken maken het besluitvormingspad zichtbaar.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">

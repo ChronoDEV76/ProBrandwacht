@@ -237,7 +237,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/voor-brandwachten/aanmelden': {
     title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
     description:
-      'Verkennende intake voor zelfstandige brandwachten. Je verkent directe samenwerking zonder klassiek bureau, op basis van passendheid.',
+      'Verkennende intake voor zelfstandige brandwachten. Je verkent 1-op-1 samenwerking zonder klassiek bureau, op basis van passendheid.',
     keywords: [
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.platform,
@@ -286,7 +286,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/probrandwacht-direct': {
-    title: 'Brandwacht direct regelen (spoed) | ProBrandwacht',
+    title: 'Spoedroute brandwacht aanvragen | ProBrandwacht',
     description:
       'Snel inzetten kan, mits rol, risico en beslislijnen kloppen. Geen klassiek bureau; uitvoerbaarheid staat voorop.',
     keywords: [...seoKeywordClusters.processSpeed, ...seoKeywordClusters.platform],
@@ -295,7 +295,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/probrandwacht-direct-spoed': {
     title: 'Spoed brandwacht route | ProBrandwacht',
     description:
-      'Spoedroute met minimale, noodzakelijke parameters. Matching hangt af van beschikbaarheid, locatie en risicoprofiel.',
+      'Spoedroute met minimale, noodzakelijke parameters. Beschikbaarheid hangt af van locatie en risicoprofiel.',
     keywords: [...seoKeywordClusters.processSpeed, 'spoed brandwacht', 'brandwacht spoedroute'],
   },
 

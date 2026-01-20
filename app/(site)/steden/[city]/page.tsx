@@ -59,8 +59,8 @@ export async function generateMetadata({
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht helpt met duidelijke afspraken, directe afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
-    : `Zelfstandige brandwacht in ${label}? ProBrandwacht helpt met duidelijke afspraken, directe afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
+    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht helpt met duidelijke afspraken, rechtstreekse afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
+    : `Zelfstandige brandwacht in ${label}? ProBrandwacht helpt met duidelijke afspraken, rechtstreekse afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
 
   return {
     ...base,
@@ -164,11 +164,15 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
-          <strong className="text-white">ProBrandwacht is geen klassiek bemiddelingsbureau.</strong>{' '}
-          Wij toetsen vooraf of de inzet van een brandwacht in{' '}
-          <strong className="text-white">{label}</strong> uitvoerbaar is in de praktijk — met
-          heldere rolverdeling en afspraken die standhouden tijdens uitvoering. Past dat niet?
-          Dan zeggen we soms ook nee.
+          <strong className="text-white">Deze pagina is een werkkaart, geen aanbod.</strong>{' '}
+          ProBrandwacht is geen klassiek bemiddelingsbureau. Wij maken inzichtelijk hoe
+          brandwacht-inzet in {label} kan worden ingericht binnen een zelfstandige 1-op-1
+          samenwerking.
+        </p>
+
+        <p className="mt-4 text-base leading-relaxed text-slate-200">
+          Of inzet passend is, hangt af van de context, rolverdeling en feitelijke uitvoering. Past
+          dat niet? Dan zeggen we soms ook nee.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -235,7 +239,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen samenwerken:
-            met heldere profielen (certificaten/ervaring), directe afstemming en afspraken die vooraf kloppen.
+            met heldere profielen (certificaten/ervaring), rechtstreekse afstemming en afspraken die vooraf kloppen.
           </p>
 
           <p className="text-sm text-slate-200 md:text-base">

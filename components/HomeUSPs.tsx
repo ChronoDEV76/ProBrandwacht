@@ -15,9 +15,9 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E5ECFF]">
               Vandaag
             </p>
-            <h2 className="mt-1 text-sm font-semibold">Directer samenwerken</h2>
+            <h2 className="mt-1 text-sm font-semibold">1-op-1 samenwerken</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
-              Zichtbaarheid voor zzp-brandwachten, direct contact met opdrachtgevers en
+              Zichtbaarheid voor zzp-brandwachten, rechtstreeks contact met opdrachtgevers en
               praktische DBA-handvatten. Heldere, toetsbare afspraken en zichtbare tariefopbouw.
             </p>
           </article>

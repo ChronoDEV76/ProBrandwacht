@@ -13,7 +13,7 @@ export default function AanmeldenPage() {
 
         <p className="mt-4 max-w-3xl text-slate-300">
           Deze intake is bedoeld voor zelfstandigen die willen onderzoeken of
-          directe samenwerking zonder klassiek bureau bij hen past. Het platform biedt
+          1-op-1 samenwerking zonder klassiek bureau bij hen past. Het platform biedt
           geen garantie op inzet. Niet iedere intake leidt tot deelname.
         </p>
 

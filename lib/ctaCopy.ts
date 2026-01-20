@@ -215,7 +215,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_spoed_direct: {
     id: 'secondary_spoed_direct',
-    label: 'Direct spoed (op basis van beschikbaarheid) →',
+    label: 'Spoedroute (op basis van beschikbaarheid) →',
     href: '/probrandwacht-direct-spoed',
     variant: 'link',
     intent: 'secondary',
@@ -223,7 +223,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_direct_route: {
     id: 'secondary_direct_route',
-    label: 'Lees de Direct-route →',
+    label: 'Lees de spoedroute →',
     href: '/probrandwacht-direct',
     variant: 'link',
     intent: 'secondary',

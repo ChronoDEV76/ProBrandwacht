@@ -57,7 +57,7 @@ export default function OverOnsPage() {
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               Inzet is vaak afhankelijk van “wie je kent”, onduidelijke tariefopbouw en afspraken die pas op locatie
               zichtbaar worden. Dat creëert stress op de verkeerde plek: in uitvoering. Daarom bouwen wij op
-              rolverdeling, toetsbare afspraken en directe afstemming.
+              rolverdeling, toetsbare afspraken en rechtstreekse afstemming.
             </p>
           </div>
 

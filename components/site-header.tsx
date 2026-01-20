@@ -47,7 +47,7 @@ export default function SiteHeader() {
             <Link
               href="/probrandwacht-direct-spoed"
               prefetch={false}
-              title="Spoed & directe inzet via Slack"
+              title="Spoed & inzet via Slack"
               aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
               className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''

@@ -17,8 +17,8 @@ export default function ProBrandwachtDirectSpoedPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
-              we iets bevestigen. Spoed is bedoeld voor korte, duidelijke afspraken; matching is afhankelijk
-              van beschikbaarheid en locatie.
+              we iets bevestigen. Spoed is bedoeld voor korte, duidelijke afspraken; beschikbaarheid blijft
+              afhankelijk van locatie en context.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -27,7 +27,7 @@ export default function ProBrandwachtDirectSpoedPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Als je vandaag nog inzet nodig hebt, wil je een ding voorkomen: ruis. Deze route focust op een
-              snelle aanvraag met minimale, noodzakelijke parameters zodat een zelfstandige direct kan
+              snelle aanvraag met minimale, noodzakelijke parameters zodat een zelfstandige snel kan
               beoordelen of het past. Pas als rol, risico en beslislijnen helder zijn, zoeken we beschikbaarheid.
             </p>
 

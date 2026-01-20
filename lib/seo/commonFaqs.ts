@@ -24,7 +24,7 @@ export const generalPlatformFaq = [
   {
     question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
     answer:
-      'Nu regel je inzet direct. ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
+      'Nu toets je inzet eerst op uitvoerbaarheid. ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
   },
   {
     question: 'Hoe blijft samenwerking binnen Wet DBA?',
@@ -100,7 +100,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Kan ik het platform gebruiken naast bestaande bureaus en contracten?',
     answer:
-      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor directe samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
+      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor 1-op-1 samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
   },
   {
     question: 'Hoe zit het met facturen, administratie en rapportages?',

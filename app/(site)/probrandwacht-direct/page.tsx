@@ -15,7 +15,7 @@ export default function ProBrandwachtDirectPage() {
         <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <div className="max-w-3xl space-y-5">
             <span className="inline-flex w-fit rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Direct
+              Spoedroute
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
@@ -59,8 +59,8 @@ export default function ProBrandwachtDirectPage() {
               accent: 'text-emerald-300',
             },
             {
-              title: '2) Directe afstemming',
-              body: "Je spreekt met de zelfstandige over inzet en voorwaarden. Geen onzichtbare 'tussenbeslisser'.",
+              title: '2) 1-op-1 afstemming',
+              body: "Je stemt 1-op-1 met de zelfstandige af over inzet en voorwaarden. Geen onzichtbare 'tussenbeslisser'.",
               accent: 'text-sky-300',
             },
             {

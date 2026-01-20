@@ -20,7 +20,7 @@ export default function BrandwachtHurenCityPage({ params }: { params: { city: st
       <h1 className="sr-only">Brandwacht huren in {label} | ProBrandwacht</h1>
       <p className="sr-only">
         ProBrandwacht is een selectief platform voor zelfstandige brandwachten en
-        opdrachtgevers die bewust kiezen voor directe samenwerking. Geen klassiek bureau
+        opdrachtgevers die bewust kiezen voor 1-op-1 samenwerking. Geen klassiek bureau
         en geen tussenlaag. We bewaken uitvoerbaarheid en zeggen soms nee. Inzet is
         contextafhankelijk met heldere rolverdeling en verantwoordelijkheid.
       </p>

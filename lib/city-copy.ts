@@ -79,7 +79,7 @@ In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg o
 
 - Sterke ervaring in haven, bouw en industriële omgevingen
 - Minimaal rijksgediplomeerd Manschap A/B
-- Korte lijnen: direct contact met de uitvoerende brandwacht of ploegleider
+- Korte lijnen: rechtstreeks contact met de uitvoerende brandwacht of ploegleider
 - Nuchtere afspraken, vastgelegd vóór de inzet
 - Mogelijkheid om vaste ploegen in te plannen bij terugkerend werk
 
@@ -177,7 +177,7 @@ In Eindhoven werken zzp-brandwachten meestal met:
 - **${resolveStandardRange('eindhoven')} per uur** voor reguliere inzet bij bouw en evenementen
 - **${resolveIndustryRange('eindhoven')} per uur** bij technische of industriële klussen
 
-We kijken per opdracht naar wat passend is. Jij stemt het uurtarief direct af met de professional, op basis van werkzaamheden, duur en werktijden.
+We kijken per opdracht naar wat passend is. Jij stemt het uurtarief 1-op-1 af met de professional, op basis van werkzaamheden, duur en werktijden.
 
 ## Waarom opdrachtgevers in Eindhoven voor zzp-brandwachten kiezen
 

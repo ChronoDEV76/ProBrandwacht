@@ -16,13 +16,18 @@ export default function ContactPage() {
             </span>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Stel de vraag die je echt wilt oplossen.
+              Contact
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Wij zijn geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat er inzet is.
-              Snelste route: kies eerst de juiste context. De meeste vragen gaan over rolverdeling, afspraken
-              vooraf en hoe je samenwerking professioneel en uitlegbaar organiseert.
+              ProBrandwacht is een platform dat samenwerking faciliteert tussen opdrachtgevers en zelfstandig
+              uitvoerende professionals. Wij geven geen instructies, nemen geen beslissingen over
+              samenwerking en zijn geen partij bij overeenkomsten.
+            </p>
+
+            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+              Heb je een vraag over onze werkwijze, de rol van het platform of wil je verkennend sparren over
+              uitvoerbaarheid? Dan kun je hier contact opnemen.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -30,6 +35,10 @@ export default function ContactPage() {
               <Cta id="opdrachtgever_explore" className="rounded-2xl px-5 py-2.5" />
               <Cta id="secondary_faq" />
             </div>
+            <p className="mt-6 text-sm text-slate-400">
+              Contact opnemen betekent niet dat er een samenwerking tot stand komt. ProBrandwacht faciliteert
+              uitsluitend de dialoog.
+            </p>
           </div>
         </div>
       </section>
