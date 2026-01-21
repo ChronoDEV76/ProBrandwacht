@@ -45,6 +45,11 @@ export default function OverOnsPage() {
             en rolverdeling niet overal helder waren. Wij kiezen voor duidelijkheid vooraf, en voor selectie
             op uitvoerbaarheid in de verkenningsfase.
           </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            ProBrandwacht is opgericht vanuit de overtuiging dat brandveiligheid vraagt om uitvoerbaarheid.
+            Niet door steeds meer papier, maar door duidelijke rollen, professioneel gedrag en samenwerking
+            op basis van zelfstandigheid.
+          </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="about_kaders_intentie" className="border-white/20" />

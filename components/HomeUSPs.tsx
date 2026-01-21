@@ -49,6 +49,11 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
               afspraken en verantwoordelijkheid in de uitvoering — DBA-bewust en
               transparant over kosten.
             </p>
+            <p className="mt-2 text-xs leading-relaxed text-[#E5ECFF]">
+              ProBrandwacht is geen uitzendbureau en geen werkgever. Het platform
+              verbindt opdrachtgevers met zelfstandig professionals die opereren
+              vanuit hun eigen ondernemerschap.
+            </p>
           </article>
         </div>
       </div>

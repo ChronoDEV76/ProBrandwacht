@@ -11,6 +11,16 @@ export default function FaqPage() {
   const faqItems = [
     ...generalPlatformFaq,
     {
+      question: 'Hoe gaat ProBrandwacht om met schijnzelfstandigheid?',
+      answer:
+        'ProBrandwacht toetst samenwerkingen op rolzuiverheid en feitelijke uitvoerbaarheid. Niet alleen wat er op papier staat, maar hoe er in de praktijk wordt gewerkt, is bepalend. Het platform stimuleert samenwerkingen die passen bij zelfstandig ondernemerschap en voorkomt verkapte loondienstconstructies.',
+    },
+    {
+      question: 'Waarom werkt ProBrandwacht niet met één standaardovereenkomst?',
+      answer:
+        'Omdat brandveiligheidsinzet plaatsvindt in uiteenlopende contexten met verschillende verantwoordelijkheden. Eén standaardovereenkomst doet vaak geen recht aan de praktijk en creëert schijnzekerheid. Heldere rolafspraken en professioneel handelen zijn doorslaggevend.',
+    },
+    {
       question: 'Wat maakt dit anders dan een klassiek bureau?',
       answer:
         'Wij zijn geen tussenlaag of garantierol. We bewaken uitvoerbaarheid en rolhelderheid vooraf en zeggen soms nee als randvoorwaarden niet kloppen.',

@@ -14,12 +14,40 @@ export default function BewustZelfstandigWerkenPage() {
             certificaten. Het vraagt professioneel oordeel, rolvastheid en
             weten waar jouw verantwoordelijkheid begint - en waar die eindigt.
           </p>
+          <p className="text-slate-300">
+            Rolhelderheid gaat v&oacute;&oacute;r papierzekerheid. In brandveiligheidsinzet ontstaat risico zelden
+            door een gebrek aan contracten, maar door onduidelijke rollen. Daarom richt ProBrandwacht zich primair
+            op duidelijke rolafspraken en uitvoerbaarheid in de praktijk, niet op standaardovereenkomsten met
+            schijnzekerheid.
+          </p>
           <p className="text-sm text-slate-400">
             ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
             - geen bureau, geen werkgever, geen matching-engine. We zijn een selectief platform en bewaken
             uitvoerbaarheid en rolhelderheid. Deze pagina helpt duiden wat zelfstandig werken in de praktijk vraagt.
           </p>
         </header>
+
+        <section className="mb-12 rounded-lg border border-slate-800 bg-slate-900/40 p-6 text-sm text-slate-300">
+          <h2 className="text-base font-semibold text-slate-100">Wat we wel en niet doen</h2>
+          <div className="mt-4 grid gap-6 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold text-slate-200">Wat ProBrandwacht doet</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+                <li>Faciliteren van inzet binnen duidelijke veiligheids- en verantwoordelijkheidskaders</li>
+                <li>Transparantie over rollen en verwachtingen</li>
+                <li>Bewaken van uitvoerbaarheid in de praktijk</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-slate-200">Wat ProBrandwacht niet doet</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-slate-300">
+                <li>Tarieven bepalen of afdwingen</li>
+                <li>Ondernemersrisico overnemen</li>
+                <li>Professionals aansturen als personeel</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
         {/* Content blocks */}
         <div className="space-y-10 text-sm leading-relaxed text-slate-200">

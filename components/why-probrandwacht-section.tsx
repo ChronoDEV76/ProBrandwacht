@@ -13,6 +13,10 @@ export default function WhyProbrandwachtSection() {
             <span className="font-semibold text-emerald-300">onafhankelijk platform</span> voor
             zelfstandige professionals.
           </p>
+          <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+            Geen tariefsturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
+            opdrachtgevers.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">

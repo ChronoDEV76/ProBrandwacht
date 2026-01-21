@@ -31,6 +31,14 @@ export default function Page() {
             - geen bureau, geen werkgever, geen matching-engine.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            Brandveiligheid vraagt om uitvoerbaarheid. ProBrandwacht faciliteert brandveiligheidsinzet vanuit
+            rolhelderheid, zelfstandigheid en praktische uitvoerbaarheid.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+            Geen tariefsturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
+            opdrachtgevers.
+          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht is geen klassiek bureau. Wij bewaken dat brandveiligheid in de
             praktijk klopt — niet alleen op papier. We leggen alleen contact waar rollen helder zijn, risico’s
             bespreekbaar zijn en afspraken daadwerkelijk uitvoerbaar zijn tijdens inzet.

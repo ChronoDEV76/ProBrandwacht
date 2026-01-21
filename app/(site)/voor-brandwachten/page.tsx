@@ -105,6 +105,37 @@ export default function VoorBrandwachtenPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Tarief, rol en ondernemerschap</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Tarief &amp; positie</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  Je bepaalt je eigen tarief. ProBrandwacht bepaalt geen tarieven. Als zelfstandig professional
+                  stel je zelf je tarief vast op basis van ervaring, inzetcategorie, risico en context van de
+                  opdracht. Het platform faciliteert de samenwerking, niet de prijsstelling.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Rol en uitvoering</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  Duidelijke rol betekent professionele ruimte. Als zelfstandig professional werk je binnen
+                  duidelijke veiligheidskaders, maar behoud je regie over je eigen werkwijze en
+                  verantwoordelijkheid. Je wordt niet aangestuurd als personeel en maakt geen onderdeel uit van
+                  interne hiërarchie.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Ondernemerschap</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  Ondernemerschap is geen formaliteit. ProBrandwacht werkt uitsluitend met professionals die hun
+                  zelfstandigheid ook in de praktijk invullen: met een eigen tariefkader, eigen voorwaarden en
+                  eigen verantwoordelijkheid.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
             <h2 className="text-2xl font-semibold text-white">Waarom wij soms nee zeggen (ook voor jou)</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               Soms is een opdracht formeel mogelijk, maar praktisch onhoudbaar. Dan zeggen we nee. Niet uit

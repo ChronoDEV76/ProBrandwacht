@@ -71,6 +71,28 @@ export default function OpdrachtgeversPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Samenwerking &amp; tarieven</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Samenwerking</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  ProBrandwacht faciliteert de inzet van zelfstandig professionals binnen duidelijke
+                  veiligheidskaders. De professional voert de opdracht uit vanuit eigen ondernemerschap. Het
+                  platform bewaakt dat rollen en verantwoordelijkheden vooraf helder zijn.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Tarieven</h3>
+                <p className="mt-2 text-sm text-slate-200">
+                  Tarieven worden vastgesteld door de zelfstandig professional zelf. ProBrandwacht stuurt niet op
+                  prijs en bepaalt geen tarieven. Dit voorkomt tariefsturing en draagt bij aan een zuivere
+                  samenwerkingsvorm.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
             <h2 className="text-2xl font-semibold text-white">Waarom dit belangrijk is</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               In een markt met toenemende bureaucratie ontstaat risico vaak in de ruimte tussen papier en
