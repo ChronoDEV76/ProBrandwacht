@@ -1,0 +1,77 @@
+{
+  "includeRoots": [
+    "app/(site)",
+    "components",
+    "content",
+    "lib"
+  ],
+  "includeExtensions": [".ts", ".tsx", ".js", ".jsx", ".mdx", ".md", ".json"],
+  "excludeDirs": [
+    ".git",
+    ".next",
+    "node_modules",
+    "dist",
+    "build",
+    "out",
+    "public",
+    "scripts",
+    "docs",
+    "utils",
+    "tests",
+    "__tests__",
+    "coverage",
+    ".turbo",
+    ".vercel"
+  ],
+  "maxFileSizeBytes": 2000000,
+  "rules": [
+    {
+      "id": "FORBIDDEN_COMPONENTS",
+      "severity": "HIGH",
+      "note": "Deze componenten horen niet meer in de frontstage.",
+      "patterns": [
+        "\\bPlatformPricingNote\\b",
+        "\\bFeeVergelijk\\b",
+        "\\bKostenOpbouw\\b",
+        "\\bTariefTabel\\b"
+      ]
+    },
+    {
+      "id": "PRICE_SIGNALS",
+      "severity": "HIGH",
+      "note": "Signalen van prijssturing/prijscommunicatie (bedragen, percentages, fee/marge, calculator-taal).",
+      "patterns": [
+        "€\\s?\\d+",
+        "\\b\\d+\\s?%\\b",
+        "\\b(platformfee|bemiddelingsfee|fee|marge|escrow|netto)\\b",
+        "\\b(bereken|calculator|rekenmodel|vergelijk)\\b",
+        "\\b(uurtarief|uurprijs)\\b"
+      ]
+    },
+    {
+      "id": "EMPLOYER_LANGUAGE",
+      "severity": "MEDIUM",
+      "note": "Werkgever-/gezagstaal (kan zelfstandigheid/1-op-1 framing ondermijnen).",
+      "patterns": [
+        "\\b(aansturen|inzetten|onderbrengen|verplicht|rooster|geplande uren|werknemer)\\b"
+      ]
+    },
+    {
+      "id": "GUARANTEE_LANGUAGE",
+      "severity": "MEDIUM",
+      "note": "Garantie-taal is gevoelig; ‘geen garantie’ is oké maar check context.",
+      "patterns": ["\\bgarantie\\b"],
+      "allowIf": ["\\bgeen\\s+garantie\\b", "\\bzonder\\s+garantie\\b"]
+    },
+    {
+      "id": "BACKSTAGE_TERMS",
+      "severity": "LOW",
+      "note": "Backstage/ProSafetyMatch termen die je frontstage kunnen vertroebelen.",
+      "patterns": [
+        "\\bDBA-?proof\\b",
+        "\\bcompliant\\s+samenwerken\\b",
+        "\\bdossier(s)?\\s+per\\s+opdracht\\b"
+      ]
+    }
+  ]
+}
