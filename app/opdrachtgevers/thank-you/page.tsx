@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'brandwacht',
     'brandwacht inhuren',
     'brandwacht huren',
-    'DBA-proof brandwacht',
+    'bewust zelfstandig samenwerken',
     'brandwacht tarieven',
   ],
   robots: { index: false, follow: false },
