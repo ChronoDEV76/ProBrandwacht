@@ -20,8 +20,8 @@ export default function ProBrandwachtDirectPage() {
         <h1 className="text-3xl font-semibold tracking-tight">ProBrandwacht Direct</h1>
         <p className="mt-2 text-slate-700">
           Spoedlijn voor inzet van gecertificeerde brandwachten. Bij spoedinzet wordt gezocht naar beschikbare professionals die passen bij de context en het risicoprofiel van de opdracht. Duidelijk en DBA-bewust.
-          Uitvoering via ProBrandwacht Direct (spoed). Voorbeeld spoedtarief: <strong>€50/uur</strong>.
-          Bij akkoord betaal je <strong>50% aanbetaling</strong> (facilitatiefee 10% inbegrepen).
+          Uitvoering via ProBrandwacht Direct (spoed). Voorbeeld spoedinzet: tarief wordt 1-op-1 afgesproken, afhankelijk van context en beschikbaarheid.
+          Betaling en afspraken verlopen vooraf, zonder verborgen opslagen.
         </p>
         <p className="mt-1 text-sm text-slate-700">Spoedflow is in beta (technische route); beschikbaarheid blijft contextafhankelijk.</p>
         <p className="mt-1 text-sm text-slate-700">We reageren zo snel als mogelijk - je staat er niet alleen voor.</p>

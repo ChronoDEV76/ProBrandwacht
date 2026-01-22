@@ -136,6 +136,29 @@ export default function VoorBrandwachtenPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Zelfstandigheid en samenwerking</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht is een platform en geen werkgever, uitzendbureau of opdrachtgever. Zelfstandige
+              professionals en opdrachtgevers maken onderling afspraken over inzet, tarief, verantwoordelijkheden
+              en uitvoering.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Verwijzingen naar &lsquo;DBA-bewust&rsquo;, &lsquo;rolzuiver&rsquo; of &lsquo;zelfstandig
+              ondernemerschap&rsquo; dienen ter duiding. De kwalificatie van een arbeidsrelatie hangt in de regel af
+              van de feitelijke uitvoering en omstandigheden.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Aansprakelijkheid en verzekeringen</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert contact en duiding, maar is geen contractpartij bij de uitvoering van
+              opdrachten. De zelfstandig professional en opdrachtgever blijven zelf verantwoordelijk voor
+              naleving van wetgeving, verzekeringen en aansprakelijkheid.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
             <h2 className="text-2xl font-semibold text-white">Waarom wij soms nee zeggen (ook voor jou)</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               Soms is een opdracht formeel mogelijk, maar praktisch onhoudbaar. Dan zeggen we nee. Niet uit

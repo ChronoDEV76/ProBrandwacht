@@ -161,18 +161,19 @@ export default function PbDirectForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-base font-semibold text-slate-800">Tariefkader (min. spoedtarief EUR/uur)</label>
+          <label className="block text-base font-semibold text-slate-800">Tariefkader (optioneel)</label>
           <input
             name="tarief"
             type="number"
-            min={55}
             step={1}
             value={tarief ?? ''}
             onChange={e => setTarief(e.target.value ? Number(e.target.value) : undefined)}
             className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
-            placeholder="Bijv. 60"
+            placeholder="Vul tarief in als je een bandbreedte wilt delen"
           />
-          <p className="mt-1 text-sm text-slate-500">Spoed (korte oproep): verwacht minimum EUR55-EUR70/u afhankelijk van inzet/locatie.</p>
+          <p className="mt-1 text-sm text-slate-500">
+            Spoed (korte oproep): tarief ligt doorgaans hoger dan reguliere inzet en is afhankelijk van locatie, duur en risico.
+          </p>
         </div>
         <div>
           <label className="block text-base font-semibold text-slate-800">Minimum uren (spoedblok)</label>
@@ -199,6 +200,21 @@ export default function PbDirectForm() {
         />
         <p className="mt-1 text-sm text-slate-500">Vermeld certificaten, bijzondere risico&apos;s en contactpersoon op locatie.</p>
       </div>
+
+      <label className="flex items-start gap-3 text-sm text-slate-700 md:text-base">
+        <input id="terms" name="terms" type="checkbox" required className="mt-1" />
+        <span>
+          Ik ga akkoord met de{' '}
+          <a href="/voorwaarden" className="underline underline-offset-4">
+            algemene voorwaarden
+          </a>{' '}
+          en{' '}
+          <a href="/privacy" className="underline underline-offset-4">
+            privacyverklaring
+          </a>
+          .
+        </span>
+      </label>
 
       <label className="flex items-start gap-3 text-sm text-slate-700 md:text-base">
         <input id="consent" name="consent" type="checkbox" defaultChecked required className="mt-1" />

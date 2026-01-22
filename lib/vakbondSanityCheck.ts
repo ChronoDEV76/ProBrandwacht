@@ -26,8 +26,8 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
   const authorityIndicators: RegExp[] = [
     /eerlijke/i,
     /zelfstandigheid/i,
-    /dba-proof/i,
-    /dbaproof/i,
+    /dba-bewust/i,
+    /dbabewust/i,
     /professioneel netwerk/i,
     /kennisplatform/i,
     /vakmanschap/i,
@@ -72,4 +72,3 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
 
   console.groupEnd();
 }
-

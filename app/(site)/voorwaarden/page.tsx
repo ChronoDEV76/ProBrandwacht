@@ -51,22 +51,32 @@ export default function VoorwaardenPage() {
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
-              2. Geen garanties
+              2. Rol en contractpositie
             </h2>
             <p>
-              ProBrandwacht geeft geen garantie op inzetten, volumes, tarieven
+              ProBrandwacht is geen werkgever, uitzendbureau of opdrachtgever en is
+              geen contractpartij bij de uitvoering van opdrachten. Tarieven worden
+              door zelfstandigen vastgesteld; ProBrandwacht bepaalt of dwingt geen
+              tarieven.
+            </p>
+
+            <h2 className="text-lg font-semibold text-slate-900">
+              3. Geen garanties
+            </h2>
+            <p>
+              ProBrandwacht geeft geen garantie op opdrachten, volumes, tarieven
               of inkomsten. Alle voorbeelden, tarieven en berekeningen zijn
               indicatief en contextafhankelijk.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
-              3. Eigen verantwoordelijkheid
+              4. Eigen verantwoordelijkheid
             </h2>
             <p>
               Zelfstandigen en opdrachtgevers maken onderling afspraken over
               tarief, inzet, verantwoordelijkheden en voorwaarden. Zij blijven
               zelf verantwoordelijk voor naleving van wet- en regelgeving,
-              waaronder de Wet DBA.
+              waaronder de Wet DBA, evenals verzekeringen en aansprakelijkheid.
             </p>
             <p className="mt-4 text-sm text-slate-500">
               In de praktijk betekent dit: jullie leggen vooraf rolverdeling, communicatie-afspraken en verantwoordelijkheden vast,
@@ -74,7 +84,7 @@ export default function VoorwaardenPage() {
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
-              4. Informatie & tools
+              5. Informatie & tools
             </h2>
             <p>
               Informatie, blogs en tools zijn bedoeld als ondersteuning en
@@ -82,21 +92,31 @@ export default function VoorwaardenPage() {
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
-              5. Aansprakelijkheid
+              6. Aansprakelijkheid
             </h2>
             <p>
               ProBrandwacht is niet aansprakelijk voor directe of indirecte
               schade voortvloeiend uit gebruik van het platform, informatie of
-              tools, tenzij wettelijk anders bepaald.
+              tools, tenzij wettelijk anders bepaald. ProBrandwacht is geen partij
+              bij de uitvoering van opdrachten en draagt geen aansprakelijkheid
+              voor uitvoering of schade op locatie.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">
-              6. Wijzigingen
+              7. Wijzigingen
             </h2>
             <p>
               Deze voorwaarden kunnen worden aangepast wanneer wetgeving of de
               werking van het platform daarom vraagt. De meest actuele versie
               is in de regel leidend.
+            </p>
+
+            <h2 className="text-lg font-semibold text-slate-900">
+              8. Toepasselijk recht
+            </h2>
+            <p>
+              Op deze voorwaarden is Nederlands recht van toepassing. Geschillen
+              worden voorgelegd aan de bevoegde rechter in Nederland.
             </p>
 
             <h2 className="text-lg font-semibold text-slate-900">

@@ -1,0 +1,11 @@
+{
+  "includeExt": [".ts", ".tsx", ".js", ".jsx", ".mjs", ".mdx", ".txt", ".json"],
+  "excludeDirs": ["node_modules", ".next", "dist", "build", ".git", "out", "scripts", "docs", "reports"],
+  "excludePaths": ["content/blog/", "app/api/"],
+  "termsPageHints": ["voorwaarden", "terms", "legal"],
+  "acceptanceCheck": {
+    "enabled": true,
+    "formFileHints": ["form", "intake", "aanmeld", "contact", "request"],
+    "mustContainAny": ["Ik ga akkoord", "algemene voorwaarden", "privacyverklaring", "required"]
+  }
+}

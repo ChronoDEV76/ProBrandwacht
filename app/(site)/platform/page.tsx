@@ -19,7 +19,7 @@ export default function PlatformPage() {
             </h1>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-              - geen bureau, geen werkgever, geen matching-engine. Wij zijn geen klassiek bemiddelingsbureau en
+              - geen bureau, geen werkgeversrol, geen matching-engine. Wij zijn geen klassiek bemiddelingsbureau en
               geen uitzendmodel. De nadruk ligt op uitvoerbaarheid, rolhelderheid en professionele verantwoordelijkheid.
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">

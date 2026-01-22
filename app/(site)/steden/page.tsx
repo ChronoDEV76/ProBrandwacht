@@ -25,7 +25,7 @@ export default function StedenIndexPage() {
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-              - geen bureau, geen werkgever, geen matching-engine.
+              - geen bureau, geen werkgeversrol, geen matching-engine.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">

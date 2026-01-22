@@ -162,11 +162,11 @@ export default function ProbrandwachtDirectForm() {
           <label className={labelClasses}>Budgetindicatie</label>
           <input
             name="budget_range"
-            placeholder="Bijv. €45–€55 per uur"
+            placeholder="Omschrijf gewenste tariefbandbreedte (optioneel)"
             className={inputClasses}
           />
           <p className="mt-1 text-xs text-slate-500">
-            Voorbeeld: bij €50/u klanttarief ontvangt de professional ±€45/u netto (10% platformfee, escrow 1–2% volgt bij ProSafetyMatch). Alles zichtbaar voor beide kanten.
+            We gebruiken geen voorbeeldbedragen; tarief wordt 1-op-1 afgestemd op context en beschikbaarheid.
           </p>
         </div>
       </div>
@@ -179,6 +179,27 @@ export default function ProbrandwachtDirectForm() {
           placeholder="Omschrijf de situatie, aantal brandwachten, bijzondere wensen..."
           className={`${inputClasses} resize-none`}
         />
+      </div>
+
+      <div className="flex items-start gap-3 text-sm text-slate-700">
+        <input
+          id="terms"
+          name="terms"
+          type="checkbox"
+          required
+          className="mt-1.5 h-5 w-5 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
+        />
+        <label htmlFor="terms">
+          Ik ga akkoord met de{' '}
+          <a href="/voorwaarden" className="underline underline-offset-4">
+            algemene voorwaarden
+          </a>{' '}
+          en{' '}
+          <a href="/privacy" className="underline underline-offset-4">
+            privacyverklaring
+          </a>
+          .
+        </label>
       </div>
 
       <div className="flex items-start gap-3 text-sm text-slate-700">

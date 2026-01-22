@@ -163,6 +163,26 @@ export default function DirectRequestForm() {
         <input tabIndex={-1} name="website" autoComplete="off" />
       </div>
 
+      <label className="flex items-start gap-2 text-xs text-slate-600">
+        <input
+          name="terms"
+          type="checkbox"
+          required
+          className="mt-0.5 h-4 w-4 rounded border-slate-300"
+        />
+        <span>
+          Ik ga akkoord met de{' '}
+          <a href="/voorwaarden" className="underline underline-offset-4">
+            algemene voorwaarden
+          </a>{' '}
+          en{' '}
+          <a href="/privacy" className="underline underline-offset-4">
+            privacyverklaring
+          </a>
+          .
+        </span>
+      </label>
+
       {error && <p className="text-sm text-red-600">{error}</p>}
 
       <button

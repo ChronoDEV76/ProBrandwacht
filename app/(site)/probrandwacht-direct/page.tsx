@@ -19,8 +19,8 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-              - geen bureau, geen werkgever, geen matching-engine.
+            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
+            - geen bureau, geen werkgeversrol, geen matching-engine.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
@@ -29,9 +29,9 @@ export default function ProBrandwachtDirectPage() {
               beschikbaarheid en afspraken tussen partijen.
             </p>
 
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Snel inzetten kan - als de basisgegevens kloppen.
-            </h1>
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            Snel schakelen kan - als de basisgegevens kloppen.
+          </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht Direct is bedoeld voor situaties waarin je tempo nodig hebt, maar niet wilt

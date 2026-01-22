@@ -30,7 +30,7 @@ export default function ImpactInfoCard() {
           <ul className="mt-1 list-disc pl-5 text-sm text-slate-700">
             <li>Kostendekkend zelfstandig tarief (incl. privé + zakelijk) is hoger dan loondiensttarief.</li>
             <li>
-              Een gat van <span className="font-medium">± €10–€15 per uur</span> schaadt motivatie en vakbekwaamheid.
+              Een substantieel verschil per uur schaadt motivatie en vakbekwaamheid.
             </li>
             <li>Eerlijke tarieven verhogen veiligheid en kwaliteit op locatie.</li>
           </ul>

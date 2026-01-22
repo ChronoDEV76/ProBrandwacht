@@ -20,10 +20,10 @@ export default function ImpactMeter() {
       className="rounded-3xl border border-rose-200 bg-rose-50/60 p-6 shadow-sm sm:p-8"
     >
       <h2 id="impact-heading" className="text-2xl font-semibold text-rose-900">
-        Wat doet €10–€11 verschil echt?
+        Wat doet een substantieel tariefverschil echt?
       </h2>
       <p className="mt-2 text-sm text-rose-900/80">
-        Reken uit wat er verdwijnt in de tussenlaag. Hard op de inhoud, eerlijk in de uitkomst.
+        Kleine verschillen lijken beperkt, maar stapelen snel op bij structurele inzet.
       </p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-4">

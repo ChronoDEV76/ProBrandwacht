@@ -32,7 +32,7 @@ export const cityCopy: Partial<Record<CitySlug, CityCopy>> = {
       'Zoek je een brandwacht in Amsterdam? Via ProBrandwacht vind je rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en industriële inzet. Nuchtere, eerlijke afspraken.',
     body: `## Indicatief tarief in Amsterdam
 
-De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tussen:
+De meeste zzp-brandwachten in Amsterdam werken in de praktijk met vergoedingsbandbreedtes zoals:
 
 - **${resolveStandardRange('amsterdam')} per uur** bij evenementen en bouw
 - **${resolveIndustryRange('amsterdam')} per uur** bij industriële inzet of nacht/weekend
@@ -55,7 +55,7 @@ De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tu
 - Toezicht tijdens tijdelijke afsluitingen, nachtwerk en ombouwmomenten`,
     localCaseTitle: 'Voorbeeld: brandwacht op NDSM-terrein',
     localCaseBody:
-      'Een opdrachtgever had kortdurend toezicht nodig bij een evenement op het NDSM-terrein. Binnen korte tijd is een kleine ploeg zzp-brandwachten geregeld die het terrein goed kenden, met duidelijke afspraken over op- en afbouw, publiekstijden en nazorg. Eén aanspreekpunt, heldere uurtarieven en dezelfde gezichten bij vervolgopdrachten.'
+      'Een opdrachtgever had kortdurend toezicht nodig bij een evenement op het NDSM-terrein. Binnen korte tijd is een kleine ploeg zzp-brandwachten geregeld die het terrein goed kenden, met duidelijke afspraken over op- en afbouw, publiekstijden en nazorg. Eén aanspreekpunt, heldere vergoedingen en dezelfde gezichten bij vervolgopdrachten.'
   },
 
   rotterdam: {
@@ -68,7 +68,7 @@ De meeste zzp-brandwachten in Amsterdam werken in de praktijk met uurtarieven tu
       'Brandwacht nodig in Rotterdam? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor haven, bouw en industriële inzet. Eerlijke, eerlijke afspraken.',
     body: `## Indicatief tarief in Rotterdam
 
-In en rond Rotterdam liggen de meeste uurtarieven van zzp-brandwachten grofweg op:
+In en rond Rotterdam liggen de meeste vergoedingsbandbreedtes van zzp-brandwachten grofweg op:
 
 - **${resolveStandardRange('rotterdam')} per uur** voor bouw- en renovatiewerk
 - **${resolveIndustryRange('rotterdam')} per uur** bij haven- en industriële inzet (bijv. terminals, besloten ruimten)
@@ -138,7 +138,7 @@ We bekijken per aanvraag wat passend is. Jij bespreekt het tarief rechtstreeks m
       'Zoek je een brandwacht in Utrecht? ProBrandwacht verbindt je met rijksgediplomeerde zzp-brandwachten voor evenementen, bouwprojecten en logistieke locaties.',
     body: `## Indicatief tarief in Utrecht
 
-Gebruikelijk liggen uurtarieven van zzp-brandwachten in Utrecht rond:
+Gebruikelijk liggen vergoedingsbandbreedtes van zzp-brandwachten in Utrecht rond:
 
 - **${resolveStandardRange('utrecht')} per uur** bij evenementen en reguliere bouw
 - **${resolveIndustryRange('utrecht')} per uur** bij complexere inzet of onregelmatige uren
@@ -177,7 +177,7 @@ In Eindhoven werken zzp-brandwachten meestal met:
 - **${resolveStandardRange('eindhoven')} per uur** voor reguliere inzet bij bouw en evenementen
 - **${resolveIndustryRange('eindhoven')} per uur** bij technische of industriële klussen
 
-We kijken per opdracht naar wat passend is. Jij stemt het uurtarief 1-op-1 af met de professional, op basis van werkzaamheden, duur en werktijden.
+We kijken per opdracht naar wat passend is. Jij stemt de vergoeding rechtstreeks af met de professional, op basis van werkzaamheden, duur en werktijden.
 
 ## Waarom opdrachtgevers in Eindhoven voor zzp-brandwachten kiezen
 
@@ -193,7 +193,7 @@ We kijken per opdracht naar wat passend is. Jij stemt het uurtarief 1-op-1 af me
 - Industriële inzet bij onderhoud, heetwerk en tijdelijke stops`,
     localCaseTitle: 'Voorbeeld: inzet bij technisch evenement',
     localCaseBody:
-      'Een organisator in Eindhoven zocht een brandwacht die zowel met publiek als techniek uit de voeten kon. Er is gekozen voor een zzp-brandwacht met ervaring in evenementen en basiskennis van technische installaties, met vooraf duidelijk afgestemde taken en uurtarief.'
+      'Een organisator in Eindhoven zocht een brandwacht die zowel met publiek als techniek uit de voeten kon. Er is gekozen voor een zzp-brandwacht met ervaring in evenementen en basiskennis van technische installaties, met vooraf duidelijk afgestemde taken en vergoeding.'
   },
 
   tilburg: {
@@ -240,7 +240,7 @@ Het tarief spreek je vooraf samen af. Daarmee weet je waar je aan toe bent voord
       'Brandwacht zoeken in Groningen? Via ProBrandwacht huur je rijksgediplomeerde zzp-brandwachten in voor evenementen, bouw en andere projecten.',
     body: `## Indicatief tarief in Groningen
 
-In Groningen liggen uurtarieven voor zzp-brandwachten meestal rond:
+In Groningen liggen vergoedingsbandbreedtes voor zzp-brandwachten meestal rond:
 
 - **${resolveStandardRange('groningen')} per uur** bij reguliere inzet
 - **${resolveIndustryRange('groningen')} per uur** bij complexere of onregelmatige inzet
@@ -279,7 +279,7 @@ Gemiddeld werken zzp-brandwachten in Almere met:
 - **${resolveStandardRange('almere')} per uur** voor standaard inzet
 - **${resolveIndustryRange('almere')} per uur** bij complexere of onregelmatige klussen
 
-Het uurtarief wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professional weet wat er van hem of haar verwacht wordt.
+De vergoeding wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professional weet wat er van hem of haar verwacht wordt.
 
 ## Waarom opdrachtgevers in Almere voor zzp-brandwachten kiezen
 
@@ -308,7 +308,7 @@ Het uurtarief wordt vooraf afgestemd. Jij weet waar je aan toe bent, de professi
       'Brandwacht huren in Breda? Vind rijksgediplomeerde zzp-brandwachten voor evenementen, bouw en andere projecten via ProBrandwacht.',
     body: `## Indicatief tarief in Breda
 
-In Breda liggen de meeste uurtarieven van zzp-brandwachten rond:
+In Breda liggen de meeste vergoedingsbandbreedtes van zzp-brandwachten rond:
 
 - **${resolveStandardRange('breda')} per uur** bij evenementen en bouw
 - Met mogelijke toeslagen bij nachtwerk of korte, eenmalige klussen

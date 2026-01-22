@@ -288,7 +288,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/probrandwacht-direct': {
     title: 'ProBrandwacht Direct (spoed) | ProBrandwacht',
     description:
-      'Snel inzetten kan, mits rol, risico en beslislijnen kloppen. Geen klassiek bureau; uitvoerbaarheid staat voorop.',
+      'Snel schakelen kan, mits rol, risico en beslislijnen kloppen. Geen klassiek bureau; uitvoerbaarheid staat voorop.',
     keywords: [...seoKeywordClusters.processSpeed, ...seoKeywordClusters.platform],
   },
 

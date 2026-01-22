@@ -93,6 +93,51 @@ export default function OpdrachtgeversPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Zelfstandigheid en samenwerking</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht is een platform en geen werkgever, uitzendbureau of opdrachtgever. Zelfstandige
+              professionals en opdrachtgevers maken onderling afspraken over inzet, tarief, verantwoordelijkheden
+              en uitvoering.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Verwijzingen naar &lsquo;DBA-bewust&rsquo;, &lsquo;rolzuiver&rsquo; of &lsquo;zelfstandig
+              ondernemerschap&rsquo; dienen ter duiding. De kwalificatie van een arbeidsrelatie hangt in de regel af
+              van de feitelijke uitvoering en omstandigheden.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Aansprakelijkheid en verzekeringen</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht faciliteert contact en duiding, maar is geen contractpartij bij de uitvoering van
+              opdrachten. De zelfstandig professional en opdrachtgever blijven zelf verantwoordelijk voor
+              naleving van wetgeving, verzekeringen en aansprakelijkheid.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <h2 className="text-2xl font-semibold text-white">Rol van ProBrandwacht</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Wat wij doen</h3>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
+                  <li>Faciliteren van contact tussen opdrachtgevers en zelfstandigen.</li>
+                  <li>Duiden van rollen en uitvoerbaarheid.</li>
+                  <li>Informatie delen zonder tariefsturing.</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
+                <h3 className="text-lg font-semibold text-white">Wat wij niet doen</h3>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
+                  <li>Tarieven bepalen of afdwingen.</li>
+                  <li>Professionals behandelen als personeel.</li>
+                  <li>Contractpartij zijn bij uitvoering.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
             <h2 className="text-2xl font-semibold text-white">Waarom dit belangrijk is</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               In een markt met toenemende bureaucratie ontstaat risico vaak in de ruimte tussen papier en

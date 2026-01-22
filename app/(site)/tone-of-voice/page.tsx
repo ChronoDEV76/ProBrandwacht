@@ -13,7 +13,7 @@ const principles = [
 ]
 
 const useWords = ['professioneel', 'zelfstandig', 'eerlijk', 'eerlijk', 'modern', 'netwerk', 'respect', 'autonomie']
-const avoidWords = ['inzetten', 'aansturen', 'geplande uren', 'onderbrengen', 'wij ' + 'bepalen', 'verplicht']
+const avoidWords = ['inplannen', 'aansturen', 'geplande uren', 'onderbrengen', 'wij ' + 'bepalen', 'verplicht']
 
 export default function ToneOfVoicePage() {
   const breadcrumbItems = [
@@ -83,7 +83,7 @@ export default function ToneOfVoicePage() {
             <li>Niet: “Wij hebben inzet voor jou.”</li>
             <li>Maar: “Wij ondersteunen met expertise je kansen creëren.”</li>
             <li>Niet: “Wij zetten je op een project.”</li>
-            <li>Maar: “Jij kiest inzetten.”</li>
+            <li>Maar: “Jij kiest opdrachten.”</li>
           </ul>
         </div>
       </section>

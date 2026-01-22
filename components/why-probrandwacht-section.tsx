@@ -46,10 +46,12 @@ export default function WhyProbrandwachtSection() {
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <h3 className="text-sm font-semibold text-violet-300">Geen marge op jouw uurtarief</h3>
+            <h3 className="text-sm font-semibold text-violet-300">
+              Geen marge op de vergoeding van de professional
+            </h3>
             <p className="text-sm text-slate-200">
               We bouwen aan een model waarin de zelfstandige professional eerlijk wordt beloond.
-              Geen onzichtbare opslagen op jouw uurtarief.
+              Geen onzichtbare opslagen op de vergoeding van de professional.
             </p>
           </div>
         </div>

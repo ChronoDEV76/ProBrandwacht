@@ -314,6 +314,26 @@ export default function ClientSignupForm({
           </Link>
         </div>
 
+        <label className="flex items-start gap-2 text-sm text-gray-700">
+          <input
+            name="terms"
+            type="checkbox"
+            required
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <span>
+            Ik ga akkoord met de{' '}
+            <Link href="/voorwaarden" className="underline underline-offset-4">
+              algemene voorwaarden
+            </Link>{' '}
+            en{' '}
+            <Link href="/privacy" className="underline underline-offset-4">
+              privacyverklaring
+            </Link>
+            .
+          </span>
+        </label>
+
         <div className="flex flex-wrap gap-3">
           <PrimaryButton type="submit" disabled={submitting}>
             {submitting ? 'Bezig met opslaan…' : 'Intake versturen'}

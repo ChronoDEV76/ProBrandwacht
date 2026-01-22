@@ -7,10 +7,10 @@
         "question": "Hoe wordt het tarief verdeeld bij een traditioneel bureau?",
         "summary": "Bij samenwerking via tussenpersonen is de tariefverdeling niet altijd volledig inzichtelijk. Bedragen zijn indicatief en contextafhankelijk.",
         "answer": [
-          "In de praktijk houden tussenpersonen vaak indicatief €15–€25 per uur over bij klanttarieven van €40–€60, afhankelijk van sector, inzet en verantwoordelijkheden.",
+          "In de praktijk houden tussenpersonen vaak een substantiële marge over; de exacte verdeling hangt af van sector, inzet en verantwoordelijkheden.",
           "Sommige bureaus nemen aanvullende taken op zich (planning, administratie, compliance), andere beperken zich tot bemiddeling.",
-          "Voorbeeld (indicatief): opdrachtgever betaalt €50 per uur → ± €20 voor overhead/bemiddeling en ± €30 voor de zelfstandige brandwacht.",
-          "Bedragen en verdeling verschillen per situatie en zijn altijd afhankelijk van context."
+          "Voorbeeld (indicatief): een deel gaat naar overhead/bemiddeling en een deel naar de zelfstandige brandwacht.",
+          "Verdeling verschilt per situatie en is altijd afhankelijk van context."
         ],
         "more": {
           "href": "/blog/wat-kost-een-brandwacht-in-2025",
@@ -35,10 +35,10 @@
       },
       {
         "id": "lage-tarieven",
-        "question": "Waarom lijkt €40 per uur soms voldoende, maar pakt het anders uit?",
+        "question": "Waarom lijkt een laag uurtarief soms voldoende, maar pakt het anders uit?",
         "summary": "Een tarief kan op papier goed lijken, maar in de praktijk anders uitpakken.",
         "answer": [
-          "Een uurtarief van €40–€45 kan passend zijn, mits de context klopt.",
+          "Een uurtarief kan op papier passend lijken, mits de context klopt.",
           "Na bureaukosten, reistijd, onregelmatigheid en eigen kosten (verzekering, opleiding) blijft soms minder netto over dan verwacht.",
           "Daarom is het belangrijk het volledige plaatje te bekijken, niet alleen het uurtarief."
         ]
@@ -48,9 +48,9 @@
         "question": "Welke tarieven zijn marktconform voor brandwachten?",
         "summary": "Er bestaat geen vast marktconform tarief.",
         "answer": [
-          "Indicatieve bandbreedtes voor dagdiensten liggen vaak rond €38–€45 per uur.",
+          "Indicatieve bandbreedtes voor dagdiensten verschillen per locatie, inzet en certificering.",
           "Nacht-, weekend- en industriële inzet liggen doorgaans hoger.",
-          "Alle bedragen zijn indicatief en afhankelijk van locatie, certificering, ervaring en afspraken."
+          "Alle indicaties zijn contextafhankelijk en afhankelijk van locatie, certificering, ervaring en afspraken."
         ]
       },
       {
@@ -75,8 +75,8 @@
         "summary": "Je spreekt het tarief zelf af; er zijn geen garanties.",
         "answer": [
           "Je tarief spreek je rechtstreeks af met de opdrachtgever.",
-          "Veel dagdiensten liggen indicatief tussen €38–€45 per uur.",
-          "Nacht-, weekend- en industriële inzet kennen vaak hogere tarieven.",
+          "Dagdiensten kennen vaak andere bandbreedtes dan nacht-, weekend- en industriële inzet.",
+          "Nacht-, weekend- en industriële inzet kennen vaak hogere bandbreedtes.",
           "Er worden geen volumes, uren of inkomsten gegarandeerd."
         ]
       },

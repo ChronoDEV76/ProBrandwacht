@@ -33,20 +33,34 @@ export default function BewustZelfstandigWerkenPage() {
             <div>
               <p className="text-sm font-semibold text-slate-200">Wat ProBrandwacht doet</p>
               <ul className="mt-2 list-disc space-y-2 pl-5 text-slate-300">
-                <li>Faciliteren van inzet binnen duidelijke veiligheids- en verantwoordelijkheidskaders</li>
-                <li>Transparantie over rollen en verwachtingen</li>
-                <li>Bewaken van uitvoerbaarheid in de praktijk</li>
+                <li>Faciliteren van contact tussen opdrachtgevers en zelfstandigen</li>
+                <li>Duiden van rollen en uitvoerbaarheid</li>
+                <li>Informatie delen zonder tariefsturing</li>
               </ul>
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-200">Wat ProBrandwacht niet doet</p>
               <ul className="mt-2 list-disc space-y-2 pl-5 text-slate-300">
                 <li>Tarieven bepalen of afdwingen</li>
-                <li>Ondernemersrisico overnemen</li>
-                <li>Professionals aansturen als personeel</li>
+                <li>Contractpartij zijn bij uitvoering</li>
+                <li>Professionals behandelen als personeel</li>
               </ul>
             </div>
           </div>
+        </section>
+
+        <section className="mb-12 rounded-lg border border-slate-800 bg-slate-900/40 p-6 text-sm text-slate-300">
+          <h2 className="text-base font-semibold text-slate-100">Zelfstandigheid en samenwerking</h2>
+          <p className="mt-3 text-sm text-slate-300">
+            ProBrandwacht is een platform en geen werkgever, uitzendbureau of opdrachtgever. Zelfstandige
+            professionals en opdrachtgevers maken onderling afspraken over inzet, tarief, verantwoordelijkheden
+            en uitvoering.
+          </p>
+          <p className="mt-3 text-sm text-slate-300">
+            Verwijzingen naar &lsquo;DBA-bewust&rsquo;, &lsquo;rolzuiver&rsquo; of &lsquo;zelfstandig
+            ondernemerschap&rsquo; dienen ter duiding. De kwalificatie van een arbeidsrelatie hangt in de regel af
+            van de feitelijke uitvoering en omstandigheden.
+          </p>
         </section>
 
         {/* Content blocks */}

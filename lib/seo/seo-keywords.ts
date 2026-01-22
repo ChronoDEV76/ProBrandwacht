@@ -45,7 +45,7 @@ export const seoKeywordClusters = {
     'brandwacht netto verdienen',
     'brandwacht zonder marge',
     'brandwacht tarief inzicht',
-    'DBA-proof brandwacht',
+    'DBA-bewuste brandwacht',
     'brandwacht modelovereenkomst',
     'heldere tarieven',
     'toetsbare tariefafspraken',
@@ -69,7 +69,7 @@ export const seoKeywordClusters = {
   processSpeed: [
     'brandwacht spoed',
     'brandwacht spoedaanvraag',
-    'brandwacht snel inzetten',
+    'brandwacht snel schakelen',
     'brandwacht snel beschikbaar',
     'brandwacht aanvragen',
     'brandwacht zelf plannen',

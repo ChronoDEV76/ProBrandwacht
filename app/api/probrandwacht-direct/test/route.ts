@@ -59,7 +59,7 @@ export async function GET(req: Request) {
       requirements: "BHV, VCA",
       message: "Dit is een geautomatiseerde test-aanvraag.",
       urgent: false,
-      budget_range: "€40–45/u",
+      budget_range: "Test-bandbreedte",
       consent: true,
       source: "probrandwacht-direct-test",
     };
@@ -131,4 +131,3 @@ function escapeHtml(input: string) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
-

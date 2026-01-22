@@ -16,6 +16,11 @@ export default function FaqPage() {
         'ProBrandwacht toetst samenwerkingen op rolzuiverheid en feitelijke uitvoerbaarheid. Niet alleen wat er op papier staat, maar hoe er in de praktijk wordt gewerkt, is bepalend. Het platform stimuleert samenwerkingen die passen bij zelfstandig ondernemerschap en voorkomt verkapte loondienstconstructies.',
     },
     {
+      question: 'Is ProBrandwacht juridisch verantwoordelijk voor mijn inzet?',
+      answer:
+        'Nee. ProBrandwacht is geen werkgever of contractpartij. Afspraken over inzet, tarief en aansprakelijkheid worden rechtstreeks gemaakt tussen opdrachtgever en zelfstandig professional.',
+    },
+    {
       question: 'Waarom werkt ProBrandwacht niet met één standaardovereenkomst?',
       answer:
         'Omdat brandveiligheidsinzet plaatsvindt in uiteenlopende contexten met verschillende verantwoordelijkheden. Eén standaardovereenkomst doet vaak geen recht aan de praktijk en creëert schijnzekerheid. Heldere rolafspraken en professioneel handelen zijn doorslaggevend.',

@@ -75,7 +75,7 @@ export const zzpFaq = [
       'De basis is simpel: er wordt vooraf afgesproken hoe er wordt betaald en binnen welke termijn. Na goedkeuring van uren of inzet volgt uitbetaling volgens die afspraak. Je krijgt vooraf inzicht in afspraken, tarieven en verantwoordelijkheden.',
   },
   {
-    question: 'Wat als een opdrachtgever je toch als werknemer wil aansturen?',
+    question: 'Wat als een opdrachtgever je onder gezag wil laten werken?',
     answer:
       'Dan is het belangrijk om het gesprek aan te gaan over rol en verantwoordelijkheid. Het platform stimuleert afspraken die passen bij zelfstandig ondernemerschap: duidelijk over taken, geen eenzijdige roosterwijzigingen zonder overleg, en geen verplichtingen die horen bij loondienst. Kom je er samen niet uit, dan kun je beter geen opdracht aannemen dan in een grijze zone blijven hangen.',
   },
@@ -100,7 +100,7 @@ export const opdrachtgeverFaq = [
   {
     question: 'Kan ik het platform gebruiken naast bestaande bureaus en contracten?',
     answer:
-      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor 1-op-1 samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten inzetten, zolang de afspraken met alle betrokken partijen helder zijn.',
+      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor 1-op-1 samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten gebruiken, zolang de afspraken met alle betrokken partijen helder zijn.',
   },
   {
     question: 'Hoe zit het met facturen, administratie en rapportages?',

@@ -31,8 +31,8 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
               Digitale omgeving (streefdatum Q1 2026) die afspraken, planning en
               documentatie ondersteunt — werken binnen Wet DBA, eerlijk en zonder marge op
-              het uurtarief. 10% platformfee, optioneel escrow 1–2%. Indicatief en afhankelijk
-              van afspraken.
+              de vergoeding van de professional. Transparante platformkosten (alleen waar
+              van toepassing).
             </p>
           </article>
 

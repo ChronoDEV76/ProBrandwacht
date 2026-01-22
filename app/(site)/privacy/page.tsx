@@ -39,6 +39,7 @@ export default function PrivacyPage() {
             <li>– Dataminimalisatie: alleen wat nodig is voor verkennend contact en afspraken.</li>
             <li>– Transparantie: je ziet wat er wordt opgeslagen en waarom.</li>
             <li>– Controle: je beheert je profiel en zichtbaarheid.</li>
+            <li>– Delen alleen wanneer nodig voor verkennend contact en samenwerking.</li>
             <li>– Geen verkoop van persoonsgegevens.</li>
           </ul>
 
