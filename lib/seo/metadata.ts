@@ -178,13 +178,6 @@ export const routeMeta: Record<string, RouteMeta> = {
     robots: { index: true, follow: true },
   },
 
-  '/seo-resources': {
-    title: 'Bronnen & sectorinformatie over brandwachten | ProBrandwacht',
-    description:
-      'Betrouwbare bronnen, cijfers en richtlijnen over brandwachten, tarieven en veiligheid in Nederland. Voor opdrachtgevers en professionals.',
-    keywords: ['brandwacht bronnen', 'brandwacht data', 'veiligheid bronnen', 'cbs brandwacht'],
-  },
-
   '/steden': {
     title: 'Brandwacht per stad | ProBrandwacht',
     description:
@@ -267,23 +260,9 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: [...seoKeywordClusters.tariefInzicht, ...seoKeywordClusters.platform],
   },
 
-  '/tone-of-voice': {
-    title: 'Communicatiestijl | ProBrandwacht',
-    description:
-      'Richtlijnen voor de ProBrandwacht toon: ondernemend, eerlijk en menselijk, met aandacht voor context en verantwoordelijkheid.',
-    keywords: ['tone of voice', 'communicatiestijl', 'brandwacht communicatie'],
-  },
-
   // --------------------------------------------------
   // PROBRANDWACHT DIRECT / SPOED
   // --------------------------------------------------
-
-  '/direct': {
-    title: 'Spoed brandwacht aanvragen (24/7) | ProBrandwacht',
-    description:
-      'Spoedaanvraag met duidelijke kaders: rol, risico en beslislijnen eerst. Beschikbaarheid blijft contextafhankelijk.',
-    keywords: [...seoKeywordClusters.processSpeed, 'spoed brandwacht', 'brandwacht 24/7'],
-  },
 
   '/probrandwacht-direct': {
     title: 'ProBrandwacht Direct (spoed) | ProBrandwacht',
