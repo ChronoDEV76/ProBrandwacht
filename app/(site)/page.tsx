@@ -51,9 +51,9 @@ export default function Page() {
             bespreekbaar zijn en afspraken daadwerkelijk uitvoerbaar zijn tijdens inzet.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            <strong>Geen verborgen opslagen op het uurtarief.</strong> Eventuele platform- of servicekosten
-            worden afzonderlijk berekend en in de regel vooraf transparant afgestemd met alle betrokkenen.
-            Dit blijft indicatief en afhankelijk van scenario en afspraken — geen garantie.
+            <strong>Geen verborgen opslagen op afspraken.</strong> Inzetvoorwaarden worden vooraf
+            transparant afgestemd met alle betrokkenen. Dit blijft indicatief en afhankelijk van scenario
+            en afspraken — geen garantie.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

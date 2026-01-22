@@ -64,7 +64,7 @@ export default function ProBrandwachtDirectSpoedPage() {
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Afspraken die je niet uitstelt</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
-              <li>- Tarief + reistijd/wachttijd</li>
+              <li>- Inzetvoorwaarden (incl. reistijd/wachttijd)</li>
               <li>- Scope (wat wel/niet) en beslislijnen</li>
               <li>- Communicatie (portofoon/telefoon) + meldpunt</li>
               <li>- Rapportage (kort, toetsbaar, werkbaar)</li>
