@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: 'ProBrandwacht — Uitvoerbare brandveiligheid',
   description:
     'ProBrandwacht is geen klassiek bureau. Wij bewaken dat brandveiligheid in de praktijk klopt — niet alleen op papier. Soms zeggen we ja. Soms zeggen we nee.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
 }
 
 export default function Page() {

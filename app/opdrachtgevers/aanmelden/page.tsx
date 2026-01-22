@@ -33,7 +33,15 @@ export default function OpdrachtgeverAanmeldenPage() {
             <h1 className="text-3xl font-semibold md:text-4xl">Verkennende intake voor opdrachtgevers</h1>
             <p className="text-base leading-relaxed text-slate-200">
               ProBrandwacht faciliteert samenwerking tussen opdrachtgevers en zelfstandig uitvoerende
-              professionals. Wij zijn geen klassiek bemiddelingsbureau en leveren geen snelle plaatsingen.
+              professionals. Wij zijn geen klassiek bemiddelingsbureau en leveren geen snelle plaatsingen. We
+              toetsen uitvoerbaarheid en zeggen soms bewust nee; lees waarom op{' '}
+              <a
+                href="/waarom-wij-soms-nee-zeggen"
+                className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+              >
+                waarom wij soms nee zeggen
+              </a>
+              .
             </p>
             <p className="text-base leading-relaxed text-slate-200">
               Deze intake is bedoeld om samen te toetsen of een vraag uitvoerbaar is binnen een 1-op-1

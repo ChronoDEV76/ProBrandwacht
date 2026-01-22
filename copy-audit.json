@@ -1,8 +1,8 @@
 {
   "summary": {
     "appPath": "/home/roger/Desktop/WEBSITE/ProBrandwacht/React_Vite_ProBrandwacht/probrandwacht-main-new/app",
-    "filesScanned": 84,
-    "filesWithTextish": 44,
+    "filesScanned": 85,
+    "filesWithTextish": 49,
     "errors": 0,
     "warnings": 0,
     "info": 0,
@@ -13,7 +13,7 @@
     },
     "matchCounts": {
       "safety_leading": 1,
-      "honesty_traceable": 56,
+      "honesty_traceable": 68,
       "inclusion_intent_sentence": 1
     },
     "matchEvidence": {

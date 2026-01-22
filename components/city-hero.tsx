@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 
 import { Cta } from '@/components/Cta'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
@@ -22,7 +23,11 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
         <p className="mt-3 max-w-2xl text-slate-700">
           ProBrandwacht is geen klassiek bemiddelingsbureau. Wij toetsen vooraf of de inzet van een brandwacht in{' '}
           {cityName} uitvoerbaar is in de praktijk, met heldere rolverdeling en afspraken die standhouden tijdens
-          uitvoering. Past dat niet? Dan zeggen we soms ook nee.
+          uitvoering. Past dat niet? Dan zeggen we soms ook nee; lees{' '}
+          <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-800">
+            waarom wij soms nee zeggen
+          </Link>
+          .
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">

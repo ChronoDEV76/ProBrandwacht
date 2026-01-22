@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * legal-sanity-check.mjs
+ * scripts/qa/legal-sanity-check.mjs
  * ProBrandwacht Legal Sanity Check (ESM/.mjs)
  *
  * Usage:
- *   node legal-sanity-check.mjs --root .
- *   node legal-sanity-check.mjs --root . --json
- *   node legal-sanity-check.mjs --root . --config legal-sanity.config.json
+ *   node scripts/qa/legal-sanity-check.mjs --root .
+ *   node scripts/qa/legal-sanity-check.mjs --root . --json
+ *   node scripts/qa/legal-sanity-check.mjs --root . --config scripts/qa/legal-sanity.config.json
  */
 
 import fs from "node:fs";

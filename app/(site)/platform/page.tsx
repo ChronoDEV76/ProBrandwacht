@@ -21,6 +21,14 @@ export default function PlatformPage() {
               ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
               - geen bureau, geen werkgeversrol, geen matching-engine. Wij zijn geen klassiek bemiddelingsbureau en
               geen uitzendmodel. De nadruk ligt op uitvoerbaarheid, rolhelderheid en professionele verantwoordelijkheid.
+              We zeggen soms bewust nee; lees waarom op{' '}
+              <a
+                href="/waarom-wij-soms-nee-zeggen"
+                className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+              >
+                waarom wij soms nee zeggen
+              </a>
+              .
             </p>
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Dat betekent ook: we werken niet met automatische koppelingen of standaardinschrijvingen.

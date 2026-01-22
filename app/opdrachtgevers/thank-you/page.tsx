@@ -6,8 +6,15 @@ import { cookies } from 'next/headers'
 export const metadata: Metadata = {
   title: 'Bedankt voor je aanvraag | ProBrandwacht',
   description: 'Bevestigingspagina na het insturen van een aanvraag.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
   robots: { index: false, follow: false },
-};
+}
 
 
 export default function ThankYouPage({

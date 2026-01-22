@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Waarom wij soms nee zeggen — ProBrandwacht',
   description:
     'Wij zeggen soms nee tegen een opdracht. Niet omdat we moeilijk willen doen, maar omdat niet elke vraag professioneel uitvoerbaar en verantwoord is.',
+  keywords: [
+    'brandwacht',
+    'brandwacht inhuren',
+    'brandwacht huren',
+    'DBA-proof brandwacht',
+    'brandwacht tarieven',
+  ],
 }
 
 export default function Page() {

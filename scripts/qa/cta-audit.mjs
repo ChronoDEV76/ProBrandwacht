@@ -1,4 +1,4 @@
-// scripts/cta-audit.mjs
+// scripts/qa/cta-audit.mjs
 // Scan ONLY current live pages + components (skip backups/OLD).
 //
 // Default scan scope:
@@ -10,10 +10,10 @@
 // - any filename containing: backup, .backup, .bak, .old, .tmp
 //
 // Usage:
-//   node scripts/cta-audit.mjs
-//   node scripts/cta-audit.mjs --json reports/cta-audit.json
-//   node scripts/cta-audit.mjs --fix
-//   node scripts/cta-audit.mjs --include-layout   (also scan layout.tsx files)
+//   node scripts/qa/cta-audit.mjs
+//   node scripts/qa/cta-audit.mjs --json reports/cta-audit.json
+//   node scripts/qa/cta-audit.mjs --fix
+//   node scripts/qa/cta-audit.mjs --include-layout   (also scan layout.tsx files)
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -279,7 +279,11 @@ async function main() {
     const INTERMEDIARY_TERMS = ["bemiddel", "bemiddeling", "tussenpersoon", "wij regelen", "snel geregeld", "direct beschikbaar"];
     const t = normalize(raw);
     const intermediaryHits = INTERMEDIARY_TERMS.filter((w) => t.includes(w));
-    if (intermediaryHits.length) {
+    const hasExplicitNoIntermediary = t.includes("geen klassiek bemiddelingsbureau");
+    const hasUitvoerbaarheid = t.includes("uitvoerbaarheid") || t.includes("uitvoerbaar");
+    const hasWhyNoLink = t.includes("/waarom-wij-soms-nee-zeggen") || t.includes("waarom wij soms nee zeggen");
+    const allowIntermediaryTone = hasExplicitNoIntermediary && hasUitvoerbaarheid && hasWhyNoLink;
+    if (intermediaryHits.length && !allowIntermediaryTone) {
       const note = {
         kind: "tone_intermediary",
         file: rel,

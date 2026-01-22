@@ -17,9 +17,9 @@
  * - Includes evidence: first match + counts for each required signal
  *
  * Run:
- *   node scripts/copy-audit-app.mjs
- *   node scripts/copy-audit-app.mjs --json copy-audit.json
- *   node scripts/copy-audit-app.mjs --root . --app app
+ *   node scripts/qa/copy-audit-app.mjs
+ *   node scripts/qa/copy-audit-app.mjs --json copy-audit.json
+ *   node scripts/qa/copy-audit-app.mjs --root . --app app
  */
 
 import fs from "node:fs";
@@ -50,7 +50,7 @@ function parseArgs(argv) {
     else if (a === "--help") {
       console.log(`
 Usage:
-  node scripts/copy-audit-app.mjs [--root .] [--app app] [--json out.json]
+  node scripts/qa/copy-audit-app.mjs [--root .] [--app app] [--json out.json]
 Options:
   --ext .ts,.tsx,.mdx     Comma-separated extensions to scan
   --exclude node_modules,.next,dist,build,.git
@@ -489,4 +489,3 @@ main().catch((e) => {
   console.error("Fatal:", e?.message ?? e);
   process.exit(1);
 });
-

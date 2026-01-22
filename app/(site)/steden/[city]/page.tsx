@@ -165,7 +165,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
           ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-          - geen bureau, geen werkgeversrol, geen matching-engine.
+          - geen bureau, geen werkgeversrol, geen matching-engine. We toetsen uitvoerbaarheid en zeggen soms bewust
+          nee; lees waarom op{' '}
+          <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100">
+            waarom wij soms nee zeggen
+          </Link>
+          .
         </p>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
