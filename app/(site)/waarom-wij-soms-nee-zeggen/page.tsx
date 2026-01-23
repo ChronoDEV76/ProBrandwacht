@@ -28,7 +28,7 @@ export default function Page() {
             </p>
 
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Waarom wij soms "nee" zeggen
+              Waarom wij soms &quot;nee&quot; zeggen
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">

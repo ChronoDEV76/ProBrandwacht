@@ -44,7 +44,7 @@ export default function Page() {
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
               ProBrandwacht legt uit hoe opdrachtgevers en zelfstandige professionals
               praktisch kunnen samenwerken. We helpen afbakenen wat je vooraf
-              bespreekt, welke vragen je stelt, welke risico's je herkent en waar je
+              bespreekt, welke vragen je stelt, welke risico&apos;s je herkent en waar je
               grenzen trekt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
@@ -87,7 +87,7 @@ export default function Page() {
               verantwoordelijkheden steeds minder duidelijk worden.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              In die onduidelijkheid ontstaan risico's: voor opdrachtgevers, voor professionals en uiteindelijk
+              In die onduidelijkheid ontstaan risico&apos;s: voor opdrachtgevers, voor professionals en uiteindelijk
               voor veiligheid op locatie.
             </p>
           </div>

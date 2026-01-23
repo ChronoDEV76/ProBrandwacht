@@ -77,7 +77,7 @@ export default function OpdrachtgeversPage() {
           <div className="md:col-span-2">
             <h2 className="text-2xl font-semibold">Wil je een compacte checklist?</h2>
             <p className="mt-2 text-slate-200/90">
-              Start bij "Waarom we soms nee zeggen" -- dat geeft je een praktisch kader voor uitvoerbaarheid
+              Start bij &quot;Waarom we soms nee zeggen&quot; -- dat geeft je een praktisch kader voor uitvoerbaarheid
               en grensbewaking.
             </p>
           </div>

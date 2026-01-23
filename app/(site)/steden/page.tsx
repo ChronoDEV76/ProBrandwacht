@@ -18,7 +18,7 @@ export default function StedenIndexPage() {
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Brandwacht per stad: context, risico's en werkbare afspraken
+              Brandwacht per stad: context, risico&apos;s en werkbare afspraken
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
@@ -41,12 +41,12 @@ export default function StedenIndexPage() {
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is geen \"wij leveren standaard\"-aanbieder. Het is een vakinhoudelijke
+              Belangrijk: ProBrandwacht is geen &quot;wij leveren standaard&quot;-aanbieder. Het is een vakinhoudelijke
               route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
             </p>
 
             <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5 text-sm text-slate-200 md:text-base">
-              <h2 className="text-lg font-semibold text-white">Hoe je de stedenpagina's leest</h2>
+              <h2 className="text-lg font-semibold text-white">Hoe je de stedenpagina&apos;s leest</h2>
               <ul className="mt-3 space-y-2">
                 <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
                 <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
