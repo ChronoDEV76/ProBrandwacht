@@ -27,7 +27,8 @@ export default function ContactPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Heb je een vraag over onze werkwijze of wil je sparren over rolafbakening en
-              uitvoerbaarheid? Dan kun je hier contact opnemen.
+              uitvoerbaarheid? Dan kun je hier contact opnemen. We geven geen tariefadvies en bemiddelen
+              niet.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">

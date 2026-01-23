@@ -164,7 +164,7 @@ function seoSuggestions(): string[] {
   // (1) Pro-ZZP moet duidelijk hoger/zichtbaarder zijn dan de markt
   if (selfProZzp < avgProZzp * 1.5) {
     suggestions.push(
-      "Voeg meer expliciete autonomie-taal toe (eigen regie, zelfstandig tarief, zzp’er bepaalt, eigen voorwaarden) om je pro-ZZP-profiel sterker te maken dan de markt."
+      "Voeg meer expliciete autonomie-taal toe (eigen regie, zzp’er bepaalt, eigen voorwaarden) om je pro-ZZP-profiel sterker te maken dan de markt."
     );
   } else {
     suggestions.push(
@@ -175,7 +175,7 @@ function seoSuggestions(): string[] {
   // (2) Bureau-taal moet lager zijn dan de markt
   if (selfBureau > avgBureau) {
     suggestions.push(
-      "Er zit nog relatief veel bureau-/control-taal in vergelijking met de markt (woorden als ‘bemiddeling’, ‘ontzorgen’, ‘wij plannen’). Herformuleer dit naar 'platform', 'direct contact', 'zelf kiezen', 'eigen voorwaarden'."
+      "Er zit nog relatief veel bureau-/control-taal in vergelijking met de markt (woorden als ‘bemiddeling’, ‘ontzorgen’, ‘wij plannen’). Herformuleer dit naar 'direct contact', 'uitleg', 'afbakening', 'zelf kiezen'."
     );
   } else {
     suggestions.push(
@@ -201,7 +201,7 @@ function seoSuggestions(): string[] {
     );
   } else {
     suggestions.push(
-      "Je gebruikt geen conflict-/strijdtaal; dat past goed bij een volwassen, verbindende vakbond-/platformpositie."
+      "Je gebruikt geen conflict-/strijdtaal; dat past goed bij een volwassen, verbindende frontstage-duidingspositie."
     );
   }
 
@@ -286,4 +286,3 @@ seoSuggestions().forEach((s) => console.log(" - " + s));
 console.log(
   "\n📄 Pagina-specifieke adviezen staan in 'reports/tone-advice-probrandwacht.json'."
 );
-

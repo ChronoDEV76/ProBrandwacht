@@ -262,7 +262,7 @@ function repoPresenceCheck(allTextByFile, config) {
       ruleId: rule.id,
       severity: rule.severity,
       description:
-        "No platform role-clarifying phrases found anywhere. Add core disclaimers on key pages.",
+        "No initiative role-clarifying phrases found anywhere. Add core disclaimers on key pages.",
       file: "(repo)",
       line: 0,
       col: 0,

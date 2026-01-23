@@ -80,7 +80,7 @@ const LEGACY_CTA_MAP = [
   { match: "Boek nu", replace: "Bespreek of dit past", rationale: "Rustiger, geen retail-gevoel.", idHint: "tertiary_contact_exploratory" },
   { match: "Direct aanvragen", replace: "Verkennend contact", rationale: "Minder sales.", idHint: "tertiary_contact_exploratory" },
 
-  { match: "Bekijk hoe dit werkt →", replace: "Lees hoe wij opdrachten selecteren →", rationale: "Selectie/uitvoerbaarheid centraal.", idHint: "brandwacht_learn_selection" },
+  { match: "Bekijk hoe dit werkt →", replace: "Lees hoe wij rolafbakening duiden →", rationale: "Selectie/uitvoerbaarheid centraal.", idHint: "brandwacht_learn_selection" },
   { match: "Lees meer →", replace: "Waarom wij soms nee zeggen →", rationale: "Positionering zichtbaar maken.", idHint: "secondary_why_no" },
 ];
 

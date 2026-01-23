@@ -125,9 +125,8 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            ProBrandwacht is het platform waar zelfstandige brandwachten en opdrachtgevers elkaar
-            vinden in eerlijke, DBA-proof samenwerking — zonder klassieke bemiddelingslagen of andere
-            onnodige schakels.
+            ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe zelfstandige samenwerking
+            werkbaar en uitlegbaar blijft — geen bureau, geen matching-engine, geen beloftes.
           </p>
     `,
     preferredAnchors: [
@@ -141,8 +140,8 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/voor-brandwachten/page.tsx",
     snippet: `
           <p className="mt-4 text-xs text-slate-300">
-            Via ProBrandwacht werk je nu al op deze manier, en straks via ProSafetyMatch ook
-            volledig digitaal met planning, documentatie en facturatie.
+            ProBrandwacht is frontstage: publieke uitleg en kaders. Geen planning, geen opdrachten,
+            geen beloftes — wel context om 1-op-1 afspraken scherp te maken.
           </p>
     `,
     preferredAnchors: [/Aanmelden in 3 stappen/i],
@@ -152,9 +151,9 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/opdrachtgevers/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Je werkt direct samen met zelfstandige brandwachten. Tarief, taken en gezag spreken
-            jullie zelf af — ProBrandwacht helpt om dat helder, uitlegbaar en praktisch te
-            organiseren, zonder extra tussenlagen of klassieke ketenconstructies.
+            Je werkt direct samen met zelfstandige brandwachten. Rolverdeling, taken en gezag
+            spreken jullie 1-op-1 af — ProBrandwacht duidt waar je op moet letten, zonder
+            tussenlagen of sturing.
           </p>
     `,
     preferredAnchors: [
@@ -167,9 +166,8 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/belangen/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Dezelfde uitgangspunten zie je terug in alle pagina's, tools en in de toekomstige
-            ProSafetyMatch-functionaliteiten: eerlijke, zelfstandigheid en duidelijke,
-            DBA-proof afspraken voor alle betrokken partijen.
+            Dezelfde uitgangspunten zie je terug in alle pagina's en uitleg: onafhankelijke
+            duiding, rolafbakening en afspraken die uitlegbaar blijven — zonder beloftes.
           </p>
     `,
     preferredAnchors: [
@@ -197,9 +195,9 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/probrandwacht-direct-spoed/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Ook bij spoed blijven tarief en afspraken eerlijk: jij kiest als opdrachtgever
-            samen met de zelfstandige brandwacht hoe de inzet eruitziet. ProBrandwacht zorgt
-            alleen voor een veilige, snelle match.
+            Ook bij spoed blijft het kader leidend: duidelijke rolverdeling en afspraken
+            die uitvoerbaar zijn. ProBrandwacht duidt de randvoorwaarden — partijen spreken
+            het verder 1-op-1 af.
           </p>
     `,
     preferredAnchors: [
@@ -228,8 +226,8 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/over-ons/page.tsx",
     snippet: `
           <p className="mt-3 text-sm text-slate-200">
-            Alles wat je op ProBrandwacht ziet — van spoedaanvraag tot kennisbank — is gebouwd
-            vanuit dezelfde gedachte: we verbeteren de sector samen, stap voor stap.
+            Alles wat je op ProBrandwacht ziet is gebouwd vanuit dezelfde gedachte: publiek,
+            uitlegbaar en marktduidend — zonder rol in uitvoering of afspraken.
           </p>
     `,
     preferredAnchors: [/Waarom ProBrandwacht\?/i],
@@ -263,7 +261,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     file: "app/(site)/seo-resources/page.tsx",
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Deze SEO-hulpmiddelen zijn gemaakt vanuit dezelfde visie als het platform:
+            Deze SEO-hulpmiddelen zijn gemaakt vanuit dezelfde visie als het initiatief:
             eerlijk, uitlegbaar en gericht op duurzame samenwerking — niet op snelle trucjes.
           </p>
     `,

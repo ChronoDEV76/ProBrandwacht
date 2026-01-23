@@ -24,7 +24,7 @@ export default function OverOnsPage() {
               helder in rolverdeling.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
@@ -32,8 +32,8 @@ export default function OverOnsPage() {
               opdrachtgevers of intermediairs.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Achter de schermen wordt gewerkt aan tooling die organisaties helpt dit soort afspraken beter
-              te documenteren — dat valt buiten de rol van ProBrandwacht.
+              Er wordt onderzocht of er in de toekomst ondersteunende tooling kan ontstaan die afspraken
+              beter helpt documenteren — dat verandert niets aan de onafhankelijke rol van ProBrandwacht.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               De markt is in beweging. Wetgeving, praktijk en interpretatie lopen niet in alle gevallen gelijk.

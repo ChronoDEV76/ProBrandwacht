@@ -163,12 +163,27 @@ const SIGNALS = {
     /\bavg\b/i,
     /\bverwerkingsverantwoordelijke\b/i,
   ],
+  hasDuidingLanguage: [
+    /\bduid(t|en|ing)\b/i,
+    /\buitleg\b/i,
+    /\bkader(s)?\b/i,
+    /\brolafbakening\b/i,
+    /\brolverdeling\b/i,
+    /\bonafhankelijk\b/i,
+    /\binitiatief\b/i,
+    /\bgeen bureau\b/i,
+    /\bgeen bemiddeling\b/i,
+  ],
 
   // Experience / Expertise signals
   hasExperienceLanguage: [
     /\bin de praktijk\b/i,
+    /\bpraktijkervaring\b/i,
     /\bervaring\b/i,
     /\bop de vloer\b/i,
+    /\bwerkvloer\b/i,
+    /\bop locatie\b/i,
+    /\buitvoering\b/i,
     /\bcasus\b/i,
     /\bscenario\b/i,
     /\btoetsbaar\b/i,
@@ -182,6 +197,8 @@ const SIGNALS = {
     /\bBHV\b/i,
     /\bveiligheidsplan\b/i,
     /\bWet DBA\b/i,
+    /\bvakmanschap\b/i,
+    /\bprofessioneel\b/i,
   ],
 
   // Trust/Transparency (avoid absolute promises; you already handle with tone guard)
@@ -191,12 +208,14 @@ const SIGNALS = {
     /\bin de regel\b/i,
     /\bafhankelijk van\b/i,
     /\bgeen garantie\b/i,
+    /\bzonder beloftes\b/i,
   ],
 
   // Author / freshness (mostly relevant for blog pages)
   hasAuthorSignals: [
     /\bauteur\b/i,
     /\bdoor\b\s+[A-Z][a-z]/, // "door Naam"
+    /\bdoor probrandwacht\b/i,
     /\bgeschreven door\b/i,
   ],
   hasDateSignals: [
@@ -212,8 +231,12 @@ const SIGNALS = {
 };
 
 function scorePage({ url, html, text }) {
+  const pathname = new URL(url).pathname || "/";
   // Detect blog-like pages by URL heuristic
-  const isBlog = /\/blog(\/|$)/i.test(url);
+  const isBlog = /\/blog(\/|$)/i.test(pathname);
+  const isBlogDetail = /\/blog\/[^/]+/i.test(pathname);
+  const isPolicyPage = /\/(privacy|voorwaarden|disclaimer)/i.test(pathname);
+  const isIdentityPage = /^\/$|\/over-ons|\/opdrachtgevers|\/voor-brandwachten/i.test(pathname);
 
   const findings = [];
 
@@ -237,10 +260,12 @@ function scorePage({ url, html, text }) {
   const hasAbout = countRegexHits(text, SIGNALS.hasAboutOrIdentity).length > 0;
 
   if (hasAbout) ok("identity", "Identiteit/‘over ons’ signalen gevonden.");
-  else warn("identity", "Geen duidelijke identiteit/‘over ons’ signalen gevonden op deze pagina (kan ok zijn als het geen info-pagina is).");
+  else if (isIdentityPage) warn("identity", "Geen duidelijke identiteit/‘over ons’ signalen gevonden op deze pagina.");
+  else ok("identity_optional", "Identiteitssignalen zijn optioneel op deze pagina.");
 
   if (hasPolicies) ok("policies", "Privacy/voorwaarden/disclaimer signalen gevonden.");
-  else warn("policies", "Geen policy-signalen gevonden (privacy/voorwaarden/disclaimer/AVG).");
+  else if (isPolicyPage) warn("policies", "Geen policy-signalen gevonden (privacy/voorwaarden/disclaimer/AVG).");
+  else ok("policies_optional", "Policy-signalen zijn optioneel op deze pagina.");
 
   // Contact signals (harder on key pages)
   const contactHits = countRegexHits(text, SIGNALS.hasContact);
@@ -250,19 +275,24 @@ function scorePage({ url, html, text }) {
   // Experience / expertise
   const expHits = countRegexHits(text, SIGNALS.hasExperienceLanguage);
   const exptHits = countRegexHits(text, SIGNALS.hasExpertiseLanguage);
+  const duidingHits = countRegexHits(text, SIGNALS.hasDuidingLanguage);
+
   if (expHits.length) ok("experience", "Ervarings-taal gevonden (praktijk/casus/scenario).");
+  else if (duidingHits.length) ok("experience_contextual", "Duidings-taal gevonden; expliciete ervaringsclaim is optioneel.");
   else warn("experience", "Geen duidelijke ‘ervaring in de praktijk’ signalen gevonden.");
 
   if (exptHits.length) ok("expertise", "Expertise/kwalificatie signalen gevonden (certificering/wetgeving).");
+  else if (duidingHits.length) ok("expertise_contextual", "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel.");
   else warn("expertise", "Geen duidelijke expertise/kwalificatie signalen gevonden.");
 
-  // Nuance terms (nice-to-have outside landing pages, but good overall)
+  // Nuance terms (nice-to-have; only warn on key pages)
   const nuanceHits = countRegexHits(text, SIGNALS.hasNuanceTerms);
   if (nuanceHits.length) ok("nuance", "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.).");
-  else warn("nuance", "Geen nuance-termen gevonden (kan ok zijn, maar helpt ‘vertrouwen zonder belofte’).");
+  else if (isIdentityPage || isPolicyPage) warn("nuance", "Geen nuance-termen gevonden (kan ok zijn, maar helpt ‘vertrouwen zonder belofte’).");
+  else ok("nuance_optional", "Nuance-termen zijn optioneel op deze pagina.");
 
   // Blog-specific: author/date/references
-  if (isBlog) {
+  if (isBlogDetail) {
     const author = countRegexHits(text, SIGNALS.hasAuthorSignals);
     if (author.length) ok("author", "Auteur-signaal gevonden (door/auteur).");
     else warn("author", "Geen auteur-signaal gevonden (overweeg ‘door ProBrandwacht’ of naam/rol).");
@@ -276,6 +306,8 @@ function scorePage({ url, html, text }) {
     const outbound = countRegexHits(html, SIGNALS.hasOutboundLinks);
     if (outbound.length) ok("references", "Outbound links gevonden (bronverwijzingen).");
     else warn("references", "Geen outbound links gevonden (voor wet/regels/claims helpt bronvermelding).");
+  } else if (isBlog) {
+    ok("author_optional", "Auteur/datum-signalen gelden vooral voor individuele blogposts.");
   }
 
   // Determine final status

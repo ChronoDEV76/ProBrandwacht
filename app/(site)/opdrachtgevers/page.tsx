@@ -22,7 +22,7 @@ export default function OpdrachtgeversPage() {
               signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
 
@@ -30,7 +30,8 @@ export default function OpdrachtgeversPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> geen bureau, geen werkgever, geen
                 matching-engine. ProBrandwacht duidt en waarschuwt -- jij en de professional maken 1-op-1
-                afspraken over rol, verantwoordelijkheden en uitvoering.
+                afspraken over rol, verantwoordelijkheden en uitvoering. Tarief wordt onderling bepaald;
+                ProBrandwacht geeft geen tariefadvies.
               </p>
             </div>
           </div>

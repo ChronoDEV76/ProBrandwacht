@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "🛡️  Running launch check..."
+node scripts/ops/launch-check.mjs --no-build
+
 node scripts/tone/tone-guard-autofix.mjs --dry --check
 
 echo "🔍 Running Tone of Voice check..."

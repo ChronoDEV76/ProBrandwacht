@@ -6,17 +6,16 @@ import { getRouteMetadata } from '@/lib/seo/metadata'
 const ogImage = 'https://www.probrandwacht.nl/og-home.webp'
 const canonicalUrl = 'https://www.probrandwacht.nl/zzp/aanmelden'
 const description =
-  'Verkennende intake voor zelfstandige brandwachten. Geen inschrijving en geen garanties, wel toetsen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.'
+  'Verkennende intake voor zelfstandige brandwachten. Geen inschrijving en geen garanties, wel verkennen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.'
 
 export const metadata = {
   title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
   description,
   keywords: [
     'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
     'wet dba brandwacht',
-    'brandwacht tarieven',
+    'zelfstandig samenwerken',
+    'rolafbakening brandwacht',
   ],
   alternates: {
     canonical: canonicalUrl,

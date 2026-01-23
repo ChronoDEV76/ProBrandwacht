@@ -281,9 +281,9 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             )}
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               Je legt hiermee vrijblijvend je situatie voor. Dit is geen inschrijving voor werk en geen garantie
-              op opdrachten. We toetsen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.{' '}
+              op opdrachten. We verkennen of samenwerking past bij rol, verantwoordelijkheid en uitvoerbaarheid.{' '}
               <Link href="/platform" className="underline underline-offset-4">
-                Hoe werkt het platform?
+                Hoe werkt het initiatief?
               </Link>
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -421,13 +421,13 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             </Card>
 
             <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200">
-              <p className="font-semibold text-slate-100">Wat betekent ProBrandwacht als platform?</p>
+              <p className="font-semibold text-slate-100">Wat betekent ProBrandwacht als initiatief?</p>
               <p className="mt-2">
-                ProBrandwacht faciliteert samenwerking. Zoals ieder platform kan hier een platform- of servicefee
-                bij horen. Dit wordt vooraf transparant afgestemd; geen verborgen opslagen.
+                ProBrandwacht is een duidend initiatief. We bemiddelen niet en geven geen tariefadvies; afspraken
+                en eventuele vergoedingen worden onderling bepaald door opdrachtgever en professional.
               </p>
               <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">
-                Lees hoe het platform werkt
+                Lees hoe het initiatief werkt
               </Link>
             </div>
 

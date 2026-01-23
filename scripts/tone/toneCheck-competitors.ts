@@ -65,7 +65,7 @@ const HARD_WORDS: string[] = [
 
 const SUGGESTIONS: Record<string, string> = {
   oneerlijk: "niet eerlijk / uit balans",
-  profiteren: "risico’s doorschuiven / margeverschil",
+  profiteren: "risico’s doorschuiven / ketenbelang",
   "bureaus profiteren": "bureaumodel schuift risico’s door",
   misbruik: "scheefgroei / onevenwicht",
   onderbetaald: "niet kostendekkend",
@@ -85,7 +85,7 @@ const SUGGESTIONS: Record<string, string> = {
   tussenpartij: "intermediair",
   uitzendmodel: "klassiek bemiddelingsmodel",
   recruiter: "bemiddelaar / intermediair",
-  "commerciële marge": "organisatie-opslag / bemiddelingsfee",
+  "commerciële marge": "organisatie-opslag / ketenbelang",
   inzetten: "samenwerken / inschakelen op eigen voorwaarden",
   aansturen: "coördineren / begeleiden",
   "geplande uren": "geplande inzet / gewenste uren",
@@ -96,7 +96,7 @@ const SUGGESTIONS: Record<string, string> = {
 
 const POSITIVE_KEYWORDS: string[] = [
   "eerlijke",
-  "kostendekkend",
+  "kwaliteit",
   "balans",
   "duurzaam model",
   "verantwoordelijkheid",
@@ -109,7 +109,6 @@ const POSITIVE_KEYWORDS: string[] = [
   "dbaproof",
   "autonomie",
   "onafhankelijk",
-  "eerlijke tarieven",
   "vakmanschap",
   "helder",
   "heldere afspraken",

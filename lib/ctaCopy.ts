@@ -71,7 +71,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_how_we_work: {
     id: 'secondary_how_we_work',
-    label: 'Lees hoe wij opdrachten beoordelen →',
+    label: 'Lees hoe wij randvoorwaarden duiden →',
     href: '/waarom-wij-soms-nee-zeggen',
     variant: 'link',
     intent: 'secondary',
@@ -95,7 +95,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   brandwacht_learn_selection: {
     id: 'brandwacht_learn_selection',
-    label: 'Lees hoe wij opdrachten selecteren →',
+    label: 'Lees hoe wij rolafbakening duiden →',
     href: '/voor-brandwachten',
     variant: 'link',
     intent: 'secondary',

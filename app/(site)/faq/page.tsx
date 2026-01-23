@@ -31,8 +31,8 @@ export default function FaqPage() {
             oplossingen.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf bemiddelt
-            niet en stuurt niet.
+            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+            bemiddelt niet en stuurt niet.
           </p>
         </div>
       </HeroBackground>

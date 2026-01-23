@@ -106,7 +106,7 @@ export default function SiteFooter() {
             bewust zelfstandig werken in brandveiligheid.
           </p>
           <p className="mt-1">
-            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
             bemiddelt niet en stuurt niet.
           </p>
           <p className="mt-1">

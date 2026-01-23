@@ -9,7 +9,7 @@ export default function WhyProbrandwachtSection() {
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             Veel brandwachten kennen onduidelijke ketens met te veel schakels. ProBrandwacht
             werkt anders: we zijn een <span className="font-semibold text-emerald-300">onafhankelijk initiatief</span>
-            dat rolverdeling en afspraken helder maakt.
+            dat rolverdeling en afspraken uitlegbaar maakt.
           </p>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             Geen prijssturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
@@ -21,8 +21,7 @@ export default function WhyProbrandwachtSection() {
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-emerald-300">Jij houdt de regie</h3>
             <p className="text-sm text-slate-200">
-              Je kiest zelf welke opdrachten je aanneemt en met wie je samenwerkt. Geen planning die
-              over jouw agenda beslist.
+              Je houdt zelf regie over keuzes en beschikbaarheid. Geen planning die over jouw agenda beslist.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
@@ -30,14 +29,14 @@ export default function WhyProbrandwachtSection() {
               Duidelijke afstemming
             </h3>
             <p className="text-sm text-slate-200">
-              Afspraken over scope, communicatie en resultaat worden gedeeld en toetsbaar gemaakt,
-              zodat beide partijen dezelfde verwachtingen hebben.
+              We laten zien hoe afspraken over scope, communicatie en resultaat helder beschreven kunnen
+              worden, zodat verwachtingen gelijk zijn.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-sky-300">Heldere afspraken</h3>
             <p className="text-sm text-slate-200">
-              Rolverdeling en verantwoordelijkheden zijn helder en toetsbaar. Dat is beter voor de
+              Rolverdeling en verantwoordelijkheden blijven helder en uitlegbaar. Dat is beter voor de
               zelfstandige brandwacht, de opdrachtgever en de kwaliteit van de brandveiligheid.
             </p>
           </div>

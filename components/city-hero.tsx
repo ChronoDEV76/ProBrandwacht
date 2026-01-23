@@ -21,9 +21,9 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht is geen klassiek bemiddelingsbureau. Wij toetsen vooraf of de inzet van een brandwacht in{' '}
-          {cityName} uitvoerbaar is in de praktijk, met heldere rolverdeling en afspraken die standhouden tijdens
-          uitvoering. Past dat niet? Dan zeggen we soms ook nee; lees{' '}
+          ProBrandwacht is geen klassiek bemiddelingsbureau. We beschrijven welke rolverdeling en afspraken
+          vooraf nodig zijn om inzet in {cityName} uitvoerbaar te houden. Past dat niet? Dan is nee soms de
+          professionele keuze; lees{' '}
           <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-800">
             waarom wij soms nee zeggen
           </Link>
@@ -46,7 +46,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
 
         <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm text-slate-700">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
-            Zo toetsen wij een inzet
+            Zo herkennen we uitvoerbaarheid
           </p>
           <ul className="mt-3 space-y-2">
             <li>- Is de rol van de brandwacht expliciet?</li>
@@ -55,13 +55,13 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             <li>- Is de inzet uitvoerbaar zonder improvisatie?</li>
           </ul>
           <p className="mt-3 text-xs text-slate-600">
-            Alleen als dit klopt, maken we verkennende afstemming mogelijk.
+            Als dit klopt, kunnen partijen zelf verantwoord verder.
           </p>
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Direct contact met opdrachtgevers
+            Rechtstreekse afstemming tussen partijen
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             Geen concurrentiebeding · heldere afspraken

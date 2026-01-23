@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const messages = [
-  "Eerlijke tarieven. Direct contact.",
-  "Anders dan klassieke bureauconstructies: transparant en zonder ketensturing.",
+  "Heldere afspraken. Directe afstemming.",
+  "Anders dan klassieke bureauconstructies: rolzuiver en uitlegbaar.",
   "Rijksgediplomeerd en/of repressief.",
-  "Bij beschikbaarheid. Snel inzetbaar. Zonder loze beloftes.",
+  "Contextafhankelijk, zonder loze beloftes.",
 ];
 
 export default function HomeHeroCycle() {

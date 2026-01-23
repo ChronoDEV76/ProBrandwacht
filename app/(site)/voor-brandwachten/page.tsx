@@ -26,7 +26,7 @@ export default function VoorBrandwachtenPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht is geen bureau, geen
                 werkgever en regelt geen planning. We bieden context en voorbeelden om 1-op-1 afspraken
-                scherper te maken.
+                scherper te maken. ProBrandwacht geeft geen tariefadvies.
               </p>
             </div>
           </div>

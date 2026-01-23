@@ -83,7 +83,8 @@ const OLD_PATTERNS = [
 // --- “Nieuwe framing signals” ---
 // We eisen deze alleen op PUBLIC PAGES (page.tsx) zodat components niet “falen”
 const NEW_SIGNALS = [
-  /\bplatform\b/i,
+  /\binitiatief\b/i,
+  /\bduiding\b/i,
   /\bverkennend\b/i,
   /\bb[eè]ta\b/i,
   /\bwachtlijst\b/i,

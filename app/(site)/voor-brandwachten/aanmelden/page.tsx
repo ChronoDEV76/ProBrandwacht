@@ -33,7 +33,7 @@ export default function VoorBrandwachtenAanmeldenPage() {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>• ProBrandwacht is een verkennend initiatief - geen klassiek bureau en geen tussenlaag.</li>
-            <li>• We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.</li>
+            <li>• We duiden hoe uitvoerbaarheid herkenbaar wordt en zeggen soms nee als randvoorwaarden niet kloppen.</li>
             <li>• We doen geen garantie op inzet: samenwerking en inzet blijven contextafhankelijk.</li>
             <li>• Verkennende intake = geen inschrijving; selectie kan onderdeel zijn van onboarding.</li>
             <li>• Doel: DBA-bewuste, uitlegbare afspraken en professioneel gedrag in de praktijk.</li>

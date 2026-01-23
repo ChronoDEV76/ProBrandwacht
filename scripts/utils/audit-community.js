@@ -178,7 +178,7 @@ function main() {
   }
 
   console.log("\nInterpretatie:");
-  if (score >= 70) console.log("✔ Basis is geschikt voor community/vakplatform.");
+  if (score >= 70) console.log("✔ Basis is geschikt voor community/kennisinitiatief.");
   else if (score >= 40)
     console.log("⚠️ Goede start, maar mist nog community-essentials.");
   else console.log("❌ Nog te veel marketing/site, te weinig community.");
@@ -190,4 +190,3 @@ function main() {
 }
 
 main();
-

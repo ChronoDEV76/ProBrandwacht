@@ -34,19 +34,19 @@ const bureauPatterns: Pattern[] = [
     label: "bemiddelingsbureau",
     pattern: /\bbemiddelings?bureau\b/i,
     suggestion:
-      "platform waar jij rechtstreeks met opdrachtgevers samenwerkt (zonder bureau)"
+      "initiatief dat uitlegt hoe 1-op-1 samenwerking werkt (zonder bureau)"
   },
   {
     label: "detacheringsbureau",
     pattern: /\bdetachering(s)?bureau\b/i,
     suggestion:
-      "digitale omgeving waar jij zelf kiest voor opdrachten en tarieven"
+      "uitleg over zelfstandige samenwerking en rolafbakening"
   },
   {
     label: "ons bureau",
     pattern: /\bons (recruitment-?)?bureau\b/i,
     suggestion:
-      "ons platform waarop jij zelf regie houdt over inzet en tarief"
+      "ons initiatief dat kaders en context biedt"
   },
   {
     label: "kandidaten",
@@ -61,12 +61,12 @@ const bureauPatterns: Pattern[] = [
   {
     label: "wordt geplaatst",
     pattern: /\bwordt geplaatst\b/i,
-    suggestion: "start op een opdracht die jij zelf gekozen hebt"
+    suggestion: "start in een samenwerking die jij zelf gekozen hebt"
   },
   {
     label: "ontzorgen",
     pattern: /\bontzorgen(d|en)?\b/i,
-    suggestion: "ondersteunen met tools, zodat jij zelf keuzes maakt"
+    suggestion: "uitleg en afbakening, zodat jij zelf keuzes maakt"
   },
   {
     label: "volledig geregeld",
@@ -77,7 +77,7 @@ const bureauPatterns: Pattern[] = [
   {
     label: "tarief in overleg",
     pattern: /\btarief in overleg\b/i,
-    suggestion: "duidelijk tarief vooraf, zonder verborgen marge"
+    suggestion: "tarief wordt 1-op-1 afgesproken; geen advies of sturing"
   },
   {
     label: "uit handen nemen",
@@ -102,10 +102,9 @@ const empowermentPatterns: Pattern[] = [
   { label: "goedgekeurd", pattern: /\bgoedgekeurd(e)?\b/i },
   { label: "gezamenlijk", pattern: /\bgezamenlijk(e)?\b/i },
   { label: "samen verantwoordelijk", pattern: /\bsamen verantwoordelijk\b/i },
-  { label: "platform", pattern: /\bplatform\b/i },
-  { label: "digitale omgeving", pattern: /\bdigitale? omgeving\b/i },
-  { label: "meer overhouden", pattern: /\bmeer overhouden\b/i },
-  { label: "zonder marge", pattern: /\bzonder marge\b/i },
+  { label: "initiatief", pattern: /\binitiatief\b/i },
+  { label: "duiding", pattern: /\bduiding\b/i },
+  { label: "afbakening", pattern: /\bafbakening\b/i },
   { label: "uitlegbaarheid", pattern: /\buitlegbaar(heid)?\b/i },
   { label: "autonomie", pattern: /\bautonomie\b/i },
   { label: "volwassen samenwerking", pattern: /\bvolwassen samenwerking\b/i }
@@ -211,7 +210,7 @@ function analyze(text: string) {
   console.log("\n💡 Positieve (digitale / zelfregie) taal:");
   if (empowermentMatches.length === 0) {
     console.log(
-      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'eerlijk', 'platform', 'DBA-proof'."
+      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'eerlijk', 'duiding', 'afbakening'."
     );
   } else {
     const labels = Array.from(new Set(empowermentMatches.map((m) => m.label)));

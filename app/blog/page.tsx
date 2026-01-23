@@ -16,13 +16,12 @@ const TITLE_CORE = 'Blog brandveiligheid & zzp-brandwachten'
 const BRAND_SUFFIX = 'ProBrandwacht'
 const DEFAULT_TITLE = `${TITLE_CORE} | ${BRAND_SUFFIX}`
 const DEFAULT_DESCRIPTION =
-  'Praktische inzichten over tarieven, inzet en samenwerking met zzp-brandwachten. Voor opdrachtgevers en professionals die helderheid en voorspelbaarheid willen.'
+  'Praktische inzichten over inzet, rolverdeling en samenwerking met zzp-brandwachten. Voor opdrachtgevers en professionals die helderheid en voorspelbaarheid willen.'
 const DEFAULT_KEYWORDS = [
   'brandwacht',
-  'brandwacht inhuren',
-  'brandwacht huren',
+  'brandwacht uitleg',
   'wet dba brandwacht',
-  'brandwacht tarieven',
+  'rolafbakening brandwacht',
 ]
 const OG_IMAGE = `${BASE_URL}/og-home.webp`
 

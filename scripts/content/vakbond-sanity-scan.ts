@@ -131,7 +131,7 @@ const authorityIndicators: RegExp[] = [
   /dbaproof/i,
   /dba-bewust/i,
   /professioneel netwerk/i,
-  /kennisplatform/i,
+  /kennisinitiatief/i,
   /vakmanschap/i,
   /autonomie/i,
   /onafhankelijk/i,

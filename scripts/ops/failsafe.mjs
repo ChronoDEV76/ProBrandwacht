@@ -256,8 +256,8 @@ add(
   ])
 );
 
-// 3) Tarief / Indicatie Check (optional)
-add(runNode("Tarief / Indicatie Check", "scripts/utils/tarief-indicatie.mjs", []));
+// 3) Economische claim check (optional)
+add(runNode("Economische claim check", "scripts/utils/tarief-indicatie.mjs", []));
 
 // 4) Content Consistency (optional)
 add(runNode("Content Consistency", "scripts/content/content-consistency.v2.mjs", []));

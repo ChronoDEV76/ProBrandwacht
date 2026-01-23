@@ -9,11 +9,10 @@ export const metadata: Metadata = {
     'ProBrandwacht is een onafhankelijk kennis- en duidingsinitiatief. We leggen uit hoe je veilig en uitlegbaar samenwerkt, zonder bureauframing, prijssturing of beloftes.',
   keywords: [
     'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
     'zelfstandig samenwerken',
     'brandveiligheid uitvoering',
     'uitlegbaar samenwerken',
+    'rolafbakening brandwacht',
   ],
 }
 
@@ -48,7 +47,7 @@ export default function Page() {
               grenzen trekt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
 
@@ -107,7 +106,7 @@ export default function Page() {
               <h3 className="text-xl font-semibold text-white">Wat ProBrandwacht niet doet</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
                 <li>Geen bemiddeling of planning.</li>
-                <li>Geen tariefbepaling of prijsvergelijkingen.</li>
+                <li>Geen tariefadvies of prijsvergelijkingen.</li>
                 <li>Geen garanties of zekerheden.</li>
                 <li>Geen compliance- of juridische oplossingen.</li>
               </ul>

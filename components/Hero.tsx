@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 import { Cta } from "@/components/Cta";
 const taglines = [
-  "Eerlijk en helder samenwerken met toetsbare afspraken.",
-  "Wij faciliteren contact tussen opdrachtgevers en vakmensen.",
-  "Bij beschikbaarheid, snel inzetbaar op locatie.",
+  "Eerlijk en helder samenwerken met uitlegbare afspraken.",
+  "Wij leggen uit hoe directe samenwerking werkt.",
+  "Rolafbakening die ruis op locatie voorkomt.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",
 ];
 
@@ -69,7 +69,7 @@ export default function Hero() {
               Heldere afspraken. Rechtstreekse afstemming. Toetsbaar geregeld.
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Bij beschikbaarheid, snel inzetbaar
+              Rolzuiver en DBA-bewust
             </span>
           </div>
         </div>

@@ -122,7 +122,7 @@ export default function ClientSignupForm({
   className = '',
   heading = 'Verkennende intake voor opdrachtgevers',
   description =
-    'Vul je basisgegevens in. Dit is geen offerte of plaatsing. We toetsen eerst of de inzet uitvoerbaar is. We bewaren een kopie in je browser (localStorage) zodat je deze later kunt hergebruiken.',
+    'Vul je basisgegevens in. Dit is geen offerte of plaatsing. We verkennen de context en randvoorwaarden voor samenwerking. We bewaren een kopie in je browser (localStorage) zodat je deze later kunt hergebruiken.',
   cancelHref = '/',
   showCancel = true,
   successReturnHref = '/',

@@ -102,8 +102,8 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </div>
 
         <div className="border-t border-white/15 px-4 py-3 text-xs text-white/80">
-          ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf bemiddelt
-          niet en stuurt niet.
+          ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+          bemiddelt niet en stuurt niet.
         </div>
 
         {SPOED_UI_ENABLED ? (

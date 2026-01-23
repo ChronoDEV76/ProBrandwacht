@@ -32,9 +32,9 @@ export default function OpdrachtgeverAanmeldenPage() {
           <header className="space-y-3">
             <h1 className="text-3xl font-semibold md:text-4xl">Verkennende intake voor opdrachtgevers</h1>
             <p className="text-base leading-relaxed text-slate-200">
-              ProBrandwacht faciliteert samenwerking tussen opdrachtgevers en zelfstandig uitvoerende
-              professionals. Wij zijn geen klassiek bemiddelingsbureau en leveren geen snelle plaatsingen. We
-              toetsen uitvoerbaarheid en zeggen soms bewust nee; lees waarom op{' '}
+              ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe samenwerking met zelfstandige
+              professionals werkbaar en uitlegbaar blijft. Wij zijn geen klassiek bemiddelingsbureau en leveren
+              geen snelle plaatsingen. We duiden randvoorwaarden en zeggen soms bewust nee; lees waarom op{' '}
               <a
                 href="/waarom-wij-soms-nee-zeggen"
                 className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
@@ -44,15 +44,15 @@ export default function OpdrachtgeverAanmeldenPage() {
               .
             </p>
             <p className="text-base leading-relaxed text-slate-200">
-              Deze intake is bedoeld om samen te toetsen of een vraag uitvoerbaar is binnen een 1-op-1
-              samenwerking, met heldere rolverdeling en afspraken die in de praktijk standhouden.
+              Deze intake is bedoeld om te verkennen of een vraag werkbaar is binnen een 1-op-1 samenwerking,
+              met heldere rolverdeling en afspraken die in de praktijk standhouden.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <a href="/opdrachtgevers" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
-                Bekijk hoe inhuur werkt
+                Bekijk hoe samenwerking werkt
               </a>
               <a href="/platform" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
-                Hoe werkt het platform?
+                Hoe werkt het initiatief?
               </a>
               <a href="/faq" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
                 Veelgestelde vragen
@@ -71,7 +71,7 @@ export default function OpdrachtgeverAanmeldenPage() {
             <ClientSignupForm
               className="px-0"
               heading="Verkennende intake voor opdrachtgevers"
-              description="Gegevens gaan naar het platform; dit is geen verplichting, maar een eerste toets op uitvoerbaarheid. We bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
+              description="Gegevens komen bij ProBrandwacht terecht; dit is geen verplichting, maar een verkennende inventarisatie van rol, context en randvoorwaarden. We bewaren alleen een lokale kopie in je browser (localStorage) zodat je ze later kunt hergebruiken of importeren."
               headingClassName="text-2xl font-semibold text-slate-50 md:text-3xl"
               descriptionClassName="text-sm text-slate-200 md:text-base"
             />

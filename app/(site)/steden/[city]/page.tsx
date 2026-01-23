@@ -214,8 +214,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">ProBrandwacht</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Werkkaart, verkennend contact en afspraken vooraf. Geen bureau en geen automatische koppeling,
-              wel rolhelderheid en uitvoerbaarheid.
+              Werkkaart en duiding vooraf. Geen bureau en geen automatische koppeling, wel rolhelderheid en
+              uitvoerbaarheid.
             </p>
           </div>
         </div>
@@ -235,7 +235,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                Geen volume-gedreven plaatsing: we maken zichtbaar of inzet klopt in de praktijk. We duiden
+                Geen plaatsing of selectie: we beschrijven wat inzet werkbaar maakt in de praktijk. We duiden
                 samenwerking op basis van <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
                 <span className="font-semibold">uitlegbaar</span> blijven. Afspraken spreek je 1-op-1 af,
@@ -281,7 +281,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto max-w-5xl px-4 pb-10">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-            Zo toetsen we of inzet klopt
+            Zo herkennen we uitvoerbaarheid
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Rolzuiverheid: wie beslist, wie voert uit, en wat is de scope?</li>

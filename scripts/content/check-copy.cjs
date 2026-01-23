@@ -29,7 +29,7 @@ const patterns = [
     regex: /\b(gegarandeerd werk|altijd werk|altijd opdrachten|nooit zonder opdracht|altijd inkomen|inkomen gegarandeerd)\b/i,
     issue: "Je kunt geen werk of inkomen garanderen.",
     suggestion:
-      "Zeg liever: 'we helpen je aan relevante opdrachten' of 'we vergroten je kansen op passende inzet', zonder absolute garantie.",
+      "Zeg liever: 'we leggen uit hoe samenwerking werkt' of 'we duiden waar je op moet letten', zonder absolute garantie.",
   },
 
   // 3. Race-to-the-bottom / goedkoopste taal
@@ -38,7 +38,7 @@ const patterns = [
     regex: /\b(laagste tarief|laagste prijs|goedkoopste brandwachten|goedkoopste|onder de marktprijs|dumpprijzen)\b/i,
     issue: "Prijsveiling / race-to-the-bottom taal past niet bij jullie Anti-bureau positie.",
     suggestion:
-      "Leg de nadruk op kwaliteit, veiligheid en eerlijk tarief. Bijvoorbeeld: 'marktconform en eerlijk', 'eerlijk tarief voor professioneel werk'.",
+      "Leg de nadruk op kwaliteit, veiligheid en rolafbakening. Bijvoorbeeld: 'uitlegbare afspraken' en 'duidelijke verantwoordelijkheden'.",
   },
 
   // 4. Absoluut risicoloos / 100%-claims
@@ -47,7 +47,7 @@ const patterns = [
     regex: /\b(geen risico voor jou|100%\s*risicovrij|altijd veilig|volledig zonder risico|100%\s*garantie)\b/i,
     issue: "100%-claims zijn zelden waar en juridisch gevoelig.",
     suggestion:
-      "Formuleer bijvoorbeeld: 'we verkleinen risico's door goede screening, DBA-proof afspraken en escrow', zonder 100%-garantie.",
+      "Formuleer bijvoorbeeld: 'we verkleinen risico's met duidelijke rolafbakening en afspraken', zonder 100%-garantie.",
   },
 
   // 5. Te absolute ontzorging / wij regelen alles
@@ -56,7 +56,7 @@ const patterns = [
     regex: /\b(wij regelen alles|je hoeft nooit meer acquisitie te doen|wij nemen alles over|je hoeft zelf niets te doen)\b/i,
     issue: "Te absolute belofte over acquisitie of inzet, buiten jullie invloedssfeer.",
     suggestion:
-      "Gebruik: 'we nemen een groot deel van de acquisitie uit handen' of 'we zorgen voor een efficiënte stroom relevante opdrachten'.",
+      "Gebruik: 'we bieden context en duiding' of 'we maken helder waar je op moet letten'.",
   },
 
   // 6. Bureau-/uitzendtaal (context check)
@@ -66,7 +66,7 @@ const patterns = [
     issue:
       "Dit kan je meer laten klinken als klassiek uitzendbureau dan als eerlijk ecosysteem.",
     suggestion:
-      "Overweeg taal als: 'we brengen opdrachtgevers en professionals samen', 'we matchen brandwachten met passende opdrachten', zonder klassieke bureau-taal.",
+      "Overweeg taal als: 'we duiden hoe samenwerking werkt' en 'afspraken maak je 1-op-1', zonder klassieke bureau-taal.",
   },
 
   // 7. Anti-ZZP / schijnzelfstandigheid
@@ -76,7 +76,7 @@ const patterns = [
     issue:
       "Dit kan duiden op schijnzelfstandigheid of ongewenste afhankelijkheidsrelatie.",
     suggestion:
-      "Benadruk juist zelfstandigheid: 'jij bepaalt je tarief en beschikbaarheid', 'geen concurrentiebeding', 'je kiest zelf voor welke opdrachtgevers je werkt'.",
+      "Benadruk juist zelfstandigheid: 'jij bepaalt je beschikbaarheid', 'geen concurrentiebeding', 'je kiest zelf voor welke opdrachtgevers je werkt'.",
   },
 
   // 8. Overdreven marktmaker-claims
@@ -138,4 +138,3 @@ function splitInSentences(text) {
     console.error("❌ Fout bij ophalen of analyseren:", err.message);
   }
 })();
-

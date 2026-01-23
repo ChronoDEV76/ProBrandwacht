@@ -101,10 +101,10 @@ function rewriteAlwaysPhrases(text) {
 function rewriteHiddenMargins(text) {
   // Cover plural/singular, verdienmodel etc.
   return text
-    .replace(/zonder verborgen marges/gi, "met transparantie over kosten en eventuele marges")
-    .replace(/zonder verborgen verdienmodellen/gi, "met transparantie over kosten en eventuele verdienmodellen")
-    .replace(/geen verborgen marges/gi, "transparantie over kosten en eventuele marges")
-    .replace(/geen verborgen verdienmodellen/gi, "transparantie over kosten en eventuele verdienmodellen");
+    .replace(/zonder verborgen marges/gi, "met transparantie over afspraken en rollen")
+    .replace(/zonder verborgen verdienmodellen/gi, "met transparantie over afspraken en rollen")
+    .replace(/geen verborgen marges/gi, "transparantie over afspraken en rollen")
+    .replace(/geen verborgen verdienmodellen/gi, "transparantie over afspraken en rollen");
 }
 
 // “volledige vrijheid/autonomie” -> softer but still strong

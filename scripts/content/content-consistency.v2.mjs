@@ -6,7 +6,7 @@
  * - Bewaakt “structurele” consistentie zonder copy fragiel te maken.
  * - Geen harde garanties/claims afdwingen; wel: aanwezigheid van nuance-woorden op kernpagina’s.
  * - Links/CTA’s checken op intentie (anyOf) i.p.v. exacte string.
- * - Forbidden economische claims (platformfee/10% etc.) met regex.
+ * - Forbidden economische claims (fees/percentages etc.) met regex.
  *
  * Gebruik:
  *   node scripts/content/content-consistency.v2.mjs
@@ -159,7 +159,7 @@ const MUST_EXIST = [
 const MUST_CONTAIN_INTENT = [
   {
     file: "app/(site)/page.tsx",
-    label: "Homepage moet verwijzen naar 2 kanten van het platform",
+    label: "Homepage moet verwijzen naar 2 kanten van het initiatief",
     anyOfAll: [
       ["/opdrachtgevers"],
       ["/voor-brandwachten", "/brandwachten"],
@@ -202,18 +202,15 @@ const MUST_HAVE_NUANCE = [
 ];
 
 // 4) Economic claims in copy (regex)
-// - HARD: numbers/percentages -> warn (or fail in strict)
-// - SOFT: "platformfee" -> info (or ignore)
+// - HARD: numbers/percentages/fees -> warn (or fail in strict)
 const ECONOMIC_HARD = [
   /\b10%\b/,
   /\b90%\b/,
-  /\bplatformfee\s*van\s*10%\b/i,
+  /\bplatformfee\b/i,
   /\bprofessionals?\s+houden\s+90%\b/i,
   /\bvaste\s+marge\b/i,
   /\bwij\s+houden\s+.*\b(%)\b/i,
 ];
-
-const ECONOMIC_SOFT = [/\bplatformfee\b/i];
 
 // 5) Optional: “dangerous absolutes” warning (niet fail) – als extra vangnet.
 // Let op: Tone Guard doet dit al; hier blijft het licht.
@@ -337,18 +334,6 @@ for (const f of uniqFiles) {
       `Economische claim met harde cijfers gevonden (${hardHits
         .map((h) => h.toString())
         .join(", ")})`,
-      { file: f, line }
-    );
-  }
-
-  const softHits = matchAnyRegex(txt, ECONOMIC_SOFT);
-  if (softHits.length) {
-    const first = softHits[0];
-    const line = firstMatchLine(txt, new RegExp(first.source, first.flags)) ?? undefined;
-    addCheck(
-      "info",
-      "ECONOMIC_SOFT",
-      `Economische term gevonden (${softHits.map((h) => h.toString()).join(", ")})`,
       { file: f, line }
     );
   }

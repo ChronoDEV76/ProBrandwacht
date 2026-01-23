@@ -29,25 +29,25 @@ const REPORT_FILE = path.join(
 const bureauRules: RewriteRule[] = [
   {
     pattern: /\bbemiddeling\b/gi,
-    replace: "directe platform-match",
+    replace: "duiding en afbakening",
     category: "bureau",
     description: "Neutraliseert het woord 'bemiddeling'.",
   },
   {
     pattern: /\bbemiddelen\b/gi,
-    replace: "verbinden via het platform",
+    replace: "uitleg en context bieden",
     category: "bureau",
     description: "Neutraliseert klassieke bureau-taal.",
   },
   {
     pattern: /\bontzorgen\b/gi,
-    replace: "ondersteunen op jouw voorwaarden",
+    replace: "duiden en afbakenen",
     category: "bureau",
     description: "Maakt de taal zelfstandiger en minder bureau-achtig.",
   },
   {
     pattern: /\bwij plannen je in\b/gi,
-    replace: "jij kiest zelf wanneer je werkt",
+    replace: "jij maakt afspraken 1-op-1",
     category: "bureau",
     description: "Geeft autonomie terug aan de zzp’er.",
   },
@@ -103,7 +103,7 @@ const weakRules: RewriteRule[] = [
   },
   {
     pattern: /\bhelpen\b/gi,
-    replace: "ondersteunen met expertise",
+    replace: "uitleggen en duiden",
     category: "weak",
     description: "Geeft meer autoriteit.",
   },
@@ -127,7 +127,7 @@ const upgradeRules: RewriteRule[] = [
   },
   {
     pattern: /\bopdrachtgever\b/gi,
-    replace: "opdrachtgever in eerlijke samenwerking",
+    replace: "opdrachtgever",
     category: "upgrade",
     description: "Versterkt brug-/samenwerkingstaal.",
   },
@@ -217,7 +217,7 @@ async function main() {
   fs.writeFileSync(REPORT_FILE, JSON.stringify(report, null, 2), "utf8");
 
   console.log("\n📄 Rapport opgeslagen in:", REPORT_FILE);
-  console.log("✨ Klaar — tone of voice geüpdatet naar pro-ZZP/platform/vakbond-stijl.");
+  console.log("✨ Klaar — tone of voice geüpdatet naar frontstage duiding.");
 }
 
 main().catch((err) => {
