@@ -22,7 +22,7 @@ export default function StedenIndexPage() {
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
               geen matching-engine.
             </p>
 
@@ -45,33 +45,24 @@ export default function StedenIndexPage() {
               route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
             </p>
 
-            <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5 text-sm text-slate-200 md:text-base">
+            <div className="panel p-5 text-sm text-slate-200 md:text-base">
               <h2 className="text-lg font-semibold text-white">Hoe je de stedenpagina&apos;s leest</h2>
               <ul className="mt-3 space-y-2">
                 <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
                 <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
-                <li><strong>Wat ProBrandwacht wél/niet doet:</strong> duiden en kaderen, geen bemiddeling.</li>
+                <li><strong>Wat ProBrandwacht wél/niet doet:</strong> uitleg geven en kaderen, geen bemiddeling.</li>
                 <li><strong>Verantwoordelijkheid:</strong> afspraken en uitvoering blijven bij opdrachtgever en professional.</li>
               </ul>
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/voor-brandwachten" className="route-link">
                 Voor brandwachten
               </Link>
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+              <Link href="/opdrachtgevers" className="route-link">
                 Voor opdrachtgevers
               </Link>
-              <Link
-                href="/waarom-wij-soms-nee-zeggen"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+              <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
                 Waarom wij soms nee zeggen
               </Link>
             </div>
@@ -96,7 +87,7 @@ export default function StedenIndexPage() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <div className="panel mt-8 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
             Niche & verwachting
           </p>

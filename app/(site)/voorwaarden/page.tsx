@@ -29,7 +29,7 @@ export default function VoorwaardenPage() {
       <div className="mx-auto max-w-5xl px-4 py-12">
         <StructuredBreadcrumbs items={breadcrumbItems} />
 
-        <section className="mt-6 rounded-3xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 md:p-10">
+        <section className="panel mt-6 p-6 sm:p-8 md:p-10">
           <div className="space-y-5 text-sm text-slate-200">
             <h1 className="text-3xl font-semibold text-white">Algemene voorwaarden</h1>
 
@@ -42,7 +42,7 @@ export default function VoorwaardenPage() {
             <p>
               ProBrandwacht is een informatie- en kennisinitiatief voor zelfstandige brandwachten en
               opdrachtgevers. Wij zijn geen klassiek bureau, geen detacheringspartij en geen werkgever.
-              We duiden en kaderen, zodat samenwerking uitlegbaar blijft.
+              We lichten toe en kaderen, zodat samenwerking uitlegbaar blijft.
             </p>
 
             <h2 className="text-lg font-semibold text-white">2. Rol en contractpositie</h2>
@@ -55,7 +55,7 @@ export default function VoorwaardenPage() {
             <h2 className="text-lg font-semibold text-white">3. Geen garanties</h2>
             <p>
               ProBrandwacht geeft geen garantie op opdrachten, volumes of resultaten. Voorbeelden en
-              toelichtingen zijn indicatief en contextafhankelijk.
+              uitleg is indicatief en contextafhankelijk.
             </p>
 
             <h2 className="text-lg font-semibold text-white">4. Eigen verantwoordelijkheid</h2>

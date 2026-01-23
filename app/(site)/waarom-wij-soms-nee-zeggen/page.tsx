@@ -38,10 +38,10 @@ export default function Page() {
               uitvoering. Dat wil je vermijden.
             </p>
 
-            <div className="mt-7 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5">
+            <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht is geen bureau en beslist
-                niets voor partijen. We duiden patronen die in de praktijk tot mislukte
+                niets voor partijen. We lichten patronen toe die in de praktijk tot mislukte
                 uitvoering leiden. Zo kun je ze vooraf voorkomen.
               </p>
             </div>
@@ -73,17 +73,11 @@ export default function Page() {
           />
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/opdrachtgevers"
-            className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-          >
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-6">
+          <Link href="/opdrachtgevers" className="route-link">
             Checklist voor opdrachtgevers
           </Link>
-          <Link
-            href="/voor-brandwachten"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-          >
+          <Link href="/voor-brandwachten" className="route-link">
             Kaders voor brandwachten
           </Link>
         </div>
@@ -94,7 +88,7 @@ export default function Page() {
 
 function Reason({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6">
+    <div className="panel p-6">
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="mt-2 text-slate-200/90">{text}</p>
     </div>

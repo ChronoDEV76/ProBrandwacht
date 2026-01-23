@@ -26,17 +26,11 @@ export default function DisclaimerPage() {
               en geen contractpartij. Afspraken en samenwerking komen tot stand tussen de betrokken partijen.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/belangen" className="route-link">
                 Kaders en intentie
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
+              <Link href="/contact" className="route-link">
                 Verkennend contact
               </Link>
             </div>
@@ -45,7 +39,7 @@ export default function DisclaimerPage() {
       </HeroBackground>
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Wat dit betekent</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>– Geen tussenlaag of gezagsverhouding via het initiatief.</li>

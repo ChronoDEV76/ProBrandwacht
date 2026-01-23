@@ -13,11 +13,11 @@ const LINKS = [
 export default function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-slate-800 bg-slate-950 text-slate-100">
-      <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10 sm:px-6 lg:px-8">
         {/* Bovenste rij */}
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           {/* Merk + tagline + badge */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <Link
               href="/"
               className="inline-flex text-sm font-semibold underline-offset-4 hover:underline"
@@ -25,7 +25,7 @@ export default function SiteFooter() {
               ProBrandwacht
             </Link>
             <p className="max-w-md text-xs text-slate-400">
-              Inzicht, context en duiding voor bewust zelfstandig werken.
+              Onafhankelijk kennis- en platforminitiatief voor de brandwachtenmarkt.
             </p>
 
             <a
@@ -100,30 +100,32 @@ export default function SiteFooter() {
           </Link>
         </div>
 
-        <section className="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-400">
-          <p>
-            ProBrandwacht is een onafhankelijk kennis- en duidingsinitiatief voor
-            bewust zelfstandig werken in brandveiligheid.
-          </p>
-          <p className="mt-1">
-            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
-            bemiddelt niet en stuurt niet.
-          </p>
-          <p className="mt-1">
-            Inhoud en inzichten zijn gebaseerd op praktijkervaring in industriele,
-            repressieve en evenementenomgevingen, aangevuld met actuele context.
-          </p>
-          <p className="mt-1">
-            Contact:{" "}
-            <a href="mailto:info@probrandwacht.nl" className="underline">
-              info@probrandwacht.nl
-            </a>
-          </p>
-          <p className="mt-2">
-            ProBrandwacht duidt en kadert; het initiatief is geen klassiek bureau of tussenlaag en neemt geen rol
-            in uitvoering of afspraken. Verantwoordelijkheid voor samenwerking, contracten en uitvoering ligt bij
-            opdrachtgever en professional.
-          </p>
+        <section className="panel p-5 text-xs text-slate-300">
+          <div className="grid gap-4 md:grid-cols-[180px_1fr]">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
+              Slotverklaring
+            </div>
+            <div className="space-y-3">
+              <p>
+                ProBrandwacht is een onafhankelijk kennis- en platforminitiatief. We bieden geen bemiddeling,
+                doen geen toezeggingen en sturen niet op prijs of inzet.
+              </p>
+              <p>
+                Samenwerking vindt in de regel rechtstreeks plaats tussen opdrachtgever en zelfstandig professional.
+                Wij leggen uit, kaderen en signaleren waar afspraken werkbaar blijven.
+              </p>
+              <p>
+                Inhoud en inzichten zijn gebaseerd op praktijkervaring in industriele,
+                repressieve en evenementenomgevingen, aangevuld met actuele context.
+              </p>
+              <p>
+                Contact:{' '}
+                <a href="mailto:info@probrandwacht.nl" className="underline">
+                  info@probrandwacht.nl
+                </a>
+              </p>
+            </div>
+          </div>
         </section>
       </div>
     </footer>

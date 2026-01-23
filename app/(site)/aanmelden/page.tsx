@@ -17,13 +17,13 @@ export default function AanmeldenPage() {
           <p className="mt-4 max-w-3xl text-slate-300">
             Deze intake is bedoeld voor zelfstandigen die willen onderzoeken of
             1-op-1 samenwerking zonder klassiek bureau bij hen past. ProBrandwacht
-            geeft context en duiding; het is geen route naar gegarandeerde inzet.
+            geeft context en uitleg; het is geen route naar gegarandeerde inzet.
           </p>
         </section>
       </HeroBackground>
 
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-xl border border-slate-800 p-6">
+        <div className="panel p-6">
           <h2 className="text-lg font-semibold">Wat je wel krijgt</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Uitleg over rolafbakening en verantwoordelijkheden</li>
@@ -32,7 +32,7 @@ export default function AanmeldenPage() {
           </ul>
         </div>
 
-        <div className="mt-6 rounded-xl border border-slate-800 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-lg font-semibold">Wat je niet krijgt</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-300">
             <li>Geen garantie op inzet of beschikbaarheid</li>
@@ -41,7 +41,7 @@ export default function AanmeldenPage() {
           </ul>
         </div>
 
-        <div className="mt-10 rounded-xl border border-slate-800 p-6">
+        <div className="panel mt-10 p-6">
           <p className="text-sm text-slate-300">
             <strong>Formulier hier</strong> (jouw component/flow).
           </p>
@@ -54,7 +54,7 @@ export default function AanmeldenPage() {
         </div>
 
         <div className="mt-8">
-          <Link href="/over-ons" className="btn-secondary">
+          <Link href="/over-ons" className="route-link">
             Lees de uitgangspunten
           </Link>
         </div>

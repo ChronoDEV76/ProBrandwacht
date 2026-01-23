@@ -31,29 +31,20 @@ export default function ContactPage() {
               niet.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/opdrachtgevers" className="route-link">
                 Voor opdrachtgevers
               </Link>
-              <Link
-                href="/voor-brandwachten"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+              <Link href="/voor-brandwachten" className="route-link">
                 Voor brandwachten
               </Link>
-              <Link
-                href="/faq"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
-              >
+              <Link href="/faq" className="route-link">
                 Bekijk de FAQ
               </Link>
             </div>
             <p className="mt-6 text-sm text-slate-400">
               Contact opnemen betekent niet dat er een samenwerking tot stand komt. ProBrandwacht geeft
-              context en duiding; afspraken maak je 1-op-1.
+              context en uitleg; afspraken maak je 1-op-1.
             </p>
           </div>
         </section>
@@ -61,7 +52,7 @@ export default function ContactPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <div className="panel p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Waarover wil je sparren?</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>– Rolverdeling en verantwoordelijkheden</li>
@@ -71,33 +62,27 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <div className="panel p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Contactkanaal</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200">
               Voeg in je bericht toe: context (event/industrie/bouw), locatie, rol, en wat er nu onduidelijk
-              is. Dan kunnen we beter duiden waar de knelpunten zitten.
+              is. Dan kunnen we beter uitleggen waar de knelpunten zitten.
             </p>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-12">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Verkennend contact</h2>
           <p className="mt-3 text-sm text-slate-200">
             Geen inschrijving of verkooppraat. Eerst scherp krijgen of de vraag in vorm en rol klopt.
           </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
+          <div className="mt-5 flex flex-wrap gap-4">
+            <Link href="/opdrachtgevers" className="route-link">
               Start bij opdrachtgevers
             </Link>
-            <Link
-              href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
+            <Link href="/voor-brandwachten" className="route-link">
               Start bij brandwachten
             </Link>
           </div>

@@ -17,7 +17,7 @@ export default function PlatformPage() {
           <h1 className="text-3xl font-semibold text-white md:text-5xl">Wat is ProBrandwacht?</h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is een onafhankelijk kennis- en duidingsinitiatief voor de Nederlandse
+            ProBrandwacht is een onafhankelijk kennis- en vakplatform voor de Nederlandse
             brandwachtenmarkt.
           </p>
 
@@ -31,17 +31,17 @@ export default function PlatformPage() {
 
       <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">De rol van ProBrandwacht</h2>
+          <div className="panel p-6">
+            <h2 className="section-title">De rol van ProBrandwacht</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-              <li>Marktduiding: uitleggen hoe samenwerking met zelfstandige brandwachten werkt.</li>
+              <li>Marktuitleg: laten zien hoe samenwerking met zelfstandige brandwachten werkt.</li>
               <li>Afbakening: laten zien waar verantwoordelijkheden beginnen en eindigen.</li>
               <li>Bewustwording: benoemen van risico&apos;s bij onduidelijke of verkapte constructies.</li>
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Wat ProBrandwacht niet is</h2>
+          <div className="panel p-6">
+            <h2 className="section-title">Wat ProBrandwacht niet is</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
               <li>Geen uitzendbureau of bemiddelaar.</li>
               <li>Geen werkgever of opdrachtgever.</li>
@@ -50,10 +50,10 @@ export default function PlatformPage() {
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Frontstage, geen backstage</h2>
+          <div className="panel p-6">
+            <h2 className="section-title">Frontstage, geen backstage</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht bevindt zich bewust aan de voorkant van de markt: uitleg, duiding en publieke
+              ProBrandwacht bevindt zich bewust aan de voorkant van de markt: praktische uitleg en publieke
               informatie.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
@@ -62,9 +62,9 @@ export default function PlatformPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+          <div className="panel p-6">
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht kadert, waarschuwt en duidt -- maar stuurt niet.
+              ProBrandwacht kadert, waarschuwt en legt uit -- maar stuurt niet.
             </p>
           </div>
         </div>

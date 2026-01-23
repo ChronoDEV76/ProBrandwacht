@@ -157,7 +157,7 @@ export default function ProbrandwachtDirectForm() {
       </div>
 
       <div>
-        <label className={labelClasses}>Aanvullende toelichting</label>
+        <label className={labelClasses}>Aanvullende uitleg</label>
         <textarea
           name="message"
           rows={4}

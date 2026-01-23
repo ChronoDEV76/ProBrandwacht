@@ -27,13 +27,13 @@ export default function VoorBrandwachtenAanmeldenPage() {
   return (
     <>
       <div className="mx-auto w-full max-w-5xl px-4 pt-8">
-        <div className="mb-6 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+        <div className="panel mb-6 p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">
             Belangrijk om te weten
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>• ProBrandwacht is een verkennend initiatief - geen klassiek bureau en geen tussenlaag.</li>
-            <li>• We duiden hoe uitvoerbaarheid herkenbaar wordt en zeggen soms nee als randvoorwaarden niet kloppen.</li>
+            <li>• We lichten toe hoe uitvoerbaarheid herkenbaar wordt en zeggen soms nee als randvoorwaarden niet kloppen.</li>
             <li>• We doen geen garantie op inzet: samenwerking en inzet blijven contextafhankelijk.</li>
             <li>• Verkennende intake = geen inschrijving; selectie kan onderdeel zijn van onboarding.</li>
             <li>• Doel: DBA-bewuste, uitlegbare afspraken en professioneel gedrag in de praktijk.</li>

@@ -4,7 +4,7 @@ export default function WhyProbrandwachtSection() {
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8 max-w-3xl space-y-3">
           <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-            Duiding voor zelfstandige samenwerking
+            Uitleg voor zelfstandige samenwerking
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             Veel brandwachten kennen onduidelijke ketens met te veel schakels. ProBrandwacht

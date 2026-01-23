@@ -31,7 +31,7 @@ export default function FaqPage() {
             oplossingen.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+            ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
             bemiddelt niet en stuurt niet.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function FaqPage() {
       <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
           {faqItems.map((item) => (
-            <div key={item.id} className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
+            <div key={item.id} className="panel p-6">
               <h2 className="text-xl font-semibold text-white md:text-2xl">{item.question}</h2>
               <div className="mt-3 space-y-2">
                 {item.answer.map((line) => (

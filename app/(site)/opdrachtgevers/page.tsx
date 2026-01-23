@@ -22,14 +22,14 @@ export default function OpdrachtgeversPage() {
               signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+              ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
 
-            <div className="mt-7 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5">
+            <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> geen bureau, geen werkgever, geen
-                matching-engine. ProBrandwacht duidt en waarschuwt -- jij en de professional maken 1-op-1
+                matching-engine. ProBrandwacht legt uit en waarschuwt -- jij en de professional maken 1-op-1
                 afspraken over rol, verantwoordelijkheden en uitvoering. Tarief wordt onderling bepaald;
                 ProBrandwacht geeft geen tariefadvies.
               </p>
@@ -74,19 +74,16 @@ export default function OpdrachtgeversPage() {
           />
         </div>
 
-        <div className="mt-10 grid gap-4 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6 md:grid-cols-3">
+        <div className="panel mt-10 grid gap-4 p-6 md:grid-cols-3">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-semibold">Wil je een compacte checklist?</h2>
+            <h2 className="section-title">Wil je een compacte checklist?</h2>
             <p className="mt-2 text-slate-200/90">
               Start bij &quot;Waarom we soms nee zeggen&quot; -- dat geeft je een praktisch kader voor uitvoerbaarheid
               en grensbewaking.
             </p>
           </div>
           <div className="flex items-center gap-3 md:justify-end">
-            <Link
-              href="/waarom-wij-soms-nee-zeggen"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
+            <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
               Bekijk het kader
             </Link>
           </div>
@@ -98,7 +95,7 @@ export default function OpdrachtgeversPage() {
 
 function Card({ title, bullets }: { title: string; bullets: string[] }) {
   return (
-    <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6">
+    <div className="panel p-6">
       <h3 className="text-xl font-semibold">{title}</h3>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
         {bullets.map((bullet) => (

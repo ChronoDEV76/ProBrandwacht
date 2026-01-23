@@ -34,7 +34,7 @@ export default function OpdrachtgeverAanmeldenPage() {
             <p className="text-base leading-relaxed text-slate-200">
               ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe samenwerking met zelfstandige
               professionals werkbaar en uitlegbaar blijft. Wij zijn geen klassiek bemiddelingsbureau en leveren
-              geen snelle plaatsingen. We duiden randvoorwaarden en zeggen soms bewust nee; lees waarom op{' '}
+              geen snelle plaatsingen. We lichten randvoorwaarden toe en zeggen soms bewust nee; lees waarom op{' '}
               <a
                 href="/waarom-wij-soms-nee-zeggen"
                 className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
@@ -47,14 +47,14 @@ export default function OpdrachtgeverAanmeldenPage() {
               Deze intake is bedoeld om te verkennen of een vraag werkbaar is binnen een 1-op-1 samenwerking,
               met heldere rolverdeling en afspraken die in de praktijk standhouden.
             </p>
-            <div className="flex flex-wrap gap-3 text-sm">
-              <a href="/opdrachtgevers" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="/opdrachtgevers" className="route-link">
                 Bekijk hoe samenwerking werkt
               </a>
-              <a href="/platform" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+              <a href="/platform" className="route-link">
                 Hoe werkt het initiatief?
               </a>
-              <a href="/faq" className="inline-flex items-center rounded-full border border-slate-700 px-3 py-1 text-slate-100 hover:border-emerald-300 hover:text-emerald-200">
+              <a href="/faq" className="route-link">
                 Veelgestelde vragen
               </a>
             </div>

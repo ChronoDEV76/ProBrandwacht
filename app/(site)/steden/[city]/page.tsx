@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import HeroBackground from '@/components/HeroBackground'
+import AfbakeningNote from '@/components/afbakening-note'
 import { HeroShell } from '@/components/layout/hero-shell'
 import { InfoCardsRow } from '@/components/layout/info-cards-row'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
@@ -59,8 +60,8 @@ export async function generateMetadata({
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht duidt hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
-    : `Zelfstandige brandwacht in ${label}? ProBrandwacht duidt hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
+    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht legt uit hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
+    : `Zelfstandige brandwacht in ${label}? ProBrandwacht legt uit hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
 
   return {
     ...base,
@@ -123,7 +124,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       title: `Werken als zelfstandige brandwacht in ${label}`,
       body: (
         <>
-          Praktische duiding van rollen (bijv. industrieel, event, mangat/buitenwacht),
+          Praktische uitleg van rollen (bijv. industrieel, event, mangat/buitenwacht),
           verantwoordelijkheden en professioneel gedrag op de vloer. Gericht op zelfstandig
           werken met duidelijke afspraken -- zonder ruis.
         </>
@@ -159,12 +160,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
       </div>
 
       <section className="mx-auto max-w-5xl px-4 pt-10">
-        <h1 className="text-3xl font-semibold text-white">
-          Brandwacht in {label}
+        <h1 className="text-3xl font-semibold text-white md:text-4xl">
+          Brandwachten in {label}: wat opdrachtgevers en professionals moeten weten
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
-          ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+          ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
           geen matching-engine. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
           <Link
             href="/waarom-wij-soms-nee-zeggen"
@@ -187,34 +188,23 @@ export default function CityPage({ params }: { params: { city: string } }) {
           dat niet? Dan is nee soms de professionele keuze.
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href="/voor-brandwachten"
-            className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
-          >
+        <div className="mt-6 flex flex-wrap gap-4">
+          <Link href="/voor-brandwachten" className="route-link">
             Voor brandwachten
           </Link>
-
-          <Link
-            href="/opdrachtgevers"
-            className="inline-flex items-center rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-3 text-sm font-medium text-emerald-100 hover:bg-emerald-300/15"
-          >
+          <Link href="/opdrachtgevers" className="route-link">
             Voor opdrachtgevers
           </Link>
-
-          <Link
-            href="/waarom-wij-soms-nee-zeggen"
-            className="inline-flex items-center px-2 py-3 text-sm font-medium text-slate-200 hover:text-white"
-          >
-            Waarom wij soms nee zeggen →
+          <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
+            Waarom wij soms nee zeggen
           </Link>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+          <div className="panel p-5">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">ProBrandwacht</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Werkkaart en duiding vooraf. Geen bureau en geen automatische koppeling, wel rolhelderheid en
+              Werkkaart en uitleg vooraf. Geen bureau en geen automatische koppeling, wel rolhelderheid en
               uitvoerbaarheid.
             </p>
           </div>
@@ -235,14 +225,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                Geen plaatsing of selectie: we beschrijven wat inzet werkbaar maakt in de praktijk. We duiden
-                samenwerking op basis van <span className="font-semibold">vakmanschap</span>,{' '}
+                Geen plaatsing of selectie: we beschrijven wat inzet werkbaar maakt in de praktijk. We lichten
+                samenwerking toe op basis van <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
                 <span className="font-semibold">uitlegbaar</span> blijven. Afspraken spreek je 1-op-1 af,
                 contextafhankelijk.
               </>
             }
-            footer={<>ProBrandwacht duidt en kadert -- uitvoering blijft bij de betrokken partijen.</>}
+            footer={<>ProBrandwacht legt uit en kadert -- uitvoering blijft bij de betrokken partijen.</>}
           />
         </div>
       </HeroBackground>
@@ -276,6 +266,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </ul>
 
         </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-12">
+        <AfbakeningNote />
       </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-10">

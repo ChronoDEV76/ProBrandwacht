@@ -21,7 +21,7 @@ const roboto = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht — Kennis en duiding",
+  title: "ProBrandwacht — Kennis en uitleg",
   description:
     "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
   keywords: [

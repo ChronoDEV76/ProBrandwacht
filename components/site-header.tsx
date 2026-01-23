@@ -18,8 +18,8 @@ export default function SiteHeader() {
   const isActive = (href: string) => currentPath === href || (href !== '/' && currentPath.startsWith(href))
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-900/20 bg-brand-700 text-white shadow-lg">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 text-white backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight">
           ProBrandwacht
         </Link>
@@ -53,7 +53,7 @@ export default function SiteHeader() {
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
               }`}
             >
-              <span className="font-semibold flex items-center gap-1">⚡ ProBrandwacht Direct (spoed)</span>
+              <span className="font-semibold flex items-center gap-1">ProBrandwacht Direct (spoed)</span>
               <span className="opacity-85">Spoedinzet op basis van beschikbaarheid</span>
             </Link>
           ) : null}
@@ -84,7 +84,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </span>
       </summary>
 
-      <div className="absolute right-0 top-full z-40 mt-3 w-[min(20rem,90vw)] overflow-hidden rounded-2xl border border-white/15 bg-brand-900 text-sm shadow-xl">
+      <div className="absolute right-0 top-full z-40 mt-3 w-[min(20rem,90vw)] overflow-hidden rounded-2xl border border-white/15 bg-slate-950 text-sm shadow-xl">
         <div className="flex flex-col gap-1 px-4 py-4">
           {LINKS.map(link => (
             <Link
@@ -102,7 +102,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </div>
 
         <div className="border-t border-white/15 px-4 py-3 text-xs text-white/80">
-          ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+          ProBrandwacht legt uit hoe de markt werkt en waar kaders liggen — het initiatief zelf
           bemiddelt niet en stuurt niet.
         </div>
 
@@ -112,11 +112,11 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
               href="/probrandwacht-direct-spoed"
               prefetch={false}
               aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
-              className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
+                className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
               }`}
             >
-              ⚡ ProBrandwacht Direct (spoed)
+              ProBrandwacht Direct (spoed)
             </Link>
           </div>
         ) : null}

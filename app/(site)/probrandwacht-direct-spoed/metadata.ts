@@ -6,7 +6,7 @@ export const metadata: Metadata = SPOED_ROUTE_ENABLED
   ? {
       title: 'Spoed - ProBrandwacht Direct | ProBrandwacht',
       description:
-        'Spoed vraagt heldere rollen, risico-inschatting en afspraken. ProBrandwacht duidt de randvoorwaarden.',
+        'Spoed vraagt heldere rollen, risico-inschatting en afspraken. ProBrandwacht licht de randvoorwaarden toe.',
     }
   : {
       title: 'Pagina niet beschikbaar | ProBrandwacht',

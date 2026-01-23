@@ -423,7 +423,7 @@ export default function ZzpAanmeldenPage({ heading }: { heading?: ReactNode }) {
             <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200">
               <p className="font-semibold text-slate-100">Wat betekent ProBrandwacht als initiatief?</p>
               <p className="mt-2">
-                ProBrandwacht is een duidend initiatief. We bemiddelen niet en geven geen tariefadvies; afspraken
+                ProBrandwacht is een initiatief dat uitleg geeft. We bemiddelen niet en geven geen tariefadvies; afspraken
                 en eventuele vergoedingen worden onderling bepaald door opdrachtgever en professional.
               </p>
               <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">

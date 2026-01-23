@@ -306,7 +306,7 @@ export default function ClientSignupForm({
         <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
           <p className="font-semibold text-gray-900">Wat betekent ProBrandwacht?</p>
           <p className="mt-2">
-            ProBrandwacht biedt context en duiding. Afspraken worden 1-op-1 gemaakt tussen opdrachtgever en professional.
+            ProBrandwacht biedt context en uitleg. Afspraken worden 1-op-1 gemaakt tussen opdrachtgever en professional.
           </p>
           <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">
             Lees hoe het initiatief werkt

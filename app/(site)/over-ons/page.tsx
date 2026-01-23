@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
+import AfbakeningNote from '@/components/afbakening-note'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/over-ons')
@@ -15,16 +16,16 @@ export default function OverOnsPage() {
             <p className="text-sm uppercase tracking-widest text-slate-300/80">Over ProBrandwacht</p>
 
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Onafhankelijke marktduiding voor de brandwachtenmarkt
+              Onafhankelijke marktuitleg voor de brandwachtenmarkt
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht is een kennis- en duidingsinitiatief dat uitlegt hoe je brandveiligheidsinzet
+              ProBrandwacht is een kennis- en vakplatform dat uitlegt hoe je brandveiligheidsinzet
               professioneel organiseert: uitvoerbaar op de werkvloer, uitlegbaar richting stakeholders en
               helder in rolverdeling.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het initiatief zelf
+              ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
@@ -44,7 +45,7 @@ export default function OverOnsPage() {
       </HeroBackground>
 
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-4 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6 md:grid-cols-2">
+        <div className="panel grid gap-4 p-6 md:grid-cols-2">
           <div>
             <h2 className="text-xl font-semibold">Wat we wel doen</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
@@ -66,16 +67,20 @@ export default function OverOnsPage() {
           </div>
         </div>
 
+        <div className="mt-6">
+          <AfbakeningNote />
+        </div>
+
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/opdrachtgevers"
-            className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            className="route-link"
           >
             Lees: voor opdrachtgevers
           </Link>
           <Link
             href="/voor-brandwachten"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            className="route-link"
           >
             Lees: voor brandwachten
           </Link>

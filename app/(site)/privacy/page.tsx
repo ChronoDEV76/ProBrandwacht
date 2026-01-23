@@ -27,17 +27,11 @@ export default function PrivacyPage() {
               controle voor de gebruiker.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/belangen"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/belangen" className="route-link">
                 Kaders en intentie
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
+              <Link href="/contact" className="route-link">
                 Verkennend contact
               </Link>
             </div>
@@ -46,7 +40,7 @@ export default function PrivacyPage() {
       </HeroBackground>
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Principes</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>– Dataminimalisatie: alleen wat nodig is voor verkennend contact en afspraken.</li>
@@ -63,7 +57,7 @@ export default function PrivacyPage() {
 
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Verwerkingsverantwoordelijke</h2>
           <p className="mt-3 text-sm text-slate-200">
             ProBrandwacht is verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in deze
@@ -78,7 +72,7 @@ export default function PrivacyPage() {
           </p>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Doeleinden van gegevensverwerking</h2>
           <p className="mt-3 text-sm text-slate-200">Wij verwerken persoonsgegevens voor de volgende doeleinden:</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
@@ -95,7 +89,7 @@ export default function PrivacyPage() {
           </ul>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Rechtsgrond voor verwerking</h2>
           <p className="mt-3 text-sm text-slate-200">
             Wij verwerken persoonsgegevens op basis van de volgende wettelijke grondslagen:
@@ -107,7 +101,7 @@ export default function PrivacyPage() {
           </ul>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Categorieën persoonsgegevens</h2>
           <p className="mt-3 text-sm text-slate-200">Wij kunnen de volgende gegevens verwerken:</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">

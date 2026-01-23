@@ -38,7 +38,7 @@ export default function BelangenPage() {
     },
     {
       title: 'Geen tussenlaag',
-      body: 'ProBrandwacht duidt en kadert, maar neemt geen rol over in uitvoering of afspraken.',
+      body: 'ProBrandwacht legt uit en kadert, maar neemt geen rol over in uitvoering of afspraken.',
     },
   ]
 
@@ -65,23 +65,14 @@ export default function BelangenPage() {
             In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat in de praktijk standhoudt.
           </p>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/opdrachtgevers"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-            >
+          <div className="flex flex-wrap gap-4 pt-2">
+            <Link href="/opdrachtgevers" className="route-link">
               Voor opdrachtgevers
             </Link>
-            <Link
-              href="/voor-brandwachten"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
+            <Link href="/voor-brandwachten" className="route-link">
               Voor brandwachten
             </Link>
-            <Link
-              href="/disclaimer"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
+            <Link href="/disclaimer" className="route-link">
               Disclaimer
             </Link>
           </div>
@@ -94,7 +85,7 @@ export default function BelangenPage() {
             {principles.map((p) => (
               <div
                 key={p.title}
-                className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]"
+                className="panel p-6 shadow-[0_26px_70px_-40px_rgba(0,0,0,0.65)]"
               >
                 <p className="text-sm font-semibold text-white">{p.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-200">{p.body}</p>
@@ -102,7 +93,7 @@ export default function BelangenPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
+          <div className="panel mt-8 p-6">
             <p className="text-sm font-semibold text-white">Twijfel je of dit past?</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
               Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie blind tekent of de intentie niet

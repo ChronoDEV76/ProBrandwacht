@@ -16,7 +16,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
               geen matching-engine.
             </p>
 
@@ -35,17 +35,11 @@ export default function ProBrandwachtDirectSpoedPage() {
               rol, risico en beslislijnen helder zijn, ga je verder met afspraken.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/contact" className="route-link">
                 Verkennend contact
               </Link>
-              <Link
-                href="/probrandwacht-direct"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
+              <Link href="/probrandwacht-direct" className="route-link">
                 Terug naar Direct
               </Link>
             </div>
@@ -59,7 +53,7 @@ export default function ProBrandwachtDirectSpoedPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <div className="panel p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Minimale aanvraag (checklist)</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>- Stad/locatie + exacte starttijd</li>
@@ -70,7 +64,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <div className="panel p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Afspraken die je niet uitstelt</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>- Inzetvoorwaarden (incl. reistijd/wachttijd)</li>
@@ -80,10 +74,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             </ul>
 
             <div className="mt-6">
-              <Link
-                href="/belangen"
-                className="text-sm font-semibold text-emerald-200 hover:text-emerald-100"
-              >
+              <Link href="/belangen" className="route-link">
                 Kaders en intentie
               </Link>
             </div>

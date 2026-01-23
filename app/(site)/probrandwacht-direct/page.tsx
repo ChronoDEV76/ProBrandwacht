@@ -19,7 +19,7 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
               geen matching-engine.
             </p>
 
@@ -38,24 +38,15 @@ export default function ProBrandwachtDirectPage() {
               naar timing en locatie.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/contact" className="route-link">
                 Verkennend contact
               </Link>
-              <Link
-                href="/opdrachtgevers"
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
-              >
+              <Link href="/opdrachtgevers" className="route-link">
                 Kader voor opdrachtgevers
               </Link>
               {showSpoed && (
-                <Link
-                  href="/probrandwacht-direct-spoed"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
-                >
+                <Link href="/probrandwacht-direct-spoed" className="route-link">
                   Spoedroute
                 </Link>
               )}
@@ -88,14 +79,14 @@ export default function ProBrandwachtDirectPage() {
               accent: 'text-violet-300',
             },
           ].map((x) => (
-            <div key={x.title} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <div key={x.title} className="panel p-6">
               <h2 className={`text-sm font-semibold ${x.accent}`}>{x.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-200">{x.body}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+        <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Wat je vooraf klaar moet hebben</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>- Wie is aanspreekpunt op locatie?</li>

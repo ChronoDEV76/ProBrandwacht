@@ -48,20 +48,14 @@ export function HeroShell({
       <p className="mt-4 text-center text-sm leading-relaxed text-slate-200">{body}</p>
 
       {(primaryCta || secondaryCta) && (
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           {primaryCta ? (
-            <Link
-              href={primaryCta.href}
-              className="inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-sky-500/40 transition hover:bg-sky-400"
-            >
+            <Link href={primaryCta.href} className="route-link">
               {primaryCta.label}
             </Link>
           ) : null}
           {secondaryCta ? (
-            <Link
-              href={secondaryCta.href}
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-slate-900/60 px-5 py-2.5 text-sm font-semibold text-slate-50 hover:bg-slate-900/90"
-            >
+            <Link href={secondaryCta.href} className="route-link">
               {secondaryCta.label}
             </Link>
           ) : null}
