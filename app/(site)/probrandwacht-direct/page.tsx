@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
-import { Cta } from '@/components/Cta'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
@@ -19,36 +19,50 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-            - geen bureau, geen werkgeversrol, geen matching-engine.
+              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              geen matching-engine.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
-              we iets bevestigen. Of een inzet haalbaar is, is contextafhankelijk en hangt af van
-              beschikbaarheid en afspraken tussen partijen.
+              ProBrandwacht is geen klassiek bureau. We maken zichtbaar welke vragen vooraf helder moeten
+              zijn, zodat afspraken uitlegbaar blijven.
             </p>
 
-          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Snel schakelen kan - als de basisgegevens kloppen.
-          </h1>
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+              Snel schakelen kan -- als de basisgegevens kloppen.
+            </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht Direct is bedoeld voor situaties waarin je tempo nodig hebt, maar niet wilt
-              inleveren op helderheid. We stellen eerst drie vragen: rol, risico en beslislijnen.
-              Pas daarna kijken we naar timing, locatie en beschikbaarheid.
+              ProBrandwacht Direct is bedoeld voor situaties waarin tempo nodig is, maar helderheid voorop
+              blijft staan. We stellen eerst drie vragen: rol, risico en beslislijnen. Pas daarna kijk je
+              naar timing en locatie.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Cta id="tertiary_contact_exploratory" />
-              <Cta id="secondary_how_inhuren" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Verkennend contact
+              </Link>
+              <Link
+                href="/opdrachtgevers"
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              >
+                Kader voor opdrachtgevers
+              </Link>
               {showSpoed && (
-                <Cta id="secondary_spoed_direct" />
+                <Link
+                  href="/probrandwacht-direct-spoed"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
+                >
+                  Spoedroute
+                </Link>
               )}
             </div>
 
             <p className="text-xs text-slate-400">
-              Dit is geen snelle bureau-route. Het is een snellere route met dezelfde eis: afspraken vooraf,
+              Dit is geen snelle bureau-route. Het is een route met dezelfde eis: afspraken vooraf,
               toetsbaar in uitvoering.
             </p>
           </div>
@@ -59,18 +73,18 @@ export default function ProBrandwachtDirectPage() {
         <div className="grid gap-6 md:grid-cols-3">
           {[
             {
-              title: '1) Minimale intake',
-              body: 'Locatie, tijd, rol, risico\'s, aantal professionals. Geen tekstmuur; alleen bruikbare parameters.',
+              title: '1) Minimale uitvraag',
+              body: "Locatie, tijd, rol en risico's. Geen tekstmuur; alleen bruikbare parameters.",
               accent: 'text-emerald-300',
             },
             {
               title: '2) 1-op-1 afstemming',
-              body: "Je stemt 1-op-1 met de zelfstandige af over inzet en voorwaarden. Geen onzichtbare 'tussenbeslisser'.",
+              body: 'Afspraken worden 1-op-1 gemaakt, zonder onzichtbare tussenlaag.',
               accent: 'text-sky-300',
             },
             {
               title: '3) Afspraken vastleggen',
-              body: 'Tarief, scope en beslislijnen vast voor start. Dat voorkomt discussie tijdens uitvoering.',
+              body: 'Scope en beslislijnen vooraf vastleggen. Dat helpt discussie tijdens uitvoering te beperken.',
               accent: 'text-violet-300',
             },
           ].map((x) => (

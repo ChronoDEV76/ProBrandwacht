@@ -59,8 +59,8 @@ export async function generateMetadata({
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht helpt met duidelijke afspraken, rechtstreekse afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
-    : `Zelfstandige brandwacht in ${label}? ProBrandwacht helpt met duidelijke afspraken, rechtstreekse afstemming en DBA-bewuste samenwerking (contextafhankelijk).`
+    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht duidt hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
+    : `Zelfstandige brandwacht in ${label}? ProBrandwacht duidt hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
 
   return {
     ...base,
@@ -125,28 +125,28 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <>
           Praktische duiding van rollen (bijv. industrieel, event, mangat/buitenwacht),
           verantwoordelijkheden en professioneel gedrag op de vloer. Gericht op zelfstandig
-          werken met duidelijke afspraken - zonder ruis.
+          werken met duidelijke afspraken -- zonder ruis.
         </>
       ),
     },
     {
       eyebrow: 'Samenwerking & kaders',
-      title: 'DBA-bewust en uitlegbaar samenwerken',
+      title: 'Uitlegbaar samenwerken',
       body: (
         <>
           Hoe je vooraf vastlegt wie beslist, wie aanspreekpunt is, welke verwachtingen gelden en
-          hoe je dit toetsbaar houdt voor opdrachtgever én professional. Afspraken zijn in de regel
+          hoe je dit toetsbaar houdt voor opdrachtgever en professional. Afspraken zijn in de regel
           contextafhankelijk.
         </>
       ),
     },
     {
-      eyebrow: 'Tarief & randvoorwaarden',
-      title: 'Tarief, inzet en voorwaarden bespreek je vooraf',
+      eyebrow: 'Randvoorwaarden',
+      title: 'Scope en beslislijnen bespreek je vooraf',
       body: (
         <>
-          Verschil tussen preventief en repressief, dag/nacht/weekend, reis- en wachttijd.
-          Voorbeelden zijn indicatief: het uiteindelijke tarief en de voorwaarden spreken jullie 1-op-1 af.
+          Voorbeelden zijn indicatief. Het uiteindelijke kader spreken partijen 1-op-1 af, passend
+          bij rol, locatie en risico.
         </>
       ),
     },
@@ -164,10 +164,12 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
-          ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-          - geen bureau, geen werkgeversrol, geen matching-engine. We toetsen uitvoerbaarheid en zeggen soms bewust
-          nee; lees waarom op{' '}
-          <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100">
+          ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+          geen matching-engine. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
+          <Link
+            href="/waarom-wij-soms-nee-zeggen"
+            className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+          >
             waarom wij soms nee zeggen
           </Link>
           .
@@ -182,22 +184,22 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
           Of inzet passend is, hangt af van de context, rolverdeling en feitelijke uitvoering. Past
-          dat niet? Dan zeggen we soms ook nee.
+          dat niet? Dan is nee soms de professionele keuze.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/voor-brandwachten/aanmelden"
+            href="/voor-brandwachten"
             className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
           >
-            Dit past bij mijn manier van werken
+            Voor brandwachten
           </Link>
 
           <Link
-            href="/opdrachtgevers/aanmelden"
+            href="/opdrachtgevers"
             className="inline-flex items-center rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-3 text-sm font-medium text-emerald-100 hover:bg-emerald-300/15"
           >
-            Bekijk of dit past bij uw vraag →
+            Voor opdrachtgevers
           </Link>
 
           <Link
@@ -210,21 +212,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Vandaag: ProBrandwacht
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">ProBrandwacht</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
               Werkkaart, verkennend contact en afspraken vooraf. Geen bureau en geen automatische koppeling,
               wel rolhelderheid en uitvoerbaarheid.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Straks: ProSafetyMatch
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Digitale laag voor planning, dossiers en documentatie. Ondersteunt afspraken, zonder een
-              extra tussenlaag toe te voegen.
             </p>
           </div>
         </div>
@@ -244,20 +235,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                Geen volume-gedreven plaatsing: wij kijken eerst of inzet klopt in de praktijk. We brengen
-                zelfstandige brandwachten en opdrachtgevers samen op basis van{' '}
-                <span className="font-semibold">vakmanschap</span>,{' '}
+                Geen volume-gedreven plaatsing: we maken zichtbaar of inzet klopt in de praktijk. We duiden
+                samenwerking op basis van <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
-                <span className="font-semibold">uitlegbaar</span> blijven. Inzet, tarief en
-                verantwoordelijkheid spreek je 1-op-1 af - DBA-bewust en contextafhankelijk.
+                <span className="font-semibold">uitlegbaar</span> blijven. Afspraken spreek je 1-op-1 af,
+                contextafhankelijk.
               </>
             }
-            footer={
-              <>
-                ProSafetyMatch is in ontwikkeling als technische laag om afspraken en samenwerking stap voor stap
-                digitaal te ondersteunen - zonder extra tussenlagen toe te voegen.
-              </>
-            }
+            footer={<>ProBrandwacht duidt en kadert -- uitvoering blijft bij de betrokken partijen.</>}
           />
         </div>
       </HeroBackground>
@@ -269,14 +254,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </h2>
 
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            We zoeken zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen samenwerken:
-            met heldere profielen (certificaten/ervaring), rechtstreekse afstemming en afspraken die vooraf kloppen.
-          </p>
-
-          <p className="text-sm text-slate-200 md:text-base">
-            ProBrandwacht is de vakinhoudelijke basis. ProSafetyMatch is in ontwikkeling als technische laag
-            (o.a. dossiervorming, afspraken, communicatie), zodat samenwerking later makkelijker kan - zonder
-            dat autonomie verdwijnt.
+            We richten ons op zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen
+            samenwerken: met heldere profielen, rechtstreekse afstemming en afspraken die vooraf kloppen.
           </p>
 
           <p className="text-xs text-slate-400">
@@ -292,8 +271,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Zicht op certificaten, ervaring en rolprofielen in {label}.</li>
-            <li>- Afspraken vooraf: tarief, inzet, rolverdeling en escalatie.</li>
-            <li>- DBA-bewust samenwerken zonder onnodige schakels.</li>
+            <li>- Afspraken vooraf: scope, rolverdeling en escalatie.</li>
+            <li>- Samenwerken zonder onnodige schakels.</li>
           </ul>
 
         </div>
@@ -369,7 +348,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
               Praktische afspraken die in {label} vaak terugkomen
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>- Aanrijtijd/reistijd en meldpunten: vooraf vastleggen voorkomt vertraging.</li>
+              <li>- Aanrijtijd/reistijd en meldpunten: vooraf vastleggen helpt vertraging te beperken.</li>
               <li>- Toegang/parkeren/ID-checks: wie regelt wat, en wanneer?</li>
               <li>- Rolverdeling bij tijdelijke installaties of onderhoudswerk: wie beslist bij twijfel?</li>
               <li>- Escalatie: wie belt wie, en vanaf welk moment wordt opgeschaald?</li>

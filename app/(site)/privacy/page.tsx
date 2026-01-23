@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
-import { Cta } from '@/components/Cta'
+import HeroBackground from '@/components/HeroBackground'
+import AfbakeningNote from '@/components/afbakening-note'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/privacy')
@@ -8,8 +10,8 @@ export const metadata: Metadata = getRouteMetadata('/privacy')
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
-      <section className="border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+      <HeroBackground>
+        <section className="mx-auto max-w-5xl px-4 pb-10 pt-14">
           <div className="max-w-3xl space-y-5">
             <span className="inline-flex w-fit rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">
               Privacy
@@ -20,17 +22,28 @@ export default function PrivacyPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is niet gebouwd om zoveel mogelijk data te verzamelen. Het is gebouwd om afspraken, rolverdeling
-              en professionaliteit zichtbaar te maken - met minimale gegevens en maximale controle voor de gebruiker.
+              ProBrandwacht is niet gebouwd om zoveel mogelijk data te verzamelen. Het is gebouwd om rollen,
+              afspraken en verantwoordelijkheden zichtbaar te maken -- met minimale gegevens en maximale
+              controle voor de gebruiker.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Cta id="about_kaders_intentie" />
-              <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
+              <Link
+                href="/belangen"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Kaders en intentie
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              >
+                Verkennend contact
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </HeroBackground>
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
@@ -59,7 +72,7 @@ export default function PrivacyPage() {
           <p className="mt-3 text-sm text-slate-200">
             <strong>Contactgegevens:</strong>
             <br />
-            E: info@prosafetymatch.nl
+            E: info@probrandwacht.nl
             <br />
             Adres: op verzoek beschikbaar
           </p>
@@ -70,8 +83,7 @@ export default function PrivacyPage() {
           <p className="mt-3 text-sm text-slate-200">Wij verwerken persoonsgegevens voor de volgende doeleinden:</p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>
-              <strong>Intake en samenwerkingstoetsing:</strong> om verkennende intakeformulieren te verwerken en
-              de uitvoerbaarheid van inzet te beoordelen.
+              <strong>Verkennend contact:</strong> om intakeformulieren te verwerken en vragen te beantwoorden.
             </li>
             <li>
               <strong>Contact en communicatie:</strong> om vragen, reacties en verzoeken te beantwoorden.
@@ -90,7 +102,7 @@ export default function PrivacyPage() {
           </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li><strong>Toestemming:</strong> voor intakeformulieren en contact.</li>
-            <li><strong>Uitvoering van overeenkomst:</strong> voor de verkennende intake en samenwerking.</li>
+            <li><strong>Uitvoering van overeenkomst:</strong> voor het verkennend contact.</li>
             <li><strong>Gerechtvaardigd belang:</strong> voor websiteoptimalisatie en veiligheid.</li>
           </ul>
         </div>
@@ -101,7 +113,7 @@ export default function PrivacyPage() {
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>Naam, e-mail, telefoonnummer.</li>
             <li>Beroepsgegevens (rol, kwalificaties, contextinformatie).</li>
-            <li>Uploadbestanden zoals certificaten (alleen als u die dient aan te leveren).</li>
+            <li>Uploadbestanden zoals certificaten (alleen als u die deelt).</li>
           </ul>
         </div>
 
@@ -116,7 +128,7 @@ export default function PrivacyPage() {
               <strong>Formulier- en gegevensopslag</strong> voor intake.
             </li>
             <li>
-              <strong>Bestandsuploads</strong> via Dropbox File Request (tijdelijke opslag).
+              <strong>Bestandsuploads</strong> via beveiligde uploadkanalen (tijdelijke opslag).
             </li>
           </ul>
         </div>
@@ -143,7 +155,7 @@ export default function PrivacyPage() {
             <li>Bezwaar tegen verwerking.</li>
           </ul>
           <p className="mt-3 text-sm text-slate-200">
-            U kunt uw rechten uitoefenen door te mailen naar: <strong>privacy@prosafetymatch.nl</strong>
+            U kunt uw rechten uitoefenen door te mailen naar: <strong>privacy@probrandwacht.nl</strong>
           </p>
         </div>
 
@@ -155,6 +167,10 @@ export default function PrivacyPage() {
             de Autoriteit Persoonsgegevens.
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-12">
+        <AfbakeningNote />
       </section>
     </main>
   )

@@ -4,7 +4,7 @@ import { baseMeta } from '@/app/(site)/shared-metadata'
 export const metadata: Metadata = {
   ...baseMeta,
   title: 'Voor zzp-brandwachten | ProBrandwacht',
-  description: 'Werk 1-op-1 met opdrachtgevers, beheer opdrachten en leg tariefafspraken helder vast.',
+  description: 'Context en duiding voor zelfstandig werken als brandwacht, met aandacht voor rol en verantwoordelijkheid.',
   alternates: {
     canonical: '/zzp',
     languages: { 'nl-NL': '/zzp' },

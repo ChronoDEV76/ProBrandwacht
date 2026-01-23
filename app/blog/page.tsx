@@ -368,9 +368,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </section>
 
           <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-slate-50">Stadspagina&apos;s met indicatieve tariefcontext</h2>
+            <h2 className="text-lg font-semibold text-slate-50">Stadspagina&apos;s met lokale context</h2>
             <p className="mt-2 text-sm text-slate-200">
-              Bekijk per stad indicatieve tariefbanden en de kaders die vooraf uitvoerbaarheid toetsen.
+              Bekijk per stad aandachtspunten voor inzet, samenwerking en rolverdeling.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {cityLinks.map((cityLink) => (
@@ -390,8 +390,8 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="rounded-2xl border border-emerald-400/40 bg-emerald-400/10 p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-emerald-100">Autoritaire bronnen</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Al onze artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor het berekenen van een
-              zzp-tarief, Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio&apos;s.
+              Al onze artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor ondernemen,
+              Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio&apos;s.
             </p>
             <Cta
               id="secondary_seo_resources"
@@ -410,13 +410,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             </div>
           </section>
 
-          <section className="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 text-sm text-slate-200">
-            <h4 className="text-base font-semibold text-slate-50">ProSafetyMatch in ontwikkeling</h4>
-            <p className="mt-2">
-              We werken aan ProSafetyMatch: een 1-op-1, DBA-bewuste manier van samenwerken. Wil je volgen hoe
-              we uitvoerbaarheid ondersteunen?
-            </p>
-          </section>
         </div>
       </section>
     </main>

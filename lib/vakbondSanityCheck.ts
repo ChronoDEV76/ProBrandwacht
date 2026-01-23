@@ -13,7 +13,7 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     /wij plannen jou in/i,
     /wij plannen/i,
     /wordt ingepland/i,
-    /uurtarief wordt bepaald/i,
+    /prijssturing/i,
     /exclusiviteit/i,
     /exclusief voor ons/i,
     /verboden relatiebeding/i,
@@ -21,6 +21,15 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     /\b(detacheringsbureau|uitzendbureau)\b/i,
     /\bbureau\b/i,
     /\bbemiddeling\b/i,
+    /\bwij versus zij\b/i,
+    /\bwij vs\.? zij\b/i,
+    /\bnamens brandwachten\b/i,
+    /\bnamens opdrachtgevers\b/i,
+    /\bnamens (?:intermediairs|bureaus)\b/i,
+    /\bcollectieve actie\b/i,
+    /\bonderhandelen\b/i,
+    /\bzetten druk\b/i,
+    /\bbelangenbehartiging\b/i,
   ];
 
   const authorityIndicators: RegExp[] = [
@@ -29,11 +38,15 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     /dba-bewust/i,
     /dbabewust/i,
     /professioneel netwerk/i,
-    /kennisplatform/i,
+    /kennisinitiatief/i,
+    /duidingslaag/i,
+    /marktkader/i,
+    /referentiepunt/i,
+    /publiek informatie-initiatief/i,
     /vakmanschap/i,
     /autonomie/i,
     /onafhankelijk/i,
-    /eerlijke tarieven/i,
+    /heldere afspraken/i,
   ];
 
   const target: Document | HTMLElement = root ?? document;
@@ -66,7 +79,7 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
   }
   if (!foundGood) {
     console.warn(
-      "⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als 'eerlijke', 'zelfstandigheid', 'autonomie', 'kennisplatform', 'onafhankelijk'."
+      "⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als 'eerlijke', 'zelfstandigheid', 'autonomie', 'kennisinitiatief', 'duidingslaag', 'onafhankelijk'."
     );
   }
 

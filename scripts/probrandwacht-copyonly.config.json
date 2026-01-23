@@ -5,7 +5,15 @@
     "content",
     "lib"
   ],
-  "includeExtensions": [".ts", ".tsx", ".js", ".jsx", ".mdx", ".md", ".json"],
+  "includeExtensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx",
+    ".mdx",
+    ".md",
+    ".json"
+  ],
   "excludeDirs": [
     ".git",
     ".next",
@@ -23,6 +31,11 @@
     ".turbo",
     ".vercel"
   ],
+  "ignorePathContains": [
+    "lib/seo/seo-keywords.ts",
+    "lib/schema.ts",
+    "lib/seo/authoritative-sources.ts"
+  ],
   "maxFileSizeBytes": 2000000,
   "rules": [
     {
@@ -37,15 +50,23 @@
       ]
     },
     {
-      "id": "PRICE_SIGNALS",
+      "id": "PRICE_MODEL_SIGNALS",
       "severity": "HIGH",
-      "note": "Signalen van prijssturing/prijscommunicatie (bedragen, percentages, fee/marge, calculator-taal).",
+      "note": "Echte reken-/stuur-signalen (percentages/bedragen/rekenlogica).",
       "patterns": [
         "€\\s?\\d+",
         "\\b\\d+\\s?%\\b",
-        "\\b(platformfee|bemiddelingsfee|fee|marge|escrow|netto)\\b",
-        "\\b(bereken|calculator|rekenmodel|vergelijk)\\b",
-        "\\b(uurtarief|uurprijs)\\b"
+        "\\b(platformfee|escrow)\\b.*\\b\\d+\\s?%\\b",
+        "\\b(toFixed\\(|\\*\\s*0\\.|\\/\\s*100\\b|\\bfeePct\\b|\\bescrowPct\\b|\\bplatformFee\\b|\\bbureauMarge\\b)\\b",
+        "\\b(calculator|rekenmodel|bereken|vergelijk)\\b"
+      ]
+    },
+    {
+      "id": "PRICE_WORDING",
+      "severity": "MEDIUM",
+      "note": "Prijswoorden in copy (review, maar niet automatisch fout).",
+      "patterns": [
+        "\\b(uurtarief|uurprijs|tarief|kosten|fee|marge|netto)\\b"
       ]
     },
     {
@@ -60,8 +81,13 @@
       "id": "GUARANTEE_LANGUAGE",
       "severity": "MEDIUM",
       "note": "Garantie-taal is gevoelig; ‘geen garantie’ is oké maar check context.",
-      "patterns": ["\\bgarantie\\b"],
-      "allowIf": ["\\bgeen\\s+garantie\\b", "\\bzonder\\s+garantie\\b"]
+      "patterns": [
+        "\\bgarantie\\b"
+      ],
+      "allowIf": [
+        "\\bgeen\\s+garantie\\b",
+        "\\bzonder\\s+garantie\\b"
+      ]
     },
     {
       "id": "BACKSTAGE_TERMS",

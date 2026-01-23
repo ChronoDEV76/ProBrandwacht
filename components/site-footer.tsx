@@ -3,9 +3,9 @@ import Image from "next/image"
 
 const LINKS = [
   { href: "/blog", label: "Blog / Kennisbank" },
-  { href: "/platform", label: "Hoe werkt het platform?" },
-  { href: "/voor-brandwachten", label: "Voor brandwachten (selectief)" },
-  { href: "/opdrachtgevers", label: "Voor opdrachtgevers (uitvoerbaar)" },
+  { href: "/platform", label: "Hoe werkt het initiatief?" },
+  { href: "/voor-brandwachten", label: "Voor brandwachten" },
+  { href: "/opdrachtgevers", label: "Voor opdrachtgevers" },
   { href: "/waarom-wij-soms-nee-zeggen", label: "Waarom wij soms nee zeggen" },
   { href: "/over-ons", label: "Over ons" },
 ]
@@ -25,7 +25,7 @@ export default function SiteFooter() {
               ProBrandwacht
             </Link>
             <p className="max-w-md text-xs text-slate-400">
-              Inzicht, context en ondersteuning voor bewust zelfstandig werken.
+              Inzicht, context en duiding voor bewust zelfstandig werken.
             </p>
 
             <a
@@ -102,25 +102,27 @@ export default function SiteFooter() {
 
         <section className="mt-8 border-t border-slate-800 pt-4 text-xs text-slate-400">
           <p>
-            ProBrandwacht is een onafhankelijk kennis- en platforminitiatief voor
+            ProBrandwacht is een onafhankelijk kennis- en duidingsinitiatief voor
             bewust zelfstandig werken in brandveiligheid.
           </p>
           <p className="mt-1">
+            ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+            bemiddelt niet en stuurt niet.
+          </p>
+          <p className="mt-1">
             Inhoud en inzichten zijn gebaseerd op praktijkervaring in industriele,
-            repressieve en evenementenomgevingen, aangevuld met actuele wet- en
-            regelgeving (o.a. Wet DBA).
+            repressieve en evenementenomgevingen, aangevuld met actuele context.
           </p>
           <p className="mt-1">
             Contact:{" "}
-            <a href="mailto:info@prosafetymatch.nl" className="underline">
-              info@prosafetymatch.nl
+            <a href="mailto:info@probrandwacht.nl" className="underline">
+              info@probrandwacht.nl
             </a>
           </p>
           <p className="mt-2">
-            ProBrandwacht faciliteert verkenning en dialoog tussen zelfstandigen en opdrachtgevers; het platform is geen
-            klassiek bureau of tussenlaag, bewaakt uitvoerbaarheid en zegt soms nee als randvoorwaarden niet kloppen. Het draagt geen
-            verantwoordelijkheid voor specifieke samenwerkingen, contracten, uitvoeringsbeslissingen of operationele
-            uitkomsten.
+            ProBrandwacht duidt en kadert; het initiatief is geen klassiek bureau of tussenlaag en neemt geen rol
+            in uitvoering of afspraken. Verantwoordelijkheid voor samenwerking, contracten en uitvoering ligt bij
+            opdrachtgever en professional.
           </p>
         </section>
       </div>

@@ -4,7 +4,7 @@ import { baseMeta } from '@/app/(site)/shared-metadata'
 export const metadata: Metadata = {
   ...baseMeta,
   title: 'Voor opdrachtgevers | ProBrandwacht',
-  description: 'Eerlijk samenwerken met duidelijke tariefopbouw en ondersteuning voor werken binnen Wet DBA.',
+  description: 'Context en duiding voor samenwerking met zelfstandige brandwachten, met focus op rol en verantwoordelijkheid.',
   alternates: {
     canonical: '/opdrachtgevers',
     languages: { 'nl-NL': '/opdrachtgevers' },

@@ -3,15 +3,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 
+import { seoKeywordClusters } from '@/lib/seo/seo-keywords'
+
 export const metadata: Metadata = {
   title: 'Bedankt voor je aanvraag | ProBrandwacht',
   description: 'Bevestigingspagina na het insturen van een aanvraag.',
   keywords: [
-    'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
-    'bewust zelfstandig samenwerken',
-    'brandwacht tarieven',
+    ...seoKeywordClusters.core,
+    ...seoKeywordClusters.positioning,
+    'aanvraag bevestiging',
   ],
   robots: { index: false, follow: false },
 }
@@ -35,7 +35,7 @@ export default function ThankYouPage({
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            vakmanschap &amp; duidelijke kostenopbouw
+            vakmanschap &amp; duidelijke afspraken
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             eerlijk &amp; DBA-bewust

@@ -222,7 +222,7 @@ export const CITY_DATA = [
     latitude: 52.1601, longitude: 4.4970,
     venues: ["Stadsgehoorzaal"],
     industrialAreas: ["Bio Science Park (regio)"],
-    sectorNotes: "Onderwijs/health-projecten; strenge compliance/vergunningen.",
+    sectorNotes: "Onderwijs/health-projecten; strenge vergunningseisen en audits.",
     updatedAt: "2025-10-01",
   },
   {

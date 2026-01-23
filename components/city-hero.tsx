@@ -55,7 +55,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             <li>- Is de inzet uitvoerbaar zonder improvisatie?</li>
           </ul>
           <p className="mt-3 text-xs text-slate-600">
-            Alleen als dit klopt, brengen we partijen samen.
+            Alleen als dit klopt, maken we verkennende afstemming mogelijk.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             Direct contact met opdrachtgevers
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
-            Geen concurrentiebeding · transparante tariefafspraken
+            Geen concurrentiebeding · heldere afspraken
           </span>
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700">
             Voorbereiding op Wet DBA-afspraken

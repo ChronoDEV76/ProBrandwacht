@@ -2,109 +2,108 @@
 
 export const generalPlatformFaq = [
   {
-    question: 'Is ProBrandwacht een uitzendbureau of detacheerder?',
+    question: 'Waarom ligt de nadruk op rolafbakening?',
     answer:
-      'Nee. ProBrandwacht is geen bureau, geen werkgever en geen matching-engine. Opdrachtgever en zelfstandige maken zelf afspraken over tarief, rol en gezag. Het platform helpt die afspraken vast te leggen zodat ze op de werkvloer uitlegbaar blijven - zonder verborgen marge of sturing.',
+      'Omdat uitvoerbaarheid begint bij duidelijke rollen en verwachtingen. Zonder die helderheid ontstaat ruis in uitvoering.',
   },
   {
-    question: 'Hoe werken betalingen via het platform?',
+    question: 'Wanneer is nee zeggen logisch?',
     answer:
-      'Opdrachtgever en zelfstandige brandwacht spreken vooraf tarief en voorwaarden af. Die afspraken worden vastgelegd in een gezamenlijke context, zodat uitvoering en betaling uitlegbaar blijven. De manier van betalen is afhankelijk van de afspraken tussen partijen en kan per inzet verschillen.',
+      'Wanneer de vraag onduidelijk is in rol, scope of beslislijnen. Dan klopt de opdracht in vorm nog niet.',
   },
   {
-    question: 'Welke samenwerkingen passen niet bij ProBrandwacht?',
+    question: 'Waarom geen standaardroutes?',
     answer:
-      'Samenwerkingen die volledige bezettingsgarantie eisen, een bureau als buffer willen of afspraken pas na start willen uitwerken. Als rol, gezag en grenzen niet vooraf te bepalen zijn, past het niet bij dit model.',
+      'Omdat elke inzet voorbereiding en afstemming vraagt. Standaardiseren kan snel tot schijnzekerheid leiden.',
   },
   {
-    question: 'Hoe merk je in de praktijk wanneer verantwoordelijkheid ontbreekt?',
+    question: 'Hoe kijken jullie naar rolverdeling en verantwoordelijkheid?',
     answer:
-      'Als beslissingen op locatie onduidelijk zijn, verslaglegging ontbreekt of afspraken steeds verschuiven. Dan is er geen rolvastheid en wordt uitvoering onvoorspelbaar. ProBrandwacht stuurt op vooraf vastgelegde afspraken die je op locatie kunt uitleggen.',
+      'Beslislijnen moeten vooraf expliciet zijn en op locatie werken zoals afgesproken. Dat maakt samenwerking uitlegbaar.',
   },
   {
-    question: 'Hoe werkt het nu en straks (ProBrandwacht Direct → ProSafetyMatch)?',
+    question: 'Waarom focussen jullie op uitvoerbaarheid?',
     answer:
-      'Nu toets je inzet eerst op uitvoerbaarheid (verkennend contact via ProBrandwacht, en waar nodig ProBrandwacht Direct). ProSafetyMatch is in ontwikkeling als digitale laag die stap voor stap kan ondersteunen bij planning, afspraken, certificaten en administratie. De uitgangspunten blijven gelijk: eerlijk, DBA-bewust en zonder verborgen bureaumarges.',
+      'Snelheid zonder helderheid vergroot risico. We kiezen voor verantwoord afstemmen boven snelle invulling.',
   },
   {
-    question: 'Hoe blijft samenwerking binnen Wet DBA?',
+    question: 'Wat verwachten jullie van opdrachtgevers?',
     answer:
-      'De kern is dat jullie zelf duidelijke afspraken maken over tarief, gezag, verantwoordelijkheden en uitvoering. Het platform helpt om deze afspraken vast te leggen in dossiers per opdracht: wat is afgesproken, wie doet wat, en hoe worden uren en taken verantwoord. Zo kun je laten zien dat het om zelfstandige samenwerking gaat (binnen Wet DBA) en niet om een verkapt dienstverband.',
+      'Voorbereiding, rolverdeling en beslislijnen vooraf duidelijk maken. Dat houdt uitvoering rustig.',
   },
   {
-    question: 'Wat is de rol van ProSafetyMatch?',
+    question: 'Wat verwachten jullie van brandwachten?',
     answer:
-      'ProBrandwacht is de praktische voorloper; ProSafetyMatch is de bredere digitale laag in ontwikkeling voor brand- en safety-samenwerking. Denk aan plannen, documentenbeheer en rapportage als ondersteunende functies, zonder een extra schakel toe te voegen. De uitgangspunten blijven hetzelfde: eerlijke, professionele samenwerking en ruimte voor zelfstandig ondernemerschap.',
+      'Professioneel oordeel, grenzen kunnen aangeven en verantwoordelijkheid willen dragen.',
   },
   {
-    question: 'Kunnen bestaande bureaus ook met het platform werken?',
+    question: 'Wat doen jullie nadrukkelijk niet?',
     answer:
-      'Ja. Het platform is niet tegen bureaus, maar vóór eerlijke samenwerking. Bestaande organisaties kunnen het platform gebruiken om hun processen te structureren, dossiers op orde te houden en duidelijker te zijn richting zowel opdrachtgevers als zelfstandige professionals. Het idee is dat eerlijke opdrachtgevers en eerlijke professionals elkaar beter weten te vinden.',
+      'Wij vullen geen capaciteit, nemen geen beslissingen over en schuiven geen risico door.',
   },
   {
-    question: 'Wat gebeurt er met mijn gegevens?',
+    question: 'Wat gebeurt er als het niet past?',
     answer:
-      'Gegevens worden alleen gebruikt om samenwerking professioneel te ondersteunen: informatie voor verkennend contact, certificaten en afspraken die nodig zijn voor de inzet. Wat er wordt vastgelegd is afhankelijk van de context en afspraken tussen partijen. Gegevens worden niet verkocht en niet gebruikt om buiten jullie om afspraken te maken.',
+      'Dan is het een signaal om de vraag te herformuleren of de randvoorwaarden te verduidelijken.',
   },
-];
+]
 
 export const zzpFaq = [
   {
-    question: 'Wat kost het om als zzp-brandwacht mee te doen?',
+    question: 'Wat houdt zelfstandig werken via deze route in?',
     answer:
-      'Aanmelden als zelfstandige brandwacht is in de basis gratis. Je betaalt geen verborgen bureaumarge; het tarief dat jij en de opdrachtgever afspreken, is het uitgangspunt. In een later stadium kan er een eerlijke platformfee of abonnement worden toegevoegd. Afspraken blijven gericht op helderheid en uitlegbaarheid.',
+      'Je werkt 1-op-1 met opdrachtgevers. Afspraken over rol, scope en verantwoordelijkheid maak je vooraf en leg je duidelijk vast.',
   },
   {
-    question: 'Ben ik verplicht om al mijn werk via het platform te doen?',
-    answer:
-      'Nee. Je blijft zelfstandig ondernemer en behoudt je eigen klanten, kanalen en keuzes. Het platform helpt je om opdrachten overzichtelijk, eerlijk en DBA-bewust te organiseren, maar legt geen relatiebeding op. Als jij merkt dat samenwerking met bepaalde opdrachtgevers via het platform prettig loopt, kun je er samen voor kiezen dat vaker zo te doen.',
+    question: 'Moet ik al mijn werk via dit initiatief doen?',
+    answer: 'Nee. Je blijft zelfstandig ondernemer en behoudt je eigen klanten, kanalen en keuzes.',
   },
   {
-    question: 'Kan ik mijn eigen tarief en beschikbaarheid instellen?',
+    question: 'Hoe bepaal ik of een opdracht past?',
     answer:
-      'Ja. Als zelfstandige brandwacht bepaal jij je eigen tarief, beschikbaarheid en type inzet dat bij je past. Opdrachtgevers zien op basis daarvan jouw profiel, ervaring en verwachtingen. Zo ontstaat er een gesprek op basis van vakmanschap en wederzijds respect, in plaats van alleen een uurtarief dat door een tussenpartij wordt bepaald.',
+      'Door scope, rol, beslislijnen en randvoorwaarden vooraf expliciet te maken. Als die niet duidelijk zijn, past de opdracht vaak niet.',
   },
   {
-    question: 'Hoe worden certificaten en ervaring gecontroleerd?',
+    question: 'Hoe ga ik om met certificaten en ervaring?',
     answer:
-      'Je kunt certificaten zoals VCA, BHV/Manschap A/B, mangatwacht, gasmeten en relevante trainingen uploaden. Opdrachtgevers zien wat er is vastgelegd en kunnen daarover aanvullende vragen stellen. In latere fases kunnen aanvullende verificaties worden toegevoegd wanneer ProSafetyMatch verder uitrolt.',
+      'Maak vooraf duidelijk welke certificaten relevant zijn voor de inzet en leg vast wat de opdrachtgever nodig heeft om dat te beoordelen.',
   },
   {
-    question: 'Hoe en wanneer word ik uitbetaald?',
+    question: 'Hoe zit het met afspraken over uitvoering?',
     answer:
-      'De basis is simpel: er wordt vooraf afgesproken hoe er wordt betaald en binnen welke termijn. Na goedkeuring van uren of inzet volgt uitbetaling volgens die afspraak. Je krijgt vooraf inzicht in afspraken, tarieven en verantwoordelijkheden.',
+      'Leg vooraf vast wat je rol is, wat je rapporteert en wanneer je opschaalt. Dat houdt de uitvoering uitlegbaar.',
   },
   {
     question: 'Wat als een opdrachtgever je onder gezag wil laten werken?',
     answer:
-      'Dan is het belangrijk om het gesprek aan te gaan over rol en verantwoordelijkheid. Het platform stimuleert afspraken die passen bij zelfstandig ondernemerschap: duidelijk over taken, geen eenzijdige roosterwijzigingen zonder overleg, en geen verplichtingen die horen bij loondienst. Kom je er samen niet uit, dan kun je beter geen opdracht aannemen dan in een grijze zone blijven hangen.',
+      'Dan is het belangrijk het gesprek aan te gaan over rol en verantwoordelijkheid. Lukt dat niet, dan past de opdracht vaak niet.',
   },
-];
+]
 
 export const opdrachtgeverFaq = [
   {
     question: 'Hoe weet ik dat iemand gekwalificeerd is?',
     answer:
-      'Profielen tonen relevante certificaten, ervaring en eventuele specialisaties (bijvoorbeeld industrieel, evenementen, object- of projectmatig). Geüploade documenten en afspraken worden gekoppeld aan concrete opdrachten, zodat je zelf kunt beoordelen of de inzet passend en verantwoord is. In een latere fase kan ProSafetyMatch extra validaties en rapportages toevoegen.',
+      'Vraag naar relevante certificaten en ervaring, en leg vast welke rol iemand op locatie heeft. Dat maakt de inzet toetsbaar.',
   },
   {
-    question: 'Hoe werken tarieven en kosten voor opdrachtgevers?',
+    question: 'Hoe werk ik met duidelijke afspraken vooraf?',
     answer:
-      'Je spreekt het tarief rechtstreeks af met de zelfstandige brandwacht. Er is geen verborgen marge zoals bij klassieke ketenconstructies. Eventuele platformkosten of servicefees worden helder en apart weergegeven. Dat maakt gesprekken met inkoop, finance en control een stuk eenvoudiger: één tarief, één dossier, één uitleg.',
+      'Leg vooraf vast wie beslist, wat de scope is en welke randvoorwaarden gelden. Dat helpt discussie tijdens uitvoering te beperken.',
   },
   {
-    question: 'Hoe helpt het platform bij werken binnen Wet DBA?',
+    question: 'Hoe houd ik samenwerking uitlegbaar?',
     answer:
-      'Door afspraken expliciet vast te leggen: wat is de opdracht, wie voert uit, wie heeft operationeel gezag, hoe worden uren verantwoord en wanneer wordt er betaald. Deze informatie wordt gebundeld in een dossier per inzet. Zo kun je richting inspectie, accountant of interne audit laten zien dat je bewust kiest voor samenwerking met zelfstandige professionals (binnen Wet DBA) met een heldere verdeling van verantwoordelijkheden.',
+      'Door afspraken expliciet vast te leggen: wat is de opdracht, wie voert uit en wie beslist op locatie. Dat maakt de samenwerking inzichtelijk.',
   },
   {
-    question: 'Kan ik het platform gebruiken naast bestaande bureaus en contracten?',
+    question: 'Kan ik dit gebruiken naast bestaande afspraken?',
     answer:
-      'Ja. Het platform sluit bestaande relaties niet uit. Je kunt ProBrandwacht gebruiken voor 1-op-1 samenwerking met zelfstandigen, voor specifieke locaties of voor projecten waar eerlijke en flexibiliteit extra belangrijk zijn. Waar nodig kun je het naast bestaande raamovereenkomsten gebruiken, zolang de afspraken met alle betrokken partijen helder zijn.',
+      'Ja. Je kunt dit gebruiken naast bestaande relaties, zolang de rolverdeling en afspraken helder zijn.',
   },
   {
-    question: 'Hoe zit het met facturen, administratie en rapportages?',
+    question: 'Hoe zit het met documentatie?',
     answer:
-      'Het doel is om informatie rondom inzet van zelfstandige brandwachten overzichtelijk te maken: opdrachten, uren, tarieven, facturen en relevante documenten. In de doorontwikkeling naar ProSafetyMatch kunnen functies volgen zoals exports voor finance, kostenplaatsen en rapportages per locatie.',
+      'Zorg dat afspraken en bijzonderheden op een manier zijn vastgelegd die je achteraf kunt uitleggen.',
   },
-];
+]

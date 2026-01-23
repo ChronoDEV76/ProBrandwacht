@@ -122,7 +122,7 @@ export default function ClientSignupForm({
   className = '',
   heading = 'Verkennende intake voor opdrachtgevers',
   description =
-    'Vul je basisgegevens in. Dit is geen offerte of plaatsing; we toetsen eerst of de inzet uitvoerbaar is en bewaren een kopie in je browser (localStorage) zodat je deze later kunt hergebruiken.',
+    'Vul je basisgegevens in. Dit is geen offerte of plaatsing. We toetsen eerst of de inzet uitvoerbaar is. We bewaren een kopie in je browser (localStorage) zodat je deze later kunt hergebruiken.',
   cancelHref = '/',
   showCancel = true,
   successReturnHref = '/',
@@ -192,7 +192,7 @@ export default function ClientSignupForm({
       setDone(true)
     } catch (err) {
       console.error('Failed to submit client signup', err)
-      setError('We konden je intake niet naar het platform versturen. Probeer het opnieuw of mail ons via info@prosafetymatch.nl.')
+      setError('We konden je intake niet versturen. Probeer het opnieuw of mail ons via info@probrandwacht.nl.')
     }
 
     setSubmitting(false)
@@ -304,13 +304,12 @@ export default function ClientSignupForm({
         </Card>
 
         <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
-          <p className="font-semibold text-gray-900">Wat betekent ProBrandwacht als platform?</p>
+          <p className="font-semibold text-gray-900">Wat betekent ProBrandwacht?</p>
           <p className="mt-2">
-            ProBrandwacht faciliteert samenwerking. Zoals ieder platform kan hier een platform- of servicefee
-            bij horen. Dit wordt vooraf transparant afgestemd; geen verborgen opslagen.
+            ProBrandwacht biedt context en duiding. Afspraken worden 1-op-1 gemaakt tussen opdrachtgever en professional.
           </p>
           <Link href="/platform" className="mt-2 inline-flex text-sm underline underline-offset-4">
-            Lees hoe het platform werkt
+            Lees hoe het initiatief werkt
           </Link>
         </div>
 

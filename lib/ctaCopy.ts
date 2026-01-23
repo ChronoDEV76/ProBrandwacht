@@ -247,8 +247,8 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_how_inhuren: {
     id: 'secondary_how_inhuren',
-    label: 'Lees hoe inhuren werkt →',
-    href: '/brandwacht-inhuren',
+    label: 'Lees hoe samenwerking werkt →',
+    href: '/opdrachtgevers',
     variant: 'link',
     intent: 'secondary',
     audience: 'generic',

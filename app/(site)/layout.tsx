@@ -7,6 +7,7 @@ import SiteHeader from "@/components/site-header";
 import SiteMain from "@/components/layout/site-main";
 import SiteFooter from "@/components/site-footer";
 import SiteHeroBackground from "@/components/site-hero-background";
+import { seoKeywordClusters } from "@/lib/seo/seo-keywords";
 
 const roboto = localFont({
   src: [
@@ -20,19 +21,14 @@ const roboto = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Brandwacht platform | ProBrandwacht",
+  title: "ProBrandwacht — Kennis en duiding",
   description:
-    "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
+    "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
   keywords: [
-    "wet dba brandwacht",
-    "dba-bewust samenwerken",
-    "werken binnen wet dba",
-    "brandveiligheid evenementen",
-    "industriële brandwacht",
-    "platform voor zelfstandige brandwachten",
-    "kennisplatform brandwacht",
-    "zelfstandig werken brandwacht",
-    "probrandwacht",
+    ...seoKeywordClusters.core,
+    ...seoKeywordClusters.platform,
+    ...seoKeywordClusters.positioning,
+    ...seoKeywordClusters.niches,
   ],
 };
 

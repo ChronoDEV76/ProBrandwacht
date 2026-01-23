@@ -18,7 +18,6 @@ type Payload = {
   requirements?: string;
   message?: string;
   urgent?: boolean;
-  budget?: string;
   consent?: boolean;
   website?: string; // honeypot
   source?: string;
@@ -105,7 +104,6 @@ export async function POST(req: Request) {
       requirements: body.requirements ?? null,
       message: body.message ?? null,
       urgent: !!body.urgent,
-      budget_range: body.budget ?? null,
       consent: !!body.consent,
       source: body.source ?? "probrandwacht-direct",
     });
@@ -127,7 +125,6 @@ export async function POST(req: Request) {
       <p><strong>Duur (dagen):</strong> ${escapeHtml(body.duration || "-")}</p>
       <p><strong>Uren per dag:</strong> ${escapeHtml(body.hoursPerDay || "-")}</p>
       <p><strong>Certificaten:</strong> ${escapeHtml(body.requirements || "-")}</p>
-      <p><strong>Budget:</strong> ${escapeHtml(body.budget || "-")}</p>
       <p><strong>Spoed:</strong> ${body.urgent ? "Ja" : "Nee"}</p>
       <p><strong>Toelichting:</strong><br/>${escapeHtml(body.message || "-").replace(/\n/g, "<br/>")}</p>
       <hr/>
@@ -139,8 +136,7 @@ export async function POST(req: Request) {
     const htmlUser = `
       <p>Beste ${escapeHtml(body.contact)},</p>
       <p>Bedankt voor je aanvraag. We nemen snel contact op om de inzet af te stemmen.<br/>
-      Indien het binnen <strong>ProSafetyMatch</strong> past, regelen we de inzet eerlijk en DBA-bewust. 
-      Als directe levering nodig is, stemmen we dat per mail met je af.</p>
+      Afspraken worden 1-op-1 gemaakt en blijven contextafhankelijk.</p>
       <p>— Team ProBrandwacht</p>
     `;
 

@@ -13,7 +13,6 @@ type ProbrandwachtDirectPayload = {
   duration?: string
   hoursPerDay?: string
   requirements?: string
-  budget?: string
   message?: string
   consent: boolean
   website?: string
@@ -49,7 +48,6 @@ export default function ProbrandwachtDirectForm() {
       duration: String(formData.get('duration_days') ?? '').trim() || undefined,
       hoursPerDay: String(formData.get('hours_per_day') ?? '').trim() || undefined,
       requirements: String(formData.get('requirements') ?? '').trim() || undefined,
-      budget: String(formData.get('budget_range') ?? '').trim() || undefined,
       message: String(formData.get('message') ?? '').trim() || undefined,
       consent: formData.get('consent') === 'on',
       website: String(formData.get('website') ?? '').trim() || undefined,
@@ -149,26 +147,13 @@ export default function ProbrandwachtDirectForm() {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className={labelClasses}>Benodigde certificaten</label>
-          <input
-            name="requirements"
-            placeholder="Bijv. Rijksgediplomeerd, mangatwacht, gasmeting"
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label className={labelClasses}>Budgetindicatie</label>
-          <input
-            name="budget_range"
-            placeholder="Omschrijf gewenste tariefbandbreedte (optioneel)"
-            className={inputClasses}
-          />
-          <p className="mt-1 text-xs text-slate-500">
-            We gebruiken geen voorbeeldbedragen; tarief wordt 1-op-1 afgestemd op context en beschikbaarheid.
-          </p>
-        </div>
+      <div>
+        <label className={labelClasses}>Benodigde certificaten</label>
+        <input
+          name="requirements"
+          placeholder="Bijv. Rijksgediplomeerd, mangatwacht, gasmeting"
+          className={inputClasses}
+        />
       </div>
 
       <div>

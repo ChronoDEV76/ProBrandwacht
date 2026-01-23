@@ -22,7 +22,9 @@ function arg(name, fallback = null) {
 }
 
 const ROOT = path.resolve(arg('--root', '.'))
-const CONFIG_PATH = path.resolve(arg('--config', 'scripts/probrandwacht-copyonly.config.json'))
+const CONFIG_PATH = path.resolve(
+  arg('--config', 'scripts/probrandwacht-copyonly.config.json')
+)
 
 function readJson(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'))
@@ -88,6 +90,10 @@ function rel(p) {
 
 function ruleMatches(text, rule) {
   const allowIf = (rule.allowIf || []).map((s) => new RegExp(s, 'i'))
+  if (allowIf.length && allowIf.some((re) => re.test(text))) {
+    // If allowIf matches anywhere, we DO NOT skip the whole file.
+  }
+
   const patterns = (rule.patterns || []).map((s) => new RegExp(s, 'gi'))
   const hits = []
 
@@ -102,7 +108,7 @@ function ruleMatches(text, rule) {
   }
 
   if ((rule.allowIf || []).length && hits.length) {
-    const allowLineRes = allowIf
+    const allowLineRes = (rule.allowIf || []).map((s) => new RegExp(s, 'i'))
     const lines = text.split('\n')
     let offset = 0
     const lineMeta = lines.map((line) => {
@@ -114,7 +120,12 @@ function ruleMatches(text, rule) {
     return hits.filter((h) => {
       const lm = lineMeta.find((L) => h.index >= L.start && h.index <= L.end)
       if (!lm) return true
-      if (/garantie/i.test(h.match) && allowLineRes.some((re) => re.test(lm.line))) return false
+      if (
+        /garantie/i.test(h.match) &&
+        allowLineRes.some((re) => re.test(lm.line))
+      ) {
+        return false
+      }
       return true
     })
   }
@@ -140,7 +151,10 @@ console.log('=== ProBrandwacht Copy-Only Scanner (OOM-proof) ===')
 console.log('Root:', ROOT)
 console.log('Config:', CONFIG_PATH)
 console.log('Include roots:', includeRoots.map(rel).join(', '))
-console.log('Max file size:', `${Math.round(maxFileSizeBytes / 1024 / 1024)} MB`)
+console.log(
+  'Max file size:',
+  `${Math.round(maxFileSizeBytes / 1024 / 1024)} MB`
+)
 console.log('')
 
 const files = []
@@ -156,6 +170,8 @@ let skipped = 0
 const findings = []
 
 for (const f of files) {
+  const r = rel(f)
+  if ((cfg.ignorePathContains || []).some((p) => r.includes(p))) continue
   const { skipped: isSkip, text } = safeReadFile(f)
   if (isSkip || text == null) {
     skipped++
@@ -175,7 +191,7 @@ for (const f of files) {
         file: rel(f),
         line: lineNumberAt(text, h.index),
         match: h.match,
-        context: snippetAround(text, h.index, 120),
+        context: snippetAround(text, h.index, 120)
       })
     }
   }
@@ -195,14 +211,14 @@ const counts = findings.reduce(
     acc[f.severity] = (acc[f.severity] || 0) + 1
     return acc
   },
-  { total: 0, HIGH: 0, MEDIUM: 0, LOW: 0, INFO: 0 },
+  { total: 0, HIGH: 0, MEDIUM: 0, LOW: 0, INFO: 0 }
 )
 
 console.log(`Files discovered: ${files.length}`)
 console.log(`Files scanned: ${scanned}`)
 console.log(`Files skipped (too large/unreadable): ${skipped}`)
 console.log(
-  `Findings: ${counts.total} (HIGH ${counts.HIGH}, MEDIUM ${counts.MEDIUM}, LOW ${counts.LOW}, INFO ${counts.INFO})`,
+  `Findings: ${counts.total} (HIGH ${counts.HIGH}, MEDIUM ${counts.MEDIUM}, LOW ${counts.LOW}, INFO ${counts.INFO})`
 )
 console.log('')
 

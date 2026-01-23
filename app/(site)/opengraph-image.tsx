@@ -5,6 +5,6 @@ export const size = OG_SIZE
 export const contentType = OG_CONTENT_TYPE
 
 export default async function OgImage() {
-  const title = 'ProBrandwacht — Eerlijke Tarieven, Eerlijke Afspraken'
+  const title = 'ProBrandwacht — Kennis en duiding'
   return createOgImage(title)
 }

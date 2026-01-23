@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Cta } from "@/components/Cta";
 const taglines = [
-  "Eerlijk en eerlijk werken met zicht op tariefopbouw en afspraken.",
+  "Eerlijk en helder samenwerken met toetsbare afspraken.",
   "Wij faciliteren contact tussen opdrachtgevers en vakmensen.",
   "Bij beschikbaarheid, snel inzetbaar op locatie.",
   "Gecertificeerd. Gescreend. Gereed voor inzet.",
@@ -34,7 +34,7 @@ export default function Hero() {
           <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
             ProBrandwacht
             <span className="block text-slate-600 sm:mt-2 sm:text-[1.45rem]">
-              Het platform voor gecertificeerde brandwachten 
+              Onafhankelijke duiding voor gecertificeerde brandwachten
             </span>
           </h1>
 
@@ -66,7 +66,7 @@ export default function Hero() {
               Rijksgediplomeerd en/of repressief
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Eerlijke tarieven. Rechtstreekse afstemming. Helder geregeld.
+              Heldere afspraken. Rechtstreekse afstemming. Toetsbaar geregeld.
             </span>
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Bij beschikbaarheid, snel inzetbaar

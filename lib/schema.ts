@@ -13,41 +13,30 @@ export function serviceJsonLd(city: CityRecord, pageUrl: string) {
   }
 }
 
-export function offerCatalogJsonLd(city: CityRecord, ranges: { standaard: { min: number; max: number }, industrie?: { min: number; max: number } }, pageUrl: string) {
+export function offerCatalogJsonLd(
+  city: CityRecord,
+  ranges: { standaard: { min: number; max: number }, industrie?: { min: number; max: number } },
+  pageUrl: string
+) {
   const items = [
     {
       "@type": "Offer",
       name: "Evenementen/Bouw",
-      url: pageUrl + "#tarief-calculator",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "EUR",
-        minPrice: ranges.standaard.min,
-        maxPrice: ranges.standaard.max,
-        unitCode: "HUR",
-      },
+      url: pageUrl + "#inzet-afspraken",
     },
   ]
   if (ranges.industrie) {
     items.push({
       "@type": "Offer",
       name: "Industrie/Petrochemie",
-      url: pageUrl + "#tarief-calculator",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "EUR",
-        minPrice: ranges.industrie.min,
-        maxPrice: ranges.industrie.max,
-        unitCode: "HUR",
-      },
+      url: pageUrl + "#inzet-afspraken",
     })
   }
   return {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
-    name: `Tarieven brandwacht – ${city.name}`,
+    name: `Brandwacht inzet – ${city.name}`,
     url: pageUrl,
     itemListElement: items,
   }
 }
-

@@ -7,7 +7,6 @@ export default function PbDirectForm() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [tarief, setTarief] = useState<number | undefined>(undefined)
   const [hours, setHours] = useState<number | undefined>(4)
   const now = new Date()
   const later = new Date(now.getTime() + 72 * 60 * 60 * 1000)
@@ -29,7 +28,6 @@ export default function PbDirectForm() {
       people: String(fd.get('people') || '').trim() || undefined,
       when: String(fd.get('when') || '').trim() || undefined,
       message: String(fd.get('message') || '').trim() || undefined,
-      tarief: tarief ? String(tarief) : undefined,
       minimumHours: hours ? String(hours) : undefined,
       consent: fd.get('consent') === 'on',
       website: String(fd.get('website') || '').trim() || undefined, // honeypot
@@ -69,16 +67,21 @@ export default function PbDirectForm() {
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="space-y-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">ProBrandwacht Direct - Gecertificeerd - Bereikbaar</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            ProBrandwacht Direct - Gecertificeerd - Bereikbaar
+          </p>
           <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">Start een spoedaanvraag</h2>
-          <p className="text-base text-slate-600">We plaatsen je aanvraag in Slack; beschikbare professionals reageren als het past.</p>
+          <p className="text-base text-slate-600">
+            We bevestigen je aanvraag en brengen je in contact voor 1-op-1 afstemming.
+          </p>
         </div>
         <div className="flex flex-wrap gap-2 text-[11px]">
-          <span className="inline-flex items-center rounded-full bg-slate-200 px-3 py-1 font-semibold text-slate-700">Beta (spoedflow)</span>
-          <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">ProBrandwacht Direct</span>
-          <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 font-semibold text-blue-800">Gecertificeerd</span>
-          <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">E2E-addendum</span>
-          <span className="inline-flex items-center rounded-full bg-brand-700/90 px-3 py-1 font-semibold text-white shadow-sm">ProBrandwacht</span>
+          <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 font-semibold text-emerald-800">
+            ProBrandwacht Direct
+          </span>
+          <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 font-semibold text-blue-800">
+            Gecertificeerd
+          </span>
         </div>
       </div>
       {/* Honeypot */}
@@ -161,33 +164,18 @@ export default function PbDirectForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className="block text-base font-semibold text-slate-800">Tariefkader (optioneel)</label>
-          <input
-            name="tarief"
-            type="number"
-            step={1}
-            value={tarief ?? ''}
-            onChange={e => setTarief(e.target.value ? Number(e.target.value) : undefined)}
-            className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
-            placeholder="Vul tarief in als je een bandbreedte wilt delen"
-          />
-          <p className="mt-1 text-sm text-slate-500">
-            Spoed (korte oproep): tarief ligt doorgaans hoger dan reguliere inzet en is afhankelijk van locatie, duur en risico.
-          </p>
-        </div>
-        <div>
-          <label className="block text-base font-semibold text-slate-800">Minimum uren (spoedblok)</label>
+          <label className="block text-base font-semibold text-slate-800">Inzetduur (uren, optioneel)</label>
           <input
             name="minimumHours"
             type="number"
-            min={4}
+            min={1}
             step={1}
             value={hours ?? ''}
             onChange={e => setHours(e.target.value ? Number(e.target.value) : undefined)}
             className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-base"
             placeholder="Bijv. 4"
           />
-          <p className="mt-1 text-sm text-slate-500">Indicatief minimumblok 4 uur voor spoed; spreek details 1-op-1 af.</p>
+          <p className="mt-1 text-sm text-slate-500">Spreek details 1-op-1 af op basis van de inzetcontext.</p>
         </div>
       </div>
 
@@ -225,7 +213,7 @@ export default function PbDirectForm() {
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-slate-500">
-          We plaatsen je aanvraag in Slack; beschikbare zelfstandige brandwachten reageren en stemmen 1-op-1 af. Geen marge op tarief; afspraken in E2E-chat.
+          We brengen je in contact met beschikbare zelfstandige brandwachten voor 1-op-1 afstemming.
         </p>
         <button
           type="submit"

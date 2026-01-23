@@ -2,6 +2,7 @@ import StructuredBreadcrumbs from "@/components/structured-breadcrumbs"
 import SeoStructuredData from "@/components/SeoStructuredData"
 import type { Metadata } from "next"
 import { getRouteMetadata } from "@/lib/seo/metadata"
+import AfbakeningNote from '@/components/afbakening-note'
 
 export const metadata: Metadata = getRouteMetadata("/voorwaarden")
 
@@ -9,7 +10,7 @@ export default function VoorwaardenPage() {
   const canonicalUrl = "https://www.probrandwacht.nl/voorwaarden"
   const title = "Algemene voorwaarden | ProBrandwacht"
   const description =
-    "De spelregels van ProBrandwacht: wat je van het platform mag verwachten, welke afspraken indicatief zijn en wat de verantwoordelijkheid is van brandwachten en opdrachtgevers."
+    "De spelregels van ProBrandwacht: wat je van het initiatief mag verwachten en waar verantwoordelijkheid ligt bij opdrachtgevers en professionals."
 
   const breadcrumbItems = [
     { name: "Home", url: "https://www.probrandwacht.nl/" },
@@ -28,112 +29,88 @@ export default function VoorwaardenPage() {
       <div className="mx-auto max-w-5xl px-4 py-12">
         <StructuredBreadcrumbs items={breadcrumbItems} />
 
-        <section className="mt-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 md:p-10">
-          <div className="space-y-5 text-sm text-gray-800">
-            <h1 className="text-3xl font-semibold text-slate-900">
-              Algemene voorwaarden
-            </h1>
+        <section className="mt-6 rounded-3xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8 md:p-10">
+          <div className="space-y-5 text-sm text-slate-200">
+            <h1 className="text-3xl font-semibold text-white">Algemene voorwaarden</h1>
 
-            <p className="max-w-3xl text-slate-700">
-              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat je van
-              ons mag verwachten en wat niet. We houden ze bewust helder,
-              praktisch en zonder juridische ruis.
+            <p className="max-w-3xl text-slate-200">
+              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat je van ons mag verwachten en wat
+              niet. We houden ze bewust helder, praktisch en zonder juridische ruis.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              1. Wat ProBrandwacht is (en niet)
-            </h2>
+            <h2 className="text-lg font-semibold text-white">1. Wat ProBrandwacht is (en niet)</h2>
             <p>
-              ProBrandwacht is een informatie- en wervingsplatform voor
-              zelfstandige brandwachten en opdrachtgevers. Wij zijn geen
-              klassiek bureau, geen detacheringspartij en geen werkgever. We bewaken
-              uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.
+              ProBrandwacht is een informatie- en kennisinitiatief voor zelfstandige brandwachten en
+              opdrachtgevers. Wij zijn geen klassiek bureau, geen detacheringspartij en geen werkgever.
+              We duiden en kaderen, zodat samenwerking uitlegbaar blijft.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              2. Rol en contractpositie
-            </h2>
+            <h2 className="text-lg font-semibold text-white">2. Rol en contractpositie</h2>
             <p>
-              ProBrandwacht is geen werkgever, uitzendbureau of opdrachtgever en is
-              geen contractpartij bij de uitvoering van opdrachten. Tarieven worden
-              door zelfstandigen vastgesteld; ProBrandwacht bepaalt of dwingt geen
-              tarieven.
+              ProBrandwacht is geen werkgever, uitzendbureau of opdrachtgever en is geen contractpartij
+              bij de uitvoering van opdrachten. Afspraken worden rechtstreeks gemaakt tussen opdrachtgever
+              en zelfstandige professional.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              3. Geen garanties
-            </h2>
+            <h2 className="text-lg font-semibold text-white">3. Geen garanties</h2>
             <p>
-              ProBrandwacht geeft geen garantie op opdrachten, volumes, tarieven
-              of inkomsten. Alle voorbeelden, tarieven en berekeningen zijn
-              indicatief en contextafhankelijk.
+              ProBrandwacht geeft geen garantie op opdrachten, volumes of resultaten. Voorbeelden en
+              toelichtingen zijn indicatief en contextafhankelijk.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              4. Eigen verantwoordelijkheid
-            </h2>
+            <h2 className="text-lg font-semibold text-white">4. Eigen verantwoordelijkheid</h2>
             <p>
-              Zelfstandigen en opdrachtgevers maken onderling afspraken over
-              tarief, inzet, verantwoordelijkheden en voorwaarden. Zij blijven
-              zelf verantwoordelijk voor naleving van wet- en regelgeving,
-              waaronder de Wet DBA, evenals verzekeringen en aansprakelijkheid.
+              Zelfstandigen en opdrachtgevers maken onderling afspraken over inzet, verantwoordelijkheden
+              en voorwaarden. Zij blijven zelf verantwoordelijk voor naleving van wet- en regelgeving,
+              verzekeringen en aansprakelijkheid.
             </p>
-            <p className="mt-4 text-sm text-slate-500">
+            <p className="mt-4 text-sm text-slate-400">
               In de praktijk betekent dit: jullie leggen vooraf rolverdeling, communicatie-afspraken en verantwoordelijkheden vast,
               zodat de uitvoering op locatie helder en toetsbaar blijft.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              5. Informatie & tools
-            </h2>
+            <h2 className="text-lg font-semibold text-white">5. Informatie & tools</h2>
             <p>
-              Informatie, blogs en tools zijn bedoeld als ondersteuning en
-              bewustwording. Er kunnen geen rechten aan worden ontleend.
+              Informatie en voorbeelden zijn bedoeld als ondersteuning en bewustwording. Er kunnen geen
+              rechten aan worden ontleend.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              6. Aansprakelijkheid
-            </h2>
+            <h2 className="text-lg font-semibold text-white">6. Aansprakelijkheid</h2>
             <p>
               ProBrandwacht is niet aansprakelijk voor directe of indirecte
-              schade voortvloeiend uit gebruik van het platform, informatie of
+              schade voortvloeiend uit gebruik van het initiatief, informatie of
               tools, tenzij wettelijk anders bepaald. ProBrandwacht is geen partij
               bij de uitvoering van opdrachten en draagt geen aansprakelijkheid
               voor uitvoering of schade op locatie.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              7. Wijzigingen
-            </h2>
+            <h2 className="text-lg font-semibold text-white">7. Wijzigingen</h2>
             <p>
               Deze voorwaarden kunnen worden aangepast wanneer wetgeving of de
-              werking van het platform daarom vraagt. De meest actuele versie
+              werking van het initiatief daarom vraagt. De meest actuele versie
               is in de regel leidend.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              8. Toepasselijk recht
-            </h2>
+            <h2 className="text-lg font-semibold text-white">8. Toepasselijk recht</h2>
             <p>
               Op deze voorwaarden is Nederlands recht van toepassing. Geschillen
               worden voorgelegd aan de bevoegde rechter in Nederland.
             </p>
 
-            <h2 className="text-lg font-semibold text-slate-900">
-              Contact
-            </h2>
+            <h2 className="text-lg font-semibold text-white">Contact</h2>
             <p>
-              Vragen over deze voorwaarden? Mail ons via{" "}
-              <a
-                href="mailto:info@prosafetymatch.nl"
-                className="underline"
-              >
-                info@prosafetymatch.nl
+              Vragen over deze voorwaarden? Mail ons via{' '}
+              <a href="mailto:info@probrandwacht.nl" className="underline">
+                info@probrandwacht.nl
               </a>
               .
             </p>
           </div>
         </section>
+
+        <div className="mt-8">
+          <AfbakeningNote />
+        </div>
       </div>
     </main>
   )

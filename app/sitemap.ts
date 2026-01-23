@@ -11,17 +11,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     '/',
     '/blog',
+    '/aanmelden',
     '/contact',
+    '/disclaimer',
+    '/voorwaarden',
     '/privacy',
     '/platform',
-    '/missie',
     '/over-ons',
     '/faq',
-    '/brandwacht-inhuren',
     '/opdrachtgevers',
     '/voor-brandwachten',
+    '/voor-brandwachten/aanmelden',
     '/belangen',
     '/steden',
+    '/waarom-wij-soms-nee-zeggen',
     ...(SPOED_ROUTE_ENABLED ? ['/probrandwacht-direct', '/probrandwacht-direct-spoed'] : []),
   ]
 
@@ -37,11 +40,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  const brandwachtCityRoutes: MetadataRoute.Sitemap = CITY_SLUGS.map((slug) => ({
-    url: `${BASE_URL}/brandwacht-inhuren/${slug}`,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }))
 
   const slugs = await getPostSlugs()
   const blogEntries = await Promise.all(
@@ -58,5 +56,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   )
 
-  return [...staticRoutes, ...cityRoutes, ...brandwachtCityRoutes, ...blogEntries]
+  return [...staticRoutes, ...cityRoutes, ...blogEntries]
 }

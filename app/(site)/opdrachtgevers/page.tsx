@@ -1,213 +1,109 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
-import { Cta } from '@/components/Cta'
-import SeoStructuredData from '@/components/SeoStructuredData'
-import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
-import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/opdrachtgevers')
 
 export default function OpdrachtgeversPage() {
-  const breadcrumbItems = [
-    { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Opdrachtgevers', url: 'https://www.probrandwacht.nl/opdrachtgevers' },
-  ]
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
-      <SeoStructuredData faqs={generalPlatformFaq.slice(0, 4)} />
-
-      <div className="mx-auto w-full max-w-6xl px-4 py-6">
-        <StructuredBreadcrumbs items={breadcrumbItems} />
-      </div>
-
       <HeroBackground>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 pb-14 pt-8">
-          <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Voor opdrachtgevers • Zekerheid door uitvoerbaarheid
-          </span>
+        <section className="mx-auto max-w-6xl px-6 pb-10 pt-14">
+          <div className="max-w-3xl">
+            <p className="text-sm uppercase tracking-widest text-slate-300/80">Voor opdrachtgevers</p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+              Zo houd je brandveiligheidsinzet uitvoerbaar en uitlegbaar
+            </h1>
+            <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
+              ProBrandwacht is een onafhankelijk initiatief. We leveren geen inzet en sturen geen afspraken.
+              We delen kaders en aandachtspunten: welke vragen je vooraf stelt, wat je afbakent en welke
+              signalen in de praktijk extra aandacht vragen.
+            </p>
+            <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
+              ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf
+              bemiddelt niet en stuurt niet.
+            </p>
 
-          <h1 className="text-3xl font-semibold text-white md:text-5xl">
-            Zekerheid ontstaat vooraf,
-            <br />
-            <span className="text-emerald-300">niet bij toezicht.</span>
-          </h1>
-
-          <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht levert geen papieren brandveiligheid. Wij helpen u de inzet zo te organiseren
-            dat rollen helder zijn, verwachtingen kloppen en uitvoering aansluit op vergunning en realiteit.
-          </p>
-
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="tertiary_contact_exploratory" />
-            <Cta
-              id="secondary_why_no"
-              className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5"
-            />
+            <div className="mt-7 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5">
+              <p className="text-sm text-slate-200/90">
+                <span className="font-semibold">Afbakening:</span> geen bureau, geen werkgever, geen
+                matching-engine. ProBrandwacht duidt en waarschuwt -- jij en de professional maken 1-op-1
+                afspraken over rol, verantwoordelijkheden en uitvoering.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
       </HeroBackground>
 
-      <section className="border-t border-slate-900/60 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950">
-        <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:py-16">
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Wat u van ons mag verwachten</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-              <li>
-                <strong>Heldere rolverdeling</strong> (geen aannames, geen grijze zones).
-              </li>
-              <li>
-                <strong>Uitvoerbare afspraken</strong>: wat u vraagt moet ook daadwerkelijk kunnen.
-              </li>
-              <li>
-                <strong>Professionals met verantwoordelijkheid</strong> die kunnen ingrijpen en alarmeren.
-              </li>
-              <li>
-                <strong>Minder verrassingen achteraf</strong> door vooraf beter te organiseren.
-              </li>
-            </ul>
-          </div>
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card
+            title="1) Scope en taakgrenzen"
+            bullets={[
+              'Wat moet er bewaakt worden (werkzaamheden, locatie, risicomomenten)?',
+              'Wat valt expliciet buiten scope?',
+              'Welke voorwaarden gelden voor stop of opschaling?',
+            ]}
+          />
+          <Card
+            title="2) Rollen en beslislijnen"
+            bullets={[
+              'Wie neemt beslissingen op locatie (operationeel, veiligheid, escalatie)?',
+              'Hoe worden wijzigingen doorgevoerd (werkvergunning, LMRA, toolbox)?',
+              'Wanneer is "nee" professioneel de juiste keuze?',
+            ]}
+          />
+          <Card
+            title="3) Randvoorwaarden voor uitvoering"
+            bullets={[
+              'Toegang, contactpunten, middelen en rapportage-afspraken',
+              'Werktempo, nacht of weekend, overdracht en opvolging',
+              "Wat moet vooraf op papier staan zodat uitvoering niet 'op gevoel' gebeurt?",
+            ]}
+          />
+          <Card
+            title="4) Documenteerbaar samenwerken"
+            bullets={[
+              'Leg afspraken vast in duidelijke taal: wat, wie, wanneer, waarom',
+              'Maak uitzonderingen zichtbaar (tijdelijke situaties, afwijkingen)',
+              "Zorg dat uitleg achteraf mogelijk is: 'zo hebben we het gedaan en daarom'",
+            ]}
+          />
+        </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Samenwerking &amp; tarieven</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Samenwerking</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  ProBrandwacht faciliteert de inzet van zelfstandig professionals binnen duidelijke
-                  veiligheidskaders. De professional voert de opdracht uit vanuit eigen ondernemerschap. Het
-                  platform bewaakt dat rollen en verantwoordelijkheden vooraf helder zijn.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Tarieven</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  Tarieven worden vastgesteld door de zelfstandig professional zelf. ProBrandwacht stuurt niet op
-                  prijs en bepaalt geen tarieven. Dit voorkomt tariefsturing en draagt bij aan een zuivere
-                  samenwerkingsvorm.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Zelfstandigheid en samenwerking</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een platform en geen werkgever, uitzendbureau of opdrachtgever. Zelfstandige
-              professionals en opdrachtgevers maken onderling afspraken over inzet, tarief, verantwoordelijkheden
-              en uitvoering.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Verwijzingen naar &lsquo;DBA-bewust&rsquo;, &lsquo;rolzuiver&rsquo; of &lsquo;zelfstandig
-              ondernemerschap&rsquo; dienen ter duiding. De kwalificatie van een arbeidsrelatie hangt in de regel af
-              van de feitelijke uitvoering en omstandigheden.
+        <div className="mt-10 grid gap-4 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6 md:grid-cols-3">
+          <div className="md:col-span-2">
+            <h2 className="text-2xl font-semibold">Wil je een compacte checklist?</h2>
+            <p className="mt-2 text-slate-200/90">
+              Start bij "Waarom we soms nee zeggen" -- dat geeft je een praktisch kader voor uitvoerbaarheid
+              en grensbewaking.
             </p>
           </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Aansprakelijkheid en verzekeringen</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht faciliteert contact en duiding, maar is geen contractpartij bij de uitvoering van
-              opdrachten. De zelfstandig professional en opdrachtgever blijven zelf verantwoordelijk voor
-              naleving van wetgeving, verzekeringen en aansprakelijkheid.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Rol van ProBrandwacht</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Wat wij doen</h3>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-                  <li>Faciliteren van contact tussen opdrachtgevers en zelfstandigen.</li>
-                  <li>Duiden van rollen en uitvoerbaarheid.</li>
-                  <li>Informatie delen zonder tariefsturing.</li>
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Wat wij niet doen</h3>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-                  <li>Tarieven bepalen of afdwingen.</li>
-                  <li>Professionals behandelen als personeel.</li>
-                  <li>Contractpartij zijn bij uitvoering.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Waarom dit belangrijk is</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              In een markt met toenemende bureaucratie ontstaat risico vaak in de ruimte tussen papier en
-              praktijk. Als rollen niet expliciet zijn, ontstaat discussie - soms pas bij controle.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Wij helpen u dat voor te zijn: niet door extra regels, maar door{' '}
-              <strong>duidelijkheid</strong>.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Onze toets: werkt het in het echt?</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Rolzuiverheid</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  Is de brandwachtrol expliciet? Is zichtbaar wie toezicht houdt en wie mag ingrijpen?
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Uitvoering & bezetting</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  Past de bezetting bij de risico&apos;s? Of is de inzet gebaseerd op aannames die niet
-                  houdbaar zijn?
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Vergunning / voorschriften</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  Sluit de uitvoering aan op wat is voorgeschreven? Zo voorkomt u discussie bij toezicht.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                <h3 className="text-lg font-semibold text-white">Communicatie & verantwoordelijkheid</h3>
-                <p className="mt-2 text-sm text-slate-200">
-                  Is duidelijk wie beslist bij escalatie? Duidelijkheid voorkomt vertraging als het
-                  spannend wordt.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Waarom wij soms nee zeggen</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Soms is een vraag formeel mogelijk, maar praktisch niet uitvoerbaar. Dan zeggen we nee -
-              liever vooraf dan achteraf. Dat beschermt niet alleen de brandwacht, maar ook uw organisatie.
-            </p>
-            <div className="mt-5">
-              <Cta id="secondary_how_we_work" />
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6">
-            <h2 className="text-2xl font-semibold text-white">Leg uw situatie voor</h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              We kijken graag verkennend mee: wat is vereist, wat is uitvoerbaar, en hoe organiseren we
-              dit zo dat het klopt.
-            </p>
-            <p className="mt-3 text-sm text-slate-200">
-              Geen offerte en geen snelle plaatsing - wel een verkennende intake.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Cta id="opdrachtgever_explore" />
-              <Cta id="tertiary_contact_exploratory" />
-            </div>
+          <div className="flex items-center gap-3 md:justify-end">
+            <Link
+              href="/waarom-wij-soms-nee-zeggen"
+              className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+            >
+              Bekijk het kader
+            </Link>
           </div>
         </div>
       </section>
     </main>
+  )
+}
+
+function Card({ title, bullets }: { title: string; bullets: string[] }) {
+  return (
+    <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-6">
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
+        {bullets.map((bullet) => (
+          <li key={bullet}>{bullet}</li>
+        ))}
+      </ul>
+    </div>
   )
 }

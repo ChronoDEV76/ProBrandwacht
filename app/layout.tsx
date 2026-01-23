@@ -7,6 +7,7 @@ import CookieNotice from "@/components/cookie-notice";
 import { headers } from "next/headers";
 import { SanityChecker } from "./_sanity-checker";
 import AnalyticsScripts from "@/components/analytics";
+import { seoKeywordClusters } from "@/lib/seo/seo-keywords";
 // import { SanityChecker } from "./_sanity-checker"; // verwijderd
 
 const roboto = localFont({
@@ -26,12 +27,10 @@ const SEGMENT_LABELS: Record<string, string> = {
   tools: "Tools",
   tarieven: "Tarieven",
   steden: "Regio tarieven",
-  missie: "Missie",
   blog: "Blog",
   faq: "FAQ",
   opdrachtgevers: "Opdrachtgevers",
   brandwacht: "Brandwacht",
-  "brandwacht-inhuren": "Brandwacht inhuren",
   platform: "Platform",
   zzp: "ZZP",
   aanmelding: "Verkennende intake",
@@ -71,17 +70,13 @@ function titleizeSegment(segment: string) {
 }
 
 export const metadata: Metadata = {
-  title: "Brandwacht platform | ProBrandwacht",
+  title: "ProBrandwacht — Kennis en duiding",
   description:
-    "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
+    "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
   keywords: [
-    "wet dba",
-    "wet dba brandwacht",
-    "dba-bewust samenwerken",
-    "samenwerken binnen wet dba",
-    "zelfstandig werken brandwacht",
-    "platform voor zelfstandige brandwachten",
-    "probrandwacht",
+    ...seoKeywordClusters.core,
+    ...seoKeywordClusters.platform,
+    ...seoKeywordClusters.positioning,
   ],
   metadataBase: new URL(SITE_BASE_URL),
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
@@ -90,9 +85,9 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     url: SITE_BASE_URL,
     siteName: "ProBrandwacht",
-    title: "Brandwacht platform | ProBrandwacht",
+    title: "ProBrandwacht — Kennis en duiding",
     description:
-      "Inzicht, context en ondersteuning voor bewust zelfstandig werken. Voor brandwachten en opdrachtgevers die 1-op-1 willen samenwerken binnen Wet DBA (zonder bureau).",
+      "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
     images: [
       {
         url: "/og.jpg",

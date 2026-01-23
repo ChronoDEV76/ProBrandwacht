@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { Cta } from '@/components/Cta'
+import Link from 'next/link'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/probrandwacht-direct-spoed')
@@ -16,14 +16,13 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-            - geen bureau, geen werkgeversrol, geen matching-engine.
+              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              geen matching-engine.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen klassiek bureau. We bewaken uitvoerbaarheid en rolhelderheid voordat
-              we iets bevestigen. Spoed is bedoeld voor korte, duidelijke afspraken; beschikbaarheid blijft
-              afhankelijk van locatie en context.
+              ProBrandwacht is geen klassiek bureau. Spoed is bedoeld voor korte, duidelijke afspraken; de
+              context bepaalt wat verantwoord is.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -32,13 +31,23 @@ export default function ProBrandwachtDirectSpoedPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Als je vandaag nog inzet nodig hebt, wil je een ding voorkomen: ruis. Deze route focust op een
-              snelle aanvraag met minimale, noodzakelijke parameters zodat een zelfstandige snel kan
-              beoordelen of het past. Pas als rol, risico en beslislijnen helder zijn, zoeken we beschikbaarheid.
+              snelle aanvraag met minimale, noodzakelijke parameters zodat duidelijk is of het past. Pas als
+              rol, risico en beslislijnen helder zijn, ga je verder met afspraken.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Cta id="tertiary_contact_exploratory" />
-              <Cta id="secondary_direct_route" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Verkennend contact
+              </Link>
+              <Link
+                href="/probrandwacht-direct"
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-300"
+              >
+                Terug naar Direct
+              </Link>
             </div>
 
             <p className="text-xs text-slate-400">
@@ -71,7 +80,12 @@ export default function ProBrandwachtDirectSpoedPage() {
             </ul>
 
             <div className="mt-6">
-              <Cta id="about_kaders_intentie" className="text-sm font-semibold text-emerald-200 hover:text-emerald-100" />
+              <Link
+                href="/belangen"
+                className="text-sm font-semibold text-emerald-200 hover:text-emerald-100"
+              >
+                Kaders en intentie
+              </Link>
             </div>
           </div>
         </div>

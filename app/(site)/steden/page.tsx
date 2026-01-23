@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-
-import { Cta } from '@/components/Cta'
 import { CITY_DATA } from '@/lib/city-data'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
@@ -20,43 +18,66 @@ export default function StedenIndexPage() {
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Brandwacht per stad: context, risico’s en werkbare afspraken
+              Brandwacht per stad: context, risico's en werkbare afspraken
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht faciliteert transparante, zelfstandige samenwerking tussen opdrachtgever en brandwacht
-              - geen bureau, geen werkgeversrol, geen matching-engine.
+              ProBrandwacht duidt hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              geen matching-engine.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               De kern verandert niet per stad: <span className="font-semibold">rolverdeling</span>,{' '}
               <span className="font-semibold">verwachtingen</span> en{' '}
-              <span className="font-semibold">afspraken</span> moeten vooraf kloppen.
-              Wat wél verschilt is de omgeving (event, industrie, utiliteit, bouw) en de praktische
-              frictie op de vloer.
+              <span className="font-semibold">afspraken</span> hebben vooraf scherpte nodig. Wat wel verschilt is
+              de omgeving (event, industrie, utiliteit, bouw) en de praktische frictie op de vloer.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Daarom is elke stedenpagina een compacte “werkkaart”: wat komt vaak voor, waar let je op,
-              en welke afspraken voorkomen gedoe. Voorbeelden zijn{' '}
+              Daarom is elke stedenpagina een compacte werkkaart: wat komt vaak voor, waar let je op,
+              en welke afspraken helpen gedoe te beperken. Voorbeelden zijn{' '}
               <span className="font-semibold">indicatief</span> en{' '}
               <span className="font-semibold">contextafhankelijk</span>.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is géén “wij leveren standaard”-platform. Het is een vakinhoudelijke
-              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken - en
-              meebouwen aan een digitaal vervolg (ProSafetyMatch).
+              Belangrijk: ProBrandwacht is geen \"wij leveren standaard\"-aanbieder. Het is een vakinhoudelijke
+              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
             </p>
 
+            <div className="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-5 text-sm text-slate-200 md:text-base">
+              <h2 className="text-lg font-semibold text-white">Hoe je de stedenpagina's leest</h2>
+              <ul className="mt-3 space-y-2">
+                <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
+                <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
+                <li><strong>Wat ProBrandwacht wél/niet doet:</strong> duiden en kaderen, geen bemiddeling.</li>
+                <li><strong>Verantwoordelijkheid:</strong> afspraken en uitvoering blijven bij opdrachtgever en professional.</li>
+              </ul>
+            </div>
+
             <div className="flex flex-wrap gap-3 pt-2">
-              <Cta id="brandwacht_intake_fit" className="rounded-full px-4 py-2" />
-              <Cta id="opdrachtgever_intake_fit" className="rounded-full px-4 py-2" />
-              <Cta id="secondary_why_no" className="rounded-full px-4 py-2" />
+              <Link
+                href="/voor-brandwachten"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Voor brandwachten
+              </Link>
+              <Link
+                href="/opdrachtgevers"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Voor opdrachtgevers
+              </Link>
+              <Link
+                href="/waarom-wij-soms-nee-zeggen"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Waarom wij soms nee zeggen
+              </Link>
             </div>
 
             <p className="pt-1 text-xs text-slate-400">
-              Tip: kies je stad en lees vooral het stuk “praktische afspraken”. Dáár win je vertrouwen.
+              Tip: kies je stad en lees vooral het stuk “praktische afspraken”. Dat helpt vertrouwen opbouwen.
             </p>
           </div>
         </div>
@@ -80,9 +101,9 @@ export default function StedenIndexPage() {
             Niche & verwachting
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            ProBrandwacht focust op samenwerking die “inspectie-proof” en operationeel werkbaar is.
-            Niet iedereen past in die manier van werken - en dat is oké. Als je vooral &quot;snel uren&quot;
-            zoekt zonder heldere afspraken, dan is een klassiek bureau-model vaak logischer.
+            ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Niet iedereen
+            past in die manier van werken -- en dat is oké. Als je vooral snelheid zoekt zonder heldere
+            afspraken, dan is een klassiek bureau-model vaak logischer.
           </p>
         </div>
       </section>

@@ -15,21 +15,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/brandwacht-inhuren/:city',
-        destination: '/steden/:city',
-        permanent: true,
-      },
-      {
-        source: '/brandwacht-inhuren',
-        destination: '/opdrachtgevers',
-        permanent: true,
-      },
-      {
-        source: '/brandwacht-huren/:city',
-        destination: '/steden/:city',
-        permanent: true,
-      },
-      {
         source: '/missie',
         destination: '/over-ons',
         permanent: true,
@@ -40,8 +25,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/brandwacht-huren',
-        destination: '/opdrachtgevers',
+        source: '/blog/wanneer-is-een-zelfstandige-brandwacht-verplicht-bij-evenementen',
+        destination: '/blog/wanneer-is-een-zelfstandige-brandwacht-vereist-bij-evenementen',
         permanent: true,
       },
     ];

@@ -9,10 +9,10 @@ export const authoritativeSources: AuthoritativeSource[] = [
   {
     id: 'cbs',
     title: 'CBS (Centraal Bureau voor de Statistiek)',
-    description: 'Cao-lonen, loonkosten en arbeid (85663NED).',
+    description: 'Cao-lonen en arbeid (85663NED).',
     links: [
       {
-        label: 'CBS StatLine cao-lonen & contractuele loonkosten',
+        label: 'CBS StatLine cao-lonen & contractuele afspraken',
         href: 'https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85663NED',
       },
     ],
@@ -20,12 +20,8 @@ export const authoritativeSources: AuthoritativeSource[] = [
   {
     id: 'kvk',
     title: 'KVK (Kamer van Koophandel)',
-    description: 'Uurtarief berekenen zzp en ondernemersregels.',
+    description: 'Ondernemersregels en inschrijven als zelfstandige.',
     links: [
-      {
-        label: 'KVK – Uurtarief berekenen als zzp’er',
-        href: 'https://www.kvk.nl/geldzaken/uurtarief-bepalen/',
-      },
       {
         label: 'KVK – Inschrijven en ondernemen',
         href: 'https://www.kvk.nl/inschrijven-en-wijzigen/',

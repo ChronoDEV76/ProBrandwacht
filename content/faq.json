@@ -1,149 +1,59 @@
 [
   {
-    "title": "Eerlijke tarieven (geen gegarandeerde volumes)",
-    "items": [
-      {
-        "id": "tarief-verdeling",
-        "question": "Hoe wordt het tarief verdeeld bij een traditioneel bureau?",
-        "summary": "Bij samenwerking via tussenpersonen is de tariefverdeling niet altijd volledig inzichtelijk. Bedragen zijn indicatief en contextafhankelijk.",
-        "answer": [
-          "In de praktijk houden tussenpersonen vaak een substantiële marge over; de exacte verdeling hangt af van sector, inzet en verantwoordelijkheden.",
-          "Sommige bureaus nemen aanvullende taken op zich (planning, administratie, compliance), andere beperken zich tot bemiddeling.",
-          "Voorbeeld (indicatief): een deel gaat naar overhead/bemiddeling en een deel naar de zelfstandige brandwacht.",
-          "Verdeling verschilt per situatie en is altijd afhankelijk van context."
-        ],
-        "more": {
-          "href": "/blog/wat-kost-een-brandwacht-in-2025",
-          "label": "Lees: Wat kost een brandwacht in 2025?"
-        }
-      },
-      {
-        "id": "bronnen",
-        "question": "Welke officiële bronnen gebruiken jullie voor tarieven en regelgeving?",
-        "summary": "We baseren ons op openbare en verifieerbare bronnen.",
-        "answer": [
-          "CBS (loon- en loonkostenstatistieken).",
-          "KVK (kostenmodellen voor zzp’ers).",
-          "Belastingdienst (Wet DBA, aftrekposten).",
-          "FNV-publicaties en richtlijnen.",
-          "Door deze bronnen te combineren ontstaat inzicht in marktcontext en bandbreedtes, geen vast tarief."
-        ],
-        "more": {
-          "href": "/seo-resources",
-          "label": "Bekijk alle autoritaire bronnen"
-        }
-      },
-      {
-        "id": "lage-tarieven",
-        "question": "Waarom lijkt een laag uurtarief soms voldoende, maar pakt het anders uit?",
-        "summary": "Een tarief kan op papier goed lijken, maar in de praktijk anders uitpakken.",
-        "answer": [
-          "Een uurtarief kan op papier passend lijken, mits de context klopt.",
-          "Na bureaukosten, reistijd, onregelmatigheid en eigen kosten (verzekering, opleiding) blijft soms minder netto over dan verwacht.",
-          "Daarom is het belangrijk het volledige plaatje te bekijken, niet alleen het uurtarief."
-        ]
-      },
-      {
-        "id": "marktconform",
-        "question": "Welke tarieven zijn marktconform voor brandwachten?",
-        "summary": "Er bestaat geen vast marktconform tarief.",
-        "answer": [
-          "Indicatieve bandbreedtes voor dagdiensten verschillen per locatie, inzet en certificering.",
-          "Nacht-, weekend- en industriële inzet liggen doorgaans hoger.",
-          "Alle indicaties zijn contextafhankelijk en afhankelijk van locatie, certificering, ervaring en afspraken."
-        ]
-      },
-      {
-        "id": "typen-brandwachten",
-        "question": "Welke typen brandwachten zijn er?",
-        "summary": "Er bestaan verschillende vormen van inzet, afhankelijk van context.",
-        "answer": [
-          "Repressieve brandwachten uit korpsen of veiligheidsregio’s die naast hun dienst werken.",
-          "Zelfstandige brandwachten met rijksdiploma’s die hun opdrachten zelf organiseren.",
-          "Industriële brandwachten met aanvullende petrochemische certificaten voor risicovolle omgevingen.",
-          "ProSafetyMatch maakt profielen inzichtelijk met relevante informatie zoals certificaten en tariefcontext."
-        ]
-      }
+    "id": "wat-is-probrandwacht",
+    "question": "Wat is ProBrandwacht?",
+    "answer": [
+      "ProBrandwacht is een onafhankelijk kennis- en informatie-initiatief voor de brandwachtenmarkt.",
+      "Het doel is uitleggen hoe zelfstandige samenwerking werkt en waar opdrachtgevers en professionals op moeten letten."
     ]
   },
   {
-    "title": "Samenwerking & betaling",
-    "items": [
-      {
-        "id": "zzp-verdiensten",
-        "question": "Wat verdien ik als zzp’er via ProSafetyMatch?",
-        "summary": "Je spreekt het tarief zelf af; er zijn geen garanties.",
-        "answer": [
-          "Je tarief spreek je rechtstreeks af met de opdrachtgever.",
-          "Dagdiensten kennen vaak andere bandbreedtes dan nacht-, weekend- en industriële inzet.",
-          "Nacht-, weekend- en industriële inzet kennen vaak hogere bandbreedtes.",
-          "Er worden geen volumes, uren of inkomsten gegarandeerd."
-        ]
-      },
-      {
-        "id": "indexeren",
-        "question": "Kan ik mijn tarief indexeren?",
-        "summary": "Ja, als je dit vooraf afspreekt.",
-        "answer": [
-          "Indexeer bij voorkeur jaarlijks op basis van CBS-loonkosten of inflatie.",
-          "Leg vooraf vast welke index of methode wordt gebruikt om discussie te voorkomen."
-        ]
-      },
-      {
-        "id": "betalingen",
-        "question": "Hoe werken betaalafspraken?",
-        "summary": "Opdrachtgever en professional maken hier samen afspraken over.",
-        "answer": [
-          "Betalingstermijnen en voorwaarden spreek je rechtstreeks af.",
-          "ProSafetyMatch faciliteert het proces, maar neemt geen ondernemerschap over.",
-          "Bij een terechte klacht kan betaling tijdelijk worden gepauzeerd totdat er een oplossing is."
-        ]
-      },
-      {
-        "id": "probrandwacht-vs-prosafety",
-        "question": "Wat is het verschil tussen ProBrandwacht en ProSafetyMatch?",
-        "summary": "Het zijn verschillende onderdelen met elk een eigen rol (geen bureau, geen werkgever, geen matching-engine).",
-        "answer": [
-          "ProBrandwacht is de vakinhoudelijke en verkennende omgeving.",
-          "ProSafetyMatch wordt een digitale laag (gefaseerd, in ontwikkeling).",
-          "Aanmelden geeft geen garantie op opdrachten of volumes."
-        ]
-      },
-      {
-        "id": "live",
-        "question": "Wanneer gaat ProSafetyMatch live?",
-        "summary": "We werken toe naar een gefaseerde lancering.",
-        "answer": [
-          "De uitrol gebeurt via pilots en gefaseerde stappen.",
-          "Planning is onder voorbehoud en afhankelijk van ontwikkeling."
-        ]
-      }
+    "id": "is-probrandwacht-een-bureau",
+    "question": "Is ProBrandwacht een bureau of bemiddelaar?",
+    "answer": [
+      "Nee. ProBrandwacht is geen bureau, geen werkgever en geen bemiddelaar.",
+      "ProBrandwacht brengt geen partijen samen en sluit geen overeenkomsten."
     ]
   },
   {
-    "title": "Wet DBA & zelfstandig werken",
-    "items": [
-      {
-        "id": "wet-dba",
-        "question": "Hoe zit het met Wet DBA en schijnzelfstandigheid?",
-        "summary": "We werken DBA-bewust, maar geven geen garanties.",
-        "answer": [
-          "ProBrandwacht werkt DBA-bewust, niet DBA-verklarend.",
-          "Dat betekent heldere afspraken vooraf en zichtbare rolverdeling.",
-          "De uiteindelijke beoordeling blijft contextafhankelijk en ligt bij opdrachtgever en zelfstandige.",
-          "ProBrandwacht is geen bureau, geen werkgever en geen matching-engine."
-        ]
-      },
-      {
-        "id": "doelgroep",
-        "question": "Voor wie is ProBrandwacht bedoeld?",
-        "summary": "Voor bewuste zelfstandigen en opdrachtgevers.",
-        "answer": [
-          "Voor professionals die transparantie en zelfstandigheid belangrijk vinden.",
-          "Ongeacht naam, achtergrond of netwerk.",
-          "De keuzevrijheid staat centraal."
-        ]
-      }
+    "id": "maakt-probrandwacht-afspraken",
+    "question": "Maakt ProBrandwacht afspraken tussen opdrachtgever en brandwacht?",
+    "answer": [
+      "Nee. Alle afspraken worden rechtstreeks gemaakt tussen opdrachtgever en zelfstandig professional.",
+      "ProBrandwacht biedt alleen context en uitleg over waar zulke afspraken aan moeten voldoen."
+    ]
+  },
+  {
+    "id": "geeft-probrandwacht-garanties",
+    "question": "Geeft ProBrandwacht garanties over inzet of samenwerking?",
+    "answer": [
+      "Nee. ProBrandwacht geeft geen garanties over beschikbaarheid, uitvoering of uitkomst.",
+      "Samenwerking blijft altijd de verantwoordelijkheid van de betrokken partijen."
+    ]
+  },
+  {
+    "id": "stuurt-probrandwacht-op-prijs",
+    "question": "Stuurt ProBrandwacht op prijs of rekenmodellen?",
+    "answer": [
+      "Nee. ProBrandwacht doet geen prijssturing en geeft geen rekenmodellen of richtlijnen.",
+      "Het initiatief duidt alleen waarom duidelijke afspraken belangrijk zijn."
+    ]
+  },
+  {
+    "id": "is-probrandwacht-een-compliance-oplossing",
+    "question": "Is ProBrandwacht een compliance- of juridische oplossing?",
+    "answer": [
+      "Nee. ProBrandwacht biedt geen compliance-oplossing en neemt geen risico's over.",
+      "Het initiatief helpt om beter te begrijpen hoe samenwerking uitlegbaar kan blijven."
+    ]
+  },
+  {
+    "id": "voor-wie-is-probrandwacht",
+    "question": "Voor wie is ProBrandwacht bedoeld?",
+    "answer": [
+      "Voor opdrachtgevers die zelfstandige brandwachten inschakelen.",
+      "Voor professionals die bewust zelfstandig willen werken.",
+      "Voor iedereen die inzicht wil in hoe de brandwachtenmarkt functioneert."
     ]
   }
 ]

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import ClientPage from '@/app/zzp/aanmelden/client-page'
+import AfbakeningNote from '@/components/afbakening-note'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
@@ -31,7 +32,7 @@ export default function VoorBrandwachtenAanmeldenPage() {
             Belangrijk om te weten
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
-            <li>• ProBrandwacht is een verkennend platform - geen klassiek bureau en geen tussenlaag.</li>
+            <li>• ProBrandwacht is een verkennend initiatief - geen klassiek bureau en geen tussenlaag.</li>
             <li>• We bewaken uitvoerbaarheid en zeggen soms nee als randvoorwaarden niet kloppen.</li>
             <li>• We doen geen garantie op inzet: samenwerking en inzet blijven contextafhankelijk.</li>
             <li>• Verkennende intake = geen inschrijving; selectie kan onderdeel zijn van onboarding.</li>
@@ -40,6 +41,9 @@ export default function VoorBrandwachtenAanmeldenPage() {
         </div>
       </div>
       <ClientPage heading={heading} />
+      <div className="mx-auto w-full max-w-5xl px-4 pb-10">
+        <AfbakeningNote />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

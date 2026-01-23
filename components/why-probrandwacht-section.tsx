@@ -4,17 +4,15 @@ export default function WhyProbrandwachtSection() {
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8 max-w-3xl space-y-3">
           <h2 className="text-2xl font-semibold text-slate-50 md:text-3xl">
-            Anders dan klassieke bureauconstructies: transparant en rechtstreeks
+            Duiding voor zelfstandige samenwerking
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Veel brandwachten kennen het klassieke model: diensten worden voor je doorgestuurd, er
-            wordt namens jou onderhandeld en afspraken worden minder transparant. ProBrandwacht
-            werkt anders. Wij zijn geen klassieke capaciteitsleverancier, maar een{' '}
-            <span className="font-semibold text-emerald-300">onafhankelijk platform</span> voor
-            zelfstandige professionals.
+            Veel brandwachten kennen onduidelijke ketens met te veel schakels. ProBrandwacht
+            werkt anders: we zijn een <span className="font-semibold text-emerald-300">onafhankelijk initiatief</span>
+            dat rolverdeling en afspraken helder maakt.
           </p>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Geen tariefsturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
+            Geen prijssturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
             opdrachtgevers.
           </p>
         </div>
@@ -23,35 +21,31 @@ export default function WhyProbrandwachtSection() {
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-emerald-300">Jij houdt de regie</h3>
             <p className="text-sm text-slate-200">
-              Je kiest zelf welke opdrachten je aanneemt, welk tarief je hanteert en met wie je
-              samenwerkt. Geen planning die over jouw agenda beslist.
+              Je kiest zelf welke opdrachten je aanneemt en met wie je samenwerkt. Geen planning die
+              over jouw agenda beslist.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-slate-300">
-              Brug tussen opdrachtgevers en zzp’ers
+              Duidelijke afstemming
             </h3>
             <p className="text-sm text-slate-200">
-              Het platform houdt gesprekken, planning en resultaten gedeeld en gezamenlijk
-              goedgekeurd zodat beide partijen dezelfde geschiedenis zien en samen verantwoordelijk
-              blijven.
+              Afspraken over scope, communicatie en resultaat worden gedeeld en toetsbaar gemaakt,
+              zodat beide partijen dezelfde verwachtingen hebben.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
             <h3 className="text-sm font-semibold text-sky-300">Heldere afspraken</h3>
             <p className="text-sm text-slate-200">
-              Tarieven, rolverdeling en verantwoordelijkheden zijn helder en toetsbaar. Dat is beter
-              voor de zelfstandige brandwacht, de opdrachtgever en de kwaliteit van de
-              brandveiligheid.
+              Rolverdeling en verantwoordelijkheden zijn helder en toetsbaar. Dat is beter voor de
+              zelfstandige brandwacht, de opdrachtgever en de kwaliteit van de brandveiligheid.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <h3 className="text-sm font-semibold text-violet-300">
-              Geen marge op de vergoeding van de professional
-            </h3>
+            <h3 className="text-sm font-semibold text-violet-300">Geen tussenlaag</h3>
             <p className="text-sm text-slate-200">
-              We bouwen aan een model waarin de zelfstandige professional eerlijk wordt beloond.
-              Geen onzichtbare opslagen op de vergoeding van de professional.
+              ProBrandwacht is geen bemiddelaar en geen werkgever. Afspraken worden 1-op-1 gemaakt en
+              blijven volledig bij de betrokken partijen.
             </p>
           </div>
         </div>

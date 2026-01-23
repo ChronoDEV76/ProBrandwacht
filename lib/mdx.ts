@@ -10,10 +10,6 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 // MDX components available inside blog posts
-import TariefTabel from '@/components/mdx/TariefTabel'
-import KostenOpbouw from '@/components/mdx/KostenOpbouw'
-import KostenOpbouwScenarios from '@/components/mdx/KostenOpbouwScenarios'
-import FeeVergelijk from '@/components/mdx/FeeVergelijk'
 import Bronnen from '@/components/mdx/Bronnen'
 import ConclusieMarkt from '@/components/mdx/ConclusieMarkt'
 import Tldr from '@/components/mdx/Tldr'
@@ -61,10 +57,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     },
     // Components available in MDX:
     components: {
-      TariefTabel,
-      KostenOpbouw,
-      KostenOpbouwScenarios,
-      FeeVergelijk,
       Bronnen,
       ConclusieMarkt,
       Tldr,

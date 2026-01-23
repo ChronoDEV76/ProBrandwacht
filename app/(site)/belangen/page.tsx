@@ -17,28 +17,28 @@ export default function BelangenPage() {
 
   const principles = [
     {
-      title: 'DBA-bewust is ook gedrag',
-      body: 'Niet alleen papier. Ook op de vloer: communicatie, rolverdeling en het vermijden van feitelijke gezagsverhouding.',
+      title: 'Rolhelderheid voorop',
+      body: 'Vooraf moet duidelijk zijn wie beslist, wie uitvoert en waar grenzen liggen. Dat helpt ruis op locatie te beperken.',
     },
     {
-      title: 'Afspraken vooraf',
-      body: 'Tarief, inzet, verantwoordelijkheden en randvoorwaarden worden vooraf afgestemd en vastgelegd (scenario-afhankelijk).',
+      title: 'Afspraken in gewone taal',
+      body: 'Leg vast wat er nodig is om uitvoering begrijpelijk te houden: scope, stopcriteria en beslislijnen.',
     },
     {
-      title: 'Transparantie over kosten',
-      body: 'Kosten/fee en afspraken zijn uitlegbaar. Geen vage ‘pakketjes’, wél inzichtelijke opbouw.',
+      title: 'Professionele autonomie',
+      body: 'Zelfstandig werken vraagt ruimte om grenzen aan te geven. Dat is geen weerstand, maar verantwoordelijkheid.',
     },
     {
-      title: 'Selectie is onderdeel van kwaliteit',
-      body: 'Niet iedereen past. Dat is geen oordeel, maar een veiligheidskeuze: voorspelbaarheid in uitvoering.',
+      title: 'Uitlegbaarheid boven snelheid',
+      body: 'Wat vooraf niet uit te leggen is, wordt achteraf een probleem. Duidelijkheid komt eerst.',
     },
     {
-      title: 'Spoed blijft spoed',
-      body: 'Korte uitvraag, snelle afstemming, en passende routes voor betaling/afronding. Beschikbaarheid blijft contextafhankelijk.',
+      title: 'Context bepaalt het kader',
+      body: 'Geen vaste modellen. Elke inzet heeft eigen risico’s, omgeving en randvoorwaarden.',
     },
     {
-      title: 'Eén aanspreeklijn, zonder schijn-hiërarchie',
-      body: 'Op de vloer moet duidelijk zijn wie wat beslist. Daarom maken we rolbegrip expliciet en toetsbaar.',
+      title: 'Geen tussenlaag',
+      body: 'ProBrandwacht duidt en kadert, maar neemt geen rol over in uitvoering of afspraken.',
     },
   ]
 
@@ -53,17 +53,15 @@ export default function BelangenPage() {
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
           <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Kaders & intentie
+            Kaders en intentie
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-4xl">
-            Dit is waar ProBrandwacht voor staat —
-            <br className="hidden md:block" />
-            helder, toetsbaar en uitvoerbaar.
+            Dit is waar ProBrandwacht voor staat -- helder, uitlegbaar en uitvoerbaar.
           </h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Deze pagina is bewust concreet. Niet om te “verkopen”, maar om verwachtingen goed te zetten.
+            Deze pagina is bewust concreet. Niet om te verkopen, maar om verwachtingen goed te zetten.
             In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat in de praktijk standhoudt.
           </p>
 
@@ -107,8 +105,8 @@ export default function BelangenPage() {
           <div className="mt-8 rounded-3xl border border-white/10 bg-slate-900/60 p-6">
             <p className="text-sm font-semibold text-white">Twijfel je of dit past?</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie blind tekent of de intentie niet leest,
-              loopt later risico op frictie — en dat is precies wat we willen voorkomen.
+              Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie blind tekent of de intentie niet
+              leest, loopt later risico op frictie -- en dat is precies wat we willen voorkomen.
             </p>
           </div>
         </div>

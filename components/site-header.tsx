@@ -5,8 +5,8 @@ import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 import { Cta } from '@/components/Cta'
 
 const LINKS = [
-  { href: '/voor-brandwachten', label: 'Voor brandwachten (selectief)' },
-  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers (uitvoerbaar)' },
+  { href: '/voor-brandwachten', label: 'Voor brandwachten' },
+  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
   { href: '/waarom-wij-soms-nee-zeggen', label: 'Waarom wij soms nee zeggen' },
   { href: '/blog', label: 'Blog / Kennisbank' },
   { href: '/over-ons', label: 'Over ons' },
@@ -47,7 +47,7 @@ export default function SiteHeader() {
             <Link
               href="/probrandwacht-direct-spoed"
               prefetch={false}
-              title="Spoed & inzet via Slack"
+              title="Spoed & inzet"
               aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
               className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
@@ -99,6 +99,11 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
               {link.label}
             </Link>
           ))}
+        </div>
+
+        <div className="border-t border-white/15 px-4 py-3 text-xs text-white/80">
+          ProBrandwacht duidt de markt en kaders voor zelfstandige samenwerking — het platform zelf bemiddelt
+          niet en stuurt niet.
         </div>
 
         {SPOED_UI_ENABLED ? (
