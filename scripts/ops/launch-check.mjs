@@ -105,13 +105,23 @@ function apiRouteExists(routePath) {
 
 function hasSitemap() {
   const publicFile = path.join(ROOT, "public", "sitemap.xml");
+  const appRoute = path.join(ROOT, "app", "sitemap.ts");
+  const appXmlRoute = path.join(ROOT, "app", "sitemap.xml", "route.ts");
   const routeBuilt = path.join(ROOT, ".next", "server", "app", "sitemap.xml", "route.js");
   const topRoute = path.join(ROOT, ".next", "server", "app", "sitemap.xml.js");
-  return fs.existsSync(publicFile) || fs.existsSync(routeBuilt) || fs.existsSync(topRoute);
+  return (
+    fs.existsSync(publicFile) ||
+    fs.existsSync(appRoute) ||
+    fs.existsSync(appXmlRoute) ||
+    fs.existsSync(routeBuilt) ||
+    fs.existsSync(topRoute)
+  );
 }
 
 function hasRobotsTxt() {
-  return fs.existsSync(path.join(ROOT, "public", "robots.txt"));
+  const publicFile = path.join(ROOT, "public", "robots.txt");
+  const appRoute = path.join(ROOT, "app", "robots.ts");
+  return fs.existsSync(publicFile) || fs.existsSync(appRoute);
 }
 
 function buildIfNeeded() {
