@@ -24,6 +24,7 @@ const INCLUDE_DIRS = [
 const EXTENSIONS = [".tsx", ".mdx", ".md", ".json"];
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+const BLOG_DIR = path.join(ROOT, "content", "blog");
 
 /* =======================
    RULESETS
@@ -111,6 +112,16 @@ function walk(dir, files = []) {
 ======================= */
 
 const findings = [];
+let suppressed = 0;
+
+const STRONG_GUARANTEE = /\b(garandeer|gegarandeerd|garantie|100%|altijd)\b/i;
+const ADVICE_LANGUAGE = /\b(advies|aanbevolen|zet\s+in\s+op)\b/i;
+
+function getWindow(content, index, size = 50) {
+  const start = Math.max(0, index - size);
+  const end = Math.min(content.length, index + size);
+  return content.slice(start, end);
+}
 
 for (const relDir of INCLUDE_DIRS) {
   const absDir = path.join(ROOT, relDir);
@@ -118,23 +129,43 @@ for (const relDir of INCLUDE_DIRS) {
 
   for (const file of files) {
     const content = fs.readFileSync(file, "utf8");
+    const isBlog = file.startsWith(`${BLOG_DIR}${path.sep}`);
 
     for (const rule of RULES) {
       for (const pattern of rule.patterns) {
         const re = pattern.re ?? pattern;
-        const level = pattern.level ?? rule.level;
+        let level = pattern.level ?? rule.level;
         const allowIf = pattern.allowIf;
         const match = content.match(re);
         if (match) {
           const index = match.index || 0;
+          const window = getWindow(content, index, 50);
+
           if (allowIf) {
-            const windowStart = Math.max(0, index - 50);
-            const windowEnd = Math.min(content.length, index + 50);
-            const window = content.slice(windowStart, windowEnd);
             if (allowIf.test(window)) {
+              suppressed += 1;
               continue;
             }
           }
+
+          if (isBlog) {
+            if (rule.id === "PRICE_SIGNALS") {
+              level = "INFO";
+              if (/\bpercentage\b/i.test(match[0])) {
+                suppressed += 1;
+                continue;
+              }
+              if (/\btarieven?\b/i.test(match[0]) && !ADVICE_LANGUAGE.test(window)) {
+                suppressed += 1;
+                continue;
+              }
+            }
+
+            if (rule.id === "GUARANTEE_LANGUAGE" && /\bzekerheid\b/i.test(match[0])) {
+              level = STRONG_GUARANTEE.test(window) ? "HIGH" : "INFO";
+            }
+          }
+
           const snippet = content
             .slice(Math.max(0, index - 60), index + 60)
             .replace(/\s+/g, " ");
@@ -145,7 +176,8 @@ for (const relDir of INCLUDE_DIRS) {
             file: path.relative(ROOT, file),
             match: match[0],
             context: snippet,
-            message: rule.message
+            message: rule.message,
+            category: isBlog ? "BLOG" : "FRONTSTAGE"
           });
         }
       }
@@ -159,12 +191,36 @@ for (const relDir of INCLUDE_DIRS) {
 
 const counts = {
   HIGH: findings.filter(f => f.level === "HIGH").length,
-  MEDIUM: findings.filter(f => f.level === "MEDIUM").length
+  MEDIUM: findings.filter(f => f.level === "MEDIUM").length,
+  INFO: findings.filter(f => f.level === "INFO").length
 };
 
 console.log("=== ProBrandwacht Copy Guard ===");
 console.log("Root:", ROOT);
-console.log(`Findings: ${findings.length} (HIGH ${counts.HIGH}, MEDIUM ${counts.MEDIUM})\n`);
+console.log(
+  `Findings: ${findings.length} (HIGH ${counts.HIGH}, MEDIUM ${counts.MEDIUM}, INFO ${counts.INFO})`
+);
+console.log(`Suppressed by allowlist: ${suppressed}\n`);
+
+const summary = {
+  FRONTSTAGE: { HIGH: 0, MEDIUM: 0, INFO: 0 },
+  BLOG: { HIGH: 0, MEDIUM: 0, INFO: 0 }
+};
+
+for (const f of findings) {
+  if (summary[f.category]?.[f.level] !== undefined) {
+    summary[f.category][f.level] += 1;
+  }
+}
+
+console.log("Policy summary");
+console.log(
+  `  Frontstage pages: HIGH ${summary.FRONTSTAGE.HIGH}, MEDIUM ${summary.FRONTSTAGE.MEDIUM}, INFO ${summary.FRONTSTAGE.INFO}`
+);
+console.log(
+  `  Blogs: HIGH ${summary.BLOG.HIGH}, MEDIUM ${summary.BLOG.MEDIUM}, INFO ${summary.BLOG.INFO} (MEDIUM as FYI)`
+);
+console.log("");
 
 for (const f of findings) {
   console.log(`[${f.level}] ${f.rule}`);
