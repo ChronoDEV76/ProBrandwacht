@@ -41,8 +41,8 @@ export default function StedenIndexPage() {
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is geen &quot;wij leveren standaard&quot;-aanbieder. Het is een vakinhoudelijke
-              route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
+              Belangrijk: ProBrandwacht is geen aanbieder of uitvoerder met standaardpakketten. Het is een
+              vakinhoudelijke route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
             </p>
 
             <div className="panel p-5 text-sm text-slate-200 md:text-base">

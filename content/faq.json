@@ -40,11 +40,12 @@
     ]
   },
   {
-    "id": "is-probrandwacht-een-compliance-oplossing",
-    "question": "Is ProBrandwacht een compliance- of juridische oplossing?",
+    "id": "is-probrandwacht-een-publieke-gids",
+    "question": "Is ProBrandwacht een publieke gids of juridisch oordeel?",
     "answer": [
-      "Nee. ProBrandwacht biedt geen compliance-oplossing en neemt geen risico's over.",
-      "Het initiatief helpt om beter te begrijpen hoe samenwerking uitlegbaar kan blijven."
+      "ProBrandwacht is een publieke gids: uitleg, context en afbakening over hoe samenwerken in de praktijk werkt.",
+      "Het biedt geen juridisch oordeel en levert geen compliance als product.",
+      "Het helpt vooral om risico's en aandachtspunten te herkennen en afspraken beter te kunnen onderbouwen."
     ]
   },
   {
