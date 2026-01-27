@@ -29,4 +29,4 @@ scripts/freeze_site_copy.py
 scripts/herstel freeze site copy.txt
 
 # Generated city copy
-lib/city-copy.generated.ts
+# lib/city-copy.base.ts (committed)

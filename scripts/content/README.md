@@ -5,7 +5,7 @@
 This repo uses a two-tier city copy setup to keep **generic generation** and **editorial overrides** separate.
 
 ### Files
-- `lib/city-copy.generated.ts`
+- `lib/city-copy.base.ts`
   - Auto-generated output from `scripts/content/generate-city-copy.mjs`.
 - `lib/city-copy.overrides.ts`
   - Hand-crafted overrides for specific cities. This file is **never overwritten**.

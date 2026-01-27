@@ -86,7 +86,7 @@ export const cityCopy: Record<string, CityCopy> = `;
 const fileContent =
   header + JSON.stringify(cityCopyData, null, 2) + ";\n";
 
-const targetPath = resolve(process.cwd(), "lib", "city-copy.generated.ts");
+const targetPath = resolve(process.cwd(), "lib", "city-copy.base.ts");
 writeFileSync(targetPath, fileContent, "utf8");
-console.log("✅ lib/city-copy.generated.ts gegenereerd op", targetPath);
+console.log("✅ lib/city-copy.base.ts gegenereerd op", targetPath);
 console.log("ℹ️  Let op: lib/city-copy.ts is handmatig beheerd en wordt niet overschreven.");
