@@ -20,25 +20,17 @@ export default function OverOnsPage() {
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht is een kennis- en vakplatform dat uitlegt hoe je brandveiligheidsinzet
-              professioneel organiseert: uitvoerbaar op de werkvloer, uitlegbaar richting stakeholders en
-              helder in rolverdeling.
+              ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
+              verantwoordelijkheden. We duiden hoe de markt werkt, welke randvoorwaarden ertoe doen en
+              waar samenwerking in de praktijk vaak schuurt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
-              bemiddelt niet en stuurt niet.
+              ProBrandwacht is geen bureau, geen werkgever en geen matching-engine. We bemiddelen niet,
+              sturen niet op tarieven en doen geen transacties.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht vertegenwoordigt geen beroepsgroep en spreekt niet namens brandwachten,
-              opdrachtgevers of intermediairs.
-            </p>
-            <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Er wordt onderzocht of er in de toekomst ondersteunende tooling kan ontstaan die afspraken
-              beter helpt documenteren — dat verandert niets aan de onafhankelijke rol van ProBrandwacht.
-            </p>
-            <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              De markt is in beweging. Wetgeving, praktijk en interpretatie lopen niet in alle gevallen gelijk.
-              ProBrandwacht pretendeert geen definitieve antwoorden te geven.
+              Ons doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
+              uitlegbare keuzes kunnen maken — 1-op-1 en in de praktijk.
             </p>
           </div>
         </section>
@@ -70,6 +62,17 @@ export default function OverOnsPage() {
         <div className="mt-6">
           <AfbakeningNote />
         </div>
+
+        <section className="panel mt-8 p-6">
+          <h2 className="text-lg font-semibold text-white">Juridische disclaimer</h2>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200">
+            De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
+            geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
+            garanties over uitkomsten, kwalificaties of handhaving. Afspraken, tarieven en
+            verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
+            inhoud kunnen geen rechten worden ontleend.
+          </p>
+        </section>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link

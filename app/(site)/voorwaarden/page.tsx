@@ -52,10 +52,12 @@ export default function VoorwaardenPage() {
               en zelfstandige professional.
             </p>
 
-            <h2 className="text-lg font-semibold text-white">3. Geen garanties</h2>
+            <h2 className="text-lg font-semibold text-white">3. Juridische disclaimer</h2>
             <p>
-              ProBrandwacht geeft geen garantie op opdrachten, volumes of resultaten. Voorbeelden en
-              uitleg is indicatief en contextafhankelijk.
+              De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
+              geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
+              garanties over uitkomsten, kwalificaties of handhaving. Aan de inhoud kunnen geen rechten
+              worden ontleend.
             </p>
 
             <h2 className="text-lg font-semibold text-white">4. Eigen verantwoordelijkheid</h2>
@@ -73,6 +75,10 @@ export default function VoorwaardenPage() {
             <p>
               Informatie en voorbeelden zijn bedoeld als ondersteuning en bewustwording. Er kunnen geen
               rechten aan worden ontleend.
+            </p>
+            <p className="text-slate-300">
+              Afspraken, tarieven en verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever
+              en professional.
             </p>
 
             <h2 className="text-lg font-semibold text-white">6. Aansprakelijkheid</h2>

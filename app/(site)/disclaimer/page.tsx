@@ -22,8 +22,8 @@ export default function DisclaimerPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is een informatief en verkennend initiatief. Wij zijn geen bureau, geen werkgever
-              en geen contractpartij. Afspraken en samenwerking komen tot stand tussen de betrokken partijen.
+              ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
+              verantwoordelijkheden. We duiden de markt en kaders, maar bemiddelen niet en sturen niet.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -40,13 +40,14 @@ export default function DisclaimerPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="panel p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Wat dit betekent</h2>
-          <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li>– Geen tussenlaag of gezagsverhouding via het initiatief.</li>
-            <li>– Verantwoordelijkheid ligt bij opdrachtgevers en professionals.</li>
-            <li>– Uitleg is gebaseerd op praktijkervaring en sectorcontext.</li>
-            <li>– Geen garantie op inzet, uitkomst of afspraken.</li>
-          </ul>
+          <h2 className="text-xl font-semibold md:text-2xl">Juridische disclaimer</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-200">
+            De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
+            geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
+            garanties over uitkomsten, kwalificaties of handhaving. Afspraken, tarieven en
+            verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
+            inhoud kunnen geen rechten worden ontleend.
+          </p>
 
           <p className="mt-4 text-xs text-slate-400">
             Meer context? Bekijk de{' '}

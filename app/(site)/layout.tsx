@@ -7,6 +7,7 @@ import SiteHeader from "@/components/site-header";
 import SiteMain from "@/components/layout/site-main";
 import SiteFooter from "@/components/site-footer";
 import SiteHeroBackground from "@/components/site-hero-background";
+import DisclaimerNote from "@/components/disclaimer-note";
 import { seoKeywordClusters } from "@/lib/seo/seo-keywords";
 
 const roboto = localFont({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <SiteHeroBackground>
         <SiteMain>{children}</SiteMain>
       </SiteHeroBackground>
+      <DisclaimerNote />
       <SiteFooter />
     </div>
   );

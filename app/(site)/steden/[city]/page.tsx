@@ -54,14 +54,14 @@ export async function generateMetadata({
   const label = resolveLabel(rawCity)
   const canonical = `${BASE_URL}/steden/${rawCity}`
   const base = getRouteMetadata('/steden/[city]')
-  const title = `Zelfstandige brandwacht in ${label} | ProBrandwacht`
+  const title = `Brandwacht-inzet in ${label}: verantwoordelijkheden en regels | ProBrandwacht`
 
   const cityData = CITY_RECORD_MAP[rawCity] as CityRecordShape
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Zelfstandige brandwacht in ${label}? ${sectorNotes} ProBrandwacht legt uit hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
-    : `Zelfstandige brandwacht in ${label}? ProBrandwacht legt uit hoe afspraken en rolverdeling uitlegbaar blijven (contextafhankelijk).`
+    ? `Onafhankelijke uitleg over brandwacht-inzet in ${label}. ${sectorNotes} Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?`
+    : `Onafhankelijke uitleg over brandwacht-inzet in ${label}. Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?`
 
   return {
     ...base,
@@ -113,7 +113,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
     { name: 'Steden', url: 'https://www.probrandwacht.nl/steden' },
     {
-      name: `Zelfstandige brandwacht in ${label}`,
+      name: `Brandwacht-inzet in ${label}`,
       url: `https://www.probrandwacht.nl/steden/${rawCity}`,
     },
   ]
@@ -161,7 +161,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
 
       <section className="mx-auto max-w-5xl px-4 pt-10">
         <h1 className="text-3xl font-semibold text-white md:text-4xl">
-          Brandwachten in {label}: wat opdrachtgevers en professionals moeten weten
+          Brandwacht-inzet in {label}: verantwoordelijkheden, regels en aandachtspunten
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">

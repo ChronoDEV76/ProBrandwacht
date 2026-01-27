@@ -21,7 +21,22 @@ const nextConfig = {
       },
       {
         source: '/tarief-berekenen',
-        destination: '/blog/wat-kost-een-brandwacht-in-2025',
+        destination: '/blog/brandwacht-inzet-context-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/zzp-brandwacht-tarieven-2025',
+        destination: '/blog/brandwacht-inzet-context-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/zzp-brandwacht-tarieven-2025-wat-is-reeel',
+        destination: '/blog/brandwacht-inzet-context-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/5-meest-gemaakte-fouten-bij-zelfstandige-brandwacht-inhuur',
+        destination: '/blog/5-meest-gemaakte-fouten-bij-brandwacht-inzet',
         permanent: true,
       },
       {

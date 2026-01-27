@@ -2,11 +2,10 @@
 import type { NextSeoProps } from 'next-seo'
 
 const config: NextSeoProps = {
-  titleTemplate: '%s | ProSafetyMatch',
-  defaultTitle: 'ProSafetyMatch',
+  titleTemplate: '%s | ProBrandwacht',
+  defaultTitle: 'ProBrandwacht',
   openGraph: {
-    siteName: 'ProSafetyMatch',
+    siteName: 'ProBrandwacht',
   },
 }
 export default config
-

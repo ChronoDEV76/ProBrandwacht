@@ -12,16 +12,17 @@ import { coreCities } from '@/lib/cities'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
-const TITLE_CORE = 'Blog brandveiligheid & zzp-brandwachten'
+const TITLE_CORE = 'Kennisbank brandwacht-inzet & marktduiding'
 const BRAND_SUFFIX = 'ProBrandwacht'
 const DEFAULT_TITLE = `${TITLE_CORE} | ${BRAND_SUFFIX}`
 const DEFAULT_DESCRIPTION =
-  'Praktische inzichten over inzet, rolverdeling en samenwerking met zzp-brandwachten. Voor opdrachtgevers en professionals die helderheid en voorspelbaarheid willen.'
+  'Onafhankelijke uitleg over brandwacht-inzet, verantwoordelijkheden en regelgeving. Voor opdrachtgevers en professionals die de markt willen begrijpen.'
 const DEFAULT_KEYWORDS = [
   'brandwacht',
   'brandwacht uitleg',
-  'wet dba brandwacht',
-  'rolafbakening brandwacht',
+  'brandwacht-inzet uitleg',
+  'brandwachtenmarkt',
+  'rolverdeling brandwacht',
 ]
 const OG_IMAGE = `${BASE_URL}/og-home.webp`
 
@@ -263,6 +264,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-200">
+            Deze kennisbank is informatief. ProBrandwacht geeft geen juridisch, fiscaal of compliance-advies,
+            bemiddelt niet en biedt geen garanties. Afspraken en tarieven blijven 1-op-1 tussen opdrachtgever
+            en professional.
+          </div>
           <section className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>
@@ -273,7 +279,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
                     active={cat === c}
                   >
-                    {c === 'Wetgeving' ? 'Wet & regels' : c}
+                    {c === 'Wetgeving' ? 'Wet & regels' : c === 'Tarieven' ? 'Context & randvoorwaarden' : c}
                   </FilterChip>
                 ))}
               </nav>

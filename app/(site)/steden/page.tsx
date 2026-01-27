@@ -18,7 +18,7 @@ export default function StedenIndexPage() {
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Brandwacht per stad: context, risico&apos;s en werkbare afspraken
+              Brandwacht-inzet per stad: verantwoordelijkheden en aandachtspunten
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">

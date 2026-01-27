@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     "Soms is 'nee' de professionele keuze. Niet als oordeel, maar als grens voor uitvoerbaarheid, veiligheid en rolhelderheid in brandveiligheidsinzet.",
   keywords: [
     'brandwacht',
-    'brandwacht inhuren',
-    'brandwacht huren',
+    'brandwacht-inzet uitleg',
+    'brandwacht verantwoordelijkheden',
     'zelfstandig samenwerken',
     'uitvoerbaarheid',
     'rolhelderheid',

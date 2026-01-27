@@ -5,7 +5,7 @@ export function serviceJsonLd(city: CityRecord, pageUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Brandwacht inhuren ${city.name}`,
+    name: `Brandwacht-inzet in ${city.name}`,
     provider: { "@type": "Organization", name: "ProBrandwacht.nl", url: "https://www.probrandwacht.nl" },
     areaServed: city.name,
     url: pageUrl,

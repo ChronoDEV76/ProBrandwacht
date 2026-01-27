@@ -27,3 +27,6 @@ scripts/content_audit.py
 scripts/content_conscious_audit.py
 scripts/freeze_site_copy.py
 scripts/herstel freeze site copy.txt
+
+# Generated city copy
+lib/city-copy.generated.ts

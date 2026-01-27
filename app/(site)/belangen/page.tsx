@@ -65,6 +65,13 @@ export default function BelangenPage() {
             In een sector met veiligheid, druk en aansprakelijkheid werkt alleen wat in de praktijk standhoudt.
           </p>
 
+          <div className="panel max-w-3xl p-5">
+            <p className="text-sm leading-relaxed text-slate-200">
+              ProBrandwacht brengt geen mensen samen om iets af te dwingen, maar om te begrijpen hoe de
+              markt werkt — zodat iedereen zelf betere keuzes kan maken.
+            </p>
+          </div>
+
           <div className="flex flex-wrap gap-4 pt-2">
             <Link href="/opdrachtgevers" className="route-link">
               Voor opdrachtgevers

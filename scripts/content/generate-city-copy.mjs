@@ -20,14 +20,14 @@ function buildCityCopy({ slug, name }) {
   return {
     slug,
     name,
-    metaTitle: `Brandwacht in ${name} | ProBrandwacht`,
+    metaTitle: `Brandwacht-inzet in ${name}: verantwoordelijkheden en context | ProBrandwacht`,
     metaDescription:
-      `Werkkaart voor ${name}: lokale context, rolafbakening en aandachtspunten voor samenwerking. ` +
-      `ProBrandwacht duidt, geen bureau.`,
-    h1: `Brandwacht in ${name}`,
+      `Onafhankelijke uitleg over brandwacht-inzet in ${name}. ` +
+      `Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?`,
+    h1: `Brandwacht-inzet in ${name}: context en verantwoordelijkheden`,
     intro:
-      `Publieke werkkaart voor ${name}. ProBrandwacht duidt hoe samenwerking met zelfstandige ` +
-      `brandwachten uitlegbaar blijft — geen bureau, geen matching-engine, geen beloftes.`,
+      `Publieke werkkaart voor ${name}. ProBrandwacht duidt hoe brandwacht-inzet ` +
+      `uitlegbaar blijft — geen bureau, geen bemiddeling, geen beloftes.`,
     body: `## Afspraken vooraf in ${name}
 
 - **Scope en rol**: wat bewaak je precies, en wat valt er buiten?
@@ -86,6 +86,7 @@ export const cityCopy: Record<string, CityCopy> = `;
 const fileContent =
   header + JSON.stringify(cityCopyData, null, 2) + ";\n";
 
-const targetPath = resolve(process.cwd(), "lib", "city-copy.ts");
+const targetPath = resolve(process.cwd(), "lib", "city-copy.generated.ts");
 writeFileSync(targetPath, fileContent, "utf8");
-console.log("✅ lib/city-copy.ts gegenereerd op", targetPath);
+console.log("✅ lib/city-copy.generated.ts gegenereerd op", targetPath);
+console.log("ℹ️  Let op: lib/city-copy.ts is handmatig beheerd en wordt niet overschreven.");

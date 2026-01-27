@@ -165,17 +165,26 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/steden': {
-    title: 'Brandwacht per stad | ProBrandwacht',
+    title: 'Brandwacht-inzet per stad: context en verantwoordelijkheden | ProBrandwacht',
     description:
-      "Overzicht van stedenpagina's met lokale context en aandachtspunten voor samenwerking.",
-    keywords: [...seoKeywordClusters.core, 'brandwacht per stad', 'brandwacht regio'],
+      "Overzicht van stedenpagina's met lokale context, verantwoordelijkheden en aandachtspunten rond brandwacht-inzet.",
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandwacht-inzet per stad',
+      'brandwacht regio uitleg',
+    ],
   },
 
   '/steden/[city]': {
-    title: 'Zelfstandige brandwacht in jouw stad | ProBrandwacht',
+    title: 'Brandwacht-inzet in jouw stad: verantwoordelijkheden | ProBrandwacht',
     description:
-      'Uitleg over samenwerking met zelfstandige brandwachten in jouw stad. Afspraken blijven contextafhankelijk.',
-    keywords: [...seoKeywordClusters.core, 'brandwacht stad', 'brandwacht regio'],
+      'Onafhankelijke uitleg over brandwacht-inzet in jouw stad. Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?',
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandwacht-inzet uitleg',
+      'verantwoordelijkheden brandwacht',
+      'brandwachtenmarkt',
+    ],
   },
 
 

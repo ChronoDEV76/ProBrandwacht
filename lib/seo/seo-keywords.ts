@@ -1,10 +1,11 @@
 export const seoKeywordClusters = {
   core: [
     'brandwacht',
-    'brandwacht inhuren',
     'brandwacht samenwerken',
     'brandwacht uitleg',
     'brandwacht verantwoordelijkheden',
+    'brandwacht-inzet uitleg',
+    'brandwachtenmarkt',
   ],
   platform: [
     'brandwacht initiatief',
@@ -16,6 +17,8 @@ export const seoKeywordClusters = {
     'brandwacht afspraken uitleg',
     'brandwacht samenwerking uitleg',
     'uitleg brandwacht samenwerking',
+    'uitlegbare veiligheid',
+    'rol en verantwoordelijkheid brandwacht',
   ],
   zzpFreelance: [
     'zelfstandige brandwacht',
@@ -28,6 +31,7 @@ export const seoKeywordClusters = {
     'zzp brandwacht positie',
     '1-op-1 samenwerking zzp brandwacht',
     'veiligheidswacht zelfstandig',
+    'zelfstandige brandwacht uitleg',
   ],
   tariefInzicht: [
     'afspraken brandwacht',
@@ -35,6 +39,8 @@ export const seoKeywordClusters = {
     'rolafbakening samenwerking',
     'verantwoordelijkheden opdrachtgevers',
     'verantwoordelijkheden zelfstandigen',
+    'rolverdeling brandwacht',
+    'verantwoordelijkheid brandwacht',
   ],
   niches: [
     'industriële brandwacht',
@@ -46,7 +52,6 @@ export const seoKeywordClusters = {
     'brandwacht brandmeldinstallatie',
     'brandwacht heetwerkwacht',
     'brandwacht werkvergunning',
-    'veiligheidswacht inhuren',
     'brandwacht kantoor',
     'brandwacht zorginstelling',
   ],
@@ -70,5 +75,7 @@ export const seoKeywordClusters = {
     'DBA-bewust samenwerken',
     'professioneel oordeel veiligheid',
     'veiligheid in de praktijk',
+    'marktontwikkeling brandveiligheid',
+    'uitlegbare samenwerking',
   ],
 }

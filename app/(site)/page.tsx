@@ -147,9 +147,11 @@ export default function Page() {
           </div>
 
           <div className="panel p-6">
-            <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht biedt publieke informatie en marktuitleg. Samenwerking, afspraken en uitvoering
-              blijven in de regel de verantwoordelijkheid van opdrachtgever en professional zelf.
+            <h2 className="section-title">Juridische disclaimer</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              Deze informatie is informatief. ProBrandwacht geeft geen juridisch, fiscaal of
+              compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken en tarieven worden
+              in de regel 1-op-1 gemaakt tussen opdrachtgever en professional.
             </p>
             <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Niet oplossen.</p>
           </div>
