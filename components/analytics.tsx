@@ -10,6 +10,34 @@ export default function AnalyticsScripts() {
 
   return (
     <>
+      {(gtmId || gaId) ? (
+        <Script id="consent-default" strategy="afterInteractive">
+          {`
+            (function(){
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = window.gtag || gtag;
+              var consent = {
+                ad_storage: 'denied',
+                analytics_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              };
+              var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.msDoNotTrack === '1');
+              var stored = null;
+              try { stored = window.localStorage.getItem('pb_cookie_consent'); } catch(e){}
+              if (!dnt && stored === 'accepted') {
+                consent.ad_storage = 'granted';
+                consent.analytics_storage = 'granted';
+                consent.ad_user_data = 'granted';
+                consent.ad_personalization = 'granted';
+              }
+              gtag('consent', 'default', consent);
+            })();
+          `}
+        </Script>
+      ) : null}
       {gtmId ? (
         <>
           <Script id="gtm-loader" strategy="afterInteractive">

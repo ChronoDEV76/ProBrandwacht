@@ -6,6 +6,18 @@ const STORAGE_KEY = 'pb_cookie_consent'
 
 type ConsentState = 'accepted' | 'declined'
 
+type ConsentUpdate = {
+  ad_storage: 'granted' | 'denied'
+  analytics_storage: 'granted' | 'denied'
+  ad_user_data: 'granted' | 'denied'
+  ad_personalization: 'granted' | 'denied'
+}
+
+type AnalyticsWindow = Window & {
+  gtag?: (...args: unknown[]) => void
+  dataLayer?: unknown[]
+}
+
 export default function CookieNotice() {
   const [visible, setVisible] = useState(false)
 
@@ -20,6 +32,19 @@ export default function CookieNotice() {
   function handleChoice(choice: ConsentState) {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(STORAGE_KEY, choice)
+    }
+    const analyticsWindow = window as AnalyticsWindow
+    const consentValue = choice === 'accepted' ? 'granted' : 'denied'
+    const updatePayload: ConsentUpdate = {
+      ad_storage: consentValue,
+      analytics_storage: consentValue,
+      ad_user_data: consentValue,
+      ad_personalization: consentValue,
+    }
+    if (analyticsWindow.gtag) {
+      analyticsWindow.gtag('consent', 'update', updatePayload)
+    } else if (analyticsWindow.dataLayer) {
+      analyticsWindow.dataLayer.push(['consent', 'update', updatePayload])
     }
     setVisible(false)
   }
