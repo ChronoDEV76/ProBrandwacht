@@ -1,0 +1,362 @@
+{
+  "base": "http://localhost:3000",
+  "strict": false,
+  "scannedAt": "2026-02-01T18:20:13.960Z",
+  "pages": [
+    {
+      "url": "http://localhost:3000/",
+      "path": "/",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise_contextual",
+          "msg": "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/over-ons",
+      "path": "/over-ons",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise_contextual",
+          "msg": "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/opdrachtgevers",
+      "path": "/opdrachtgevers",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise",
+          "msg": "Expertise/kwalificatie signalen gevonden (certificering/wetgeving)."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/voor-brandwachten",
+      "path": "/voor-brandwachten",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise",
+          "msg": "Expertise/kwalificatie signalen gevonden (certificering/wetgeving)."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/disclaimer",
+      "path": "/disclaimer",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise_contextual",
+          "msg": "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/privacy",
+      "path": "/privacy",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (3)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise_contextual",
+          "msg": "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/voorwaarden",
+      "path": "/voorwaarden",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite, WebPage, Article)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (1)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise_contextual",
+          "msg": "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/blog",
+      "path": "/blog",
+      "final": "ok",
+      "warnCount": 0,
+      "findings": [
+        {
+          "level": "ok",
+          "key": "jsonld_present",
+          "msg": "JSON-LD aanwezig (types match: Organization, WebSite, FAQPage, Article)"
+        },
+        {
+          "level": "ok",
+          "key": "identity",
+          "msg": "Identiteit/‘over ons’ signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "policies",
+          "msg": "Privacy/voorwaarden/disclaimer signalen gevonden."
+        },
+        {
+          "level": "ok",
+          "key": "contact",
+          "msg": "Contact/bedrijfsgegevens signalen gevonden (2)."
+        },
+        {
+          "level": "ok",
+          "key": "experience",
+          "msg": "Ervarings-taal gevonden (praktijk/casus/scenario)."
+        },
+        {
+          "level": "ok",
+          "key": "expertise",
+          "msg": "Expertise/kwalificatie signalen gevonden (certificering/wetgeving)."
+        },
+        {
+          "level": "ok",
+          "key": "nuance",
+          "msg": "Nuance-termen gevonden (indicatief/contextafhankelijk/etc.)."
+        },
+        {
+          "level": "ok",
+          "key": "author_optional",
+          "msg": "Auteur/datum-signalen gelden vooral voor individuele blogposts."
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "ok": 8,
+    "warn": 0,
+    "fail": 0
+  }
+}
