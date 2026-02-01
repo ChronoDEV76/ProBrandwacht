@@ -26,7 +26,7 @@ export default function OverOnsPage() {
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               ProBrandwacht is geen bureau, geen werkgever en geen matching-engine. We bemiddelen niet,
-              sturen niet op tarieven en doen geen transacties.
+              sturen niet op voorwaarden en doen geen transacties.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               Ons doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
@@ -68,7 +68,7 @@ export default function OverOnsPage() {
           <p className="mt-3 text-sm leading-relaxed text-slate-200">
             De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
             geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
-            garanties over uitkomsten, kwalificaties of handhaving. Afspraken, tarieven en
+            garanties over uitkomsten, kwalificaties of handhaving. Afspraken over inzet en
             verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
             inhoud kunnen geen rechten worden ontleend.
           </p>

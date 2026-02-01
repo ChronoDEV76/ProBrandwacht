@@ -51,7 +51,7 @@ export default function PlatformPage() {
           </div>
 
           <div className="panel p-6">
-            <h2 className="section-title">Frontstage, geen backstage</h2>
+            <h2 className="section-title">Publieke uitleg, geen uitvoer</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht bevindt zich bewust aan de voorkant van de markt: praktische uitleg en publieke
               informatie.

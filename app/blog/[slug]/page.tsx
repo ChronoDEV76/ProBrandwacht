@@ -45,13 +45,23 @@ export async function generateMetadata({
     const { frontmatter } = await getPostBySlug(params.slug)
 
     const rawTitle = frontmatter.title as string | undefined
-    const title = rawTitle ? `${rawTitle} | ProBrandwacht` : 'Kennisbank | ProBrandwacht'
+    const category =
+      typeof frontmatter.category === 'string' ? frontmatter.category.toLowerCase() : undefined
+    const isSafetyFramework = category === 'veiligheidskundig kader'
+    const title = rawTitle
+      ? isSafetyFramework
+        ? `${rawTitle} — veiligheidskundig kader | ProBrandwacht`
+        : `${rawTitle} | ProBrandwacht`
+      : 'Kennisbank | ProBrandwacht'
     const canonical = `${BASE_URL}/blog/${params.slug}`
-    const description =
-      (frontmatter.tldr as string | undefined) ??
-      (frontmatter.excerpt as string | undefined) ??
-      (frontmatter.description as string | undefined) ??
-      'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
+    const safetyFrameworkDescription =
+      'Een veiligheidskundige beschouwing over rol, verantwoordelijkheid en systeemwerking binnen brandveiligheid. Uitleg en context, geen advies.'
+    const description = isSafetyFramework
+      ? safetyFrameworkDescription
+      : (frontmatter.tldr as string | undefined) ??
+        (frontmatter.excerpt as string | undefined) ??
+        (frontmatter.description as string | undefined) ??
+        'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
     const ogImage = toAbsoluteUrl(
       (frontmatter.ogImage as string | undefined) ??
         (frontmatter.image as string | undefined) ??
@@ -117,6 +127,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       (frontmatter.image as string | undefined) ??
       '/og-home.webp'
   )
+  const heroImage =
+    (frontmatter.image as string | undefined) ??
+    (frontmatter.ogImage as string | undefined) ??
+    undefined
+  const heroImageAlt =
+    (frontmatter.imageAlt as string | undefined) ?? title
+  const heroImagePosition =
+    (frontmatter.imagePosition as string | undefined) ?? 'center 60%'
   const breadcrumbItems = [
     { name: 'Home', item: 'https://www.probrandwacht.nl/' },
     { name: 'Kennisbank', item: 'https://www.probrandwacht.nl/blog' },
@@ -157,6 +175,19 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {updated ? <span>• Laatst bijgewerkt: {formatDate(updated)}</span> : null}
             {readingTime ? <span>• {readingTime}</span> : null}
           </div>
+
+          {heroImage ? (
+            <div className="mt-4 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40">
+              <div className="relative aspect-[16/9] w-full">
+                <img
+                  src={heroImage}
+                  alt={heroImageAlt}
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: heroImagePosition }}
+                />
+              </div>
+            </div>
+          ) : null}
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Cta id="brandwacht_interest_waitlist" />

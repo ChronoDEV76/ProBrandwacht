@@ -1,0 +1,154 @@
+{
+  "includeDirs": ["app/(site)", "components", "lib", "content"],
+  "extensions": [".tsx", ".mdx", ".md", ".json"],
+  "maxFileSizeBytes": 2097152,
+
+  "frontstageOnlyDirs": ["app/(site)"],
+
+  "affirmationSignals": [
+    "geen bureau",
+    "geen werkgever",
+    "geen matching-engine",
+    "geen prijssturing",
+    "uitleg",
+    "context",
+    "afbakening",
+    "zo werkt het",
+    "hier moet je op letten"
+  ],
+
+  "logicRules": [
+    {
+      "id": "REQUIRES_AFFIRMATION_WHEN_CTA_OR_PLATFORMISH",
+      "level": "HIGH",
+      "message": "Als je CTA/platform-achtige taal gebruikt, moet de pagina ook duidelijke afbakening/duiding bevatten (geen bureau/geen werkgever/geen matching-engine/geen prijssturing).",
+      "appliesTo": "FRONTSTAGE",
+      "triggerAny": [
+        "\\bboek(en)?\\b",
+        "\\baanvraag\\b",
+        "\\bspoed\\b",
+        "\\bdirect\\b",
+        "\\bplatform\\b",
+        "\\bwij\\s+(regelen|leveren|plaatsen|sturen|matchen|koppelen)\\b",
+        "\\bvia\\s+ons\\b"
+      ],
+      "excludePaths": ["app/(site)/admin/analytics"],
+      "requireAny": [
+        "geen bureau",
+        "geen werkgever",
+        "geen matching-engine",
+        "geen prijssturing",
+        "afbakening"
+      ]
+    },
+    {
+      "id": "NO_BACKSTAGE_BRAND_LINKING",
+      "level": "HIGH",
+      "message": "Frontstage mag ProSafetyMatch/backstage niet expliciet koppelen/verkopen. Houd ProBrandwacht onafhankelijk en duidend.",
+      "appliesTo": "FRONTSTAGE",
+      "triggerAny": [
+        "\\bprosafetymatch\\b",
+        "\\bbackstage\\b",
+        "\\bsaas\\b",
+        "\\bin\\s+ontwikkeling\\b"
+      ],
+      "excludePaths": ["app/(site)/admin/analytics"],
+      "requireAny": []
+    },
+    {
+      "id": "NO_PRICE_MODEL_LOGIC",
+      "level": "HIGH",
+      "message": "Frontstage mag geen rekenmodel/fee/percentages als mechaniek uitleggen (ook niet impliciet). Alleen context/risico/duiding.",
+      "appliesTo": "FRONTSTAGE",
+      "triggerAny": [
+        "\\b\\d+\\s*%\\b",
+        "€\\s?\\d+",
+        "\\bplatformfee\\b",
+        "\\bes\\s*crow\\b",
+        "\\bmarge\\b",
+        "\\bcalculator\\b",
+        "\\bbereken(en)?\\b"
+      ],
+      "requireAny": []
+    },
+    {
+      "id": "NO_ATTACK_LANGUAGE_TOWARDS_BUREAUS",
+      "level": "MEDIUM",
+      "message": "Let op aanval-/strijdtaal richting bureaus. Houd het beschrijvend en kaderend (marktduiding, geen vijandbeeld).",
+      "appliesTo": "FRONTSTAGE",
+      "triggerAny": [
+        "\\bbureaus?\\b.*\\b(verkopen|liegen|afromen|misleiden|schijnveiligheid)\\b",
+        "\\b(ruis\\s+blootleggen|verdienmodel\\s+op\\s+schijn)\\b",
+        "\\btegen\\s+bureaus\\b",
+        "\\bwij\\s+pakken\\s+bureaus\\b"
+      ],
+      "requireAny": []
+    },
+    {
+      "id": "BLOG_REQUIRED_SECTIONS",
+      "level": "MEDIUM",
+      "message": "Blogs moeten vaste rubrieken hebben: Veiligheidskundig kader + Afbakening + Gerelateerd.",
+      "appliesTo": "BLOG",
+      "triggerAny": ["\\b---\\b"],
+      "requireAllHeadings": ["Afbakening", "Gerelateerd"]
+    }
+  ],
+
+  "patternRules": [
+    {
+      "id": "ROLE_SHIFT",
+      "level": "HIGH",
+      "message": "Oplossing-/leverancierstaal: ProBrandwacht mag duiden, niet oplossen.",
+      "patterns": [
+        "\\bwij\\s+(regelen|leveren|lossen\\s+op|bieden|zorgen\\s+voor)\\b",
+        "\\bwij\\s+(matchen|koppelen|selecteren|plannen)\\b",
+        "\\bboek(en)?\\s+via\\b",
+        "\\bvia\\s+ons\\b"
+      ]
+    },
+    {
+      "id": "GUARANTEE_LANGUAGE",
+      "level": "HIGH",
+      "message": "Beloftes/garanties ondermijnen neutraliteit. ('geen garantie' is meestal oké, maar check toon.)",
+      "patterns": [
+        "\\bgegarandeerd\\b",
+        "\\bwij\\s+garanderen\\b",
+        "\\b100%\\b",
+        "\\baltijd\\s+zeker\\b",
+        "\\bcompliance[-\\s]?oplossing\\b",
+        "\\bDBA[-\\s]?proof\\b"
+      ],
+      "allowIfNear": ["geen garantie", "indicatief", "contextafhankelijk", "geen juridisch advies"]
+    },
+    {
+      "id": "PRICE_SIGNALS",
+      "level": "MEDIUM",
+      "message": "Prijs-/verdienmodeltaal: alleen beschrijvend, niet sturend.",
+      "patterns": [
+        "\\buurtarief\\b",
+        "\\btarieven?\\b",
+        "\\bfee\\b",
+        "\\bmarge\\b",
+        "\\bpercentage\\b",
+        "\\bcalculator\\b",
+        "\\bbereken(en)?\\b",
+        "€\\s?\\d+",
+        "\\b\\d+\\s*%\\b"
+      ]
+    },
+    {
+      "id": "UNION_FRAMING",
+      "level": "MEDIUM",
+      "message": "Vakbond-/activistische framing: blijf beschrijvend, niet strijdend.",
+      "patterns": [
+        "\\bopkomen\\s+voor\\b",
+        "\\bbeschermen\\b",
+        "\\bstrijd\\b",
+        "\\bafdwingen\\b",
+        "\\bcollectief\\b",
+        "\\bbelangenbehartiging\\b",
+        "\\bachterban\\b"
+      ]
+    }
+  ]
+}

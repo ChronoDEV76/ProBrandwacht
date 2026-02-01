@@ -1,0 +1,126 @@
+{
+  "name": "VR Blog Guard",
+  "version": 1,
+  "scan": {
+    "include": ["content/blog"],
+    "extensions": [".mdx"],
+    "excludeDirs": [
+      "node_modules",
+      ".next",
+      "dist",
+      "build",
+      "public",
+      ".git",
+      "scripts",
+      "tests",
+      "__tests__",
+      "coverage",
+      ".turbo",
+      ".cache"
+    ],
+    "maxFileSizeBytes": 2097152
+  },
+  "requiredFrontmatterKeys": [
+    "title",
+    "slug",
+    "date",
+    "category",
+    "description",
+    "canonical",
+    "pillar"
+  ],
+  "requiredSections": [
+    "Afbakening",
+    "Gerelateerd"
+  ],
+  "serp": {
+    "titleMin": 20,
+    "titleMax": 90,
+    "descriptionMin": 60,
+    "descriptionMax": 200,
+    "preferIntentWords": ["wat", "wanneer", "hoe", "checklist", "kader", "uitleg", "betekenis"],
+    "avoidWordsInTitle": ["garantie", "100%", "proof", "DBA-proof", "escrow", "fee", "marge"]
+  },
+  "tone": {
+    "vrWhitelist": [
+      "Bbl",
+      "veiligheidsregio",
+      "Brandweer",
+      "vergunning",
+      "vergunningvoorschrift",
+      "gebruiksmelding",
+      "omgevingsvergunning",
+      "veiligheidsplan",
+      "risicoanalyse",
+      "risicobeoordeling",
+      "maatregel",
+      "beheersmaatregel",
+      "toezicht",
+      "handhaving",
+      "incident",
+      "escalatie",
+      "rol",
+      "verantwoordelijkheid",
+      "bevoegdheid",
+      "mandaat",
+      "werkvloer",
+      "plan van aanpak",
+      "procedure"
+    ],
+    "vrRiskPhrases": [
+      "wij lossen op",
+      "wij regelen",
+      "wij garanderen",
+      "altijd veilig",
+      "volledig veilig",
+      "100% veilig",
+      "compliance-oplossing",
+      "DBA-proof",
+      "juridisch waterdicht",
+      "risicoloos"
+    ],
+    "attackLanguage": [
+      "bureaus verkopen",
+      "schijnveiligheid verkopen",
+      "slager keurt",
+      "afroming",
+      "parasiteren",
+      "oplich",
+      "graaien",
+      "kartel",
+      "misleiding"
+    ],
+    "priceSignals": [
+      "€",
+      "euro",
+      "uurtarief",
+      "tarief",
+      "tarieven",
+      "fee",
+      "platformfee",
+      "marge",
+      "percentage",
+      "%",
+      "rekentool",
+      "calculator",
+      "bereken"
+    ],
+    "allowedPriceContextMarkers": [
+      "context",
+      "bandbreedte",
+      "indicatief",
+      "verschilt per",
+      "afhankelijk van",
+      "markt",
+      "bron",
+      "CBS",
+      "FVN",
+      "verzekeraars",
+      "onderzoek"
+    ]
+  },
+  "components": {
+    "centralKaderComponent": "",
+    "allowedVariants": []
+  }
+}

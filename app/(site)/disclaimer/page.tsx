@@ -44,9 +44,14 @@ export default function DisclaimerPage() {
           <p className="mt-4 text-sm leading-relaxed text-slate-200">
             De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
             geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
-            garanties over uitkomsten, kwalificaties of handhaving. Afspraken, tarieven en
+            garanties over uitkomsten, kwalificaties of handhaving. Afspraken over inzet en
             verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
             inhoud kunnen geen rechten worden ontleend.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-200">
+            Dit platform beschrijft de markt vanuit praktijkervaring en bestaande wet- en regelgeving, niet
+            vanuit een toezichthoudend of handhavend perspectief. Bevoegdheden, aanwijzingen en handhaving
+            liggen in de regel bij opdrachtgever, vergunningverlener en toezichthouder — nooit bij dit platform.
           </p>
 
           <p className="mt-4 text-xs text-slate-400">

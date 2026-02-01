@@ -77,7 +77,7 @@ export default function VoorwaardenPage() {
               rechten aan worden ontleend.
             </p>
             <p className="text-slate-300">
-              Afspraken, tarieven en verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever
+              Afspraken over inzet en verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever
               en professional.
             </p>
 

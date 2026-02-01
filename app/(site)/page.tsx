@@ -150,7 +150,7 @@ export default function Page() {
             <h2 className="section-title">Juridische disclaimer</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               Deze informatie is informatief. ProBrandwacht geeft geen juridisch, fiscaal of
-              compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken en tarieven worden
+              compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken over inzet worden
               in de regel 1-op-1 gemaakt tussen opdrachtgever en professional.
             </p>
             <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Niet oplossen.</p>

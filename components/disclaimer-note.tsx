@@ -16,7 +16,7 @@ export default function DisclaimerNote({ className }: DisclaimerNoteProps) {
       <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <p className="text-sm leading-relaxed">
           Deze informatie is informatief. ProBrandwacht geeft geen juridisch, fiscaal of
-          compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken en tarieven worden
+          compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken over inzet worden
           in de regel 1-op-1 gemaakt tussen opdrachtgever en professional.
         </p>
         <p className="mt-2 text-xs text-slate-400">

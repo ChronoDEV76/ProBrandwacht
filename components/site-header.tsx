@@ -9,6 +9,7 @@ const LINKS = [
   { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
   { href: '/waarom-wij-soms-nee-zeggen', label: 'Waarom wij soms nee zeggen' },
   { href: '/blog', label: 'Blog / Kennisbank' },
+  { href: '/veiligheidskundig-kader', label: 'Veiligheidskundig kader' },
   { href: '/over-ons', label: 'Over ons' },
 ]
 

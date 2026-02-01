@@ -1,4 +1,12 @@
-export const CATEGORY_LABELS = ['Tarieven', 'Wetgeving', 'Evenementen', 'Bouw', 'Industrie', 'Overig'] as const
+export const CATEGORY_LABELS = [
+  'Tarieven',
+  'Wetgeving',
+  'Evenementen',
+  'Bouw',
+  'Industrie',
+  'Veiligheidskundig kader',
+  'Overig',
+] as const
 export type CategoryLabel = (typeof CATEGORY_LABELS)[number]
 
 export const CITY_FILTERS = ['Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht'] as const

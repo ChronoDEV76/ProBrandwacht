@@ -37,30 +37,68 @@ export type BlogFrontmatter = {
 
 export const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
-export async function getPostSlugs(): Promise<string[]> {
-  const files = await fs.readdir(BLOG_DIR)
+type PostEntry = {
+  slug: string
+  filePath: string
+  frontmatter: BlogFrontmatter
+  content: string
+}
+
+async function listMdxFiles(dir: string): Promise<string[]> {
+  const entries = await fs.readdir(dir, { withFileTypes: true })
+  const files: string[] = []
+
+  for (const entry of entries) {
+    const entryPath = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      files.push(...(await listMdxFiles(entryPath)))
+    } else if (entry.isFile() && entry.name.endsWith('.mdx') && !entry.name.startsWith('_')) {
+      files.push(entryPath)
+    }
+  }
+
   return files
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => f.replace(/\.mdx$/, ''))
+}
+
+async function getAllPosts(): Promise<PostEntry[]> {
+  const files = await listMdxFiles(BLOG_DIR)
+  const posts = await Promise.all(
+    files.map(async (filePath) => {
+      const raw = await fs.readFile(filePath, 'utf8')
+      const { data, content } = matter(raw)
+      const fm = data as BlogFrontmatter
+      const fileSlug = path.basename(filePath, '.mdx')
+      const slug = typeof fm.slug === 'string' && fm.slug.trim() ? fm.slug.trim() : fileSlug
+      if (!fm.h1 && typeof fm.title === 'string') {
+        fm.h1 = fm.title
+      }
+      return { slug, filePath, frontmatter: fm, content }
+    })
+  )
+
+  const unique = new Map<string, PostEntry>()
+  for (const post of posts) {
+    if (!unique.has(post.slug)) {
+      unique.set(post.slug, post)
+    }
+  }
+  return Array.from(unique.values())
+}
+
+export async function getPostSlugs(): Promise<string[]> {
+  const posts = await getAllPosts()
+  return posts.map((post) => post.slug)
 }
 
 export async function getPostBySlug(
   slug: string
 ): Promise<{ frontmatter: BlogFrontmatter; content: string }> {
-  const fullPath = path.join(BLOG_DIR, `${slug}.mdx`)
-  let raw: string
-  try {
-    raw = await fs.readFile(fullPath, 'utf8')
-  } catch {
+  const posts = await getAllPosts()
+  const match = posts.find((post) => post.slug === slug)
+  if (!match) {
     throw new Error(`File not found: ${slug}.mdx`)
   }
-
-  const { data, content } = matter(raw)
-  const fm = data as BlogFrontmatter
-  if (!fm.h1 && typeof fm.title === 'string') {
-    fm.h1 = fm.title
-  }
-  return { frontmatter: fm, content }
+  return { frontmatter: match.frontmatter, content: match.content }
 }
 
 export function readingTime(

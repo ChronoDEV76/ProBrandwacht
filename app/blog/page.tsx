@@ -266,7 +266,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
           <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-200">
             Deze kennisbank is informatief. ProBrandwacht geeft geen juridisch, fiscaal of compliance-advies,
-            bemiddelt niet en biedt geen garanties. Afspraken en tarieven blijven 1-op-1 tussen opdrachtgever
+            bemiddelt niet en biedt geen garanties. Afspraken over inzet blijven 1-op-1 tussen opdrachtgever
             en professional.
           </div>
           <section className="flex flex-wrap gap-4">
@@ -380,11 +380,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             <ul className="mt-4 flex flex-wrap gap-2">
               {cityLinks.map((cityLink) => (
                 <li key={cityLink.slug}>
-                  <Link
-                    href={`/steden/${cityLink.slug}`}
-                    prefetch={false}
-                    className="route-link"
-                  >
+                  <Link href={`/steden/${cityLink.slug}`} prefetch={false} className="route-link">
                     Brandwacht {cityLink.name}
                   </Link>
                 </li>

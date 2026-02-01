@@ -1,0 +1,131 @@
+{
+  "scanRoot": "content/blog",
+  "extensions": [".mdx"],
+
+  "requiredFrontmatterKeys": [
+    "title",
+    "slug",
+    "date",
+    "category",
+    "description",
+    "canonical",
+    "pillar"
+  ],
+
+  "requiredSections": [
+    "Afbakening",
+    "Gerelateerd"
+  ],
+
+  "forbiddenLanguage": [
+    { "label": "OPLOSSINGSTAAL", "pattern": "\\b(oplossing|wij bieden|wij zorgen|wij leveren)\\b" },
+    { "label": "GARANTIE", "pattern": "\\b(garantie|zekerheid bieden|gegarandeerd)\\b" },
+    { "label": "AANVAL_BUREAUS", "pattern": "\\b(bureaus maken winst|slager keurt|uitbuiting)\\b" },
+    { "label": "COMMERCIËLE_SEO", "pattern": "\\b(goedkoop|beste|tarieven vergelijken|kosten berekenen)\\b" }
+  ],
+
+  "serpSignals": {
+    "allowed": [
+      "wat is",
+      "wanneer",
+      "hoe werkt",
+      "veiligheidskundig",
+      "kader",
+      "duiding"
+    ],
+    "discouraged": [
+      "kosten",
+      "tarief",
+      "vergelijken",
+      
+      "calculator"
+    ],
+    "titleMin": 20,
+    "titleMax": 90,
+    "descriptionMin": 60,
+    "descriptionMax": 200,
+    "preferIntentWords": [
+      "wat",
+      "wanneer",
+      "hoe",
+      "checklist",
+      "kader",
+      "uitleg",
+      "betekenis"
+    ],
+    "avoidWordsInTitle": [
+      "garantie",
+      "100%",
+      "proof",
+      "DBA-proof",
+      "escrow",
+      "fee",
+      "marge"
+    ]
+  },
+
+  "vrBblLanguage": {
+    "preferred": [
+      "risico",
+      "beheersmaatregel",
+      "rol",
+      "verantwoordelijkheid",
+      "mandaat",
+      "bevoegdheid",
+      "vergunning",
+      "veiligheidsplan",
+      "contextafhankelijk"
+    ],
+    "avoid": [
+      "oplossing",
+      "garanderen",
+      "afdwingen",
+      "compliance-oplossing"
+    ]
+  },
+
+  "vrWhitelist": [
+    "brandveiligheid",
+    "brandveiligheidsmaatregelen",
+    "brandveiligheidsorganisatie",
+    "veiligheidsniveau",
+    "risicobeheersing",
+    "restrisico",
+    "veiligheidskundige duiding",
+    "systeemwerking",
+    "rolverdeling",
+    "verantwoordelijkheidsverdeling",
+    "bevoegdheden",
+    "mandaat",
+    "escalatielijnen",
+    "toezicht",
+    "borging",
+    "naleving",
+    "vergunningseisen",
+    "veiligheidsplan",
+    "beheersmaatregelen",
+    "contextafhankelijk"
+  ],
+
+  "conditionalTerms": [
+    "schijnveiligheid",
+    "rolonduidelijkheid",
+    "systeemspanning",
+    "symbolische maatregel"
+  ],
+
+  "conditionalNuance": [
+    "kan ontstaan wanneer",
+    "in sommige situaties",
+    "wordt in de praktijk gezien als",
+    "schijnveiligheid ontstaat",
+    "schijnveiligheid kan",
+    "rolonduidelijkheid kan",
+    "contextafhankelijk",
+    "geen garantie",
+    "geen absolute zekerheid",
+    "gedeelde verantwoordelijkheid",
+    "beperkte controle"
+  ],
+  "vrWhitelistMinHits": 2
+}

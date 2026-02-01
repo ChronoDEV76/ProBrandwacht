@@ -125,6 +125,58 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
+  '/brandwachtenmarkt': {
+    title: 'Brandwachtenmarkt — systeemduiding en context | ProBrandwacht',
+    description:
+      'Onafhankelijke uitleg over hoe de brandwachtenmarkt werkt: rollen, verantwoordelijkheden en systeemwerking. Duiding zonder advies.',
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandwachtenmarkt',
+      'brandwacht inzet uitleg',
+      'rol brandwacht',
+      'systeemwerking brandveiligheid',
+    ],
+  },
+
+  '/veiligheidskundig-kader': {
+    title: 'Veiligheidskundig kader — principes en systeemveiligheid | ProBrandwacht',
+    description:
+      'Veiligheidskundige duiding van rol, mandaat en systeemveiligheid binnen brandveiligheid. Context en principes, geen advies.',
+    keywords: [
+      ...seoKeywordClusters.core,
+      'veiligheidskundig kader',
+      'systeemveiligheid',
+      'veiligheidsprincipes',
+      'rolzuiverheid',
+    ],
+  },
+
+  '/wetgeving-brandwacht': {
+    title: 'Wetgeving brandwacht — duiding zonder advies | ProBrandwacht',
+    description:
+      'Overzicht en context van wet- en regelgeving rond brandwacht-inzet, verantwoordelijkheid en rolafbakening. Beschrijvend en neutraal.',
+    keywords: [
+      ...seoKeywordClusters.core,
+      'wet dba brandwacht',
+      'wtta brandwacht',
+      'brandwacht wetgeving',
+      'verantwoordelijkheid brandwacht',
+    ],
+  },
+
+  '/praktijk-brandveiligheid': {
+    title: 'Praktijk brandveiligheid — duiding zonder oordeel | ProBrandwacht',
+    description:
+      'Observaties uit de praktijk van brandveiligheid: waar systemen knellen en rolverdeling onder druk staat. Context, geen oplossingen.',
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandveiligheid praktijk',
+      'brandwacht inzet praktijk',
+      'rolverdeling veiligheid',
+      'systemen knellen',
+    ],
+  },
+
   '/faq': {
     title: 'FAQ | ProBrandwacht',
     description:

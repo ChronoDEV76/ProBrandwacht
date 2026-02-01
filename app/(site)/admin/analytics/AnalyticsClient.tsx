@@ -38,7 +38,7 @@ export default function AnalyticsClient({ heading }: AnalyticsClientProps) {
           <thead className="bg-slate-900/70 text-slate-200">
             <tr>
               <th className="border-b p-2 text-left">Tijd</th>
-              <th className="border-b p-2 text-left">Platform</th>
+              <th className="border-b p-2 text-left">Kanaal</th>
               <th className="border-b p-2 text-left">URL</th>
             </tr>
           </thead>
