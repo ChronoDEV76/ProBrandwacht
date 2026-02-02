@@ -98,6 +98,26 @@ export default function VeiligheidskundigKaderPage() {
                   De brandwacht als signaaldrager, niet als risicodrager
                 </Link>
               </li>
+              <li>
+                <Link href="/blog/marktdruk-en-veiligheidskwaliteit">
+                  Marktdruk en veiligheidskwaliteit
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/verantwoordelijkheid-in-de-veiligheidsketen">
+                  Verantwoordelijkheid in de veiligheidsketen
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/vakmanschap-onder-druk-in-onvolwassen-markt">
+                  Vakmanschap onder druk in een onvolwassen markt
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/systeem-botst-met-vakmanschap">
+                  Wanneer het systeem botst met het vakmanschap
+                </Link>
+              </li>
             </ul>
 
             <h2>Leeswijzer</h2>
