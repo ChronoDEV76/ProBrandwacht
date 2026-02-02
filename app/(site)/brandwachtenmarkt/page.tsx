@@ -4,6 +4,8 @@ import Link from 'next/link'
 import HeroBackground from '@/components/HeroBackground'
 import Prose from '@/components/prose'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
+import TrustBand from '@/components/trust-band'
+import AfbakeningBanner from '@/components/afbakening-banner'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/brandwachtenmarkt')
@@ -22,7 +24,7 @@ export default function BrandwachtenmarktPage() {
 
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-4 pb-10 pt-8">
-          <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+          <span className="inline-flex w-fit items-center rounded-full border border-amber-300/40 bg-amber-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-200">
             Kenniscluster
           </span>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">
@@ -34,6 +36,9 @@ export default function BrandwachtenmarktPage() {
           </p>
         </div>
       </HeroBackground>
+
+      <TrustBand className="mt-6" />
+      <AfbakeningBanner className="mt-6" />
 
       <section className="mx-auto max-w-5xl px-4 pb-16 pt-8">
         <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">

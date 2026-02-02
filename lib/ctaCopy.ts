@@ -34,6 +34,9 @@ export type CtaId =
   | 'secondary_over_ons'
   | 'secondary_blog_index'
   | 'secondary_seo_resources'
+  | 'secondary_kader_overview'
+  | 'secondary_afbakening'
+  | 'secondary_checklist_info'
 
 export type Cta = {
   id: CtaId
@@ -274,6 +277,30 @@ const CTA: Record<CtaId, Cta> = {
     label: 'Bekijk alle autoritaire bronnen →',
     href: '/seo-resources',
     variant: 'link',
+    intent: 'secondary',
+    audience: 'generic',
+  },
+  secondary_kader_overview: {
+    id: 'secondary_kader_overview',
+    label: 'Lees het kader',
+    href: '/veiligheidskundig-kader',
+    variant: 'outline',
+    intent: 'secondary',
+    audience: 'generic',
+  },
+  secondary_afbakening: {
+    id: 'secondary_afbakening',
+    label: 'Check de afbakening',
+    href: '/waarom-wij-soms-nee-zeggen',
+    variant: 'outline',
+    intent: 'secondary',
+    audience: 'generic',
+  },
+  secondary_checklist_info: {
+    id: 'secondary_checklist_info',
+    label: 'Bekijk afspraken-checklist',
+    href: '/blog/5-veelvoorkomende-aandachtspunten-bij-brandwacht-inzet',
+    variant: 'outline',
     intent: 'secondary',
     audience: 'generic',
   },

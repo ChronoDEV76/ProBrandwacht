@@ -5,12 +5,12 @@ import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 import { Cta } from '@/components/Cta'
 
 const LINKS = [
-  { href: '/voor-brandwachten', label: 'Voor brandwachten' },
-  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
-  { href: '/waarom-wij-soms-nee-zeggen', label: 'Waarom wij soms nee zeggen' },
-  { href: '/blog', label: 'Blog / Kennisbank' },
+  { href: '/blog', label: 'Kennisbank' },
   { href: '/veiligheidskundig-kader', label: 'Veiligheidskundig kader' },
-  { href: '/over-ons', label: 'Over ons' },
+  { href: '/voor-brandwachten', label: 'Voor professionals' },
+  { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
+  { href: '/waarom-wij-soms-nee-zeggen', label: 'Afbakening' },
+  { href: '/over-ons', label: 'Over ProBrandwacht' },
 ]
 
 export default function SiteHeader() {
@@ -21,7 +21,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 text-white backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight">
+        <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight text-amber-100">
           ProBrandwacht
         </Link>
 
@@ -32,9 +32,9 @@ export default function SiteHeader() {
               href={link.href}
               prefetch={false}
               aria-current={isActive(link.href) ? 'page' : undefined}
-              className={`relative rounded-md px-3 py-1.5 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+              className={`relative rounded-md px-3 py-1.5 transition hover:bg-white/10 hover:text-amber-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                 isActive(link.href)
-                  ? 'bg-white/10 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:bg-white/80'
+                  ? 'bg-white/10 text-amber-100 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2px] after:bg-amber-200/90'
                   : ''
               }`}
             >
@@ -50,8 +50,8 @@ export default function SiteHeader() {
               prefetch={false}
               title="Spoed & inzet"
               aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
-              className={`inline-flex flex-col items-center justify-center rounded-xl border border-white/35 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-                currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
+              className={`inline-flex flex-col items-center justify-center rounded-xl border border-amber-200/50 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-amber-200/70' : ''
               }`}
             >
               <span className="font-semibold flex items-center gap-1">ProBrandwacht Direct (spoed)</span>

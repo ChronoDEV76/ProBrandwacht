@@ -27,7 +27,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   tools: "Tools",
   tarieven: "Kaders",
   steden: "Regio context",
-  blog: "Blog",
+  blog: "Kennisbank",
   faq: "FAQ",
   opdrachtgevers: "Opdrachtgevers",
   brandwacht: "Brandwacht",
@@ -35,6 +35,8 @@ const SEGMENT_LABELS: Record<string, string> = {
   zzp: "ZZP",
   aanmelding: "Verkennende intake",
   aanmelden: "Verkennende intake",
+  "voor-brandwachten": "Voor professionals",
+  "waarom-wij-soms-nee-zeggen": "Afbakening",
   seo: "SEO",
   "seo-resources": "SEO resources",
 };

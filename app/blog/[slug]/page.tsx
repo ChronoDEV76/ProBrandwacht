@@ -3,11 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import BlogLegalNote from '@/components/BlogLegalNote'
 import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import Prose from '@/components/prose'
+import AfbakeningBanner from '@/components/afbakening-banner'
+import TrustBand from '@/components/trust-band'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 import { getPostSlugs } from '@/lib/blog'
 import { getPostBySlug } from '@/lib/mdx'
@@ -117,7 +118,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const pageUrl = `${BASE_URL}/blog/${params.slug}`
   const publishedDate = parseFrontmatterDate(frontmatter.date)
   const updatedDate = parseFrontmatterDate(frontmatter.updated) ?? publishedDate
-  const legalNoteVariant = resolveLegalNoteVariant(frontmatter.legalNote)
   const description =
     (frontmatter.tldr as string | undefined) ??
     (frontmatter.excerpt as string | undefined) ??
@@ -161,14 +161,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 pb-10 pt-8">
           <div className="flex flex-wrap items-center gap-2 text-xs text-slate-300">
-            <Link href="/blog" className="font-semibold text-emerald-200 hover:text-emerald-100">
+            <Link href="/blog" className="font-semibold text-amber-200 hover:text-amber-100">
               Kennisbank
             </Link>
             <span>-&gt;</span>
             <span className="text-slate-200">{title}</span>
           </div>
-
-          <BlogLegalNote variant={legalNoteVariant} showClosingLine={false} className="mt-4" />
 
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
 
@@ -195,12 +193,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           ) : null}
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Cta id="brandwacht_interest_waitlist" />
-            <Cta id="secondary_why_no" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
-            <Cta id="about_kaders_intentie" className="border-white/20" />
+            <Cta id="secondary_kader_overview" />
+            <Cta id="secondary_afbakening" className="inline-flex items-center justify-center rounded-2xl px-5 py-2.5" />
+            <Cta id="secondary_checklist_info" className="border-white/20" />
           </div>
         </div>
       </HeroBackground>
+
+      <TrustBand className="mt-6" />
+      <AfbakeningBanner className="mt-6" />
 
       {/* CONTENT */}
       <section className="mx-auto max-w-5xl px-4 pb-16 pt-8">
@@ -223,14 +224,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
         {/* FOOTER CTA */}
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Volgende stap</h2>
+          <h2 className="text-xl font-semibold md:text-2xl">Meer context</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            Als dit herkenbaar is: toets uitvoerbaarheid en rolverdeling vooraf. Dat maakt uitvoering rustiger en
-            samenwerking sterker.
+            Lees het kader en de afbakening om dit artikel in de juiste context te plaatsen.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Cta id="brandwacht_interest_waitlist" />
-            <Cta id="tertiary_contact_exploratory" className="rounded-2xl px-5 py-2.5" />
+            <Cta id="secondary_kader_overview" />
+            <Cta id="secondary_afbakening" className="rounded-2xl px-5 py-2.5" />
           </div>
         </div>
 
@@ -264,11 +264,4 @@ function parseFrontmatterDate(value: unknown) {
   if (!trimmed) return undefined
   const parsed = new Date(trimmed)
   return Number.isNaN(parsed.getTime()) ? undefined : parsed
-}
-
-function resolveLegalNoteVariant(value: unknown): 'standard' | 'dba' | 'extended' {
-  if (value === 'standard' || value === 'dba' || value === 'extended') {
-    return value
-  }
-  return 'standard'
 }

@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 import BlogTrustHeader from '@/components/BlogTrustHeader'
+import TrustBand from '@/components/trust-band'
+import AfbakeningBanner from '@/components/afbakening-banner'
 import { Cta } from '@/components/Cta'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getPostBySlug, getPostSlugs, readingTime } from '@/lib/blog'
@@ -239,7 +241,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Blog', url: 'https://www.probrandwacht.nl/blog' },
+    { name: 'Kennisbank', url: 'https://www.probrandwacht.nl/blog' },
   ]
 
   const faqJsonLd = {
@@ -260,15 +262,12 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <BlogTrustHeader lastUpdatedISO={latestDate} />
+      <TrustBand className="mt-6" />
+      <AfbakeningBanner className="mt-6" />
 
       <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
           <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-200">
-            Deze kennisbank is informatief. ProBrandwacht geeft geen juridisch, fiscaal of compliance-advies,
-            bemiddelt niet en biedt geen garanties. Afspraken over inzet blijven 1-op-1 tussen opdrachtgever
-            en professional.
-          </div>
           <section className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>
@@ -313,7 +312,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
             {filtered.map((post) => (
               <article
                 key={post.slug}
-                className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-emerald-500/20"
+                className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 text-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-amber-400/20"
               >
                 {post.image ? (
                   <div className="relative w-full overflow-hidden px-3 pb-5 pt-3">
@@ -336,7 +335,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                 <div className="p-5">
                   <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-slate-400">
                     <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.category}</span>
-                    <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-emerald-100">
+                    <span className="rounded-full bg-amber-300/10 px-2 py-0.5 text-amber-100">
                       {derivePositionTag(post.category)}
                     </span>
                     {post.city && <span className="rounded-full bg-slate-800 px-2 py-0.5">{post.city}</span>}
@@ -344,11 +343,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     <span>- {post.minutes} min leestijd</span>
                   </div>
                   <h2 className="line-clamp-2 text-lg font-semibold text-slate-50">
-                    <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-emerald-200">
+                    <Link href={`/blog/${post.slug}`} prefetch={false} className="hover:text-amber-100">
                       {post.title}
                     </Link>
                   </h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">Lees het artikel &rarr;</p>
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-200">{post.excerpt}</p>
                   <p className="mt-2 text-xs text-slate-400">
                     Door {post.author ?? 'ProBrandwacht'} ·{' '}
                     {post.updatedAt
@@ -361,11 +360,10 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     <Link
                       href={`/blog/${post.slug}`}
                       prefetch={false}
-                      className="font-medium text-emerald-200 hover:text-emerald-100"
+                      className="font-medium text-amber-200 hover:text-amber-100"
                     >
-                      Lees hoe we uitvoerbaarheid borgen &rarr;
+                      Lees het principe &rarr;
                     </Link>
-                    <Cta id="secondary_platform_fit" className="text-slate-300 hover:text-emerald-100" />
                   </div>
                 </div>
               </article>
@@ -398,13 +396,13 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           </section>
 
           <section className="panel p-6 text-center">
-            <h3 className="text-xl font-semibold text-slate-50">Past deze aanpak bij jullie?</h3>
+            <h3 className="text-xl font-semibold text-slate-50">Meer context nodig?</h3>
             <p className="mt-2 text-slate-200">
-              Voor professionals en opdrachtgevers die vooraf willen toetsen of inzet uitvoerbaar is.
+              Lees het kader en de afbakening om deze artikelen goed te duiden.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-              <Cta id="brandwacht_interest_waitlist" className="route-link" />
-              <Cta id="opdrachtgever_explore" className="route-link" />
+              <Cta id="secondary_kader_overview" className="route-link" />
+              <Cta id="secondary_afbakening" className="route-link" />
             </div>
           </section>
 
@@ -422,8 +420,8 @@ function FilterChip({ href, active, children }: { href: string; active?: boolean
       className={[
         'rounded-full border px-3 py-1 text-sm transition',
         active
-          ? 'border-emerald-300 bg-emerald-400/10 text-emerald-100'
-          : 'border-slate-700 bg-slate-900 text-slate-200 hover:border-emerald-300 hover:text-emerald-100',
+          ? 'border-amber-300 bg-amber-400/10 text-amber-100'
+          : 'border-slate-700 bg-slate-900 text-slate-200 hover:border-amber-300 hover:text-amber-100',
       ].join(' ')}
     >
       {children}

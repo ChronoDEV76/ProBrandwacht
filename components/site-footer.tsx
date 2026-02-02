@@ -2,12 +2,12 @@ import Link from "next/link"
 import Image from "next/image"
 
 const LINKS = [
-  { href: "/blog", label: "Blog / Kennisbank" },
-  { href: "/platform", label: "Hoe werkt het initiatief?" },
-  { href: "/voor-brandwachten", label: "Voor brandwachten" },
+  { href: "/blog", label: "Kennisbank" },
+  { href: "/veiligheidskundig-kader", label: "Veiligheidskundig kader" },
+  { href: "/voor-brandwachten", label: "Voor professionals" },
   { href: "/opdrachtgevers", label: "Voor opdrachtgevers" },
-  { href: "/waarom-wij-soms-nee-zeggen", label: "Waarom wij soms nee zeggen" },
-  { href: "/over-ons", label: "Over ons" },
+  { href: "/waarom-wij-soms-nee-zeggen", label: "Afbakening" },
+  { href: "/over-ons", label: "Over ProBrandwacht" },
 ]
 
 export default function SiteFooter() {
@@ -89,7 +89,7 @@ export default function SiteFooter() {
             href="/voor-brandwachten/aanmelden"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >
-            Voor brandwachten
+            Voor professionals
           </Link>
           <span aria-hidden="true">·</span>
           <Link
@@ -102,7 +102,7 @@ export default function SiteFooter() {
 
         <section className="panel p-5 text-xs text-slate-300">
           <div className="grid gap-4 md:grid-cols-[180px_1fr]">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-200">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-200">
               Slotverklaring
             </div>
             <div className="space-y-3">
