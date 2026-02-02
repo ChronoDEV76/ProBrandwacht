@@ -21,6 +21,8 @@ seo_report.local.md
 reports/failsafe.json
 reports/tone-guard.json
 reports/tone-live-report.json
+reports/seo_report.json
+tsconfig.tsbuildinfo
 
 # Local helper scripts / notes (not part of app)
 scripts/content_audit.py
