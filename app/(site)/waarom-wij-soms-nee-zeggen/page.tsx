@@ -1,21 +1,9 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
-  title: 'Waarom wij soms nee zeggen — ProBrandwacht',
-  description:
-    "Soms is 'nee' de professionele keuze. Niet als oordeel, maar als grens voor uitvoerbaarheid, veiligheid en rolhelderheid in brandveiligheidsinzet.",
-  keywords: [
-    'brandwacht',
-    'brandwacht-inzet uitleg',
-    'brandwacht verantwoordelijkheden',
-    'zelfstandig samenwerken',
-    'uitvoerbaarheid',
-    'rolhelderheid',
-  ],
-}
+export const metadata = getRouteMetadata('/waarom-wij-soms-nee-zeggen')
 
 export default function Page() {
   return (

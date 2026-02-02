@@ -86,7 +86,9 @@ export default function VeiligheidskundigKaderPage() {
                 <Link href="/blog/waarnemen-zonder-mandaat">Waarnemen zonder mandaat</Link>
               </li>
               <li>
-                <Link href="/blog/schijnveiligheid-als-systeemfout">Schijnveiligheid is een systeemfout</Link>
+                <Link href="/blog/onbedoelde-veiligheidsillusie-als-systeemfout">
+                  Onbedoelde veiligheidsillusie is een systeemfout
+                </Link>
               </li>
               <li>
                 <Link href="/blog/compliance-is-niet-veiligheid">Compliance is niet hetzelfde als veiligheid</Link>

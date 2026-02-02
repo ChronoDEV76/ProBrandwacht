@@ -52,8 +52,8 @@ export default function PraktijkBrandveiligheidPage() {
             <h2>Onderwerpen in dit cluster</h2>
             <ul>
               <li>
-                <Link href="/blog/5-meest-gemaakte-fouten-bij-brandwacht-inzet">
-                  5 meest gemaakte fouten bij brandwacht-inhuur
+                <Link href="/blog/5-veelvoorkomende-aandachtspunten-bij-brandwacht-inzet">
+                  5 veelvoorkomende aandachtspunten bij brandwacht-inzet
                 </Link>
               </li>
               <li>

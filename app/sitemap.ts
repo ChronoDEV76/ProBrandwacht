@@ -1,7 +1,6 @@
 // app/sitemap.ts
 import type { MetadataRoute } from 'next'
 
-import { CITY_SLUGS } from '@/lib/city-data'
 import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 
@@ -11,7 +10,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     '/',
     '/blog',
-    '/aanmelden',
     '/contact',
     '/disclaimer',
     '/voorwaarden',
@@ -21,7 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/faq',
     '/opdrachtgevers',
     '/voor-brandwachten',
-    '/voor-brandwachten/aanmelden',
     '/belangen',
     '/brandwachtenmarkt',
     '/veiligheidskundig-kader',
@@ -36,12 +33,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${BASE_URL}${path}`,
     changeFrequency: 'weekly',
     priority: 0.8,
-  }))
-
-  const cityRoutes: MetadataRoute.Sitemap = CITY_SLUGS.map((slug) => ({
-    url: `${BASE_URL}/steden/${slug}`,
-    changeFrequency: 'weekly',
-    priority: 0.7,
   }))
 
 
@@ -60,5 +51,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   )
 
-  return [...staticRoutes, ...cityRoutes, ...blogEntries]
+  return [...staticRoutes, ...blogEntries]
 }

@@ -39,14 +39,22 @@ const DEFAULT_CLOSING_LINE =
 export default function BlogLegalNote({
   variant = 'standard',
   showClosingLine = true,
+  className,
 }: {
   variant?: LegalNoteVariant
   showClosingLine?: boolean
+  className?: string
 }) {
   const copy = LEGAL_NOTE_COPY[variant]
+  const rootClassName = [
+    'mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+    <div className={rootClassName}>
       <h2 className="text-xl font-semibold md:text-2xl">{copy.title}</h2>
       <p className="mt-2 text-sm leading-relaxed text-slate-200">{copy.body}</p>
       {showClosingLine ? (

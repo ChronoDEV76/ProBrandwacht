@@ -30,9 +30,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   // HOMEPAGE
   // --------------------------------------------------
   '/': {
-    title: 'ProBrandwacht — Onafhankelijk kennis- en duidingsinitiatief',
+    title: 'ProBrandwacht — Kennis en uitleg',
     description:
-      'ProBrandwacht legt uit hoe opdrachtgevers en zelfstandige brandwachten veilig en uitlegbaar samenwerken — zonder tussenconstructies.',
+      'ProBrandwacht is een onafhankelijk kennis- en vakplatform. We leggen uit hoe je veilig en uitlegbaar samenwerkt, zonder bureauframing, prijssturing of beloftes.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -174,6 +174,19 @@ export const routeMeta: Record<string, RouteMeta> = {
       'brandwacht inzet praktijk',
       'rolverdeling veiligheid',
       'systemen knellen',
+    ],
+  },
+
+  '/waarom-wij-soms-nee-zeggen': {
+    title: 'Waarom wij soms nee zeggen — ProBrandwacht',
+    description:
+      "Soms is 'nee' de professionele keuze. Niet als oordeel, maar als grens voor uitvoerbaarheid, veiligheid en rolhelderheid in brandveiligheidsinzet.",
+    keywords: [
+      ...seoKeywordClusters.core,
+      'brandwacht-inzet uitleg',
+      'brandwacht verantwoordelijkheden',
+      'uitvoerbaarheid',
+      'rolhelderheid',
     ],
   },
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -167,6 +168,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <span className="text-slate-200">{title}</span>
           </div>
 
+          <BlogLegalNote variant={legalNoteVariant} showClosingLine={false} className="mt-4" />
+
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
@@ -179,10 +182,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           {heroImage ? (
             <div className="mt-4 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40">
               <div className="relative aspect-[16/9] w-full">
-                <img
+                <Image
                   src={heroImage}
                   alt={heroImageAlt}
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 640px"
+                  className="object-cover"
                   style={{ objectPosition: heroImagePosition }}
                 />
               </div>
@@ -203,7 +208,18 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <Prose>{post.compiled}</Prose>
         </article>
 
-        <BlogLegalNote variant={legalNoteVariant} />
+        <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+          <h2 className="text-xl font-semibold md:text-2xl">Wat neem je mee</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-200">
+            Neutrale checklist om rolafbakening en uitvoering uitlegbaar te houden.
+          </p>
+          <ul className="mt-3 grid gap-2 text-sm text-slate-200 md:grid-cols-2">
+            <li>Context: welke werkzaamheden, risico&apos;s en randvoorwaarden gelden er?</li>
+            <li>Rol: wat is expliciet de taak van de brandwacht en wat niet?</li>
+            <li>Bevoegdheid: wie beslist bij afwijkingen, escalatie of stop?</li>
+            <li>Stopcriteria: wanneer en hoe wordt werk onderbroken bij onveiligheid?</li>
+          </ul>
+        </div>
 
         {/* FOOTER CTA */}
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">

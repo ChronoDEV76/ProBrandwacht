@@ -36,12 +36,27 @@ const nextConfig = {
       },
       {
         source: '/blog/5-meest-gemaakte-fouten-bij-zelfstandige-brandwacht-inhuur',
-        destination: '/blog/5-meest-gemaakte-fouten-bij-brandwacht-inzet',
+        destination: '/blog/5-veelvoorkomende-aandachtspunten-bij-brandwacht-inzet',
+        permanent: true,
+      },
+      {
+        source: '/blog/5-meest-gemaakte-fouten-bij-brandwacht-inzet',
+        destination: '/blog/5-veelvoorkomende-aandachtspunten-bij-brandwacht-inzet',
         permanent: true,
       },
       {
         source: '/blog/wanneer-is-een-zelfstandige-brandwacht-verplicht-bij-evenementen',
         destination: '/blog/wanneer-is-een-zelfstandige-brandwacht-vereist-bij-evenementen',
+        permanent: true,
+      },
+      {
+        source: '/blog/schijnveiligheid-als-systeemfout',
+        destination: '/blog/onbedoelde-veiligheidsillusie-als-systeemfout',
+        permanent: true,
+      },
+      {
+        source: '/blog/brandwachtenmarkt-schijnveiligheid-en-systeemwerking',
+        destination: '/blog/brandwachtenmarkt-onbedoelde-veiligheidsillusie-en-systeemwerking',
         permanent: true,
       },
     ];

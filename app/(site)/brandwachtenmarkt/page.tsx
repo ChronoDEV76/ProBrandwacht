@@ -62,7 +62,9 @@ export default function BrandwachtenmarktPage() {
                 <Link href="/blog/aanwezigheid-is-geen-veiligheid">Aanwezigheid is geen veiligheid</Link>
               </li>
               <li>
-                <Link href="/blog/schijnveiligheid-als-systeemfout">Schijnveiligheid is een systeemfout</Link>
+                <Link href="/blog/onbedoelde-veiligheidsillusie-als-systeemfout">
+                  Onbedoelde veiligheidsillusie is een systeemfout
+                </Link>
               </li>
               <li>
                 <Link href="/blog/brandwacht-als-signaaldrager">

@@ -1,21 +1,10 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
 import AfbakeningNote from '@/components/afbakening-note'
+import { getRouteMetadata } from '@/lib/seo/metadata'
 
-export const metadata: Metadata = {
-  title: 'ProBrandwacht — Kennis en uitleg',
-  description:
-    'ProBrandwacht is een onafhankelijk kennis- en vakplatform. We leggen uit hoe je veilig en uitlegbaar samenwerkt, zonder bureauframing, prijssturing of beloftes.',
-  keywords: [
-    'brandwacht',
-    'zelfstandig samenwerken',
-    'brandveiligheid uitvoering',
-    'uitlegbaar samenwerken',
-    'rolafbakening brandwacht',
-  ],
-}
+export const metadata = getRouteMetadata('/')
 
 export default function Page() {
   return (
@@ -74,11 +63,11 @@ export default function Page() {
               </p>
             </div>
             <div className="panel p-6">
-              <h3 className="text-lg font-semibold text-white">Wat gaat hier vaak mis?</h3>
+              <h3 className="text-lg font-semibold text-white">Waar onduidelijkheid kan ontstaan</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
                 <li>Scope die niet concreet is vastgelegd</li>
                 <li>Beslislijnen die pas tijdens uitvoering blijken</li>
-                <li>Onzichtbare tussenlagen die verantwoordelijkheid vervagen</li>
+                <li>Als gevolg van onduidelijke afspraken in de keten kan rolafbakening soms vervagen</li>
                 <li>Afspraken die achteraf niet uitlegbaar zijn</li>
               </ul>
             </div>
