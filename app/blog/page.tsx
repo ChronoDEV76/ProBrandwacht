@@ -199,7 +199,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     })
   )
 
-  const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
+  const postsSorted = posts.sort((a, b) => {
+    const aKey = a.updatedAt ?? a.publishedAt ?? a.dateIso
+    const bKey = b.updatedAt ?? b.publishedAt ?? b.dateIso
+    return new Date(bKey).getTime() - new Date(aKey).getTime()
+  })
   const latestDate =
     postsSorted[0]?.updatedAt ?? postsSorted[0]?.publishedAt ?? postsSorted[0]?.dateIso
   const filtered = postsSorted.filter((post) => {
