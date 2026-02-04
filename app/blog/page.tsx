@@ -267,7 +267,23 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
       <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
-          <p className="text-xs text-slate-400">Door ProBrandwacht · Kennisbank</p>
+          <p className="text-xs text-slate-400">Redactie · Artikelen</p>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-200">
+            <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-amber-200">
+              Snelle leesroutes
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Link href="/veiligheidskundig-kader" className="route-link">
+                Veiligheidskundig kader
+              </Link>
+              <Link href="/praktijk-brandveiligheid" className="route-link">
+                Praktijk brandveiligheid
+              </Link>
+              <Link href="/wetgeving-brandwacht" className="route-link">
+                Wetgeving & context
+              </Link>
+            </div>
+          </div>
           <section className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2 text-slate-200">
               <span className="text-sm">Categorie</span>

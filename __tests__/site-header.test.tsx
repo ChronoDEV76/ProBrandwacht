@@ -25,12 +25,12 @@ describe('SiteHeader', () => {
   it('renders brand and primary links', () => {
     render(<SiteHeader />)
     expect(screen.getByText('ProBrandwacht')).toBeInTheDocument()
-    const blogLinks = screen.getAllByRole('link', { name: /blog/i })
+    const blogLinks = screen.getAllByRole('link', { name: /kennisbank/i })
     expect(blogLinks.some(link => link.getAttribute('href') === '/blog')).toBe(true)
-    const aboutLinks = screen.getAllByRole('link', { name: /over ons/i })
+    const aboutLinks = screen.getAllByRole('link', { name: /over probrandwacht/i })
     expect(aboutLinks.some(link => link.getAttribute('href') === '/over-ons')).toBe(true)
 
-    const brandwachtLinks = screen.getAllByRole('link', { name: /voor brandwachten/i })
+    const brandwachtLinks = screen.getAllByRole('link', { name: /voor professionals/i })
     expect(brandwachtLinks.some(link => link.getAttribute('href') === '/voor-brandwachten')).toBe(true)
 
     const opdrachtgeverLinks = screen.getAllByRole('link', { name: /voor opdrachtgevers/i })

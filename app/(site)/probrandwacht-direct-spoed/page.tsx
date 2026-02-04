@@ -16,12 +16,12 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
+              Dit initiatief legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
               geen matching-engine.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen klassiek bureau. Spoed is bedoeld voor korte, duidelijke afspraken; de
+              Het platform is geen klassiek bureau. Spoed is bedoeld voor korte, duidelijke afspraken; de
               context bepaalt wat verantwoord is.
             </p>
 

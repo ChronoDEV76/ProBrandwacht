@@ -21,9 +21,14 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 text-white backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight text-amber-100">
-          ProBrandwacht
-        </Link>
+        <div className="flex flex-col leading-tight">
+          <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight text-amber-100">
+            ProBrandwacht
+          </Link>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300">
+            Duiding, geen bemiddeling of garanties
+          </span>
+        </div>
 
         <nav className="hidden items-center gap-1 text-sm lg:flex">
           {LINKS.map(link => (
@@ -103,7 +108,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </div>
 
         <div className="border-t border-white/15 px-4 py-3 text-xs text-white/80">
-          ProBrandwacht legt uit hoe de markt werkt en waar kaders liggen — het initiatief zelf
+          Het initiatief legt uit hoe de markt werkt en waar kaders liggen — het initiatief zelf
           bemiddelt niet en stuurt niet.
         </div>
 

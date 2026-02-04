@@ -136,6 +136,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     (frontmatter.imageAlt as string | undefined) ?? title
   const heroImagePosition =
     (frontmatter.imagePosition as string | undefined) ?? 'center 60%'
+  const tldr = typeof frontmatter.tldr === 'string' ? frontmatter.tldr : undefined
+  const isSystemArticle =
+    frontmatter.category === 'Veiligheidskundig kader' ||
+    frontmatter.pillar === '/veiligheidskundig-kader'
   const breadcrumbItems = [
     { name: 'Home', item: 'https://www.probrandwacht.nl/' },
     { name: 'Kennisbank', item: 'https://www.probrandwacht.nl/blog' },
@@ -176,6 +180,32 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {updated ? <span>• Laatst bijgewerkt: {formatDate(updated)}</span> : null}
             {readingTime ? <span>• {readingTime}</span> : null}
           </div>
+
+          {(tldr || isSystemArticle) ? (
+            <div className="mt-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
+              {tldr ? (
+                <p className="leading-relaxed">
+                  <span className="font-semibold text-amber-200">TL;DR:</span> {tldr}
+                </p>
+              ) : null}
+              {isSystemArticle ? (
+                <div className={tldr ? 'mt-3 space-y-2' : 'space-y-2'}>
+                  <p>
+                    Dit artikel richt zich op organisatorische en regelgevende kaders, niet op persoonlijke
+                    prestaties of professionele competentie.
+                  </p>
+                  <p>
+                    In dit artikel duiden we systemische factoren zonder commentaar te leveren op individuele
+                    professionals; de inzet en deskundigheid van brandwachten blijft essentieel voor veilige uitvoering.
+                  </p>
+                  <p>
+                    Brandwachten leveren waardevolle observaties en kennis; deze tekst onderzoekt hoe
+                    systeemfactoren de rolcontext beïnvloeden.
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
 
           {heroImage ? (
             <div className="mt-4 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40">

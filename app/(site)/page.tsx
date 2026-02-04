@@ -26,7 +26,7 @@ export default function Page() {
             </div>
 
             <p className="text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht legt uit hoe opdrachtgevers en zelfstandige brandwachten praktisch
+              Dit initiatief legt uit hoe opdrachtgevers en zelfstandige brandwachten praktisch
               samenwerken. We maken zichtbaar wat je vooraf bespreekt, waar risico&apos;s
               ontstaan en waar verantwoordelijkheden beginnen en eindigen.
             </p>

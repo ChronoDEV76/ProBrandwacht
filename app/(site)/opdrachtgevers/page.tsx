@@ -17,12 +17,12 @@ export default function OpdrachtgeversPage() {
               Zo houd je brandveiligheidsinzet uitvoerbaar en uitlegbaar
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht is een onafhankelijk initiatief. We leveren geen inzet en sturen geen afspraken.
+              Dit initiatief is onafhankelijk. We leveren geen inzet en sturen geen afspraken.
               We delen kaders en aandachtspunten: welke vragen je vooraf stelt, wat je afbakent en welke
               signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
+              Het platform licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
               bemiddelt niet en stuurt niet.
             </p>
 
