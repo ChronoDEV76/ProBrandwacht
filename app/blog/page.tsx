@@ -241,7 +241,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Kennisbank', url: 'https://www.probrandwacht.nl/blog' },
+    { name: 'Artikelen', url: 'https://www.probrandwacht.nl/blog' },
   ]
 
   const faqJsonLd = {
