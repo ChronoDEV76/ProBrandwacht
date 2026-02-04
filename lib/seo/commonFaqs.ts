@@ -7,7 +7,7 @@ export const generalPlatformFaq = [
       'Omdat uitvoerbaarheid begint bij duidelijke rollen en verwachtingen. Zonder die helderheid ontstaat ruis in uitvoering.',
   },
   {
-    question: 'Wanneer is nee zeggen logisch?',
+    question: 'Wanneer is het logisch om grenzen te benoemen?',
     answer:
       'Wanneer de vraag onduidelijk is in rol, scope of beslislijnen. Dan klopt de opdracht in vorm nog niet.',
   },
@@ -27,14 +27,14 @@ export const generalPlatformFaq = [
       'Snelheid zonder helderheid vergroot risico. We kiezen voor verantwoord afstemmen boven snelle invulling.',
   },
   {
-    question: 'Wat verwachten jullie van opdrachtgevers?',
+    question: 'Wat helpt opdrachtgevers in de praktijk?',
     answer:
-      'Voorbereiding, rolverdeling en beslislijnen vooraf duidelijk maken. Dat houdt uitvoering rustig.',
+      'Vooraf rolverdeling en beslislijnen expliciet maken. Dat houdt uitvoering rustig en uitlegbaar.',
   },
   {
-    question: 'Wat verwachten jullie van brandwachten?',
+    question: 'Wat helpt brandwachten in de praktijk?',
     answer:
-      'Professioneel oordeel, grenzen kunnen aangeven en verantwoordelijkheid willen dragen.',
+      'Professioneel oordeel, grenzen kunnen aangeven en afspraken zorgvuldig vastleggen.',
   },
   {
     question: 'Wat doen jullie nadrukkelijk niet?',
@@ -42,24 +42,24 @@ export const generalPlatformFaq = [
       'Wij vullen geen capaciteit, nemen geen beslissingen over en schuiven geen risico door.',
   },
   {
-    question: 'Wat gebeurt er als het niet past?',
+    question: 'Wat als een vraag niet past binnen rolafbakening?',
     answer:
-      'Dan is het een signaal om de vraag te herformuleren of de randvoorwaarden te verduidelijken.',
+      'Dan is het een signaal om de vraag te herformuleren of randvoorwaarden explicieter te maken.',
   },
 ]
 
 export const zzpFaq = [
   {
-    question: 'Wat houdt zelfstandig werken via deze route in?',
+    question: 'Wat houdt zelfstandig werken binnen dit kader in?',
     answer:
       'Je werkt 1-op-1 met opdrachtgevers. Afspraken over rol, scope en verantwoordelijkheid maak je vooraf en leg je duidelijk vast.',
   },
   {
-    question: 'Moet ik al mijn werk via dit initiatief doen?',
+    question: 'Ben ik gebonden aan dit initiatief?',
     answer: 'Nee. Je blijft zelfstandig ondernemer en behoudt je eigen klanten, kanalen en keuzes.',
   },
   {
-    question: 'Hoe bepaal ik of een opdracht past?',
+    question: 'Wat helpt om te beoordelen of een opdracht past?',
     answer:
       'Door scope, rol, beslislijnen en randvoorwaarden vooraf expliciet te maken. Als die niet duidelijk zijn, past de opdracht vaak niet.',
   },
@@ -74,7 +74,7 @@ export const zzpFaq = [
       'Leg vooraf vast wat je rol is, wat je rapporteert en wanneer je opschaalt. Dat houdt de uitvoering uitlegbaar.',
   },
   {
-    question: 'Wat als een opdrachtgever je onder gezag wil laten werken?',
+    question: 'Wat als een opdrachtgever gezagsverhouding verwacht?',
     answer:
       'Dan is het belangrijk het gesprek aan te gaan over rol en verantwoordelijkheid. Lukt dat niet, dan past de opdracht vaak niet.',
   },
@@ -82,27 +82,27 @@ export const zzpFaq = [
 
 export const opdrachtgeverFaq = [
   {
-    question: 'Hoe weet ik dat iemand gekwalificeerd is?',
+    question: 'Wat helpt om kwalificaties te beoordelen?',
     answer:
       'Vraag naar relevante certificaten en ervaring, en leg vast welke rol iemand op locatie heeft. Dat maakt de inzet toetsbaar.',
   },
   {
-    question: 'Hoe werk ik met duidelijke afspraken vooraf?',
+    question: 'Wat helpt bij duidelijke afspraken vooraf?',
     answer:
       'Leg vooraf vast wie beslist, wat de scope is en welke randvoorwaarden gelden. Dat helpt discussie tijdens uitvoering te beperken.',
   },
   {
-    question: 'Hoe houd ik samenwerking uitlegbaar?',
+    question: 'Wat helpt om samenwerking uitlegbaar te houden?',
     answer:
       'Door afspraken expliciet vast te leggen: wat is de opdracht, wie voert uit en wie beslist op locatie. Dat maakt de samenwerking inzichtelijk.',
   },
   {
-    question: 'Kan ik dit gebruiken naast bestaande afspraken?',
+    question: 'Kan dit naast bestaande afspraken gebruikt worden?',
     answer:
       'Ja. Je kunt dit gebruiken naast bestaande relaties, zolang de rolverdeling en afspraken helder zijn.',
   },
   {
-    question: 'Hoe zit het met documentatie?',
+    question: 'Wat helpt bij documentatie?',
     answer:
       'Zorg dat afspraken en bijzonderheden op een manier zijn vastgelegd die je achteraf kunt uitleggen.',
   },
