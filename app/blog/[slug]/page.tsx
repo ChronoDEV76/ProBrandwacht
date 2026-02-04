@@ -140,6 +140,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const isSystemArticle =
     frontmatter.category === 'Veiligheidskundig kader' ||
     frontmatter.pillar === '/veiligheidskundig-kader'
+  const categoryLabel =
+    typeof frontmatter.category === 'string' && frontmatter.category.trim()
+      ? frontmatter.category
+      : 'Kennisbank'
   const breadcrumbItems = [
     { name: 'Home', item: 'https://www.probrandwacht.nl/' },
     { name: 'Kennisbank', item: 'https://www.probrandwacht.nl/blog' },
@@ -170,6 +174,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </Link>
             <span>-&gt;</span>
             <span className="text-slate-200">{title}</span>
+          </div>
+
+          <div className="flex flex-col gap-2 border-l border-amber-200/40 pl-3 text-xs text-slate-300">
+            <div className="uppercase tracking-[0.2em] text-amber-200">
+              Kennisbank • {isSystemArticle ? 'Veiligheidskundig kader' : categoryLabel}
+            </div>
+            <div className="text-[11px] text-slate-400">
+              Analyse en duiding – geen oordeel, geen advies
+            </div>
           </div>
 
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
@@ -235,6 +248,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       {/* CONTENT */}
       <section className="mx-auto max-w-5xl px-4 pb-16 pt-8">
+        <div className="mb-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-200">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-amber-200">
+            <span aria-hidden>ℹ️</span>
+            {isSystemArticle ? 'Veiligheidskundig kader' : 'Kader & duiding'}
+          </div>
+          <p className="mt-2">
+            Dit artikel biedt context en duiding. Het is geen advies, geen beoordeling van professionals en
+            geen vervanging van formele besluitvorming.
+          </p>
+        </div>
         <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
           <Prose>{post.compiled}</Prose>
         </article>

@@ -21,7 +21,8 @@ export default function Page() {
                 Duidelijkheid in de brandwachtenmarkt.
               </h1>
               <p className="text-xl leading-relaxed text-slate-200/90 md:text-2xl">
-                Zodat samenwerking veilig, uitlegbaar en zelfstandig blijft.
+                ProBrandwacht duidt de brandwachtenmarkt vanuit veiligheidskundig perspectief.
+                Context, rolafbakening en systeemwerking — zonder oordeel of oplossing.
               </p>
             </div>
 
