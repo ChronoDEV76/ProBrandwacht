@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 
+import DisclaimerContent from "@/components/disclaimer-content"
+
 const LINKS = [
   { href: "/blog", label: "Kennisbank" },
   { href: "/veiligheidskundig-kader", label: "Veiligheidskundig kader" },
@@ -79,24 +81,17 @@ export default function SiteFooter() {
             href="/disclaimer"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >
-            Disclaimer
+            Disclaimer & afbakening
           </Link>
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-slate-400">
-          <span className="text-slate-500">Verkennende intake:</span>
+          <span className="text-slate-500">Contact & reflectie:</span>
           <Link
-            href="/voor-brandwachten/aanmelden"
+            href="/contact"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >
-            Voor professionals
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link
-            href="/opdrachtgevers/aanmelden"
-            className="underline-offset-4 hover:text-slate-200 hover:underline"
-          >
-            Voor opdrachtgevers
+            Neem contact op
           </Link>
         </div>
 
@@ -106,18 +101,7 @@ export default function SiteFooter() {
               Slotverklaring
             </div>
             <div className="space-y-3">
-              <p>
-                ProBrandwacht is een onafhankelijk kennis- en platforminitiatief. We bieden geen bemiddeling,
-                doen geen toezeggingen en sturen niet op prijs of inzet.
-              </p>
-              <p>
-                Samenwerking vindt in de regel rechtstreeks plaats tussen opdrachtgever en zelfstandig professional.
-                Wij leggen uit, kaderen en signaleren waar afspraken werkbaar blijven.
-              </p>
-              <p>
-                Inhoud en inzichten zijn gebaseerd op praktijkervaring in industriele,
-                repressieve en evenementenomgevingen, aangevuld met actuele context.
-              </p>
+              <DisclaimerContent variant="compact" className="text-xs text-slate-300" />
               <p>
                 Contact:{' '}
                 <a href="mailto:info@probrandwacht.nl" className="underline">

@@ -34,6 +34,14 @@ export default function OpdrachtgeversPage() {
                 ProBrandwacht geeft geen tariefadvies.
               </p>
             </div>
+
+            <div className="panel mt-4 p-5">
+              <p className="text-sm text-slate-200/90">
+                <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
+                of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de
+                duidende laag en biedt geen matching of sturing.
+              </p>
+            </div>
           </div>
         </section>
       </HeroBackground>

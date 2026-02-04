@@ -33,8 +33,6 @@ const SEGMENT_LABELS: Record<string, string> = {
   brandwacht: "Brandwacht",
   platform: "Initiatief",
   zzp: "ZZP",
-  aanmelding: "Verkennende intake",
-  aanmelden: "Verkennende intake",
   "voor-brandwachten": "Voor professionals",
   "waarom-wij-soms-nee-zeggen": "Afbakening",
   seo: "SEO",

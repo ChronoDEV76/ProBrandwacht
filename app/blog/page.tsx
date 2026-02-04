@@ -18,13 +18,14 @@ const TITLE_CORE = 'Kennisbank brandwacht-inzet & marktduiding'
 const BRAND_SUFFIX = 'ProBrandwacht'
 const DEFAULT_TITLE = `${TITLE_CORE} | ${BRAND_SUFFIX}`
 const DEFAULT_DESCRIPTION =
-  'Onafhankelijke uitleg over brandwacht-inzet, verantwoordelijkheden en regelgeving. Voor opdrachtgevers en professionals die de markt willen begrijpen.'
+  'Onafhankelijke duiding en veiligheidskundig kader over brandwacht-inzet, verantwoordelijkheden en regelgeving.'
 const DEFAULT_KEYWORDS = [
   'brandwacht',
-  'brandwacht uitleg',
-  'brandwacht-inzet uitleg',
-  'brandwachtenmarkt',
-  'rolverdeling brandwacht',
+  'veiligheidskundig kader',
+  'rolafbakening brandwacht',
+  'uitlegbaarheid samenwerking',
+  'brandwacht-inzet context',
+  'brandwachtenmarkt duiding',
 ]
 const OG_IMAGE = `${BASE_URL}/og-home.webp`
 
@@ -199,13 +200,8 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     })
   )
 
-  const postsSorted = posts.sort((a, b) => {
-    const aKey = a.updatedAt ?? a.publishedAt ?? a.dateIso
-    const bKey = b.updatedAt ?? b.publishedAt ?? b.dateIso
-    return new Date(bKey).getTime() - new Date(aKey).getTime()
-  })
-  const latestDate =
-    postsSorted[0]?.updatedAt ?? postsSorted[0]?.publishedAt ?? postsSorted[0]?.dateIso
+  const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
+  const latestDate = postsSorted[0]?.dateIso
   const filtered = postsSorted.filter((post) => {
     const matchCategory = cat === 'Alle' || post.category === cat
     const matchCity = city === 'Alle' || post.city === city

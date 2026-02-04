@@ -45,13 +45,6 @@ export const routeMeta: Record<string, RouteMeta> = {
   // (SITE) – MARKETINGPAGINA’S
   // --------------------------------------------------
 
-  '/aanmelden': {
-    title: 'Verkennende intake | ProBrandwacht',
-    description:
-      'Verkennende intake voor zelfstandigen. ProBrandwacht geeft context over rolafbakening en samenwerking, zonder garanties.',
-    keywords: [...seoKeywordClusters.zzpFreelance, ...seoKeywordClusters.platform],
-    robots: { index: false, follow: false },
-  },
 
   '/opdrachtgevers': {
     title: 'Opdrachtgevers | Uitlegbare samenwerking | ProBrandwacht',
@@ -64,16 +57,6 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
-  '/opdrachtgevers/aanmelden': {
-    title: 'Verkennende intake voor opdrachtgevers | ProBrandwacht',
-    description:
-      'Verkennende intake voor opdrachtgevers. We bespreken rol, verantwoordelijkheden en afspraken vooraf zodat samenwerking helder blijft.',
-    keywords: [
-      ...seoKeywordClusters.core,
-      ...seoKeywordClusters.platform,
-    ],
-    robots: { index: false, follow: false },
-  },
 
   '/platform': {
     title: 'Wat is ProBrandwacht? | ProBrandwacht',
@@ -257,29 +240,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   // ZZP-BRANDWACHTEN
   // --------------------------------------------------
 
-  '/zzp/aanmelden': {
-    title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
-    description:
-      'Verkennende intake voor zelfstandige brandwachten. We bespreken rol, verwachtingen en zelfstandigheid vooraf.',
-    keywords: [
-      ...seoKeywordClusters.zzpFreelance,
-      ...seoKeywordClusters.platform,
-    ],
-    robots: { index: false, follow: false },
-  },
 
-  '/voor-brandwachten/aanmelden': {
-    title: 'Verkennende intake voor zelfstandige brandwachten | ProBrandwacht',
-    description:
-      'Verkennende intake voor zelfstandige brandwachten. Je verkent 1-op-1 samenwerking zonder klassiek bureau, op basis van rolafbakening.',
-    keywords: [
-      ...seoKeywordClusters.zzpFreelance,
-      ...seoKeywordClusters.platform,
-      'zelfstandige brandwacht aanmelden',
-      ...seoKeywordClusters.positioning,
-    ],
-    robots: { index: false, follow: false },
-  },
 
   '/voor-brandwachten': {
     title: 'Voor brandwachten | ProBrandwacht',
@@ -288,7 +249,6 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: [
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.platform,
-      'brandwacht aanmelden',
       'zelfstandige brandwacht',
       ...seoKeywordClusters.positioning,
     ],

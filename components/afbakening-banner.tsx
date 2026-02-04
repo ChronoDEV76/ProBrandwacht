@@ -11,7 +11,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </span>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-slate-200">
-          Dit platform duidt rol, mandaat en afspraken. Het is geen bureau, geen adviespartij en geeft geen
+          Dit platform duidt rol, mandaat en afspraken. Het is geen bureau, geen contractpartij en geeft geen
           garanties. Afspraken blijven 1-op-1 tussen opdrachtgever en professional.
         </p>
         <details className="group mt-3 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3">
@@ -20,8 +20,8 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </summary>
           <div className="mt-3 space-y-2 text-xs text-slate-300">
             <ul className="list-disc space-y-1 pl-4">
-              <li>Geen bemiddeling, geen matching en geen tariefsturing.</li>
-              <li>Geen juridisch of fiscaal advies; geen garanties of handhaving.</li>
+              <li>Geen bemiddeling of matching en geen sturing op tarief.</li>
+              <li>Geen juridisch, operationeel of handhavend advies.</li>
               <li>Rolafbakening en besluitvorming liggen bij opdrachtgever en professional.</li>
             </ul>
             <Link href="/waarom-wij-soms-nee-zeggen" className="text-amber-200 underline underline-offset-4">

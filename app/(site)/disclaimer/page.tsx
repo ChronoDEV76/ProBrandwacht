@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import HeroBackground from '@/components/HeroBackground'
-import AfbakeningNote from '@/components/afbakening-note'
+import DisclaimerContent from '@/components/disclaimer-content'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = getRouteMetadata('/disclaimer')
@@ -40,19 +40,8 @@ export default function DisclaimerPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="panel p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Juridische disclaimer</h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-200">
-            De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
-            geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
-            garanties over uitkomsten, kwalificaties of handhaving. Afspraken over inzet en
-            verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
-            inhoud kunnen geen rechten worden ontleend.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-200">
-            Dit platform beschrijft de markt vanuit praktijkervaring en bestaande wet- en regelgeving, niet
-            vanuit een toezichthoudend of handhavend perspectief. Bevoegdheden, aanwijzingen en handhaving
-            liggen in de regel bij opdrachtgever, vergunningverlener en toezichthouder — nooit bij dit platform.
-          </p>
+          <h2 className="text-xl font-semibold md:text-2xl">Definitieve disclaimer</h2>
+          <DisclaimerContent className="mt-4" />
 
           <p className="mt-4 text-xs text-slate-400">
             Meer context? Bekijk de{' '}
@@ -61,16 +50,7 @@ export default function DisclaimerPage() {
             </Link>{' '}
             over onze werkwijze.
           </p>
-
-          <p className="mt-6 text-xs text-slate-500">
-            De uiteindelijke beoordeling van arbeidsrelaties blijft contextafhankelijk en ligt bij de betrokken
-            partijen en bevoegde instanties.
-          </p>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-4 pb-12">
-        <AfbakeningNote />
       </section>
     </main>
   )

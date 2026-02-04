@@ -49,6 +49,15 @@
     ]
   },
   {
+    "id": "prosafetymatch-toelichting",
+    "question": "Komt er tooling of compliance-ondersteuning?",
+    "answer": [
+      "ProBrandwacht blijft de publieke kennis- en kaderlaag, zonder bemiddeling of sturing.",
+      "Eventuele faciliterende modellen voor compliance of administratie vallen buiten dit platform en zijn geen matching- of tariefsystemen.",
+      "De communicatie blijft gescheiden: ProBrandwacht = duiding; facilitering gebeurt buiten dit platform."
+    ]
+  },
+  {
     "id": "voor-wie-is-probrandwacht",
     "question": "Voor wie is ProBrandwacht bedoeld?",
     "answer": [

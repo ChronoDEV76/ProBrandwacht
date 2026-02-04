@@ -85,6 +85,9 @@ export default function ContactPage() {
             <Link href="/voor-brandwachten" className="route-link">
               Start bij brandwachten
             </Link>
+            <a href="mailto:info@prosafetymatch.nl" className="route-link">
+              Contact ProSafetyMatch
+            </a>
           </div>
         </div>
       </section>

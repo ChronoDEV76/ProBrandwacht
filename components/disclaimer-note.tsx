@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import DisclaimerContent from '@/components/disclaimer-content'
+
 type DisclaimerNoteProps = {
   className?: string
 }
@@ -14,11 +16,7 @@ export default function DisclaimerNote({ className }: DisclaimerNoteProps) {
       }
     >
       <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-        <p className="text-sm leading-relaxed">
-          Deze informatie is informatief. ProBrandwacht geeft geen juridisch, fiscaal of
-          compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken over inzet worden
-          in de regel 1-op-1 gemaakt tussen opdrachtgever en professional.
-        </p>
+        <DisclaimerContent variant="compact" className="text-sm" />
         <p className="mt-2 text-xs text-slate-400">
           Lees ook de{' '}
           <Link href="/disclaimer" className="font-medium text-emerald-300 hover:text-emerald-200">

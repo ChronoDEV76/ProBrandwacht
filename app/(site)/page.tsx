@@ -144,6 +144,18 @@ export default function Page() {
             </p>
             <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Niet oplossen.</p>
           </div>
+
+          <div className="panel p-6">
+            <h2 className="section-title">Faciliterende modellen & compliance-ondersteuning</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
+              ProBrandwacht blijft de publieke kennis- en kaderlaag. Eventuele faciliterende modellen die
+              samenwerking juridisch of administratief ondersteunen, vallen buiten de scope van dit platform
+              en zijn nadrukkelijk geen bemiddelings- of matchingdienst.
+            </p>
+            <p className="mt-3 text-sm text-slate-400">
+              Backstage ondersteuning kan bestaan, maar staat los van ProBrandwacht en kent geen tariefsturing.
+            </p>
+          </div>
         </div>
       </section>
     </main>
