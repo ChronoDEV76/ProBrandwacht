@@ -68,19 +68,19 @@ const BIG_CLAIM_PATTERNS: Array<{ re: RegExp; label: string }> = [
   { re: /\b(wereldwijd|marktleider)\b/i, label: "Market leader claim" },
 ];
 
-// Tone-of-voice guard: flag defensive/negative stacking
+// Tone-of-voice guard: flag defensive stacking + belerende framing
 const TONE_NEGATIVE_PATTERNS: Array<{ re: RegExp; label: string }> = [
   {
-    re: /\bgeen\b[^\n]{0,80}\bgeen\b/i,
+    re: /\bgeen\b[^\n]{0,120}\bgeen\b/i,
     label: "Dubbele 'geen' in korte span (defensieve opsomming)",
   },
   {
-    re: /\bgeen\b[^\n]{0,80}\bgeen\b[^\n]{0,80}\bgeen\b/i,
+    re: /\bgeen\b[^\n]{0,120}\bgeen\b[^\n]{0,120}\bgeen\b/i,
     label: "Drievoudige 'geen' in korte span (defensieve opsomming)",
   },
   {
     re: /\bwat\s+we\s+niet\b/i,
-    label: "Kop 'Wat we niet' (overweeg positieve afbakening)",
+    label: "Kop/sectie 'Wat we niet' (overweeg positieve afbakening)",
   },
   {
     re: /\bgeen\s+\/\s+niet\b/i,
@@ -89,6 +89,22 @@ const TONE_NEGATIVE_PATTERNS: Array<{ re: RegExp; label: string }> = [
   {
     re: /\buitsluit(en|ing|en)?\b/i,
     label: "Uitsluiten-framing (overweeg positieve afbakening)",
+  },
+  {
+    re: /\bDit betekent dat\b/i,
+    label: "Belerende framing ('Dit betekent dat…' → liever 'In de praktijk zie je dat…')",
+  },
+  {
+    re: /\bWat dit betekent voor\b/i,
+    label: "Belerende framing ('Wat dit betekent voor…' → liever 'Wat dit in de praktijk betekent…')",
+  },
+  {
+    re: /\bHet veiligheidskundige principe\b/i,
+    label: "Academische framing ('principe' → liever 'waar het wringt in de praktijk')",
+  },
+  {
+    re: /\bHet systeem\b/i,
+    label: "Abstracte framing ('het systeem…' → liever 'in de praktijk zie je…')",
   },
 ];
 
