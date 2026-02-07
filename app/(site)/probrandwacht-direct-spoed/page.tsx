@@ -21,8 +21,8 @@ export default function ProBrandwachtDirectSpoedPage() {
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Het platform opereert onafhankelijk van uitvoering. Spoed is bedoeld voor korte, duidelijke
-              afspraken; de context bepaalt wat verantwoord is.
+              Het platform biedt context en kaders. Spoed is bedoeld voor korte, duidelijke afspraken;
+              de context bepaalt wat verantwoord is.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">

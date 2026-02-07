@@ -21,14 +21,14 @@ export default function ContactPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe samenwerking met zelfstandige
-              brandwachten werkt. We bieden duiding en context; keuzes en overeenkomsten blijven bij de
-              betrokken partijen.
+              brandwachten werkt. We bieden context en praktische aandachtspunten zodat je afspraken beter
+              kunt voorbereiden.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Heb je een vraag over onze werkwijze of wil je sparren over rolafbakening en
-              uitvoerbaarheid? Dan kun je hier contact opnemen. Tariefafspraken en inzet vinden plaats
-              tussen opdrachtgever en professional.
+              uitvoerbaarheid? Dan kun je hier contact opnemen. Tariefafspraken en inzet worden 1-op-1
+              afgestemd tussen opdrachtgever en professional.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-slate-400">
-              Contact opnemen betekent dat we meedenken over context en rolafbakening; afspraken maak je
-              1-op-1.
+              Contact opnemen betekent dat we meedenken over context en rolafbakening, zodat je afspraken
+              beter kunt voorbereiden.
             </p>
           </div>
         </section>

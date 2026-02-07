@@ -24,8 +24,8 @@ export default function ProBrandwachtDirectPage() {
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht opereert onafhankelijk van uitvoering. We maken zichtbaar welke vragen vooraf
-              helder moeten zijn, zodat afspraken uitlegbaar blijven.
+              ProBrandwacht biedt context en maakt zichtbaar welke vragen vooraf helder moeten zijn, zodat
+              afspraken uitlegbaar blijven.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">

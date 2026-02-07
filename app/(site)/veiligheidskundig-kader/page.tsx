@@ -56,9 +56,8 @@ export default function VeiligheidskundigKaderPage() {
           <Prose>
             <h2>Doel en afbakening</h2>
             <p>
-              Het veiligheidskundig kader is bedoeld om spanningen in de praktijk te duiden zonder oordeel
-              of handelingsadvies. De teksten beschrijven hoe veiligheid systemisch werkt en waar rollen
-              en bevoegdheden uit balans raken.
+              Het veiligheidskundig kader helpt om spanningen in de praktijk beter te begrijpen. De teksten
+              beschrijven hoe veiligheid systemisch werkt en waar rollen en bevoegdheden uit balans raken.
             </p>
 
             <h2>Afbakening & kader</h2>
@@ -69,7 +68,7 @@ export default function VeiligheidskundigKaderPage() {
               blijven.
             </p>
             <ul>
-              <li>De rol ligt bij duiding, niet bij uitvoering of planning</li>
+              <li>De rol ligt bij context en duiding; uitvoering en planning blijven in de praktijk</li>
               <li>Toezicht en handhaving blijven bij de bevoegde instanties</li>
               <li>Uitkomsten blijven contextafhankelijk</li>
               <li>Bevoegdheden liggen bij opdrachtgever, vergunningverlener en toezichthouder</li>

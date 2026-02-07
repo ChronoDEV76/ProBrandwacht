@@ -37,8 +37,8 @@ export default function BelangenPage() {
       body: 'Geen vaste modellen. Elke inzet heeft eigen risico’s, omgeving en randvoorwaarden.',
     },
     {
-      title: 'Geen tussenlaag',
-      body: 'ProBrandwacht legt uit en kadert, maar neemt geen rol over in uitvoering of afspraken.',
+      title: 'Heldere rolverdeling',
+      body: 'ProBrandwacht biedt context en kaders, zodat uitvoering en afspraken helder 1-op-1 kunnen plaatsvinden.',
     },
   ]
 
@@ -67,8 +67,8 @@ export default function BelangenPage() {
 
           <div className="panel max-w-3xl p-5">
             <p className="text-sm leading-relaxed text-slate-200">
-              ProBrandwacht brengt geen mensen samen om iets af te dwingen, maar om te begrijpen hoe de
-              markt werkt — zodat iedereen zelf betere keuzes kan maken.
+              ProBrandwacht brengt mensen samen om te begrijpen hoe de markt werkt — zodat iedereen zelf
+              betere keuzes kan maken.
             </p>
           </div>
 
@@ -103,8 +103,8 @@ export default function BelangenPage() {
           <div className="panel mt-8 p-6">
             <p className="text-sm font-semibold text-white">Twijfel je of dit past?</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie blind tekent of de intentie niet
-              leest, loopt later risico op frictie -- en dat is precies wat we willen voorkomen.
+              Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie vooraf helderheid zoekt,
+              voorkomt later frictie -- en dat is precies wat we willen ondersteunen.
             </p>
           </div>
         </div>

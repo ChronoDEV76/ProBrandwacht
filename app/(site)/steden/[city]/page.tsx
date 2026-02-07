@@ -60,8 +60,8 @@ export async function generateMetadata({
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Onafhankelijke uitleg over brandwacht-inzet in ${label}. ${sectorNotes} Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?`
-    : `Onafhankelijke uitleg over brandwacht-inzet in ${label}. Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?`
+    ? `Onafhankelijke uitleg over brandwacht-inzet in ${label}. ${sectorNotes} Wat is verplicht, wie is verantwoordelijk en waar kan het wringen?`
+    : `Onafhankelijke uitleg over brandwacht-inzet in ${label}. Wat is verplicht, wie is verantwoordelijk en waar kan het wringen?`
 
   return {
     ...base,
@@ -126,7 +126,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
         <>
           Praktische uitleg van rollen (bijv. industrieel, event, mangat/buitenwacht),
           verantwoordelijkheden en professioneel gedrag op de vloer. Gericht op zelfstandig
-          werken met duidelijke afspraken -- zonder ruis.
+          werken met duidelijke afspraken -- met rust en helderheid op de vloer.
         </>
       ),
     },
@@ -164,10 +164,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
           Brandwacht-inzet in {label}: verantwoordelijkheden, regels en aandachtspunten
         </h1>
 
-        <p className="mt-4 text-base leading-relaxed text-slate-200">
-          ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
-          lijnen tussen opdrachtgever en professional. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
-          <Link
+      <p className="mt-4 text-base leading-relaxed text-slate-200">
+        ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
+        lijnen tussen opdrachtgever en professional. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
+        <Link
             href="/waarom-wij-soms-nee-zeggen"
             className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
           >
@@ -223,14 +223,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                Geen plaatsing of selectie: we beschrijven wat inzet werkbaar maakt in de praktijk. We lichten
-                samenwerking toe op basis van <span className="font-semibold">vakmanschap</span>,{' '}
+                Onze focus ligt op uitleg en context over wat inzet werkbaar maakt in de praktijk.
+                We lichten samenwerking toe op basis van <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
                 <span className="font-semibold">uitlegbaar</span> blijven. Afspraken spreek je 1-op-1 af,
                 contextafhankelijk.
               </>
             }
-            footer={<>ProBrandwacht legt uit en kadert -- uitvoering blijft bij de betrokken partijen.</>}
+            footer={<>ProBrandwacht legt uit en kadert -- uitvoering ligt bij de betrokken partijen.</>}
           />
         </div>
       </HeroBackground>

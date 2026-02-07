@@ -41,7 +41,7 @@ export default function StedenIndexPage() {
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is een vakinhoudelijke route voor opdrachtgevers en zelfstandigen die
+              ProBrandwacht is een vakinhoudelijke route voor opdrachtgevers en zelfstandigen die
               professioneel willen samenwerken, met nadruk op rolhelderheid en afspraken vooraf.
             </p>
 
@@ -51,7 +51,7 @@ export default function StedenIndexPage() {
                 <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
                 <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
                 <li><strong>Afbakening:</strong> uitleg en kadering, met directe samenwerking tussen partijen.</li>
-                <li><strong>Verantwoordelijkheid:</strong> afspraken en uitvoering blijven bij opdrachtgever en professional.</li>
+                <li><strong>Verantwoordelijkheid:</strong> afspraken en uitvoering liggen bij opdrachtgever en professional.</li>
               </ul>
             </div>
 
@@ -93,7 +93,7 @@ export default function StedenIndexPage() {
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
             ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Als je vooral
-            snelheid zoekt zonder heldere afspraken, dan past een klassiek bureau-model vaak beter.
+            snel wilt schakelen zonder uitgebreide kadering, kan een klassiek bureau-model soms beter passen.
           </p>
         </div>
       </section>

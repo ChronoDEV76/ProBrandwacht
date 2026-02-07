@@ -21,15 +21,15 @@ export default function Page() {
                 Duidelijkheid in de brandwachtenmarkt.
               </h1>
               <p className="text-xl leading-relaxed text-slate-200/90 md:text-2xl">
-                ProBrandwacht duidt de brandwachtenmarkt vanuit veiligheidskundig perspectief.
-                Context, rolafbakening en systeemwerking — met focus op uitleg en overzicht.
+                ProBrandwacht biedt veiligheidskundige context bij de brandwachtenmarkt.
+                Rolafbakening, systeemwerking en praktische uitleg — met focus op overzicht en werkbaarheid.
               </p>
             </div>
 
             <p className="text-lg leading-relaxed text-slate-200/90">
-              Dit initiatief legt uit hoe opdrachtgevers en zelfstandige brandwachten praktisch
-              samenwerken. We maken zichtbaar wat je vooraf bespreekt, waar risico&apos;s
-              ontstaan en waar verantwoordelijkheden beginnen en eindigen.
+              Dit initiatief helpt opdrachtgevers en zelfstandige brandwachten om samenwerking vooraf scherp
+              te krijgen. We maken zichtbaar wat je bespreekt, waar risico&apos;s ontstaan en hoe
+              verantwoordelijkheden in de praktijk verdeeld zijn.
             </p>
 
             <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
@@ -55,12 +55,12 @@ export default function Page() {
             <div className="panel p-6">
               <h2 className="section-title">Waarom dit initiatief bestaat</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-                De inzet van zelfstandige brandwachten groeit, terwijl regels, verwachtingen en
-                verantwoordelijkheden steeds minder duidelijk worden.
+                De inzet van zelfstandige brandwachten groeit. Juist dan helpt het om regels, verwachtingen
+                en verantwoordelijkheden vooraf helder te maken.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-                In die onduidelijkheid ontstaan risico&apos;s: voor opdrachtgevers, voor professionals en
-                uiteindelijk voor veiligheid op locatie.
+                Dat geeft rust en voorspelbaarheid: voor opdrachtgevers, voor professionals en uiteindelijk
+                voor veiligheid op locatie.
               </p>
             </div>
             <div className="panel p-6">
@@ -68,8 +68,8 @@ export default function Page() {
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
                 <li>Scope die niet concreet is vastgelegd</li>
                 <li>Beslislijnen die pas tijdens uitvoering blijken</li>
-                <li>Als gevolg van onduidelijke afspraken in de keten kan rolafbakening soms vervagen</li>
-                <li>Afspraken die achteraf niet uitlegbaar zijn</li>
+                <li>Rollen die in de keten verschuiven zonder heldere afbakening</li>
+                <li>Afspraken die achteraf lastig uitlegbaar zijn</li>
               </ul>
             </div>
           </div>
@@ -81,12 +81,12 @@ export default function Page() {
                 {
                   title: '1) Afspraken voor inzet',
                   body:
-                    'Kader vooraf rol, scope en randvoorwaarden zodat iedereen weet wat wel en niet bij de inzet hoort.',
+                    'Kader vooraf rol, scope en randvoorwaarden zodat iedereen weet wat er bij de inzet hoort.',
                 },
                 {
                   title: '2) Verantwoordelijkheid tijdens uitvoering',
                   body:
-                    'Leg vast wie beslist bij wijzigingen, escalatie en stop, zodat veiligheid niet op gevoel draait.',
+                    'Leg vast wie beslist bij wijzigingen, escalatie en stop, zodat veiligheid op feiten draait.',
                 },
                 {
                   title: '3) Uitlegbaarheid achteraf',
@@ -116,9 +116,9 @@ export default function Page() {
             <div className="panel p-6">
               <h3 className="text-xl font-semibold text-white">Afbakening</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-200 md:text-base">
-                ProBrandwacht biedt veiligheidskundige duiding en context. Het platform faciliteert geen
-                inzet, contracten of besluitvorming, maar beschrijft hoe rollen, verantwoordelijkheden en
-                kaders zich in de praktijk tot elkaar verhouden.
+                ProBrandwacht biedt veiligheidskundige context en praktische handvatten. We maken zichtbaar
+                hoe rollen, verantwoordelijkheden en kaders zich in de praktijk tot elkaar verhouden, zodat
+                afspraken beter voorbereid kunnen worden.
               </p>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function Page() {
           <div className="panel p-6">
             <h2 className="section-title">Juridische context</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Deze informatie is bedoeld als duiding en overzicht. Afspraken over inzet worden in de regel
+              Deze informatie is bedoeld als context en overzicht. Afspraken over inzet worden in de regel
               1-op-1 gemaakt tussen opdrachtgever en professional, binnen hun eigen juridische en
               organisatorische kaders.
             </p>

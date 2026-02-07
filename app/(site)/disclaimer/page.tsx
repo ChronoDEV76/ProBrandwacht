@@ -23,7 +23,8 @@ export default function DisclaimerPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
-              verantwoordelijkheden. We duiden de markt en kaders, maar bemiddelen niet en sturen niet.
+              verantwoordelijkheden. We bieden context en praktische kaders zodat samenwerking beter
+              voorbereid is.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">

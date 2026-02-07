@@ -17,13 +17,14 @@ export default function AfbakeningNote({ className }: AfbakeningNoteProps) {
       </div>
       <div className="space-y-3">
         <p className="text-slate-300">
-          ProBrandwacht biedt veiligheidskundige duiding en context. Het platform faciliteert geen
-          inzet, contracten of besluitvorming, maar beschrijft hoe rollen, verantwoordelijkheden en
-          kaders zich in de praktijk tot elkaar verhouden.
+          ProBrandwacht biedt veiligheidskundige context en praktische handvatten om samenwerking scherp
+          te krijgen. We laten zien hoe rollen, verantwoordelijkheden en kaders zich in de praktijk tot
+          elkaar verhouden.
         </p>
         <p className="text-slate-300">
           Afspraken maak je 1-op-1 tussen opdrachtgever en zelfstandig professional, binnen hun eigen
-          juridische en organisatorische kaders.
+          juridische en organisatorische kaders. Zo blijven verantwoordelijkheden helder en blijft de
+          samenwerking uitlegbaar.
         </p>
       </div>
     </aside>

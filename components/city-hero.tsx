@@ -21,9 +21,9 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht is geen klassiek bemiddelingsbureau. We beschrijven welke rolverdeling en afspraken
-          vooraf nodig zijn om inzet in {cityName} uitvoerbaar te houden. Past dat niet? Dan is nee soms de
-          professionele keuze; lees{' '}
+          ProBrandwacht biedt context en kaders voor zelfstandige samenwerking. We beschrijven welke
+          rolverdeling en afspraken vooraf nodig zijn om inzet in {cityName} uitvoerbaar te houden. Past dat
+          niet? Dan is nee soms de professionele keuze; lees{' '}
           <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-800">
             waarom wij soms nee zeggen
           </Link>

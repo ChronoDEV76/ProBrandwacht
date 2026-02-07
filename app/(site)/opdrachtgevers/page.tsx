@@ -21,15 +21,15 @@ export default function OpdrachtgeversPage() {
               stelt, wat je afbakent en welke signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Het platform licht de markt en kaders voor zelfstandige samenwerking toe — uitvoering en keuzes
-              blijven bij de betrokken partijen.
+              Het platform licht de markt en kaders voor zelfstandige samenwerking toe, zodat afspraken
+              uitvoerbaar en uitlegbaar blijven.
             </p>
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
-                uitvoering en contractering. Jij en de professional maken 1-op-1 afspraken over rol,
-                verantwoordelijkheden en uitvoering. Tarief wordt onderling bepaald.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en voorbeelden.
+                Jij en de professional maken 1-op-1 afspraken over rol, verantwoordelijkheden en uitvoering.
+                Tarief wordt onderling bepaald.
               </p>
             </div>
 
@@ -37,7 +37,7 @@ export default function OpdrachtgeversPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
                 of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de
-                duidende laag, met focus op rolhelderheid en uitlegbaarheid.
+                kennislaag, met focus op rolhelderheid en uitlegbaarheid.
               </p>
             </div>
           </div>

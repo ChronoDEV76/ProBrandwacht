@@ -204,12 +204,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               {isSystemArticle ? (
                 <div className={tldr ? 'mt-3 space-y-2' : 'space-y-2'}>
                   <p>
-                    Dit artikel richt zich op organisatorische en regelgevende kaders, niet op persoonlijke
-                    prestaties of professionele competentie.
+                    Dit artikel richt zich op organisatorische en regelgevende kaders, zodat professioneel
+                    vakmanschap beter tot zijn recht komt.
                   </p>
                   <p>
-                    In dit artikel duiden we systemische factoren zonder commentaar te leveren op individuele
-                    professionals; de inzet en deskundigheid van brandwachten blijft essentieel voor veilige uitvoering.
+                    We waarderen het vakmanschap van brandwachten. Dit artikel kijkt naar systeemfactoren die
+                    het werk beïnvloeden, zodat rollen en verwachtingen beter te bespreken zijn.
                   </p>
                   <p>
                     Brandwachten leveren waardevolle observaties en kennis; deze tekst onderzoekt hoe

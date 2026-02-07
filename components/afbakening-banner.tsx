@@ -11,8 +11,8 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </span>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-slate-200">
-          Dit platform duidt rol, mandaat en afspraken. ProBrandwacht opereert onafhankelijk van uitvoering
-          en contractering; afspraken blijven 1-op-1 tussen opdrachtgever en professional.
+          Dit platform biedt context bij rol, mandaat en afspraken. Afspraken worden 1-op-1 gemaakt tussen
+          opdrachtgever en professional, binnen hun eigen juridische en organisatorische kaders.
         </p>
         <details className="group mt-3 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3">
           <summary className="cursor-pointer list-none text-xs font-semibold uppercase tracking-[0.18em] text-amber-100">
@@ -20,9 +20,9 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </summary>
           <div className="mt-3 space-y-2 text-xs text-slate-300">
             <ul className="list-disc space-y-1 pl-4">
-              <li>Samenwerking vindt buiten het platform plaats, met eigen tarief- en inzetafspraken.</li>
-              <li>Deze duiding ondersteunt inzicht en rolhelderheid, niet besluitvorming of handhaving.</li>
-              <li>Rolafbakening en keuzes blijven bij opdrachtgever en professional.</li>
+              <li>Samenwerking gebeurt rechtstreeks, met eigen tarief- en inzetafspraken.</li>
+              <li>Deze duiding ondersteunt inzicht en rolhelderheid, zodat besluitvorming beter voorbereid is.</li>
+              <li>Rolafbakening en keuzes worden gemaakt door opdrachtgever en professional.</li>
             </ul>
             <Link href="/waarom-wij-soms-nee-zeggen" className="text-amber-200 underline underline-offset-4">
               Lees het volledige kader
@@ -30,7 +30,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </div>
         </details>
         <p className="mt-3 text-xs text-slate-400">
-          Compacte afbakening: duiding en context, los van uitvoering en sturing.
+          Compacte afbakening: context en uitleg naast de praktijk.
         </p>
       </div>
     </section>

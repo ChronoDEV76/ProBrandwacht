@@ -21,16 +21,15 @@ export default function Page() {
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
               Nee is hier geen oordeel over mensen of intenties. Het is een signaal dat
-              randvoorwaarden ontbreken voor professioneel, veilig en uitlegbaar werk.
+              randvoorwaarden nog niet compleet zijn voor professioneel, veilig en uitlegbaar werk.
               Als scope, rol en beslislijnen niet kloppen, ontstaan discussies tijdens
-              uitvoering. Dat wil je vermijden.
+              uitvoering. Dat wil je voorkomen.
             </p>
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
-                uitvoering en besluitvorming. We lichten patronen toe die in de praktijk tot mislukte
-                uitvoering leiden, zodat je ze vooraf kunt voorkomen.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en herkenning
+                bij patronen die in de praktijk voor gedoe zorgen, zodat je ze vooraf kunt voorkomen.
               </p>
             </div>
           </div>
@@ -45,11 +44,11 @@ export default function Page() {
           />
           <Reason
             title="2) Beslislijnen ontbreken"
-            text="Als onduidelijk is wie beslist bij wijziging, stop of escalatie, ontstaat er druk op locatie. Dat is onprofessioneel en onveilig."
+            text="Als onduidelijk is wie beslist bij wijziging, stop of escalatie, ontstaat er druk op locatie. Dat werkt onrust in de hand."
           />
           <Reason
             title="3) Randvoorwaarden ontbreken"
-            text="Toegang, contactpunt, middelen en overdracht moeten vooraf geregeld zijn; anders wordt uitvoering improvisatie. Dat werkt tegen iedereen."
+            text="Toegang, contactpunt, middelen en overdracht moeten vooraf geregeld zijn; anders wordt uitvoering improvisatie. Dat helpt niemand."
           />
           <Reason
             title="4) Tempo wint van veiligheid"

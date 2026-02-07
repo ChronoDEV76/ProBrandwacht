@@ -29,8 +29,8 @@ export default function PraktijkBrandveiligheidPage() {
           </span>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Praktijk en realiteit</h1>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Dit cluster beschrijft waar systemen in de praktijk knellen. Geen oordeel, wel herkenning van
-            de spanning tussen papier en uitvoering.
+            Dit cluster beschrijft waar systemen in de praktijk knellen. Met herkenning voor de spanning
+            tussen papier en uitvoering.
           </p>
         </div>
       </HeroBackground>
@@ -49,7 +49,7 @@ export default function PraktijkBrandveiligheidPage() {
 
             <h2>Hoe we dit onderwerp benaderen</h2>
             <ul>
-              <li>We beschrijven praktijkgevallen zonder oordeel of interventie.</li>
+              <li>We beschrijven praktijkgevallen met respect voor vakmanschap.</li>
               <li>We benoemen frictie tussen verantwoordelijkheid en uitvoerbaarheid.</li>
               <li>We blijven bij observatie en duiding.</li>
             </ul>
@@ -84,7 +84,7 @@ export default function PraktijkBrandveiligheidPage() {
             <h2>Leeswijzer</h2>
             <p>
               De focus ligt op wat er in de praktijk zichtbaar gebeurt. De artikelen zijn bedoeld om
-              begrippen en rollen te verhelderen, niet om uitvoering te sturen.
+              begrippen en rollen te verhelderen, zodat uitvoering beter voorbereid is.
             </p>
           </Prose>
         </article>

@@ -46,7 +46,7 @@ export default function BrandwachtenmarktPage() {
             <h2>Doel en afbakening</h2>
             <p>
               Deze pillar page beschrijft hoe de markt voor brandwacht-inzet is gegroeid en waarom bepaalde
-              spanningen terugkomen. Het doel is begrip en herkenning, niet beoordeling of sturing.
+              spanningen terugkomen. Het doel is begrip en herkenning, zodat samenwerking beter voorbereid is.
             </p>
 
             <h2>Hoe we dit onderwerp benaderen</h2>
@@ -88,7 +88,7 @@ export default function BrandwachtenmarktPage() {
             <h2>Leeswijzer</h2>
             <p>
               De artikelen in dit cluster zijn bewust beschrijvend. Ze benoemen systeemspanningen zonder
-              individuele schuld of oplossingsrichting. Zo blijft de focus op inzicht en rolhelderheid.
+              individuele schuld. Zo blijft de focus op inzicht en rolhelderheid.
             </p>
           </Prose>
         </article>

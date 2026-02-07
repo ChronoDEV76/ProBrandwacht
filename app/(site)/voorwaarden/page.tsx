@@ -34,11 +34,11 @@ export default function VoorwaardenPage() {
             <h1 className="text-3xl font-semibold text-white">Algemene voorwaarden</h1>
 
             <p className="max-w-3xl text-slate-200">
-              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat je van ons mag verwachten en wat
-              niet. We houden ze bewust helder, praktisch en zonder juridische ruis.
+              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat je van ons mag verwachten en hoe
+              de rolverdeling werkt. We houden ze bewust helder, praktisch en zonder juridische ruis.
             </p>
 
-            <h2 className="text-lg font-semibold text-white">1. Wat ProBrandwacht is (en niet)</h2>
+            <h2 className="text-lg font-semibold text-white">1. Wat ProBrandwacht is</h2>
             <p>
               ProBrandwacht is een informatie- en kennisinitiatief voor zelfstandige brandwachten en
               opdrachtgevers. We lichten toe en kaderen, zodat samenwerking uitlegbaar blijft.
@@ -52,7 +52,7 @@ export default function VoorwaardenPage() {
 
             <h2 className="text-lg font-semibold text-white">3. Juridische disclaimer</h2>
             <p>
-              De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. Juridische,
+              De informatie op ProBrandwacht is informatief en algemeen van aard. Juridische,
               fiscale, compliance- en tariefkeuzes blijven bij de betrokken partijen. Aan de inhoud kunnen
               geen rechten worden ontleend.
             </p>

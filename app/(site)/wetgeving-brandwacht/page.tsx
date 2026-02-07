@@ -30,7 +30,7 @@ export default function WetgevingBrandwachtPage() {
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Wet- en regelgeving</h1>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             Duiding van wet- en regelgeving rond brandwacht-inzet en verantwoordelijkheid. We beschrijven
-            kaders en begrippen zonder juridisch advies of interpretaties voor specifieke situaties.
+            kaders en begrippen, zodat je de juiste vragen kunt stellen in je eigen context.
           </p>
         </div>
       </HeroBackground>
@@ -44,14 +44,14 @@ export default function WetgevingBrandwachtPage() {
             <h2>Doel en afbakening</h2>
             <p>
               Deze pillar page zet de context neer voor wetgeving die de brandwachtenmarkt raakt. Het doel
-              is helderheid over termen en reikwijdte, niet het geven van juridisch advies.
+              is helderheid over termen en reikwijdte, zodat samenwerking beter voorbereid is.
             </p>
 
             <h2>Hoe we dit onderwerp benaderen</h2>
             <ul>
               <li>We houden de taal feitelijk en beschrijvend.</li>
               <li>We leggen uit wat begrippen betekenen in de praktijk.</li>
-              <li>We wijzen op rolafbakening en verantwoordelijkheid zonder oplossingsrichting.</li>
+              <li>We wijzen op rolafbakening en verantwoordelijkheid als basis voor goede afspraken.</li>
             </ul>
 
             <h2>Onderwerpen in dit cluster</h2>

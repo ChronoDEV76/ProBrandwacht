@@ -25,8 +25,8 @@ export default function OverOnsPage() {
               waar samenwerking in de praktijk vaak schuurt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht opereert onafhankelijk van uitvoering, contractering en besluitvorming. We
-              duiden, kaderen en maken zichtbaar waar afspraken en verantwoordelijkheden liggen.
+              ProBrandwacht biedt context naast uitvoering, contractering en besluitvorming. We duiden,
+              kaderen en maken zichtbaar waar afspraken en verantwoordelijkheden liggen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               Ons doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
@@ -53,7 +53,7 @@ export default function OverOnsPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
               <li>Samenwerking vindt plaats tussen opdrachtgever en professional</li>
               <li>Tarief- en inzetafspraken blijven onderdeel van die samenwerking</li>
-              <li>ProBrandwacht ondersteunt inzicht, geen uitvoering of planning</li>
+              <li>ProBrandwacht ondersteunt inzicht naast uitvoering of planning</li>
               <li>Besluiten en uitkomsten blijven contextafhankelijk</li>
             </ul>
           </div>
@@ -66,7 +66,7 @@ export default function OverOnsPage() {
         <section className="panel mt-8 p-6">
           <h2 className="text-lg font-semibold text-white">Juridische context</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-200">
-            De informatie op ProBrandwacht is bedoeld als duiding en overzicht. Afspraken over inzet en
+            De informatie op ProBrandwacht is bedoeld als context en overzicht. Afspraken over inzet en
             verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional, binnen
             hun eigen juridische en organisatorische kaders. Aan de inhoud kunnen geen rechten worden ontleend.
           </p>

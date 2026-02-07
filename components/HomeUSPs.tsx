@@ -17,7 +17,7 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             </p>
             <h2 className="mt-1 text-sm font-semibold">1-op-1 samenwerken</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
-              Duiding voor zzp-brandwachten en opdrachtgevers met praktische DBA-handvatten.
+              Praktische uitleg voor zzp-brandwachten en opdrachtgevers met DBA-handvatten.
               Heldere, toetsbare afspraken en duidelijke rolverdeling.
             </p>
           </article>
@@ -29,8 +29,8 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             </p>
             <h2 className="mt-1 text-sm font-semibold">Uitlegbare samenwerking</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
-              Duiding over verantwoordelijkheid, communicatie en uitvoering. Zo blijft de samenwerking
-              zelfstandig en toetsbaar, met directe lijnen.
+              Inzicht in verantwoordelijkheid, communicatie en uitvoering. Zo blijft de samenwerking
+              zelfstandig, toetsbaar en duidelijk voor iedereen.
             </p>
           </article>
 
@@ -47,8 +47,8 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
               verantwoordelijkheid in de uitvoering — DBA-bewust en uitlegbaar.
             </p>
             <p className="mt-2 text-xs leading-relaxed text-[#E5ECFF]">
-              ProBrandwacht opereert onafhankelijk van uitvoering. Afspraken worden 1-op-1 gemaakt tussen
-              opdrachtgever en zelfstandig professional.
+              ProBrandwacht biedt context en kaders; afspraken worden 1-op-1 gemaakt tussen opdrachtgever
+              en zelfstandig professional.
             </p>
           </article>
         </div>

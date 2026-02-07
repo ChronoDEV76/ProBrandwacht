@@ -7,10 +7,10 @@ const LEGAL_NOTE_COPY: Record<
   standard: {
     title: 'Juridische nuance',
     body:
-      'Dit artikel is informatief. ' +
+      'Dit artikel is informatief en bedoeld om inzicht te geven. ' +
       'Of een samenwerking voldoet aan wet- en regelgeving, zoals de Wet DBA, hangt ' +
-      'af van de feitelijke uitvoering in de praktijk. Aan deze tekst kunnen geen ' +
-      'rechten worden ontleend.',
+      'af van de feitelijke uitvoering in de praktijk. Gebruik dit als context, ' +
+      'niet als juridisch oordeel.',
   },
   dba: {
     title: 'Belangrijk om te weten',
@@ -19,7 +19,7 @@ const LEGAL_NOTE_COPY: Record<
       'automatisch doorslaggevend voor de kwalificatie van de arbeidsrelatie. ' +
       'Toezichthouders beoordelen de feitelijke gezagsverhouding, mate van ' +
       'zelfstandigheid en wijze van uitvoering. De beoordeling blijft ' +
-      'contextafhankelijk.',
+      'contextafhankelijk en vraagt om zorgvuldige onderbouwing.',
   },
   extended: {
     title: 'Context en verantwoordelijkheid',
@@ -27,13 +27,13 @@ const LEGAL_NOTE_COPY: Record<
       'De inhoud van dit artikel is informatief en gebaseerd op praktijkervaring en ' +
       'publiek beschikbare regelgeving. De uiteindelijke beoordeling van een ' +
       'arbeidsrelatie ligt bij opdrachtgever en uitvoerende en, indien van toepassing, ' +
-      'bij toezichthouders. ProBrandwacht biedt duiding en overzicht; juridische ' +
-      'en fiscale keuzes blijven bij de betrokken partijen.',
+      'bij toezichthouders. ProBrandwacht biedt context en overzicht; juridische ' +
+      'en fiscale keuzes worden gemaakt door de betrokken partijen.',
   },
 }
 
 const DEFAULT_CLOSING_LINE =
-  'Professionele samenwerking vraagt niet om standaardantwoorden, maar om bewuste keuzes in de praktijk.'
+  'Professionele samenwerking vraagt om duidelijke afspraken en bewuste keuzes in de praktijk.'
 
 export default function BlogLegalNote({
   variant = 'standard',

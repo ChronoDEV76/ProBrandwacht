@@ -14,7 +14,7 @@ export default function VoorBrandwachtenPage() {
           <div className="max-w-3xl">
             <p className="text-sm uppercase tracking-widest text-slate-300/80">Voor brandwachten</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Zelfstandig werken, met duidelijke grenzen
+              Zelfstandig werken, met duidelijke kaders
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
               ProBrandwacht helpt je aan taal en kaders om professioneel samen te werken: helderheid over rol,
@@ -24,9 +24,9 @@ export default function VoorBrandwachtenPage() {
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
-                uitvoering en planning. We bieden context en voorbeelden om 1-op-1 afspraken scherper te
-                maken. Tariefafspraken blijven onderdeel van die samenwerking.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en voorbeelden
+                om 1-op-1 afspraken scherper te maken. Uitvoering, planning en tariefafspraken blijven
+                onderdeel van die samenwerking.
               </p>
             </div>
 
@@ -34,7 +34,7 @@ export default function VoorBrandwachtenPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
                 of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de kennis-
-                en kaderlaag, met focus op duiding en rolhelderheid.
+                en kaderlaag, met focus op context en rolhelderheid.
               </p>
             </div>
           </div>
