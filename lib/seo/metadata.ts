@@ -190,7 +190,8 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'FAQ | ProBrandwacht',
     description:
       'Antwoorden op veelgestelde vragen over rolafbakening, verantwoordelijkheden en afspraken.',
-    keywords: [...seoKeywordClusters.core
+    keywords: [
+      ...seoKeywordClusters.core,
       'brandwacht platform',
     ],
   },
