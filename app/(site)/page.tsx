@@ -22,7 +22,7 @@ export default function Page() {
               </h1>
               <p className="text-xl leading-relaxed text-slate-200/90 md:text-2xl">
                 ProBrandwacht duidt de brandwachtenmarkt vanuit veiligheidskundig perspectief.
-                Context, rolafbakening en systeemwerking — zonder oordeel of oplossing.
+                Context, rolafbakening en systeemwerking — met focus op uitleg en overzicht.
               </p>
             </div>
 
@@ -108,19 +108,18 @@ export default function Page() {
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
                 <li>Uitleggen hoe zelfstandige samenwerking is bedoeld.</li>
                 <li>Benoemen waar rollen en verantwoordelijkheden vervagen.</li>
-                <li>Waarschuwen voor schijnconstructies en onduidelijke afspraken.</li>
+                <li>Signaleren waar rol- en constructierisico&apos;s ontstaan.</li>
                 <li>Marktontwikkelingen uitleggen zonder belang of sturing.</li>
               </ul>
             </div>
 
             <div className="panel p-6">
-              <h3 className="text-xl font-semibold text-white">Wat ProBrandwacht niet doet</h3>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-                <li>Geen bemiddeling of planning.</li>
-                <li>Geen tariefadvies of prijsvergelijkingen.</li>
-                <li>Geen garanties of zekerheden.</li>
-                <li>Geen compliance- of juridische oplossingen.</li>
-              </ul>
+              <h3 className="text-xl font-semibold text-white">Afbakening</h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-200 md:text-base">
+                ProBrandwacht biedt veiligheidskundige duiding en context. Het platform faciliteert geen
+                inzet, contracten of besluitvorming, maar beschrijft hoe rollen, verantwoordelijkheden en
+                kaders zich in de praktijk tot elkaar verhouden.
+              </p>
             </div>
           </div>
 
@@ -137,24 +136,25 @@ export default function Page() {
           </div>
 
           <div className="panel p-6">
-            <h2 className="section-title">Juridische disclaimer</h2>
+            <h2 className="section-title">Juridische context</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Deze informatie is informatief. ProBrandwacht geeft geen juridisch, fiscaal of
-              compliance-advies, bemiddelt niet en biedt geen garanties. Afspraken over inzet worden
-              in de regel 1-op-1 gemaakt tussen opdrachtgever en professional.
+              Deze informatie is bedoeld als duiding en overzicht. Afspraken over inzet worden in de regel
+              1-op-1 gemaakt tussen opdrachtgever en professional, binnen hun eigen juridische en
+              organisatorische kaders.
             </p>
-            <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Niet oplossen.</p>
+            <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Praktijk.</p>
           </div>
 
           <div className="panel p-6">
-            <h2 className="section-title">Faciliterende modellen & compliance-ondersteuning</h2>
+            <h2 className="section-title">Faciliterende modellen & ondersteuning</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht blijft de publieke kennis- en kaderlaag. Eventuele faciliterende modellen die
-              samenwerking juridisch of administratief ondersteunen, vallen buiten de scope van dit platform
-              en zijn nadrukkelijk geen bemiddelings- of matchingdienst.
+              samenwerking juridisch of administratief ondersteunen, opereren buiten dit platform en hebben
+              een eigen rol en verantwoordelijkheid.
             </p>
             <p className="mt-3 text-sm text-slate-400">
-              Backstage ondersteuning kan bestaan, maar staat los van ProBrandwacht en kent geen tariefsturing.
+              Backstage ondersteuning kan bestaan, maar staat los van ProBrandwacht; tariefafspraken blijven
+              bij de betrokken partijen.
             </p>
           </div>
         </div>

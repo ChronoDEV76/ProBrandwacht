@@ -124,7 +124,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/veiligheidskundig-kader': {
     title: 'Veiligheidskundig kader — principes en systeemveiligheid | ProBrandwacht',
     description:
-      'Veiligheidskundige duiding van rol, mandaat en systeemveiligheid binnen brandveiligheid. Context en principes, geen advies.',
+      'Veiligheidskundige duiding van rol, mandaat en systeemveiligheid binnen brandveiligheid. Context en principes voor bewuste keuzes.',
     keywords: [
       ...seoKeywordClusters.core,
       'veiligheidskundig kader',

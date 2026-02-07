@@ -30,7 +30,7 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
             <h2 className="mt-1 text-sm font-semibold">Uitlegbare samenwerking</h2>
             <p className="mt-1 text-xs leading-relaxed text-[#E5ECFF]">
               Duiding over verantwoordelijkheid, communicatie en uitvoering. Zo blijft de samenwerking
-              zelfstandig en toetsbaar, zonder tussenlagen.
+              zelfstandig en toetsbaar, met directe lijnen.
             </p>
           </article>
 
@@ -47,8 +47,8 @@ export default function HomeUSPs({ className }: HomeUSPsProps) {
               verantwoordelijkheid in de uitvoering — DBA-bewust en uitlegbaar.
             </p>
             <p className="mt-2 text-xs leading-relaxed text-[#E5ECFF]">
-              ProBrandwacht is geen uitzendbureau en geen werkgever. Afspraken worden 1-op-1 gemaakt
-              tussen opdrachtgever en zelfstandig professional.
+              ProBrandwacht opereert onafhankelijk van uitvoering. Afspraken worden 1-op-1 gemaakt tussen
+              opdrachtgever en zelfstandig professional.
             </p>
           </article>
         </div>

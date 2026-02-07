@@ -6,7 +6,7 @@ const messages = [
   "Heldere afspraken. Directe afstemming.",
   "Anders dan klassieke bureauconstructies: rolzuiver en uitlegbaar.",
   "Rijksgediplomeerd en/of repressief.",
-  "Contextafhankelijk, zonder loze beloftes.",
+  "Contextafhankelijk, met realistische verwachtingen.",
 ];
 
 export default function HomeHeroCycle() {

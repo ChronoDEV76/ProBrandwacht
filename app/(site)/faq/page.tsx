@@ -27,8 +27,8 @@ export default function FaqPage() {
           <h1 className="text-3xl font-semibold text-white md:text-5xl">FAQ</h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Antwoorden die grenzen, rolverdeling en verantwoordelijkheden duidelijk maken. Geen beloftes, geen
-            oplossingen.
+            Antwoorden die grenzen, rolverdeling en verantwoordelijkheden duidelijk maken, met focus op context
+            en rolhelderheid.
           </p>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             ProBrandwacht licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf

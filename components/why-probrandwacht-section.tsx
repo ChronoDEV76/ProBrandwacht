@@ -12,8 +12,8 @@ export default function WhyProbrandwachtSection() {
             dat rolverdeling en afspraken uitlegbaar maakt.
           </p>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            Geen prijssturing. Geen verkapte loondienst. Wel duidelijke kaders voor professionals en
-            opdrachtgevers.
+            Heldere kaders voor professionals en opdrachtgevers, met afspraken die zelfstandig en transparant
+            blijven.
           </p>
         </div>
 
@@ -41,10 +41,10 @@ export default function WhyProbrandwachtSection() {
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <h3 className="text-sm font-semibold text-violet-300">Geen tussenlaag</h3>
+            <h3 className="text-sm font-semibold text-violet-300">Directe samenwerking</h3>
             <p className="text-sm text-slate-200">
-              ProBrandwacht is geen bemiddelaar en geen werkgever. Afspraken worden 1-op-1 gemaakt en
-              blijven volledig bij de betrokken partijen.
+              ProBrandwacht opereert onafhankelijk van uitvoering. Afspraken worden 1-op-1 gemaakt en blijven
+              bij de betrokken partijen.
             </p>
           </div>
         </div>

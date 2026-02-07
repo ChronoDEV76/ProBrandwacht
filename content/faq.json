@@ -11,32 +11,32 @@
     "id": "is-probrandwacht-een-bureau",
     "question": "Is ProBrandwacht een bureau of bemiddelaar?",
     "answer": [
-      "Nee. ProBrandwacht is geen bureau, geen werkgever en geen bemiddelaar.",
-      "ProBrandwacht brengt geen partijen samen en sluit geen overeenkomsten."
+      "ProBrandwacht opereert onafhankelijk van uitvoering en contractering.",
+      "Samenwerking vindt plaats tussen opdrachtgever en professional."
     ]
   },
   {
     "id": "maakt-probrandwacht-afspraken",
     "question": "Maakt ProBrandwacht afspraken tussen opdrachtgever en brandwacht?",
     "answer": [
-      "Nee. Alle afspraken worden rechtstreeks gemaakt tussen opdrachtgever en zelfstandig professional.",
-      "ProBrandwacht biedt alleen context en uitleg over waar zulke afspraken aan moeten voldoen."
+      "Afspraken worden rechtstreeks gemaakt tussen opdrachtgever en zelfstandig professional.",
+      "ProBrandwacht biedt context en uitleg over wat afspraken uitlegbaar en werkbaar maakt."
     ]
   },
   {
     "id": "geeft-probrandwacht-garanties",
     "question": "Geeft ProBrandwacht garanties over inzet of samenwerking?",
     "answer": [
-      "Nee. ProBrandwacht geeft geen garanties over beschikbaarheid, uitvoering of uitkomst.",
-      "Samenwerking blijft altijd de verantwoordelijkheid van de betrokken partijen."
+      "Beschikbaarheid, uitvoering en uitkomst blijven contextafhankelijk.",
+      "Samenwerking en keuzes liggen bij de betrokken partijen."
     ]
   },
   {
     "id": "stuurt-probrandwacht-op-prijs",
     "question": "Stuurt ProBrandwacht op prijs of rekenmodellen?",
     "answer": [
-      "Nee. ProBrandwacht doet geen prijssturing en geeft geen rekenmodellen of richtlijnen.",
-      "Het initiatief legt alleen uit waarom duidelijke afspraken belangrijk zijn."
+      "Tariefafspraken en rekenmodellen horen bij de samenwerking zelf.",
+      "Het initiatief legt uit waarom duidelijke afspraken belangrijk zijn."
     ]
   },
   {
@@ -44,7 +44,7 @@
     "question": "Is ProBrandwacht een publieke gids of juridisch oordeel?",
     "answer": [
       "ProBrandwacht is een publieke gids: uitleg, context en afbakening over hoe samenwerken in de praktijk werkt.",
-      "Het biedt geen juridisch oordeel en levert geen compliance als product.",
+      "Juridische oordelen en compliance-keuzes blijven bij de betrokken partijen.",
       "Het helpt vooral om risico's en aandachtspunten te herkennen en afspraken beter te kunnen onderbouwen."
     ]
   },
@@ -52,8 +52,8 @@
     "id": "prosafetymatch-toelichting",
     "question": "Komt er tooling of compliance-ondersteuning?",
     "answer": [
-      "ProBrandwacht blijft de publieke kennis- en kaderlaag, zonder bemiddeling of sturing.",
-      "Eventuele faciliterende modellen voor compliance of administratie vallen buiten dit platform en zijn geen matching- of tariefsystemen.",
+      "ProBrandwacht blijft de publieke kennis- en kaderlaag.",
+      "Eventuele faciliterende modellen voor compliance of administratie vallen buiten dit platform en hebben een eigen rol en verantwoordelijkheid.",
       "De communicatie blijft gescheiden: ProBrandwacht = duiding; facilitering gebeurt buiten dit platform."
     ]
   },

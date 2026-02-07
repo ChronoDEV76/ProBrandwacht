@@ -32,7 +32,7 @@ export default function BrandwachtenmarktPage() {
           </h1>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
             Onafhankelijke duiding van hoe de brandwachtenmarkt werkt, hoe rollen zich verhouden en waar
-            systeemspanningen ontstaan. Geen advies, geen oplossingstaal, wel context.
+            systeemspanningen ontstaan. Gericht op context en begrip, zodat keuzes uitlegbaar blijven.
           </p>
         </div>
       </HeroBackground>
@@ -64,7 +64,9 @@ export default function BrandwachtenmarktPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/aanwezigheid-is-geen-veiligheid">Aanwezigheid is geen veiligheid</Link>
+                <Link href="/blog/aanwezigheid-is-geen-veiligheid">
+                  Aanwezigheid is niet genoeg voor veiligheid
+                </Link>
               </li>
               <li>
                 <Link href="/blog/onbedoelde-veiligheidsillusie-als-systeemfout">

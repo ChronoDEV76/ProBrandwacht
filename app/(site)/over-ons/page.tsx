@@ -25,8 +25,8 @@ export default function OverOnsPage() {
               waar samenwerking in de praktijk vaak schuurt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht is geen bureau, geen werkgever en geen matching-engine. We bemiddelen niet,
-              sturen niet op voorwaarden en doen geen transacties.
+              ProBrandwacht opereert onafhankelijk van uitvoering, contractering en besluitvorming. We
+              duiden, kaderen en maken zichtbaar waar afspraken en verantwoordelijkheden liggen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               Ons doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
@@ -49,12 +49,12 @@ export default function OverOnsPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold">Wat we niet doen</h2>
+            <h2 className="text-xl font-semibold">Afbakening</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
-              <li>Geen bureau en geen werkgever</li>
-              <li>Geen matching-engine en geen inzet beloven</li>
-              <li>Geen prijssturing, geen rekenmodellen, geen percentages</li>
-              <li>Geen oplossing verkopen of garanties suggereren</li>
+              <li>Samenwerking vindt plaats tussen opdrachtgever en professional</li>
+              <li>Tarief- en inzetafspraken blijven onderdeel van die samenwerking</li>
+              <li>ProBrandwacht ondersteunt inzicht, geen uitvoering of planning</li>
+              <li>Besluiten en uitkomsten blijven contextafhankelijk</li>
             </ul>
           </div>
         </div>
@@ -64,13 +64,11 @@ export default function OverOnsPage() {
         </div>
 
         <section className="panel mt-8 p-6">
-          <h2 className="text-lg font-semibold text-white">Juridische disclaimer</h2>
+          <h2 className="text-lg font-semibold text-white">Juridische context</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-200">
-            De informatie op ProBrandwacht is uitsluitend informatief en algemeen van aard. ProBrandwacht
-            geeft geen juridisch, fiscaal, compliance- of tariefadvies, bemiddelt niet en biedt geen
-            garanties over uitkomsten, kwalificaties of handhaving. Afspraken over inzet en
-            verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional. Aan de
-            inhoud kunnen geen rechten worden ontleend.
+            De informatie op ProBrandwacht is bedoeld als duiding en overzicht. Afspraken over inzet en
+            verantwoordelijkheden liggen in de regel rechtstreeks tussen opdrachtgever en professional, binnen
+            hun eigen juridische en organisatorische kaders. Aan de inhoud kunnen geen rechten worden ontleend.
           </p>
         </section>
 

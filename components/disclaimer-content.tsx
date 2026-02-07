@@ -12,8 +12,8 @@ export default function DisclaimerContent({
       <div className={className}>
         <p className="leading-relaxed">
           ProBrandwacht is een onafhankelijk kennis- en platforminitiatief. De informatie is bedoeld voor
-          context en duiding en is geen juridisch, operationeel of compliance-advies. We bemiddelen niet,
-          sturen niet op inzet of tarief en geven geen garanties.
+          context en duiding. Juridische, operationele en compliance-keuzes blijven bij de betrokken
+          partijen; samenwerking en afspraken vinden buiten het platform plaats.
         </p>
       </div>
     )
@@ -39,14 +39,14 @@ export default function DisclaimerContent({
         <li>Context geven bij regelgeving, vergunningen en praktijk</li>
       </ul>
 
-      <h2 className="mt-6 text-base font-semibold text-slate-50">Wat ProBrandwacht niet doet</h2>
+      <h2 className="mt-6 text-base font-semibold text-slate-50">Afbakening</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
-        <li>Geen bureau, geen werkgever, geen contractpartij</li>
-        <li>Geen bemiddeling of matching van professionals</li>
-        <li>Geen sturing op inzet, tarief, planning of uitkomst</li>
-        <li>Geen garanties over beschikbaarheid, veiligheid of naleving</li>
-        <li>Geen juridisch, operationeel of handhavend advies</li>
-        <li>Geen compliance- of nalevingsoplossing aanbieden</li>
+        <li>ProBrandwacht opereert onafhankelijk van uitvoering en contractering</li>
+        <li>Samenwerking en matching vinden plaats tussen opdrachtgever en professional</li>
+        <li>Tarief-, inzet- en planningskeuzes blijven bij de betrokken partijen</li>
+        <li>Uitkomsten blijven contextafhankelijk</li>
+        <li>Juridische, operationele en handhavende kaders liggen bij de bevoegde partijen</li>
+        <li>Het platform biedt duiding en inzicht, geen besluitvorming</li>
       </ul>
 
       <h2 className="mt-6 text-base font-semibold text-slate-50">Rol en verantwoordelijkheid</h2>
@@ -65,9 +65,9 @@ export default function DisclaimerContent({
 
       <h2 className="mt-6 text-base font-semibold text-slate-50">Afbakening</h2>
       <p className="mt-2 text-sm leading-relaxed text-slate-200">
-        De publicaties op ProBrandwacht zijn beschrijvend en reflectief van aard. Ze zijn niet bedoeld als
-        vervanging van professioneel advies, instructies of formele besluitvorming, en kunnen niet worden
-        opgevat als bindend of richtinggevend voor concrete situaties.
+        De publicaties op ProBrandwacht zijn beschrijvend en reflectief van aard. Ze ondersteunen inzicht en
+        afwegingen, terwijl professioneel advies, instructies en formele besluitvorming bij de betrokken
+        partijen blijven.
       </p>
     </div>
   )

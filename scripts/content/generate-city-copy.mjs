@@ -2,7 +2,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-// Frontstage city copy generator (duiding, geen bemiddeling/prijssturing)
+// Frontstage city copy generator (duiding, rolhelderheid, context)
 const cities = [
   { slug: "amsterdam", name: "Amsterdam" },
   { slug: "rotterdam", name: "Rotterdam" },
@@ -27,7 +27,7 @@ function buildCityCopy({ slug, name }) {
     h1: `Brandwacht-inzet in ${name}: context en verantwoordelijkheden`,
     intro:
       `Publieke werkkaart voor ${name}. ProBrandwacht duidt hoe brandwacht-inzet ` +
-      `uitlegbaar blijft — geen bureau, geen bemiddeling, geen beloftes.`,
+      `uitlegbaar blijft — onafhankelijke duiding en rolhelderheid in de praktijk.`,
     body: `## Afspraken vooraf in ${name}
 
 - **Scope en rol**: wat bewaak je precies, en wat valt er buiten?
@@ -39,21 +39,22 @@ function buildCityCopy({ slug, name }) {
 Elke stad heeft eigen fricties: bereikbaarheid, type locaties en werkritme. Deze werkkaart helpt
 om die context expliciet te maken vóórdat er afspraken worden gemaakt.
 
-## Wat ProBrandwacht wel/niet doet
+## Afbakening
 
-- **Wel**: uitleg, context en afbakening van rollen en verwachtingen.
-- **Niet**: bemiddelen, prijssturing, garanties, of compliance-oplossingen verkopen.
+- **Rol**: uitleg, context en afbakening van rollen en verwachtingen.
+- **Samenwerking**: afspraken tussen opdrachtgever en professional, contextafhankelijk.
+- **Keuzes**: besluitvorming blijft bij de betrokken partijen.
 
 ## Samenwerking in de praktijk
 
 Afspraken worden 1-op-1 gemaakt en blijven contextafhankelijk. ProBrandwacht beschrijft wat
-uitlegbaar samenwerken vraagt, maar lost het niet voor je op.
+uitlegbaar samenwerken vraagt, en laat de keuzes bij de betrokken partijen.
 
 ## Vragen om vooraf te stellen
 
 - Welke signalen betekenen: pauzeren, stoppen, opschalen?
 - Welke documentatie moet later uitlegbaar zijn?
-- Wat is de rol van opdrachtgever vs. professional op locatie?`,
+- Wat is de rol van opdrachtgever en professional op locatie?`,
     localCaseTitle: `Voorbeeld: context in ${name}`,
     localCaseBody:
       `Een opdrachtgever en professional hebben vooraf rol, bereikbaarheid en escalatie afgesproken. ` +

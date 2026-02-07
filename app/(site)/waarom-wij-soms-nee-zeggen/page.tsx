@@ -28,9 +28,9 @@ export default function Page() {
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> ProBrandwacht is geen bureau en beslist
-                niets voor partijen. We lichten patronen toe die in de praktijk tot mislukte
-                uitvoering leiden. Zo kun je ze vooraf voorkomen.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
+                uitvoering en besluitvorming. We lichten patronen toe die in de praktijk tot mislukte
+                uitvoering leiden, zodat je ze vooraf kunt voorkomen.
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Page() {
           />
           <Reason
             title="3) Randvoorwaarden ontbreken"
-            text="Geen toegang, geen contactpunt, geen middelen, geen overdracht: dan wordt uitvoering improvisatie. Dat werkt tegen iedereen."
+            text="Toegang, contactpunt, middelen en overdracht moeten vooraf geregeld zijn; anders wordt uitvoering improvisatie. Dat werkt tegen iedereen."
           />
           <Reason
             title="4) Tempo wint van veiligheid"

@@ -20,10 +20,10 @@ export default function ImpactInfoCard() {
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl bg-slate-950/40 p-4 ring-1 ring-white/10">
-          <div className="text-xs font-medium uppercase tracking-wide text-slate-400">Wat we niet doen</div>
+          <div className="text-xs font-medium uppercase tracking-wide text-slate-400">Afbakening</div>
           <p className="mt-1 text-sm text-slate-200">
-            ProBrandwacht is geen bemiddelaar en stuurt niet op uitkomsten. We lichten alleen toe wat nodig is voor
-            uitlegbare samenwerking.
+            ProBrandwacht opereert onafhankelijk van uitvoering en besluitvorming. We lichten toe wat nodig is voor
+            uitlegbare samenwerking en laten de keuzes bij de betrokken partijen.
           </p>
         </div>
         <div className="rounded-xl bg-slate-950/40 p-4 ring-1 ring-white/10">

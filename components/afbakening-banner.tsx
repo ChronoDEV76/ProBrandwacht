@@ -11,8 +11,8 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </span>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-slate-200">
-          Dit platform duidt rol, mandaat en afspraken. Het is geen bureau, geen contractpartij en geeft geen
-          garanties. Afspraken blijven 1-op-1 tussen opdrachtgever en professional.
+          Dit platform duidt rol, mandaat en afspraken. ProBrandwacht opereert onafhankelijk van uitvoering
+          en contractering; afspraken blijven 1-op-1 tussen opdrachtgever en professional.
         </p>
         <details className="group mt-3 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3">
           <summary className="cursor-pointer list-none text-xs font-semibold uppercase tracking-[0.18em] text-amber-100">
@@ -20,9 +20,9 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </summary>
           <div className="mt-3 space-y-2 text-xs text-slate-300">
             <ul className="list-disc space-y-1 pl-4">
-              <li>Geen bemiddeling of matching en geen sturing op tarief.</li>
-              <li>Geen juridisch, operationeel of handhavend advies.</li>
-              <li>Rolafbakening en besluitvorming liggen bij opdrachtgever en professional.</li>
+              <li>Samenwerking vindt buiten het platform plaats, met eigen tarief- en inzetafspraken.</li>
+              <li>Deze duiding ondersteunt inzicht en rolhelderheid, niet besluitvorming of handhaving.</li>
+              <li>Rolafbakening en keuzes blijven bij opdrachtgever en professional.</li>
             </ul>
             <Link href="/waarom-wij-soms-nee-zeggen" className="text-amber-200 underline underline-offset-4">
               Lees het volledige kader
@@ -30,7 +30,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </div>
         </details>
         <p className="mt-3 text-xs text-slate-400">
-          Compacte afbakening: duiding en context, geen uitvoering of sturing.
+          Compacte afbakening: duiding en context, los van uitvoering en sturing.
         </p>
       </div>
     </section>

@@ -24,9 +24,9 @@ export default function VoorBrandwachtenPage() {
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> ProBrandwacht is geen bureau, geen
-                werkgever en regelt geen planning. We bieden context en voorbeelden om 1-op-1 afspraken
-                scherper te maken. ProBrandwacht geeft geen tariefadvies.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
+                uitvoering en planning. We bieden context en voorbeelden om 1-op-1 afspraken scherper te
+                maken. Tariefafspraken blijven onderdeel van die samenwerking.
               </p>
             </div>
 
@@ -34,7 +34,7 @@ export default function VoorBrandwachtenPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
                 of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de kennis-
-                en kaderlaag zonder matching of sturing.
+                en kaderlaag, met focus op duiding en rolhelderheid.
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function VoorBrandwachtenPage() {
             bullets={[
               'Wat bewaak je precies (werkzaamheden, zones, risicomomenten)?',
               'Welke signalen betekenen: pauzeren, stoppen, opschalen?',
-              'Wat is niet jouw rol -- en hoe leg je dat uit?',
+              'Welke rol past bij jouw inzet en hoe leg je die uit?',
             ]}
           />
           <Card
@@ -81,8 +81,8 @@ export default function VoorBrandwachtenPage() {
           <div className="md:col-span-2">
             <h2 className="section-title">Lees het nee-kader</h2>
             <p className="mt-2 text-slate-200/90">
-              Handig als je twijfel hebt over scope, rolverwarring of onduidelijke uitvoering. Het is geen
-              oordeel -- het is een praktische grens voor professionaliteit.
+              Handig als je twijfel hebt over scope, rolverwarring of onduidelijke uitvoering. Het is een
+              praktische grens voor professionaliteit, met respect voor alle partijen.
             </p>
           </div>
           <div className="flex items-center gap-3 md:justify-end">

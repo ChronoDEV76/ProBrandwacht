@@ -8,6 +8,7 @@
 // 3) Pages export metadata OR generateMetadata (basic SEO hygiene)
 // 4) No accidental “big claims” phrases (configurable)
 // 5) CTA routes: warn if core CTAs are missing across key pages
+// 6) Tone-of-voice guard: avoid defensive "geen/niet/uitsluiten" dominance
 //
 // Adjust ROOTS / patterns if your repo differs.
 
@@ -65,6 +66,30 @@ const BIG_CLAIM_PATTERNS: Array<{ re: RegExp; label: string }> = [
   { re: /\b(altijd|nooit)\b/i, label: "Absolute language" },
   { re: /\b(100%|totaal)\b/i, label: "Over-absolute numeric claim" },
   { re: /\b(wereldwijd|marktleider)\b/i, label: "Market leader claim" },
+];
+
+// Tone-of-voice guard: flag defensive/negative stacking
+const TONE_NEGATIVE_PATTERNS: Array<{ re: RegExp; label: string }> = [
+  {
+    re: /\bgeen\b[^\n]{0,80}\bgeen\b/i,
+    label: "Dubbele 'geen' in korte span (defensieve opsomming)",
+  },
+  {
+    re: /\bgeen\b[^\n]{0,80}\bgeen\b[^\n]{0,80}\bgeen\b/i,
+    label: "Drievoudige 'geen' in korte span (defensieve opsomming)",
+  },
+  {
+    re: /\bwat\s+we\s+niet\b/i,
+    label: "Kop 'Wat we niet' (overweeg positieve afbakening)",
+  },
+  {
+    re: /\bgeen\s+\/\s+niet\b/i,
+    label: "Expliete 'geen/niet' framing (overweeg positieve afbakening)",
+  },
+  {
+    re: /\buitsluit(en|ing|en)?\b/i,
+    label: "Uitsluiten-framing (overweeg positieve afbakening)",
+  },
 ];
 
 // Expected CTA links (warn if missing on key pages; not an error)
@@ -163,6 +188,18 @@ function checkFile(fileAbs: string): Finding[] {
         file,
         level: "warn",
         message: `Potential hype/absolute language: ${p.label}`,
+        excerpt: excerptAround(content, idx),
+      });
+    }
+  }
+
+  // Tone-of-voice guard (warn)
+  for (const p of TONE_NEGATIVE_PATTERNS) {
+    for (const idx of findAllMatches(content, p.re)) {
+      findings.push({
+        file,
+        level: "warn",
+        message: `Tone-of-voice (defensive framing): ${p.label}`,
         excerpt: excerptAround(content, idx),
       });
     }

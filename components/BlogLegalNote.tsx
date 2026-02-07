@@ -15,11 +15,11 @@ const LEGAL_NOTE_COPY: Record<
   dba: {
     title: 'Belangrijk om te weten',
     body:
-      'Directe samenwerking of het gebruik van bepaalde contracten betekent niet ' +
-      'automatisch dat sprake is van een zelfstandige arbeidsrelatie. ' +
+      'Directe samenwerking of het gebruik van bepaalde contracten is niet ' +
+      'automatisch doorslaggevend voor de kwalificatie van de arbeidsrelatie. ' +
       'Toezichthouders beoordelen de feitelijke gezagsverhouding, mate van ' +
-      'zelfstandigheid en wijze van uitvoering. Dit artikel biedt geen garantie ' +
-      'op een specifieke kwalificatie.',
+      'zelfstandigheid en wijze van uitvoering. De beoordeling blijft ' +
+      'contextafhankelijk.',
   },
   extended: {
     title: 'Context en verantwoordelijkheid',
@@ -27,9 +27,8 @@ const LEGAL_NOTE_COPY: Record<
       'De inhoud van dit artikel is informatief en gebaseerd op praktijkervaring en ' +
       'publiek beschikbare regelgeving. De uiteindelijke beoordeling van een ' +
       'arbeidsrelatie ligt bij opdrachtgever en uitvoerende en, indien van toepassing, ' +
-      'bij toezichthouders. ProBrandwacht geeft geen juridisch of fiscaal advies en ' +
-      'aanvaardt geen verantwoordelijkheid voor de kwalificatie van individuele ' +
-      'samenwerkingen.',
+      'bij toezichthouders. ProBrandwacht biedt duiding en overzicht; juridische ' +
+      'en fiscale keuzes blijven bij de betrokken partijen.',
   },
 }
 

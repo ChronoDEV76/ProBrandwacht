@@ -19,13 +19,13 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
-              geen matching-engine.
+              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
+              directe lijnen tussen opdrachtgever en professional.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht is geen klassiek bureau. We maken zichtbaar welke vragen vooraf helder moeten
-              zijn, zodat afspraken uitlegbaar blijven.
+              ProBrandwacht opereert onafhankelijk van uitvoering. We maken zichtbaar welke vragen vooraf
+              helder moeten zijn, zodat afspraken uitlegbaar blijven.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -53,8 +53,7 @@ export default function ProBrandwachtDirectPage() {
             </div>
 
             <p className="text-xs text-slate-400">
-              Dit is geen snelle bureau-route. Het is een route met dezelfde eis: afspraken vooraf,
-              toetsbaar in uitvoering.
+              Dit is een route met dezelfde eis: afspraken vooraf, toetsbaar in uitvoering.
             </p>
           </div>
         </div>
@@ -65,12 +64,12 @@ export default function ProBrandwachtDirectPage() {
           {[
             {
               title: '1) Minimale uitvraag',
-              body: "Locatie, tijd, rol en risico's. Geen tekstmuur; alleen bruikbare parameters.",
+              body: "Locatie, tijd, rol en risico's. Kort en concreet, zodat de parameters direct bruikbaar zijn.",
               accent: 'text-emerald-300',
             },
             {
               title: '2) 1-op-1 afstemming',
-              body: 'Afspraken worden 1-op-1 gemaakt, zonder onzichtbare tussenlaag.',
+              body: 'Afspraken worden 1-op-1 gemaakt, met directe afstemming.',
               accent: 'text-sky-300',
             },
             {
@@ -90,7 +89,7 @@ export default function ProBrandwachtDirectPage() {
           <h2 className="text-xl font-semibold md:text-2xl">Wat je vooraf klaar moet hebben</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>- Wie is aanspreekpunt op locatie?</li>
-            <li>- Wat is de scope (wat wel/niet)?</li>
+            <li>- Wat is de scope (wat valt binnen de inzet)?</li>
             <li>- Welke risico&apos;s zijn relevant (heetwerk, besloten ruimte, publiek)?</li>
             <li>- Hoe loopt escalatie (wie beslist wanneer)?</li>
           </ul>

@@ -21,14 +21,14 @@ export default function ContactPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe samenwerking met zelfstandige
-              brandwachten werkt. We geven geen instructies, nemen geen beslissingen over samenwerking en
-              zijn geen partij bij overeenkomsten.
+              brandwachten werkt. We bieden duiding en context; keuzes en overeenkomsten blijven bij de
+              betrokken partijen.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Heb je een vraag over onze werkwijze of wil je sparren over rolafbakening en
-              uitvoerbaarheid? Dan kun je hier contact opnemen. We geven geen tariefadvies en bemiddelen
-              niet.
+              uitvoerbaarheid? Dan kun je hier contact opnemen. Tariefafspraken en inzet vinden plaats
+              tussen opdrachtgever en professional.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-slate-400">
-              Contact opnemen betekent niet dat er een samenwerking tot stand komt. ProBrandwacht geeft
-              context en uitleg; afspraken maak je 1-op-1.
+              Contact opnemen betekent dat we meedenken over context en rolafbakening; afspraken maak je
+              1-op-1.
             </p>
           </div>
         </section>
@@ -76,7 +76,7 @@ export default function ContactPage() {
         <div className="panel p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Verkennend contact</h2>
           <p className="mt-3 text-sm text-slate-200">
-            Geen inschrijving of verkooppraat. Eerst scherp krijgen of de vraag in vorm en rol klopt.
+            Eerst scherp krijgen of de vraag in vorm en rol klopt.
           </p>
           <div className="mt-5 flex flex-wrap gap-4">
             <Link href="/opdrachtgevers" className="route-link">

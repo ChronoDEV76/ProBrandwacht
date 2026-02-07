@@ -7,12 +7,13 @@ export default function VeiligheidskundigAfbakening() {
         praktijkervaring en veiligheidskundige uitgangspunten.
       </p>
       <p className="mt-2 leading-relaxed">
-        ProBrandwacht is geen bureau, geen werkgever, geen contractpartij en stuurt niet op inzet, tarief of
-        uitkomst. Dit platform biedt geen garanties en geen nalevingsinstrumenten.
+        ProBrandwacht opereert onafhankelijk van uitvoering en contractering. Dit platform ondersteunt
+        inzicht in rolafbakening en samenwerking, terwijl besluiten en uitkomsten contextafhankelijk
+        blijven.
       </p>
       <p className="mt-2 leading-relaxed">
         Bevoegdheden, aanwijzingen en handhaving liggen in de regel bij opdrachtgever, vergunningverlener en
-        toezichthouder — nooit bij dit platform.
+        toezichthouder — bij het platform ligt de duiding en reflectie.
       </p>
     </aside>
   )

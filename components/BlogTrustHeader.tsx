@@ -30,7 +30,8 @@ export default function BlogTrustHeader({
         </h1>
 
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-          Dit is kaderende analyse: het gaat over systeemprikkels en rolzuiverheid, niet over schuld of gelijk.
+          Dit is kaderende analyse: het gaat over systeemprikkels en rolzuiverheid, met focus op begrip en
+          verantwoordelijkheid.
         </p>
 
         <p className="mt-4 text-xs text-slate-400">

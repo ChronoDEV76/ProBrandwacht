@@ -41,30 +41,30 @@ export default function PlatformPage() {
           </div>
 
           <div className="panel p-6">
-            <h2 className="section-title">Wat ProBrandwacht niet is</h2>
+            <h2 className="section-title">Afbakening</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-              <li>Geen uitzendbureau of bemiddelaar.</li>
-              <li>Geen werkgever of opdrachtgever.</li>
-              <li>Geen matching-engine of planningssysteem.</li>
-              <li>Geen oplossing die risico&apos;s overneemt.</li>
+              <li>ProBrandwacht opereert onafhankelijk van uitvoering en contractering.</li>
+              <li>De samenwerking vindt plaats tussen opdrachtgever en professional.</li>
+              <li>Het platform ondersteunt inzicht en rolhelderheid in plaats van planning.</li>
+              <li>Besluiten en uitkomsten blijven contextafhankelijk.</li>
             </ul>
           </div>
 
           <div className="panel p-6">
-            <h2 className="section-title">Publieke uitleg, geen uitvoer</h2>
+            <h2 className="section-title">Publieke uitleg en context</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht bevindt zich bewust aan de voorkant van de markt: praktische uitleg en publieke
               informatie.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Het initiatief verkoopt geen compliance, geen tooling en geen zekerheden. Samenwerking en afspraken
-              blijven in de regel een verantwoordelijkheid van de betrokken partijen zelf.
+              Het initiatief biedt duiding en overzicht. Samenwerking en afspraken blijven in de regel een
+              verantwoordelijkheid van de betrokken partijen zelf.
             </p>
           </div>
 
           <div className="panel p-6">
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht kadert, waarschuwt en legt uit -- maar stuurt niet.
+              ProBrandwacht kadert, waarschuwt en legt uit, zodat keuzes bewust en uitlegbaar blijven.
             </p>
           </div>
         </div>

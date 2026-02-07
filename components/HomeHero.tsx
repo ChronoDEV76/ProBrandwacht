@@ -7,7 +7,7 @@ type HomeHeroProps = {
 }
 
 const HERO_SUBTITLE =
-  "Je werkt als zelfstandig professional met maximale ruimte om je eigen keuzes te maken, zonder onnodige tussenlagen of onduidelijke voorwaarden."
+  "Je werkt als zelfstandig professional met maximale ruimte om je eigen keuzes te maken, met directe lijnen en heldere voorwaarden."
 
 const HERO_BADGES = [
   "DBA-bewust samenwerken",
@@ -57,7 +57,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           </p>
 
           <p className="mt-3 text-[11px] text-slate-400">
-            ProBrandwacht werkt anders dan klassieke bureauconstructies: transparant, zonder ketensturing en met heldere afspraken vooraf.
+            ProBrandwacht werkt anders dan klassieke bureauconstructies: transparant, met directe afstemming en heldere afspraken vooraf.
           </p>
         </div>
       </div>

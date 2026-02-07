@@ -256,6 +256,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
+      <h1 className="sr-only">Kennisbank brandwacht-inzet & marktduiding</h1>
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
       <JSONLD data={itemListSchema} />

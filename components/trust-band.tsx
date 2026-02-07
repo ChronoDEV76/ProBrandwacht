@@ -9,7 +9,7 @@ type TrustItem = {
 const ITEMS: TrustItem[] = [
   {
     title: 'Onafhankelijk initiatief',
-    body: 'Duiding van rol, mandaat en uitvoering zonder commerciële sturing.',
+    body: 'Duiding van rol, mandaat en uitvoering met focus op publieke context.',
     icon: (
       <svg className="h-5 w-5 text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7l7-4z" />
@@ -18,8 +18,8 @@ const ITEMS: TrustItem[] = [
     ),
   },
   {
-    title: 'Geen bemiddeling of sturing',
-    body: 'Geen bureau, geen matching en geen prijs- of tariefadvies.',
+    title: 'Directe samenwerking',
+    body: 'Afspraken vinden plaats tussen opdrachtgever en professional, met heldere rolafbakening.',
     icon: (
       <svg className="h-5 w-5 text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M4 6h16M4 12h10M4 18h16" />
@@ -29,7 +29,7 @@ const ITEMS: TrustItem[] = [
   },
   {
     title: 'Context & afspraken',
-    body: 'Informatief kader, geen garanties of juridisch advies.',
+    body: 'Informatief kader dat keuzes en afspraken uitlegbaar maakt.',
     icon: (
       <svg className="h-5 w-5 text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M7 3h7l5 5v13H7z" />

@@ -22,8 +22,8 @@ export default function StedenIndexPage() {
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
-              geen matching-engine.
+              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
+              lijnen tussen opdrachtgever en professional.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
@@ -41,8 +41,8 @@ export default function StedenIndexPage() {
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Belangrijk: ProBrandwacht is geen aanbieder of uitvoerder met standaardpakketten. Het is een
-              vakinhoudelijke route voor opdrachtgevers en zelfstandigen die professioneel willen samenwerken.
+              Belangrijk: ProBrandwacht is een vakinhoudelijke route voor opdrachtgevers en zelfstandigen die
+              professioneel willen samenwerken, met nadruk op rolhelderheid en afspraken vooraf.
             </p>
 
             <div className="panel p-5 text-sm text-slate-200 md:text-base">
@@ -50,7 +50,7 @@ export default function StedenIndexPage() {
               <ul className="mt-3 space-y-2">
                 <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
                 <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
-                <li><strong>Wat ProBrandwacht wél/niet doet:</strong> uitleg geven en kaderen, geen bemiddeling.</li>
+                <li><strong>Afbakening:</strong> uitleg en kadering, met directe samenwerking tussen partijen.</li>
                 <li><strong>Verantwoordelijkheid:</strong> afspraken en uitvoering blijven bij opdrachtgever en professional.</li>
               </ul>
             </div>
@@ -92,9 +92,8 @@ export default function StedenIndexPage() {
             Niche & verwachting
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Niet iedereen
-            past in die manier van werken -- en dat is oké. Als je vooral snelheid zoekt zonder heldere
-            afspraken, dan is een klassiek bureau-model vaak logischer.
+            ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Als je vooral
+            snelheid zoekt zonder heldere afspraken, dan past een klassiek bureau-model vaak beter.
           </p>
         </div>
       </section>

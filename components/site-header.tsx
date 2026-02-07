@@ -25,9 +25,11 @@ export default function SiteHeader() {
           <Link href="/" prefetch={false} className="text-[15px] font-semibold tracking-tight text-amber-100">
             ProBrandwacht
           </Link>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300">
-            Duiding, geen bemiddeling of garanties
-          </span>
+          {currentPath !== '/' ? (
+            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300">
+              Duiding en context bij samenwerking
+            </span>
+          ) : null}
         </div>
 
         <nav className="hidden items-center gap-1 text-sm lg:flex">
@@ -108,8 +110,8 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
         </div>
 
         <div className="border-t border-white/15 px-4 py-3 text-xs text-white/80">
-          Het initiatief legt uit hoe de markt werkt en waar kaders liggen — het initiatief zelf
-          bemiddelt niet en stuurt niet.
+          Het initiatief legt uit hoe de markt werkt en waar kaders liggen. Uitvoering en keuzes blijven
+          bij de betrokken partijen.
         </div>
 
         {SPOED_UI_ENABLED ? (
@@ -118,7 +120,7 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
               href="/probrandwacht-direct-spoed"
               prefetch={false}
               aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
-                className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
+              className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
                 currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
               }`}
             >

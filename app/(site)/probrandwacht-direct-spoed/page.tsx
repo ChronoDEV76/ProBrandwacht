@@ -16,13 +16,13 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Dit initiatief legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
-              geen matching-engine.
+              Dit initiatief legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
+              directe lijnen tussen opdrachtgever en professional.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Het platform is geen klassiek bureau. Spoed is bedoeld voor korte, duidelijke afspraken; de
-              context bepaalt wat verantwoord is.
+              Het platform opereert onafhankelijk van uitvoering. Spoed is bedoeld voor korte, duidelijke
+              afspraken; de context bepaalt wat verantwoord is.
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -68,7 +68,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             <h2 className="text-xl font-semibold md:text-2xl">Afspraken die je niet uitstelt</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>- Inzetvoorwaarden (incl. reistijd/wachttijd)</li>
-              <li>- Scope (wat wel/niet) en beslislijnen</li>
+              <li>- Scope (wat valt binnen de inzet) en beslislijnen</li>
               <li>- Communicatie (portofoon/telefoon) + meldpunt</li>
               <li>- Rapportage (kort, toetsbaar, werkbaar)</li>
             </ul>

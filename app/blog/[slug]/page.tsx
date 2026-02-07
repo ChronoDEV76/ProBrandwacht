@@ -57,7 +57,7 @@ export async function generateMetadata({
       : 'Kennisbank | ProBrandwacht'
     const canonical = `${BASE_URL}/blog/${params.slug}`
     const safetyFrameworkDescription =
-      'Een veiligheidskundige beschouwing over rol, verantwoordelijkheid en systeemwerking binnen brandveiligheid. Uitleg en context, geen advies.'
+      'Een veiligheidskundige beschouwing over rol, verantwoordelijkheid en systeemwerking binnen brandveiligheid. Uitleg en context voor bewuste keuzes.'
     const description = isSafetyFramework
       ? safetyFrameworkDescription
       : (frontmatter.tldr as string | undefined) ??
@@ -181,7 +181,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               Kennisbank • {isSystemArticle ? 'Veiligheidskundig kader' : categoryLabel}
             </div>
             <div className="text-[11px] text-slate-400">
-              Analyse en duiding – geen oordeel, geen advies
+              Analyse en duiding – gericht op begrip en rolhelderheid
             </div>
           </div>
 
@@ -254,8 +254,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {isSystemArticle ? 'Veiligheidskundig kader' : 'Kader & duiding'}
           </div>
           <p className="mt-2">
-            Dit artikel biedt context en duiding. Het is geen advies, geen beoordeling van professionals en
-            geen vervanging van formele besluitvorming.
+            Dit artikel biedt context en duiding. Beoordeling en besluitvorming blijven bij de betrokken
+            partijen.
           </p>
         </div>
         <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">

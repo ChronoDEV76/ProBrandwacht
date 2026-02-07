@@ -17,21 +17,19 @@ export default function OpdrachtgeversPage() {
               Zo houd je brandveiligheidsinzet uitvoerbaar en uitlegbaar
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              Dit initiatief is onafhankelijk. We leveren geen inzet en sturen geen afspraken.
-              We delen kaders en aandachtspunten: welke vragen je vooraf stelt, wat je afbakent en welke
-              signalen in de praktijk extra aandacht vragen.
+              Dit initiatief is onafhankelijk. We bieden context en aandachtspunten: welke vragen je vooraf
+              stelt, wat je afbakent en welke signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Het platform licht de markt en kaders voor zelfstandige samenwerking toe — het initiatief zelf
-              bemiddelt niet en stuurt niet.
+              Het platform licht de markt en kaders voor zelfstandige samenwerking toe — uitvoering en keuzes
+              blijven bij de betrokken partijen.
             </p>
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
-                <span className="font-semibold">Afbakening:</span> geen bureau, geen werkgever, geen
-                matching-engine. ProBrandwacht legt uit en waarschuwt -- jij en de professional maken 1-op-1
-                afspraken over rol, verantwoordelijkheden en uitvoering. Tarief wordt onderling bepaald;
-                ProBrandwacht geeft geen tariefadvies.
+                <span className="font-semibold">Afbakening:</span> ProBrandwacht opereert onafhankelijk van
+                uitvoering en contractering. Jij en de professional maken 1-op-1 afspraken over rol,
+                verantwoordelijkheden en uitvoering. Tarief wordt onderling bepaald.
               </p>
             </div>
 
@@ -39,7 +37,7 @@ export default function OpdrachtgeversPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
                 of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de
-                duidende laag en biedt geen matching of sturing.
+                duidende laag, met focus op rolhelderheid en uitlegbaarheid.
               </p>
             </div>
           </div>

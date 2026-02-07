@@ -165,8 +165,8 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </h1>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
-          ProBrandwacht legt uit hoe zelfstandige samenwerking werkt -- geen bureau, geen werkgeversrol,
-          geen matching-engine. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
+          ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
+          lijnen tussen opdrachtgever en professional. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
           <Link
             href="/waarom-wij-soms-nee-zeggen"
             className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
@@ -177,10 +177,9 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </p>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
-          <strong className="text-white">Deze pagina is een werkkaart, geen aanbod.</strong>{' '}
-          ProBrandwacht is geen klassiek bemiddelingsbureau. Wij maken inzichtelijk hoe
-          brandwacht-inzet in {label} kan worden ingericht binnen een zelfstandige 1-op-1
-          samenwerking.
+          <strong className="text-white">Deze pagina is een werkkaart.</strong>{' '}
+          ProBrandwacht maakt inzichtelijk hoe brandwacht-inzet in {label} kan worden ingericht binnen
+          een zelfstandige 1-op-1 samenwerking.
         </p>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
@@ -204,8 +203,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
           <div className="panel p-5">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">ProBrandwacht</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Werkkaart en uitleg vooraf. Geen bureau en geen automatische koppeling, wel rolhelderheid en
-              uitvoerbaarheid.
+              Werkkaart en uitleg vooraf, met focus op rolhelderheid en uitvoerbaarheid.
             </p>
           </div>
         </div>

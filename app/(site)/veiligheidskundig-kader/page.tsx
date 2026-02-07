@@ -32,7 +32,7 @@ export default function VeiligheidskundigKaderPage() {
             <h1 className="text-3xl font-semibold text-white md:text-4xl">Veiligheidskundig kader</h1>
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
               Dit cluster legt principes uit die helpen om brandveiligheid systemisch te begrijpen. Het gaat
-              niet om oplossingen, maar om rolhelderheid, mandaat en samenhang in het veiligheidsmodel.
+              om rolhelderheid, mandaat en samenhang in het veiligheidsmodel.
             </p>
           </div>
           <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.7)] md:h-56 md:w-64">
@@ -65,13 +65,13 @@ export default function VeiligheidskundigKaderPage() {
             <p>
               ProBrandwacht duidt de brandwachtenmarkt vanuit een veiligheidskundig perspectief.
               Deze artikelen beschrijven principes, systeemwerking en rolverdeling binnen
-              brandveiligheid. Ze bieden context en reflectie — geen advies, geen oplossingen,
-              geen garanties.
+              brandveiligheid. Ze bieden context en reflectie, zodat keuzes bewuster en uitlegbaar
+              blijven.
             </p>
             <ul>
-              <li>Geen rol in uitvoering, planning of bemiddeling</li>
-              <li>Geen toezichthoudende of handhavende positie</li>
-              <li>Geen garanties over uitkomsten of naleving</li>
+              <li>De rol ligt bij duiding, niet bij uitvoering of planning</li>
+              <li>Toezicht en handhaving blijven bij de bevoegde instanties</li>
+              <li>Uitkomsten blijven contextafhankelijk</li>
               <li>Bevoegdheden liggen bij opdrachtgever, vergunningverlener en toezichthouder</li>
             </ul>
 
@@ -85,7 +85,9 @@ export default function VeiligheidskundigKaderPage() {
             <h2>Onderwerpen in dit cluster</h2>
             <ul>
               <li>
-                <Link href="/blog/aanwezigheid-is-geen-veiligheid">Aanwezigheid is geen veiligheid</Link>
+                <Link href="/blog/aanwezigheid-is-geen-veiligheid">
+                  Aanwezigheid is niet genoeg voor veiligheid
+                </Link>
               </li>
               <li>
                 <Link href="/blog/waarnemen-zonder-mandaat">Waarnemen zonder mandaat</Link>
@@ -128,8 +130,8 @@ export default function VeiligheidskundigKaderPage() {
             <h2>Leeswijzer</h2>
             <p>
               De artikelen zijn bedoeld voor toezichthouders, beleidsmakers en professionals die willen
-              begrijpen hoe veiligheidssystemen in de praktijk functioneren. De focus ligt op duiding,
-              niet op actie.
+              begrijpen hoe veiligheidssystemen in de praktijk functioneren. De focus ligt op duiding
+              en reflectie.
             </p>
           </Prose>
         </article>
