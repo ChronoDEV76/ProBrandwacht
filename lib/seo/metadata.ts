@@ -37,6 +37,9 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
+      'brandwacht platform',
+      'kennisplatform brandwacht',
+      'brandwacht kennisbank',
     ],
     robots: { index: true, follow: true },
   },
@@ -54,6 +57,8 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
+      'brandwacht platform',
+      'kennisplatform brandwacht',
     ],
   },
 
@@ -68,6 +73,9 @@ export const routeMeta: Record<string, RouteMeta> = {
       'probrandwacht initiatief',
       'hoe werkt probrandwacht',
       'brandwacht initiatief uitleg',
+      'brandwacht platform',
+      'kennisplatform brandwacht',
+      'brandwacht kennisbank',
     ],
   },
 
@@ -80,6 +88,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.positioning,
       'over probrandwacht',
       'brandwacht manifest',
+      'brandwacht platform',
     ],
   },
 
@@ -118,6 +127,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'brandwacht inzet uitleg',
       'rol brandwacht',
       'systeemwerking brandveiligheid',
+      'brandwacht kennisbank',
     ],
   },
 
@@ -131,6 +141,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'systeemveiligheid',
       'veiligheidsprincipes',
       'rolzuiverheid',
+      'brandwacht kennisbank',
     ],
   },
 
@@ -144,6 +155,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'wtta brandwacht',
       'brandwacht wetgeving',
       'verantwoordelijkheid brandwacht',
+      'brandwacht kennisbank',
     ],
   },
 
@@ -157,6 +169,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'brandwacht inzet praktijk',
       'rolverdeling veiligheid',
       'systemen knellen',
+      'brandwacht kennisbank',
     ],
   },
 
@@ -177,7 +190,9 @@ export const routeMeta: Record<string, RouteMeta> = {
     title: 'FAQ | ProBrandwacht',
     description:
       'Antwoorden op veelgestelde vragen over rolafbakening, verantwoordelijkheden en afspraken.',
-    keywords: [...seoKeywordClusters.core],
+    keywords: [...seoKeywordClusters.core
+      'brandwacht platform',
+    ],
   },
 
   '/voorwaarden': {
@@ -220,6 +235,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       'brandwacht-inzet per stad',
       'brandwacht regio uitleg',
+      'brandwacht platform',
     ],
   },
 
@@ -232,6 +248,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'brandwacht-inzet uitleg',
       'verantwoordelijkheden brandwacht',
       'brandwachtenmarkt',
+      'brandwacht platform',
     ],
   },
 
@@ -251,6 +268,8 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.platform,
       'zelfstandige brandwacht',
       ...seoKeywordClusters.positioning,
+      'brandwacht platform',
+      'kennisplatform brandwacht',
     ],
   },
 
@@ -285,6 +304,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.positioning,
+      'brandwacht kennisbank',
     ],
   },
 
