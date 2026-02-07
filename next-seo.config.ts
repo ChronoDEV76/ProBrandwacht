@@ -6,6 +6,19 @@ const config: NextSeoProps = {
   defaultTitle: 'ProBrandwacht',
   openGraph: {
     siteName: 'ProBrandwacht',
+    type: 'website',
+    locale: 'nl_NL',
+    images: [
+      {
+        url: 'https://www.probrandwacht.nl/og-home.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ProBrandwacht',
+      },
+    ],
+  },
+  twitter: {
+    cardType: 'summary_large_image',
   },
 }
 export default config

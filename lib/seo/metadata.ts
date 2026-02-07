@@ -32,7 +32,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/': {
     title: 'ProBrandwacht — Kennis en uitleg',
     description:
-      'ProBrandwacht is een onafhankelijk kennis- en vakplatform. We leggen uit hoe je veilig en uitlegbaar samenwerkt, zonder bureauframing, prijssturing of beloftes.',
+      'ProBrandwacht is een onafhankelijk kennis- en vakplatform. We maken samenwerking tussen opdrachtgevers en zelfstandige brandwachten helder, uitvoerbaar en uitlegbaar.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -49,7 +49,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/opdrachtgevers': {
     title: 'Opdrachtgevers | Uitlegbare samenwerking | ProBrandwacht',
     description:
-      'Onafhankelijk initiatief met context over rolverdeling, verantwoordelijkheden en afspraken zodat samenwerking uitlegbaar blijft.',
+      'Onafhankelijk initiatief met context over rolverdeling, verantwoordelijkheden en afspraken zodat samenwerking uitvoerbaar en uitlegbaar blijft.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -61,7 +61,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/platform': {
     title: 'Wat is ProBrandwacht? | ProBrandwacht',
     description:
-      'Uitleg over ProBrandwacht als onafhankelijk initiatief: rolafbakening, grenzen en wat het initiatief niet is.',
+      'Uitleg over ProBrandwacht als onafhankelijk initiatief: rolafbakening, kaders en wat je wel mag verwachten.',
     keywords: [
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
@@ -72,7 +72,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/over-ons': {
-    title: 'Over ons — rol, duiding en afbakening | ProBrandwacht',
+    title: 'Over ons — rol, context en afbakening | ProBrandwacht',
     description:
       'Waarom ProBrandwacht bestaat: een onafhankelijke rol die kaders zichtbaar maakt vóór samenwerking.',
     keywords: [
@@ -109,9 +109,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/brandwachtenmarkt': {
-    title: 'Brandwachtenmarkt — systeemduiding en context | ProBrandwacht',
+    title: 'Brandwachtenmarkt — systeemcontext en uitleg | ProBrandwacht',
     description:
-      'Onafhankelijke uitleg over hoe de brandwachtenmarkt werkt: rollen, verantwoordelijkheden en systeemwerking. Duiding zonder advies.',
+      'Onafhankelijke uitleg over hoe de brandwachtenmarkt werkt: rollen, verantwoordelijkheden en systeemwerking. Praktische context voor bewuste keuzes.',
     keywords: [
       ...seoKeywordClusters.core,
       'brandwachtenmarkt',
@@ -122,9 +122,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/veiligheidskundig-kader': {
-    title: 'Veiligheidskundig kader — principes en systeemveiligheid | ProBrandwacht',
+    title: 'Veiligheidskundig kader — systeemveiligheid en context | ProBrandwacht',
     description:
-      'Veiligheidskundige duiding van rol, mandaat en systeemveiligheid binnen brandveiligheid. Context en principes voor bewuste keuzes.',
+      'Veiligheidskundige context over rol, mandaat en systeemveiligheid binnen brandveiligheid. Praktische uitleg voor bewuste keuzes.',
     keywords: [
       ...seoKeywordClusters.core,
       'veiligheidskundig kader',
@@ -135,9 +135,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/wetgeving-brandwacht': {
-    title: 'Wetgeving brandwacht — duiding zonder advies | ProBrandwacht',
+    title: 'Wetgeving brandwacht — context en overzicht | ProBrandwacht',
     description:
-      'Overzicht en context van wet- en regelgeving rond brandwacht-inzet, verantwoordelijkheid en rolafbakening. Beschrijvend en neutraal.',
+      'Overzicht en context van wet- en regelgeving rond brandwacht-inzet, verantwoordelijkheid en rolafbakening. Praktisch en helder.',
     keywords: [
       ...seoKeywordClusters.core,
       'wet dba brandwacht',
@@ -148,9 +148,9 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/praktijk-brandveiligheid': {
-    title: 'Praktijk brandveiligheid — duiding zonder oordeel | ProBrandwacht',
+    title: 'Praktijk brandveiligheid — context en herkenning | ProBrandwacht',
     description:
-      'Observaties uit de praktijk van brandveiligheid: waar systemen knellen en rolverdeling onder druk staat. Context, geen oplossingen.',
+      'Observaties uit de praktijk van brandveiligheid: waar systemen knellen en rolverdeling onder druk staat. Context en herkenning voor betere afspraken.',
     keywords: [
       ...seoKeywordClusters.core,
       'brandveiligheid praktijk',
@@ -163,7 +163,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/waarom-wij-soms-nee-zeggen': {
     title: 'Waarom wij soms nee zeggen — ProBrandwacht',
     description:
-      "Soms is 'nee' de professionele keuze. Niet als oordeel, maar als grens voor uitvoerbaarheid, veiligheid en rolhelderheid in brandveiligheidsinzet.",
+      "Soms is 'nee' de professionele keuze. Een grens die uitvoerbaarheid, veiligheid en rolhelderheid beschermt in brandveiligheidsinzet.",
     keywords: [
       ...seoKeywordClusters.core,
       'brandwacht-inzet uitleg',
@@ -176,14 +176,14 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/faq': {
     title: 'FAQ | ProBrandwacht',
     description:
-      'Antwoorden op veelgestelde vragen over rolafbakening, verantwoordelijkheden en grenzen.',
+      'Antwoorden op veelgestelde vragen over rolafbakening, verantwoordelijkheden en afspraken.',
     keywords: [...seoKeywordClusters.core],
   },
 
   '/voorwaarden': {
     title: 'Algemene voorwaarden | ProBrandwacht',
     description:
-      'Voorwaarden van ProBrandwacht: wat het initiatief wel en niet doet en waar verantwoordelijkheid ligt.',
+      'Voorwaarden van ProBrandwacht: rolverdeling, verantwoordelijkheid en afspraken in de praktijk.',
     keywords: [
       'algemene voorwaarden',
       'voorwaarden probrandwacht',
@@ -195,7 +195,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/disclaimer': {
     title: 'Disclaimer | ProBrandwacht',
     description:
-      'Lees hoe informatie en voorbeelden bedoeld zijn: indicatief, ter duiding en zonder garanties.',
+      'Lees hoe informatie en voorbeelden bedoeld zijn: indicatief, contextueel en bedoeld als ondersteuning.',
     keywords: [
       'disclaimer',
       'aansprakelijkheid',
@@ -226,7 +226,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/steden/[city]': {
     title: 'Brandwacht-inzet in jouw stad: verantwoordelijkheden | ProBrandwacht',
     description:
-      'Onafhankelijke uitleg over brandwacht-inzet in jouw stad. Wat is verplicht, wie is verantwoordelijk en waar gaat het vaak mis?',
+      'Onafhankelijke uitleg over brandwacht-inzet in jouw stad. Wat is verplicht, wie is verantwoordelijk en waar kan het wringen?',
     keywords: [
       ...seoKeywordClusters.core,
       'brandwacht-inzet uitleg',
@@ -299,14 +299,14 @@ export function getRouteMetadata(pathname: string): Metadata {
 
   if (!meta) {
     return {
-      title: 'ProBrandwacht — Kennis en duiding',
+      title: 'ProBrandwacht — Kennis en uitleg',
       description:
         'ProBrandwacht geeft uitleg over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
       keywords: defaultKeywords,
       robots: { index: true, follow: true },
       alternates: { canonical, languages: { 'nl-NL': canonical } },
       openGraph: {
-        title: 'ProBrandwacht — Kennis en duiding',
+        title: 'ProBrandwacht — Kennis en uitleg',
         description:
           'ProBrandwacht geeft uitleg over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
         url: canonical,
@@ -321,7 +321,7 @@ export function getRouteMetadata(pathname: string): Metadata {
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'ProBrandwacht — Kennis en duiding',
+        title: 'ProBrandwacht — Kennis en uitleg',
         description:
           'ProBrandwacht geeft uitleg over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
         images: [DEFAULT_OG_IMAGE],
