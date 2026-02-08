@@ -263,14 +263,6 @@ for (const r of mustPages) {
   else incWarn(`route ${r} niet gevonden (kan elders gerenderd worden; check navigatie).`);
 }
 
-// API routes
-log.info("\n[API] Endpoints");
-const apis = ["/api/probrandwacht-direct"];
-for (const r of apis) {
-  if (apiRouteExists(r)) log.ok(`API ${r}`);
-  else incErr(`API ${r} ontbreekt`);
-}
-
 // Package scripts
 log.info("\n[Package scripts]");
 ensurePackageScripts();
