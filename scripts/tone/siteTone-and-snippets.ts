@@ -167,7 +167,7 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     snippet: `
           <p className="mt-3 max-w-2xl text-sm text-slate-200">
             Dezelfde uitgangspunten zie je terug in alle pagina's en uitleg: onafhankelijke
-            duiding, rolafbakening en afspraken die uitlegbaar blijven — zonder beloftes.
+            analyse, rolafbakening en afspraken die uitlegbaar blijven — zonder beloftes.
           </p>
     `,
     preferredAnchors: [

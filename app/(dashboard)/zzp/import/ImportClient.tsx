@@ -54,7 +54,7 @@ export default function ImportClient({ heading }: ImportClientProps) {
         <h1 className="text-2xl font-bold">Importeer ZZP-profiel (JSON)</h1>
       ))}
       <p className="text-gray-600">
-        Upload de JSON die vanuit het ZZP-aanmeldformulier is gedownload (schema: <code>psm-profile/zzp@v1</code>).
+        Upload het JSON-profielbestand (schema: <code>psm-profile/zzp@v1</code>).
       </p>
 
       <div

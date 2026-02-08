@@ -201,7 +201,7 @@ function seoSuggestions(): string[] {
     );
   } else {
     suggestions.push(
-      "Je gebruikt geen conflict-/strijdtaal; dat past goed bij een volwassen, verbindende frontstage-duidingspositie."
+      "Je gebruikt geen conflict-/strijdtaal; dat past goed bij een volwassen, verbindende frontstage-analysepositie."
     );
   }
 

@@ -20,10 +20,10 @@ export const authoritativeSources: AuthoritativeSource[] = [
   {
     id: 'kvk',
     title: 'KVK (Kamer van Koophandel)',
-    description: 'Ondernemersregels en inschrijven als zelfstandige.',
+    description: 'Ondernemersregels en starten als zelfstandige.',
     links: [
       {
-        label: 'KVK – Inschrijven en ondernemen',
+        label: 'KVK – Ondernemen als zelfstandige',
         href: 'https://www.kvk.nl/inschrijven-en-wijzigen/',
       },
     ],

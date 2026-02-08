@@ -41,23 +41,8 @@ export default function DisclaimerPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="panel p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Definitieve disclaimer</h2>
+          <h2 className="text-xl font-semibold md:text-2xl sr-only">Definitieve disclaimer</h2>
           <DisclaimerContent className="mt-4" />
-
-          <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-slate-200">
-            <p className="font-semibold text-slate-100">Vaste rolafbakening (woord voor woord)</p>
-            <p className="mt-2 text-xs text-slate-400">
-              Deze opsomming is definitief en wordt niet herschreven.
-            </p>
-            <ul className="mt-3 list-disc space-y-1 pl-5">
-              <li>ProBrandwacht is geen bureau</li>
-              <li>ProBrandwacht is geen werkgever</li>
-              <li>ProBrandwacht is geen contractpartij</li>
-              <li>ProBrandwacht stuurt niet op inzet, tarief of uitkomst</li>
-              <li>ProBrandwacht biedt geen garanties</li>
-              <li>ProBrandwacht is geen compliance-instrument</li>
-            </ul>
-          </div>
 
           <p className="mt-4 text-xs text-slate-400">
             Meer context? Bekijk de{' '}

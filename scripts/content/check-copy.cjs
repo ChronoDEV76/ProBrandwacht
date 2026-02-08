@@ -56,7 +56,7 @@ const patterns = [
     regex: /\b(wij regelen alles|je hoeft nooit meer acquisitie te doen|wij nemen alles over|je hoeft zelf niets te doen)\b/i,
     issue: "Te absolute belofte over acquisitie of inzet, buiten jullie invloedssfeer.",
     suggestion:
-      "Gebruik: 'we bieden context en duiding' of 'we maken helder waar je op moet letten'.",
+      "Gebruik: 'we bieden context en analyse' of 'we maken helder waar je op moet letten'.",
   },
 
   // 6. Bureau-/uitzendtaal (context check)

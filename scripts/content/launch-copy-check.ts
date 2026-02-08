@@ -175,8 +175,6 @@ const EXPECTED_CTA_BY_PAGE: Record<string, string[]> = {
   ],
   [path.join("app", "blog", "page.tsx")]: [
     "/veiligheidskundig-kader",
-    "/praktijk-brandveiligheid",
-    "/wetgeving-brandwacht",
   ],
 };
 

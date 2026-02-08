@@ -84,7 +84,7 @@ const OLD_PATTERNS = [
 // We eisen deze alleen op PUBLIC PAGES (page.tsx) zodat components niet “falen”
 const NEW_SIGNALS = [
   /\binitiatief\b/i,
-  /\bduiding\b/i,
+  /\banalyse\b/i,
   /\bverkennend\b/i,
   /\bb[eè]ta\b/i,
   /\bwachtlijst\b/i,

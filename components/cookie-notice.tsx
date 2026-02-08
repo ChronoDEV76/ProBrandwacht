@@ -57,11 +57,7 @@ export default function CookieNotice() {
     <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center px-4 pb-4">
       <div className="max-w-4xl rounded-2xl border border-slate-200 bg-white p-4 shadow-lg">
         <p className="text-sm text-slate-800">
-          Er worden alleen functionele en analytische cookies gebruikt om de diensten te laten werken. Lees meer in de{' '}
-          <a href="/privacy" className="font-semibold underline">
-            privacyverklaring
-          </a>
-          .
+          Er worden alleen functionele en analytische cookies gebruikt om de diensten te laten werken.
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           <button

@@ -36,13 +36,13 @@ export default function VoorwaardenPage() {
             <p className="max-w-3xl text-slate-200">
               Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat van het initiatief mag worden
               verwacht en hoe de rolverdeling werkt. De tekst blijft bewust helder, praktisch en zonder
-              juridische ruis.
+              juridisch jargon.
             </p>
 
             <h2 className="text-lg font-semibold text-white">1. Wat ProBrandwacht is</h2>
             <p>
               ProBrandwacht is een informatie- en kennisinitiatief voor zelfstandige brandwachten en
-              opdrachtgevers. Er wordt toegelicht en gekaderd, zodat samenwerking uitlegbaar blijft.
+              opdrachtgevers. Er wordt geanalyseerd en in context geplaatst, zodat samenwerking uitlegbaar blijft.
             </p>
 
             <h2 className="text-lg font-semibold text-white">2. Rol en contractpositie</h2>
@@ -69,7 +69,7 @@ export default function VoorwaardenPage() {
               verantwoordelijkheden vast, zodat de uitvoering op locatie helder en toetsbaar blijft.
             </p>
 
-            <h2 className="text-lg font-semibold text-white">5. Informatie & tools</h2>
+            <h2 className="text-lg font-semibold text-white">5. Informatie</h2>
             <p>
               Informatie en voorbeelden zijn bedoeld als ondersteuning en bewustwording. Er kunnen geen
               rechten aan worden ontleend.
@@ -92,7 +92,7 @@ export default function VoorwaardenPage() {
             <p>
               Deze voorwaarden kunnen worden aangepast wanneer wetgeving of de
               werking van het initiatief daarom vraagt. De meest actuele versie
-              is in de regel leidend.
+              is leidend.
             </p>
 
             <h2 className="text-lg font-semibold text-white">8. Toepasselijk recht</h2>
@@ -101,14 +101,6 @@ export default function VoorwaardenPage() {
               worden voorgelegd aan de bevoegde rechter in Nederland.
             </p>
 
-            <h2 className="text-lg font-semibold text-white">Contact</h2>
-            <p>
-              Vragen over deze voorwaarden? Mail via{' '}
-              <a href="mailto:info@probrandwacht.nl" className="underline">
-                info@probrandwacht.nl
-              </a>
-              .
-            </p>
           </div>
         </section>
 

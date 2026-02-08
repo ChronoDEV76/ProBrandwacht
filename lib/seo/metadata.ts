@@ -178,14 +178,6 @@ export const routeMeta: Record<string, RouteMeta> = {
     ],
   },
 
-  '/privacy': {
-    title: 'Privacyverklaring | ProBrandwacht',
-    description:
-      'Toelichting op persoonsgegevens: welke data nodig zijn en waarom, en hoe deze worden behandeld.',
-    keywords: ['privacy brandwacht', 'privacyverklaring', 'gegevensbescherming brandwacht'],
-    robots: { index: true, follow: true },
-  },
-
   '/steden': {
     title: 'Brandwacht-inzet per stad — lokale context | ProBrandwacht',
     description:
@@ -231,26 +223,6 @@ export const routeMeta: Record<string, RouteMeta> = {
       'kennisplatform brandwacht',
     ],
   },
-
-
-  // --------------------------------------------------
-  // PROBRANDWACHT DIRECT / SPOED
-  // --------------------------------------------------
-
-  '/probrandwacht-direct': {
-    title: 'ProBrandwacht Direct | ProBrandwacht',
-    description:
-      'Context voor snelle inzet met duidelijke rolverdeling, risico-inschatting en afspraken vooraf.',
-    keywords: [...seoKeywordClusters.processSpeed, ...seoKeywordClusters.platform],
-  },
-
-  '/probrandwacht-direct-spoed': {
-    title: 'ProBrandwacht Direct (spoed) | ProBrandwacht',
-    description:
-      'Spoedaanvragen vragen duidelijke rollen en afspraken. Context bepaalt wat uitvoerbaar is.',
-    keywords: [...seoKeywordClusters.processSpeed, 'spoed brandwacht', 'brandwacht spoedroute'],
-  },
-
   // --------------------------------------------------
   // BLOG
   // --------------------------------------------------

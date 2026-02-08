@@ -47,7 +47,7 @@ const BAD_WORDS = [
   "commerciële marge",
 ];
 
-// woorden die passen bij jouw pro-ZZP / duiding / brugtoon
+// woorden die passen bij jouw pro-ZZP / analyse / brugtoon
 const POSITIVE_WORDS = [
   "eerlijke",
   "eerlijk",

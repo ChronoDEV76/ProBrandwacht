@@ -22,7 +22,7 @@
     {
       "id": "REQUIRES_AFFIRMATION_WHEN_CTA_OR_PLATFORMISH",
       "level": "HIGH",
-      "message": "Als je CTA/platform-achtige taal gebruikt, moet de pagina ook duidelijke afbakening/duiding bevatten (geen bureau/geen werkgever/geen matching-engine/geen prijssturing).",
+      "message": "Als je CTA/platform-achtige taal gebruikt, moet de pagina ook duidelijke afbakening/analyse bevatten (geen bureau/geen werkgever/geen matching-engine/geen prijssturing).",
       "appliesTo": "FRONTSTAGE",
       "triggerAny": [
         "\\bboek(en)?\\b",
@@ -59,7 +59,7 @@
     {
       "id": "NO_PRICE_MODEL_LOGIC",
       "level": "HIGH",
-      "message": "Frontstage mag geen rekenmodel/fee/percentages als mechaniek uitleggen (ook niet impliciet). Alleen context/risico/duiding.",
+      "message": "Frontstage mag geen rekenmodel/fee/percentages als mechaniek uitleggen (ook niet impliciet). Alleen context/risico/analyse.",
       "appliesTo": "FRONTSTAGE",
       "triggerAny": [
         "\\b\\d+\\s*%\\b",
@@ -75,7 +75,7 @@
     {
       "id": "NO_ATTACK_LANGUAGE_TOWARDS_BUREAUS",
       "level": "MEDIUM",
-      "message": "Let op aanval-/strijdtaal richting bureaus. Houd het beschrijvend en kaderend (marktduiding, geen vijandbeeld).",
+      "message": "Let op aanval-/strijdtaal richting bureaus. Houd het beschrijvend en kaderend (marktanalyse, geen vijandbeeld).",
       "appliesTo": "FRONTSTAGE",
       "triggerAny": [
         "\\bbureaus?\\b.*\\b(verkopen|liegen|afromen|misleiden|schijnveiligheid)\\b",

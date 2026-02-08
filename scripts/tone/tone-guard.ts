@@ -206,9 +206,9 @@ const RULES: Rule[] = [
     id: "bureau-wij-regelen",
     level: "ERROR",
     title: "‘Wij regelen’ / ‘wij nemen over’ framing",
-    why: "Je positioneert als frontstage duidend initiatief. ‘Wij regelen/ontzorgen/plannen’ klinkt als bureau.",
+    why: "Je positioneert als frontstage analyserend initiatief. ‘Wij regelen/ontzorgen/plannen’ klinkt als bureau.",
     re: /\b(wij\s+regelen|we\s+regelen|wij\s+nemen\s+over|we\s+nemen\s+over|wij\s+plannen|we\s+plannen|wordt\s+ingepland|aansturen)\b/gi,
-    replacement: "‘Jij houdt regie; wij duiden kaders en afbakening. Afspraken maak je 1-op-1.’",
+    replacement: "‘Jij houdt regie; wij analyseren context en afbakening. Afspraken maak je 1-op-1.’",
   },
   {
     id: "bureau-ontzorgen",
@@ -216,7 +216,7 @@ const RULES: Rule[] = [
     title: "‘Ontzorgen’ / ‘bemiddelen’ / ‘bemiddeling’",
     why: "ProBrandwacht is geen bemiddelingsbureau; ‘ontzorgen/bemiddeling’ triggert dat frame.",
     re: /\b(ontzorg(en|t|ing)|bemiddel(ing|en|t)|tussenpersoon|tussenpartij|detacheerder|uitzendbureau)\b/gi,
-    replacement: "Gebruik: ‘directe afspraken’, ‘duiding en afbakening’, ‘uitleg’, ‘zelfstandig’.",
+    replacement: "Gebruik: ‘directe afspraken’, ‘analyse en afbakening’, ‘uitleg’, ‘zelfstandig’.",
     // Escape hatch: als je expliciet zegt "geen bemiddelingsbureau" mag het soms
     allowIfAlsoMatchesAny: [/\b(geen\s+bemiddelingsbureau|geen\s+klassiek\s+bureau|zonder\s+bureau)\b/i],
   },

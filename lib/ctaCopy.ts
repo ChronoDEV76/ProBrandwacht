@@ -26,8 +26,6 @@ export type CtaId =
   | 'about_kennisbank'
   | 'about_contact_email'
   | 'secondary_steden_overview'
-  | 'secondary_spoed_direct'
-  | 'secondary_direct_route'
   | 'secondary_platform_fit'
   | 'secondary_faq'
   | 'secondary_how_inhuren'
@@ -213,22 +211,6 @@ const CTA: Record<CtaId, Cta> = {
     label: 'Terug naar stedenoverzicht',
     href: '/steden',
     variant: 'outline',
-    intent: 'secondary',
-    audience: 'generic',
-  },
-  secondary_spoed_direct: {
-    id: 'secondary_spoed_direct',
-    label: 'ProBrandwacht Direct (spoed) →',
-    href: '/probrandwacht-direct-spoed',
-    variant: 'link',
-    intent: 'secondary',
-    audience: 'generic',
-  },
-  secondary_direct_route: {
-    id: 'secondary_direct_route',
-    label: 'Lees ProBrandwacht Direct →',
-    href: '/probrandwacht-direct',
-    variant: 'link',
     intent: 'secondary',
     audience: 'generic',
   },

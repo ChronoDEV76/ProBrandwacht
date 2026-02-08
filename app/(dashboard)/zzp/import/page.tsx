@@ -3,7 +3,7 @@ import ImportClient from './ImportClient'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 
 const description =
-  'Upload het JSON-profiel uit het aanmeldformulier en importeer gegevens veilig in het dashboard.';
+  'Upload het JSON-profielbestand en importeer gegevens veilig in het dashboard.'
 
 export const metadata = {
   title: 'Importeer ZZP-profielen | ProBrandwacht',

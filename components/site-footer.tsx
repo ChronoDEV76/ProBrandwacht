@@ -64,13 +64,6 @@ export default function SiteFooter() {
         {/* Juridische links */}
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-slate-400">
           <Link
-            href="/privacy"
-            className="underline-offset-4 hover:text-slate-200 hover:underline"
-          >
-            Privacy
-          </Link>
-          <span aria-hidden="true">·</span>
-          <Link
             href="/voorwaarden"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >

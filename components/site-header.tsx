@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { headers } from 'next/headers'
 
-import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 import { Cta } from '@/components/Cta'
 
 const LINKS = [
@@ -51,22 +50,7 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
-          {SPOED_UI_ENABLED ? (
-            <Link
-              href="/probrandwacht-direct-spoed"
-              prefetch={false}
-              title="Spoed & inzet"
-              aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
-              className={`inline-flex flex-col items-center justify-center rounded-xl border border-amber-200/50 px-3 py-1.5 text-[11px] leading-tight shadow-sm transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-                currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-amber-200/70' : ''
-              }`}
-            >
-              <span className="font-semibold flex items-center gap-1">ProBrandwacht Direct (spoed)</span>
-              <span className="opacity-85">Spoedinzet op basis van beschikbaarheid</span>
-            </Link>
-          ) : null}
-        </div>
+        <div className="hidden items-center gap-2 lg:flex" />
 
         <MobileMenu currentPath={currentPath} />
       </div>
@@ -115,20 +99,6 @@ function MobileMenu({ currentPath }: { currentPath: string }) {
           bij de betrokken partijen.
         </div>
 
-        {SPOED_UI_ENABLED ? (
-          <div className="grid gap-2 border-t border-white/15 px-4 py-3">
-            <Link
-              href="/probrandwacht-direct-spoed"
-              prefetch={false}
-              aria-current={currentPath.startsWith('/probrandwacht-direct-spoed') ? 'page' : undefined}
-              className={`rounded-md border border-white/35 px-3 py-2 text-center text-[12px] font-semibold hover:bg-white/10 ${
-                currentPath.startsWith('/probrandwacht-direct-spoed') ? 'bg-white/10 ring-1 ring-white/40' : ''
-              }`}
-            >
-              ProBrandwacht Direct (spoed)
-            </Link>
-          </div>
-        ) : null}
 
       </div>
     </details>

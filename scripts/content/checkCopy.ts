@@ -129,7 +129,7 @@ const empowermentPatterns: Pattern[] = [
   { label: "gezamenlijk", pattern: /\bgezamenlijk(e)?\b/i },
   { label: "samen verantwoordelijk", pattern: /\bsamen verantwoordelijk\b/i },
   { label: "initiatief", pattern: /\binitiatief\b/i },
-  { label: "duiding", pattern: /\bduiding\b/i },
+  { label: "analyse", pattern: /\banalyse\b/i },
   { label: "afbakening", pattern: /\bafbakening\b/i },
   { label: "uitlegbaarheid", pattern: /\buitlegbaar(heid)?\b/i },
   { label: "autonomie", pattern: /\bautonomie\b/i },
@@ -263,7 +263,7 @@ function analyze(text: string) {
   console.log("\n💡 Positieve (digitale / zelfregie) taal:");
   if (empowermentMatches.length === 0) {
     console.log(
-      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'eerlijk', 'duiding', 'afbakening'."
+      "  ℹ️  Geen duidelijke empowerment-woorden. Overweeg termen als 'rechtstreeks', 'zelf regie', 'eerlijk', 'analyse', 'afbakening'."
     );
   } else {
     const labels = Array.from(new Set(empowermentMatches.map((m) => m.label)));

@@ -2,7 +2,6 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 
 import { Cta } from '@/components/Cta'
-import { SPOED_UI_ENABLED } from '@/lib/featureFlags'
 
 type CityHeroProps = {
   cityName: string
@@ -39,9 +38,6 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
             id="secondary_why_no"
             className="rounded-2xl border border-slate-200 px-5 py-3 text-slate-800 hover:bg-white"
           />
-          {SPOED_UI_ENABLED ? (
-            <Cta id="secondary_spoed_direct" className="text-brand-700" />
-          ) : null}
         </div>
 
         <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm text-slate-700">

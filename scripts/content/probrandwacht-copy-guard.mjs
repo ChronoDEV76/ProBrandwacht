@@ -2,7 +2,7 @@
 /**
  * ProBrandwacht Copy Guard
  * Bewaakt frontstage positionering:
- * - marktduiding
+ * - marktanalyse
  * - geen oplossingen / beloftes
  * - geen prijssturing
  * - geen vakbondstaal
@@ -36,7 +36,7 @@ const RULES = [
   {
     id: "ROLE_SHIFT",
     level: "HIGH",
-    message: "Oplossing-/platformtaal: ProBrandwacht mag duiden, niet oplossen.",
+    message: "Oplossing-/platformtaal: ProBrandwacht mag analyseren, niet oplossen.",
     patterns: [
       /\bwij\s+(regelen|leveren|lossen|bieden|zorgen)\b/i,
       /\bvia\s+ons\b/i,

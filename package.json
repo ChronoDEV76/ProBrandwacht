@@ -40,7 +40,7 @@
     "seo:upgrade:apply": "node scripts/seo/seo-upgrade.mjs --apply",
     "seo:upgrade:sitemap": "node scripts/seo/seo-upgrade.mjs --apply --sitemap",
     "quality-check": "npm run seo:check && npm run content-check",
-    "frictie:guard": "node scripts/brandwacht-frictie-guard.mjs",
+    "frictie:guard": "node scripts/qa/brandwacht-frictie-guard.mjs",
     "launch:check": "node scripts/ops/launch-check.mjs",
     "launch:quick": "node scripts/ops/launch-check.mjs --no-build",
     "diagnose": "node scripts/ops/diagnose.js",

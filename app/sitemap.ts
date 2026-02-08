@@ -1,7 +1,6 @@
 // app/sitemap.ts
 import type { MetadataRoute } from 'next'
 
-import { SPOED_ROUTE_ENABLED } from '@/lib/featureFlags'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
@@ -13,7 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact',
     '/disclaimer',
     '/voorwaarden',
-    '/privacy',
     '/platform',
     '/over-ons',
     '/faq',
@@ -23,7 +21,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/veiligheidskundig-kader',
     '/steden',
     '/waarom-wij-soms-nee-zeggen',
-    ...(SPOED_ROUTE_ENABLED ? ['/probrandwacht-direct', '/probrandwacht-direct-spoed'] : []),
   ]
 
   const staticRoutes: MetadataRoute.Sitemap = staticPaths.map((path) => ({

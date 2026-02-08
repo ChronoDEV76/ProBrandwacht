@@ -163,10 +163,10 @@ const SIGNALS = {
     /\bavg\b/i,
     /\bverwerkingsverantwoordelijke\b/i,
   ],
-  hasDuidingLanguage: [
-    /\bduid(t|en|ing)\b/i,
+  hasAnalysisLanguage: [
+    /\banalyse\b/i,
     /\buitleg\b/i,
-    /\bkader(s)?\b/i,
+    /\bcontext\b/i,
     /\brolafbakening\b/i,
     /\brolverdeling\b/i,
     /\bonafhankelijk\b/i,
@@ -275,14 +275,14 @@ function scorePage({ url, html, text }) {
   // Experience / expertise
   const expHits = countRegexHits(text, SIGNALS.hasExperienceLanguage);
   const exptHits = countRegexHits(text, SIGNALS.hasExpertiseLanguage);
-  const duidingHits = countRegexHits(text, SIGNALS.hasDuidingLanguage);
+  const analysisHits = countRegexHits(text, SIGNALS.hasAnalysisLanguage);
 
   if (expHits.length) ok("experience", "Ervarings-taal gevonden (praktijk/casus/scenario).");
-  else if (duidingHits.length) ok("experience_contextual", "Duidings-taal gevonden; expliciete ervaringsclaim is optioneel.");
+  else if (analysisHits.length) ok("experience_contextual", "Analyse-taal gevonden; expliciete ervaringsclaim is optioneel.");
   else warn("experience", "Geen duidelijke ‘ervaring in de praktijk’ signalen gevonden.");
 
   if (exptHits.length) ok("expertise", "Expertise/kwalificatie signalen gevonden (certificering/wetgeving).");
-  else if (duidingHits.length) ok("expertise_contextual", "Duidings-taal gevonden; expliciete kwalificaties zijn optioneel.");
+  else if (analysisHits.length) ok("expertise_contextual", "Analyse-taal gevonden; expliciete kwalificaties zijn optioneel.");
   else warn("expertise", "Geen duidelijke expertise/kwalificatie signalen gevonden.");
 
   // Nuance terms (nice-to-have; only warn on key pages)

@@ -29,7 +29,7 @@ const REPORT_FILE = path.join(
 const bureauRules: RewriteRule[] = [
   {
     pattern: /\bbemiddeling\b/gi,
-    replace: "duiding en afbakening",
+    replace: "analyse en afbakening",
     category: "bureau",
     description: "Neutraliseert het woord 'bemiddeling'.",
   },
@@ -217,7 +217,7 @@ async function main() {
   fs.writeFileSync(REPORT_FILE, JSON.stringify(report, null, 2), "utf8");
 
   console.log("\n📄 Rapport opgeslagen in:", REPORT_FILE);
-  console.log("✨ Klaar — tone of voice geüpdatet naar frontstage duiding.");
+  console.log("✨ Klaar — tone of voice geüpdatet naar frontstage analyse.");
 }
 
 main().catch((err) => {

@@ -2,7 +2,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-// Frontstage city copy generator (duiding, rolhelderheid, context)
+// Frontstage city copy generator (analyse, rolhelderheid, context)
 const cities = [
   { slug: "amsterdam", name: "Amsterdam" },
   { slug: "rotterdam", name: "Rotterdam" },
@@ -23,11 +23,11 @@ function buildCityCopy({ slug, name }) {
     metaTitle: `Brandwacht-inzet in ${name}: verantwoordelijkheden en context | ProBrandwacht`,
     metaDescription:
       `Onafhankelijke uitleg over brandwacht-inzet in ${name}. ` +
-      `Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?`,
+      `Wat is vereist, wie is verantwoordelijk en waar let je op in de praktijk?`,
     h1: `Brandwacht-inzet in ${name}: context en verantwoordelijkheden`,
     intro:
-      `Publieke werkkaart voor ${name}. ProBrandwacht duidt hoe brandwacht-inzet ` +
-      `uitlegbaar blijft — onafhankelijke duiding en rolhelderheid in de praktijk.`,
+      `Publieke werkkaart voor ${name}. ProBrandwacht beschrijft hoe brandwacht-inzet ` +
+      `uitlegbaar blijft — onafhankelijke analyse en rolhelderheid in de praktijk.`,
     body: `## Afspraken vooraf in ${name}
 
 - **Scope en rol**: wat bewaak je precies, en wat valt er buiten?
@@ -58,7 +58,7 @@ uitlegbaar samenwerken vraagt, en laat de keuzes bij de betrokken partijen.
     localCaseTitle: `Voorbeeld: context in ${name}`,
     localCaseBody:
       `Een opdrachtgever en professional hebben vooraf rol, bereikbaarheid en escalatie afgesproken. ` +
-      `ProBrandwacht beschrijft zulke kaders; uitvoering en afspraken blijven bij de betrokken partijen.`,
+      `ProBrandwacht beschrijft zulke context; uitvoering en afspraken blijven bij de betrokken partijen.`,
   };
 }
 

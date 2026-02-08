@@ -82,7 +82,7 @@ const POSITIVE_KEYWORDS = [
 const DUPLICATE_PATTERN = /\b([a-z\u00c0-\u017f]+)(\s+\1){1,}\b/gi;
 
 const SYNONYM_ROTATIONS = {
-  duiding: ["analyse", "toelichting", "uitleg"],
+  analyse: ["analyse", "toelichting", "uitleg"],
 };
 
 function capitalize(word) {
