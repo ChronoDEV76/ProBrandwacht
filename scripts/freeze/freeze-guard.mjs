@@ -22,6 +22,9 @@ const requiredBlogs = config.requiredBlocksForBlogs ?? {}
 const requiredHeadings = requiredBlogs.requiredHeadings ?? []
 const requiredFrontmatterKeys = requiredBlogs.requiredFrontmatterKeys ?? []
 const requiredDisclaimerMarker = requiredBlogs.requiredDisclaimerMarker ?? ''
+const toneAvoid = config.toneOfVoice?.avoid ?? []
+const toneViolationLevel =
+  (config.enforcement?.severity?.toneViolation ?? 'MEDIUM').toUpperCase()
 
 const findings = []
 
@@ -119,6 +122,14 @@ for (const base of freezePaths) {
       const t = String(term).toLowerCase()
       if (t && lower.includes(t)) {
         report('HIGH', file, 'FORBIDDEN_ENTITY', `Entity targeting found: ${term}`)
+      }
+    }
+
+    for (const term of toneAvoid) {
+      const t = String(term).toLowerCase()
+      if (!t) continue
+      if (lower.includes(t)) {
+        report(toneViolationLevel, file, 'TONE_VIOLATION', `Tone-of-voice avoid term found: ${term}`)
       }
     }
 

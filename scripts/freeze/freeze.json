@@ -1,8 +1,22 @@
 {
   "version": 1,
   "project": "ProBrandwacht",
+  "status": "frozen",
+  "freezeDate": "2026-02-08",
+  "rationale": "Positionering afgerond. Platform dient als onafhankelijk kennis- en duidingskader. Geen actieve doorontwikkeling gewenst.",
   "mode": "freeze",
   "intent": "Lock frontstage positioning and tone. Allow only minimal maintenance edits (typos, broken links, factual corrections).",
+  "immutablePrinciples": [
+    "Geen bureau",
+    "Geen werkgever",
+    "Geen vakbond",
+    "Geen collectief",
+    "Geen bemiddeling",
+    "Geen oplossingstaal",
+    "Geen normatieve uitspraken",
+    "Geen garanties",
+    "Geen oproepen tot actie"
+  ],
   "freezeScope": {
     "freezePaths": [
       "app/(site)",
@@ -41,6 +55,19 @@
       "compliance_solution_sales"
     ]
   },
+  "allowedChanges": [
+    "Correctie van feitelijke onjuistheden",
+    "Wetswijzigingen (inhoudelijk, beschrijvend)",
+    "Technische updates zonder inhoudelijke impact"
+  ],
+  "forbiddenChanges": [
+    "Toevoegen van activerende CTA’s",
+    "Aanscherpen van taal richting partijen",
+    "Heropening van tariefdiscussies",
+    "Persoonlijke opinie toevoegen",
+    "Actualiteitspolitiek verwerken",
+    "Reactieve content naar marktincidenten"
+  ],
   "toneRules": {
     "voice": {
       "primary": "calm_neutral_explanatory",
@@ -51,6 +78,20 @@
       "allowed": ["je/jij"],
       "avoid": ["wij gaan", "wij regelen", "wij leveren", "wij fixen", "sluit je aan", "achterban"]
     }
+  },
+  "toneOfVoice": {
+    "mode": "neutraal-beschrijvend",
+    "perspective": "derde persoon",
+    "intent": "uitleg en context, geen oordeel",
+    "avoid": [
+      "wij vinden",
+      "wij eisen",
+      "dit moet",
+      "dit klopt niet",
+      "schijnveiligheid (als beschuldiging)",
+      "misstanden",
+      "boosdoener"
+    ]
   },
   "hardBlocks": {
     "forbiddenPhrases": [
@@ -77,7 +118,13 @@
       "matching-engine",
       "boek direct",
       "direct boeken",
-      "spoed funnel"
+      "spoed funnel",
+      "wij vinden",
+      "wij eisen",
+      "dit moet",
+      "dit klopt niet",
+      "misstanden",
+      "boosdoener"
     ],
     "forbiddenEntityTargeting": {
       "blockIfContains": ["de groot", "eurosafe"],
@@ -99,6 +146,11 @@
   "freezeDisclaimer": {
     "id": "PB_FREEZE_DISCLAIMER_V1",
     "text": "ProBrandwacht biedt duiding en context op basis van openbare kaders en praktijkervaring. Het is geen bemiddelaar, geen contractpartij en geen toezichthouder. ProBrandwacht geeft geen operationeel advies, geen garanties en stuurt niet op inzet, tarief of uitkomst. Verantwoordelijkheden en bevoegdheden blijven bij de betrokken partijen en volgen uit context, vergunningseisen, risicoanalyse en gemaakte afspraken."
+  },
+  "reviewPolicy": {
+    "frequency": "geen",
+    "trigger": "alleen bij significante wetswijziging",
+    "owner": "Chrono4Solutions"
   },
   "enforcement": {
     "severity": {
