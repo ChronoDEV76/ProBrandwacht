@@ -1,0 +1,7 @@
+# Freeze-critical areas require owner approval
+/scripts/freeze/* @ChronoDEV76
+/content/blog/** @ChronoDEV76
+/app/(site)/** @ChronoDEV76
+/lib/seo/** @ChronoDEV76
+/docs/freeze.md @ChronoDEV76
+/docs/tone-of-voice.md @ChronoDEV76
