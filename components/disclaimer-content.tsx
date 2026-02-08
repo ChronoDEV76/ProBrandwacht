@@ -46,7 +46,7 @@ export default function DisclaimerContent({
       <h2 className="mt-6 text-base font-semibold text-slate-50">Afbakening</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
         <li>ProBrandwacht biedt een neutrale kennislaag naast de praktijk</li>
-        <li>Samenwerking en matching ontstaan rechtstreeks tussen opdrachtgever en professional</li>
+        <li>Samenwerking ontstaat rechtstreeks tussen opdrachtgever en professional</li>
         <li>Tarief-, inzet- en planningskeuzes worden samen gemaakt</li>
         <li>ProBrandwacht is geen werkgever, geen uitzendbureau en geen contractpartij</li>
         <li>Tarieven worden zelf bepaald tussen opdrachtgever en professional</li>

@@ -12,7 +12,7 @@ export const metadata: Metadata = getRouteMetadata('/belangen')
 export default function BelangenPage() {
   const breadcrumbItems = [
     { name: 'Home', url: 'https://www.probrandwacht.nl/' },
-    { name: 'Belangen', url: 'https://www.probrandwacht.nl/belangen' },
+    { name: 'Intentie', url: 'https://www.probrandwacht.nl/belangen' },
   ]
 
   const principles = [

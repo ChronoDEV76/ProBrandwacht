@@ -9,7 +9,7 @@ const LINKS = [
   { href: '/voor-brandwachten', label: 'Voor professionals' },
   { href: '/opdrachtgevers', label: 'Voor opdrachtgevers' },
   { href: '/waarom-wij-soms-nee-zeggen', label: 'Afbakening' },
-  { href: '/belangen', label: 'Belangen' },
+  { href: '/belangen', label: 'Intentie' },
   { href: '/over-ons', label: 'Over ProBrandwacht' },
 ]
 

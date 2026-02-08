@@ -17,7 +17,7 @@ export default function PlatformPage() {
           <h1 className="text-3xl font-semibold text-white md:text-5xl">Wat is ProBrandwacht?</h1>
 
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            ProBrandwacht is een onafhankelijk kennis- en vakplatform voor de Nederlandse
+            ProBrandwacht is een onafhankelijk kennis- en analyseplatform voor de Nederlandse
             brandwachtenmarkt.
           </p>
 
