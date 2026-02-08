@@ -10,7 +10,7 @@ import Prose from '@/components/prose'
 import AfbakeningBanner from '@/components/afbakening-banner'
 import TrustBand from '@/components/trust-band'
 import { getRouteMetadata } from '@/lib/seo/metadata'
-import { getPostSlugs } from '@/lib/blog'
+import { getPostBySlug as getPostBySlugRaw, getPostSlugs } from '@/lib/blog'
 import { getPostBySlug } from '@/lib/mdx'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
@@ -150,6 +150,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     { name: title, item: pageUrl },
   ]
 
+  const related = await getRelatedPosts({
+    currentSlug: params.slug,
+    currentCategory: frontmatter.category as string | undefined,
+    currentPillar: frontmatter.pillar as string | undefined,
+    currentTags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
+  })
+
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950 text-slate-50">
@@ -262,6 +269,21 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <Prose>{post.compiled}</Prose>
         </article>
 
+        {related.length > 0 ? (
+          <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <h2 className="text-xl font-semibold md:text-2xl">Gerelateerd</h2>
+            <ul className="mt-3 space-y-2 text-sm text-slate-200">
+              {related.map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/blog/${item.slug}`} className="text-emerald-200 hover:text-emerald-100">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Kernpunten</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
@@ -317,4 +339,63 @@ function parseFrontmatterDate(value: unknown) {
   if (!trimmed) return undefined
   const parsed = new Date(trimmed)
   return Number.isNaN(parsed.getTime()) ? undefined : parsed
+}
+
+type RelatedInput = {
+  currentSlug: string
+  currentCategory?: string
+  currentPillar?: string
+  currentTags: string[]
+}
+
+type RelatedPost = {
+  slug: string
+  title: string
+  date?: string
+}
+
+async function getRelatedPosts({
+  currentSlug,
+  currentCategory,
+  currentPillar,
+  currentTags,
+}: RelatedInput): Promise<RelatedPost[]> {
+  const slugs = await getPostSlugs()
+  const candidates = await Promise.all(
+    slugs
+      .filter((slug) => slug !== currentSlug)
+      .map(async (slug) => {
+        const { frontmatter } = await getPostBySlugRaw(slug)
+        return {
+          slug,
+          title: (frontmatter.title as string | undefined) ?? slug,
+          category: frontmatter.category as string | undefined,
+          pillar: frontmatter.pillar as string | undefined,
+          tags: Array.isArray(frontmatter.tags) ? frontmatter.tags : [],
+          date: frontmatter.updated ?? frontmatter.date,
+        }
+      })
+  )
+
+  const scored = candidates.map((post) => {
+    let score = 0
+    if (currentPillar && post.pillar === currentPillar) score += 3
+    if (currentCategory && post.category === currentCategory) score += 2
+    const sharedTags = post.tags.filter((tag) =>
+      currentTags.some((t) => String(t).toLowerCase() === String(tag).toLowerCase())
+    ).length
+    score += sharedTags
+    return { ...post, score }
+  })
+
+  const sorted = scored
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score
+      const dateA = a.date ? new Date(a.date).getTime() : 0
+      const dateB = b.date ? new Date(b.date).getTime() : 0
+      return dateB - dateA
+    })
+    .slice(0, 3)
+
+  return sorted.map(({ slug, title, date }) => ({ slug, title, date }))
 }

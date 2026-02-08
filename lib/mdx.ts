@@ -26,12 +26,34 @@ export interface BlogPost {
 
 // Where your .mdx posts live (e.g. /content/blog/*.mdx)
 
+const ANTI_FRICTION_SENTENCE =
+  'Dit zegt niets over inzet of vakmanschap; het gaat om de inrichting van verantwoordelijkheden en verwachtingen.'
+
+function stripRelatedSection(content: string) {
+  const match = content.match(/^\s*##\s+Gerelateerd\b/m)
+  if (!match || match.index == null) return content
+  return content.slice(0, match.index).trimEnd()
+}
+
+function ensureAfbakeningSentence(content: string) {
+  const marker = '## Afbakening'
+  const idx = content.indexOf(marker)
+  if (idx < 0) return content
+  const after = content.slice(idx + marker.length)
+  const nextHeading = after.search(/\n##\s+/)
+  const section = nextHeading >= 0 ? after.slice(0, nextHeading) : after
+  if (section.includes(ANTI_FRICTION_SENTENCE)) return content
+  const insertion = `\n${ANTI_FRICTION_SENTENCE}\n`
+  return content.slice(0, idx + marker.length) + insertion + after
+}
+
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   const { frontmatter, content } = await getPostBySlugRaw(slug)
+  const normalized = ensureAfbakeningSentence(stripRelatedSection(content))
 
   // Compile MDX to a React node and inject your MDX components here
   const { content: compiled } = await compileMDX({
-    source: content,
+    source: normalized,
     options: {
       // we already parsed frontmatter via gray-matter above
       parseFrontmatter: false,
