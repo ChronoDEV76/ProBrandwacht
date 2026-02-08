@@ -17,6 +17,9 @@ import process from "node:process";
 
 const DEFAULT_CONFIG = "scripts/blog/vr-blog-guard.config.json";
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
+const FORCE_LOCAL =
+  String(process.argv.find((a) => a.startsWith("--local="))?.split("=")[1] ?? "0") === "1" ||
+  process.env.CI === "true";
 
 function argValue(flag) {
   const i = process.argv.indexOf(flag);
@@ -278,6 +281,92 @@ async function main() {
 
   const indexUrl = safeUrlJoin(cfg.baseUrl, cfg.startPath);
   printHeader(cfg, configPath);
+
+  if (FORCE_LOCAL) {
+    console.log("⚠️  Live crawl overgeslagen (force local / CI).");
+    const files = walk(BLOG_DIR).filter((f) => f.endsWith(".mdx") && !path.basename(f).startsWith("_"));
+
+    const allFindings = [];
+
+    for (const file of files) {
+      const raw = fs.readFileSync(file, "utf8");
+      const { data, body } = parseFrontmatter(raw);
+      const slug = data.slug ? String(data.slug) : path.basename(file, ".mdx");
+      const url = safeUrlJoin(cfg.baseUrl, `/blog/${slug}`);
+      const headings = extractHeadingsFromMdx(body);
+      const title = data.title ? String(data.title) : (headings[0] || slug);
+
+      const req = anyRequiredHeadingPresent(headings, cfg.requiredHeadingsAnyOf || []);
+      if (!req.ok) {
+        allFindings.push({
+          severity: "MEDIUM",
+          ruleId: "MISSING_SECTIONS",
+          note: "Blog mist 1 of meer verwachte secties (kader/afbakening/gerelateerd).",
+          url,
+          title,
+          extra: `Missing: ${req.missing.map((s) => `[${s.join(" | ")}]`).join(", ")}`
+        });
+      }
+
+      const text = stripMarkdown(body);
+
+      for (const rule of cfg.rules || []) {
+        const matches = findMatches(text, rule.patterns || [], cfg.contextChars ?? 90);
+        if (!matches.length) continue;
+
+        for (const m of matches) {
+          if (rule.allowIfNear?.length) {
+            const ctxLower = (m.context || "").toLowerCase();
+            const allowed = rule.allowIfNear.some((a) => new RegExp(a, "i").test(ctxLower));
+            if (allowed) continue;
+          }
+
+          allFindings.push({
+            severity: rule.severity,
+            ruleId: rule.id,
+            note: rule.note,
+            url,
+            title,
+            match: m.match,
+            context: m.context
+          });
+        }
+      }
+
+      const tone = vrToneScore(text, cfg.vrBblTone || {});
+      const minOk = cfg.vrBblTone?.minScoreOk ?? 70;
+      if (tone.score < minOk) {
+        allFindings.push({
+          severity: "MEDIUM",
+          ruleId: "VR_TONE_SCORE_LOW",
+          note: "VR/Bbl-toon score onder drempel (meer neutraal/verklarend formuleren).",
+          url,
+          title,
+          extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits}, minOk=${minOk})`
+        });
+      } else if (hasFlag("--verbose")) {
+        allFindings.push({
+          severity: "INFO",
+          ruleId: "VR_TONE_SCORE_OK",
+          note: "VR/Bbl-toon score ok.",
+          url,
+          title,
+          extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits})`
+        });
+      }
+    }
+
+    allFindings.sort((a, b) => {
+      const d = severityRank(b.severity) - severityRank(a.severity);
+      if (d !== 0) return d;
+      return String(a.url).localeCompare(String(b.url));
+    });
+
+    printSummary(allFindings);
+    for (const f of allFindings) printFindingBlock(f);
+    const hasHigh = allFindings.some((f) => f.severity === "HIGH");
+    process.exit(hasHigh ? 1 : 0);
+  }
 
   let indexHtml;
   try {

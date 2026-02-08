@@ -30,7 +30,7 @@
     "sanity:probrandwacht": "node scripts/probrandwacht-sanity-guard.mjs --root . --config scripts/probrandwacht-sanity-guard.config.json",
     "blog-guard": "node scripts/blog/blog-guard.mjs --root . --config scripts/blog/blog-guard.config.json",
     "blog:guard:strict": "node scripts/blog/blog-guard.mjs",
-    "blog:vr-guard": "node scripts/blog/vr-blog-guard.mjs",
+    "blog:vr-guard": "node scripts/blog/vr-blog-guard.mjs --local=1",
     "seo:check": "node scripts/seo/seo-check.mjs --local=1",
     "seo:check:tsx": "tsx seo-checker.ts",
     "seo:audit": "node scripts/seo/digitalSeoAudit.mjs --site=https://www.probrandwacht.nl",
