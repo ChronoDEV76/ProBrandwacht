@@ -14,10 +14,10 @@ export default function VoorBrandwachtenPage() {
           <div className="max-w-3xl">
             <p className="text-sm uppercase tracking-widest text-slate-300/80">Voor brandwachten</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Zelfstandig werken, met duidelijke kaders
+              Zelfstandig werken, met duidelijke afspraken
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht biedt taal en kaders voor professioneel samenwerken: helderheid over rol, scope,
+              ProBrandwacht biedt taal en afspraken voor professioneel samenwerken: helderheid over rol, scope,
               beslislijnen en stopcriteria -- zodat inzet uitvoerbaar blijft en achteraf uitlegbaar is wat
               is afgesproken.
             </p>
@@ -33,8 +33,8 @@ export default function VoorBrandwachtenPage() {
             <div className="panel mt-4 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Facilitering:</span> faciliterende modellen voor compliance
-                of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de kennis-
-                en kaderlaag, met focus op context en rolhelderheid.
+                of administratieve ondersteuning vallen buiten dit platform. ProBrandwacht blijft de
+                kennislaag, met focus op context en rolhelderheid.
               </p>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function VoorBrandwachtenPage() {
 
         <div className="panel mt-10 grid gap-4 p-6 md:grid-cols-3">
           <div className="md:col-span-2">
-            <h2 className="section-title">Lees het nee-kader</h2>
+            <h2 className="section-title">Lees de nee-leidraad</h2>
             <p className="mt-2 text-slate-200/90">
               Handig bij twijfel over scope, rolverwarring of onduidelijke uitvoering. Het is een praktische
               grens voor professionaliteit, met respect voor alle partijen.
@@ -87,7 +87,7 @@ export default function VoorBrandwachtenPage() {
           </div>
           <div className="flex flex-wrap items-center gap-3 md:justify-end">
             <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
-              Bekijk het kader
+              Bekijk de leidraad
             </Link>
             <Link href="/contact" className="route-link">
               Verkennend contact

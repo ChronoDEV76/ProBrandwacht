@@ -27,7 +27,7 @@ export default function ContactPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               Vragen over werkwijze of sparren over rolafbakening en uitvoerbaarheid? Contact opnemen kan via
-              dit kanaal. Tariefafspraken en inzet worden 1-op-1 afgestemd tussen opdrachtgever en
+              dit kanaal. Afspraken over inzet en voorwaarden worden 1-op-1 afgestemd tussen opdrachtgever en
               professional.
             </p>
 

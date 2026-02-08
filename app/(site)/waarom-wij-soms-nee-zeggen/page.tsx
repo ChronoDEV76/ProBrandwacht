@@ -65,7 +65,7 @@ export default function Page() {
             Checklist voor opdrachtgevers
           </Link>
           <Link href="/voor-brandwachten" className="route-link">
-            Kaders voor brandwachten
+            Voor brandwachten
           </Link>
         </div>
       </section>

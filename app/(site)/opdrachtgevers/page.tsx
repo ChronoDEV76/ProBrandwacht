@@ -21,8 +21,8 @@ export default function OpdrachtgeversPage() {
               worden gesteld, wat wordt afgebakend en welke signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Het platform licht de markt en kaders voor zelfstandige samenwerking toe, zodat afspraken
-              uitvoerbaar en uitlegbaar blijven.
+              Het platform licht de markt en randvoorwaarden voor zelfstandige samenwerking toe, zodat
+              afspraken uitvoerbaar en uitlegbaar blijven.
             </p>
 
             <div className="panel mt-7 p-5">
@@ -84,13 +84,13 @@ export default function OpdrachtgeversPage() {
           <div className="md:col-span-2">
             <h2 className="section-title">Een compacte checklist</h2>
             <p className="mt-2 text-slate-200/90">
-              Startpunt is &quot;Waarom er soms nee wordt gezegd&quot; -- dat geeft een praktisch kader voor
+              Startpunt is &quot;Waarom er soms nee wordt gezegd&quot; -- dat geeft een praktische leidraad voor
               uitvoerbaarheid en grensbewaking.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 md:justify-end">
             <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
-              Bekijk het kader
+              Bekijk de leidraad
             </Link>
             <Link href="/contact" className="route-link">
               Verkennend contact

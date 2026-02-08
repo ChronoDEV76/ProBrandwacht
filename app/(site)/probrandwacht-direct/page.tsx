@@ -43,7 +43,7 @@ export default function ProBrandwachtDirectPage() {
                 Verkennend contact
               </Link>
               <Link href="/opdrachtgevers" className="route-link">
-                Kader voor opdrachtgevers
+                Voor opdrachtgevers
               </Link>
               {showSpoed && (
                 <Link href="/probrandwacht-direct-spoed" className="route-link">

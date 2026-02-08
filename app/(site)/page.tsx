@@ -21,15 +21,15 @@ export default function Page() {
                 Duidelijkheid in de brandwachtenmarkt.
               </h1>
               <p className="text-xl leading-relaxed text-slate-200/90 md:text-2xl">
-                ProBrandwacht biedt veiligheidskundige context bij de brandwachtenmarkt.
+                ProBrandwacht biedt veiligheidskundige context en duiding bij brandwacht-inzet.
                 Rolafbakening, systeemwerking en praktische uitleg — met focus op overzicht en werkbaarheid.
               </p>
             </div>
 
             <p className="text-lg leading-relaxed text-slate-200/90">
               Dit initiatief helpt opdrachtgevers en zelfstandige brandwachten om samenwerking vooraf scherp
-              te krijgen. Het maakt zichtbaar wat wordt besproken, waar risico&apos;s ontstaan en hoe
-              verantwoordelijkheden in de praktijk verdeeld zijn.
+              te krijgen. Het maakt zichtbaar wat vooraf besproken moet worden, waar risico&apos;s ontstaan en
+              hoe verantwoordelijkheden in de praktijk verdeeld zijn.
             </p>
 
             <div className="flex flex-col gap-2 sm:flex-row sm:gap-6">
@@ -148,7 +148,7 @@ export default function Page() {
           <div className="panel p-6">
             <h2 className="section-title">Faciliterende modellen & ondersteuning</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht blijft de publieke kennis- en kaderlaag. Eventuele faciliterende modellen die
+              ProBrandwacht blijft de publieke kennislaag. Eventuele faciliterende modellen die
               samenwerking juridisch of administratief ondersteunen, opereren buiten dit platform en hebben
               een eigen rol en verantwoordelijkheid.
             </p>

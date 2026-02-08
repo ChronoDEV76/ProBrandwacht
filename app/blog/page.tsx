@@ -281,12 +281,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               <Link href="/veiligheidskundig-kader" className="route-link">
                 Veiligheidskundig kader
               </Link>
-              <Link href="/praktijk-brandveiligheid" className="route-link">
-                Praktijk brandveiligheid
-              </Link>
-              <Link href="/wetgeving-brandwacht" className="route-link">
-                Wetgeving & context
-              </Link>
             </div>
           </div>
           <section className="flex flex-wrap gap-4">

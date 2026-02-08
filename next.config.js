@@ -104,6 +104,21 @@ const nextConfig = {
         destination: '/blog/aanwezigheid-is-geen-veiligheid',
         permanent: true,
       },
+      {
+        source: '/brandwachtenmarkt',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/wetgeving-brandwacht',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/praktijk-brandveiligheid',
+        destination: '/blog',
+        permanent: true,
+      },
     ];
   },
   images: {

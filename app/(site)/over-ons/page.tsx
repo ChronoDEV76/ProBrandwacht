@@ -20,7 +20,7 @@ export default function OverOnsPage() {
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
+              ProBrandwacht is een onafhankelijk kennis- en duidingsplatform over brandwacht-inzet, rollen en
               verantwoordelijkheden. Het beschrijft hoe de markt werkt, welke randvoorwaarden ertoe doen en
               waar samenwerking in de praktijk vaak schuurt.
             </p>
@@ -43,7 +43,7 @@ export default function OverOnsPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
               <li>Uitleg geven over samenwerking en uitvoerbaarheid</li>
               <li>Signaleren wanneer scopes en beslislijnen te vaag zijn</li>
-              <li>Kaders delen: welke vragen vooraf worden gesteld</li>
+              <li>Duiden welke vragen vooraf worden gesteld</li>
               <li>Voorbeelden geven van documenteerbare afspraken</li>
             </ul>
           </div>
@@ -52,7 +52,7 @@ export default function OverOnsPage() {
             <h2 className="text-xl font-semibold">Afbakening</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
               <li>Samenwerking vindt plaats tussen opdrachtgever en professional</li>
-              <li>Tarief- en inzetafspraken blijven onderdeel van die samenwerking</li>
+              <li>Inzet- en samenwerkingsafspraken blijven onderdeel van die samenwerking</li>
               <li>ProBrandwacht ondersteunt inzicht naast uitvoering of planning</li>
               <li>Besluiten en uitkomsten blijven contextafhankelijk</li>
             </ul>

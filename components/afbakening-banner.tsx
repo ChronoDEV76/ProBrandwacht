@@ -7,7 +7,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">
           Afbakening
           <span className="rounded-full border border-amber-200/30 px-2 py-0.5 text-[10px] text-amber-100/90">
-            informatief kader
+            informatieve context
           </span>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-slate-200">
@@ -25,7 +25,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
               <li>Rolafbakening en keuzes worden gemaakt door opdrachtgever en professional.</li>
             </ul>
             <Link href="/waarom-wij-soms-nee-zeggen" className="text-amber-200 underline underline-offset-4">
-              Lees het volledige kader
+              Lees de volledige afbakening
             </Link>
           </div>
         </details>
