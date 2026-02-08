@@ -95,12 +95,6 @@ export default function SiteFooter() {
             </div>
             <div className="space-y-3">
               <DisclaimerContent variant="compact" className="text-xs text-slate-300" />
-              <p>
-                Contact:{' '}
-                <a href="mailto:info@probrandwacht.nl" className="underline">
-                  info@probrandwacht.nl
-                </a>
-              </p>
             </div>
           </div>
         </section>

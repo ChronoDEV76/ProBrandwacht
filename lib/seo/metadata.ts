@@ -32,7 +32,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/': {
     title: 'ProBrandwacht — Duidelijkheid in de brandwachtenmarkt',
     description:
-      'Onafhankelijk kennis- en duidingsplatform met veiligheidskundige context over rolafbakening, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.',
+      'Onafhankelijk kennis- en analyseplatform met veiligheidskundige context over rolafbakening, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.',
     keywords: [
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
@@ -64,9 +64,9 @@ export const routeMeta: Record<string, RouteMeta> = {
 
 
   '/platform': {
-    title: 'Wat is ProBrandwacht? — kennis en duiding | ProBrandwacht',
+    title: 'Wat is ProBrandwacht? — kennis en analyse | ProBrandwacht',
     description:
-      'Uitleg over ProBrandwacht als onafhankelijk kennis- en duidingsinitiatief: rolafbakening, context en afbakening.',
+      'Uitleg over ProBrandwacht als onafhankelijk kennis- en analyse-initiatief: rolafbakening, context en afbakening.',
     keywords: [
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
@@ -82,7 +82,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   '/over-ons': {
     title: 'Over ProBrandwacht — rol en afbakening | ProBrandwacht',
     description:
-      'Waarom ProBrandwacht bestaat: een onafhankelijke rol die het speelveld beschrijft en context en duiding zichtbaar maakt.',
+      'Waarom ProBrandwacht bestaat: een onafhankelijke rol die het speelveld beschrijft en context en analyse zichtbaar maakt.',
     keywords: [
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
@@ -264,14 +264,14 @@ export function getRouteMetadata(pathname: string): Metadata {
     return {
       title: 'ProBrandwacht — Duidelijkheid in de brandwachtenmarkt',
       description:
-        'Onafhankelijk kennis- en duidingsplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
+        'Onafhankelijk kennis- en analyseplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
       keywords: defaultKeywords,
       robots: { index: true, follow: true },
       alternates: { canonical, languages: { 'nl-NL': canonical } },
       openGraph: {
         title: 'ProBrandwacht — Duidelijkheid in de brandwachtenmarkt',
         description:
-          'Onafhankelijk kennis- en duidingsplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
+          'Onafhankelijk kennis- en analyseplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
         url: canonical,
         images: [
           {
@@ -286,7 +286,7 @@ export function getRouteMetadata(pathname: string): Metadata {
         card: 'summary_large_image',
         title: 'ProBrandwacht — Duidelijkheid in de brandwachtenmarkt',
         description:
-          'Onafhankelijk kennis- en duidingsplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
+          'Onafhankelijk kennis- en analyseplatform met context over rolverdeling, verantwoordelijkheid en samenwerking in de brandwachtenmarkt.',
         images: [DEFAULT_OG_IMAGE],
       },
     }

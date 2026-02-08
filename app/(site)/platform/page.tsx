@@ -36,7 +36,7 @@ export default function PlatformPage() {
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
               <li>Marktuitleg: laten zien hoe samenwerking met zelfstandige brandwachten werkt.</li>
               <li>Afbakening: laten zien waar verantwoordelijkheden beginnen en eindigen.</li>
-              <li>Bewustwording: benoemen van risico&apos;s bij onduidelijke of verkapte constructies.</li>
+              <li>Bewustwording: benoemen van risico&apos;s bij onduidelijke constructies en rolverdeling.</li>
             </ul>
           </div>
 
@@ -64,7 +64,7 @@ export default function PlatformPage() {
 
           <div className="panel p-6">
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht kadert, waarschuwt en legt uit, zodat keuzes bewust en uitlegbaar blijven.
+              ProBrandwacht kadert, analyseert en legt uit, zodat keuzes bewust en uitlegbaar blijven.
             </p>
           </div>
         </div>

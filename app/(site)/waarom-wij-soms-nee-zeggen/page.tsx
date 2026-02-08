@@ -23,13 +23,13 @@ export default function Page() {
               Nee is hier geen oordeel over mensen of intenties. Het is een signaal dat
               randvoorwaarden nog niet compleet zijn voor professioneel, veilig en uitlegbaar werk.
               Als scope, rol en beslislijnen niet kloppen, ontstaan discussies tijdens uitvoering.
-              Dat ondermijnt voorspelbaarheid.
+              Dat verkleint voorspelbaarheid.
             </p>
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en herkenning
-                bij patronen die in de praktijk voor gedoe zorgen, zodat ze vooraf zichtbaar worden.
+                bij patronen die in de praktijk voor problemen zorgen, zodat ze vooraf zichtbaar worden.
               </p>
             </div>
           </div>

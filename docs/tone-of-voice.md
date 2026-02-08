@@ -87,7 +87,8 @@ Niet:
 - “ProBrandwacht is geen bureau, geen werkgever, geen oplossing…”
 
 Wel:
-- “ProBrandwacht positioneert zich als kennis- en duidingsplatform, met focus op context, rolafbakening en veiligheidskundige reflectie.”
+- “ProBrandwacht positioneert zich als kennis- en analyseplatform, met focus op context, rolafbakening en veiligheidskundige reflectie.”
+- “ProBrandwacht is een onafhankelijk kennis- en analyseplatform, geïnformeerd door praktijkervaring maar zonder belang bij inzet, tarieven of marktuitkomsten.”
 
 ## 7. Afbakening
 Regel:
@@ -100,7 +101,7 @@ Gebruik:
 - In blogs één korte verwijzing, maximaal twee zinnen.
 
 Voorbeeld:
-- “Deze publicatie biedt veiligheidskundige context en duiding. Zie de algemene afbakening voor rol en verantwoordelijkheid.”
+- “Deze publicatie biedt veiligheidskundige context en analyse. Zie de algemene afbakening voor rol en verantwoordelijkheid.”
 
 ## 8. Voor wie schrijven we?
 Niet:

@@ -67,8 +67,8 @@ export default function BelangenPage() {
 
           <div className="panel max-w-3xl p-5">
             <p className="text-sm leading-relaxed text-slate-200">
-              ProBrandwacht brengt partijen samen om te begrijpen hoe de markt werkt — zodat beter
-              onderbouwde keuzes mogelijk worden.
+              ProBrandwacht helpt partijen begrijpen hoe de markt werkt — zodat beter onderbouwde keuzes
+              mogelijk worden.
             </p>
           </div>
 
