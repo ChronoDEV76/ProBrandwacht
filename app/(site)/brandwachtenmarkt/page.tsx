@@ -59,7 +59,7 @@ export default function BrandwachtenmarktPage() {
             <h2>Onderwerpen in dit cluster</h2>
             <ul>
               <li>
-                <Link href="/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving">
+                <Link href="/blog/brandwacht-inzet-context-2026">
                   De brandveiligheidsmarkt in Nederland: trends en regelgeving
                 </Link>
               </li>
@@ -69,7 +69,7 @@ export default function BrandwachtenmarktPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/onbedoelde-veiligheidsillusie-als-systeemfout">
+                <Link href="/blog/brandwacht-als-signaaldrager">
                   Onbedoelde veiligheidsillusie is een systeemfout
                 </Link>
               </li>
@@ -79,7 +79,7 @@ export default function BrandwachtenmarktPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/veiligheid-vraagt-om-nuance">
+                <Link href="/blog/aanwezigheid-is-geen-veiligheid">
                   Veiligheid vraagt om nuance - niet om zwart-witdenken
                 </Link>
               </li>

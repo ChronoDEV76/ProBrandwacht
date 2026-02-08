@@ -5,7 +5,6 @@ import type { ReactNode } from 'react'
 
 import BlogTrustHeader from '@/components/BlogTrustHeader'
 import TrustBand from '@/components/trust-band'
-import AfbakeningBanner from '@/components/afbakening-banner'
 import { Cta } from '@/components/Cta'
 import StructuredBreadcrumbs from '@/components/structured-breadcrumbs'
 import { getPostBySlug, getPostSlugs, readingTime } from '@/lib/blog'
@@ -181,6 +180,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           }
         }
       }
+      const sortDate = resolveDate(
+        (updatedAt as string | undefined) ??
+          (publishedAt as string | undefined) ??
+          (frontmatter.date as string | undefined)
+      )
 
       return {
         slug,
@@ -190,6 +194,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
         city: mappedCity,
         minutes,
         dateIso: resolvedDate.toISOString().slice(0, 10),
+        sortIso: sortDate.toISOString().slice(0, 10),
         image,
         imageAlt,
         imagePosition,
@@ -200,7 +205,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
     })
   )
 
-  const postsSorted = posts.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime())
+  const postsSorted = posts.sort((a, b) => new Date(b.sortIso).getTime() - new Date(a.sortIso).getTime())
   const latestDate = postsSorted[0]?.dateIso
   const filtered = postsSorted.filter((post) => {
     const matchCategory = cat === 'Alle' || post.category === cat
@@ -264,7 +269,6 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
       <BlogTrustHeader lastUpdatedISO={latestDate} />
       <TrustBand className="mt-6" />
-      <AfbakeningBanner className="mt-6" />
 
       <section className="bg-slate-950">
         <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-10">
@@ -295,7 +299,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
                     active={cat === c}
                   >
-                    {c === 'Wetgeving' ? 'Wet & regels' : c === 'Tarieven' ? 'Context & randvoorwaarden' : c}
+                    {c === 'Wetgeving' ? 'Wet & regels' : c}
                   </FilterChip>
                 ))}
               </nav>

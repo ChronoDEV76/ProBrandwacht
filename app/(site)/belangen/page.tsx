@@ -53,7 +53,7 @@ export default function BelangenPage() {
       <HeroBackground>
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 pb-14 pt-8">
           <span className="inline-flex w-fit items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Kaders en intentie
+            Intentie & afbakening
           </span>
 
           <h1 className="text-3xl font-semibold text-white md:text-4xl">

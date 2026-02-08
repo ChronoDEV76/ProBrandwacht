@@ -91,12 +91,12 @@ export default function VeiligheidskundigKaderPage() {
                 <Link href="/blog/waarnemen-zonder-mandaat">Waarnemen zonder mandaat</Link>
               </li>
               <li>
-                <Link href="/blog/onbedoelde-veiligheidsillusie-als-systeemfout">
+                <Link href="/blog/brandwacht-als-signaaldrager">
                   Onbedoelde veiligheidsillusie is een systeemfout
                 </Link>
               </li>
               <li>
-                <Link href="/blog/compliance-is-niet-veiligheid">Compliance is niet hetzelfde als veiligheid</Link>
+                <Link href="/blog/aanwezigheid-is-geen-veiligheid">Compliance is niet hetzelfde als veiligheid</Link>
               </li>
               <li>
                 <Link href="/blog/brandwacht-als-signaaldrager">
@@ -104,7 +104,7 @@ export default function VeiligheidskundigKaderPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/marktdruk-en-veiligheidskwaliteit">
+                <Link href="/blog/verantwoordelijkheid-in-de-veiligheidsketen">
                   Marktdruk en veiligheidskwaliteit
                 </Link>
               </li>
@@ -114,12 +114,12 @@ export default function VeiligheidskundigKaderPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/vakmanschap-onder-druk-in-onvolwassen-markt">
+                <Link href="/blog/brandwacht-als-signaaldrager">
                   Vakmanschap onder druk in een onvolwassen markt
                 </Link>
               </li>
               <li>
-                <Link href="/blog/systeem-botst-met-vakmanschap">
+                <Link href="/blog/brandwacht-als-signaaldrager">
                   Wanneer praktijk en vakmanschap botsen
                 </Link>
               </li>

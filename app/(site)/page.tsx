@@ -142,7 +142,7 @@ export default function Page() {
               1-op-1 gemaakt tussen opdrachtgever en professional, binnen hun eigen juridische en
               organisatorische kaders.
             </p>
-            <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Kader. Praktijk.</p>
+            <p className="mt-3 text-sm text-slate-400">Uitleg. Waarschuwing. Context. Praktijk.</p>
           </div>
 
           <div className="panel p-6">

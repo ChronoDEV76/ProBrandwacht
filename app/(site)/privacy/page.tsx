@@ -29,7 +29,7 @@ export default function PrivacyPage() {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Link href="/belangen" className="route-link">
-                Kaders en intentie
+                Intentie & afbakening
               </Link>
               <Link href="/contact" className="route-link">
                 Verkennend contact

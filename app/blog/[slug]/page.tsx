@@ -7,7 +7,6 @@ import { Cta } from '@/components/Cta'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import Prose from '@/components/prose'
-import AfbakeningBanner from '@/components/afbakening-banner'
 import TrustBand from '@/components/trust-band'
 import { getRouteMetadata } from '@/lib/seo/metadata'
 import { getPostBySlug as getPostBySlugRaw, getPostSlugs } from '@/lib/blog'
@@ -136,7 +135,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     (frontmatter.imageAlt as string | undefined) ?? title
   const heroImagePosition =
     (frontmatter.imagePosition as string | undefined) ?? 'center 60%'
-  const tldr = typeof frontmatter.tldr === 'string' ? frontmatter.tldr : undefined
   const isSystemArticle =
     frontmatter.category === 'Veiligheidskundig kader' ||
     frontmatter.pillar === '/veiligheidskundig-kader'
@@ -201,32 +199,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {readingTime ? <span>• {readingTime}</span> : null}
           </div>
 
-          {(tldr || isSystemArticle) ? (
-            <div className="mt-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
-              {tldr ? (
-                <p className="leading-relaxed">
-                  <span className="font-semibold text-amber-200">TL;DR:</span> {tldr}
-                </p>
-              ) : null}
-              {isSystemArticle ? (
-                <div className={tldr ? 'mt-3 space-y-2' : 'space-y-2'}>
-                  <p>
-                    Dit artikel richt zich op organisatorische en regelgevende kaders, zodat professioneel
-                    vakmanschap beter tot zijn recht komt.
-                  </p>
-                  <p>
-                    We waarderen het vakmanschap van brandwachten. Dit artikel kijkt naar systeemfactoren die
-                    het werk beïnvloeden, zodat rollen en verwachtingen beter te bespreken zijn.
-                  </p>
-                  <p>
-                    Brandwachten leveren waardevolle observaties en kennis; deze tekst onderzoekt hoe
-                    systeemfactoren de rolcontext beïnvloeden.
-                  </p>
-                </div>
-              ) : null}
-            </div>
-          ) : null}
-
           {heroImage ? (
             <div className="mt-4 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40">
               <div className="relative aspect-[16/9] w-full">
@@ -251,20 +223,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </HeroBackground>
 
       <TrustBand className="mt-6" />
-      <AfbakeningBanner className="mt-6" />
 
       {/* CONTENT */}
       <section className="mx-auto max-w-5xl px-4 pb-16 pt-8">
-        <div className="mb-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-200">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-amber-200">
-            <span aria-hidden>ℹ️</span>
-            {isSystemArticle ? 'Veiligheidskundig kader' : 'Kader & beschrijving'}
-          </div>
-          <p className="mt-2">
-            Dit artikel biedt context en beschrijving. Beoordeling en besluitvorming blijven bij de betrokken
-            partijen.
-          </p>
-        </div>
         <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
           <Prose>{post.compiled}</Prose>
         </article>

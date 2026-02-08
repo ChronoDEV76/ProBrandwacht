@@ -51,12 +51,57 @@ const nextConfig = {
       },
       {
         source: '/blog/schijnveiligheid-als-systeemfout',
-        destination: '/blog/onbedoelde-veiligheidsillusie-als-systeemfout',
+        destination: '/blog/brandwacht-als-signaaldrager',
         permanent: true,
       },
       {
         source: '/blog/brandwachtenmarkt-schijnveiligheid-en-systeemwerking',
-        destination: '/blog/brandwachtenmarkt-onbedoelde-veiligheidsillusie-en-systeemwerking',
+        destination: '/blog/brandwacht-als-signaaldrager',
+        permanent: true,
+      },
+      {
+        source: '/blog/brandveiligheidsmarkt-nederland-trends-en-regelgeving',
+        destination: '/blog/brandwacht-inzet-context-2026',
+        permanent: true,
+      },
+      {
+        source: '/blog/veiligheid-vraagt-om-nuance',
+        destination: '/blog/aanwezigheid-is-geen-veiligheid',
+        permanent: true,
+      },
+      {
+        source: '/blog/positie-brandwacht-veiligheidsketen',
+        destination: '/blog/verantwoordelijkheid-in-de-veiligheidsketen',
+        permanent: true,
+      },
+      {
+        source: '/blog/marktdruk-en-veiligheidskwaliteit',
+        destination: '/blog/verantwoordelijkheid-in-de-veiligheidsketen',
+        permanent: true,
+      },
+      {
+        source: '/blog/onbedoelde-veiligheidsillusie-als-systeemfout',
+        destination: '/blog/brandwacht-als-signaaldrager',
+        permanent: true,
+      },
+      {
+        source: '/blog/brandwachtenmarkt-onbedoelde-veiligheidsillusie-en-systeemwerking',
+        destination: '/blog/brandwacht-als-signaaldrager',
+        permanent: true,
+      },
+      {
+        source: '/blog/systeem-botst-met-vakmanschap',
+        destination: '/blog/brandwacht-als-signaaldrager',
+        permanent: true,
+      },
+      {
+        source: '/blog/vakmanschap-onder-druk-in-onvolwassen-markt',
+        destination: '/blog/brandwacht-als-signaaldrager',
+        permanent: true,
+      },
+      {
+        source: '/blog/compliance-is-niet-veiligheid',
+        destination: '/blog/aanwezigheid-is-geen-veiligheid',
         permanent: true,
       },
     ];

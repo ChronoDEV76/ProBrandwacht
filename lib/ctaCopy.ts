@@ -186,7 +186,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   about_kaders_intentie: {
     id: 'about_kaders_intentie',
-    label: 'Kaders & intentie',
+    label: 'Intentie & afbakening',
     href: '/belangen',
     variant: 'outline',
     intent: 'secondary',

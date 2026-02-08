@@ -75,7 +75,7 @@ export default function ProBrandwachtDirectSpoedPage() {
 
             <div className="mt-6">
               <Link href="/belangen" className="route-link">
-                Kaders en intentie
+                Intentie & afbakening
               </Link>
             </div>
           </div>

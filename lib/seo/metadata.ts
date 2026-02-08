@@ -106,7 +106,7 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
 
   '/belangen': {
-    title: 'Kaders en intentie | ProBrandwacht',
+    title: 'Intentie & afbakening | ProBrandwacht',
     description:
       'Uitgangspunten voor rolhelderheid, verantwoordelijkheid en uitvoerbaarheid in samenwerking.',
     keywords: [
