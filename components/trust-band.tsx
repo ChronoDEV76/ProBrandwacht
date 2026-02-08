@@ -9,7 +9,7 @@ type TrustItem = {
 const ITEMS: TrustItem[] = [
   {
     title: 'Onafhankelijk initiatief',
-    body: 'Duiding van rol, mandaat en uitvoering met focus op publieke context.',
+    body: 'Analyse van rol, mandaat en uitvoering met focus op publieke context.',
     icon: (
       <svg className="h-5 w-5 text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d="M12 3l7 4v6c0 4-3 7-7 8-4-1-7-4-7-8V7l7-4z" />

@@ -3,7 +3,7 @@ import type { NextSeoProps } from 'next-seo'
 
 const config: NextSeoProps = {
   titleTemplate: '%s | ProBrandwacht',
-  defaultTitle: 'ProBrandwacht',
+  defaultTitle: 'ProBrandwacht — Duiding in de brandwachtenmarkt',
   openGraph: {
     siteName: 'ProBrandwacht',
     type: 'website',

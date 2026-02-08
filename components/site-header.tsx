@@ -28,7 +28,7 @@ export default function SiteHeader() {
           </Link>
           {currentPath !== '/' ? (
             <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300">
-              Duiding en context bij samenwerking
+              Analyse en context bij samenwerking
             </span>
           ) : null}
         </div>

@@ -32,6 +32,7 @@ const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoe
   .map((p) => p.trim());
 const JSON_OUT = String(argv.json ?? "0") === "1";
 const FORCE_LOCAL = String(argv.local ?? "0") === "1";
+const AUTOFIX = String(argv.autofix ?? (FORCE_LOCAL ? "1" : "0")) === "1";
 
 // Tone-of-Voice regels
 const HARD_WORDS = [
@@ -79,6 +80,38 @@ const POSITIVE_KEYWORDS = [
 ];
 
 const DUPLICATE_PATTERN = /\b([a-z\u00c0-\u017f]+)(\s+\1){1,}\b/gi;
+
+const SYNONYM_ROTATIONS = {
+  duiding: ["analyse", "toelichting", "uitleg"],
+};
+
+function capitalize(word) {
+  if (!word) return word;
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function applySynonymRotation(text, fileLabel) {
+  let updated = text;
+  let changed = false;
+  Object.entries(SYNONYM_ROTATIONS).forEach(([word, options]) => {
+    const re = new RegExp(`\\b${word}\\b`, "gi");
+    let index = 0;
+    updated = updated.replace(re, (match) => {
+      if (index === 0) {
+        index += 1;
+        return match;
+      }
+      const replacement = options[(index - 1) % options.length];
+      index += 1;
+      changed = true;
+      return match[0] === match[0].toUpperCase()
+        ? capitalize(replacement)
+        : replacement;
+    });
+  });
+
+  return { updated, changed, fileLabel };
+}
 
 // HTML → plain text
 function stripHtml(html) {
@@ -228,10 +261,22 @@ function runLocalFallback() {
   const files = roots.flatMap((r) => walk(path.join(process.cwd(), r)));
   const targetExt = new Set([".mdx", ".tsx", ".ts", ".json"]);
   const results = [];
+  const changedFiles = [];
 
   for (const file of files) {
     if (!targetExt.has(path.extname(file))) continue;
-    const content = fs.readFileSync(file, "utf8");
+    let content = fs.readFileSync(file, "utf8");
+    if (AUTOFIX) {
+      const { updated, changed } = applySynonymRotation(
+        content,
+        path.relative(process.cwd(), file)
+      );
+      if (changed) {
+        fs.writeFileSync(file, updated, "utf8");
+        content = updated;
+        changedFiles.push(path.relative(process.cwd(), file));
+      }
+    }
     results.push(scanText(content, path.relative(process.cwd(), file), { checkDuplicates: false }));
   }
 
@@ -240,6 +285,13 @@ function runLocalFallback() {
   const outFile = path.join(outDir, "tone-local-report.json");
   fs.writeFileSync(outFile, JSON.stringify({ scannedAt: new Date().toISOString(), results }, null, 2));
   console.log(`📝 JSON rapport opgeslagen: ${outFile}`);
+  if (AUTOFIX) {
+    console.log(
+      changedFiles.length
+        ? `🛠️  Autofix toegepast op ${changedFiles.length} bestand(en).`
+        : "🛠️  Autofix: geen wijzigingen nodig."
+    );
+  }
 
   const hasIssues = results.some((r) => !r.ok);
   if (hasIssues) {
