@@ -70,9 +70,9 @@ function titleizeSegment(segment: string) {
 }
 
 export const metadata: Metadata = {
-  title: "ProBrandwacht — Kennis en uitleg",
+  title: "ProBrandwacht — Duidelijkheid in de brandwachtenmarkt",
   description:
-    "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
+    "Onafhankelijk kennis- en kaderinitiatief met veiligheidskundige context over rolafbakening, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
   keywords: [
     ...seoKeywordClusters.core,
     ...seoKeywordClusters.platform,
@@ -85,15 +85,15 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     url: SITE_BASE_URL,
     siteName: "ProBrandwacht",
-    title: "ProBrandwacht — Kennis en uitleg",
+    title: "ProBrandwacht — Duidelijkheid in de brandwachtenmarkt",
     description:
-      "Onafhankelijk initiatief met uitleg over rollen, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
+      "Onafhankelijk kennis- en kaderinitiatief met veiligheidskundige context over rolafbakening, verantwoordelijkheden en samenwerking in de brandwachtenmarkt.",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "ProBrandwacht – brandwacht kennisinitiatief",
+        alt: "ProBrandwacht – kennis- en kaderinitiatief",
       },
     ],
   },
@@ -123,7 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${roboto.className} min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100`}
       >
         {/* Globale SEO-schema’s */}
-        <SeoStructuredData website={{ name: "ProBrandwacht.nl", url: SITE_BASE_URL }} />
+        <SeoStructuredData website={{ name: "ProBrandwacht", url: SITE_BASE_URL }} />
 
         {/* Analytics: Google Tag Manager & GA4 */}
         <AnalyticsScripts />

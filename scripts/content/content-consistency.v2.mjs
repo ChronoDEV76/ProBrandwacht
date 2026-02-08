@@ -169,14 +169,14 @@ const MUST_CONTAIN_INTENT = [
     file: "app/(site)/opdrachtgevers/page.tsx",
     label: "Opdrachtgevers pagina moet CTA of aanmelding bevatten",
     anyOfAll: [
-      ["/opdrachtgevers/aanmelden", "aanmelden", "contact"],
+      ["/opdrachtgevers/aanmelden", "aanmelden", "contact", "/contact"],
     ],
   },
   {
     file: "app/(site)/voor-brandwachten/page.tsx",
     label: "Voor-brandwachten pagina moet CTA of aanmelding bevatten",
     anyOfAll: [
-      ["/zzp/aanmelden", "/brandwachten/aanmelden", "aanmelden"],
+      ["/zzp/aanmelden", "/brandwachten/aanmelden", "aanmelden", "contact", "/contact"],
     ],
   },
 ];

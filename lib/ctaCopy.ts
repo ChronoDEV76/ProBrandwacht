@@ -50,7 +50,7 @@ export type Cta = {
 const CTA: Record<CtaId, Cta> = {
   primary_select: {
     id: 'primary_select',
-    label: 'Dit sluit aan bij hoe ik wil werken',
+    label: 'Dit sluit aan bij deze werkwijze',
     href: '/voor-brandwachten',
     variant: 'outline',
     intent: 'primary',
@@ -58,7 +58,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   primary_select_compact: {
     id: 'primary_select_compact',
-    label: 'Dit past bij mijn manier van werken',
+    label: 'Dit past bij deze werkwijze',
     href: '/voor-brandwachten',
     variant: 'outline',
     intent: 'primary',
@@ -66,7 +66,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_why_no: {
     id: 'secondary_why_no',
-    label: 'Waarom wij soms nee zeggen →',
+    label: 'Waarom er soms nee wordt gezegd →',
     href: '/waarom-wij-soms-nee-zeggen',
     variant: 'link',
     intent: 'secondary',
@@ -74,7 +74,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_how_we_work: {
     id: 'secondary_how_we_work',
-    label: 'Lees hoe wij randvoorwaarden duiden →',
+    label: 'Lees hoe randvoorwaarden worden benoemd →',
     href: '/waarom-wij-soms-nee-zeggen',
     variant: 'link',
     intent: 'secondary',
@@ -98,7 +98,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   brandwacht_learn_selection: {
     id: 'brandwacht_learn_selection',
-    label: 'Lees hoe wij rolafbakening duiden →',
+    label: 'Lees hoe rolafbakening wordt beschreven →',
     href: '/voor-brandwachten',
     variant: 'link',
     intent: 'secondary',
@@ -154,7 +154,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   opdrachtgever_fit_your_case: {
     id: 'opdrachtgever_fit_your_case',
-    label: 'Bekijk of dit past bij uw vraag →',
+    label: 'Bekijk of dit past bij de vraag →',
     href: '/opdrachtgevers',
     variant: 'link',
     intent: 'secondary',
@@ -234,7 +234,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_platform_fit: {
     id: 'secondary_platform_fit',
-    label: 'Bekijk of deze werkwijze bij je past',
+    label: 'Bekijk of deze werkwijze past',
     href: '/platform',
     variant: 'link',
     intent: 'secondary',
@@ -290,7 +290,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_afbakening: {
     id: 'secondary_afbakening',
-    label: 'Check de afbakening',
+    label: 'Afbakening bekijken',
     href: '/waarom-wij-soms-nee-zeggen',
     variant: 'outline',
     intent: 'secondary',

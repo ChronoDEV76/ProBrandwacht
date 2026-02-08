@@ -31,6 +31,59 @@ function readJson(p) {
 }
 
 const cfg = readJson(CONFIG_PATH)
+const TONE_PROFILE_PATH = path.resolve(arg('--tone', 'scripts/tone/probrandwacht-tone.json'))
+
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function phraseToPatternString(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, '\\s+')
+  const startsWord = /^[A-Za-z0-9]/.test(phrase)
+  const endsWord = /[A-Za-z0-9]$/.test(phrase)
+  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+function appendToneRules(cfgObj, tone) {
+  if (!tone) return
+  const disallowed = tone.disallowed_language ?? {}
+  const avoidVoice = tone.preferred_voice?.avoid ?? []
+  const forbiddenPromises = tone.guarantees_and_promises?.forbidden ?? []
+  const closingAvoid = tone.closing_guidance?.avoid ?? []
+
+  const toPatterns = (arr) =>
+    (Array.isArray(arr) ? arr : []).map((p) => phraseToPatternString(p))
+
+  const pushRule = (id, patterns, level = 'HIGH') => {
+    if (!patterns?.length) return
+    cfgObj.rules = cfgObj.rules ?? []
+    cfgObj.rules.push({
+      id,
+      level,
+      message: `Tone guard (${id})`,
+      patterns
+    })
+  }
+
+  pushRule('TONE_ACTIVIST', toPatterns(disallowed.activist_terms))
+  pushRule('TONE_ACCUSATORY', toPatterns(disallowed.accusatory_terms))
+  pushRule('TONE_COLLECTIVE', toPatterns(disallowed.collective_identity))
+  pushRule('TONE_EMOTIONAL', toPatterns(disallowed.emotional_charge))
+  pushRule('TONE_VOICE_AVOID', toPatterns(avoidVoice), 'MEDIUM')
+  pushRule('TONE_GUARANTEES', toPatterns(forbiddenPromises))
+  pushRule('TONE_CLOSING_AVOID', toPatterns(closingAvoid), 'MEDIUM')
+}
+
+appendToneRules(cfg, loadToneProfile())
 
 const includeRoots = (cfg.includeRoots || []).map((p) => path.join(ROOT, p))
 const includeExts = new Set(cfg.includeExtensions || [])

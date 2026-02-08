@@ -10,7 +10,7 @@ export default function VoorwaardenPage() {
   const canonicalUrl = "https://www.probrandwacht.nl/voorwaarden"
   const title = "Algemene voorwaarden | ProBrandwacht"
   const description =
-    "De spelregels van ProBrandwacht: wat je van het initiatief mag verwachten en waar verantwoordelijkheid ligt bij opdrachtgevers en professionals."
+    "De spelregels van ProBrandwacht: wat van het initiatief mag worden verwacht en waar verantwoordelijkheid ligt bij opdrachtgevers en professionals."
 
   const breadcrumbItems = [
     { name: "Home", url: "https://www.probrandwacht.nl/" },
@@ -34,14 +34,15 @@ export default function VoorwaardenPage() {
             <h1 className="text-3xl font-semibold text-white">Algemene voorwaarden</h1>
 
             <p className="max-w-3xl text-slate-200">
-              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat je van ons mag verwachten en hoe
-              de rolverdeling werkt. We houden ze bewust helder, praktisch en zonder juridische ruis.
+              Deze voorwaarden beschrijven hoe ProBrandwacht werkt, wat van het initiatief mag worden
+              verwacht en hoe de rolverdeling werkt. De tekst blijft bewust helder, praktisch en zonder
+              juridische ruis.
             </p>
 
             <h2 className="text-lg font-semibold text-white">1. Wat ProBrandwacht is</h2>
             <p>
               ProBrandwacht is een informatie- en kennisinitiatief voor zelfstandige brandwachten en
-              opdrachtgevers. We lichten toe en kaderen, zodat samenwerking uitlegbaar blijft.
+              opdrachtgevers. Er wordt toegelicht en gekaderd, zodat samenwerking uitlegbaar blijft.
             </p>
 
             <h2 className="text-lg font-semibold text-white">2. Rol en contractpositie</h2>
@@ -64,8 +65,8 @@ export default function VoorwaardenPage() {
               verzekeringen en aansprakelijkheid.
             </p>
             <p className="mt-4 text-sm text-slate-400">
-              In de praktijk betekent dit: jullie leggen vooraf rolverdeling, communicatie-afspraken en verantwoordelijkheden vast,
-              zodat de uitvoering op locatie helder en toetsbaar blijft.
+              In de praktijk betekent dit: partijen leggen vooraf rolverdeling, communicatie-afspraken en
+              verantwoordelijkheden vast, zodat de uitvoering op locatie helder en toetsbaar blijft.
             </p>
 
             <h2 className="text-lg font-semibold text-white">5. Informatie & tools</h2>
@@ -102,7 +103,7 @@ export default function VoorwaardenPage() {
 
             <h2 className="text-lg font-semibold text-white">Contact</h2>
             <p>
-              Vragen over deze voorwaarden? Mail ons via{' '}
+              Vragen over deze voorwaarden? Mail via{' '}
               <a href="mailto:info@probrandwacht.nl" className="underline">
                 info@probrandwacht.nl
               </a>

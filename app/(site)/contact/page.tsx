@@ -21,14 +21,14 @@ export default function ContactPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is een onafhankelijk initiatief dat uitlegt hoe samenwerking met zelfstandige
-              brandwachten werkt. We bieden context en praktische aandachtspunten zodat je afspraken beter
-              kunt voorbereiden.
+              brandwachten werkt. Het biedt context en praktische aandachtspunten zodat afspraken beter
+              voorbereid kunnen worden.
             </p>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Heb je een vraag over onze werkwijze of wil je sparren over rolafbakening en
-              uitvoerbaarheid? Dan kun je hier contact opnemen. Tariefafspraken en inzet worden 1-op-1
-              afgestemd tussen opdrachtgever en professional.
+              Vragen over werkwijze of sparren over rolafbakening en uitvoerbaarheid? Contact opnemen kan via
+              dit kanaal. Tariefafspraken en inzet worden 1-op-1 afgestemd tussen opdrachtgever en
+              professional.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-slate-400">
-              Contact opnemen betekent dat we meedenken over context en rolafbakening, zodat je afspraken
-              beter kunt voorbereiden.
+              Contact opnemen betekent dat ProBrandwacht meedenkt over context en rolafbakening, zodat
+              afspraken beter voorbereid kunnen worden.
             </p>
           </div>
         </section>
@@ -53,7 +53,7 @@ export default function ContactPage() {
       <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="panel p-6">
-            <h2 className="text-xl font-semibold md:text-2xl">Waarover wil je sparren?</h2>
+            <h2 className="text-xl font-semibold md:text-2xl">Onderwerpen om te sparren</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>– Rolverdeling en verantwoordelijkheden</li>
               <li>– Uitvoerbaarheid op locatie</li>
@@ -65,8 +65,8 @@ export default function ContactPage() {
           <div className="panel p-6">
             <h2 className="text-xl font-semibold md:text-2xl">Contactkanaal</h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-200">
-              Voeg in je bericht toe: context (event/industrie/bouw), locatie, rol, en wat er nu onduidelijk
-              is. Dan kunnen we beter uitleggen waar de knelpunten zitten.
+              In het bericht kan worden toegevoegd: context (event/industrie/bouw), locatie, rol, en wat er
+              onduidelijk is. Dat helpt om knelpunten beter te benoemen.
             </p>
           </div>
         </div>
@@ -85,8 +85,8 @@ export default function ContactPage() {
             <Link href="/voor-brandwachten" className="route-link">
               Start bij brandwachten
             </Link>
-            <a href="mailto:info@prosafetymatch.nl" className="route-link">
-              Contact ProSafetyMatch
+            <a href="mailto:info@probrandwacht.nl" className="route-link">
+              Contact via e-mail
             </a>
           </div>
         </div>

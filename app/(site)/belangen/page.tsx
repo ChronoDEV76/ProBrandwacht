@@ -67,8 +67,8 @@ export default function BelangenPage() {
 
           <div className="panel max-w-3xl p-5">
             <p className="text-sm leading-relaxed text-slate-200">
-              ProBrandwacht brengt mensen samen om te begrijpen hoe de markt werkt — zodat iedereen zelf
-              betere keuzes kan maken.
+              ProBrandwacht brengt partijen samen om te begrijpen hoe de markt werkt — zodat beter
+              onderbouwde keuzes mogelijk worden.
             </p>
           </div>
 
@@ -101,10 +101,10 @@ export default function BelangenPage() {
           </div>
 
           <div className="panel mt-8 p-6">
-            <p className="text-sm font-semibold text-white">Twijfel je of dit past?</p>
+            <p className="text-sm font-semibold text-white">Twijfel over passendheid?</p>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">
-              Dan is dat een goed signaal om eerst de kennisbank te lezen. Wie vooraf helderheid zoekt,
-              voorkomt later frictie -- en dat is precies wat we willen ondersteunen.
+              Dat is een goed signaal om eerst de kennisbank te lezen. Wie vooraf helderheid zoekt,
+              voorkomt later frictie -- en dat is precies wat dit initiatief ondersteunt.
             </p>
           </div>
         </div>

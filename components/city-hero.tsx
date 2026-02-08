@@ -21,11 +21,11 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
       <div className="max-w-3xl">
         {heading ?? defaultHeading}
         <p className="mt-3 max-w-2xl text-slate-700">
-          ProBrandwacht biedt context en kaders voor zelfstandige samenwerking. We beschrijven welke
+          ProBrandwacht biedt context en kaders voor zelfstandige samenwerking. Er wordt beschreven welke
           rolverdeling en afspraken vooraf nodig zijn om inzet in {cityName} uitvoerbaar te houden. Past dat
           niet? Dan is nee soms de professionele keuze; lees{' '}
           <Link href="/waarom-wij-soms-nee-zeggen" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-800">
-            waarom wij soms nee zeggen
+            waarom er soms nee wordt gezegd
           </Link>
           .
         </p>
@@ -46,7 +46,7 @@ export default function CityHero({ cityName, heading }: CityHeroProps) {
 
         <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm text-slate-700">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
-            Zo herkennen we uitvoerbaarheid
+            Zo wordt uitvoerbaarheid herkend
           </p>
           <ul className="mt-3 space-y-2">
             <li>- Is de rol van de brandwacht expliciet?</li>

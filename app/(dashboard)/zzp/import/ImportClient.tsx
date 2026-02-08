@@ -63,7 +63,7 @@ export default function ImportClient({ heading }: ImportClientProps) {
         className="rounded-xl border-2 border-dashed p-8 text-center hover:bg-gray-50"
       >
         <p className="mb-3">
-          Sleep je <strong>.json</strong> hierheen of
+          Sleep een <strong>.json</strong> hierheen of
         </p>
         <button
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700"

@@ -14,7 +14,7 @@ export default function BlogNotFound() {
           </h1>
 
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            De snelste route terug: ga naar het overzicht en kies een artikel dat je direct helpt in de praktijk.
+            De snelste route terug: terug naar het overzicht en een artikel kiezen dat direct helpt in de praktijk.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

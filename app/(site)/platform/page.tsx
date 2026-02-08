@@ -57,7 +57,7 @@ export default function PlatformPage() {
               informatie.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-              Het initiatief biedt duiding en overzicht. Samenwerking en afspraken blijven in de regel een
+              Het initiatief biedt beschrijving en overzicht. Samenwerking en afspraken blijven in de regel een
               verantwoordelijkheid van de betrokken partijen zelf.
             </p>
           </div>

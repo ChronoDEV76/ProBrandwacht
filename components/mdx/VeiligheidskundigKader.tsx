@@ -23,7 +23,7 @@ export default function VeiligheidskundigKader({
   const kaderSection = (
     <>
       <p className="mt-2 text-sm leading-relaxed">
-        Brandwacht-inzet staat nooit op zichzelf. De rol, verantwoordelijkheid en bevoegdheden worden
+        Brandwacht-inzet staat niet op zichzelf. De rol, verantwoordelijkheid en bevoegdheden worden
         bepaald door context, vergunning, risicoanalyse en gemaakte afspraken tussen opdrachtgever en
         uitvoerend professional.
       </p>

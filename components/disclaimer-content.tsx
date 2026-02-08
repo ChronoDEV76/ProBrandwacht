@@ -25,7 +25,7 @@ export default function DisclaimerContent({
         ProBrandwacht is een onafhankelijk kennis- en platforminitiatief voor de brandwachtenmarkt.
       </p>
       <p className="mt-3 text-sm leading-relaxed text-slate-200">
-        De informatie op dit platform is bedoeld om context, duiding en inzicht te geven in de werking van de
+        De informatie op dit platform is bedoeld om context, beschrijving en inzicht te geven in de werking van de
         markt, de rol van de brandwacht en de veiligheidskundige kaders waarbinnen brandwacht-inzet
         plaatsvindt. De inhoud is gebaseerd op praktijkervaring, bestaande wet- en regelgeving en
         veiligheidskundige uitgangspunten.
@@ -33,7 +33,7 @@ export default function DisclaimerContent({
 
       <h2 className="mt-6 text-base font-semibold text-slate-50">Wat ProBrandwacht wel doet</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
-        <li>Marktduiding en uitleg bieden</li>
+        <li>Marktbeschrijving en uitleg bieden</li>
         <li>Veiligheidskundige principes beschrijven</li>
         <li>Spanningen en rolafbakening inzichtelijk maken</li>
         <li>Context geven bij regelgeving, vergunningen en praktijk</li>

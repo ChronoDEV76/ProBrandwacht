@@ -16,20 +16,20 @@ export default function Page() {
             </p>
 
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Waarom wij soms &quot;nee&quot; zeggen
+              Waarom er soms &quot;nee&quot; wordt gezegd
             </h1>
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
               Nee is hier geen oordeel over mensen of intenties. Het is een signaal dat
               randvoorwaarden nog niet compleet zijn voor professioneel, veilig en uitlegbaar werk.
-              Als scope, rol en beslislijnen niet kloppen, ontstaan discussies tijdens
-              uitvoering. Dat wil je voorkomen.
+              Als scope, rol en beslislijnen niet kloppen, ontstaan discussies tijdens uitvoering.
+              Dat ondermijnt voorspelbaarheid.
             </p>
 
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en herkenning
-                bij patronen die in de praktijk voor gedoe zorgen, zodat je ze vooraf kunt voorkomen.
+                bij patronen die in de praktijk voor gedoe zorgen, zodat ze vooraf zichtbaar worden.
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function Page() {
         <div className="grid gap-4">
           <Reason
             title="1) Scope is te vaag"
-            text="Als niemand precies kan zeggen wat bewaakt moet worden en waar de grenzen liggen, wordt veiligheid interpretatie. Leg vooraf vast wanneer opschaling nodig is."
+            text="Als niemand precies kan zeggen wat bewaakt moet worden en waar de grenzen liggen, wordt veiligheid interpretatie. Vooraf vastleggen wanneer opschaling nodig is, maakt uitvoering toetsbaar."
           />
           <Reason
             title="2) Beslislijnen ontbreken"
@@ -56,7 +56,7 @@ export default function Page() {
           />
           <Reason
             title="5) Afspraken zijn niet uitlegbaar"
-            text="Als je achteraf niet kunt uitleggen wat er is afgesproken en waarom, is dat een teken dat je vooraf te weinig hebt afgebakend."
+            text="Als achteraf niet uit te leggen is wat er is afgesproken en waarom, is dat een teken dat vooraf te weinig is afgebakend."
           />
         </div>
 

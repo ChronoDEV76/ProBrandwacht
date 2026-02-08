@@ -91,7 +91,7 @@ export default function SiteFooter() {
             href="/contact"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >
-            Neem contact op
+            Contact opnemen
           </Link>
         </div>
 

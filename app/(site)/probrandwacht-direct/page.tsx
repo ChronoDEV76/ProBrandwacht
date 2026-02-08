@@ -19,7 +19,7 @@ export default function ProBrandwachtDirectPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
+              ProBrandwacht beschrijft hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
               directe lijnen tussen opdrachtgever en professional.
             </p>
 
@@ -34,8 +34,8 @@ export default function ProBrandwachtDirectPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht Direct is bedoeld voor situaties waarin tempo nodig is, maar helderheid voorop
-              blijft staan. We stellen eerst drie vragen: rol, risico en beslislijnen. Pas daarna kijk je
-              naar timing en locatie.
+              blijft staan. Eerst worden drie vragen gesteld: rol, risico en beslislijnen. Pas daarna volgen
+              timing en locatie.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -86,7 +86,7 @@ export default function ProBrandwachtDirectPage() {
         </div>
 
         <div className="panel mt-6 p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Wat je vooraf klaar moet hebben</h2>
+          <h2 className="text-xl font-semibold md:text-2xl">Wat vooraf klaar moet zijn</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>- Wie is aanspreekpunt op locatie?</li>
             <li>- Wat is de scope (wat valt binnen de inzet)?</li>

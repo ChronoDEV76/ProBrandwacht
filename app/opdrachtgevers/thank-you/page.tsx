@@ -6,8 +6,8 @@ import { cookies } from 'next/headers'
 import { seoKeywordClusters } from '@/lib/seo/seo-keywords'
 
 export const metadata: Metadata = {
-  title: 'Bedankt voor je aanvraag | ProBrandwacht',
-  description: 'Bevestigingspagina na het insturen van een aanvraag.',
+  title: 'Bedankt voor de aanvraag | ProBrandwacht',
+  description: 'Bevestiging van een ontvangen aanvraag.',
   keywords: [
     ...seoKeywordClusters.core,
     ...seoKeywordClusters.positioning,
@@ -27,10 +27,10 @@ export default function ThankYouPage({
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-10 space-y-6">
       <div className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
-        <h1 className="text-3xl font-semibold tracking-tight">Bedankt voor uw spoedaanvraag!</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Bedankt voor de spoedaanvraag!</h1>
         <p className="mt-2 text-slate-700">
-          We hebben je aanvraag ontvangen en nemen <strong>snel contact</strong> met je op om de inzet af te stemmen.
-          Gaat de inzet langer dan 48 uur duren, dan plannen we alvast een reguliere vervolgstap in via{' '}
+          De aanvraag is ontvangen en er volgt <strong>snel contact</strong> om de inzet af te stemmen.
+          Duurt de inzet langer dan 48 uur, dan volgt alvast een reguliere vervolgstap via{' '}
           <a className="underline" href="/probrandwacht-direct">ProBrandwacht Direct</a>.
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -61,7 +61,7 @@ export default function ThankYouPage({
       {requestId ? (
         <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
           <p className="text-sm text-emerald-900">
-            Je aanvraag is geregistreerd. Je kunt nu verder afstemmen in het inzet-dashboard.
+            De aanvraag is geregistreerd. Verdere afstemming is mogelijk in het inzet-dashboard.
             <br />
             <span className="opacity-70">Aanvraag-ID: {requestId}</span>
           </p>
@@ -76,7 +76,7 @@ export default function ThankYouPage({
         </div>
       ) : (
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
-          Geen aanvraag-ID gevonden in de URL of cookie. Heb je zojuist ingestuurd? Verstuur opnieuw of zorg dat je wordt
+          Geen aanvraag-ID gevonden in de URL of cookie. Is er zojuist ingestuurd? Verstuur opnieuw of zorg dat er wordt
           doorgestuurd naar <code>?id=&lt;aanvraag-id&gt;</code>.
         </div>
       )}

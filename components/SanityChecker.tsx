@@ -2,15 +2,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { runVakbondSanityCheck } from "@/lib/vakbondSanityCheck";
+import { runCollectiveSanityCheck } from "@/lib/collectiveSanityCheck";
 
 export function SanityChecker() {
   useEffect(() => {
     if (process.env.NODE_ENV === "development") {
-      runVakbondSanityCheck();
+      runCollectiveSanityCheck();
     }
   }, []);
 
   return null;
 }
-

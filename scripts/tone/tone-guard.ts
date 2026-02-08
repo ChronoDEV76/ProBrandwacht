@@ -72,6 +72,28 @@ type RunReport = {
   };
 };
 
+const TONE_PROFILE_PATH = path.join(process.cwd(), "scripts", "tone", "probrandwacht-tone.json");
+
+function escapeRegex(s: string) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToRegex(phrase: string) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  const wrapped = startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+  return new RegExp(wrapped, "gi");
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
 function parseArgs(argv: string[]) {
   const args: Record<string, string | boolean> = {};
   for (const part of argv.slice(2)) {
@@ -254,6 +276,37 @@ const RULES: Rule[] = [
     replacement: "Gebruik nuance: ‘vaak’, ‘meestal’, ‘waar mogelijk’, ‘indicatief’, ‘afhankelijk van beschikbaarheid’.",
   },
 ];
+
+const toneProfile = loadToneProfile();
+if (toneProfile) {
+  const disallowed = toneProfile.disallowed_language ?? {};
+  const avoidVoice = toneProfile.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = toneProfile.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = toneProfile.closing_guidance?.avoid ?? [];
+
+  const addRule = (id: string, title: string, phrases: string[], level: Level = "WARN") => {
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    RULES.push({
+      id,
+      level,
+      title,
+      why: "Tone-of-voice term in conflict met het definitieve kader.",
+      re: new RegExp(
+        phrases.map((p) => phraseToRegex(p).source).join("|"),
+        "gi"
+      ),
+      replacement: "Herformuleer naar beschrijvende, neutrale systeemtaal.",
+    });
+  };
+
+  addRule("tone-activist", "Activistische taal", disallowed.activist_terms, "ERROR");
+  addRule("tone-accusatory", "Aanvallende/accusatoire taal", disallowed.accusatory_terms, "ERROR");
+  addRule("tone-collective", "Collectieve framing", disallowed.collective_identity, "ERROR");
+  addRule("tone-emotional", "Emotioneel geladen taal", disallowed.emotional_charge, "ERROR");
+  addRule("tone-voice-avoid", "Belerende/collectieve formulering", avoidVoice, "WARN");
+  addRule("tone-promises", "Garantie-/zekerheidstaal", forbiddenPromises, "ERROR");
+  addRule("tone-closing-avoid", "Activerende afsluiting", closingAvoid, "WARN");
+}
 
 /**
  * Calculator/vergelijking nuance guard:

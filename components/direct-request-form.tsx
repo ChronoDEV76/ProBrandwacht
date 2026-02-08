@@ -93,7 +93,7 @@ export default function DirectRequestForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4" noValidate>
       <p className="text-xs text-slate-500">
-        Spoedverzoek (verkennend): je vraagt informatie en beschikbaarheidsrichtingen op. Geen garantie op inzet;
+        Spoedverzoek (verkennend): er wordt informatie en beschikbaarheidsrichting opgevraagd. Geen toezegging op inzet;
         afspraken zijn 1-op-1.
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
@@ -174,7 +174,7 @@ export default function DirectRequestForm() {
           className="mt-0.5 h-4 w-4 rounded border-slate-300"
         />
         <span>
-          Ik ga akkoord met de{' '}
+          Akkoord met de{' '}
           <a href="/voorwaarden" className="underline underline-offset-4">
             algemene voorwaarden
           </a>{' '}

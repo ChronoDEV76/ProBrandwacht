@@ -161,7 +161,7 @@ export default function ChatBox({ requestId, viewer, className }: Props) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
-            placeholder="Typ je bericht…"
+            placeholder="Typ een bericht…"
             className="min-h-[44px] flex-1 resize-y rounded-md border p-2"
             aria-label="Bericht invoer"
           />

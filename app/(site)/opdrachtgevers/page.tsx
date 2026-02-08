@@ -14,11 +14,11 @@ export default function OpdrachtgeversPage() {
           <div className="max-w-3xl">
             <p className="text-sm uppercase tracking-widest text-slate-300/80">Voor opdrachtgevers</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Zo houd je brandveiligheidsinzet uitvoerbaar en uitlegbaar
+              Zo blijft brandveiligheidsinzet uitvoerbaar en uitlegbaar
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              Dit initiatief is onafhankelijk. We bieden context en aandachtspunten: welke vragen je vooraf
-              stelt, wat je afbakent en welke signalen in de praktijk extra aandacht vragen.
+              Dit initiatief is onafhankelijk. Het biedt context en aandachtspunten: welke vragen vooraf
+              worden gesteld, wat wordt afgebakend en welke signalen in de praktijk extra aandacht vragen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
               Het platform licht de markt en kaders voor zelfstandige samenwerking toe, zodat afspraken
@@ -28,8 +28,8 @@ export default function OpdrachtgeversPage() {
             <div className="panel mt-7 p-5">
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en voorbeelden.
-                Jij en de professional maken 1-op-1 afspraken over rol, verantwoordelijkheden en uitvoering.
-                Tarief wordt onderling bepaald.
+                Opdrachtgever en professional maken 1-op-1 afspraken over rol, verantwoordelijkheden en
+                uitvoering. Tarief wordt onderling bepaald.
               </p>
             </div>
 
@@ -75,22 +75,28 @@ export default function OpdrachtgeversPage() {
             bullets={[
               'Leg afspraken vast in duidelijke taal: wat, wie, wanneer, waarom',
               'Maak uitzonderingen zichtbaar (tijdelijke situaties, afwijkingen)',
-              "Zorg dat uitleg achteraf mogelijk is: 'zo hebben we het gedaan en daarom'",
+              "Zorg dat uitleg achteraf mogelijk is: 'zo is het gedaan en daarom'",
             ]}
           />
         </div>
 
         <div className="panel mt-10 grid gap-4 p-6 md:grid-cols-3">
           <div className="md:col-span-2">
-            <h2 className="section-title">Wil je een compacte checklist?</h2>
+            <h2 className="section-title">Een compacte checklist</h2>
             <p className="mt-2 text-slate-200/90">
-              Start bij &quot;Waarom we soms nee zeggen&quot; -- dat geeft je een praktisch kader voor uitvoerbaarheid
-              en grensbewaking.
+              Startpunt is &quot;Waarom er soms nee wordt gezegd&quot; -- dat geeft een praktisch kader voor
+              uitvoerbaarheid en grensbewaking.
             </p>
           </div>
-          <div className="flex items-center gap-3 md:justify-end">
+          <div className="flex flex-wrap items-center gap-3 md:justify-end">
             <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
               Bekijk het kader
+            </Link>
+            <Link href="/contact" className="route-link">
+              Verkennend contact
+            </Link>
+            <Link href="/voor-brandwachten" className="route-link">
+              Voor brandwachten
             </Link>
           </div>
         </div>

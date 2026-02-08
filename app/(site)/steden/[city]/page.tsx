@@ -60,8 +60,8 @@ export async function generateMetadata({
   const sectorNotes = cityData?.sectorNotes
 
   const description = sectorNotes
-    ? `Onafhankelijke uitleg over brandwacht-inzet in ${label}. ${sectorNotes} Wat is verplicht, wie is verantwoordelijk en waar kan het wringen?`
-    : `Onafhankelijke uitleg over brandwacht-inzet in ${label}. Wat is verplicht, wie is verantwoordelijk en waar kan het wringen?`
+    ? `Onafhankelijke beschrijving van brandwacht-inzet in ${label}. ${sectorNotes} Context over rolverdeling, verantwoordelijkheden en uitvoerbaarheid.`
+    : `Onafhankelijke beschrijving van brandwacht-inzet in ${label}. Context over rolverdeling, verantwoordelijkheden en uitvoerbaarheid.`
 
   return {
     ...base,
@@ -135,15 +135,15 @@ export default function CityPage({ params }: { params: { city: string } }) {
       title: 'Uitlegbaar samenwerken',
       body: (
         <>
-          Hoe je vooraf vastlegt wie beslist, wie aanspreekpunt is, welke verwachtingen gelden en
-          hoe je dit toetsbaar houdt voor opdrachtgever en professional. Afspraken zijn in de regel
+          Hoe vooraf wordt vastgelegd wie beslist, wie aanspreekpunt is, welke verwachtingen gelden en
+          hoe dit toetsbaar blijft voor opdrachtgever en professional. Afspraken zijn in de regel
           contextafhankelijk.
         </>
       ),
     },
     {
       eyebrow: 'Randvoorwaarden',
-      title: 'Scope en beslislijnen bespreek je vooraf',
+      title: 'Scope en beslislijnen worden vooraf besproken',
       body: (
         <>
           Voorbeelden zijn indicatief. Het uiteindelijke kader spreken partijen 1-op-1 af, passend
@@ -165,16 +165,16 @@ export default function CityPage({ params }: { params: { city: string } }) {
         </h1>
 
       <p className="mt-4 text-base leading-relaxed text-slate-200">
-        ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
-        lijnen tussen opdrachtgever en professional. We maken zichtbaar waar grenzen liggen; lees waarom op{' '}
+        ProBrandwacht beschrijft hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
+        lijnen tussen opdrachtgever en professional. Het maakt zichtbaar waar grenzen liggen; lees waarom op{' '}
         <Link
-            href="/waarom-wij-soms-nee-zeggen"
-            className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
-          >
-            waarom wij soms nee zeggen
-          </Link>
-          .
-        </p>
+          href="/waarom-wij-soms-nee-zeggen"
+          className="text-emerald-200 underline underline-offset-4 hover:text-emerald-100"
+        >
+          waarom er soms nee wordt gezegd
+        </Link>
+        .
+      </p>
 
         <p className="mt-4 text-base leading-relaxed text-slate-200">
           <strong className="text-white">Deze pagina is een werkkaart.</strong>{' '}
@@ -195,7 +195,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
             Voor opdrachtgevers
           </Link>
           <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
-            Waarom wij soms nee zeggen
+            Waarom er soms nee wordt gezegd
           </Link>
         </div>
 
@@ -223,14 +223,14 @@ export default function CityPage({ params }: { params: { city: string } }) {
             headingLevel="h2"
             body={
               <>
-                Onze focus ligt op uitleg en context over wat inzet werkbaar maakt in de praktijk.
-                We lichten samenwerking toe op basis van <span className="font-semibold">vakmanschap</span>,{' '}
+                De focus ligt op uitleg en context over wat inzet werkbaar maakt in de praktijk.
+                Samenwerking wordt toegelicht op basis van <span className="font-semibold">vakmanschap</span>,{' '}
                 <span className="font-semibold">rolverdeling</span> en afspraken die{' '}
-                <span className="font-semibold">uitlegbaar</span> blijven. Afspraken spreek je 1-op-1 af,
+                <span className="font-semibold">uitlegbaar</span> blijven. Afspraken worden 1-op-1 gemaakt,
                 contextafhankelijk.
               </>
             }
-            footer={<>ProBrandwacht legt uit en kadert -- uitvoering ligt bij de betrokken partijen.</>}
+            footer={<>ProBrandwacht beschrijft en kadert -- uitvoering ligt bij de betrokken partijen.</>}
           />
         </div>
       </HeroBackground>
@@ -242,13 +242,13 @@ export default function CityPage({ params }: { params: { city: string } }) {
           </h2>
 
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-            We richten ons op zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen
+            De focus ligt op zelfstandige brandwachten en opdrachtgevers in {label} die volwassen willen
             samenwerken: met heldere profielen, rechtstreekse afstemming en afspraken die vooraf kloppen.
           </p>
 
           <p className="text-xs text-slate-400">
             Voorbeelden en formuleringen zijn indicatief. Het uiteindelijke kader is afhankelijk van context,
-            risico en de afspraken die jullie vastleggen.
+            risico en de afspraken die worden vastgelegd.
           </p>
 
         </div>
@@ -273,7 +273,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       <section className="mx-auto max-w-5xl px-4 pb-10">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-            Zo herkennen we uitvoerbaarheid
+            Zo wordt uitvoerbaarheid herkend
           </p>
           <ul className="mt-3 space-y-2 text-sm text-slate-200">
             <li>- Rolzuiverheid: wie beslist, wie voert uit, en wat is de scope?</li>
@@ -313,7 +313,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
             <div className="rounded-2xl border border-white/10 bg-slate-950/30 p-5">
               <p className="text-sm font-semibold text-white">Verantwoording achteraf</p>
               <p className="mt-2 text-sm text-slate-200">
-                Bij audit of incident wil je kunnen aantonen wie wat deed en waarom. Dossierdiscipline
+                Bij audit of incident moet aantoonbaar zijn wie wat deed en waarom. Dossierdiscipline
                 maakt die uitleg mogelijk.
               </p>
             </div>
@@ -327,10 +327,10 @@ export default function CityPage({ params }: { params: { city: string } }) {
             Lokale context in {label}
           </p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-50 md:text-3xl">
-            Waar kom je dit type inzet vaak tegen in {label}?
+            Waar komt dit type inzet vaak voor in {label}?
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">
-            In {label} zie je brandwacht-inzet terug bij projecten waar tijdelijke installaties, publieksveiligheid
+            In {label} is brandwacht-inzet zichtbaar bij projecten waar tijdelijke installaties, publieksveiligheid
             of verhoogd brandrisico samenkomen. {venueLine} {industrialLine}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-slate-200 md:text-base">{sectorLine}</p>

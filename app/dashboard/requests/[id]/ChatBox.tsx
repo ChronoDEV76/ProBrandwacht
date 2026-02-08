@@ -179,7 +179,7 @@ export default function ChatBox({ requestId }: { requestId: string }) {
           value={text}
           onChange={e => setText(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Typ je bericht…"
+          placeholder="Typ een bericht…"
           className="flex-1 rounded-md border bg-white p-2"
         />
         <button

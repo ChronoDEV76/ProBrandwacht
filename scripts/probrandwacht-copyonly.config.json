@@ -1,4 +1,5 @@
 {
+  "toneProfile": "scripts/tone/probrandwacht-tone.json",
   "includeRoots": [
     "app/(site)",
     "components",

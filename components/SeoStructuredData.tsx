@@ -41,10 +41,10 @@ interface SeoStructuredDataProps {
 const DEFAULT_ORGANIZATION = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'ProBrandwacht.nl',
+  name: 'ProBrandwacht',
   url: 'https://www.probrandwacht.nl',
   description:
-    'Platform voor uitvoerbare brandveiligheid met nadruk op rolhelderheid, professionele verantwoordelijkheid en DBA-bewuste samenwerking.',
+    'Onafhankelijk kennis- en kaderinitiatief met context over rolafbakening, verantwoordelijkheden en uitvoerbaarheid in brandwacht-inzet.',
   knowsAbout: [
     'brandveiligheid',
     'brandwacht',
@@ -65,8 +65,8 @@ const DEFAULT_ORGANIZATION = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      email: 'info@prosafetymatch.nl',
-      contactType: 'customer support',
+      email: 'info@probrandwacht.nl',
+      contactType: 'informatie',
       areaServed: 'NL',
       availableLanguage: 'Dutch',
     },

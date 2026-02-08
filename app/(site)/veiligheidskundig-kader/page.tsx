@@ -38,7 +38,7 @@ export default function VeiligheidskundigKaderPage() {
           <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.7)] md:h-56 md:w-64">
             <Image
               src="/brandvergrootglas.webp"
-              alt="Vergrootglas op brandveiligheidsmaatregelen als symbool voor duiding en rol"
+              alt="Vergrootglas op brandveiligheidsmaatregelen als symbool voor beschrijving en rol"
               fill
               sizes="(max-width: 768px) 100vw, 256px"
               className="object-cover"
@@ -62,23 +62,22 @@ export default function VeiligheidskundigKaderPage() {
 
             <h2>Afbakening & kader</h2>
             <p>
-              ProBrandwacht duidt de brandwachtenmarkt vanuit een veiligheidskundig perspectief.
-              Deze artikelen beschrijven principes, systeemwerking en rolverdeling binnen
-              brandveiligheid. Ze bieden context en reflectie, zodat keuzes bewuster en uitlegbaar
-              blijven.
+              ProBrandwacht beschrijft de brandwachtenmarkt vanuit een veiligheidskundig perspectief.
+              Deze artikelen beschrijven principes, systeemwerking en rolverdeling binnen brandveiligheid.
+              Ze bieden context en reflectie, zodat keuzes bewuster en uitlegbaar blijven.
             </p>
             <ul>
-              <li>De rol ligt bij context en duiding; uitvoering en planning blijven in de praktijk</li>
+              <li>De rol ligt bij context en beschrijving; uitvoering en planning blijven in de praktijk</li>
               <li>Toezicht en handhaving blijven bij de bevoegde instanties</li>
               <li>Uitkomsten blijven contextafhankelijk</li>
               <li>Bevoegdheden liggen bij opdrachtgever, vergunningverlener en toezichthouder</li>
             </ul>
 
-            <h2>Hoe we dit onderwerp benaderen</h2>
+            <h2>Hoe dit onderwerp wordt benaderd</h2>
             <ul>
-              <li>We beschrijven principes zoals mandaat, rolzuiverheid en beslisruimte.</li>
-              <li>We benoemen waar systemen zichzelf geruststellen in plaats van risico te verminderen.</li>
-              <li>We houden de taal beschrijvend en neutraal.</li>
+              <li>Principes zoals mandaat, rolzuiverheid en beslisruimte staan centraal.</li>
+              <li>Er wordt benoemd waar systemen zichzelf geruststellen in plaats van risico te verminderen.</li>
+              <li>De taal blijft beschrijvend en neutraal.</li>
             </ul>
 
             <h2>Onderwerpen in dit cluster</h2>
@@ -121,7 +120,7 @@ export default function VeiligheidskundigKaderPage() {
               </li>
               <li>
                 <Link href="/blog/systeem-botst-met-vakmanschap">
-                  Wanneer het systeem botst met het vakmanschap
+                  Wanneer praktijk en vakmanschap botsen
                 </Link>
               </li>
             </ul>
@@ -129,7 +128,7 @@ export default function VeiligheidskundigKaderPage() {
             <h2>Leeswijzer</h2>
             <p>
               De artikelen zijn bedoeld voor toezichthouders, beleidsmakers en professionals die willen
-              begrijpen hoe veiligheidssystemen in de praktijk functioneren. De focus ligt op duiding
+              begrijpen hoe veiligheidssystemen in de praktijk functioneren. De focus ligt op beschrijving
               en reflectie.
             </p>
           </Prose>

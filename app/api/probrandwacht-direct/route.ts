@@ -135,7 +135,7 @@ export async function POST(req: Request) {
 
     const htmlUser = `
       <p>Beste ${escapeHtml(body.contact)},</p>
-      <p>Bedankt voor je aanvraag. We nemen snel contact op om de inzet af te stemmen.<br/>
+      <p>Bedankt voor de aanvraag. Er volgt snel contact om de inzet af te stemmen.<br/>
       Afspraken worden 1-op-1 gemaakt en blijven contextafhankelijk.</p>
       <p>— Team ProBrandwacht</p>
     `;

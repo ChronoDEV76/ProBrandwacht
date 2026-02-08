@@ -5,10 +5,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   amsterdam: {
     h1: 'Brandwacht-inzet in Amsterdam: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Amsterdam. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Amsterdam. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Amsterdam: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Amsterdam. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Amsterdam. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Amsterdam
 
 - **Scope en rol**: toezicht, heetwerk, mangat/buitenwacht of publieksveiligheid
@@ -38,10 +38,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   rotterdam: {
     h1: 'Brandwacht-inzet in Rotterdam: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Rotterdam. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Rotterdam. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Rotterdam: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Rotterdam. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Rotterdam. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Rotterdam
 
 - **Scope en rol**: toezicht, heetwerk, onderhoudsstops of besloten ruimten
@@ -71,10 +71,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   'den-haag': {
     h1: 'Brandwacht-inzet in Den Haag: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Den Haag. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Den Haag. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Den Haag: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Den Haag. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Den Haag. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Den Haag
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -102,10 +102,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   utrecht: {
     h1: 'Brandwacht-inzet in Utrecht: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Utrecht. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Utrecht. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Utrecht: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Utrecht. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Utrecht. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Utrecht
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -133,10 +133,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   eindhoven: {
     h1: 'Brandwacht-inzet in Eindhoven: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Eindhoven. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Eindhoven. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Eindhoven: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Eindhoven. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Eindhoven. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Eindhoven
 
 - **Scope en rol**: toezicht, heetwerk, onderhoudsstops of publieksveiligheid
@@ -164,10 +164,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   tilburg: {
     h1: 'Brandwacht-inzet in Tilburg: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Tilburg. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Tilburg. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Tilburg: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Tilburg. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Tilburg. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Tilburg
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -195,10 +195,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   groningen: {
     h1: 'Brandwacht-inzet in Groningen: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Groningen. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Groningen. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Groningen: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Groningen. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Groningen. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Groningen
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -226,10 +226,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   almere: {
     h1: 'Brandwacht-inzet in Almere: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Almere. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Almere. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Almere: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Almere. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Almere. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Almere
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -257,10 +257,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   breda: {
     h1: 'Brandwacht-inzet in Breda: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Breda. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Breda. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Breda: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Breda. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Breda. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Breda
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties
@@ -288,10 +288,10 @@ export const cityCopyOverrides: Partial<Record<CitySlug, Partial<CityCopy>>> = {
   nijmegen: {
     h1: 'Brandwacht-inzet in Nijmegen: context en verantwoordelijkheden',
     intro:
-      'ProBrandwacht legt uit welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Nijmegen. Onafhankelijke duiding en rolhelderheid vooraf.',
+      'ProBrandwacht beschrijft welke lokale context, risico’s en randvoorwaarden vaak spelen bij brandwacht-inzet in Nijmegen. Onafhankelijke beschrijving en rolhelderheid vooraf.',
     metaTitle: 'Brandwacht-inzet in Nijmegen: verantwoordelijkheden en context | ProBrandwacht',
     metaDescription:
-      'Onafhankelijke uitleg over brandwacht-inzet in Nijmegen. Wat is verplicht, wie is verantwoordelijk en waar let je op in de praktijk?',
+      'Onafhankelijke uitleg over brandwacht-inzet in Nijmegen. Wat is verplicht, wie is verantwoordelijk en waar ligt de aandacht in de praktijk?',
     body: `## Afspraken vooraf in Nijmegen
 
 - **Scope en rol**: toezicht, publieksveiligheid of tijdelijke installaties

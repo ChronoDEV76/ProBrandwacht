@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "name": "ProBrandwacht Tone of Voice",
+    "version": "1.0",
+    "purpose": "Rustige, neutrale en veiligheidskundige communicatie zonder activisme, aanval of collectieve framing."
+  },
+  "core_principles": [
+    "Observerend, niet normerend",
+    "Duidend, niet belerend",
+    "Individueel perspectief, geen collectieve claim",
+    "Veiligheidskundig kader boven emotie",
+    "Geen vijandbeeld, geen schuldtoewijzing"
+  ],
+  "preferred_voice": {
+    "person": "derde persoon",
+    "examples": [
+      "In de praktijk ontstaat regelmatig...",
+      "Voor zelfstandigen betekent dit dat...",
+      "Binnen vergunningstrajecten wordt vaak..."
+    ],
+    "avoid": [
+      "wij vinden",
+      "wij zien",
+      "wij moeten",
+      "samen staan we",
+      "de sector moet"
+    ]
+  },
+  "allowed_language": {
+    "verbs": [
+      "beschrijft",
+      "verkent",
+      "duidt",
+      "plaatst in context",
+      "maakt inzichtelijk",
+      "signaleert",
+      "verheldert"
+    ],
+    "modality": [
+      "kan",
+      "in sommige gevallen",
+      "vaak",
+      "regelmatig",
+      "in de praktijk",
+      "binnen dit kader"
+    ]
+  },
+  "disallowed_language": {
+    "activist_terms": [
+      "strijd",
+      "vechten",
+      "opstaan tegen",
+      "wij pikken dit niet",
+      "tijd voor actie"
+    ],
+    "accusatory_terms": [
+      "bureaus doen fout",
+      "bedrijven misbruiken",
+      "de markt liegt",
+      "men houdt klein"
+    ],
+    "collective_identity": [
+      "wij brandwachten",
+      "onze beroepsgroep",
+      "collega’s",
+      "achterban"
+    ],
+    "emotional_charge": [
+      "schandalig",
+      "onacceptabel",
+      "misdadig",
+      "uitbuiting",
+      "slachtoffer"
+    ]
+  },
+  "framing_rules": {
+    "market": "systeem en structuur, niet partijen",
+    "brandwacht": "professioneel individu, geen groep",
+    "bureau": "organisatievorm, geen tegenstander",
+    "wetgeving": "kader, geen oordeel"
+  },
+  "guarantees_and_promises": {
+    "forbidden": [
+      "garantie",
+      "oplossing",
+      "voorkomt risico",
+      "maakt compliant"
+    ],
+    "allowed_contextual": [
+      "geen garantie",
+      "biedt geen zekerheid",
+      "afhankelijk van context",
+      "geen vervanging van"
+    ]
+  },
+  "tone_checks": {
+    "must_pass": [
+      "Leest dit als uitleg, niet als oproep?",
+      "Is dit informerend zonder richting te geven?",
+      "Kan een opdrachtgever dit lezen zonder zich aangesproken te voelen?",
+      "Kan een brandwacht dit lezen zonder zich beoordeeld te voelen?",
+      "Kan een toezichthouder dit lezen zonder frictie?"
+    ]
+  },
+  "closing_guidance": {
+    "preferred": [
+      "Dit vraagt om reflectie.",
+      "Dit onderstreept het belang van rolzuiverheid.",
+      "Dit maakt zichtbaar waar spanning ontstaat."
+    ],
+    "avoid": [
+      "Daarom moet dit anders",
+      "Hier moeten we iets aan doen",
+      "Dit kan zo niet langer"
+    ]
+  }
+}

@@ -8,7 +8,7 @@ export default function WhyProbrandwachtSection() {
           </h2>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
             Veel brandwachten kennen onduidelijke ketens met te veel schakels. ProBrandwacht
-            werkt anders: we zijn een <span className="font-semibold text-emerald-300">onafhankelijk initiatief</span>
+            werkt anders: het is een <span className="font-semibold text-emerald-300">onafhankelijk initiatief</span>
             dat rolverdeling en afspraken uitlegbaar maakt.
           </p>
           <p className="text-sm leading-relaxed text-slate-200 md:text-base">
@@ -19,9 +19,10 @@ export default function WhyProbrandwachtSection() {
 
         <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <h3 className="text-sm font-semibold text-emerald-300">Jij houdt de regie</h3>
+            <h3 className="text-sm font-semibold text-emerald-300">Regie blijft bij de professional</h3>
             <p className="text-sm text-slate-200">
-              Je houdt zelf regie over keuzes en beschikbaarheid. Geen planning die over jouw agenda beslist.
+              Regie over keuzes en beschikbaarheid blijft bij de professional. Geen planning die over de
+              agenda beslist.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
@@ -29,8 +30,8 @@ export default function WhyProbrandwachtSection() {
               Duidelijke afstemming
             </h3>
             <p className="text-sm text-slate-200">
-              We laten zien hoe afspraken over scope, communicatie en resultaat helder beschreven kunnen
-              worden, zodat verwachtingen gelijk zijn.
+              ProBrandwacht laat zien hoe afspraken over scope, communicatie en resultaat helder beschreven
+              kunnen worden, zodat verwachtingen gelijk zijn.
             </p>
           </div>
           <div className="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">

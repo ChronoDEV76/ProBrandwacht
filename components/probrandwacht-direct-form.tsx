@@ -75,7 +75,7 @@ export default function ProbrandwachtDirectForm() {
       })
 
       if (response.status === 429) {
-        setError('We hebben al een recente aanvraag ontvangen. Probeer het later opnieuw.')
+        setError('Er is al een recente aanvraag ontvangen. Probeer het later opnieuw.')
         return
       }
 
@@ -88,7 +88,7 @@ export default function ProbrandwachtDirectForm() {
       router.push('/opdrachtgevers/thank-you')
     } catch (err) {
       console.error('[probrandwacht-direct] submit failed', err)
-      setError('Netwerkfout. Controleer je verbinding en probeer opnieuw.')
+      setError('Netwerkfout. Controleer de verbinding en probeer opnieuw.')
     } finally {
       setLoading(false)
     }
@@ -175,7 +175,7 @@ export default function ProbrandwachtDirectForm() {
           className="mt-1.5 h-5 w-5 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
         />
         <label htmlFor="terms">
-          Ik ga akkoord met de{' '}
+          Akkoord met de{' '}
           <a href="/voorwaarden" className="underline underline-offset-4">
             algemene voorwaarden
           </a>{' '}
@@ -197,8 +197,8 @@ export default function ProbrandwachtDirectForm() {
           className="mt-1.5 h-5 w-5 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
         />
         <label htmlFor="consent">
-          Ik ga akkoord met het verwerken van mijn gegevens voor deze aanvraag en
-          ontvang praktische updates over inzet.
+          Akkoord met het verwerken van gegevens voor deze aanvraag en
+          het ontvangen van praktische updates over inzet.
         </label>
       </div>
 

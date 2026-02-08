@@ -63,7 +63,7 @@ export async function generateMetadata({
       : (frontmatter.tldr as string | undefined) ??
         (frontmatter.excerpt as string | undefined) ??
         (frontmatter.description as string | undefined) ??
-        'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
+        'Beschrijvende kennis over brandwacht-inzet: rolverdeling, afspraken en uitvoerbaarheid in de praktijk.'
     const ogImage = toAbsoluteUrl(
       (frontmatter.ogImage as string | undefined) ??
         (frontmatter.image as string | undefined) ??
@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     (frontmatter.tldr as string | undefined) ??
     (frontmatter.excerpt as string | undefined) ??
     (frontmatter.description as string | undefined) ??
-    'Praktische kennis voor zelfstandige brandwachten en opdrachtgevers: afspraken, rolverdeling en uitvoering.'
+    'Beschrijvende kennis over brandwacht-inzet: rolverdeling, afspraken en uitvoerbaarheid in de praktijk.'
   const articleImage = toAbsoluteUrl(
     (frontmatter.ogImage as string | undefined) ??
       (frontmatter.image as string | undefined) ??
@@ -181,7 +181,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               Kennisbank • {isSystemArticle ? 'Veiligheidskundig kader' : categoryLabel}
             </div>
             <div className="text-[11px] text-slate-400">
-              Analyse en duiding – gericht op begrip en rolhelderheid
+              Analyse en beschrijving – gericht op begrip en rolhelderheid
             </div>
           </div>
 
@@ -251,10 +251,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="mb-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-200">
           <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-amber-200">
             <span aria-hidden>ℹ️</span>
-            {isSystemArticle ? 'Veiligheidskundig kader' : 'Kader & duiding'}
+            {isSystemArticle ? 'Veiligheidskundig kader' : 'Kader & beschrijving'}
           </div>
           <p className="mt-2">
-            Dit artikel biedt context en duiding. Beoordeling en besluitvorming blijven bij de betrokken
+            Dit artikel biedt context en beschrijving. Beoordeling en besluitvorming blijven bij de betrokken
             partijen.
           </p>
         </div>
@@ -263,7 +263,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         </article>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Wat neem je mee</h2>
+          <h2 className="text-xl font-semibold md:text-2xl">Kernpunten</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
             Neutrale checklist om rolafbakening en uitvoering uitlegbaar te houden.
           </p>
@@ -290,7 +290,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Bronnen & redactie</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            We baseren artikelen op praktijkervaring en controleerbare bronnen. Bekijk de bronverzameling en
+            Artikelen worden gebaseerd op praktijkervaring en controleerbare bronnen. Bekijk de bronverzameling en
             achtergrond van ProBrandwacht.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">

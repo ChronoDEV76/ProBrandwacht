@@ -90,7 +90,7 @@ export async function POST(req: Request) {
       throw new Error(error?.message || 'insert_failed');
     }
 
-    // Slack mag falen zonder de UX te blokkeren
+    // Slack mag mislukken zonder de UX te blokkeren
     try {
       await postPbDirectToSlack(row);
     } catch (e) {

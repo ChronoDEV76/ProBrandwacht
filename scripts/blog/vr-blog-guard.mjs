@@ -29,6 +29,17 @@ function readJson(p) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToPatternString(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+}
+
 function isDir(p) {
   try {
     return fs.statSync(p).isDirectory();
@@ -481,6 +492,36 @@ function main() {
   }
 
   const cfg = readJson(configPath);
+  const toneProfilePath = path.resolve(argValue("--tone", "scripts/tone/probrandwacht-tone.json"));
+  if (isFile(toneProfilePath)) {
+    try {
+      const tone = readJson(toneProfilePath);
+      const disallowed = tone.disallowed_language ?? {};
+      const avoidVoice = tone.preferred_voice?.avoid ?? [];
+      const forbiddenPromises = tone.guarantees_and_promises?.forbidden ?? [];
+      const closingAvoid = tone.closing_guidance?.avoid ?? [];
+
+      const toPhrases = (arr) =>
+        (Array.isArray(arr) ? arr : []).map((p) => phraseToPatternString(p));
+
+      cfg.tone.vrRiskPhrases = [
+        ...(cfg.tone.vrRiskPhrases ?? []),
+        ...toPhrases(forbiddenPromises),
+        ...toPhrases(avoidVoice),
+        ...toPhrases(closingAvoid)
+      ];
+
+      cfg.tone.attackLanguage = [
+        ...(cfg.tone.attackLanguage ?? []),
+        ...toPhrases(disallowed.activist_terms),
+        ...toPhrases(disallowed.accusatory_terms),
+        ...toPhrases(disallowed.collective_identity),
+        ...toPhrases(disallowed.emotional_charge)
+      ];
+    } catch (err) {
+      console.error(`${ANSI.yellow}Tone profile load failed:${ANSI.reset}`, err);
+    }
+  }
 
   console.log(`=== ProBrandwacht VR Blog Guard ===`);
   console.log(`Root: ${root}`);

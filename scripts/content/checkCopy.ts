@@ -1,12 +1,38 @@
 #!/usr/bin/env ts-node
 
 import * as readline from "node:readline";
+import fs from "node:fs";
+import path from "node:path";
 
 type Pattern = {
   label: string;
   pattern: RegExp;
   suggestion?: string;
 };
+
+const ROOT = process.cwd();
+const TONE_PROFILE_PATH = path.join(ROOT, "scripts", "tone", "probrandwacht-tone.json");
+
+function escapeRegex(s: string) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToRegex(phrase: string) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  const wrapped = startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+  return new RegExp(wrapped, "i");
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
 
 // Bureautaal: wat we willen ontmoedigen
 const bureauPatterns: Pattern[] = [
@@ -119,6 +145,33 @@ const externalControlPatterns: Pattern[] = [
   { label: "wij regelen alles", pattern: /\bwij regelen alles\b/i },
   { label: "wij zorgen dat jij wordt ingezet", pattern: /\bwij zorgen dat jij.*wordt ingezet\b/i }
 ];
+
+const toneProfile = loadToneProfile();
+if (toneProfile) {
+  const disallowed = toneProfile.disallowed_language ?? {};
+  const avoidVoice = toneProfile.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = toneProfile.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = toneProfile.closing_guidance?.avoid ?? [];
+
+  const pushTone = (label: string, phrases: string[]) => {
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    phrases.forEach((phrase) => {
+      bureauPatterns.push({
+        label: `tone:${label}`,
+        pattern: phraseToRegex(phrase),
+        suggestion: "Herformuleer naar beschrijvende, neutrale systeemtaal."
+      });
+    });
+  };
+
+  pushTone("activist_terms", disallowed.activist_terms);
+  pushTone("accusatory_terms", disallowed.accusatory_terms);
+  pushTone("collective_identity", disallowed.collective_identity);
+  pushTone("emotional_charge", disallowed.emotional_charge);
+  pushTone("preferred_voice_avoid", avoidVoice);
+  pushTone("forbidden_promises", forbiddenPromises);
+  pushTone("closing_avoid", closingAvoid);
+}
 
 function countWords(text: string): number {
   const tokens = text.trim().split(/\s+/);

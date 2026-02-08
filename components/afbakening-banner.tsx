@@ -21,7 +21,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           <div className="mt-3 space-y-2 text-xs text-slate-300">
             <ul className="list-disc space-y-1 pl-4">
               <li>Samenwerking gebeurt rechtstreeks, met eigen tarief- en inzetafspraken.</li>
-              <li>Deze duiding ondersteunt inzicht en rolhelderheid, zodat besluitvorming beter voorbereid is.</li>
+              <li>Deze beschrijving ondersteunt inzicht en rolhelderheid, zodat besluitvorming beter voorbereid is.</li>
               <li>Rolafbakening en keuzes worden gemaakt door opdrachtgever en professional.</li>
             </ul>
             <Link href="/waarom-wij-soms-nee-zeggen" className="text-amber-200 underline underline-offset-4">

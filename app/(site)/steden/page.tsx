@@ -22,8 +22,8 @@ export default function StedenIndexPage() {
             </h1>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              ProBrandwacht legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en directe
-              lijnen tussen opdrachtgever en professional.
+              ProBrandwacht beschrijft hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
+              directe lijnen tussen opdrachtgever en professional.
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
@@ -34,7 +34,7 @@ export default function StedenIndexPage() {
             </p>
 
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              Daarom is elke stedenpagina een compacte werkkaart: wat komt vaak voor, waar let je op,
+              Daarom is elke stedenpagina een compacte werkkaart: wat komt vaak voor, waar ligt de aandacht,
               en welke afspraken helpen gedoe te beperken. Voorbeelden zijn{' '}
               <span className="font-semibold">indicatief</span> en{' '}
               <span className="font-semibold">contextafhankelijk</span>.
@@ -46,7 +46,7 @@ export default function StedenIndexPage() {
             </p>
 
             <div className="panel p-5 text-sm text-slate-200 md:text-base">
-              <h2 className="text-lg font-semibold text-white">Hoe je de stedenpagina&apos;s leest</h2>
+              <h2 className="text-lg font-semibold text-white">Hoe de stedenpagina&apos;s gelezen worden</h2>
               <ul className="mt-3 space-y-2">
                 <li><strong>Regelgeving & praktijk:</strong> wat lokaal vaak speelt en welke kaders relevant zijn.</li>
                 <li><strong>Verwarring:</strong> waar scope, rol of bevoegdheden snel vervagen.</li>
@@ -63,12 +63,12 @@ export default function StedenIndexPage() {
                 Voor opdrachtgevers
               </Link>
               <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
-                Waarom wij soms nee zeggen
+                Waarom er soms nee wordt gezegd
               </Link>
             </div>
 
             <p className="pt-1 text-xs text-slate-400">
-              Tip: kies je stad en lees vooral het stuk “praktische afspraken”. Dat helpt vertrouwen opbouwen.
+              Tip: een stad kiezen en het stuk “praktische afspraken” lezen helpt vertrouwen opbouwen.
             </p>
           </div>
         </div>
@@ -92,8 +92,8 @@ export default function StedenIndexPage() {
             Niche & verwachting
           </p>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Als je vooral
-            snel wilt schakelen zonder uitgebreide kadering, kan een klassiek bureau-model soms beter passen.
+            ProBrandwacht focust op samenwerking die operationeel werkbaar en uitlegbaar is. Als snelheid
+            voorop staat zonder uitgebreide kadering, kan een klassiek bureau-model soms beter passen.
           </p>
         </div>
       </section>

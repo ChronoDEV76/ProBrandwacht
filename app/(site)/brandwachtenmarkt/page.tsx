@@ -31,7 +31,7 @@ export default function BrandwachtenmarktPage() {
             Brandwachtenmarkt en systeemwerking
           </h1>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Onafhankelijke duiding van hoe de brandwachtenmarkt werkt, hoe rollen zich verhouden en waar
+            Onafhankelijke beschrijving van hoe de brandwachtenmarkt werkt, hoe rollen zich verhouden en waar
             systeemspanningen ontstaan. Gericht op context en begrip, zodat keuzes uitlegbaar blijven.
           </p>
         </div>
@@ -49,11 +49,11 @@ export default function BrandwachtenmarktPage() {
               spanningen terugkomen. Het doel is begrip en herkenning, zodat samenwerking beter voorbereid is.
             </p>
 
-            <h2>Hoe we dit onderwerp benaderen</h2>
+            <h2>Hoe dit onderwerp wordt benaderd</h2>
             <ul>
-              <li>We kijken naar rolverdeling, mandaat en systeemverantwoordelijkheid.</li>
-              <li>We beschrijven waar aanwezigheid en veiligheid uit elkaar gaan lopen.</li>
-              <li>We leggen uit hoe marktstructuur gedrag en verwachtingen kan sturen.</li>
+              <li>Rolverdeling, mandaat en systeemverantwoordelijkheid staan centraal.</li>
+              <li>Er wordt beschreven waar aanwezigheid en veiligheid uit elkaar gaan lopen.</li>
+              <li>Er wordt uitgelegd hoe marktstructuur gedrag en verwachtingen kan sturen.</li>
             </ul>
 
             <h2>Onderwerpen in dit cluster</h2>
@@ -88,7 +88,7 @@ export default function BrandwachtenmarktPage() {
             <h2>Leeswijzer</h2>
             <p>
               De artikelen in dit cluster zijn bewust beschrijvend. Ze benoemen systeemspanningen zonder
-              individuele schuld. Zo blijft de focus op inzicht en rolhelderheid.
+              individuele verwijtbaarheid. Zo blijft de focus op inzicht en rolhelderheid.
             </p>
           </Prose>
         </article>

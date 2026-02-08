@@ -17,9 +17,9 @@ export default function VoorBrandwachtenPage() {
               Zelfstandig werken, met duidelijke kaders
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht helpt je aan taal en kaders om professioneel samen te werken: helderheid over rol,
-              scope, beslislijnen en stopcriteria -- zodat je inzet uitvoerbaar blijft en je achteraf kunt
-              uitleggen wat er is afgesproken.
+              ProBrandwacht biedt taal en kaders voor professioneel samenwerken: helderheid over rol, scope,
+              beslislijnen en stopcriteria -- zodat inzet uitvoerbaar blijft en achteraf uitlegbaar is wat
+              is afgesproken.
             </p>
 
             <div className="panel mt-7 p-5">
@@ -46,15 +46,15 @@ export default function VoorBrandwachtenPage() {
           <Card
             title="1) Start met scope in gewone taal"
             bullets={[
-              'Wat bewaak je precies (werkzaamheden, zones, risicomomenten)?',
+              'Wat wordt precies bewaakt (werkzaamheden, zones, risicomomenten)?',
               'Welke signalen betekenen: pauzeren, stoppen, opschalen?',
-              'Welke rol past bij jouw inzet en hoe leg je die uit?',
+              'Welke rol past bij de inzet en hoe wordt die uitgelegd?',
             ]}
           />
           <Card
             title="2) Maak beslislijnen zichtbaar"
             bullets={[
-              'Wie is jouw aanspreekpunt op locatie?',
+              'Wie is het aanspreekpunt op locatie?',
               'Wie hakt knopen door bij wijziging of twijfel?',
               'Hoe wordt een stop of opschaling vastgelegd?',
             ]}
@@ -81,13 +81,19 @@ export default function VoorBrandwachtenPage() {
           <div className="md:col-span-2">
             <h2 className="section-title">Lees het nee-kader</h2>
             <p className="mt-2 text-slate-200/90">
-              Handig als je twijfel hebt over scope, rolverwarring of onduidelijke uitvoering. Het is een
-              praktische grens voor professionaliteit, met respect voor alle partijen.
+              Handig bij twijfel over scope, rolverwarring of onduidelijke uitvoering. Het is een praktische
+              grens voor professionaliteit, met respect voor alle partijen.
             </p>
           </div>
-          <div className="flex items-center gap-3 md:justify-end">
+          <div className="flex flex-wrap items-center gap-3 md:justify-end">
             <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
               Bekijk het kader
+            </Link>
+            <Link href="/contact" className="route-link">
+              Verkennend contact
+            </Link>
+            <Link href="/opdrachtgevers" className="route-link">
+              Voor opdrachtgevers
             </Link>
           </div>
         </div>

@@ -14,18 +14,18 @@ import { coreCities } from '@/lib/cities'
 import { generalPlatformFaq } from '@/lib/seo/commonFaqs'
 
 const BASE_URL = 'https://www.probrandwacht.nl'
-const TITLE_CORE = 'Kennisbank brandwacht-inzet & marktduiding'
+const TITLE_CORE = 'Kennisbank brandwacht-inzet & marktinzicht'
 const BRAND_SUFFIX = 'ProBrandwacht'
 const DEFAULT_TITLE = `${TITLE_CORE} | ${BRAND_SUFFIX}`
 const DEFAULT_DESCRIPTION =
-  'Onafhankelijke duiding en veiligheidskundig kader over brandwacht-inzet, verantwoordelijkheden en regelgeving.'
+  'Onafhankelijke beschrijving en veiligheidskundig kader over brandwacht-inzet, verantwoordelijkheden en regelgeving.'
 const DEFAULT_KEYWORDS = [
   'brandwacht',
   'veiligheidskundig kader',
   'rolafbakening brandwacht',
   'uitlegbaarheid samenwerking',
   'brandwacht-inzet context',
-  'brandwachtenmarkt duiding',
+  'brandwachtenmarkt inzicht',
 ]
 const OG_IMAGE = `${BASE_URL}/og-home.webp`
 
@@ -256,7 +256,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
-      <h1 className="sr-only">Kennisbank brandwacht-inzet & marktduiding</h1>
+      <h1 className="sr-only">Kennisbank brandwacht-inzet & marktinzicht</h1>
       <StructuredBreadcrumbs items={breadcrumbItems} />
       <JSONLD data={{ '@context': 'https://schema.org', '@graph': articleSchema }} />
       <JSONLD data={itemListSchema} />
@@ -406,7 +406,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="panel p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-slate-100">Autoritaire bronnen</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Al onze artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor ondernemen,
+              Alle artikelen verwijzen naar dezelfde officiele bronnen: CBS voor cao-lonen, KVK voor ondernemen,
               Belastingdienst voor Wet DBA en FNV voor cao Veiligheidsregio&apos;s.
             </p>
             <Cta id="secondary_seo_resources" className="route-link mt-3" />
@@ -415,7 +415,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="panel p-6 text-center">
             <h3 className="text-xl font-semibold text-slate-50">Meer context nodig?</h3>
             <p className="mt-2 text-slate-200">
-              Lees het kader en de afbakening om deze artikelen goed te duiden.
+              Lees het kader en de afbakening om deze artikelen goed te plaatsen.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
               <Cta id="secondary_kader_overview" className="route-link" />

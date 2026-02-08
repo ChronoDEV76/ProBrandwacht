@@ -41,7 +41,7 @@ export const authoritativeSources: AuthoritativeSource[] = [
   },
   {
     id: 'fnv',
-    title: 'FNV (Vakbond)',
+    title: 'FNV (Belangenorganisatie)',
     description: 'Cao Veiligheidsregio’s en zzp-perspectief.',
     links: [
       {

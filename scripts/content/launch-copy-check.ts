@@ -23,6 +23,7 @@ type Finding = {
 };
 
 const ROOT = process.cwd();
+const TONE_PROFILE_PATH = path.join(ROOT, "scripts", "tone", "probrandwacht-tone.json");
 
 // Directories we scan for pages
 const ROOTS = [
@@ -68,6 +69,27 @@ const BIG_CLAIM_PATTERNS: Array<{ re: RegExp; label: string }> = [
   { re: /\b(wereldwijd|marktleider)\b/i, label: "Market leader claim" },
 ];
 
+function escapeRegex(s: string) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToRegex(phrase: string) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  const wrapped = startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+  return new RegExp(wrapped, "i");
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
 // Tone-of-voice guard: flag defensive stacking + belerende framing
 const TONE_NEGATIVE_PATTERNS: Array<{ re: RegExp; label: string }> = [
   {
@@ -108,22 +130,55 @@ const TONE_NEGATIVE_PATTERNS: Array<{ re: RegExp; label: string }> = [
   },
 ];
 
-// Expected CTA links (warn if missing on key pages; not an error)
-const EXPECTED_CTA_HREFS = [
-  "/zzp/aanmelden",
-  "/opdrachtgevers/aanmelden",
-  "/voor-brandwachten",
-  "/opdrachtgevers",
-  "/belangen",
-];
+const toneProfile = loadToneProfile();
+if (toneProfile) {
+  const disallowed = toneProfile.disallowed_language ?? {};
+  const avoidVoice = toneProfile.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = toneProfile.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = toneProfile.closing_guidance?.avoid ?? [];
 
-const KEY_PAGES = new Set([
-  // add/adjust as needed: these are file-path suffix checks
-  path.join("app", "(site)", "page.tsx"),
-  path.join("app", "(site)", "voor-brandwachten", "page.tsx"),
-  path.join("app", "(site)", "opdrachtgevers", "page.tsx"),
-  path.join("app", "blog", "page.tsx"),
-]);
+  const pushTone = (label: string, phrases: string[]) => {
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    phrases.forEach((phrase) => {
+      TONE_NEGATIVE_PATTERNS.push({
+        re: phraseToRegex(phrase),
+        label: `Tone-of-voice (${label})`,
+      });
+    });
+  };
+
+  pushTone("activist_terms", disallowed.activist_terms);
+  pushTone("accusatory_terms", disallowed.accusatory_terms);
+  pushTone("collective_identity", disallowed.collective_identity);
+  pushTone("emotional_charge", disallowed.emotional_charge);
+  pushTone("preferred_voice_avoid", avoidVoice);
+  pushTone("forbidden_promises", forbiddenPromises);
+  pushTone("closing_avoid", closingAvoid);
+}
+
+// Expected CTA links per key page (warn if missing; not an error)
+const EXPECTED_CTA_BY_PAGE: Record<string, string[]> = {
+  [path.join("app", "(site)", "page.tsx")]: [
+    "/opdrachtgevers",
+    "/voor-brandwachten",
+    "/waarom-wij-soms-nee-zeggen",
+  ],
+  [path.join("app", "(site)", "voor-brandwachten", "page.tsx")]: [
+    "/waarom-wij-soms-nee-zeggen",
+    "/contact",
+    "/opdrachtgevers",
+  ],
+  [path.join("app", "(site)", "opdrachtgevers", "page.tsx")]: [
+    "/waarom-wij-soms-nee-zeggen",
+    "/contact",
+    "/voor-brandwachten",
+  ],
+  [path.join("app", "blog", "page.tsx")]: [
+    "/veiligheidskundig-kader",
+    "/praktijk-brandveiligheid",
+    "/wetgeving-brandwacht",
+  ],
+};
 
 function walk(dirAbs: string, out: string[] = []): string[] {
   if (!fs.existsSync(dirAbs)) return out;
@@ -240,10 +295,14 @@ function checkFile(fileAbs: string): Finding[] {
   }
 
   // CTA checks on key pages (warn)
-  if (KEY_PAGES.has(file.replaceAll("/", path.sep))) {
-    for (const href of EXPECTED_CTA_HREFS) {
-      if (!content.includes(`href="${href}"`) && !content.includes(`href='${href}'`) && !content.includes(`href={\"${href}\"}`)) {
-        // only warn for "core routes" on key pages — not all pages need all CTAs
+  const expectedCtas = EXPECTED_CTA_BY_PAGE[file.replaceAll("/", path.sep)];
+  if (expectedCtas?.length) {
+    for (const href of expectedCtas) {
+      if (
+        !content.includes(`href="${href}"`) &&
+        !content.includes(`href='${href}'`) &&
+        !content.includes(`href={\"${href}\"}`)
+      ) {
         findings.push({
           file,
           level: "warn",

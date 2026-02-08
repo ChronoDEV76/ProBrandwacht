@@ -1,4 +1,5 @@
 {
+  "toneProfile": "scripts/tone/probrandwacht-tone.json",
   "scanRoot": "content/blog",
   "extensions": [".mdx"],
 
@@ -13,6 +14,10 @@
   ],
 
   "requiredSections": [
+    "Situatieschets",
+    "Veiligheidskundig principe",
+    "Waar het wringt",
+    "Wat dit betekent voor veiligheid",
     "Afbakening",
     "Gerelateerd"
   ],

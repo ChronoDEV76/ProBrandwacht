@@ -80,7 +80,7 @@ export const seoKeywordClusters = {
     'spoed brandwacht verantwoordelijkheden',
     'spoed inzet brandwacht',
     'spoed inzet voorwaarden',
-    'brandwacht spoed duiding',
+    'brandwacht spoed inzicht',
     'spoed brandwacht rollen',
     'spoed brandwacht risico',
   ],

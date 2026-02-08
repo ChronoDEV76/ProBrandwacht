@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 
 export const baseMeta: Metadata = {
   metadataBase: new URL('https://www.probrandwacht.nl'),
-  applicationName: 'ProBrandwacht.nl',
+  applicationName: 'ProBrandwacht',
   openGraph: {
     type: 'website',
-    siteName: 'ProBrandwacht.nl',
+    siteName: 'ProBrandwacht',
   },
   alternates: {
     languages: {

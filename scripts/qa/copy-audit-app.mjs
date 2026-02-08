@@ -27,6 +27,27 @@ import path from "node:path";
 import process from "node:process";
 
 const SEV_ORDER = { ERROR: 0, WARN: 1, INFO: 2 };
+const TONE_PROFILE_PATH = path.join(process.cwd(), "scripts", "tone", "probrandwacht-tone.json");
+
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToPatternString(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
 
 function parseArgs(argv) {
   const args = {
@@ -266,6 +287,34 @@ const POSITIONING_RULES = [
       "‘Papieren must/afvink’ kan kloppen, maar klinkt snel denigrerend. Overweeg neutraler: ‘veiligheid wordt soms administratief ingestoken; wij brengen toetsbaarheid en uitvoering terug’.",
   },
 ];
+
+const toneProfile = loadToneProfile();
+if (toneProfile) {
+  const disallowed = toneProfile.disallowed_language ?? {};
+  const avoidVoice = toneProfile.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = toneProfile.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = toneProfile.closing_guidance?.avoid ?? [];
+
+  const addRules = (idPrefix, phrases) => {
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    phrases.forEach((phrase) => {
+      POSITIONING_RULES.push({
+        id: `TONE.${idPrefix}`,
+        severity: "WARN",
+        pattern: phraseToPatternString(phrase),
+        message: "Tone-of-voice term in conflict met het definitieve kader.",
+      });
+    });
+  };
+
+  addRules("ACTIVIST", disallowed.activist_terms);
+  addRules("ACCUSATORY", disallowed.accusatory_terms);
+  addRules("COLLECTIVE", disallowed.collective_identity);
+  addRules("EMOTIONAL", disallowed.emotional_charge);
+  addRules("VOICE_AVOID", avoidVoice);
+  addRules("FORBIDDEN_PROMISES", forbiddenPromises);
+  addRules("CLOSING_AVOID", closingAvoid);
+}
 
 function auditApp({ rootDir, appDir, options }) {
   const appPath = path.resolve(rootDir, appDir);

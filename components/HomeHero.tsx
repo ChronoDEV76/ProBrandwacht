@@ -7,7 +7,7 @@ type HomeHeroProps = {
 }
 
 const HERO_SUBTITLE =
-  "Je werkt als zelfstandig professional met ruimte voor eigen keuzes, directe lijnen en heldere voorwaarden die je werk uitvoerbaar maken."
+  "Zelfstandige professionals werken met ruimte voor eigen keuzes, directe lijnen en heldere voorwaarden die het werk uitvoerbaar maken."
 
 const HERO_BADGES = [
   "DBA-bewust samenwerken",
@@ -38,7 +38,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
           </div>
 
           <p className="mt-2 text-sm leading-relaxed text-[#E5ECFF] drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]">
-            {HERO_SUBTITLE} Gebruik de kennisbank en kaders om DBA-bewust te werken.
+            {HERO_SUBTITLE} De kennisbank en kaders ondersteunen DBA-bewust werken.
           </p>
 
           {/* CTA buttons */}
@@ -53,7 +53,7 @@ export default function HomeHero({ className }: HomeHeroProps) {
             />
           </div>
           <p className="mt-2 text-[11px] text-slate-400">
-            Je werkt zelfstandig, met ruimte voor eigen keuzes én met verantwoordelijkheid voor hoe die keuzes op de werkvloer worden ingevuld.
+            Zelfstandig werken vraagt ruimte voor eigen keuzes én verantwoordelijkheid voor hoe die keuzes op de werkvloer worden ingevuld.
           </p>
 
           <p className="mt-3 text-[11px] text-slate-400">

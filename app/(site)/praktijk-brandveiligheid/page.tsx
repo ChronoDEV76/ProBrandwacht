@@ -43,15 +43,15 @@ export default function PraktijkBrandveiligheidPage() {
           <Prose>
             <h2>Doel en afbakening</h2>
             <p>
-              Deze pillar page verbindt theorie met uitvoering. We beschrijven waar afspraken botsen met
-              realiteit en wat dat betekent voor rolhelderheid en veiligheid.
+              Deze pillar page verbindt theorie met uitvoering. Er wordt beschreven waar afspraken botsen
+              met realiteit en wat dat betekent voor rolhelderheid en veiligheid.
             </p>
 
-            <h2>Hoe we dit onderwerp benaderen</h2>
+            <h2>Hoe dit onderwerp wordt benaderd</h2>
             <ul>
-              <li>We beschrijven praktijkgevallen met respect voor vakmanschap.</li>
-              <li>We benoemen frictie tussen verantwoordelijkheid en uitvoerbaarheid.</li>
-              <li>We blijven bij observatie en duiding.</li>
+              <li>Praktijkgevallen worden beschreven met respect voor vakmanschap.</li>
+              <li>Frictie tussen verantwoordelijkheid en uitvoerbaarheid wordt benoemd.</li>
+              <li>De benadering blijft bij observatie en beschrijving.</li>
             </ul>
 
             <h2>Onderwerpen in dit cluster</h2>

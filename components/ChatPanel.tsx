@@ -140,10 +140,10 @@ export default function ChatPanel({
           Chat met opdrachtgever in eerlijke samenwerking
         </h3>
         <p className="text-xs text-slate-500">
-          Houd bespreking, afspraken en vragen gedeeld bij elkaar zodat iedereen dezelfde context behoudt en jullie een gezamenlijk, toetsbaar spoor hebben.
+          Houd bespreking, afspraken en vragen gedeeld bij elkaar zodat iedereen dezelfde context behoudt en er een gezamenlijk, toetsbaar spoor ontstaat.
         </p>
         <p className="text-xs text-slate-500">
-          Je reageert als <span className="font-medium">{viewerName}</span> ({viewerRole})
+          Reactie namens <span className="font-medium">{viewerName}</span> ({viewerRole})
         </p>
       </div>
 

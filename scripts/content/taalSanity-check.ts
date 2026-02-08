@@ -24,6 +24,28 @@ interface Hit {
 }
 
 const ROOT_DIR = process.cwd();
+const TONE_PROFILE_PATH = path.join(ROOT_DIR, "scripts", "tone", "probrandwacht-tone.json");
+
+function escapeRegex(s: string) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToRegex(phrase: string) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  const wrapped = startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+  return new RegExp(wrapped, "gi");
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
 
 // Alleen content & site-pagina's
 const BASE_DIRS = [
@@ -50,6 +72,33 @@ const PATTERNS: { id: string; regex: RegExp; message: string }[] = [
       'Herhaling van "in eerlijke samenwerking" (2x of vaker) – waarschijnlijk copy-paste fout.',
   },
 ];
+
+const toneProfile = loadToneProfile();
+if (toneProfile) {
+  const disallowed = toneProfile.disallowed_language ?? {};
+  const avoidVoice = toneProfile.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = toneProfile.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = toneProfile.closing_guidance?.avoid ?? [];
+
+  const addPattern = (id: string, phrases: string[]) => {
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    phrases.forEach((phrase) => {
+      PATTERNS.push({
+        id: `tone:${id}`,
+        regex: phraseToRegex(phrase),
+        message: "Tone-of-voice term in conflict met het definitieve kader.",
+      });
+    });
+  };
+
+  addPattern("activist_terms", disallowed.activist_terms);
+  addPattern("accusatory_terms", disallowed.accusatory_terms);
+  addPattern("collective_identity", disallowed.collective_identity);
+  addPattern("emotional_charge", disallowed.emotional_charge);
+  addPattern("preferred_voice_avoid", avoidVoice);
+  addPattern("forbidden_promises", forbiddenPromises);
+  addPattern("closing_avoid", closingAvoid);
+}
 
 // Check of pad onder een van de base dirs valt
 function isInBaseDirs(filePath: string): boolean {

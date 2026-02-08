@@ -29,8 +29,8 @@ export default function WetgevingBrandwachtPage() {
           </span>
           <h1 className="text-3xl font-semibold text-white md:text-4xl">Wet- en regelgeving</h1>
           <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-            Duiding van wet- en regelgeving rond brandwacht-inzet en verantwoordelijkheid. We beschrijven
-            kaders en begrippen, zodat je de juiste vragen kunt stellen in je eigen context.
+            Beschrijving van wet- en regelgeving rond brandwacht-inzet en verantwoordelijkheid. Kaders en
+            begrippen worden uiteengezet, zodat de juiste vragen in de eigen context gesteld kunnen worden.
           </p>
         </div>
       </HeroBackground>
@@ -47,11 +47,11 @@ export default function WetgevingBrandwachtPage() {
               is helderheid over termen en reikwijdte, zodat samenwerking beter voorbereid is.
             </p>
 
-            <h2>Hoe we dit onderwerp benaderen</h2>
+            <h2>Hoe dit onderwerp wordt benaderd</h2>
             <ul>
-              <li>We houden de taal feitelijk en beschrijvend.</li>
-              <li>We leggen uit wat begrippen betekenen in de praktijk.</li>
-              <li>We wijzen op rolafbakening en verantwoordelijkheid als basis voor goede afspraken.</li>
+              <li>De taal blijft feitelijk en beschrijvend.</li>
+              <li>Begrippen worden uitgelegd in hun praktische betekenis.</li>
+              <li>Rolverdeling en verantwoordelijkheid worden benoemd als basis voor goede afspraken.</li>
             </ul>
 
             <h2>Onderwerpen in dit cluster</h2>
@@ -81,7 +81,7 @@ export default function WetgevingBrandwachtPage() {
             <h2>Leeswijzer</h2>
             <p>
               Deze teksten beschrijven regelgeving op hoofdlijnen. Bij vragen over de toepassing in een
-              specifieke context is in de regel aanvullende duiding nodig.
+              specifieke context is in de regel aanvullende toelichting nodig.
             </p>
           </Prose>
         </article>

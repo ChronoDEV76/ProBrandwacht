@@ -28,7 +28,7 @@ export default function Page() {
 
             <p className="text-lg leading-relaxed text-slate-200/90">
               Dit initiatief helpt opdrachtgevers en zelfstandige brandwachten om samenwerking vooraf scherp
-              te krijgen. We maken zichtbaar wat je bespreekt, waar risico&apos;s ontstaan en hoe
+              te krijgen. Het maakt zichtbaar wat wordt besproken, waar risico&apos;s ontstaan en hoe
               verantwoordelijkheden in de praktijk verdeeld zijn.
             </p>
 
@@ -40,7 +40,7 @@ export default function Page() {
                 Voor brandwachten
               </Link>
               <Link href="/waarom-wij-soms-nee-zeggen" className="route-link">
-                Waarom we soms nee zeggen
+                Waarom er soms nee wordt gezegd
               </Link>
             </div>
 
@@ -106,17 +106,17 @@ export default function Page() {
             <div className="panel p-6">
               <h3 className="text-xl font-semibold text-white">Wat ProBrandwacht wel doet</h3>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-200 md:text-base">
-                <li>Uitleggen hoe zelfstandige samenwerking is bedoeld.</li>
+                <li>In kaart brengen hoe zelfstandige samenwerking is bedoeld.</li>
                 <li>Benoemen waar rollen en verantwoordelijkheden vervagen.</li>
                 <li>Signaleren waar rol- en constructierisico&apos;s ontstaan.</li>
-                <li>Marktontwikkelingen uitleggen zonder belang of sturing.</li>
+                <li>Marktontwikkelingen beschrijven zonder belang of sturing.</li>
               </ul>
             </div>
 
             <div className="panel p-6">
               <h3 className="text-xl font-semibold text-white">Afbakening</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-200 md:text-base">
-                ProBrandwacht biedt veiligheidskundige context en praktische handvatten. We maken zichtbaar
+                ProBrandwacht biedt veiligheidskundige context en praktische handvatten. Het maakt zichtbaar
                 hoe rollen, verantwoordelijkheden en kaders zich in de praktijk tot elkaar verhouden, zodat
                 afspraken beter voorbereid kunnen worden.
               </p>
@@ -153,8 +153,8 @@ export default function Page() {
               een eigen rol en verantwoordelijkheid.
             </p>
             <p className="mt-3 text-sm text-slate-400">
-              Backstage ondersteuning kan bestaan, maar staat los van ProBrandwacht; tariefafspraken blijven
-              bij de betrokken partijen.
+              Ondersteuning kan bestaan, maar staat los van ProBrandwacht; tariefafspraken blijven bij de
+              betrokken partijen.
             </p>
           </div>
         </div>

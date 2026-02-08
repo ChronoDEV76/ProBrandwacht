@@ -4,8 +4,57 @@ import path from "path";
 
 const CONFIG_PATH = "scripts/blog/blog-guard.config.json";
 const config = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf8"));
+const TONE_PROFILE_PATH = "scripts/tone/probrandwacht-tone.json";
 
 const findings = [];
+
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToPatternString(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function appendToneForbidden(configObj, tone) {
+  if (!tone) return;
+  const target = configObj.forbiddenLanguage ?? [];
+  const disallowed = tone.disallowed_language ?? {};
+
+  const pushPatterns = (label, phrases) => {
+    if (!Array.isArray(phrases) || phrases.length === 0) return;
+    phrases.forEach((phrase) => {
+      target.push({
+        label,
+        pattern: phraseToPatternString(phrase)
+      });
+    });
+  };
+
+  pushPatterns("TONE_ACTIVIST", disallowed.activist_terms);
+  pushPatterns("TONE_ACCUSATORY", disallowed.accusatory_terms);
+  pushPatterns("TONE_COLLECTIVE", disallowed.collective_identity);
+  pushPatterns("TONE_EMOTIONAL", disallowed.emotional_charge);
+  pushPatterns("TONE_VOICE_AVOID", tone.preferred_voice?.avoid);
+  pushPatterns("TONE_GUARANTEES", tone.guarantees_and_promises?.forbidden);
+  pushPatterns("TONE_CLOSING_AVOID", tone.closing_guidance?.avoid);
+
+  configObj.forbiddenLanguage = target;
+}
+
+appendToneForbidden(config, loadToneProfile());
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {

@@ -21,15 +21,15 @@ export default function OverOnsPage() {
 
             <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
               ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
-              verantwoordelijkheden. We duiden hoe de markt werkt, welke randvoorwaarden ertoe doen en
+              verantwoordelijkheden. Het beschrijft hoe de markt werkt, welke randvoorwaarden ertoe doen en
               waar samenwerking in de praktijk vaak schuurt.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              ProBrandwacht biedt context naast uitvoering, contractering en besluitvorming. We duiden,
-              kaderen en maken zichtbaar waar afspraken en verantwoordelijkheden liggen.
+              ProBrandwacht biedt context naast uitvoering, contractering en besluitvorming. Het beschrijft,
+              benoemt en maakt zichtbaar waar afspraken en verantwoordelijkheden liggen.
             </p>
             <p className="mt-3 text-lg leading-relaxed text-slate-200/90">
-              Ons doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
+              Het doel is helderheid vóór inzet, zodat opdrachtgevers en professionals zelf betere,
               uitlegbare keuzes kunnen maken — 1-op-1 en in de praktijk.
             </p>
           </div>
@@ -39,11 +39,11 @@ export default function OverOnsPage() {
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="panel grid gap-4 p-6 md:grid-cols-2">
           <div>
-            <h2 className="text-xl font-semibold">Wat we wel doen</h2>
+            <h2 className="text-xl font-semibold">Wat ProBrandwacht wel doet</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-200/90">
               <li>Uitleg geven over samenwerking en uitvoerbaarheid</li>
-              <li>Waarschuwen voor vage scopes en onduidelijke beslislijnen</li>
-              <li>Kaders delen: welke vragen je vooraf stelt</li>
+              <li>Signaleren wanneer scopes en beslislijnen te vaag zijn</li>
+              <li>Kaders delen: welke vragen vooraf worden gesteld</li>
               <li>Voorbeelden geven van documenteerbare afspraken</li>
             </ul>
           </div>

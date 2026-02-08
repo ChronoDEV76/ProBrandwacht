@@ -1,6 +1,6 @@
-// lib/vakbondSanityCheck.ts
+// lib/collectiveSanityCheck.ts
 
-export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
+export function runCollectiveSanityCheck(root?: Document | HTMLElement): void {
   if (typeof window === "undefined") {
     // Niet draaien tijdens SSR
     return;
@@ -13,6 +13,9 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     /wij plannen jou in/i,
     /wij plannen/i,
     /wordt ingepland/i,
+    /kom in actie/i,
+    /verzet je/i,
+    /samen moeten we/i,
     /prijssturing/i,
     /exclusiviteit/i,
     /exclusief voor ons/i,
@@ -30,23 +33,38 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     /\bonderhandelen\b/i,
     /\bzetten druk\b/i,
     /\bbelangenbehartiging\b/i,
+    /\bschijnveiligheid\b/i,
+    /\bmisbruik\b/i,
+    /\buitbuiting\b/i,
+    /\boneerlijk\b/i,
+    /\bschuld\b/i,
+    /\bfalen\b/i,
+    /\bmacht\b/i,
+    /\bmanipulatie\b/i,
+    /\bstrijd\b/i,
+    /\boorlog\b/i,
+    /\bboeman\b/i,
+    /\btegenpartij\b/i,
   ];
 
   const authorityIndicators: RegExp[] = [
-    /eerlijke/i,
-    /zelfstandigheid/i,
-    /dba-bewust/i,
-    /dbabewust/i,
-    /professioneel netwerk/i,
-    /kennisinitiatief/i,
-    /duidingslaag/i,
-    /marktkader/i,
+    /context/i,
+    /duiding/i,
+    /afbakening/i,
+    /rolverdeling/i,
+    /verantwoordelijkheid/i,
+    /bevoegdheden/i,
+    /systeemwerking/i,
+    /spanningsveld/i,
+    /risicoverdeling/i,
+    /marktstructuur/i,
+    /juridische positionering/i,
+    /veiligheidskundig kader/i,
+    /observatie/i,
+    /signalering/i,
+    /vastlegging/i,
     /referentiepunt/i,
-    /publiek informatie-initiatief/i,
-    /vakmanschap/i,
-    /autonomie/i,
     /onafhankelijk/i,
-    /heldere afspraken/i,
   ];
 
   const target: Document | HTMLElement = root ?? document;
@@ -55,7 +73,7 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
     (target as HTMLElement).innerText ??
     "";
 
-  console.group("🧠 ProBrandwacht Vakbond Sanity Script");
+  console.group("🧠 ProBrandwacht Sanity Script");
 
   console.log("🔎 Controle op potentieel risicovolle termen:");
   let foundBad = false;
@@ -79,9 +97,13 @@ export function runVakbondSanityCheck(root?: Document | HTMLElement): void {
   }
   if (!foundGood) {
     console.warn(
-      "⚠️ Geen autoriteits-termen gevonden. Overweeg woorden als 'eerlijke', 'zelfstandigheid', 'autonomie', 'kennisinitiatief', 'duidingslaag', 'onafhankelijk'."
+      "⚠️ Geen kern-termen gevonden. Overweeg woorden als 'context', 'duiding', 'afbakening', 'rolverdeling', 'systeemwerking', 'veiligheidskundig kader', 'onafhankelijk'."
     );
   }
 
   console.groupEnd();
+
+  if (foundBad) {
+    throw new Error("Sanity Check: verboden termen gevonden. Aanpassen voor launch.");
+  }
 }

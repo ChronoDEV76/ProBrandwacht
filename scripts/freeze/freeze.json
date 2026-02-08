@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "project": "ProBrandwacht",
+  "mode": "freeze",
+  "intent": "Lock frontstage positioning and tone. Allow only minimal maintenance edits (typos, broken links, factual corrections).",
+  "freezeScope": {
+    "freezePaths": [
+      "app/(site)",
+      "content/blog",
+      "content/faq.json",
+      "components",
+      "lib/seo"
+    ],
+    "excludePaths": [
+      "scripts",
+      "app/api",
+      "app/(backstage)",
+      "server",
+      "infra",
+      "tests",
+      "node_modules",
+      ".next",
+      "dist"
+    ],
+    "extensions": [".mdx", ".tsx", ".ts", ".json"]
+  },
+  "allowedMaintenance": {
+    "allowedChangeTypes": [
+      "typo_fix",
+      "broken_link_fix",
+      "spelling_grammar",
+      "fact_update_with_source",
+      "accessibility_copy_clarity"
+    ],
+    "disallowedChangeTypes": [
+      "new_funnel_or_lead_capture",
+      "positioning_shift",
+      "pricing_or_fee_language",
+      "matching_or_supply_promises",
+      "bureau_attack_or_naming",
+      "compliance_solution_sales"
+    ]
+  },
+  "toneRules": {
+    "voice": {
+      "primary": "calm_neutral_explanatory",
+      "avoid": ["belerend", "activistisch", "wij-tegen-zij", "vakbond-achtig", "salesy"]
+    },
+    "perspective": {
+      "preferred": ["derde_persoon", "neutraal", "contextueel"],
+      "allowed": ["je/jij"],
+      "avoid": ["wij gaan", "wij regelen", "wij leveren", "wij fixen", "sluit je aan", "achterban"]
+    }
+  },
+  "hardBlocks": {
+    "forbiddenPhrases": [
+      "wij leveren",
+      "wij regelen",
+      "wij garanderen",
+      "wij zorgen dat",
+      "sluit je aan",
+      "achterban",
+      "vakbond",
+      "boycot",
+      "oplichters",
+      "maffia",
+      "corrup",
+      "fraude",
+      "illegaal",
+      "schijnveiligheid",
+      "fee",
+      "platformfee",
+      "marge",
+      "percentage",
+      "tariefcalculator",
+      "wij matchen",
+      "matching-engine",
+      "boek direct",
+      "direct boeken",
+      "spoed funnel"
+    ],
+    "forbiddenEntityTargeting": {
+      "blockIfContains": ["de groot", "eurosafe"],
+      "note": "No naming/shaming. Use generic market wording (\"sommige marktmodellen\", \"sommige intermediairs\")."
+    }
+  },
+  "requiredBlocksForBlogs": {
+    "requiredHeadings": [
+      "Situatieschets",
+      "Veiligheidskundig principe",
+      "Waar het wringt",
+      "Wat dit betekent voor veiligheid",
+      "Afbakening",
+      "Gerelateerd"
+    ],
+    "requiredFrontmatterKeys": ["title", "slug", "date", "canonical", "pillar"],
+    "requiredDisclaimerMarker": "PB_FREEZE_DISCLAIMER_V1"
+  },
+  "freezeDisclaimer": {
+    "id": "PB_FREEZE_DISCLAIMER_V1",
+    "text": "ProBrandwacht biedt duiding en context op basis van openbare kaders en praktijkervaring. Het is geen bemiddelaar, geen contractpartij en geen toezichthouder. ProBrandwacht geeft geen operationeel advies, geen garanties en stuurt niet op inzet, tarief of uitkomst. Verantwoordelijkheden en bevoegdheden blijven bij de betrokken partijen en volgen uit context, vergunningseisen, risicoanalyse en gemaakte afspraken."
+  },
+  "enforcement": {
+    "severity": {
+      "hardBlock": "HIGH",
+      "requiredMissing": "HIGH",
+      "toneViolation": "MEDIUM"
+    },
+    "exitCodeOnHigh": true,
+    "outputStyle": "copy-guard"
+  }
+}

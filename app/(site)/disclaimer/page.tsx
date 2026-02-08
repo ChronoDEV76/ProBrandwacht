@@ -23,7 +23,7 @@ export default function DisclaimerPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
               ProBrandwacht is een onafhankelijk kennisplatform over brandwacht-inzet, rollen en
-              verantwoordelijkheden. We bieden context en praktische kaders zodat samenwerking beter
+              verantwoordelijkheden. Het biedt context en praktische kaders zodat samenwerking beter
               voorbereid is.
             </p>
 
@@ -44,12 +44,27 @@ export default function DisclaimerPage() {
           <h2 className="text-xl font-semibold md:text-2xl">Definitieve disclaimer</h2>
           <DisclaimerContent className="mt-4" />
 
+          <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-slate-200">
+            <p className="font-semibold text-slate-100">Vaste rolafbakening (woord voor woord)</p>
+            <p className="mt-2 text-xs text-slate-400">
+              Deze opsomming is definitief en wordt niet herschreven.
+            </p>
+            <ul className="mt-3 list-disc space-y-1 pl-5">
+              <li>ProBrandwacht is geen bureau</li>
+              <li>ProBrandwacht is geen werkgever</li>
+              <li>ProBrandwacht is geen contractpartij</li>
+              <li>ProBrandwacht stuurt niet op inzet, tarief of uitkomst</li>
+              <li>ProBrandwacht biedt geen garanties</li>
+              <li>ProBrandwacht is geen compliance-instrument</li>
+            </ul>
+          </div>
+
           <p className="mt-4 text-xs text-slate-400">
             Meer context? Bekijk de{' '}
             <Link href="/faq" className="underline underline-offset-4">
               FAQ
             </Link>{' '}
-            over onze werkwijze.
+            over de werkwijze.
           </p>
         </div>
       </section>

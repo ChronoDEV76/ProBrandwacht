@@ -28,6 +28,95 @@ if (!fs.existsSync(CONFIG_PATH)) {
 
 const cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf8"));
 
+const TONE_PROFILE_PATH = path.join(ROOT, "scripts", "tone", "probrandwacht-tone.json");
+
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToPatternString(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function appendToneRules(cfgObj, tone) {
+  if (!tone) return;
+  const disallowed = tone.disallowed_language ?? {};
+  const avoidVoice = tone.preferred_voice?.avoid ?? [];
+  const forbiddenPromises = tone.guarantees_and_promises?.forbidden ?? [];
+  const closingAvoid = tone.closing_guidance?.avoid ?? [];
+
+  const toPatterns = (arr) =>
+    (Array.isArray(arr) ? arr : []).map((p) => phraseToPatternString(p));
+
+  const pushRule = (id, level, message, phrases) => {
+    if (!phrases?.length) return;
+    cfgObj.patternRules = cfgObj.patternRules ?? [];
+    cfgObj.patternRules.push({
+      id,
+      level,
+      message,
+      patterns: phrases
+    });
+  };
+
+  pushRule(
+    "TONE_ACTIVIST",
+    "HIGH",
+    "Activistische taal ondermijnt neutraliteit.",
+    toPatterns(disallowed.activist_terms)
+  );
+  pushRule(
+    "TONE_ACCUSATORY",
+    "HIGH",
+    "Aanvallende/accusatoire taal ondermijnt het kader.",
+    toPatterns(disallowed.accusatory_terms)
+  );
+  pushRule(
+    "TONE_COLLECTIVE",
+    "HIGH",
+    "Collectieve framing is niet toegestaan.",
+    toPatterns(disallowed.collective_identity)
+  );
+  pushRule(
+    "TONE_EMOTIONAL",
+    "HIGH",
+    "Emotioneel geladen taal is niet toegestaan.",
+    toPatterns(disallowed.emotional_charge)
+  );
+  pushRule(
+    "TONE_VOICE_AVOID",
+    "MEDIUM",
+    "Belerende of collectieve formulering vermijden.",
+    toPatterns(avoidVoice)
+  );
+  pushRule(
+    "TONE_GUARANTEES",
+    "HIGH",
+    "Garantie-/zekerheidstaal is niet toegestaan.",
+    toPatterns(forbiddenPromises)
+  );
+  pushRule(
+    "TONE_CLOSING_AVOID",
+    "MEDIUM",
+    "Activerende afsluiting vermijden.",
+    toPatterns(closingAvoid)
+  );
+}
+
+appendToneRules(cfg, loadToneProfile());
+
 const INCLUDE_DIRS = cfg.includeDirs ?? ["app/(site)", "components", "lib", "content"];
 const FRONTSTAGE_ONLY_DIRS = cfg.frontstageOnlyDirs ?? ["app/(site)"];
 const EXTENSIONS = cfg.extensions ?? [".tsx", ".mdx", ".md", ".json"];

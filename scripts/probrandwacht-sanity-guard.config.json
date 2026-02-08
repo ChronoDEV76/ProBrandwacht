@@ -1,4 +1,5 @@
 {
+  "toneProfile": "scripts/tone/probrandwacht-tone.json",
   "includeDirs": ["app/(site)", "components", "lib", "content"],
   "extensions": [".tsx", ".mdx", ".md", ".json"],
   "maxFileSizeBytes": 2097152,

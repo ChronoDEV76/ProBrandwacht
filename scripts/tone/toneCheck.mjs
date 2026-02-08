@@ -31,6 +31,7 @@ const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoe
   .split(",")
   .map((p) => p.trim());
 const JSON_OUT = String(argv.json ?? "0") === "1";
+const FORCE_LOCAL = String(argv.local ?? "0") === "1";
 
 // Tone-of-Voice regels
 const HARD_WORDS = [
@@ -84,6 +85,17 @@ function stripHtml(html) {
   return html
     .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function stripMarkup(text) {
+  return text
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]+`/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, " ")
+    .replace(/\[[^\]]+\]\([^)]+\)/g, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -147,12 +159,110 @@ async function scanUrl(url) {
   };
 }
 
+function walk(dir, ignore = new Set(["node_modules", ".next", "dist", "build"])) {
+  if (!fs.existsSync(dir)) return [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const out = [];
+  for (const e of entries) {
+    if (ignore.has(e.name)) continue;
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...walk(full, ignore));
+    else out.push(full);
+  }
+  return out;
+}
+
+function scanText(text, sourceLabel, { checkDuplicates = true } = {}) {
+  const normalized = stripMarkup(text).toLowerCase();
+  const issues = [];
+  const positives = new Set();
+
+  HARD_WORDS.forEach((word) => {
+    const pattern = new RegExp(`\\b${word}\\b`, "i");
+    if (pattern.test(normalized)) {
+      issues.push({
+        source: sourceLabel,
+        found: word,
+        suggestion: SUGGESTIONS[word] || "neutraler formuleren",
+      });
+    }
+  });
+
+  if (/\bzelfstandig brandwacht\b/.test(normalized)) {
+    issues.push({
+      source: sourceLabel,
+      found: "zelfstandig brandwacht",
+      suggestion: SUGGESTIONS["zelfstandig brandwacht"],
+    });
+  }
+
+  if (checkDuplicates) {
+    const dupes = new Set();
+    let match;
+    while ((match = DUPLICATE_PATTERN.exec(normalized)) !== null) {
+      dupes.add(match[0]);
+    }
+    dupes.forEach((d) =>
+      issues.push({
+        source: sourceLabel,
+        found: `herhaling: ${d}`,
+        suggestion: "verwijder dubbele woorden",
+      })
+    );
+  }
+
+  POSITIVE_KEYWORDS.forEach((kw) => {
+    if (normalized.includes(kw)) positives.add(kw);
+  });
+
+  return {
+    source: sourceLabel,
+    ok: issues.length === 0,
+    issues,
+    positives: [...positives],
+  };
+}
+
+function runLocalFallback() {
+  const roots = ["app/(site)", "content"];
+  const files = roots.flatMap((r) => walk(path.join(process.cwd(), r)));
+  const targetExt = new Set([".mdx", ".tsx", ".ts", ".json"]);
+  const results = [];
+
+  for (const file of files) {
+    if (!targetExt.has(path.extname(file))) continue;
+    const content = fs.readFileSync(file, "utf8");
+    results.push(scanText(content, path.relative(process.cwd(), file), { checkDuplicates: false }));
+  }
+
+  const outDir = path.join(process.cwd(), "reports");
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
+  const outFile = path.join(outDir, "tone-local-report.json");
+  fs.writeFileSync(outFile, JSON.stringify({ scannedAt: new Date().toISOString(), results }, null, 2));
+  console.log(`📝 JSON rapport opgeslagen: ${outFile}`);
+
+  const hasIssues = results.some((r) => !r.ok);
+  if (hasIssues) {
+    console.log("❌ Tone-of-Voice issues gevonden in lokale scan.");
+    process.exit(1);
+  } else {
+    console.log("✅ Lokale Tone-of-Voice scan: geen issues gevonden.");
+  }
+}
+
 async function main() {
   console.log(`🔎 Tone-of-Voice scan op live site: ${BASE}`);
   console.log(`🌐 Pagina's: ${PATHS.join(", ")}`);
   console.log("");
 
+  if (FORCE_LOCAL) {
+    console.log("⚠️ Live scan overgeslagen (force local).");
+    runLocalFallback();
+    return;
+  }
+
   const results = [];
+  let fetchErrors = 0;
 
   for (const p of PATHS) {
     const full = `${BASE}${p}`;
@@ -175,6 +285,7 @@ async function main() {
       console.log(`📄 ${full}`);
       console.log(`   💥 Fout: ${err.message}`);
       console.log("");
+      fetchErrors += 1;
     }
   }
 
@@ -191,6 +302,12 @@ async function main() {
   const outFile = path.join(outDir, "tone-live-report.json");
   fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
   console.log(`📝 JSON rapport opgeslagen: ${outFile}`);
+
+  if (fetchErrors > 0) {
+    console.log("⚠️ Live scan onvolledig (fetch errors). Val terug op lokale scan.");
+    runLocalFallback();
+    return;
+  }
 
   // Exit code voor CI
   if (results.some((r) => !r.ok)) {

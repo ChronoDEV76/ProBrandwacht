@@ -26,6 +26,8 @@ const EXTENSIONS = [".tsx", ".mdx", ".md", ".json"];
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 const BLOG_DIR = path.join(ROOT, "content", "blog");
 
+const TONE_PROFILE_PATH = path.join(ROOT, "scripts", "tone", "probrandwacht-tone.json");
+
 /* =======================
    RULESETS
 ======================= */
@@ -83,6 +85,104 @@ const RULES = [
     ]
   }
 ];
+
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function phraseToRegex(phrase) {
+  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
+  const startsWord = /^[A-Za-z0-9]/.test(phrase);
+  const endsWord = /[A-Za-z0-9]$/.test(phrase);
+  const wrapped = startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+  return new RegExp(wrapped, "i");
+}
+
+function loadToneProfile() {
+  if (!fs.existsSync(TONE_PROFILE_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(TONE_PROFILE_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function buildToneRules(tone) {
+  if (!tone) return [];
+  const rules = [];
+  const disallowed = tone.disallowed_language ?? {};
+
+  if (Array.isArray(disallowed.activist_terms)) {
+    rules.push({
+      id: "TONE_ACTIVIST",
+      level: "HIGH",
+      message: "Activistische taal ondermijnt neutraliteit.",
+      patterns: disallowed.activist_terms.map(phraseToRegex)
+    });
+  }
+
+  if (Array.isArray(disallowed.accusatory_terms)) {
+    rules.push({
+      id: "TONE_ACCUSATORY",
+      level: "HIGH",
+      message: "Aanvallende/accusatoire taal ondermijnt het kader.",
+      patterns: disallowed.accusatory_terms.map(phraseToRegex)
+    });
+  }
+
+  if (Array.isArray(disallowed.collective_identity)) {
+    rules.push({
+      id: "TONE_COLLECTIVE",
+      level: "HIGH",
+      message: "Collectieve framing is niet toegestaan.",
+      patterns: disallowed.collective_identity.map(phraseToRegex)
+    });
+  }
+
+  if (Array.isArray(disallowed.emotional_charge)) {
+    rules.push({
+      id: "TONE_EMOTIONAL",
+      level: "HIGH",
+      message: "Emotioneel geladen taal is niet toegestaan.",
+      patterns: disallowed.emotional_charge.map(phraseToRegex)
+    });
+  }
+
+  const avoidVoice = tone.preferred_voice?.avoid;
+  if (Array.isArray(avoidVoice)) {
+    rules.push({
+      id: "TONE_VOICE_AVOID",
+      level: "MEDIUM",
+      message: "Belerende of collectieve formulering vermijden.",
+      patterns: avoidVoice.map(phraseToRegex)
+    });
+  }
+
+  const forbidden = tone.guarantees_and_promises?.forbidden;
+  if (Array.isArray(forbidden)) {
+    rules.push({
+      id: "TONE_GUARANTEES",
+      level: "HIGH",
+      message: "Garantie-/zekerheidstaal is niet toegestaan.",
+      patterns: forbidden.map(phraseToRegex)
+    });
+  }
+
+  const closingAvoid = tone.closing_guidance?.avoid;
+  if (Array.isArray(closingAvoid)) {
+    rules.push({
+      id: "TONE_CLOSING_AVOID",
+      level: "MEDIUM",
+      message: "Activerende afsluiting vermijden.",
+      patterns: closingAvoid.map(phraseToRegex)
+    });
+  }
+
+  return rules.filter((r) => r.patterns?.length);
+}
+
+const toneProfile = loadToneProfile();
+RULES.push(...buildToneRules(toneProfile));
 
 /* =======================
    FILE WALKER

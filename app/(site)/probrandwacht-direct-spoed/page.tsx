@@ -16,7 +16,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             </span>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Dit initiatief legt uit hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
+              Dit initiatief beschrijft hoe zelfstandige samenwerking werkt, met heldere rolafbakening en
               directe lijnen tussen opdrachtgever en professional.
             </p>
 
@@ -30,9 +30,9 @@ export default function ProBrandwachtDirectSpoedPage() {
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-200 md:text-base">
-              Als je vandaag nog inzet nodig hebt, wil je een ding voorkomen: ruis. Deze route focust op een
+              Als er vandaag nog inzet nodig is, is het zaak ruis te voorkomen. Deze route focust op een
               snelle aanvraag met minimale, noodzakelijke parameters zodat duidelijk is of het past. Pas als
-              rol, risico en beslislijnen helder zijn, ga je verder met afspraken.
+              rol, risico en beslislijnen helder zijn, volgen de afspraken.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -45,7 +45,7 @@ export default function ProBrandwachtDirectSpoedPage() {
             </div>
 
             <p className="text-xs text-slate-400">
-              Praktisch: hoe concreter je locatie/rol/risico/duur, hoe sneller je een passende reactie krijgt.
+              Praktisch: hoe concreter locatie/rol/risico/duur, hoe sneller een passende reactie volgt.
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function ProBrandwachtDirectSpoedPage() {
           </div>
 
           <div className="panel p-6">
-            <h2 className="text-xl font-semibold md:text-2xl">Afspraken die je niet uitstelt</h2>
+            <h2 className="text-xl font-semibold md:text-2xl">Afspraken die niet worden uitgesteld</h2>
             <ul className="mt-4 space-y-2 text-sm text-slate-200">
               <li>- Inzetvoorwaarden (incl. reistijd/wachttijd)</li>
               <li>- Scope (wat valt binnen de inzet) en beslislijnen</li>

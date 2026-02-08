@@ -4,7 +4,7 @@ import { baseMeta } from '@/app/(site)/shared-metadata'
 export const metadata: Metadata = {
   ...baseMeta,
   title: 'Dashboard | ProBrandwacht',
-  description: 'Beheer je profiel en opdrachten met helder inzicht via ProBrandwacht.',
+  description: 'Beheeromgeving voor aanvragen, afstemming en opvolging.',
   alternates: {
     canonical: '/dashboard',
     languages: { 'nl-NL': '/dashboard' },

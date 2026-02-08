@@ -19,7 +19,7 @@ export default function ClientFallback() {
     return (
       <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-amber-900">
         Geen aanvraag-ID gevonden in de URL.  
-        Heb je zojuist ingestuurd? Ververs de pagina of zorg dat je wordt doorgestuurd naar  
+        Is er zojuist ingestuurd? Ververs de pagina of zorg dat er wordt doorgestuurd naar  
         <code>?id=&lt;aanvraag-id&gt;</code>.
       </div>
     );
@@ -29,7 +29,7 @@ export default function ClientFallback() {
     <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
       <p className="text-sm text-emerald-900">
         Laatst geregistreerde aanvraag gevonden.  
-        Je kunt nu verder afstemmen in het inzet-dashboard.
+        Verdere afstemming is mogelijk in het inzet-dashboard.
         <br />
         <span className="opacity-70">Aanvraag-ID: {id}</span>
       </p>
@@ -44,4 +44,3 @@ export default function ClientFallback() {
     </div>
   );
 }
-

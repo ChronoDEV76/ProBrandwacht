@@ -72,7 +72,7 @@ export default function PbDirectForm() {
           </p>
           <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">Start een spoedaanvraag</h2>
           <p className="text-base text-slate-600">
-            We bevestigen je aanvraag en brengen je in contact voor 1-op-1 afstemming.
+            De aanvraag wordt bevestigd en er volgt contact voor 1-op-1 afstemming.
           </p>
         </div>
         <div className="flex flex-wrap gap-2 text-[11px]">
@@ -192,7 +192,7 @@ export default function PbDirectForm() {
       <label className="flex items-start gap-3 text-sm text-slate-700 md:text-base">
         <input id="terms" name="terms" type="checkbox" required className="mt-1" />
         <span>
-          Ik ga akkoord met de{' '}
+          Akkoord met de{' '}
           <a href="/voorwaarden" className="underline underline-offset-4">
             algemene voorwaarden
           </a>{' '}
@@ -206,14 +206,14 @@ export default function PbDirectForm() {
 
       <label className="flex items-start gap-3 text-sm text-slate-700 md:text-base">
         <input id="consent" name="consent" type="checkbox" defaultChecked required className="mt-1" />
-        <span>Ik ga akkoord met het verwerken van mijn gegevens voor deze spoedaanvraag.</span>
+        <span>Akkoord met het verwerken van gegevens voor deze spoedaanvraag.</span>
       </label>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-slate-500">
-          We brengen je in contact met beschikbare zelfstandige brandwachten voor 1-op-1 afstemming.
+          Er volgt contact met beschikbare zelfstandige brandwachten voor 1-op-1 afstemming.
         </p>
         <button
           type="submit"

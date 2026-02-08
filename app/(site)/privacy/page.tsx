@@ -44,15 +44,15 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold md:text-2xl">Principes</h2>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>– Dataminimalisatie: alleen wat nodig is voor verkennend contact en afspraken.</li>
-            <li>– Transparantie: je ziet wat er wordt opgeslagen en waarom.</li>
-            <li>– Controle: je beheert je profiel en zichtbaarheid.</li>
+            <li>– Transparantie: zichtbaar is wat er wordt opgeslagen en waarom.</li>
+            <li>– Controle: beheer van profiel en zichtbaarheid blijft bij de gebruiker.</li>
             <li>– Delen alleen wanneer nodig voor verkennend contact en samenwerking.</li>
             <li>– Geen verkoop van persoonsgegevens.</li>
           </ul>
 
           <p className="mt-6 text-xs text-slate-500">
-            In de praktijk werken we met dataminimalisatie: we vragen alleen gegevens die nodig zijn voor verkennend
-            contact, communicatie en wettelijke verplichtingen. De exacte verwerking kan per situatie contextafhankelijk zijn.
+            In de praktijk geldt dataminimalisatie: alleen gegevens die nodig zijn voor verkennend contact,
+            communicatie en wettelijke verplichtingen. De exacte verwerking kan per situatie contextafhankelijk zijn.
           </p>
 
         </div>
@@ -74,7 +74,9 @@ export default function PrivacyPage() {
 
         <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Doeleinden van gegevensverwerking</h2>
-          <p className="mt-3 text-sm text-slate-200">Wij verwerken persoonsgegevens voor de volgende doeleinden:</p>
+          <p className="mt-3 text-sm text-slate-200">
+            ProBrandwacht verwerkt persoonsgegevens voor de volgende doeleinden:
+          </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>
               <strong>Verkennend contact:</strong> om intakeformulieren te verwerken en vragen te beantwoorden.
@@ -92,7 +94,7 @@ export default function PrivacyPage() {
         <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Rechtsgrond voor verwerking</h2>
           <p className="mt-3 text-sm text-slate-200">
-            Wij verwerken persoonsgegevens op basis van de volgende wettelijke grondslagen:
+            ProBrandwacht verwerkt persoonsgegevens op basis van de volgende wettelijke grondslagen:
           </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li><strong>Toestemming:</strong> voor intakeformulieren en contact.</li>
@@ -103,7 +105,9 @@ export default function PrivacyPage() {
 
         <div className="panel mt-6 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Categorieën persoonsgegevens</h2>
-          <p className="mt-3 text-sm text-slate-200">Wij kunnen de volgende gegevens verwerken:</p>
+          <p className="mt-3 text-sm text-slate-200">
+            ProBrandwacht kan de volgende gegevens verwerken:
+          </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>Naam, e-mail, telefoonnummer.</li>
             <li>Beroepsgegevens (rol, kwalificaties, contextinformatie).</li>
@@ -113,7 +117,9 @@ export default function PrivacyPage() {
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Verwerkers</h2>
-          <p className="mt-3 text-sm text-slate-200">Om onze dienstverlening te leveren, kunnen wij verwerkers inschakelen zoals:</p>
+          <p className="mt-3 text-sm text-slate-200">
+            Voor dienstverlening kunnen verwerkers worden ingeschakeld, zoals:
+          </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
             <li>
               <strong>Serverhosting en website-infrastructuur</strong> (EU).
@@ -130,7 +136,7 @@ export default function PrivacyPage() {
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Bewaartermijnen</h2>
           <p className="mt-3 text-sm text-slate-200">
-            Wij bewaren persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld,
+            Persoonsgegevens worden niet langer bewaard dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld,
             tenzij wettelijke verplichtingen een langere bewaartermijn voorschrijven. Intakegegevens en uploads worden
             verwijderd zodra toetsing en eventuele samenwerking zijn afgerond, tenzij wettelijke verplichtingen anders
             vereisen.
@@ -138,10 +144,12 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-          <h2 className="text-xl font-semibold md:text-2xl">Uw rechten</h2>
-          <p className="mt-3 text-sm text-slate-200">U heeft volgens de AVG de volgende rechten:</p>
+          <h2 className="text-xl font-semibold md:text-2xl">Rechten van betrokkenen</h2>
+          <p className="mt-3 text-sm text-slate-200">
+            Betrokkenen hebben volgens de AVG de volgende rechten:
+          </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li>Inzage in uw gegevens.</li>
+            <li>Inzage in gegevens.</li>
             <li>Correctie / verbetering.</li>
             <li>Dataportabiliteit.</li>
             <li>Verwijdering (recht om vergeten te worden).</li>
@@ -149,15 +157,15 @@ export default function PrivacyPage() {
             <li>Bezwaar tegen verwerking.</li>
           </ul>
           <p className="mt-3 text-sm text-slate-200">
-            U kunt uw rechten uitoefenen door te mailen naar: <strong>privacy@probrandwacht.nl</strong>
+            Uitoefenen van rechten kan door te mailen naar: <strong>privacy@probrandwacht.nl</strong>
           </p>
         </div>
 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Klachten en toezicht</h2>
           <p className="mt-3 text-sm text-slate-200">
-            Indien u een klacht heeft over de verwerking van uw persoonsgegevens, kunt u contact opnemen via{' '}
-            <strong>privacy@probrandwacht.nl</strong>. U heeft daarnaast het recht een klacht in te dienen bij
+            Bij klachten over de verwerking van persoonsgegevens kan contact worden opgenomen via{' '}
+            <strong>privacy@probrandwacht.nl</strong>. Daarnaast bestaat het recht een klacht in te dienen bij
             de Autoriteit Persoonsgegevens.
           </p>
         </div>
