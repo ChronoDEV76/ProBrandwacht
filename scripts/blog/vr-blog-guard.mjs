@@ -1,573 +1,484 @@
 #!/usr/bin/env node
 /**
- * scripts/blog/vr-blog-guard.mjs
+ * VR Blog Guard (live crawl)
+ * - Crawls /blog
+ * - Fetches each post
+ * - Checks headings + tone rules + VR/Bbl vocabulary score
  *
- * Run:
- *   node scripts/blog/vr-blog-guard.mjs --root . --config scripts/blog/vr-blog-guard.config.json
+ * Usage:
+ *   node scripts/blog/vr-blog-guard.mjs
+ *   node scripts/blog/vr-blog-guard.mjs --config scripts/blog/vr-blog-guard.config.json
+ *   node scripts/blog/vr-blog-guard.mjs --base https://www.probrandwacht.nl --path /blog --max 40
  */
 
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
-const ANSI = {
-  reset: "\x1b[0m",
-  dim: "\x1b[2m",
-  red: "\x1b[31m",
-  yellow: "\x1b[33m",
-  green: "\x1b[32m",
-  cyan: "\x1b[36m"
-};
+const DEFAULT_CONFIG = "scripts/blog/vr-blog-guard.config.json";
+const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-function argValue(flag, def = null) {
-  const idx = process.argv.indexOf(flag);
-  if (idx === -1) return def;
-  return process.argv[idx + 1] ?? def;
+function argValue(flag) {
+  const i = process.argv.indexOf(flag);
+  return i >= 0 ? process.argv[i + 1] : null;
+}
+
+function hasFlag(flag) {
+  return process.argv.includes(flag);
 }
 
 function readJson(p) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
-function escapeRegex(s) {
-  return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function nowIso() {
+  return new Date().toISOString();
 }
 
-function phraseToPatternString(phrase) {
-  const escaped = escapeRegex(phrase).replace(/\s+/g, "\\s+");
-  const startsWord = /^[A-Za-z0-9]/.test(phrase);
-  const endsWord = /[A-Za-z0-9]$/.test(phrase);
-  return startsWord && endsWord ? `\\b${escaped}\\b` : escaped;
+function normalizeWhitespace(s) {
+  return s.replace(/\s+/g, " ").trim();
 }
 
-function isDir(p) {
+function stripMarkdown(text) {
+  return normalizeWhitespace(
+    text
+      .replace(/```[\s\S]*?```/g, " ")
+      .replace(/`[^`]+`/g, " ")
+      .replace(/!\[[^\]]*\]\([^)]+\)/g, " ")
+      .replace(/\[[^\]]+\]\([^)]+\)/g, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/[#>*_~`]/g, " ")
+  );
+}
+
+function stripHtml(html) {
+  // crude but effective: remove scripts/styles, then tags, decode common entities
+  const noScript = html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ");
+  const text = noScript.replace(/<[^>]+>/g, " ");
+  return decodeEntities(normalizeWhitespace(text));
+}
+
+function decodeEntities(s) {
+  // Minimal decoding (enough for context printing)
+  return s
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function safeUrlJoin(base, p) {
+  if (!p) return base;
+  if (p.startsWith("http://") || p.startsWith("https://")) return p;
+  const b = base.endsWith("/") ? base.slice(0, -1) : base;
+  const pp = p.startsWith("/") ? p : `/${p}`;
+  return `${b}${pp}`;
+}
+
+async function fetchText(url, cfg) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), cfg.timeoutMs ?? 15000);
   try {
-    return fs.statSync(p).isDirectory();
-  } catch {
-    return false;
+    const res = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      headers: { "user-agent": cfg.userAgent ?? "VR Blog Guard/1.0" },
+      signal: ctrl.signal
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.text();
+  } finally {
+    clearTimeout(t);
   }
 }
 
-function isFile(p) {
-  try {
-    return fs.statSync(p).isFile();
-  } catch {
-    return false;
+function extractPostLinksFromBlogIndex(html, cfg) {
+  // Parse all href="/blog/slug" occurrences; de-dupe.
+  const links = new Set();
+  const re = /href\s*=\s*"([^"]+)"/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const href = m[1];
+    if (!href) continue;
+    if (!cfg.includeUrlPrefixes.some((p) => href.startsWith(p))) continue;
+    if (cfg.excludeUrlPatterns.some((pat) => new RegExp(pat).test(href))) continue;
+    links.add(href.split("#")[0]);
   }
+  return Array.from(links);
 }
 
-function rel(root, file) {
-  return path.relative(root, file).replaceAll("\\", "/");
-}
-
-function clampSnippet(s, max = 140) {
-  const oneLine = String(s).replace(/\s+/g, " ").trim();
-  if (oneLine.length <= max) return oneLine;
-  return oneLine.slice(0, max - 1) + "…";
-}
-
-function escapeRegex(s) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function findHeadingLines(body) {
-  // returns array: { level: 1..6, text, idx }
-  const lines = body.split("\n");
+function extractHeadings(html) {
+  // grab H1/H2/H3 text content
   const headings = [];
-  for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/^(#{1,6})\s+(.*)\s*$/);
-    if (m) headings.push({ level: m[1].length, text: m[2].trim(), idx: i + 1 });
+  const re = /<(h1|h2|h3)[^>]*>([\s\S]*?)<\/\1>/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const raw = stripHtml(m[2]);
+    if (raw) headings.push(raw);
   }
   return headings;
 }
 
-function parseFrontmatter(raw) {
-  // minimal YAML-ish parser for common cases
-  // returns { frontmatter: {}, body: "" }
-  const fm = {};
-  const m = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
-  if (!m) return { frontmatter: null, body: raw };
-
-  const fmText = m[1];
-  const body = m[2];
-
-  // naive: handle key: 'value' / "value" / value, plus arrays and tags list
-  const lines = fmText.split("\n");
-  let currentKey = null;
+function extractHeadingsFromMdx(content) {
+  const lines = content.split(/\r?\n/);
+  const headings = [];
   for (const line of lines) {
-    if (!line.trim()) continue;
+    const m = line.match(/^#{1,3}\s+(.+?)\s*$/);
+    if (m) headings.push(m[1].trim());
+  }
+  return headings;
+}
 
-    // list item (yaml "- foo")
-    const li = line.match(/^\s*-\s+(.*)\s*$/);
-    if (li && currentKey) {
-      if (!Array.isArray(fm[currentKey])) fm[currentKey] = [];
-      fm[currentKey].push(li[1].trim().replace(/^['"]|['"]$/g, ""));
-      continue;
+function findMatches(text, patterns, contextChars) {
+  const findings = [];
+  for (const pat of patterns) {
+    const re = new RegExp(pat, "gi");
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      const idx = m.index;
+      const match = m[0];
+      const start = Math.max(0, idx - contextChars);
+      const end = Math.min(text.length, idx + match.length + contextChars);
+      const ctx = text.slice(start, end);
+      findings.push({ match, context: ctx });
+      // prevent infinite loops on zero-length
+      if (re.lastIndex === idx) re.lastIndex++;
+      // only show first few per pattern to keep output readable
+      if (findings.length >= 6) break;
     }
+  }
+  return findings;
+}
 
+function anyRequiredHeadingPresent(headings, requiredSets) {
+  const hay = headings.map((h) => h.toLowerCase());
+  const missing = [];
+
+  for (const set of requiredSets) {
+    const ok = set.some((needle) =>
+      hay.some((h) => h.includes(String(needle).toLowerCase()))
+    );
+    if (!ok) missing.push(set);
+  }
+  return { ok: missing.length === 0, missing };
+}
+
+function vrToneScore(text, toneCfg) {
+  // Score idea:
+  // - Start 100
+  // - subtract for softBan hits
+  // - add small points if whitelist terms appear (cap)
+  let score = 100;
+
+  const lower = text.toLowerCase();
+
+  let softHits = 0;
+  for (const pat of toneCfg.softBan ?? []) {
+    const re = new RegExp(pat, "gi");
+    if (re.test(lower)) softHits++;
+  }
+  score -= softHits * 8;
+
+  let whitelistHits = 0;
+  for (const w of toneCfg.whitelist ?? []) {
+    const re = new RegExp(`\\b${escapeRegExp(String(w).toLowerCase())}\\b`, "g");
+    if (re.test(lower)) whitelistHits++;
+  }
+  score += Math.min(15, whitelistHits * 1.2);
+
+  // Clamp
+  score = Math.max(0, Math.min(100, Math.round(score)));
+  return { score, softHits, whitelistHits };
+}
+
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function severityRank(s) {
+  if (s === "HIGH") return 3;
+  if (s === "MEDIUM") return 2;
+  if (s === "LOW") return 1;
+  return 0;
+}
+
+function printHeader(cfg, configPath) {
+  console.log("=== ProBrandwacht VR Blog Guard (live) ===");
+  console.log(`Base: ${cfg.baseUrl}`);
+  console.log(`Start: ${cfg.startPath}`);
+  console.log(`Config: ${path.resolve(configPath)}`);
+  console.log(`Time: ${nowIso()}`);
+  console.log("");
+}
+
+function printSummary(findings) {
+  const counts = { HIGH: 0, MEDIUM: 0, LOW: 0, INFO: 0 };
+  for (const f of findings) counts[f.severity] = (counts[f.severity] ?? 0) + 1;
+
+  const total = findings.length;
+  console.log(
+    `Findings: ${total} (HIGH ${counts.HIGH}, MEDIUM ${counts.MEDIUM}, LOW ${counts.LOW}, INFO ${counts.INFO})`
+  );
+  console.log("");
+}
+
+function printFindingBlock(f) {
+  console.log(`[${f.severity}] ${f.ruleId}`);
+  if (f.note) console.log(`  Note: ${f.note}`);
+  console.log(`  URL: ${f.url}`);
+  if (f.title) console.log(`  Title: ${f.title}`);
+
+  if (f.match) console.log(`  Match: ${f.match}`);
+  if (f.context) console.log(`  Context: ${f.context}`);
+  if (f.extra) console.log(`  Extra: ${f.extra}`);
+  console.log("");
+}
+
+function walk(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walk(full));
+    else out.push(full);
+  }
+  return out;
+}
+
+function parseFrontmatter(src) {
+  const match = src.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
+  if (!match) return { data: {}, body: src };
+  const fmText = match[1];
+  const body = src.slice(match[0].length);
+  const data = {};
+  const lines = fmText.split("\n");
+  for (const line of lines) {
     const kv = line.match(/^([A-Za-z0-9_]+)\s*:\s*(.*)\s*$/);
     if (!kv) continue;
     const key = kv[1];
     let val = kv[2].trim();
-
-    currentKey = key;
-
-    if (val === "" || val === "|"
-      || val === ">"
-      || val === ">-"
-      || val === "|-") {
-      // multi-line values: we won’t reconstruct perfectly here; keep marker
-      fm[key] = val;
-      continue;
-    }
-
-    // strip quotes
     val = val.replace(/^['"]|['"]$/g, "");
-
-    // simple arrays: [a, b]
-    if (val.startsWith("[") && val.endsWith("]")) {
-      const inner = val.slice(1, -1).trim();
-      fm[key] = inner
-        ? inner.split(",").map((x) => x.trim().replace(/^['"]|['"]$/g, ""))
-        : [];
-      continue;
-    }
-
-    fm[key] = val;
+    data[key] = val;
   }
-
-  return { frontmatter: fm, body };
+  return { data, body };
 }
 
-function containsAny(text, needles) {
-  const t = text.toLowerCase();
-  for (const n of needles) {
-    if (t.includes(String(n).toLowerCase())) return n;
-  }
-  return null;
-}
+async function main() {
+  const configPath = argValue("--config") || DEFAULT_CONFIG;
+  const cfg = readJson(configPath);
 
-function countWhitelistHits(text, whitelist) {
-  const t = text;
-  let hits = 0;
-  for (const w of whitelist) {
-    const re = new RegExp(`\\b${escapeRegex(w)}\\b`, "i");
-    if (re.test(t)) hits++;
-  }
-  return hits;
-}
+  // CLI overrides
+  cfg.baseUrl = argValue("--base") || cfg.baseUrl;
+  cfg.startPath = argValue("--path") || cfg.startPath;
+  cfg.maxPosts = Number(argValue("--max") || cfg.maxPosts || 80);
 
-function scanFile({ root, file, cfg }) {
-  const out = [];
-  const stat = fs.statSync(file);
-  if (stat.size > cfg.scan.maxFileSizeBytes) {
-    out.push({
-      severity: "LOW",
-      code: "SKIPPED_TOO_LARGE",
-      file: rel(root, file),
-      line: 1,
-      match: `${Math.round(stat.size / 1024)} KB`,
-      note: `Bestand groter dan limiet (${Math.round(cfg.scan.maxFileSizeBytes / 1024)} KB).`,
-      context: ""
-    });
-    return out;
-  }
+  const indexUrl = safeUrlJoin(cfg.baseUrl, cfg.startPath);
+  printHeader(cfg, configPath);
 
-  const raw = fs.readFileSync(file, "utf8");
-  const { frontmatter, body } = parseFrontmatter(raw);
+  let indexHtml;
+  try {
+    indexHtml = await fetchText(indexUrl, cfg);
+  } catch (e) {
+    console.error(`Failed to fetch blog index: ${indexUrl}`);
+    console.error(String(e?.message || e));
+    console.log("⚠️  Falling back to local content/blog scan.");
+    const files = walk(BLOG_DIR).filter((f) => f.endsWith(".mdx") && !path.basename(f).startsWith("_"));
 
-  // Frontmatter required
-  if (!frontmatter) {
-    out.push({
-      severity: "HIGH",
-      code: "MISSING_FRONTMATTER",
-      file: rel(root, file),
-      line: 1,
-      match: "---",
-      note: "Frontmatter ontbreekt (--- ... ---).",
-      context: clampSnippet(raw.slice(0, 200))
-    });
-    return out;
-  }
+    const allFindings = [];
 
-  for (const k of cfg.requiredFrontmatterKeys) {
-    if (frontmatter[k] == null || String(frontmatter[k]).trim() === "") {
-      out.push({
-        severity: "HIGH",
-        code: "MISSING_FRONTMATTER_KEY",
-        file: rel(root, file),
-        line: 1,
-        match: k,
-        note: `Frontmatter mist sleutel: ${k}`,
-        context: ""
-      });
-    }
-  }
+    for (const file of files) {
+      const raw = fs.readFileSync(file, "utf8");
+      const { data, body } = parseFrontmatter(raw);
+      const slug = data.slug ? String(data.slug) : path.basename(file, ".mdx");
+      const url = safeUrlJoin(cfg.baseUrl, `/blog/${slug}`);
+      const headings = extractHeadingsFromMdx(body);
+      const title = data.title ? String(data.title) : (headings[0] || slug);
 
-  // Canonical should match slug
-  if (frontmatter.slug && frontmatter.canonical) {
-    const want = `/blog/${String(frontmatter.slug).trim().replace(/^\/+/, "")}`;
-    const got = String(frontmatter.canonical).trim();
-    if (got !== want) {
-      out.push({
-        severity: "MEDIUM",
-        code: "CANONICAL_MISMATCH",
-        file: rel(root, file),
-        line: 1,
-        match: `canonical=${got}`,
-        note: `Canonical wijkt af van slug. Verwacht: ${want}`,
-        context: ""
-      });
-    }
-  }
+      const req = anyRequiredHeadingPresent(headings, cfg.requiredHeadingsAnyOf || []);
+      if (!req.ok) {
+        allFindings.push({
+          severity: "MEDIUM",
+          ruleId: "MISSING_SECTIONS",
+          note: "Blog mist 1 of meer verwachte secties (kader/afbakening/gerelateerd).",
+          url,
+          title,
+          extra: `Missing: ${req.missing.map((s) => `[${s.join(" | ")}]`).join(", ")}`
+        });
+      }
 
-  // SERP title length / avoid words
-  if (frontmatter.title) {
-    const title = String(frontmatter.title);
-    if (title.length < cfg.serp.titleMin || title.length > cfg.serp.titleMax) {
-      out.push({
-        severity: "MEDIUM",
-        code: "SERP_TITLE_LENGTH",
-        file: rel(root, file),
-        line: 1,
-        match: `${title.length} chars`,
-        note: `Title lengte buiten range (${cfg.serp.titleMin}-${cfg.serp.titleMax}).`,
-        context: title
-      });
-    }
-    const bad = containsAny(title, cfg.serp.avoidWordsInTitle);
-    if (bad) {
-      out.push({
-        severity: "HIGH",
-        code: "TITLE_FORBIDDEN_TERM",
-        file: rel(root, file),
-        line: 1,
-        match: bad,
-        note: "Title bevat term die frontstage/VR-frictie kan geven.",
-        context: title
-      });
-    }
-    const hasIntent = containsAny(title.toLowerCase(), cfg.serp.preferIntentWords);
-    if (!hasIntent) {
-      out.push({
-        severity: "LOW",
-        code: "SERP_INTENT_WEAK",
-        file: rel(root, file),
-        line: 1,
-        match: "geen intent-woord",
-        note: "Title is vrij abstract; overweeg ‘wat/wanneer/hoe/checklist/kader’.",
-        context: title
-      });
-    }
-  }
+      const text = stripMarkdown(body);
 
-  // SERP description length
-  if (frontmatter.description) {
-    const d = String(frontmatter.description);
-    if (d.length < cfg.serp.descriptionMin || d.length > cfg.serp.descriptionMax) {
-      out.push({
-        severity: "LOW",
-        code: "SERP_DESCRIPTION_LENGTH",
-        file: rel(root, file),
-        line: 1,
-        match: `${d.length} chars`,
-        note: `Description lengte buiten range (${cfg.serp.descriptionMin}-${cfg.serp.descriptionMax}).`,
-        context: d
-      });
-    }
-  }
+      for (const rule of cfg.rules || []) {
+        const matches = findMatches(text, rule.patterns || [], cfg.contextChars ?? 90);
+        if (!matches.length) continue;
 
-  // Required sections via headings
-  const headings = findHeadingLines(body);
-  const headingTexts = headings.map((h) => h.text.toLowerCase());
+        for (const m of matches) {
+          if (rule.allowIfNear?.length) {
+            const ctxLower = (m.context || "").toLowerCase();
+            const allowed = rule.allowIfNear.some((a) => new RegExp(a, "i").test(ctxLower));
+            if (allowed) continue;
+          }
 
-  for (const section of cfg.requiredSections) {
-    const ok = headingTexts.some((t) => t.includes(section.toLowerCase()));
-    if (!ok) {
-      out.push({
-        severity: "HIGH",
-        code: "MISSING_REQUIRED_SECTION",
-        file: rel(root, file),
-        line: 1,
-        match: section,
-        note: `Mist verplichte sectie: ${section}`,
-        context: ""
-      });
-    }
-  }
-
-  // Central component presence (so je niet elke blog vol plakt met dezelfde tekst)
-  const compName = cfg.components?.centralKaderComponent;
-  if (compName) {
-    const has = new RegExp(`<\\s*${escapeRegex(compName)}\\b`, "i").test(body);
-    if (!has) {
-      out.push({
-        severity: "MEDIUM",
-        code: "MISSING_CENTRAL_KADER_COMPONENT",
-        file: rel(root, file),
-        line: 1,
-        match: compName,
-        note: `Gebruik centrale component voor ‘kader/afbakening’ om herhaling te voorkomen: <${compName} … />`,
-        context: ""
-      });
-    } else {
-      // validate variants
-      const allowed = cfg.components.allowedVariants || [];
-      const variantRe = new RegExp(`<\\s*${escapeRegex(compName)}[^>]*variant\\s*=\\s*["']([^"']+)["'][^>]*\\/?>`, "gi");
-      let m;
-      while ((m = variantRe.exec(body))) {
-        const v = m[1];
-        if (allowed.length && !allowed.includes(v)) {
-          out.push({
-            severity: "LOW",
-            code: "UNKNOWN_COMPONENT_VARIANT",
-            file: rel(root, file),
-            line: 1,
-            match: `variant=\"${v}\"`,
-            note: `Onbekende variant. Toegestaan: ${allowed.join(", ")}`,
-            context: clampSnippet(m[0])
+          allFindings.push({
+            severity: rule.severity,
+            ruleId: rule.id,
+            note: rule.note,
+            url,
+            title,
+            match: m.match,
+            context: m.context
           });
         }
       }
-    }
-  }
 
-  // Tone checks: solution/guarantee, attack, price signals
-  const bodyLower = body.toLowerCase();
-
-  for (const phrase of cfg.tone.vrRiskPhrases) {
-    if (bodyLower.includes(String(phrase).toLowerCase())) {
-      out.push({
-        severity: "HIGH",
-        code: "VR_RISK_PHRASE",
-        file: rel(root, file),
-        line: 1,
-        match: phrase,
-        note: "Te oplossend/garantie-taal. VR/toezichthouder frictie.",
-        context: clampSnippet(extractContext(body, phrase))
-      });
-    }
-  }
-
-  for (const phrase of cfg.tone.attackLanguage) {
-    if (bodyLower.includes(String(phrase).toLowerCase())) {
-      out.push({
-        severity: "HIGH",
-        code: "ATTACK_LANGUAGE",
-        file: rel(root, file),
-        line: 1,
-        match: phrase,
-        note: "Aanval-/beschuldigende taal richting marktpartijen. Houd het beschrijvend/neutraler.",
-        context: clampSnippet(extractContext(body, phrase))
-      });
-    }
-  }
-
-  // Price signals: allow if “markers” also present nearby (rough heuristic)
-  const priceSignals = cfg.tone.priceSignals || [];
-  const markers = cfg.tone.allowedPriceContextMarkers || [];
-
-  for (const sig of priceSignals) {
-    const sigLower = String(sig).toLowerCase();
-    if (sigLower === "%") {
-      if (body.includes("%")) {
-        const okMarker = containsAny(bodyLower, markers);
-        out.push({
-          severity: okMarker ? "LOW" : "MEDIUM",
-          code: "PRICE_SIGNAL",
-          file: rel(root, file),
-          line: 1,
-          match: "%",
-          note: okMarker
-            ? "Prijs/percentage-context: lijkt beschrijvend (markers aanwezig)."
-            : "Prijs/percentage-taal zonder duidelijke context/bronmarker.",
-          context: "%"
+      const tone = vrToneScore(text, cfg.vrBblTone || {});
+      const minOk = cfg.vrBblTone?.minScoreOk ?? 70;
+      if (tone.score < minOk) {
+        allFindings.push({
+          severity: "MEDIUM",
+          ruleId: "VR_TONE_SCORE_LOW",
+          note: "VR/Bbl-toon score onder drempel (meer neutraal/verklarend formuleren).",
+          url,
+          title,
+          extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits}, minOk=${minOk})`
+        });
+      } else if (hasFlag("--verbose")) {
+        allFindings.push({
+          severity: "INFO",
+          ruleId: "VR_TONE_SCORE_OK",
+          note: "VR/Bbl-toon score ok.",
+          url,
+          title,
+          extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits})`
         });
       }
-      continue;
     }
 
-    if (sigLower === "€") {
-      if (body.includes("€")) {
-        const okMarker = containsAny(bodyLower, markers);
-        out.push({
-          severity: okMarker ? "LOW" : "MEDIUM",
-          code: "PRICE_SIGNAL",
-          file: rel(root, file),
-          line: 1,
-          match: "€",
-          note: okMarker
-            ? "Bedragen lijken bron-/contextgeduid (markers aanwezig)."
-            : "Bedragen zonder duidelijke bron-/contextduiding.",
-          context: "€"
-        });
-      }
-      continue;
-    }
-
-    if (bodyLower.includes(sigLower)) {
-      const okMarker = containsAny(bodyLower, markers);
-      out.push({
-        severity: okMarker ? "LOW" : "MEDIUM",
-        code: "PRICE_SIGNAL",
-        file: rel(root, file),
-        line: 1,
-        match: sig,
-        note: okMarker
-          ? "Prijs-/verdienmodeltaal lijkt beschrijvend (markers aanwezig)."
-          : "Prijs-/verdienmodeltaal: zet expliciet ‘context/indicatief/bron’ erbij of herformuleer.",
-        context: clampSnippet(extractContext(body, sig))
-      });
-    }
-  }
-
-  // VR whitelist density: if too low -> tone might be “opinion essay” ipv kader
-  const hits = countWhitelistHits(body, cfg.tone.vrWhitelist || []);
-  if (hits < 2) {
-    out.push({
-      severity: "LOW",
-      code: "VR_TONE_THIN",
-      file: rel(root, file),
-      line: 1,
-      match: `${hits} whitelist hits`,
-      note: "Weinig VR/Bbl-ankerwoorden. Overweeg 1–2 neutrale kader-termen (risicobeoordeling, vergunningvoorschrift, beheersmaatregel).",
-      context: ""
+    allFindings.sort((a, b) => {
+      const d = severityRank(b.severity) - severityRank(a.severity);
+      if (d !== 0) return d;
+      return String(a.url).localeCompare(String(b.url));
     });
+
+    printSummary(allFindings);
+    for (const f of allFindings) printFindingBlock(f);
+    const hasHigh = allFindings.some((f) => f.severity === "HIGH");
+    process.exit(hasHigh ? 1 : 0);
   }
 
-  return out;
-}
-
-function extractContext(text, match, radius = 90) {
-  const i = text.toLowerCase().indexOf(String(match).toLowerCase());
-  if (i === -1) return "";
-  const start = Math.max(0, i - radius);
-  const end = Math.min(text.length, i + String(match).length + radius);
-  return text.slice(start, end);
-}
-
-function walkFiles(rootDir, cfg) {
-  const results = [];
-  const includeAbs = (cfg.scan.include || []).map((p) => path.join(rootDir, p));
-  const exDirs = new Set((cfg.scan.excludeDirs || []).map((x) => x.toLowerCase()));
-
-  const exts = new Set((cfg.scan.extensions || []).map((e) => e.toLowerCase()));
-
-  function walk(dir) {
-    const base = path.basename(dir).toLowerCase();
-    if (exDirs.has(base)) return;
-    let entries;
-    try {
-      entries = fs.readdirSync(dir, { withFileTypes: true });
-    } catch {
-      return;
-    }
-
-    for (const ent of entries) {
-      const p = path.join(dir, ent.name);
-      if (ent.isDirectory()) {
-        walk(p);
-      } else if (ent.isFile()) {
-        const ext = path.extname(ent.name).toLowerCase();
-        if (!exts.has(ext)) continue;
-        results.push(p);
-      }
-    }
-  }
-
-  for (const inc of includeAbs) {
-    if (isDir(inc)) walk(inc);
-  }
-
-  return results;
-}
-
-function main() {
-  const root = path.resolve(argValue("--root", "."));
-  const configPath = path.resolve(argValue("--config", "scripts/blog/vr-blog-guard.config.json"));
-
-  if (!isFile(configPath)) {
-    console.error(`${ANSI.red}Config not found:${ANSI.reset} ${configPath}`);
-    process.exit(1);
-  }
-
-  const cfg = readJson(configPath);
-  const toneProfilePath = path.resolve(argValue("--tone", "scripts/tone/probrandwacht-tone.json"));
-  if (isFile(toneProfilePath)) {
-    try {
-      const tone = readJson(toneProfilePath);
-      const disallowed = tone.disallowed_language ?? {};
-      const avoidVoice = tone.preferred_voice?.avoid ?? [];
-      const forbiddenPromises = tone.guarantees_and_promises?.forbidden ?? [];
-      const closingAvoid = tone.closing_guidance?.avoid ?? [];
-
-      const toPhrases = (arr) =>
-        (Array.isArray(arr) ? arr : []).map((p) => phraseToPatternString(p));
-
-      cfg.tone.vrRiskPhrases = [
-        ...(cfg.tone.vrRiskPhrases ?? []),
-        ...toPhrases(forbiddenPromises),
-        ...toPhrases(avoidVoice),
-        ...toPhrases(closingAvoid)
-      ];
-
-      cfg.tone.attackLanguage = [
-        ...(cfg.tone.attackLanguage ?? []),
-        ...toPhrases(disallowed.activist_terms),
-        ...toPhrases(disallowed.accusatory_terms),
-        ...toPhrases(disallowed.collective_identity),
-        ...toPhrases(disallowed.emotional_charge)
-      ];
-    } catch (err) {
-      console.error(`${ANSI.yellow}Tone profile load failed:${ANSI.reset}`, err);
-    }
-  }
-
-  console.log(`=== ProBrandwacht VR Blog Guard ===`);
-  console.log(`Root: ${root}`);
-  console.log(`Config: ${configPath}`);
-  console.log(`Scan: ${cfg.scan.include.join(", ")}  (${cfg.scan.extensions.join(", ")})`);
-  console.log(`Max file size: ${Math.round(cfg.scan.maxFileSizeBytes / 1024)} KB\n`);
-
-  const files = walkFiles(root, cfg);
-  let findings = [];
-
-  for (const file of files) {
-    findings = findings.concat(scanFile({ root, file, cfg }));
-  }
-
-  // Sort by severity
-  const weight = { HIGH: 3, MEDIUM: 2, LOW: 1 };
-  findings.sort((a, b) => (weight[b.severity] ?? 0) - (weight[a.severity] ?? 0));
-
-  const high = findings.filter((x) => x.severity === "HIGH").length;
-  const med = findings.filter((x) => x.severity === "MEDIUM").length;
-  const low = findings.filter((x) => x.severity === "LOW").length;
-
-  console.log(`Files scanned: ${files.length}`);
-  console.log(`Findings: ${findings.length} (HIGH ${high}, MEDIUM ${med}, LOW ${low})\n`);
-
-  if (!findings.length) {
-    console.log(`${ANSI.green}✔️ Geen issues gevonden.${ANSI.reset}`);
+  const postPaths = extractPostLinksFromBlogIndex(indexHtml, cfg).slice(0, cfg.maxPosts);
+  if (!postPaths.length) {
+    console.log("No blog posts found on index page. (Parsing rule may need update.)");
     process.exit(0);
   }
 
-  for (const f of findings) {
-    const color =
-      f.severity === "HIGH" ? ANSI.red :
-      f.severity === "MEDIUM" ? ANSI.yellow :
-      ANSI.cyan;
+  const allFindings = [];
 
-    console.log(`[${color}${f.severity}${ANSI.reset}] ${f.code}`);
-    console.log(`  File: ${f.file}${f.line ? `:${f.line}` : ""}`);
-    console.log(`  Match: ${f.match}`);
-    console.log(`  Note: ${f.note}`);
-    if (f.context) console.log(`  Context: ${f.context}`);
-    console.log("");
+  for (const p of postPaths) {
+    const url = safeUrlJoin(cfg.baseUrl, p);
+
+    let html;
+    try {
+      html = await fetchText(url, cfg);
+    } catch (e) {
+      allFindings.push({
+        severity: "HIGH",
+        ruleId: "FETCH_ERROR",
+        note: "Kon blog niet ophalen (HTTP/timeout).",
+        url
+      });
+      continue;
+    }
+
+    const headings = extractHeadings(html);
+    const title = headings.find((h) => h && h.length > 3) || "";
+
+    // Required sections check
+    const req = anyRequiredHeadingPresent(headings, cfg.requiredHeadingsAnyOf || []);
+    if (!req.ok) {
+      allFindings.push({
+        severity: "MEDIUM",
+        ruleId: "MISSING_SECTIONS",
+        note: "Blog mist 1 of meer verwachte secties (kader/afbakening/gerelateerd).",
+        url,
+        title,
+        extra: `Missing: ${req.missing.map((s) => `[${s.join(" | ")}]`).join(", ")}`
+      });
+    }
+
+    // Text content checks
+    const text = stripHtml(html);
+
+    for (const rule of cfg.rules || []) {
+      const matches = findMatches(text, rule.patterns || [], cfg.contextChars ?? 90);
+      if (!matches.length) continue;
+
+      for (const m of matches) {
+        // allowIfNear logic (for guarantee language)
+        if (rule.allowIfNear?.length) {
+          const ctxLower = (m.context || "").toLowerCase();
+          const allowed = rule.allowIfNear.some((a) => new RegExp(a, "i").test(ctxLower));
+          if (allowed) continue;
+        }
+
+        allFindings.push({
+          severity: rule.severity,
+          ruleId: rule.id,
+          note: rule.note,
+          url,
+          title,
+          match: m.match,
+          context: m.context
+        });
+      }
+    }
+
+    // VR/Bbl tone score
+    const tone = vrToneScore(text, cfg.vrBblTone || {});
+    const minOk = cfg.vrBblTone?.minScoreOk ?? 70;
+
+    if (tone.score < minOk) {
+      allFindings.push({
+        severity: "MEDIUM",
+        ruleId: "VR_TONE_SCORE_LOW",
+        note: "VR/Bbl-toon score onder drempel (meer neutraal/verklarend formuleren).",
+        url,
+        title,
+        extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits}, minOk=${minOk})`
+      });
+    } else if (hasFlag("--verbose")) {
+      allFindings.push({
+        severity: "INFO",
+        ruleId: "VR_TONE_SCORE_OK",
+        note: "VR/Bbl-toon score ok.",
+        url,
+        title,
+        extra: `score=${tone.score} (softHits=${tone.softHits}, whitelistHits=${tone.whitelistHits})`
+      });
+    }
   }
 
-  // Exit code: fail on HIGH by default
-  process.exit(high > 0 ? 2 : 0);
+  // Sort by severity then URL
+  allFindings.sort((a, b) => {
+    const d = severityRank(b.severity) - severityRank(a.severity);
+    if (d !== 0) return d;
+    return String(a.url).localeCompare(String(b.url));
+  });
+
+  printSummary(allFindings);
+
+  for (const f of allFindings) printFindingBlock(f);
+
+  // Exit codes like a guard
+  const hasHigh = allFindings.some((f) => f.severity === "HIGH");
+  process.exit(hasHigh ? 1 : 0);
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(2);
+});

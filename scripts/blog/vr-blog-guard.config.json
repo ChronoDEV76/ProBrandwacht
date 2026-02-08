@@ -1,126 +1,138 @@
 {
-  "name": "VR Blog Guard",
-  "version": 1,
-  "scan": {
-    "include": ["content/blog"],
-    "extensions": [".mdx"],
-    "excludeDirs": [
-      "node_modules",
-      ".next",
-      "dist",
-      "build",
-      "public",
-      ".git",
-      "scripts",
-      "tests",
-      "__tests__",
-      "coverage",
-      ".turbo",
-      ".cache"
-    ],
-    "maxFileSizeBytes": 2097152
-  },
-  "requiredFrontmatterKeys": [
-    "title",
-    "slug",
-    "date",
-    "category",
-    "description",
-    "canonical",
-    "pillar"
+  "siteName": "ProBrandwacht",
+  "baseUrl": "https://www.probrandwacht.nl",
+  "startPath": "/blog",
+  "includeUrlPrefixes": ["/blog/"],
+  "excludeUrlPatterns": ["/blog\\b$"],
+  "requiredHeadingsAnyOf": [
+    ["Situatieschets"],
+    ["Afbakening"],
+    ["Gerelateerd", "Gerelateerde artikelen", "Lees ook"]
   ],
-  "requiredSections": [
-    "Afbakening",
-    "Gerelateerd"
+  "rules": [
+    {
+      "id": "ATTACK_LANGUAGE",
+      "severity": "HIGH",
+      "note": "Vermijd vijandbeeld/aanval op partijen; blijf systeem-neutraal.",
+      "patterns": [
+        "\\bslager\\s+keurt\\s+zijn\\s+eigen\\s+vlees\\b",
+        "\\bmanipul(eren|atie)\\b",
+        "\\bonde(r)?mijn(en|ing)\\b",
+        "\\bcorrupt\\b",
+        "\\bmaffia\\b",
+        "\\bboeven\\b",
+        "\\boplichter(s)?\\b",
+        "\\bparasiet(en)?\\b",
+        "\\buitmelken\\b",
+        "\\bmarkt\\s+domineren\\b",
+        "\\bhandelsoorlog\\b",
+        "\\b(ze|zij)\\s+liegen\\b",
+        "\\bbureaus?\\s+(doen|zijn)\\s+.*(fout|slecht|niet\\s+ok)\\b"
+      ]
+    },
+    {
+      "id": "SOLUTION_SELLING",
+      "severity": "HIGH",
+      "note": "ProBrandwacht duidt; geen 'wij lossen op' / 'wij regelen'.",
+      "patterns": [
+        "\\bwij\\s+lossen\\s+dit\\s+op\\b",
+        "\\bwij\\s+regelen\\b",
+        "\\bwij\\s+leveren\\b",
+        "\\bwij\\s+bemiddelen\\b",
+        "\\bwij\\s+garanderen\\b",
+        "\\bstart\\s+intake\\b",
+        "\\bverkennende\\s+intake\\b",
+        "\\bleg\\s+uw\\s+situatie\\s+voor\\b"
+      ]
+    },
+    {
+      "id": "GUARANTEE_LANGUAGE",
+      "severity": "MEDIUM",
+      "note": "Garantie/zekerheid taal kan gelezen worden als belofte. 'geen garantie' is ok, maar check framing.",
+      "patterns": [
+        "\\bgarantie\\b",
+        "\\bzekerheid\\b",
+        "\\b100%\\b",
+        "\\baltijd\\b",
+        "\\bnooit\\b"
+      ],
+      "allowIfNear": ["geen\\s+garantie", "zonder\\s+garantie", "biedt\\s+geen\\s+garantie"]
+    },
+    {
+      "id": "PRICE_SIGNALS",
+      "severity": "MEDIUM",
+      "note": "Vermijd prijssturing (fees/percentages/tarieven als norm). Beschrijvend mag, sturend niet.",
+      "patterns": [
+        "\\buurtarief\\b",
+        "\\btarieven\\b",
+        "\\bfee\\b",
+        "\\bplatformfee\\b",
+        "\\bmarge\\b",
+        "\\b%\\b",
+        "€\\s?\\d+",
+        "\\b(30|35|40|45|50)\\s?euro\\b"
+      ]
+    },
+    {
+      "id": "NEGATIVE_MARKET_FRAMING",
+      "severity": "MEDIUM",
+      "note": "Kijk uit dat opdrachtgever de markt als 'onbetrouwbaar/kansloos' leest.",
+      "patterns": [
+        "\\bkansloos\\b",
+        "\\bwildgroei\\b",
+        "\\bchaos\\b",
+        "\\bonvolwassen\\s+markt\\b",
+        "\\bniemand\\s+neemt\\s+verantwoordelijkheid\\b",
+        "\\bverkapt\\s+loondienst\\b",
+        "\\bpseudo\\s*zzp\\b"
+      ]
+    },
+    {
+      "id": "HOT_WORDS_REPLACE",
+      "severity": "INFO",
+      "note": "Hot words die vaak polariserend lezen; overweeg neutralere varianten.",
+      "patterns": [
+        "\\bschijnveiligheid\\b",
+        "\\billusie\\b"
+      ]
+    }
   ],
-  "serp": {
-    "titleMin": 20,
-    "titleMax": 90,
-    "descriptionMin": 60,
-    "descriptionMax": 200,
-    "preferIntentWords": ["wat", "wanneer", "hoe", "checklist", "kader", "uitleg", "betekenis"],
-    "avoidWordsInTitle": ["garantie", "100%", "proof", "DBA-proof", "escrow", "fee", "marge"]
-  },
-  "tone": {
-    "vrWhitelist": [
-      "Bbl",
-      "veiligheidsregio",
-      "Brandweer",
+  "vrBblTone": {
+    "whitelist": [
       "vergunning",
-      "vergunningvoorschrift",
-      "gebruiksmelding",
-      "omgevingsvergunning",
       "veiligheidsplan",
       "risicoanalyse",
-      "risicobeoordeling",
       "maatregel",
-      "beheersmaatregel",
-      "toezicht",
-      "handhaving",
-      "incident",
-      "escalatie",
-      "rol",
-      "verantwoordelijkheid",
       "bevoegdheid",
       "mandaat",
-      "werkvloer",
-      "plan van aanpak",
-      "procedure"
+      "escalatielijn",
+      "toezicht",
+      "handhaving",
+      "Bbl",
+      "omgevingsvergunning",
+      "brandveiligheid",
+      "organisator",
+      "opdrachtgever",
+      "uitvoerend",
+      "professional",
+      "rolafbakening",
+      "verantwoordelijkheid",
+      "vastlegging",
+      "rapportage",
+      "risicoacceptatie"
     ],
-    "vrRiskPhrases": [
-      "wij lossen op",
-      "wij regelen",
-      "wij garanderen",
-      "altijd veilig",
-      "volledig veilig",
-      "100% veilig",
-      "compliance-oplossing",
-      "DBA-proof",
-      "juridisch waterdicht",
-      "risicoloos"
+    "softBan": [
+      "hack",
+      "koop\\s+risico",
+      "wij\\s+fixen",
+      "wij\\s+maken\\s+compliance",
+      "boosdoener",
+      "vijand"
     ],
-    "attackLanguage": [
-      "bureaus verkopen",
-      "schijnveiligheid verkopen",
-      "slager keurt",
-      "afroming",
-      "parasiteren",
-      "oplich",
-      "graaien",
-      "kartel",
-      "misleiding"
-    ],
-    "priceSignals": [
-      "€",
-      "euro",
-      "uurtarief",
-      "tarief",
-      "tarieven",
-      "fee",
-      "platformfee",
-      "marge",
-      "percentage",
-      "%",
-      "rekentool",
-      "calculator",
-      "bereken"
-    ],
-    "allowedPriceContextMarkers": [
-      "context",
-      "bandbreedte",
-      "indicatief",
-      "verschilt per",
-      "afhankelijk van",
-      "markt",
-      "bron",
-      "CBS",
-      "FVN",
-      "verzekeraars",
-      "onderzoek"
-    ]
+    "minScoreOk": 70
   },
-  "components": {
-    "centralKaderComponent": "",
-    "allowedVariants": []
-  }
+  "contextChars": 90,
+  "timeoutMs": 15000,
+  "maxPosts": 80,
+  "userAgent": "ProBrandwacht VR Blog Guard/1.0"
 }
