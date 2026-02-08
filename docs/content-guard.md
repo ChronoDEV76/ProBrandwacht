@@ -45,10 +45,10 @@ Laatste check (voor publicatie)
 - Is de scheiding met ProSafetyMatch expliciet waar relevant?
 
 Run guards (kort)
-- `node scripts/probrandwacht-copy-guard.mjs --root .`
-- `node scripts/probrandwacht-sanity-guard.mjs --root .`
-- `node scripts/probrandwacht-copyonly-scan.mjs --root . --config scripts/probrandwacht-copyonly.config.json`
-- `node scripts/blog/blog-guard.mjs`
+- `node scripts/content/probrandwacht-copy-guard.mjs --root .`
+- `node scripts/qa/probrandwacht-sanity-guard.mjs --root .`
+- `node scripts/content/probrandwacht-copyonly-scan.mjs --root . --config scripts/content/probrandwacht-copyonly.config.json`
+- `node scripts/blog/blog-guard-oom.mjs`
 - `node scripts/blog/vr-blog-guard.mjs --root . --config scripts/blog/vr-blog-guard.config.json`
 - `npx tsx scripts/content/checkCopy.ts` (stdin of arg)
 - `npx tsx scripts/content/launch-copy-check.ts`
@@ -56,6 +56,6 @@ Run guards (kort)
 - `node scripts/content/taalSanity-check.ts`
 
 Minimal run order (pre-launch)
-1. `node scripts/probrandwacht-copy-guard.mjs --root .`
-2. `node scripts/probrandwacht-sanity-guard.mjs --root .`
+1. `node scripts/content/probrandwacht-copy-guard.mjs --root .`
+2. `node scripts/qa/probrandwacht-sanity-guard.mjs --root .`
 3. `npx tsx scripts/content/launch-copy-check.ts`

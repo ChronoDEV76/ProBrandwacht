@@ -15,7 +15,7 @@ const ROOT = process.argv.includes("--root")
 
 const CONFIG_PATH = process.argv.includes("--config")
   ? path.resolve(process.argv[process.argv.indexOf("--config") + 1])
-  : path.join(ROOT, "scripts", "probrandwacht-sanity-guard.config.json");
+  : path.join(ROOT, "scripts", "qa", "probrandwacht-sanity-guard.config.json");
 
 function die(msg) {
   console.error(msg);

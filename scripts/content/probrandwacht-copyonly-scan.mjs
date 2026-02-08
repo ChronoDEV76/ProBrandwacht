@@ -9,7 +9,7 @@
  * En negeert technische mappen (scripts/docs/utils/etc).
  *
  * Usage:
- *   node --max-old-space-size=4096 scripts/probrandwacht-copyonly-scan.mjs --root . --config scripts/probrandwacht-copyonly.config.json
+ *   node --max-old-space-size=4096 scripts/content/probrandwacht-copyonly-scan.mjs --root . --config scripts/content/probrandwacht-copyonly.config.json
  */
 
 import fs from 'node:fs'
@@ -23,7 +23,7 @@ function arg(name, fallback = null) {
 
 const ROOT = path.resolve(arg('--root', '.'))
 const CONFIG_PATH = path.resolve(
-  arg('--config', 'scripts/probrandwacht-copyonly.config.json')
+  arg('--config', 'scripts/content/probrandwacht-copyonly.config.json')
 )
 
 function readJson(p) {
