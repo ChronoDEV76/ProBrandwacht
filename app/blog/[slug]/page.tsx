@@ -262,7 +262,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
           <h2 className="text-xl font-semibold md:text-2xl">Meer context</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-200">
-            Lees het kader en de afbakening om dit artikel in de juiste context te plaatsen.
+            Lees de context en de afbakening om dit artikel in de juiste context te plaatsen.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Cta id="secondary_kader_overview" />

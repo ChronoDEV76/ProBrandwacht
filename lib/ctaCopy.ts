@@ -282,7 +282,7 @@ const CTA: Record<CtaId, Cta> = {
   },
   secondary_kader_overview: {
     id: 'secondary_kader_overview',
-    label: 'Lees het kader',
+    label: 'Lees de context',
     href: '/veiligheidskundig-kader',
     variant: 'outline',
     intent: 'secondary',

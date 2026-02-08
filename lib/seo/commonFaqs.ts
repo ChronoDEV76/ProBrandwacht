@@ -50,7 +50,7 @@ export const generalPlatformFaq = [
 
 export const zzpFaq = [
   {
-    question: 'Wat houdt zelfstandig werken binnen dit kader in?',
+    question: 'Wat houdt zelfstandig werken binnen deze context in?',
     answer:
       'Samenwerking verloopt 1-op-1 met opdrachtgevers. Afspraken over rol, scope en verantwoordelijkheid worden vooraf en duidelijk vastgelegd.',
   },

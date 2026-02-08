@@ -419,7 +419,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
           <section className="panel p-6 text-center">
             <h3 className="text-xl font-semibold text-slate-50">Meer context nodig?</h3>
             <p className="mt-2 text-slate-200">
-              Lees het kader en de afbakening om deze artikelen goed te plaatsen.
+              Lees de context en de afbakening om deze artikelen goed te plaatsen.
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
               <Cta id="secondary_kader_overview" className="route-link" />
