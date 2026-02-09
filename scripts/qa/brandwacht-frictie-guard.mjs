@@ -2,7 +2,7 @@ import { readFile, readdir } from 'node:fs/promises'
 import { extname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ROOT = fileURLToPath(new URL('../content/blog', import.meta.url))
+const ROOT = fileURLToPath(new URL('../../content/blog', import.meta.url))
 
 const RULES = [
   {
