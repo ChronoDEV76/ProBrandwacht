@@ -88,7 +88,6 @@ export default function VeiligheidskundigKaderPage() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog/waarnemen-zonder-mandaat">Waarnemen zonder mandaat</Link>
               </li>
               <li>
                 <Link href="/blog/brandwacht-als-signaaldrager">

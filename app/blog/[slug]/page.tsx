@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const title = (frontmatter.title as string | undefined) ?? 'Artikel'
   const date = (frontmatter.date as string | undefined) ?? undefined
   const updated = (frontmatter.updated as string | undefined) ?? undefined
-  const author = (frontmatter.author as string | undefined) ?? 'ProBrandwacht Redactie'
+  const author = (frontmatter.author as string | undefined) ?? 'ProBrandwacht'
   const readingTime = frontmatter.readingTime as string | number | undefined
   const pageUrl = `${BASE_URL}/blog/${params.slug}`
   const publishedDate = parseFrontmatterDate(frontmatter.date)
