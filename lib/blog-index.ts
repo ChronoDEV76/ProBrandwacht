@@ -1,10 +1,13 @@
 export const CATEGORY_LABELS = [
+  'Context & randvoorwaarden',
+  'Wet & regels',
   'Evenementen',
+  'Bouw',
   'Industrie',
-  'Wetgeving',
   'Veiligheidskundig kader',
+  'Overig',
 ] as const
-export type CategoryLabel = (typeof CATEGORY_LABELS)[number] | 'Overig'
+export type CategoryLabel = (typeof CATEGORY_LABELS)[number]
 
 export const CITY_FILTERS = ['Amsterdam', 'Rotterdam', 'Den Haag', 'Utrecht'] as const
 export type CityFilter = (typeof CITY_FILTERS)[number]
@@ -23,8 +26,15 @@ export function resolveDate(baseIso: string | undefined) {
 
 export function normalizeCategory(value: unknown): CategoryLabel {
   if (typeof value !== 'string') return 'Overig'
-  return CATEGORY_LABELS.includes(value as (typeof CATEGORY_LABELS)[number])
-    ? (value as (typeof CATEGORY_LABELS)[number])
+  const trimmed = value.trim()
+  const mapped =
+    trimmed === 'Wetgeving'
+      ? 'Wet & regels'
+      : trimmed === 'Context'
+        ? 'Context & randvoorwaarden'
+        : trimmed
+  return CATEGORY_LABELS.includes(mapped as CategoryLabel)
+    ? (mapped as CategoryLabel)
     : 'Overig'
 }
 

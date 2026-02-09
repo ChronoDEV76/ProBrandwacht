@@ -278,6 +278,12 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               Snelle leesroutes
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
+              <Link href="/praktijk-brandveiligheid" className="route-link">
+                Praktijk brandveiligheid
+              </Link>
+              <Link href="/wetgeving-brandwacht" className="route-link">
+                Wetgeving & context
+              </Link>
               <Link href="/veiligheidskundig-kader" className="route-link">
                 Veiligheidskundig kader
               </Link>
