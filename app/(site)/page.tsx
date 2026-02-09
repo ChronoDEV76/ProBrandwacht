@@ -44,6 +44,21 @@ export default function Page() {
               </Link>
             </div>
 
+            <div className="flex flex-wrap gap-2 text-sm">
+              <Link href="/over-ons" className="route-link">
+                Over ProBrandwacht
+              </Link>
+              <Link href="/platform" className="route-link">
+                Platform
+              </Link>
+              <Link href="/steden" className="route-link">
+                Steden
+              </Link>
+              <Link href="/veiligheidskundig-kader" className="route-link">
+                Veiligheidskundig kader
+              </Link>
+            </div>
+
             <AfbakeningNote className="mt-4" />
           </div>
         </section>
