@@ -20,7 +20,7 @@ export default function AfbakeningBanner({ className }: { className?: string }) 
           </summary>
           <div className="mt-3 space-y-2 text-xs text-slate-300">
             <ul className="list-disc space-y-1 pl-4">
-              <li>Samenwerking gebeurt rechtstreeks, met eigen tarief- en inzetafspraken.</li>
+              <li>Samenwerking gebeurt rechtstreeks, met eigen voorwaarden en inzetafspraken.</li>
               <li>Deze beschrijving ondersteunt inzicht en rolhelderheid, zodat besluitvorming beter voorbereid is.</li>
               <li>Rolafbakening en keuzes worden gemaakt door opdrachtgever en professional.</li>
             </ul>

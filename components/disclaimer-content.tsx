@@ -47,9 +47,9 @@ export default function DisclaimerContent({
       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
         <li>ProBrandwacht biedt een neutrale kennislaag naast de praktijk</li>
         <li>Samenwerking ontstaat rechtstreeks tussen opdrachtgever en professional</li>
-        <li>Tarief-, inzet- en planningskeuzes worden samen gemaakt</li>
+        <li>Financiële afspraken en keuzes over inzet en planning worden samen gemaakt</li>
         <li>ProBrandwacht is geen werkgever, geen uitzendbureau en geen contractpartij</li>
-        <li>Tarieven worden zelf bepaald tussen opdrachtgever en professional</li>
+        <li>Financiële afspraken worden zelf bepaald tussen opdrachtgever en professional</li>
         <li>Uitkomsten blijven contextafhankelijk</li>
         <li>Juridische, operationele en handhavende kaders liggen bij de bevoegde partijen</li>
         <li>Het platform ondersteunt inzicht en onderbouwing, niet de besluitvorming zelf</li>

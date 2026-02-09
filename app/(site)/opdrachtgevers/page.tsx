@@ -29,7 +29,7 @@ export default function OpdrachtgeversPage() {
               <p className="text-sm text-slate-200/90">
                 <span className="font-semibold">Afbakening:</span> ProBrandwacht biedt context en voorbeelden.
                 Opdrachtgever en professional maken 1-op-1 afspraken over rol, verantwoordelijkheden en
-                uitvoering. Tarief wordt onderling bepaald.
+                uitvoering. Financiële afspraken worden onderling bepaald.
               </p>
             </div>
 

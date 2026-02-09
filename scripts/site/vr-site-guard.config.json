@@ -1,0 +1,95 @@
+{
+  "include": [
+    "app/(site)",
+    "components",
+    "content",
+    "lib"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "dist",
+    "build",
+    "coverage",
+    ".turbo",
+    ".git",
+    "scripts",
+    "public"
+  ],
+  "extensions": [".mdx", ".md", ".tsx", ".ts", ".jsx", ".js", ".json"],
+  "maxFileSizeBytes": 2000000,
+  "required": {
+    "frontmatterKeys": ["title", "date", "canonical"]
+  },
+  "rules": [
+    {
+      "id": "ROLE_SHIFT_SOLVING",
+      "severity": "HIGH",
+      "note": "Oplossing-/leveringstaal: VR/Bbl-proof = duiden/kaderen, niet 'wij regelen/leveren/garanderen'.",
+      "patterns": [
+        "\\bwij\\s+(regelen|leveren|bieden|zorgen\\s+voor|fixen|lossen\\s+op)\\b",
+        "\\b(garanderen|100%|altijd|nooit\\s+mis)\\b",
+        "\\b(compliance[-\\s]*oplossing|juridisch\\s+waterdicht\\s+maken)\\b"
+      ],
+      "ignoreIf": [
+        "\\bgeen\\s+garantie\\b",
+        "\\bgeen\\s+advies\\b",
+        "\\bcontext\\b"
+      ]
+    },
+    {
+      "id": "ATTACK_OR_NAMING",
+      "severity": "HIGH",
+      "note": "Aanval/vingerwijzen of namedropping van partijen: verhoogt frictie en reputatierisico.",
+      "patterns": [
+        "\\b(bureaus\\s+verkopen\\s+schijnveiligheid|slager\\s+keurt\\s+zijn\\s+eigen\\s+vlees)\\b",
+        "\\b(maffia|kartel|corrupt|manipuleren|ondermijnen)\\b",
+        "\\b(De\\s+Groot|Eurosafe)\\b"
+      ]
+    },
+    {
+      "id": "NORMATIVE_TONE",
+      "severity": "MEDIUM",
+      "note": "Te normatief/belerend. VR-stijl is beschrijvend: 'kan/wordt vaak/risico is dat' i.p.v. 'moet/fout/niet ok'.",
+      "patterns": [
+        "\\b(niet\\s+ok|fout|moet\\s+stoppen|onacceptabel|schandalig)\\b",
+        "\\b(jullie\\s+moeten|jij\\s+moet)\\b"
+      ]
+    },
+    {
+      "id": "PRICE_OR_STEERING",
+      "severity": "MEDIUM",
+      "note": "Prijssturing/tarieven/percentages op frontstage: alleen beschrijvend, nooit normerend of calculerend.",
+      "patterns": [
+        "€\\s*\\d+",
+        "\\b(tarief|uurtarief|fee|platformfee|marge|percentage|%|calculator)\\b"
+      ],
+      "ignoreIf": [
+        "\\bmarkt\\b",
+        "\\bbandbreedte\\b",
+        "\\bcontext\\b",
+        "\\bbron\\b"
+      ]
+    },
+    {
+      "id": "VR_BBL_LANGUAGE_MISMATCH",
+      "severity": "LOW",
+      "note": "Niet-fout, maar hint: vermijd pseudo-juridische stelligheid zonder bron; liever 'in de praktijk' + verwijzing.",
+      "patterns": [
+        "\\b(dit\\s+is\\s+illegaal|mag\\s+nooit|altijd\\s+in\\s+strijd\\s+met\\s+de\\s+wet)\\b"
+      ]
+    },
+    {
+      "id": "BANNED_TERM_SCHIJNVEILIGHEID",
+      "severity": "MEDIUM",
+      "note": "‘Schijnveiligheid’ triggert defensie. Gebruik neutralere termen.",
+      "patterns": ["\\bschijnveiligheid\\b"],
+      "suggestions": [
+        "onbedoelde veiligheidsillusie",
+        "papieren beheersing",
+        "zichtbare maatregel zonder aantoonbaar effect",
+        "beheersing die niet matcht met risico"
+      ]
+    }
+  ]
+}
