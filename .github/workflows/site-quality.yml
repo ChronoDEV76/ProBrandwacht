@@ -16,7 +16,7 @@ jobs:
       # Basis-URL voor je eigen site (in CI draaien we tegen localhost)
       LOCAL_BASE_URL: http://localhost:3000
       # Paths die jij belangrijk vindt op je eigen site
-      LOCAL_PATHS: /,/blog,/opdrachtgevers,/probrandwacht-direct-spoed
+      LOCAL_PATHS: /,/blog,/opdrachtgevers,/voor-brandwachten
 
     steps:
       - name: Checkout repository

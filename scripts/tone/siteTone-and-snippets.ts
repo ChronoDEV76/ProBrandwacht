@@ -191,18 +191,18 @@ const SNIPPET_CONFIGS: SnippetConfig[] = [
     ],
   },
   {
-    route: "/probrandwacht-direct-spoed",
-    file: "app/(site)/probrandwacht-direct-spoed/page.tsx",
+    route: "/voor-brandwachten",
+    file: "app/(site)/voor-brandwachten/page.tsx",
     snippet: `
-          <p className="mt-3 max-w-2xl text-sm text-slate-200">
-            Ook bij spoed blijft het kader leidend: duidelijke rolverdeling en afspraken
-            die uitvoerbaar zijn. ProBrandwacht duidt de randvoorwaarden — partijen spreken
-            het verder 1-op-1 af.
+          <p className="mt-5 text-lg leading-relaxed text-slate-200/90">
+            ProBrandwacht biedt taal en afspraken voor professioneel samenwerken: helderheid over rol, scope,
+            beslislijnen en stopcriteria -- zodat inzet uitvoerbaar blijft en achteraf uitlegbaar is wat
+            is afgesproken.
           </p>
     `,
     preferredAnchors: [
-      /SPOED — direct een brandwacht claimen/i,
-      /<h1[^>]*>[\s\S]*?SPOED[\s\S]*?<\/h1>/i,
+      /Zelfstandig werken, met duidelijke afspraken/i,
+      /<h1[^>]*>[\s\S]*?Zelfstandig werken[\s\S]*?<\/h1>/i,
     ],
   },
   {

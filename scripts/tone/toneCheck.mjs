@@ -27,7 +27,7 @@ const BASE = (
   process.env.NEXT_PUBLIC_BASE_URL ||
   "http://localhost:3000"
 ).replace(/\/$/, "");
-const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoed")
+const PATHS = (argv.paths || "/,/blog,/opdrachtgevers,/voor-brandwachten")
   .split(",")
   .map((p) => p.trim());
 const JSON_OUT = String(argv.json ?? "0") === "1";

@@ -176,7 +176,7 @@ function scanText(text: string, url: string, status?: number): PageResult {
 }
 
 function defaultPaths(): string[] {
-  return ["/", "/probrandwacht-direct-spoed", "/opdrachtgevers", "/blog"];
+  return ["/", "/voor-brandwachten", "/opdrachtgevers", "/blog"];
 }
 
 async function main() {

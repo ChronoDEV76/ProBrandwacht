@@ -23,7 +23,7 @@ const BASE = String(argv.url).replace(/\/$/, "");
 const pathsArg =
   typeof argv.paths === "string"
     ? argv.paths
-    : "/,/blog,/opdrachtgevers,/probrandwacht-direct-spoed";
+    : "/,/blog,/opdrachtgevers,/voor-brandwachten";
 
 const PATHS: string[] = pathsArg
   .split(",")
