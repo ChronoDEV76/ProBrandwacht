@@ -287,6 +287,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
               <Link href="/veiligheidskundig-kader" className="route-link">
                 Veiligheidskundig kader
               </Link>
+              <Link href="/steden" className="route-link">
+                Stedenoverzicht
+              </Link>
             </div>
           </div>
           <section className="flex flex-wrap gap-4">

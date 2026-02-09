@@ -79,6 +79,7 @@ function main() {
 
   const sourceFiles = []
   walk(path.join(ROOT, 'app/(site)'), ['.tsx'], sourceFiles)
+  walk(path.join(ROOT, 'app/blog'), ['.tsx'], sourceFiles)
   walk(path.join(ROOT, 'components'), ['.tsx'], sourceFiles)
   walk(path.join(ROOT, 'content'), ['.mdx', '.md'], sourceFiles)
 

@@ -51,9 +51,6 @@ export default function Page() {
               <Link href="/platform" className="route-link">
                 Platform
               </Link>
-              <Link href="/steden" className="route-link">
-                Steden
-              </Link>
               <Link href="/veiligheidskundig-kader" className="route-link">
                 Veiligheidskundig kader
               </Link>
