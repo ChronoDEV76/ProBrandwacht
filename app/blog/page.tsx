@@ -299,7 +299,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams?: R
                     href={`/blog?cat=${encodeURIComponent(c)}&city=${encodeURIComponent(city)}`}
                     active={cat === c}
                   >
-                    {c === 'Wetgeving' ? 'Wet & regels' : c}
+                    {c}
                   </FilterChip>
                 ))}
               </nav>
