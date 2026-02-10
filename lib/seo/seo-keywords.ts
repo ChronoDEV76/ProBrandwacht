@@ -80,4 +80,13 @@ export const seoKeywordClusters = {
     'uitlegbare samenwerking',
     'brandwacht rijksgediplomeerd',
   ],
+  regulatory: [
+    'veiligheidsregio',
+    'veiligheidsregio brandwacht',
+    'vr brandwacht',
+    'bbl brandveiligheid',
+    'besluit bouwwerken leefomgeving',
+    'toezichthouder brandveiligheid',
+    'brandveiligheid toezicht',
+  ],
 }

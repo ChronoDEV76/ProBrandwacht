@@ -57,6 +57,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
+      ...seoKeywordClusters.regulatory,
       'brandwacht platform',
       'kennisplatform brandwacht',
     ],
@@ -123,6 +124,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       'Veiligheidskundige context over rol, mandaat en systeemwerking binnen brandveiligheid. Kader voor reflectie en uitlegbaarheid.',
     keywords: [
       ...seoKeywordClusters.core,
+      ...seoKeywordClusters.regulatory,
       'veiligheidskundig kader',
       'systeemveiligheid',
       'veiligheidsprincipes',
@@ -173,6 +175,18 @@ export const routeMeta: Record<string, RouteMeta> = {
     keywords: [
       'disclaimer',
       'aansprakelijkheid',
+      ...seoKeywordClusters.platform,
+      ...seoKeywordClusters.positioning,
+    ],
+  },
+
+  '/privacy': {
+    title: 'Privacyverklaring | ProBrandwacht',
+    description:
+      'Uitleg over persoonsgegevens, bewaartermijnen en contact rondom privacy bij ProBrandwacht.',
+    keywords: [
+      'privacyverklaring',
+      'privacy probrandwacht',
       ...seoKeywordClusters.platform,
       ...seoKeywordClusters.positioning,
     ],
@@ -235,6 +249,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.positioning,
+      ...seoKeywordClusters.regulatory,
       'brandwacht kennisbank',
     ],
   },
@@ -247,6 +262,7 @@ export const routeMeta: Record<string, RouteMeta> = {
       ...seoKeywordClusters.core,
       ...seoKeywordClusters.zzpFreelance,
       ...seoKeywordClusters.positioning,
+      ...seoKeywordClusters.regulatory,
       'brandwacht kennisbank',
     ],
   },

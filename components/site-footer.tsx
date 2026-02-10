@@ -71,6 +71,13 @@ export default function SiteFooter() {
           </Link>
           <span aria-hidden="true">·</span>
           <Link
+            href="/privacy"
+            className="underline-offset-4 hover:text-slate-200 hover:underline"
+          >
+            Privacy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link
             href="/disclaimer"
             className="underline-offset-4 hover:text-slate-200 hover:underline"
           >

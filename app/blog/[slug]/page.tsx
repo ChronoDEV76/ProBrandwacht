@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { Cta } from '@/components/Cta'
+import BlogNeutralNote from '@/components/BlogNeutralNote'
 import HeroBackground from '@/components/HeroBackground'
 import SeoStructuredData from '@/components/SeoStructuredData'
 import Prose from '@/components/prose'
@@ -229,6 +230,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <article className="rounded-[26px] border border-white/10 bg-gradient-to-b from-slate-950 via-slate-900/95 to-slate-950/85 p-6 shadow-[0_18px_45px_-20px_rgba(0,0,0,0.7)] md:p-8">
           <Prose>{post.compiled}</Prose>
         </article>
+
+        <BlogNeutralNote />
 
         {related.length > 0 ? (
           <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
