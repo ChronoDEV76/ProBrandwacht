@@ -85,7 +85,7 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-semibold text-white">6. Beveiliging</h2>
             <p>
               We nemen passende technische en organisatorische maatregelen om gegevens te beschermen tegen
-              verlies, scheefgroei en onbevoegde toegang.
+              verlies, misbruik en onbevoegde toegang.
             </p>
 
             <h2 className="text-lg font-semibold text-white">7. Jouw rechten</h2>
